@@ -2,8 +2,8 @@
 # Careful: allegations are reported, not proven. Always attribute. Don't name the woman.
 # Markup: *gold  !red  {shown|spoken}  [#cue]
 
-[#hook] How does a former *Denny's dishwasher's secret wipe out {!$430 billion|four hundred thirty billion dollars} in two days?
-[#reframe] This is *Jensen *Huang. [#rise] At {15,|fifteen,} he bused tables at Denny's. [#booth] At {30,|thirty,} he started *Nvidia in a Denny's booth. [#top] Today, it's one of the most *valuable companies on Earth.
+[#hook] How did one man's secret wipe out {!$430 billion|four hundred thirty billion dollars} in two days?
+[#reframe] This is *Jensen *Huang. [#rise] At {15,|fifteen,} he washed dishes at *Denny's. [#booth] At {30,|thirty,} he started *Nvidia in a Denny's booth. [#top] Today, it's one of the most *valuable companies on Earth.
 
 [#step1] Then came Friday.
 [#nyt] The New York Times reported U.S. intelligence believes a woman he'd been seeing is a !Chinese !spy, [#goal] reportedly sent to push for Nvidia's best chips in China.
