@@ -4,19 +4,17 @@
 [#hook] How do you hide {*$5,000,000,000|five billion dollars} of steel under the ocean, for !months?
 [#reframe] It's not a boat. It's a *nuclear *city. [#how] Here's how it's built.
 
-[#setup] Meet the *Virginia-class attack submarine. [#size] {377 feet|Three hundred seventy-seven feet} long.
-[#job] It's built to *hunt enemy subs and ships, [#strike] launch *missiles, [#spy] spy, [#seals] and drop off *special *forces.
+[#setup] Meet the *Virginia-class attack sub. [#size] {377 feet|Three hundred seventy-seven feet} long.
+[#job] Built to *hunt enemy subs, [#strike] launch *missiles, [#spy] spy, [#seals] and sneak in *special *forces.
 
-[#step1] Step one: *rings. [#rings] Workers weld thick steel into giant rings, [#fill] and fill each one with pipes, wires, and bunks.
-[#step2] Step two: *swap. [#barge] Two shipyards build the pieces, and trade them by barge.
-[#step3] Step three: *join. [#join] The rings become one sealed hull. [#years] Start to finish: almost !nine !years.
+[#step1] Step one: *slices. [#tube] The hull is a steel tube, {34 feet|thirty-four feet} wide, [#cut] built in giant round slices, [#can] like a can cut into rings.
+[#step2] Step two: *fill. [#fill] Workers pack each slice with pipes, wires, and bunks, [#barge] and two shipyards trade slices by barge.
+[#step3] Step three: *join. [#join] The slices are welded into one sealed hull. [#years] Start to finish: almost !nine !years.
 
-[#catch] That hull has one job. [#deep] Dive past {!800 feet,|eight hundred feet,} [#pressure] where the water pushes {!25×|twenty-five times} harder than at the surface.
+[#catch] Then it's tested. [#deep] It can dive past {!800 feet,|eight hundred feet,} [#pressure] where water pushes {!25×|twenty-five times} harder than at the surface.
 
-[#crew] Inside: about {135|one hundred thirty-five} sailors, [#weapons] and up to {37|thirty-seven} torpedoes and missiles.
-[#deploy] A deployment lasts about {*6 months.|six months.} [#make] The sub makes its own water and *oxygen, [#food] so the real limit is !food. About {90 days.|ninety days.}
-
-[#contrast] Your phone needs charging every day. [#reactor] This reactor runs {*33 years|thirty-three years} without refueling.
+[#crew] Inside: {*135|one hundred thirty-five} sailors. [#ranks] {15|Fifteen} officers, {120|one hundred twenty} enlisted. [#team] Plus room for *Navy *SEALs, [#lockout] who exit through an airlock underwater, {9|nine} at a time.
+[#deploy] A deployment lasts about {*6 months.|six months.} [#reactor] The reactor runs {*33 years|thirty-three years} without refueling. [#make] It makes its own water and *oxygen, [#food] so the real limit is !food. About {90 days.|ninety days.}
 
 [#punch] It's not limited by fuel. [#lunch] It's limited by *lunch.
 [#cta] Follow for more *how *it's *built.
