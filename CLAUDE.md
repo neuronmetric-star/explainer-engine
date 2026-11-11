@@ -64,8 +64,13 @@ Put a `[#cue]` before every sentence that should change the picture.
 - Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
 
 ## Looks (styles)
-Current: **gold-noir** (black void, glowing gold wireframes, reflective floor) — finance/wealth.
-Planned looks to add as `engine/styles/*` when a topic needs them: **parchment** (history: warm
-low-poly dioramas, maps, lantern light), **blueprint** (science/engineering: cyan lines on navy,
-cutaways and exploded views), **chalk** (math: white lines on dark green). Keep the same card,
-caption and step systems across looks so the brand stays recognizable.
+Pick one with `style: '<name>'` at the top of `window.SCENE` (default **gold-noir**).
+- **gold-noir** (black void, glowing gold wireframes, reflective floor) — finance/wealth.
+- **parchment** (`engine/styles/parchment.*`) — history: lit low-poly dioramas with ink outlines, Cinzel cards, paper grain. Extra colours: `K.STONE, EARTH, WOOD, FIRE, INK`.
+- **blueprint** (`engine/styles/blueprint.*`) — science: cyan lines on navy, drafting grid. Extra colours: `K.CYAN, PINK, VIOLET, NAVY`; card class `blue`.
+- Planned: **chalk** (math: white lines on dark green).
+Extra kit helpers: `K.glow(geo,color,parent,opacity,x,y,z)` (unlit: fire, beams, screens), `K.solid(...)`,
+`K.line(pts,color,parent,width)` + `K.setLine(line,0..1)`, `K.col(hex)`, `K.wire(geo,color,parent,{angle})` (angle 1 = show all edges).
+Tools: `node tools/draft.js <slug>` = estimated timing so scenes can be built/previewed before the voice exists;
+`node tools/cues.js <slug> [cue+0.5 ...]` prints cue times (pipe into `--preview`);
+`tools/look.sh <slug> "<times>" [cols]` = larger review montage in $SCRATCH. Keep the same card, caption and step systems across looks so the brand stays recognizable.

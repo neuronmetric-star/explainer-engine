@@ -158,7 +158,7 @@ window.SCENE = {
     { l: 'Speed', v: '0 KM/H', cls: 'red big', a: [40, 13, -6], t0: 'impact', t1: 'crater', count: [0, 72000, 'impact', 1.4], fmt: n => Math.round(n).toLocaleString('en-US') + ' KM/H' },
     { v: 'MEXICO', cls: 'tag', a: [40, 2.5, 0], t0: 'impact+0.6', t1: 'crater' },
     { l: 'Crater', v: '180 KM WIDE', a: [80, 7.4, -2], t0: 'crater+0.4', t1: 'step1' },
-    { l: 'Debris falls back', v: 'SKY HEATS UP', cls: 'red', a: [110, 7.6, -3], t0: 'fire+0.3', t1: 'step2' },
+    { l: 'Debris falls back', v: 'SKY HEATS UP', cls: 'red', a: [110, 5.4, 0], t0: 'fire+0.3', t1: 'step2' },
     { l: 'Sunlight for plants', v: '100%', cls: 'big', a: [138, 8.2, -2], t0: 'photo', t1: 'step3', count: [100, 1, 'photo+0.2', 1.6], fmt: n => (n < 1.5 ? '<1' : Math.round(n)) + '%' },
     { v: 'FOR 1+ YEAR', cls: 'red', a: [138, 6.6, -2], t0: 'photo+1.8', t1: 'step3' },
     { v: 'SUN', cls: 'tag', a: [164.7, 4.2, 0], t0: 'step3', t1: 'math' },
