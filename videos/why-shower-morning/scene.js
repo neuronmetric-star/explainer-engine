@@ -54,8 +54,8 @@ window.SCENE = {
     S.lampLight = new THREE.PointLight(0xffb066, 1.3, 7, 2); S.lampLight.position.set(2.3, 1.45, -2.0); K.scene.add(S.lampLight);
     S.daySky = K.scene.background; S.nightSky = K.skyTexture([0x070b26, 0x141c48, 0x232a5a]); S.sunriseSky = K.skyTexture([0x7cbcff, 0xffc98a, 0xffe2b8]);
     // sleeper: lying on his back, head on the pillow
-    S.sleepRig = K.group(0, 1.0, .1);
-    S.guy = K.model('guy', { height: 1.75, parent: S.sleepRig }); S.guy.rotation.x = -Math.PI / 2;
+    S.sleepRig = K.group(0, 1.0, 1.5);
+    S.guy = K.model('guy', { height: 3.25, parent: S.sleepRig }); S.guy.rotation.x = -Math.PI / 2;
     // teaser bacteria orbiting the bed (hook) and returning at 7 AM
     S.orbit = [];
     const bcol = [0x4b8df8, 0xff6fb5, 0x55d66b, 0x4b8df8, 0x55d66b, 0xff6fb5, 0x4b8df8, 0x55d66b];
@@ -132,10 +132,10 @@ window.SCENE = {
     [0,            [3.0, 3.4, 4.2],  [0, 1.2, -.6],  1.2],
     ['t11',        [2.6, 3.0, 3.2],  [0, 1.0, -1.2], .6],
     ['t12',        [3.4, 3.4, 3.8],  [0, 1.1, -.6],  .8],
-    ['sweat',      [1.4, 2.2, .6],   [0, 1.2, -1.0], .4],
+    ['sweat',      [.6, 3.6, .4],    [0, 1.3, -1.1], .4],
     ['glands',     [20, 2.6, 9.5],   [20, 2.2, .5],  .8],
     ['apocrine',   [21.4, 2.0, 7.4], [21.0, 1.6, .7], .6],
-    ['t2',         [1.6, 2.4, -.4],  [0, 1.0, -1.7], .4],
+    ['t2',         [2.4, 3.0, -.3],  [0, 1.2, -1.6], .4],
     ['mites',      [42.6, 3.2, 5.4], [40, 1.1, 0],   .8],
     ['t4',         [64, 4.8, 9],     [60, .8, -1],   1.2],
     ['epi',        [58.6, 2.2, 4.4], [57.6, 1.0, .6], .4],
@@ -158,7 +158,7 @@ window.SCENE = {
     { v: 'SQUEAKY CLEAN ✨', a: [0, 2.6, -1.4], t0: 't11+0.3', t1: 'think' },
     { v: '…YOU THINK', cls: 'red big', a: [0, 2.6, -1.4], t0: 'think', t1: 't12' },
     // midnight
-    { l: 'Body cools down to sleep', v: 'HEAT OUT THROUGH SKIN', cls: 'red', a: [0, 3.0, -1], t0: 'heat', t1: 'glands' },
+    { l: 'Body cools down to sleep', v: 'HEAT OUT THROUGH SKIN', cls: 'red', a: [0, 2.3, -1], t0: 'heat', t1: 'glands' },
     // glands
     { v: 'YOUR SKIN, ZOOMED IN', cls: 'tag', a: [20, 5.6, -1], t0: 'glands', t1: 'eccrine' },
     // shedding + mite
@@ -228,7 +228,7 @@ window.SCENE = {
       h.children[0].material.opacity = .55 * (1 - u); });
     // sweat beads pop out and slide
     S.sweat.forEach((d, i) => { const st = T('sweat') + i * .12, on = t > st && t < at('glands') || (t > at('covered') && t < at('wash')); d.visible = on; if (!on) return;
-      const u = clamp01((t - st) / 2.2); d.position.set(-.36 + (i % 5) * .18, 1.24 - u * .12, -1.25 + Math.floor(i / 5) * .45 + u * .05); d.scale.setScalar(pop(clamp01((t - st) / .3))); });
+      const u = clamp01((t - st) / 2.2); d.position.set(-.5 + (i % 5) * .25, 1.42 - u * .14, -1.15 + Math.floor(i / 5) * .55 + u * .05); d.scale.setScalar(pop(clamp01((t - st) / .3))); });
     // skin flakes snow onto the pillow at 2 AM
     S.flakes.forEach((f, i) => { const on = t > at('t2') && t < at('mites') || (t > at('covered') && t < at('wash')); f.visible = on; if (!on) return;
       const u = ((t - at('t2')) * .5 + i / 26) % 1; f.position.set(-.7 + (i * .37) % 1.4, 1.5 - u * .45, -1.95 + (i * .23) % .6); f.rotation.set(t * 2 + i, t + i, 0); });
