@@ -1,0 +1,22 @@
+# The Man Who Bought (Almost) Every Lottery Ticket — STORY MODE (see docs/ricks-clips-study.md)
+# Markup: *gold  !red  {display|spoken}  [#cue]
+
+[#hook] He bought about {*5,000,000|five million} lottery tickets... [#one] for one single drawing.
+[#feb] February, {1992.|nineteen ninety-two.} Virginia's jackpot climbs to {*$27,000,000.|twenty-seven million dollars.}
+[#strange] And lottery officials notice something strange.
+[#blocks] Someone is buying tickets in giant blocks. Thousands at a time.
+[#grocery] Many get paid for at one grocery chain's headquarters.
+[#crazy] It sounds insane. Nobody can buy the whole lottery. [#orcan] Or can they?
+[#combos] Pick six numbers out of forty-four, and there are just over {*7,000,000|seven million} possible tickets.
+[#dollar] At {$1|one dollar} each, that's seven million dollars, [#prize] for a twenty-seven million dollar prize.
+[#race] So a group from Australia races the clock, buying ticket after ticket.
+[#deadline] Then the deadline hits. [#short] They've covered only about {!5,000,000.|five million.}
+[#gap] Two million numbers, !missing.
+[#draw] The balls drop.
+[#box] And somewhere in their boxes, [#win] is the *winning ticket.
+[#refuse] But the lottery threatens !not !to !pay. [#fbi] The FBI and state police start digging.
+[#pay] Three weeks later, Virginia gives in. [#paid] {*$27,000,000.|Twenty-seven million dollars.}
+[#yousee] You see, the man behind it was *Stefan *Mandel, a Romanian-born economist.
+[#rule] His rule: when the jackpot is worth more than every ticket combined, [#math] buying them all isn't gambling. [#profit] It's *math.
+[#changed] Virginia changed its rules soon after.
+[#cta] Would you have chipped in? [#share] Send this to the friend who plays every week.
