@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@fontsource/inter": "^5.0.0",
-    "ffmpeg-static": "^5.2.0",
     "playwright": "^1.47.0",
     "three": "0.128.0"
+  },
+  "optionalDependencies": {
+    "ffmpeg-static": "^5.2.0"
   }
 }
