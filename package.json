@@ -1,0 +1,18 @@
+{
+  "name": "explainer-engine",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Three.js engine for high-quality vertical teaching videos (TikTok / Reels / Shorts)",
+  "scripts": {
+    "setup": "npm install && npx playwright install chromium",
+    "tts": "node tools/tts.js",
+    "align": "node tools/align.js",
+    "render": "node tools/render.js"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.0.0",
+    "ffmpeg-static": "^5.2.0",
+    "playwright": "^1.47.0",
+    "three": "0.128.0"
+  }
+}

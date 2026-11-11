@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8">
+<title>Explainer stage</title>
+<!-- Open as: engine/stage.html?v=<video-slug>   (the render tool does this for you) -->
+<style>
+@font-face{font-family:IN;font-weight:900;src:url('../node_modules/@fontsource/inter/files/inter-latin-900-normal.woff2')}
+@font-face{font-family:IN;font-weight:800;src:url('../node_modules/@fontsource/inter/files/inter-latin-800-normal.woff2')}
+@font-face{font-family:IN;font-weight:600;src:url('../node_modules/@fontsource/inter/files/inter-latin-600-normal.woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family:IN,sans-serif}
+#c{position:fixed;inset:0;width:1080px;height:1920px}
+#ui{position:fixed;inset:0;pointer-events:none}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 45%,transparent 55%,rgba(0,0,0,.65) 100%)}
+/* floating info cards */
+.card{position:absolute;transform-origin:50% 50%;white-space:nowrap;text-align:center;border:3px solid rgba(255,206,92,.95);border-radius:18px;background:rgba(8,6,2,.72);
+  box-shadow:0 0 22px rgba(255,190,60,.55),inset 0 0 18px rgba(255,190,60,.18);padding:16px 30px 18px}
+.card .l{font-weight:800;font-size:22px;letter-spacing:.32em;color:rgba(255,226,160,.85);text-transform:uppercase}
+.card .v{font-weight:900;font-size:66px;color:#ffd15a;text-shadow:0 0 18px rgba(255,190,60,.8);line-height:1.08;margin-top:4px}
+.card.red{border-color:rgba(255,70,60,.95);box-shadow:0 0 26px rgba(255,50,40,.7),inset 0 0 18px rgba(255,50,40,.2)}
+.card.red .l{color:rgba(255,170,160,.9)} .card.red .v{color:#ff4a3d;text-shadow:0 0 20px rgba(255,40,30,.9)}
+.card.white{border-color:rgba(255,255,255,.9);box-shadow:0 0 18px rgba(255,255,255,.35)} .card.white .v{color:#fff;text-shadow:0 0 14px rgba(255,255,255,.6)}
+.card.green{border-color:rgba(120,255,170,.9);box-shadow:0 0 22px rgba(80,255,150,.5)} .card.green .v{color:#7dffb0;text-shadow:0 0 16px rgba(80,255,150,.7)}
+.card.tag{padding:8px 22px 9px;border-radius:12px;background:rgba(0,0,0,.75)} .card.tag .v{font-size:36px;letter-spacing:.06em;color:#fff;text-shadow:none;margin:0}
+.card.big{padding:22px 46px} .card.big .v{font-size:120px}
+/* word-by-word captions: sits at 67% height, inside TikTok/Reels safe zone */
+#cap{position:absolute;left:0;right:0;top:1290px;text-align:center;font-weight:900;font-size:86px;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.9),0 0 3px #000}
+#cap.gold{color:#ffd15a;text-shadow:0 0 22px rgba(255,190,60,.75),0 4px 14px #000}
+#cap.red{color:#ff4a3d;text-shadow:0 0 22px rgba(255,40,30,.75),0 4px 14px #000}
+/* step tracker */
+#steps{position:absolute;top:150px;left:0;right:0;text-align:center}
+#steps .t{font-weight:800;font-size:24px;letter-spacing:.4em;color:rgba(255,226,160,.9);margin-bottom:16px}
+#steps .row{display:flex;justify-content:center;align-items:center}
+.sc{width:66px;height:66px;border-radius:50%;border:3px solid rgba(255,255,255,.55);color:rgba(255,255,255,.7);font-weight:900;font-size:32px;display:grid;place-items:center;background:#000}
+.sc.on{background:#ffc63d;border-color:#ffd15a;color:#1a1000;box-shadow:0 0 26px rgba(255,190,60,.9)} .sc.done{border-color:#ffd15a;color:#ffd15a}
+.sl{width:90px;height:3px;background:rgba(255,255,255,.35)} .sl.done{background:#ffd15a}
+#steps .labs{display:flex;justify-content:center;gap:50px;margin-top:12px}
+#steps .labs span{width:106px;text-align:center;font-weight:800;font-size:22px;letter-spacing:.12em;color:rgba(255,255,255,.55)} #steps .labs span.on{color:#ffd15a}
+/* receipt */
+#receipt{position:absolute;left:190px;width:700px;top:330px;background:#f7f5ef;color:#222;padding:46px 54px 70px;box-shadow:0 20px 60px rgba(0,0,0,.6);transform-origin:50% 0}
+#receipt:after{content:"";position:absolute;left:0;right:0;bottom:-22px;height:24px;background:linear-gradient(-45deg,transparent 16px,#f7f5ef 0),linear-gradient(45deg,transparent 16px,#f7f5ef 0);background-size:32px 32px;background-position:left bottom}
+#receipt h3{text-align:center;font-weight:800;letter-spacing:.42em;font-size:30px;margin-bottom:34px;color:#333}
+#receipt .r{display:flex;justify-content:space-between;font-weight:600;font-size:32px;letter-spacing:.06em;margin:20px 0;color:#444}
+#receipt .r.g b{color:#13a98c} #receipt .r.k{border-top:2px dashed #bbb;padding-top:22px;margin-top:30px;color:#111} #receipt .r.k b{color:#c9302a} #receipt b{font-weight:800}
+/* follow CTA */
+#follow{position:absolute;left:50%;top:380px;transform:translateX(-50%);border:4px solid #ffd15a;border-radius:60px;padding:20px 54px;font-weight:900;font-size:52px;color:#ffd15a;background:rgba(0,0,0,.75);box-shadow:0 0 30px rgba(255,190,60,.7);white-space:nowrap}
+#follow.on{background:#ffc63d;color:#1a1000}
+#ftitle{position:absolute;left:0;right:0;top:290px;text-align:center;font-weight:800;font-size:26px;letter-spacing:.38em;color:rgba(255,226,160,.9)}
+#cursor{position:absolute;width:60px;height:60px}
+#flash{position:absolute;inset:0;background:#ff1e10;opacity:0}
+</style></head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui"><div id="vig"></div></div>
+<script src="../node_modules/three/build/three.min.js"></script>
+<script src="../node_modules/three/examples/js/objects/Reflector.js"></script>
+<script src="../node_modules/three/examples/js/lines/LineSegmentsGeometry.js"></script>
+<script src="../node_modules/three/examples/js/lines/LineMaterial.js"></script>
+<script src="../node_modules/three/examples/js/lines/LineSegments2.js"></script>
+<script src="../node_modules/three/examples/js/shaders/CopyShader.js"></script>
+<script src="../node_modules/three/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="../node_modules/three/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="../node_modules/three/examples/js/postprocessing/RenderPass.js"></script>
+<script src="../node_modules/three/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="../node_modules/three/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="script.js"></script>
+<script>
+(function(){
+  const v=new URLSearchParams(location.search).get('v');
+  if(!v){ document.body.innerHTML='<h1 style="color:#fff">add ?v=video-slug</h1>'; return; }
+  const load=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error('missing '+src));document.body.appendChild(s);});
+  load('../videos/'+v+'/data.js').then(()=>load('kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>KIT.start())
+    .catch(e=>{ window.loadError=String(e); console.error(e); });
+})();
+</script>
+</body></html>

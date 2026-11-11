@@ -1,0 +1,4 @@
+node_modules/
+.env
+videos/*/.preview/
+videos/*/.silent.mp4

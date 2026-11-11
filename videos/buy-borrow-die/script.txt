@@ -1,0 +1,38 @@
+# Buy, Borrow, Die — how billionaires live off stock without selling it
+# Markup: *gold  !red  {display|spoken}  [#cue]   (see engine/script.js)
+
+[#hook] Why do *billionaires live like *kings, but barely pay !income !tax?
+[#dontsell] They don't !sell.
+[#borrow] They *borrow.
+[#how] Here's how it works.
+
+[#owns] *Victor owns {*$100,000,000|one hundred million dollars} in stock.
+[#paid] He bought it for {*$1,000,000.|one million.}
+
+[#sells] If he sells, [#gain] the gain gets !taxed.
+[#rate] Up to {!23.8%|twenty-three point eight percent} federal.
+[#gone] That's over {!$23,000,000,|twenty-three million dollars,} !gone.
+
+[#step1] So, step one: *buy.
+[#never] He buys assets that grow, and he *never *sells.
+
+[#step2] Step two: *borrow.
+[#lends] The bank lends him {*$10,000,000|ten million dollars} against his stock.
+[#notax] A loan isn't *income, so there's *no *tax on it.
+[#interest] He pays a little interest, while his stock keeps *growing.
+
+[#step3] Step three: *die.
+[#dies] When *Victor dies, his kids inherit the stock at today's price.
+[#basis] It's called a *step-up *in *basis.
+[#decades] Decades of gains, *never *taxed.
+[#repeat] They sell just enough to pay off the loans, and do it all *again.
+
+[#risk] There's just !one !risk.
+[#crash] If the market !crashes, the bank can !force him to sell.
+
+[#teacher] Meanwhile, a *teacher sells [#sells5k] {$5,000|five thousand dollars} of stock to fix her roof, and pays [#ttax] !tax on every dollar of gain.
+
+[#math] *Victor never sold a share.
+[#paper] On paper, he barely earned a thing.
+
+[#cta] Follow for more *money *tricks the rich use.
