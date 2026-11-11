@@ -1,26 +1,24 @@
-# Nvidia's CEO scandal — how one secret erased ~$430 billion (news as of Nov 11, 2026)
+# Nvidia's CEO scandal — human version: Denny's dishwasher -> AI king -> one weekend (news as of Nov 11, 2026)
 # Careful: allegations are reported, not proven. Always attribute. Don't name the woman.
 # Markup: *gold  !red  {shown|spoken}  [#cue]
 
-[#hook] How does one CEO's secret wipe out {!$430,000,000,000|four hundred thirty billion dollars} in two days?
-[#reframe] It's not the affair. It's *trust. [#how] Here's what happened.
+[#hook] How does a former *Denny's dishwasher's secret wipe out {!$430 billion|four hundred thirty billion dollars} in two days?
+[#reframe] This is *Jensen *Huang. [#rise] At {15,|fifteen,} he bused tables at Denny's. [#booth] At {30,|thirty,} he started *Nvidia in a Denny's booth. [#top] Today, it's one of the most *valuable companies on Earth.
 
-[#setup] *Jensen *Huang runs *Nvidia, [#chips] the chipmaker behind the AI boom.
+[#step1] Then came Friday.
+[#nyt] The New York Times reported U.S. intelligence believes a woman he'd been seeing is a !Chinese !spy, [#goal] reportedly sent to push for Nvidia's best chips in China.
 
-[#step1] Step one: the report.
-[#nyt] On Friday, the New York Times reported U.S. intelligence believes a woman he was involved with is a !Chinese !spy.
+[#step2] Sunday.
+[#memo] Huang told his employees he had an affair. [#resp] He took full responsibility.
 
-[#step2] Step two: the admission.
-[#memo] On Sunday, Huang told employees he had an affair, and took full responsibility. [#board] Nvidia's board opened an independent investigation.
+[#step3] Monday and Tuesday.
+[#drop] The stock fell nearly {!10%.|ten percent.} [#gone] About {!$430 billion|four hundred thirty billion dollars} in value, gone.
 
-[#step3] Step three: the selloff.
-[#mon] Monday, the stock fell {!4%.|four percent.} [#tue] Tuesday, {!5.5%|five and a half percent} more. [#gone] About {!$430 billion|four hundred thirty billion dollars} in value, gone.
+[#catch] But here's the twist. [#board] Nvidia's board says it has no reason to think any secrets leaked. [#china] China denies everything. [#trump] And President Trump called him "an honorable guy."
 
-[#catch] Here's what nobody knows yet: [#leak] was anything leaked? [#board2] The board says it has no reason to think so. [#china] China denies the claims.
+[#next] Now Congress wants answers, [#suit] and shareholders are suing.
 
-[#next] Now, Congress wants a closed-door briefing, [#suit] and shareholders are suing.
+[#contrast] Meanwhile, a *nurse with an S&P {500|five hundred} index fund owns a tiny piece of Nvidia, [#felt] and felt that drop too.
 
-[#contrast] Meanwhile, a *nurse with an S&P {500|five hundred} index fund owns a tiny slice of Nvidia, [#felt] and felt that drop too.
-
-[#punch] Nvidia sells the world's most powerful chips. [#trust] This week proved its most valuable asset is *trust.
+[#punch] Thirty years to build. [#weekend] One weekend to shake.
 [#cta] Follow for more *money *stories.

@@ -10,3 +10,10 @@ Allegations are press reports citing anonymous officials; nothing is proven. Scr
 - Forbes, "Nvidia's $190 Billion Drop Over Jensen Huang Probe Is A Board Warning" (Nov 10, 2026) — allegations remain allegations; China's Foreign Ministry rejected them. https://www.forbes.com/sites/sandycarter/2026/11/10/nvidias-190-billion-drop-over-jensen-huang-probe-is-a-board-warning/
 - NBC News, "Nvidia hires former acting U.S. attorney to probe Jensen Huang affair" — three House committee chairs requested a closed-door briefing; class-action shareholder lawsuit filed in federal court in San Jose. https://www.nbcnews.com/business/corporations/ex-prosecutor-probe-jensen-huang-chinese-spy-affair-nvidia-rcna608628
 - Nvidia is a member of the S&P 500, so S&P 500 index funds hold Nvidia shares (index membership).
+
+## Added for the "human" version
+- NVIDIA blog, "NVIDIA Founder and CEO Jensen Huang Returns to Denny's Where NVIDIA Launched a Trillion-Dollar Vision" — Nvidia founded in 1993 by Huang, Malachowsky and Priem at a San Jose Denny's booth (now has a plaque); Huang worked at Denny's as a teen. https://blogs.nvidia.com/blog/nvidia-dennys-trillion/
+- CNBC via NBC Miami, "Jensen Huang started his $2 trillion company Nvidia at a Denny's breakfast booth" — dishwasher/busboy at a Portland Denny's starting at 15; age 30 at the 1993 founding. https://www.nbcmiami.com/news/business/money-report/jensen-huang-started-his-2-trillion-company-nvidia-at-a-dennys-breakfast-booth/3302554
+- Axios (Nov 8, 2026) — per the NYT, the woman was reportedly recruited to seek information and potentially push for Nvidia's advanced chips to be made available in China. https://www.axios.com/2026/11/08/nvidia-ceo-jensen-huang-admits-affair-board-to-launch-investigation
+- NBC News / CNBC — President Trump called Huang "an honorable guy". https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148
+- "Nearly 10%": −4.27% Monday and −5.47% Tuesday compound to about −9.5% (CNBC Nov 9 and Nov 10 figures).
