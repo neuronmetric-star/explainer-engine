@@ -5,6 +5,20 @@ with Three.js: finance, history, science, "how things really work." Owner: Brian
 Brand handle (TikTok + socials): **@coonknows** — the engine shows it as a moving watermark and on the
 end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep messages short, show previews, ask before spending credits.
 
+## Brian's preferences (learned while making the first videos — follow these)
+- Stay on the question. Cut anything that doesn't answer it (e.g. no morning-breath tangent in a shower video).
+- Hyper-educational: name the real things (glands, bacteria species, parts) and explain what each does, simply.
+- Story beats > fact lists: e.g. "your night, hour by hour" with a ticking clock tracker.
+- Premium, cinematic sets: mood lighting (night room with moon + lamp, sunrise), real 3D characters
+  (Quaternius) at believable scale — a person should fill their bed, not look like a toy on it.
+- Characters fit the topic: soldiers look like soldiers, kings/queens wear crowns (K.crown), etc.
+- CTA is a question + share bait, e.g. "Knowing this, will you start taking morning showers? Send this to your stinky partner."
+- Remove "advice" lines that aren't asked for (e.g. "keep it quick and lukewarm").
+- Real people/news: allegations always attributed, never name private people, faceless figures only.
+- Brian records the voiceover in OpenArt; then run `node tools/align.js <slug>` (rate-based sync) and check cues.
+- Show a preview before every full render; he may say "wait" — stop the render immediately.
+- Keep messages short (he's on his phone). Post caption + hashtags + pinned-sources comment with each final video.
+
 ## The pipeline (always in this order)
 1. **Research** the topic. Use web search. Every number and claim must come from a source.
    Save sources to `videos/<slug>/sources.md` (title + URL + the fact it supports).
