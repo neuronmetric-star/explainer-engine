@@ -58,14 +58,15 @@
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(1); renderer.setSize(W, H, false);
   renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.localClippingEnabled = true;   // needed for cutaways (K.cutaway)
   const scene = K.scene = new THREE.Scene(); scene.background = new THREE.Color(ST.bg);
   scene.fog = new THREE.Fog(ST.bg, ST.fog[0], ST.fog[1]);
   const camera = K.camera = new THREE.PerspectiveCamera(50, W / H, .1, 400);
-  scene.add(new THREE.AmbientLight(0xffffff, .35));
+  const amb = new THREE.AmbientLight(0xffffff, .35); scene.add(amb);
   const key = new THREE.DirectionalLight(0xffffff, .9); key.position.set(5, 10, 8); scene.add(key);
   const composer = new THREE.EffectComposer(renderer);
   composer.addPass(new THREE.RenderPass(scene, camera));
-  composer.addPass(new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), ...ST.bloom));
+  const bloomPass = K.bloom = new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), ...ST.bloom); composer.addPass(bloomPass);
 
   // reflective floor + dimmer + guide lines + dust
   const FLOOR_W = 600;
@@ -133,10 +134,46 @@
     if (!obj.visible) return; const e = ease(u); obj.position.lerpVectors(from, to, e); obj.position.y += Math.sin(e * Math.PI) * height; obj.rotation.y = e * 3; };
   K.hop = (obj, t, at, h = .25) => { obj.position.y = Math.max(0, Math.sin(clamp01((t - K.T(at)) / .4) * Math.PI)) * h; };
 
+  // ---------------- solid models + cutaways (technical-illustration look) ----------------
+  // Solid shaded parts for machines (subs, jets, engines). Extra studio lights are added the first time
+  // K.solid is used, so older wireframe-only videos render exactly as before.
+  let solidLit = false;
+  function solidLights() { if (solidLit) return; solidLit = true;
+    const hemi = new THREE.HemisphereLight(0xdfefff, 0x101418, .22); scene.add(hemi);
+    const rim = new THREE.DirectionalLight(0x9fd8ff, .5); rim.position.set(-6, 6, -8); scene.add(rim);
+    // solids are lit, not glowing: raise the bloom threshold so only emissive parts (reactor, screens) bloom
+    bloomPass.threshold = .82; bloomPass.strength = .8;
+    // filmic tone mapping keeps close-ups from blowing out to white
+    renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = .95; amb.intensity = .2; key.intensity = .8; }
+  // cutaway: a box-shaped "bite" removed from every solid that uses it: x0 < x < x1 AND z > zCut (front half)
+  // and optionally y > yCut. Animate the opening with K.setCut(cut, x0, x1).
+  K.cutaway = function (o = {}) {
+    const c = { planes: [new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0), new THREE.Plane(new THREE.Vector3(1, 0, 0), 0), new THREE.Plane(new THREE.Vector3(0, 0, -1), o.z || 0)] };
+    if (o.y !== undefined) c.planes.push(new THREE.Plane(new THREE.Vector3(0, -1, 0), o.y));
+    K.setCut(c, o.x0 || 0, o.x1 || 0); return c; };
+  K.setCut = (c, x0, x1) => { c.planes[0].constant = x0; c.planes[1].constant = -Math.max(x0, x1); };   // x1 <= x0 -> closed
+  // solid(geo, color, parent, {cut, rough, metal, inner}) -> shaded mesh; with a cut, the inside wall shows in 'inner' color
+  K.solid = function (geo, color = 0x5d6b78, parent, o = {}) {
+    solidLights();
+    const mk = (side, col) => { const m = new THREE.MeshStandardMaterial({ color: col, roughness: o.rough ?? .55, metalness: o.metal ?? .25, side,
+      emissive: o.glow ? col : 0x000000, emissiveIntensity: o.glow || 0 });
+      if (o.cut) { m.clippingPlanes = o.cut.planes; m.clipIntersection = true; } return m; };
+    const g = new THREE.Group(); g.add(new THREE.Mesh(geo, mk(THREE.FrontSide, color)));
+    if (o.cut) g.add(new THREE.Mesh(geo, mk(THREE.BackSide, o.inner ?? 0x2a3138)));
+    (parent || scene).add(g); return g;
+  };
+  // hull(profile [[x, radius], ...], color, parent, opts): a smooth body of revolution along the x axis
+  K.hull = function (prof, color, parent, o = {}) {
+    const pts = prof.map(([x, r]) => new THREE.Vector2(Math.max(.001, r), x));
+    const geo = new THREE.LatheGeometry(pts, o.seg || 48); geo.rotateZ(-Math.PI / 2); geo.computeVertexNormals();
+    return K.solid(geo, color, parent, o);
+  };
+
   // ---------------- UI (DOM overlays, crisp text) ----------------
   const $ = id => document.getElementById(id);
   const ui = $('ui');
   ui.insertAdjacentHTML('beforeend', `
+    <svg id="colines" width="1080" height="1920"></svg><div id="callouts"></div>
     <div id="cards"></div>
     <div id="steps" style="opacity:0"><div class="t"></div><div class="row"></div><div class="labs"></div></div>
     <div id="receipt" style="opacity:0"></div>
@@ -156,6 +193,30 @@
     o.orig = o.v; CARDS.push(o); return o;
   };
   const fmt = n => '$' + Math.round(n).toLocaleString('en-US'); K.fmt = fmt;
+  // callout({n:1, l:'Reactor', a:[x,y,z] anchor, at:[screenX, screenY] label position, t0, t1, cls:'red|gold|cyan'})
+  // -> numbered dot on the part + leader line + label box, like a cutaway poster. Pops in at t0.
+  const CALLS = [], coSvg = () => $('colines');
+  K.callout = function (o) {
+    const el = document.createElement('div'); el.className = 'co ' + (o.cls || '');
+    el.innerHTML = `<b>${o.n ?? ''}</b><span>${o.l}</span>`; $('callouts').appendChild(el);
+    const dot = document.createElement('div'); dot.className = 'cod ' + (o.cls || ''); dot.textContent = o.n ?? ''; $('callouts').appendChild(dot);
+    const ln = document.createElementNS('http://www.w3.org/2000/svg', 'line'); ln.setAttribute('class', 'col ' + (o.cls || '')); coSvg().appendChild(ln);
+    Object.assign(o, { el, dot, ln, anchor: new THREE.Vector3(...o.a), _t0: K.T(o.t0), _t1: K.T(o.t1) }); CALLS.push(o); return o; };
+  const cv = new THREE.Vector3();
+  function updateCallouts(t) {
+    for (const c of CALLS) {
+      const on = t >= c._t0 && t < c._t1; c.el.style.display = on ? 'flex' : 'none'; c.dot.style.display = on ? 'grid' : 'none'; c.ln.style.display = on ? '' : 'none'; if (!on) continue;
+      cv.copy(c.anchor).project(camera); const ax = (cv.x * .5 + .5) * W, ay = (-cv.y * .5 + .5) * H;
+      if (cv.z > 1 || ax < 0 || ax > W || ay < 140 || ay > H - 380) { c.el.style.display = c.dot.style.display = 'none'; c.ln.style.display = 'none'; continue; }
+      const k = pop(clamp01((t - c._t0) / .35)), out = clamp01((c._t1 - t) / .2), lineK = clamp01((t - c._t0 - .1) / .3);
+      c.dot.style.left = ax + 'px'; c.dot.style.top = ay + 'px'; c.dot.style.transform = `translate(-50%,-50%) scale(${k})`; c.dot.style.opacity = out;
+      const r = c.el.getBoundingClientRect(), lx = Math.max(28, Math.min(W - 28 - r.width, c.at[0] - r.width / 2)), ly = c.at[1];
+      c.el.style.left = lx + 'px'; c.el.style.top = (ly - r.height / 2) + 'px'; c.el.style.opacity = Math.min(out, clamp01((t - c._t0 - .2) / .2));
+      c.el.style.transform = `scale(${.7 + .3 * pop(clamp01((t - c._t0 - .2) / .3))})`;
+      const ex = lx + r.width / 2 + (ax < lx ? -r.width / 2 : ax > lx + r.width ? r.width / 2 : 0), ey = ly;
+      c.ln.setAttribute('x1', ax); c.ln.setAttribute('y1', ay); c.ln.setAttribute('x2', ax + (ex - ax) * lineK); c.ln.setAttribute('y2', ay + (ey - ay) * lineK); c.ln.style.opacity = out;
+    }
+  }
   const pv = new THREE.Vector3();
   function updateCards(t) {
     for (const c of CARDS) {
@@ -197,7 +258,7 @@
     const sh = shakeAmp(t);
     camera.position.copy(camPos).add(new THREE.Vector3(Math.sin(t * 61) * sh, Math.cos(t * 47) * sh, 0));
     camera.lookAt(camTgt); camera.updateMatrixWorld();
-    updateCards(t);
+    updateCards(t); updateCallouts(t);
     // captions: one word/token at a time
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
     if (c && t <= c.end + .45) { if (cap.textContent !== c.txt) cap.textContent = c.txt; cap.className = c.cls;
@@ -233,6 +294,7 @@
     SC.build && SC.build(K);
     SHOTS = (SC.shots || []).map(s => ({ t: K.T(s[0]), p: new THREE.Vector3(...s[1]), q: new THREE.Vector3(...s[2]), d: s[3] || 1 })).sort((a, b) => a.t - b.t);
     (SC.cards || []).forEach(o => K.card(o));
+    (SC.callouts || []).forEach(o => K.callout(o));
     SC._shakes = (SC.shakes || []).map(([a, d, amp]) => [K.T(a), d, amp]);
     SC._flashes = (SC.flashes || []).map(([a, d, amp]) => [K.T(a), d, amp]);
     if (SC.steps) { const s = SC.steps, el = $('steps'); el.querySelector('.t').textContent = s.title || 'THE TRICK';

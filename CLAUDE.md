@@ -62,6 +62,12 @@ Put a `[#cue]` before every sentence that should change the picture.
   `tube([[x,y,z]...],color,radius,parent)` + `drawTube(tube,0..1)`, `ring(r,x,z)`, `group(x,y,z)`,
   `person(x,z,{tie:true,scale,color})`, `fly(obj,t,start,dur,fromVec,toVec)`, `hop(obj,t,'cue')`.
 - Scene object: `build(K)`, `shots`, `cards`, `steps`, `receipt`, `follow`, `shakes`, `flashes`, `update(t,K)`.
+- **Cutaways (solid machines)**: `K.solid(geo,color,parent,{cut,inner,glow,metal,rough})`, `K.hull([[x,r]...],color,parent,opts)`
+  (body of revolution along x), `K.cutaway({z,x0,x1})` + `K.setCut(cut,x0,x1)` to peel the front open,
+  and `callouts:[{n,l,cls,a:[x,y,z],at:[screenX,screenY],t0,t1}]` for numbered labels. Show ≤2 callouts at once.
+  Full example: `videos/_cutaway-demo/scene.js`. Use our own models only — never copy someone's cutaway art.
+- Looks: `videos/<slug>/look.js` with `window.LOOK = 'blueprint'` (engine/styles/blueprint.js); no file = gold-noir.
+- No voice yet? `node tools/draft-timing.js <slug>` makes placeholder timing so you can preview a scene early.
 - Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
 
 ## Looks (styles)
