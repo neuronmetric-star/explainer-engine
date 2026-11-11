@@ -20,6 +20,7 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
 
 (async () => {
   const launch = { args: flag('--gpu') > -1 ? ['--ignore-gpu-blocklist', '--enable-gpu-rasterization'] : ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] };
+  launch.args.push('--allow-file-access-from-files');   // 3D models (assets/models/*.glb) load from disk
   const sysChrome = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].find(p => fs.existsSync(p));
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   else if (sysChrome) launch.executablePath = sysChrome;   // use installed Chrome if there is one
@@ -35,7 +36,7 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
 
   if (preview) {
     const times = pList || Array.from({ length: 12 }, (_, i) => +(0.8 + i * (L - 1.6) / 11).toFixed(2));
-    const tmp = path.join(dir, '.preview'); fs.mkdirSync(tmp, { recursive: true });
+    const tmp = path.join(dir, '.preview'); fs.rmSync(tmp, { recursive: true, force: true }); fs.mkdirSync(tmp, { recursive: true });
     let prev = 0;
     for (let i = 0; i < times.length; i++) {
       await page.evaluate(`window.step(${Math.max(1, Math.round((times[i] - prev) * FPS))},${1 / FPS})`); prev = times[i];
@@ -62,9 +63,9 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
     if (fs.existsSync(voice) && fs.existsSync(music))
       mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-stream_loop', '-1', '-i', music,
         '-filter_complex', '[1:a]apad[v];[2:a]volume=0.12[m];[v][m]amix=inputs=2:duration=first:normalize=0[a]',
-        '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
+        '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-ar', '48000', '-t', L.toFixed(3)];
     else if (fs.existsSync(voice))
-      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-af', 'apad', '-t', L.toFixed(3)];
+      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-ar', '48000', '-af', 'apad', '-t', L.toFixed(3)];
     else mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
     mux.push('-movflags', '+faststart', out);
     spawnSync(ff, mux, { stdio: 'inherit' }); fs.rmSync(silent, { force: true });

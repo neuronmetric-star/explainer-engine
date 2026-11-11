@@ -2,7 +2,22 @@
 
 This repo makes **extreme-quality vertical teaching videos** (TikTok / Instagram Reels / YouTube Shorts)
 with Three.js: finance, history, science, "how things really work." Owner: Brian (NeuronMetric).
-He works mostly from his phone — keep messages short, show previews, ask before spending credits.
+Brand handle (TikTok + socials): **@coonknows** — the engine shows it as a moving watermark and on the
+end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep messages short, show previews, ask before spending credits.
+
+## Brian's preferences (learned while making the first videos — follow these)
+- Stay on the question. Cut anything that doesn't answer it (e.g. no morning-breath tangent in a shower video).
+- Hyper-educational: name the real things (glands, bacteria species, parts) and explain what each does, simply.
+- Story beats > fact lists: e.g. "your night, hour by hour" with a ticking clock tracker.
+- Premium, cinematic sets: mood lighting (night room with moon + lamp, sunrise), real 3D characters
+  (Quaternius) at believable scale — a person should fill their bed, not look like a toy on it.
+- Characters fit the topic: soldiers look like soldiers, kings/queens wear crowns (K.crown), etc.
+- CTA is a question + share bait, e.g. "Knowing this, will you start taking morning showers? Send this to your stinky partner."
+- Remove "advice" lines that aren't asked for (e.g. "keep it quick and lukewarm").
+- Real people/news: allegations always attributed, never name private people, faceless figures only.
+- Brian records the voiceover in OpenArt; then run `node tools/align.js <slug>` (rate-based sync) and check cues.
+- Show a preview before every full render; he may say "wait" — stop the render immediately.
+- Keep messages short (he's on his phone). Post caption + hashtags + pinned-sources comment with each final video.
 
 ## The pipeline (always in this order)
 1. **Research** the topic. Use web search. Every number and claim must come from a source.
@@ -21,19 +36,22 @@ He works mostly from his phone — keep messages short, show previews, ask befor
    in the folder is mixed in quietly if present). Software rendering takes ~10–15 min per minute of video.
 7. Commit the folder (not the mp4s if they're huge) and tell Brian where the video is.
 
-## Script formula (55–70 seconds, ~150–175 spoken words)
-1. **Hook question** (first 2 s): a curiosity gap about something everyone sees.
-   "Why does every rich person drive a G-Wagon?" / "Why didn't medieval people shower?"
-2. **Reframe**: "It's not X. It's Y." + "Here's how it works."
-3. **Setup with a character** — a named, faceless character the viewer follows (e.g. Victor).
-4. **Numbered steps** — 2–4 steps, each one sentence of setup + one of payoff. Use the step tracker.
-5. **The catch**: "There's just one rule / one risk…" (honesty builds trust).
-6. **The math / proof**: real numbers, shown on a receipt or chart.
-7. **Relatable contrast**: a normal person (teacher, nurse, firefighter) in the same situation.
-8. **Punchline** (one short line that reframes everything) + **CTA**: "Follow for more ___."
-Rules: short sentences. Concrete numbers. No filler ("so basically", "in today's video").
-Every sentence must be visualizable. Never give personalized financial/legal/medical advice;
-explain how things work. History: no myths stated as fact — say "historians think" when unsure.
+## Script formula — "WHY THE F*CK…?" format (from Nov 2026, any topic humans wonder about)
+Length **61–75 s** (~170–200 spoken words). Must be over 60 s: TikTok Creator Rewards only pays on videos >1 min.
+1. **Hook (0–3 s)**: "Why the fuck did/does/is ___?" + bridge: "Give me a minute, I'll show you." /
+   "Let me explain." Exactly ONE swear, only in the hook. Caption shows it masked: `{F*CK|fuck}`.
+   Never put the swear in the TikTok caption text, title, hashtags or thumbnail.
+2. **Short answer** (one line, surprising) → "But the real reason is wilder."
+3. **Deep, simple explanation**: 3–4 numbered steps. Each = one concrete picture + one real number.
+   Explain like to a smart 12-year-old. Every sentence must be visualizable.
+4. **Twist / catch**: the part most people get wrong ("Here's what nobody tells you…").
+5. **Proof**: real numbers on a receipt, chart or comparison.
+6. **"You" moment**: tie it to the viewer's life ("That's why YOUR ___ …").
+7. **Punchline** (one short line) + **CTA**: "Follow — I explain one of these every day." Optional share bait:
+   "Send this to someone who …".
+Rules: short sentences, concrete numbers, no filler. Every fact from a source. History: no myths stated as
+fact ("historians think"). Real people/news: attribute every claim, never present allegations as fact.
+Never give personalized financial/legal/medical advice. See docs/growth-plan.md for monetization rules.
 
 ## Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{$23.8%|twenty-three point eight percent}` ·
@@ -42,6 +60,8 @@ Write numbers as words in the spoken part so the voice reads them right.
 Put a `[#cue]` before every sentence that should change the picture.
 
 ## Visual rules (the quality bar)
+- **Default look = bright** (sunny sky, warm ground, solid toy-like shapes, soft shadows, NO outlines).
+  New videos get it automatically. Old videos pin theirs in `look.js` (gold-noir / blueprint).
 - **Something changes every 2–3 seconds**: camera move, card pop, counter, object growing.
 - **One idea per shot.** Each set lives at its own x position (0, 20, 40, 60…); shots jump between them.
 - Hook frame = the most striking image in the video, already moving at frame 1. No fade-ins.
@@ -61,10 +81,25 @@ Put a `[#cue]` before every sentence that should change the picture.
   `tube([[x,y,z]...],color,radius,parent)` + `drawTube(tube,0..1)`, `ring(r,x,z)`, `group(x,y,z)`,
   `person(x,z,{tie:true,scale,color})`, `fly(obj,t,start,dur,fromVec,toVec)`, `hop(obj,t,'cue')`.
 - Scene object: `build(K)`, `shots`, `cards`, `steps`, `receipt`, `follow`, `shakes`, `flashes`, `update(t,K)`.
+- **Cutaways (solid machines)**: `K.solid(geo,color,parent,{cut,inner,glow,metal,rough})`, `K.hull([[x,r]...],color,parent,opts)`
+  (body of revolution along x), `K.cutaway({z,x0,x1})` + `K.setCut(cut,x0,x1)` to peel the front open,
+  and `callouts:[{n,l,cls,a:[x,y,z],at:[screenX,screenY],t0,t1}]` for numbered labels. Show ≤2 callouts at once.
+  Full example: `videos/_cutaway-demo/scene.js`. Use our own models only — never copy someone's cutaway art.
+- Looks: no `look.js` = **bright** (engine/styles/bright.js). `window.LOOK = 'gold-noir' | 'blueprint'` in
+  `videos/<slug>/look.js` for the old styles. In bright, box/cyl/bar/extrude are solid automatically.
+  Bright example: `videos/_bright-demo/scene.js`.
+- No voice yet? `node tools/draft-timing.js <slug>` makes placeholder timing so you can preview a scene early.
+- **Real 3D models (CC0, Quaternius)** in `assets/models/quaternius/` — characters (Man_King, Man_Suit, Man_Worker,
+  Man_Farmer, Man_Spacesuit, Man_Swat, Woman_Medieval, Woman_Soldier, Woman_Formal, Woman_Witch, Knight…), village
+  buildings, weapons/helmets, tanks, ships, animals, dinosaurs, trees. List them in `models:{name:'path.glb'}`, then
+  `K.model(name,{height|size,x,z,rotY,tint})`, animate with `K.anim(obj,'Walk'|'Walking'|'Run'|'Idle_Neutral'|'Wave'|
+  'Punch_Right'|'Death'|'Sword_Slash'|'Interact'…, t)`, props with `K.crown()` + `K.stick(item,obj,'Head',[dx,dy,dz])`.
+  Example: `videos/_army-demo/scene.js`. More CC0 models: quaternius.com (allowed host); license notes in assets/models/LICENSES.md.
 - Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
 
 ## Looks (styles)
-Current: **gold-noir** (black void, glowing gold wireframes, reflective floor) — finance/wealth.
+Default: **bright** (sunny, solid, shadows). Also available: **gold-noir** (black void, glowing gold
+wireframes) and **blueprint** (cyan lines on navy).
 Planned looks to add as `engine/styles/*` when a topic needs them: **parchment** (history: warm
 low-poly dioramas, maps, lantern light), **blueprint** (science/engineering: cyan lines on navy,
 cutaways and exploded views), **chalk** (math: white lines on dark green). Keep the same card,

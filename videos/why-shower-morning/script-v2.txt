@@ -1,0 +1,22 @@
+# Why the f*ck do we shower in the morning if we showered at night? — v2: the night, hour by hour
+# Markup: *gold  !red  {shown|spoken}  [#cue]   — sources in sources.md (v1 kept in script-v1.txt)
+
+[#hook] Why the {F*CK|fuck} do we have to shower in the morning, if we showered at night? [#bridge] Give me a minute. I'll show you what happens while you sleep.
+
+[#t11] {11 PM.|Eleven P M.} You're fresh out the shower. Squeaky *clean. [#think] You think.
+
+[#t12] {Midnight.|Midnight.} Your body cools down to sleep, [#skin] and it does it the gross way: through your skin. [#sweat] You start to !sweat.
+
+[#t2] {2 AM.|Two A M.} You're *shedding. [#cells] Tens of thousands of dead skin cells, every minute. [#buffet] Your pillow is a *buffet, [#mites] and dust mites are eating your face flakes.
+
+[#t4] {4 AM.|Four A M.} Now it gets nasty. [#bugs] About {*100 billion|a hundred billion} bacteria live on your skin, [#breakfast] and they just found *breakfast. [#hominis] Staph hominis eats your sweat [#burp] and burps out !sulfur !gas. [#bo] Your sweat doesn't stink. The bacteria eating it does.
+
+[#t6] {6 AM.|Six A M.} Your mouth's been dry for hours. [#crew] No saliva, no cleanup crew. [#breath] !Morning !breath.
+
+[#t7] {7 AM.|Seven A M.} You wake up [#cup] about a *cup of water lighter.
+
+[#wash] So your night shower washes off your *day. [#washnight] Your morning shower washes off your *night.
+[#catch] Just don't overdo it. [#derm] Dermatologists say long, hot showers strip your skin's natural oils. [#quick] Quick and lukewarm.
+
+[#punch] You didn't sleep alone. [#roommates] You slept with {*100 billion|a hundred billion} roommates.
+[#cta] Follow for one of these every day.

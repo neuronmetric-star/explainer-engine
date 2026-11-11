@@ -1,0 +1,24 @@
+# Nvidia's CEO scandal — human version: Denny's dishwasher -> AI king -> one weekend (news as of Nov 11, 2026)
+# Careful: allegations are reported, not proven. Always attribute. Don't name the woman.
+# Markup: *gold  !red  {shown|spoken}  [#cue]
+
+[#hook] How did one man's secret wipe out {!$430 billion|four hundred thirty billion dollars} in two days?
+[#reframe] This is *Jensen *Huang. [#rise] At {15,|fifteen,} he washed dishes at *Denny's. [#booth] At {30,|thirty,} he started *Nvidia in a Denny's booth. [#top] Today, it's one of the most *valuable companies on Earth.
+
+[#step1] Then came Friday.
+[#nyt] The New York Times reported U.S. intelligence believes a woman he'd been seeing is a !Chinese !spy, [#goal] reportedly sent to push for Nvidia's best chips in China.
+
+[#step2] Sunday.
+[#memo] Huang told his employees he had an affair. [#resp] He took full responsibility.
+
+[#step3] Monday and Tuesday.
+[#drop] The stock fell nearly {!10%.|ten percent.} [#gone] About {!$430 billion|four hundred thirty billion dollars} in value, gone.
+
+[#catch] But here's the twist. [#board] Nvidia's board says it has no reason to think any secrets leaked. [#china] China denies everything. [#trump] And President Trump called him "an honorable guy."
+
+[#next] Now Congress wants answers, [#suit] and shareholders are suing.
+
+[#contrast] Meanwhile, a *nurse with an S&P {500|five hundred} index fund owns a tiny piece of Nvidia, [#felt] and felt that drop too.
+
+[#punch] Thirty years to build. [#weekend] One weekend to shake.
+[#cta] Follow for more *money *stories.

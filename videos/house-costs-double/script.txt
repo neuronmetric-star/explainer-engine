@@ -1,0 +1,29 @@
+# Why a $400,000 house costs over $860,000 — mortgage interest explained
+# Markup: *gold  !red  {shown|spoken}  [#cue]
+# Math: $320k loan, 30y fixed, 7.18% (Freddie Mac PMMS Nov 5 2026) — see sources.md
+
+[#hook] Why does a {*$400,000|four hundred thousand dollar} house end up costing over {!$860,000?|eight hundred sixty thousand dollars?}
+[#reframe] It's not the house. It's the !interest. [#how] Here's how it works.
+
+[#setup] *Maya buys one. [#down] She puts {$80,000|eighty thousand} down, [#loan] and borrows {*$320,000|three hundred twenty thousand} for thirty years, at {!7.18%.|seven point one eight percent.}
+
+[#step1] Step one: the *payment.
+[#pay] Every month, she pays {$2,168.|twenty-one sixty-eight.}
+
+[#step2] Step two: the !split.
+[#split] In month one, {!$1,915|nineteen fifteen} goes to interest.
+[#principal] Only {$253|two fifty-three} pays down the house.
+
+[#step3] Step three: the *slow *climb.
+[#tenyears] After ten years of payments, [#owes] she still owes {!$275,000.|two hundred seventy-five thousand.}
+
+[#catch] Here's the catch.
+[#why] Interest is charged on what you still owe, so the early years are almost all !interest.
+
+[#math] Thirty years later: [#total] {$780,000|seven hundred eighty thousand} in payments. [#interest] {!$460,000|four hundred sixty thousand} of it is pure interest.
+
+[#contrast] Meanwhile, a *nurse with the same loan pays an extra {$200|two hundred dollars} a month.
+[#saves] She's done seven years early, and saves {*$124,000.|a hundred twenty-four thousand.}
+
+[#punch] The bank didn't sell you a house. [#rent] It rented you *money.
+[#cta] Follow for more *money *math.
