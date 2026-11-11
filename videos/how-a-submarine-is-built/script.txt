@@ -4,24 +4,19 @@
 [#hook] How do you hide {*$5,000,000,000|five billion dollars} of steel under the ocean, for !months?
 [#reframe] It's not a boat. It's a *nuclear *city. [#how] Here's how it's built.
 
-[#setup] Meet the *Virginia-class attack submarine.
-[#size] {377 feet|Three hundred seventy-seven feet} long. [#tons] {7,800 tons.|Seventy-eight hundred tons.}
+[#setup] Meet the *Virginia-class attack submarine. [#size] {377 feet|Three hundred seventy-seven feet} long.
+[#job] It's built to *hunt enemy subs and ships, [#strike] launch *missiles, [#spy] spy, [#seals] and drop off *special *forces.
 
-[#step1] Step one: *rings.
-[#rings] Workers weld thick steel into giant rings, [#fill] then pack each one with pipes, wires, and bunks, before it's sealed.
+[#step1] Step one: *rings. [#rings] Workers weld thick steel into giant rings, [#fill] and fill each one with pipes, wires, and bunks.
+[#step2] Step two: *swap. [#barge] Two shipyards build the pieces, and trade them by barge.
+[#step3] Step three: *join. [#join] The rings become one sealed hull. [#years] Start to finish: almost !nine !years.
 
-[#step2] Step two: *two *shipyards.
-[#yards] Electric Boat and Newport News each build pieces, [#barge] and ship them to each other by barge.
+[#catch] That hull has one job. [#deep] Dive past {!800 feet,|eight hundred feet,} [#pressure] where the water pushes {!25×|twenty-five times} harder than at the surface.
 
-[#step3] Step three: *join.
-[#join] The sections are welded into one sealed hull. [#years] From first weld to delivery: almost !nine !years.
+[#crew] Inside: about {135|one hundred thirty-five} sailors, [#weapons] and up to {37|thirty-seven} torpedoes and missiles.
+[#deploy] A deployment lasts about {*6 months.|six months.} [#make] The sub makes its own water and *oxygen, [#food] so the real limit is !food. About {90 days.|ninety days.}
 
-[#math] Inside: [#crew] about {135|one hundred thirty-five} sailors, [#weapons] up to {37|thirty-seven} torpedoes and missiles, [#speed] and over {25 knots|twenty-five knots} underwater.
-
-[#catch] There's just !one !limit.
-[#water] It turns seawater into drinking water [#oxygen] and *oxygen. [#food] But the food runs out, after about {90 days.|ninety days.}
-
-[#contrast] Your phone needs charging every day. [#reactor] This sub's reactor runs {*33 years|thirty-three years} without refueling.
+[#contrast] Your phone needs charging every day. [#reactor] This reactor runs {*33 years|thirty-three years} without refueling.
 
 [#punch] It's not limited by fuel. [#lunch] It's limited by *lunch.
 [#cta] Follow for more *how *it's *built.
