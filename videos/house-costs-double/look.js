@@ -1,0 +1,1 @@
+window.LOOK = 'gold-noir';

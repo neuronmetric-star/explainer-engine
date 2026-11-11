@@ -82,7 +82,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
   if(!v){ document.body.innerHTML='<h1 style="color:#fff">add ?v=video-slug</h1>'; return; }
   const load=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error('missing '+src));document.body.appendChild(s);});
   // optional videos/<slug>/look.js sets window.LOOK; engine/styles/<LOOK>.js sets window.STYLE
-  const look=()=>load('../videos/'+v+'/look.js').then(()=>window.LOOK?load('styles/'+window.LOOK+'.js'):0,()=>0);
+  // default look for new videos = bright (older videos pin theirs in look.js)
+  const look=()=>load('../videos/'+v+'/look.js').catch(()=>0).then(()=>load('styles/'+(window.LOOK||'bright')+'.js'));
   load('../videos/'+v+'/data.js').then(look).then(()=>load('kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>KIT.start())
     .catch(e=>{ window.loadError=String(e); console.error(e); });
 })();

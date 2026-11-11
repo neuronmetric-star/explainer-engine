@@ -60,6 +60,11 @@
   renderer.outputEncoding = THREE.sRGBEncoding;
   renderer.localClippingEnabled = true;   // needed for cutaways (K.cutaway)
   const scene = K.scene = new THREE.Scene(); scene.background = new THREE.Color(ST.bg);
+  if (ST.sky) { // vertical gradient sky (bright look): top color -> horizon color
+    const cv = document.createElement('canvas'); cv.width = 4; cv.height = 512; const cx = cv.getContext('2d'), gr = cx.createLinearGradient(0, 0, 0, 512);
+    ST.sky.forEach((c, i) => gr.addColorStop(i / (ST.sky.length - 1), '#' + c.toString(16).padStart(6, '0'))); cx.fillStyle = gr; cx.fillRect(0, 0, 4, 512);
+    const tx = new THREE.CanvasTexture(cv); tx.encoding = THREE.sRGBEncoding; scene.background = tx; }
+  if (ST.shadows) { renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap; }
   scene.fog = new THREE.Fog(ST.bg, ST.fog[0], ST.fog[1]);
   const camera = K.camera = new THREE.PerspectiveCamera(50, W / H, .1, 400);
   const amb = new THREE.AmbientLight(0xffffff, .35); scene.add(amb);
@@ -68,8 +73,12 @@
   composer.addPass(new THREE.RenderPass(scene, camera));
   const bloomPass = K.bloom = new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), ...ST.bloom); composer.addPass(bloomPass);
 
-  // reflective floor + dimmer + guide lines + dust
+  // floor: reflective (noir/blueprint) or matte with soft shadows (bright)
   const FLOOR_W = 600;
+  if (ST.floorMode === 'matte') {
+    const fl = new THREE.Mesh(new THREE.PlaneGeometry(FLOOR_W, 120), new THREE.MeshStandardMaterial({ color: ST.floor, roughness: .95, metalness: 0 }));
+    fl.rotation.x = -Math.PI / 2; fl.position.set(200, 0, -20); fl.receiveShadow = true; scene.add(fl); K.floor = fl;
+  } else {
   const refl = new THREE.Reflector(new THREE.PlaneGeometry(FLOOR_W, 80), { textureWidth: 540, textureHeight: 960, color: ST.floor });
   refl.rotation.x = -Math.PI / 2; refl.position.set(200, 0, 0); scene.add(refl);
   const dim = new THREE.Mesh(new THREE.PlaneGeometry(FLOOR_W, 80), new THREE.MeshBasicMaterial({ color: ST.dim, transparent: true, opacity: ST.dimOpacity }));
@@ -78,12 +87,13 @@
   refl.onBeforeRender = function () { dim.visible = false; origBR.apply(this, arguments); dim.visible = true; };
   { const g = new THREE.BufferGeometry(); const p = []; for (let i = -2; i <= 2; i++) p.push(-100, .01, i * 6, 500, .01, i * 6);
     g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: ST.grid }))); }
+  }
   if (ST.backGrid) { // blueprint paper: a big gridded wall far behind every set
     const g = new THREE.BufferGeometry(), p = [], z = ST.backGrid.z, step = ST.backGrid.step;
     for (let x = -60; x <= 520; x += step) p.push(x, 0, z, x, 60, z);
     for (let y = 0; y <= 60; y += step) p.push(-60, y, z, 520, y, z);
     g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: ST.backGrid.color }))); }
-  { const n = 2400, p = new Float32Array(n * 3); for (let i = 0; i < n; i++) { p[i * 3] = -40 + Math.random() * 480; p[i * 3 + 1] = Math.random() * 16; p[i * 3 + 2] = -16 + Math.random() * 24; }
+  if (ST.dust) { const n = 2400, p = new Float32Array(n * 3); for (let i = 0; i < n; i++) { p[i * 3] = -40 + Math.random() * 480; p[i * 3 + 1] = Math.random() * 16; p[i * 3 + 2] = -16 + Math.random() * 24; }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
     scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: ST.dust, size: .05, transparent: true, opacity: .55 }))); }
 
@@ -93,6 +103,7 @@
   function lm(c) { if (!lineMats[c]) { const m = new THREE.LineMaterial({ color: c, linewidth: 3.2 }); m.resolution.set(W, H); lineMats[c] = m; } return lineMats[c]; }
   // wire(geometry, color, parent): glowing edge outline over a near-black body
   K.wire = function (geo, color = K.INK, parent) {
+    if (ST.solidAll) return K.solid(geo, color, parent);   // bright look: no outlines, every shape is solid
     const g = new THREE.Group();
     const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: ST.body, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
     const lg = new THREE.LineSegmentsGeometry().fromEdgesGeometry(new THREE.EdgesGeometry(geo, 20));
@@ -119,8 +130,9 @@
   const tieMat = new THREE.MeshStandardMaterial({ color: 0xffc548, emissive: 0xb07a10, roughness: .3 });
   K.person = function (x, z, opts = {}) {
     const s = (opts.scale || 1) * .82, g = K.group(x, 0, z); g.scale.setScalar(s);
+    if (ST.rig) solidLights();
     const mat = opts.color ? new THREE.MeshStandardMaterial({ color: opts.color, emissive: 0x111111, roughness: .5 }) : figMat;
-    const add = (geo, y, m = mat) => { const o = new THREE.Mesh(geo, m); o.position.y = y; g.add(o); return o; };
+    const add = (geo, y, m = mat) => { const o = new THREE.Mesh(geo, m); o.position.y = y; o.castShadow = !!ST.shadows; g.add(o); return o; };
     add(new THREE.CylinderGeometry(.55, .62, 1.7, 28), .95);
     add(new THREE.SphereGeometry(.55, 28, 16, 0, Math.PI * 2, 0, Math.PI / 2), 1.8);
     add(new THREE.SphereGeometry(.42, 28, 20), 2.65);
@@ -139,6 +151,11 @@
   // K.solid is used, so older wireframe-only videos render exactly as before.
   let solidLit = false;
   function solidLights() { if (solidLit) return; solidLit = true;
+    if (ST.rig === 'bright') { // sunny studio: sky fill + warm sun with soft shadows that follow the camera
+      scene.add(new THREE.HemisphereLight(0xdcecff, 0x8a7458, .42)); amb.intensity = .08; key.intensity = .78; key.color.set(0xfff1dc);
+      key.castShadow = true; key.shadow.mapSize.set(2048, 2048); const sc = key.shadow.camera; sc.left = sc.bottom = -14; sc.right = sc.top = 14; sc.near = 1; sc.far = 60;
+      key.shadow.bias = -.0006; key.shadow.normalBias = .02; scene.add(key.target);
+      bloomPass.threshold = .95; bloomPass.strength = .25; return; }
     const hemi = new THREE.HemisphereLight(0xdfefff, 0x101418, .22); scene.add(hemi);
     const rim = new THREE.DirectionalLight(0x9fd8ff, .5); rim.position.set(-6, 6, -8); scene.add(rim);
     // solids are lit, not glowing: raise the bloom threshold so only emissive parts (reactor, screens) bloom
@@ -159,7 +176,8 @@
     const mk = (side, col) => { const m = new THREE.MeshStandardMaterial({ color: col, roughness: o.rough ?? .55, metalness: o.metal ?? .25, side,
       emissive: o.glow ? col : 0x000000, emissiveIntensity: o.glow || 0 });
       if (o.cut) { m.clippingPlanes = o.cut.planes; m.clipIntersection = true; } return m; };
-    const g = new THREE.Group(); g.add(new THREE.Mesh(geo, mk(THREE.FrontSide, color)));
+    const g = new THREE.Group(); const fm = new THREE.Mesh(geo, mk(THREE.FrontSide, color)); g.add(fm);
+    if (ST.shadows) { fm.castShadow = o.shadow !== false; fm.receiveShadow = true; }
     if (o.cut) g.add(new THREE.Mesh(geo, mk(THREE.BackSide, o.inner ?? 0x2a3138)));
     (parent || scene).add(g); return g;
   };
@@ -259,6 +277,7 @@
     const sh = shakeAmp(t);
     camera.position.copy(camPos).add(new THREE.Vector3(Math.sin(t * 61) * sh, Math.cos(t * 47) * sh, 0));
     camera.lookAt(camTgt); camera.updateMatrixWorld();
+    if (ST.shadows) { key.position.copy(camTgt).add(new THREE.Vector3(6, 14, 9)); key.target.position.copy(camTgt); key.target.updateMatrixWorld(); }
     updateCards(t); updateCallouts(t);
     // captions: one word/token at a time
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
