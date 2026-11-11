@@ -119,7 +119,7 @@ window.SCENE = {
     { l: 'Safe practice', v: 'ESCAPE', a: [89, 6.0, 0], t0: 'practice', t1: 'step3' },
     { l: '2019 mouse study', v: 'FORGET NEURONS', cls: 'white', a: [120.5, 7.0, -.5], t0: 'mice+0.3', t1: 'catch' },
     { l: 'Memory saver', v: 'HIPPOCAMPUS', a: [151.5, 8.6, -1], t0: 'hippo+0.2', t1: 'nor' },
-    { l: 'Named for its shape:', v: 'SEAHORSE', cls: 'white', a: [147.4, 7.4, -1], t0: 'hippo+1.2', t1: 'nor' },
+    { l: 'Named for its shape:', v: 'SEAHORSE', cls: 'white', a: [147.4, 7.4, -1], t0: 'hippo+1.2', t1: 'hippo+2.4' },
     { l: 'Last to', v: 'WAKE UP', cls: 'red', a: [151.5, 8.6, -1], t0: 'hippo+2.4', t1: 'nor' },
     { l: 'Memory glue', v: 'NORADRENALINE', cls: 'white', a: [152, 8.6, -1], t0: 'nor+0.2', t1: 'wake' },
     { l: 'During REM', v: 'LOW', cls: 'red big', a: [156.6, 4.0, 1], t0: 'nor+1.2', t1: 'wake' },
