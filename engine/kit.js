@@ -69,6 +69,11 @@
   const camera = K.camera = new THREE.PerspectiveCamera(50, W / H, .1, 400);
   const amb = new THREE.AmbientLight(0xffffff, .35); scene.add(amb);
   const key = new THREE.DirectionalLight(0xffffff, .9); key.position.set(5, 10, 8); scene.add(key);
+  // lights + sky are exposed so a scene can change time of day (night room, sunrise…) inside update(t)
+  K.lights = { amb, key }; K.keyOffset = new THREE.Vector3(6, 14, 9);
+  K.skyTexture = function (cols) { const cv = document.createElement('canvas'); cv.width = 4; cv.height = 512; const cx = cv.getContext('2d'), gr = cx.createLinearGradient(0, 0, 0, 512);
+    cols.forEach((c, i) => gr.addColorStop(i / (cols.length - 1), '#' + c.toString(16).padStart(6, '0'))); cx.fillStyle = gr; cx.fillRect(0, 0, 4, 512);
+    const tx = new THREE.CanvasTexture(cv); tx.encoding = THREE.sRGBEncoding; return tx; };
   const composer = new THREE.EffectComposer(renderer);
   composer.addPass(new THREE.RenderPass(scene, camera));
   const bloomPass = K.bloom = new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), ...ST.bloom); composer.addPass(bloomPass);
@@ -152,7 +157,7 @@
   let solidLit = false;
   function solidLights() { if (solidLit) return; solidLit = true;
     if (ST.rig === 'bright') { // sunny studio: sky fill + warm sun with soft shadows that follow the camera
-      scene.add(new THREE.HemisphereLight(0xdcecff, 0x8a7458, .42)); amb.intensity = .08; key.intensity = .78; key.color.set(0xfff1dc);
+      const hemiB = new THREE.HemisphereLight(0xdcecff, 0x8a7458, .42); scene.add(hemiB); K.lights.hemi = hemiB; amb.intensity = .08; key.intensity = .78; key.color.set(0xfff1dc);
       key.castShadow = true; key.shadow.mapSize.set(2048, 2048); const sc = key.shadow.camera; sc.left = sc.bottom = -14; sc.right = sc.top = 14; sc.near = 1; sc.far = 60;
       key.shadow.bias = -.0006; key.shadow.normalBias = .02; scene.add(key.target);
       bloomPass.threshold = .95; bloomPass.strength = .25; return; }
@@ -277,7 +282,7 @@
     const sh = shakeAmp(t);
     camera.position.copy(camPos).add(new THREE.Vector3(Math.sin(t * 61) * sh, Math.cos(t * 47) * sh, 0));
     camera.lookAt(camTgt); camera.updateMatrixWorld();
-    if (ST.shadows) { key.position.copy(camTgt).add(new THREE.Vector3(6, 14, 9)); key.target.position.copy(camTgt); key.target.updateMatrixWorld(); }
+    if (ST.shadows) { key.position.copy(camTgt).add(K.keyOffset); key.target.position.copy(camTgt); key.target.updateMatrixWorld(); }
     updateCards(t); updateCallouts(t);
     // captions: one word/token at a time
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }

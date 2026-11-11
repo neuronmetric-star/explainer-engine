@@ -13,21 +13,46 @@ window.SCENE = {
     const eyes = (p, r, y, z, dx = r * .55) => { for (const sx of [-1, 1]) { SP(r * .32, sx * dx, y, z, 0xffffff, p, { rough: .3 }); SP(r * .16, sx * dx, y, z + r * .22, 0x111111, p, { rough: .3 }); } };
     S.eyes = eyes;
 
-    // ---------- A: bedroom ----------
-    B(12, 6, .3, 0, 3, -3.0, 0xbfdcf5);                     // back wall
-    B(.3, 6, 9, -5.0, 3, 1.4, 0xd6e8f8);                    // side wall
-    B(2.0, 1.5, .1, -1.6, 3.6, -2.82, 0xffffff); B(1.8, 1.3, .06, -1.6, 3.6, -2.76, 0x8fd0ff);   // window
-    B(5.2, .05, 4.2, 0, .02, .6, 0xf6c86a, undefined, { rough: .95 });                          // rug
-    B(2.8, .45, 4.6, 0, .25, 0, 0x9a6b45);                                                      // bed frame
-    B(2.8, 1.5, .25, 0, .75, -2.35, 0x8a5d3a);                                                  // headboard
-    B(2.6, .35, 4.3, 0, .62, 0, 0xffffff, undefined, { rough: .9 });                             // mattress
-    S.pillow = B(1.6, .28, .8, 0, .93, -1.75, 0xffffff, undefined, { rough: .95 });
-    S.blanket = B(2.7, .3, 2.1, 0, .92, 1.08, 0x5b8fe8, undefined, { rough: .9 });
-    B(.9, .9, .8, 2.05, .45, -1.9, 0xc08a5c);                                                    // nightstand
-    S.clock = B(.55, .3, .25, 2.05, 1.05, -1.95, 0x222831, undefined, { rough: .4 });
-    B(.42, .16, .02, 2.05, 1.06, -1.82, 0x7dff9a, undefined, { glow: .9 });
+    // ---------- A: bedroom (night → sunrise) ----------
+    B(12, .06, 9, 0, .01, .4, 0xb4845a, undefined, { rough: .8 });                           // wooden floor
+    B(12, 6, .3, 0, 3, -3.0, 0x9aa6d8);                                                      // back wall
+    B(.3, 6, 9, -5.0, 3, 1.4, 0xa9b3e0);                                                     // side wall
+    // window with the sky outside (night: moon + stars, morning: sunrise)
+    const skyCanvas = (night) => { const cv = document.createElement('canvas'); cv.width = 512; cv.height = 384; const c = cv.getContext('2d');
+      const g = c.createLinearGradient(0, 0, 0, 384); (night ? ['#070b26', '#18225a', '#2f3a7a'] : ['#6fb6ff', '#ffc98a', '#ffe9c9']).forEach((col, i) => g.addColorStop(i / 2, col));
+      c.fillStyle = g; c.fillRect(0, 0, 512, 384);
+      if (night) { let r = 7; for (let i = 0; i < 90; i++) { r = (r * 9301 + 49297) % 233280; const x = r / 233280 * 512; r = (r * 9301 + 49297) % 233280; const y = r / 233280 * 300;
+          c.fillStyle = 'rgba(255,255,255,' + (.4 + (i % 5) * .12) + ')'; c.beginPath(); c.arc(x, y, (i % 7 === 0) ? 2.2 : 1.1, 0, 7); c.fill(); }
+        const mg = c.createRadialGradient(360, 110, 10, 360, 110, 120); mg.addColorStop(0, 'rgba(255,250,220,.55)'); mg.addColorStop(1, 'rgba(255,250,220,0)'); c.fillStyle = mg; c.fillRect(200, 0, 312, 260);
+        c.fillStyle = '#fff6d8'; c.beginPath(); c.arc(360, 110, 46, 0, 7); c.fill(); c.fillStyle = '#e9dfbf'; [[345, 98, 9], [378, 125, 7], [355, 132, 5]].forEach(([x, y, rr]) => { c.beginPath(); c.arc(x, y, rr, 0, 7); c.fill(); });
+      } else { const sg = c.createRadialGradient(256, 330, 10, 256, 330, 160); sg.addColorStop(0, 'rgba(255,240,180,1)'); sg.addColorStop(1, 'rgba(255,200,120,0)'); c.fillStyle = sg; c.fillRect(0, 150, 512, 234); }
+      const tx = new THREE.CanvasTexture(cv); tx.encoding = THREE.sRGBEncoding; return tx; };
+    S.skyNight = skyCanvas(true); S.skyMorning = skyCanvas(false);
+    S.windowSky = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 1.95), new THREE.MeshBasicMaterial({ map: S.skyNight, fog: false })); S.windowSky.position.set(-1.6, 3.6, -2.84); K.scene.add(S.windowSky);
+    for (const [w, h, x, y] of [[2.9, .14, -1.6, 4.62], [2.9, .14, -1.6, 2.58], [.14, 2.1, -3.0, 3.6], [.14, 2.1, -.2, 3.6], [.08, 1.95, -1.6, 3.6], [2.6, .07, -1.6, 3.6]]) B(w, h, .14, x, y, -2.8, 0xf4f1ea);
+    B(3.2, .16, .5, -1.6, 2.45, -2.65, 0xf4f1ea);                                            // sill
+    for (const sx of [-3.45, .25]) for (let k = 0; k < 3; k++) B(.22, 3.4, .14, sx + (k - 1) * .2, 3.3, -2.7 + k * .03, 0x6f5fc9, undefined, { rough: .95 });   // curtains
+    B(1.3, .9, .06, 1.4, 3.4, -2.83, 0xf4f1ea); B(1.15, .75, .03, 1.4, 3.4, -2.8, 0x5b8fe8);                                // little framed picture
+    // moonbeam through the window + floating dust motes
+    const beam = new THREE.Mesh(new THREE.CylinderGeometry(1.1, 2.2, 4.4, 4, 1, true), new THREE.MeshBasicMaterial({ color: 0xaecbff, transparent: true, opacity: .1, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+    beam.position.set(-.9, 2.3, -1.4); beam.rotation.set(.75, .78, .35); K.scene.add(beam); S.beam = beam;
+    S.motes = []; for (let i = 0; i < 40; i++) { const m = new THREE.Mesh(new THREE.SphereGeometry(.018, 6, 4), new THREE.MeshBasicMaterial({ color: 0xdbe8ff, transparent: true, opacity: .8 })); K.scene.add(m); S.motes.push(m); }
+    B(5.2, .05, 4.2, 0, .05, .6, 0x5a63b8, undefined, { rough: .95 });                       // rug
+    B(2.8, .45, 4.6, 0, .25, 0, 0x7a5236);                                                   // bed frame
+    B(2.8, 1.6, .25, 0, .8, -2.35, 0x6b4630);                                                // headboard
+    B(2.6, .35, 4.3, 0, .62, 0, 0xffffff, undefined, { rough: .9 });                          // mattress
+    S.pillow = B(1.6, .28, .8, 0, .93, -1.75, 0xf7f7ff, undefined, { rough: .95 });
+    S.blanket = B(2.7, .3, 2.1, 0, .92, 1.08, 0x4762c9, undefined, { rough: .9 });
+    B(2.72, .06, .3, 0, 1.06, .1, 0xe9ecff, undefined, { rough: .9 });                        // folded sheet edge
+    B(.9, .9, .8, 2.05, .45, -1.9, 0x8a5a3a);                                                 // nightstand
+    S.clock = B(.55, .3, .25, 2.05, 1.05, -1.95, 0x1a1e26, undefined, { rough: .4 });
+    B(.42, .16, .02, 2.05, 1.06, -1.82, 0x7dff9a, undefined, { glow: 1.2 });
     S.glass = B(.22, 1, .22, 1.75, .9, -1.55, 0x7ec8ff, undefined, { rough: .1, glow: .15 });
-    CY(.12, .7, 2.3, 1.25, -2.1, 0xfff1c0, undefined, { glow: .5 });                            // lamp
+    // bedside lamp: base + glowing shade + warm light
+    CY(.1, .45, 2.3, 1.12, -2.15, 0xd9c7a0); S.shade = M(new THREE.CylinderGeometry(.18, .3, .34, 24, 1, true), 0xffd59a, undefined, { glow: .9 });
+    S.shade.position.set(2.3, 1.5, -2.15); S.shade.children[0].material.side = THREE.DoubleSide;
+    S.lampLight = new THREE.PointLight(0xffb066, 1.3, 7, 2); S.lampLight.position.set(2.3, 1.45, -2.0); K.scene.add(S.lampLight);
+    S.daySky = K.scene.background; S.nightSky = K.skyTexture([0x070b26, 0x141c48, 0x232a5a]); S.sunriseSky = K.skyTexture([0x7cbcff, 0xffc98a, 0xffe2b8]);
     // sleeper: lying on his back, head on the pillow
     S.sleepRig = K.group(0, 1.0, .1);
     S.guy = K.model('guy', { height: 1.75, parent: S.sleepRig }); S.guy.rotation.x = -Math.PI / 2;
@@ -169,6 +194,22 @@ window.SCENE = {
 
   update(t, K) {
     const { at, T, ease, easeOut, clamp01, prog, pop } = K, S = this.s;
+    // ---- time of day: night in the bedroom, sunrise at 7 AM, plain daylight inside the micro-world sets ----
+    const inRoom = K.camera.position.x < 12, morning = ease(prog(t, 't7', 1.6)), night = inRoom ? 1 - morning : 0;
+    const L = K.lights; if (L.hemi) {
+      const mix = (a, b, k) => a + (b - a) * k, day = !inRoom;
+      L.key.intensity = day ? .78 : mix(.3, .95, morning); L.key.color.setHex(day ? 0xfff1dc : morning > .5 ? 0xffd2a0 : 0x6f8cff);
+      K.keyOffset.set(day ? 6 : -5, day ? 14 : 9, day ? 9 : -8);
+      L.hemi.intensity = day ? .42 : mix(.16, .45, morning); L.hemi.color.setHex(day ? 0xdcecff : morning > .5 ? 0xffe6c8 : 0x3a4aa8);
+      L.hemi.groundColor.setHex(day ? 0x8a7458 : 0x120e26); L.amb.intensity = day ? .08 : mix(0, .08, morning);
+      K.scene.background = day ? S.daySky : (morning > .5 ? S.sunriseSky : S.nightSky);
+      K.scene.fog.color.setHex(day ? 0xfff3df : morning > .5 ? 0xffe2b8 : 0x0b1030);
+      K.bloom.threshold = day ? .95 : mix(.72, .92, morning); K.bloom.strength = day ? .25 : mix(.6, .3, morning);
+    }
+    S.lampLight.intensity = inRoom ? 1.0 * (1 - morning) : 0; S.shade.children[0].material.emissiveIntensity = .2 + .6 * (1 - morning);
+    S.windowSky.material.map = morning > .5 ? S.skyMorning : S.skyNight;
+    S.beam.material.opacity = .045 * (1 - morning) + .03 * morning; S.beam.material.color.setHex(morning > .5 ? 0xffd9a0 : 0xaecbff);
+    S.motes.forEach((m, i) => { const u = (t * .05 + i * .137) % 1; m.position.set(-1.9 + 1.6 * u + .2 * Math.sin(i), 1.2 + ((i * .61) % 1) * 2.4 + .1 * Math.sin(t + i), -2.4 + 1.8 * u); m.visible = inRoom; });
     // sleeper: breathing idle, tosses at midnight and 2 AM, sits up at 7 AM
     K.anim(S.guy, 'Idle_Neutral', t);
     const toss = .18 * Math.sin(clamp01((t - at('sweat')) / 1.6) * Math.PI) - .15 * Math.sin(clamp01((t - at('t2')) / 1.4) * Math.PI);

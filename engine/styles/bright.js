@@ -20,9 +20,9 @@ body.look-bright, html{background:#a9d8ff}
 .look-bright .card.blue{border-color:#2f6fd6} .look-bright .card.blue .l{color:#4a5f86} .look-bright .card.blue .v{color:#2f6fd6;text-shadow:none}
 .look-bright .card.cyan{border-color:#0ea5c6} .look-bright .card.cyan .v{color:#0b8fb0;text-shadow:none}
 .look-bright .card.tag{background:#1d2330;border-color:#1d2330} .look-bright .card.tag .v{color:#fff}
-.look-bright #steps .t{color:#1d2330;text-shadow:0 1px 0 rgba(255,255,255,.7)}
+.look-bright #steps .t{color:#fff;text-shadow:0 0 3px #000,0 2px 6px rgba(0,0,0,.6)}
 .look-bright .sc{background:#fff;border-color:#1d2330;color:#1d2330} .look-bright .sc.done{border-color:#d48a00;color:#d48a00}
-.look-bright .sl{background:rgba(29,35,48,.35)} .look-bright #steps .labs span{color:rgba(29,35,48,.6)} .look-bright #steps .labs span.on{color:#d48a00}
+.look-bright .sl{background:rgba(255,255,255,.7);box-shadow:0 0 3px rgba(0,0,0,.5)} .look-bright #steps .labs span{color:#fff;text-shadow:0 0 3px #000,0 2px 5px rgba(0,0,0,.7)} .look-bright #steps .labs span.on{color:#ffc21a}
 .look-bright #ftitle{color:#1d2330}
 .look-bright #follow{background:#fff;color:#e0261b;border-color:#e0261b;box-shadow:0 10px 26px rgba(20,30,60,.25)} .look-bright #follow.on{background:#e0261b;color:#fff}
 .look-bright #fhandle{color:#fff;text-shadow:3px 3px 0 #000,-3px 3px 0 #000,3px -3px 0 #000,-3px -3px 0 #000}
