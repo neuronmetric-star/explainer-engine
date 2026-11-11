@@ -1,0 +1,22 @@
+/* BLUEPRINT look — science. Same card / caption / step systems, drafting-table skin. */
+@font-face{font-family:JB;font-weight:700;src:url('../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-700-normal.woff2')}
+@font-face{font-family:JB;font-weight:800;src:url('../../node_modules/@fontsource/jetbrains-mono/files/jetbrains-mono-latin-800-normal.woff2')}
+body.style-blueprint #vig{background:radial-gradient(ellipse at 50% 45%,transparent 50%,rgba(1,6,18,.72) 100%)}
+/* faint drafting grid + corner registration marks */
+body.style-blueprint #ui:before{content:"";position:absolute;inset:0;opacity:.11;
+  background-image:linear-gradient(rgba(140,210,255,.9) 1px,transparent 1px),linear-gradient(90deg,rgba(140,210,255,.9) 1px,transparent 1px);background-size:54px 54px}
+body.style-blueprint #ui:after{content:"";position:absolute;inset:40px 40px 400px 40px;border:2px solid rgba(120,200,255,.22)}
+body.style-blueprint .card{background:rgba(5,22,52,.86);border:2px solid #6fe3ff;border-radius:6px;box-shadow:0 0 20px rgba(80,200,255,.45),inset 0 0 14px rgba(80,200,255,.15)}
+body.style-blueprint .card .l{font-family:JB;font-weight:700;letter-spacing:.18em;color:#9fe9ff}
+body.style-blueprint .card .v{color:#ffd15a}
+body.style-blueprint .card.white .v{color:#f2fbff;text-shadow:0 0 14px rgba(140,220,255,.6)} body.style-blueprint .card.white{border-color:#eaf6ff}
+body.style-blueprint .card.blue{border-color:#5cc8ff} body.style-blueprint .card.blue .v{color:#7fd8ff;text-shadow:0 0 18px rgba(80,200,255,.8)}
+body.style-blueprint .card.red{border-color:#ff5a48}
+body.style-blueprint .card.tag{background:rgba(5,22,52,.9)} body.style-blueprint .card.tag .v{font-family:JB;font-weight:800;color:#eaf6ff}
+body.style-blueprint #steps .t{font-family:JB;color:#9fe9ff}
+body.style-blueprint .sc{background:#061630;border-color:rgba(160,220,255,.55);color:rgba(220,240,255,.75)}
+body.style-blueprint #steps .labs span{font-family:JB}
+body.style-blueprint #receipt{background:#eef6ff;color:#0b2245}
+body.style-blueprint #receipt:after{background:linear-gradient(-45deg,transparent 16px,#eef6ff 0),linear-gradient(45deg,transparent 16px,#eef6ff 0);background-size:32px 32px;background-position:left bottom}
+body.style-blueprint #receipt h3{font-family:JB;color:#14407a} body.style-blueprint #receipt .r.g b{color:#0a8fd0}
+body.style-blueprint #ftitle{font-family:JB;color:#9fe9ff}

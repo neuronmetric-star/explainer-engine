@@ -56,6 +56,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
 <script src="../node_modules/three/examples/js/lines/LineSegmentsGeometry.js"></script>
 <script src="../node_modules/three/examples/js/lines/LineMaterial.js"></script>
 <script src="../node_modules/three/examples/js/lines/LineSegments2.js"></script>
+<script src="../node_modules/three/examples/js/lines/LineGeometry.js"></script>
+<script src="../node_modules/three/examples/js/lines/Line2.js"></script>
 <script src="../node_modules/three/examples/js/shaders/CopyShader.js"></script>
 <script src="../node_modules/three/examples/js/shaders/LuminosityHighPassShader.js"></script>
 <script src="../node_modules/three/examples/js/postprocessing/EffectComposer.js"></script>
@@ -68,7 +70,13 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
   const v=new URLSearchParams(location.search).get('v');
   if(!v){ document.body.innerHTML='<h1 style="color:#fff">add ?v=video-slug</h1>'; return; }
   const load=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error('missing '+src));document.body.appendChild(s);});
-  load('../videos/'+v+'/data.js').then(()=>load('kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>KIT.start())
+  // scene.js only defines window.SCENE (no KIT use at load time), so it loads before kit.js;
+  // that lets the kit read SCENE.style and load engine/styles/<style>.js + .css first.
+  const css=href=>new Promise(res=>{const l=document.createElement('link');l.rel='stylesheet';l.href=href;l.onload=res;l.onerror=res;document.head.appendChild(l);});
+  load('../videos/'+v+'/data.js').then(()=>load('../videos/'+v+'/scene.js')).then(()=>{
+      const st=(window.SCENE&&window.SCENE.style)||'gold-noir'; document.body.classList.add('style-'+st);
+      return st==='gold-noir'?0:Promise.all([load('styles/'+st+'.js'),css('styles/'+st+'.css')]);
+    }).then(()=>load('kit.js')).then(()=>KIT.start())
     .catch(e=>{ window.loadError=String(e); console.error(e); });
 })();
 </script>

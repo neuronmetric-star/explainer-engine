@@ -5,3 +5,6 @@
 - **The Great Wall of China Construction Project that Spanned Generations** — Ancient Origins — https://www.ancient-origins.net/node/11155 — Qin linked walls of Yan, Zhao and Qin from ~214 BC; in 1644 Wu Sangui opened Shanhai Pass to the Manchus.
 - **Battle of Shanhai Pass** — Wikipedia — https://en.wikipedia.org/wiki/Battle_of_Shanhai_Pass — Ming general Wu Sangui surrendered to the Qing (Manchus) at Shanhai Pass, May 1644.
 - **Great Wall: Length, History, Why Built** — China Highlights — https://www.chinahighlights.com/greatwall/ — Beacon towers relayed smoke/fire signals; wall slowed mounted raiders.
+- **Defending the Wall** — China Mike — https://www.china-mike.com/china-tourist-attractions/great-wall-china/defending-the-wall/ — Ming beacon code: 1 smoke + 1 cannon ≈ 100 enemies, 2 ≈ 500, 3 ≈ 1,000+.
+- **How was the Great Wall defended?** — Travel China Guide — https://travelchinaguide.com/china_great_wall/construction/fortifications.htm — One beacon fire and salvo for up to 100 enemies, two for 500.
+- (Math) 21,196 km ÷ Earth's circumference 40,075 km ≈ 0.53 → "more than halfway around the Earth".
