@@ -1,21 +1,22 @@
-# Why the f*ck do we shower in the morning if we showered at night? — what happens to your body while you sleep
-# Markup: *gold  !red  {shown|spoken}  [#cue]   — sources in sources.md
+# Why the f*ck do we shower in the morning if we showered at night? — v2: the night, hour by hour
+# Markup: *gold  !red  {shown|spoken}  [#cue]   — sources in sources.md (v1 kept in script-v1.txt)
 
 [#hook] Why the {F*CK|fuck} do we have to shower in the morning, if we showered at night? [#bridge] Give me a minute. I'll show you what happens while you sleep.
-[#answer] Short answer: you weren't alone in that bed. [#wilder] About {*100 billion|a hundred billion} *bacteria were with you.
 
-[#step1] Step one: you *sweat.
-[#heat] To fall asleep, your body dumps heat through your skin. [#cup] You lose about a *cup of water overnight.
+[#t11] {11 PM.|Eleven P M.} You're fresh out the shower. Squeaky *clean. [#think] You think.
 
-[#step2] Step two: you *shed.
-[#cells] You drop tens of thousands of dead skin cells a minute. [#millions] *Millions by morning. [#mites] Dust mites in your pillow eat them.
+[#t12] {Midnight.|Midnight.} Your body cools down to sleep, [#skin] and it does it the gross way: through your skin. [#sweat] You start to !sweat.
 
-[#step3] Step three: the bacteria *feast.
-[#bugs] Your skin is home to about {*1,000|a thousand} kinds of bacteria. [#smell] One, called Staph hominis, turns odorless sweat into a !sulfur !gas. [#bo] Sweat doesn't stink. Bacteria *eating it does.
-[#breath] In your mouth, saliva slows down, so bacteria make sulfur gas there too. [#morningbreath] !Morning !breath.
+[#t2] {2 AM.|Two A M.} You're *shedding. [#cells] Tens of thousands of dead skin cells, every minute. [#buffet] Your pillow is a *buffet, [#mites] and dust mites are eating your face flakes.
 
-[#catch] But here's what nobody tells you: [#derm] dermatologists say you don't need two long showers. [#hot] Too much hot water strips your skin's protective oils.
-[#you] So your night shower washes off your *day. [#morning] Your morning shower washes off your *night. [#quick] Keep it quick and lukewarm.
+[#t4] {4 AM.|Four A M.} Now it gets nasty. [#bugs] About {*100 billion|a hundred billion} bacteria live on your skin, [#breakfast] and they just found *breakfast. [#hominis] Staph hominis eats your sweat [#burp] and burps out !sulfur !gas. [#bo] Your sweat doesn't stink. The bacteria eating it does.
 
-[#punch] You don't wake up dirty. [#punch2] You wake up *outnumbered.
-[#cta] Follow. I explain one of these every day.
+[#t6] {6 AM.|Six A M.} Your mouth's been dry for hours. [#crew] No saliva, no cleanup crew. [#breath] !Morning !breath.
+
+[#t7] {7 AM.|Seven A M.} You wake up [#cup] about a *cup of water lighter.
+
+[#wash] So your night shower washes off your *day. [#washnight] Your morning shower washes off your *night.
+[#catch] Just don't overdo it. [#derm] Dermatologists say long, hot showers strip your skin's natural oils. [#quick] Quick and lukewarm.
+
+[#punch] You didn't sleep alone. [#roommates] You slept with {*100 billion|a hundred billion} roommates.
+[#cta] Follow for one of these every day.
