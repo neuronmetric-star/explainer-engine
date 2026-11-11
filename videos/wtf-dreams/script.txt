@@ -1,0 +1,28 @@
+# Why the fuck do we dream, and why do we forget them?
+# Markup: *gold  !red  {shown|spoken}  [#cue]
+
+[#hook] Why the *fuck do we dream, [#forget] and why do we !forget them?
+[#reframe] Dreams aren't random noise. [#shift] Your brain is working the *night *shift. [#how] Here's what scientists think.
+
+[#setup] *Jay sleeps eight hours. [#twohours] About *two of them are spent dreaming, mostly in REM sleep.
+
+[#step1] Step one: *replay.
+[#replay] His brain replays the day, sorting what to keep.
+
+[#step2] Step two: *rehearse.
+[#threat] One theory says dreams simulate !threats, [#practice] so you practice escaping danger safely.
+
+[#step3] Step three: *delete.
+[#mice] In a {2019|twenty nineteen} mouse study, special neurons helped the brain !forget during REM.
+
+[#catch] And here's why dreams vanish.
+[#hippo] The *hippocampus, your memory saver, is one of the last parts to wake up.
+[#nor] And noradrenaline, a chemical that helps lock memories in, runs !low during REM.
+
+[#wake] So *Jay wakes up, and the dream sits in short-term memory [#nobody] with nothing to save it.
+[#seconds] Seconds later, it's !gone.
+
+[#contrast] It's like writing an essay with *autosave turned !off, [#crash] and then the laptop dies.
+
+[#punch] You don't forget your dreams. [#punch2] Your brain just never hit *save.
+[#cta] Follow for more *why *the *fuck science.

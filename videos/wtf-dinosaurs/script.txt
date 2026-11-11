@@ -1,0 +1,29 @@
+# Why the fuck did an asteroid wipe out the dinosaurs?
+# Markup: *gold  !red  {shown|spoken}  [#cue]
+
+[#hook] Why the *fuck did one rock kill the !dinosaurs?
+[#reframe] It wasn't the hit. It was the !darkness. [#how] Here's how it works.
+
+[#setup] {66 million|Sixty-six million} years ago, *Tina the Triceratops is eating ferns.
+[#rock] Then a rock about {!10 km|ten kilometers} wide [#impact] slams into Mexico at up to {!72,000 km/h.|seventy-two thousand kilometers an hour.}
+[#crater] It leaves a crater about {180 km|one hundred eighty kilometers} wide.
+
+[#step1] Step one: !fire.
+[#fire] Debris rains back down, the sky heats up, and forests burn.
+
+[#step2] Step two: !darkness.
+[#dark] Soot, dust and sulfur block the sun. [#photo] Plants get under {!1%|one percent} of normal light for over a year.
+
+[#step3] Step three: !starvation.
+[#chain] No sun, no plants. [#chain2] No plants, no Tina. [#chain3] No Tina, no {T. rex.|T rex.}
+
+[#math] About {!75%|seventy-five percent} of all species, [#gone] !gone.
+
+[#catch] But there's one twist. [#birds] Not every dinosaur died. *Birds made it.
+[#beaks] Scientists think *beaks let them eat seeds.
+
+[#contrast] Meanwhile, tiny *mammals hid in burrows. [#us] Those were *our ancestors.
+
+[#punch] The asteroid didn't kill the dinosaurs. [#punch2] It turned off the *sun.
+[#pigeon] And that pigeon outside your window? [#dino] Still a *dinosaur.
+[#cta] Follow for more *why *the *fuck science.

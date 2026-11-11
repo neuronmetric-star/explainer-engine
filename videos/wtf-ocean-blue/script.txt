@@ -1,0 +1,26 @@
+# Why the fuck is the ocean blue if water is clear?
+# Markup: *gold  !red  {shown|spoken}  [#cue]
+
+[#hook] Why the *fuck is the ocean blue if water is clear?
+[#reframe] It's not reflecting the sky. [#blue] Water itself is a little bit *blue. [#how] Here's how it works.
+
+[#setup] Sunlight is every color mixed together: [#rainbow] red, orange, yellow, green, blue.
+
+[#step1] Step one: water !eats !red.
+[#absorb] Water molecules absorb red light first.
+[#sam] *Sam dives with red fins. [#5m] At just {5 meters,|five meters,} about {!90%|ninety percent} of the red is gone. [#brown] His fins look !brown.
+
+[#step2] Step two: the rest fades.
+[#fade] Go deeper, and orange, yellow, then green get swallowed too.
+
+[#step3] Step three: blue *survives.
+[#bounce] Blue travels the farthest, [#eye] bounces around, and comes back up to your eye.
+
+[#catch] There's just one exception. [#coast] Near the coast, plankton and mud turn water green or brown.
+
+[#math] Below {200 meters,|two hundred meters,} hardly any light. [#dark] Below {1,000,|one thousand,} total !darkness.
+
+[#contrast] A glass of water is about {10 cm|ten centimeters} deep. [#ocean] The ocean averages about {*3,700 meters.|three thousand seven hundred meters.}
+
+[#punch] Water isn't clear. [#punch2] There's just not enough of it in your glass to *see the *blue.
+[#cta] Follow for more *why *the *fuck science.

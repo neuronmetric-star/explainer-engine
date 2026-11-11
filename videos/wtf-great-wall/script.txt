@@ -1,0 +1,30 @@
+# Why the fuck did China build the Great Wall?
+# Markup: *gold  !red  {shown|spoken}  [#cue]
+
+[#hook] Why the *fuck did China build a wall over {*13,000|thirteen thousand} miles long?
+[#reframe] It's not one wall. It's *thousands of walls, [#how] built over about {*2,000|two thousand} years.
+
+[#setup] Meet *Li, a soldier on China's northern border.
+[#threat] Out there: !nomad !horsemen. Fast raiders.
+
+[#step1] Step one: *slow them down.
+[#slow] Horses can't jump a wall. Raiders had to stop or find a gate.
+
+[#step2] Step two: *sound the alarm.
+[#towers] Beacon towers passed smoke signals, tower to tower.
+
+[#step3] Step three: *control the border.
+[#gates] Every gate let China tax traders and decide who got in.
+
+[#qin] Around {214 BC,|two fourteen B C,} the first emperor linked older walls.
+[#ming] Most of today's wall is *Ming.
+
+[#catch] There's just !one !weakness: [#people] the people guarding it.
+[#1644] In {1644,|sixteen forty-four,} a Ming general !opened a gate [#manchu] and let the Manchus in.
+
+[#math] Add every wall from every dynasty: [#total] {*21,196 km.|twenty-one thousand kilometers.}
+
+[#contrast] It's like the *lock on your front door. [#lock] It won't stop a pro. It buys you time.
+
+[#punch] The wall wasn't built to stop everyone. [#punch2] Just to stop them *long *enough.
+[#cta] Follow for more *why *the *fuck history.

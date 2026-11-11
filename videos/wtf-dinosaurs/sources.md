@@ -1,0 +1,6 @@
+# Sources — Why the fuck did an asteroid wipe out the dinosaurs?
+- **Extinction day** — Imperial College London — https://imperial.ac.uk/stories/extinction-day — Asteroid ~10–15 km wide, up to 72,000 km/h, ~66 million years ago, Yucatán (Mexico).
+- **How an asteroid caused the extinction of the dinosaurs** — Natural History Museum — https://www.nhm.ac.uk/discover/how-an-asteroid-caused-extinction-of-dinosaurs.html — Chicxulub crater ~180 km; impact winter; ~75% of species lost; bird lineages survived.
+- **Darkness, not cold, likely responsible for dinosaur-killing extinction** — Phys.org / AGU (2020) — https://phys.org/news/2020-03-darkness-cold-responsible-dinosaur-killing-extinction.html — Soot from global fires; photosynthesis dropped below 1% of normal for well over a year.
+- **Dust may have triggered the global winter that killed the dinosaurs** — Smithsonian — https://www.smithsonianmag.com/smart-news/dust-may-have-triggered-the-global-winter-that-killed-the-dinosaurs-180983165/ — Dust, soot and sulfur all blocked sunlight; darkness lasted ~2 years in models.
+- **Dinosaur mass extinction facts** — Discover Wildlife — https://www.discoverwildlife.com/animal-facts/reptiles/facts-about-fifth-mass-extinction — Ancestors of birds had beaks (not teeth), possibly letting them eat seeds; small mammals survived.

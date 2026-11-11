@@ -1,0 +1,6 @@
+# Sources — Why the fuck do we dream, and why do we forget them?
+- **Why do we dream? Science offers a few possibilities** — Discover — https://discovermagazine.com/mind/why-do-we-dream-science-offers-a-few-possibilities — Most people spend ~2 hours a night dreaming; memory consolidation theory.
+- **Dreams and Dreaming** — Lumen Learning (Intro Psychology) — https://courses.lumenlearning.com/waymaker-psychology/chapter/reading-dreams/ — Theories: memory consolidation, threat simulation (Revonsuo 2000), activation-synthesis; question still open.
+- **Why Can't We Remember Our Dreams?** — Live Science — https://www.livescience.com/62703-why-we-forget-dreams-quickly.html — Hippocampus is among the last regions to wake; low noradrenaline during REM reduces recall; still unsolved.
+- **Izawa et al., "REM sleep–active MCH neurons are involved in forgetting hippocampus-dependent memories"** — Science (2019), summarized by Medical News Today — https://www.medicalnewstoday.com/articles/326421 — In mice, MCH neurons active during REM help the brain actively forget.
+- **Why Are Dreams So Hard to Remember?** — Indiana Public Media — https://www.ipm.org/show/amomentofscience/2022-08-16/why-are-dreams-so-hard-to-remember — Dream sits in short-term memory on waking but isn't transferred to long-term.
