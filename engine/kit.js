@@ -129,7 +129,7 @@
     <div id="receipt" style="opacity:0"></div>
     <div id="ftitle" style="opacity:0"></div><div id="follow" style="opacity:0">+ FOLLOW</div>
     <svg id="cursor" viewBox="0 0 24 24" style="opacity:0"><path d="M3 2l17 9-7 2-3 7z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
-    <div id="cap"></div><div id="flash"></div>`);
+    <div id="cap"></div><div id="wm"></div><div id="fhandle"></div><div id="flash"></div>`);
   const cardsEl = $('cards'), cap = $('cap'), flash = $('flash');
   const CARDS = [];
   // card({l:'label', v:'value', cls:'red|white|big|tag', a:[x,y,z] anchor, t0:'cue', t1:'cue', count:[from,to,'cue',seconds], neg, flip:['cue','new value']})
@@ -202,11 +202,19 @@
       if (on) { const ct = t - f._from; fo.style.transform = `translateX(-50%) scale(${.6 + .4 * pop(clamp01(ct / .35))})`; const clicked = ct > 1.6;
         fo.className = clicked ? 'on' : ''; fo.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cu.style.opacity = ct > .5 ? 1 : 0;
         const u = easeOut(clamp01((ct - .5) / 1)); cu.style.left = (760 - 150 * u) + 'px'; cu.style.top = (620 - 160 * u + (clicked && ct < 1.8 ? 6 : 0)) + 'px'; } else cu.style.opacity = 0; }
+    // brand watermark: hops between 4 safe corners every 5 s (hard to crop or blur out), hidden under the end card
+    { const wm = $('wm'), P = [[44, 160, 0], [44, 1478, 0], [1036, 160, 1], [1036, 1478, 1]];
+      const seg = 5, i = Math.floor(t / seg), u = t - i * seg, p = P[(i * 3 + 1) % 4];
+      const endOn = SC.follow && t >= SC.follow._from - .3;
+      wm.style.top = p[1] + 'px'; wm.style.left = p[2] ? 'auto' : p[0] + 'px'; wm.style.right = p[2] ? (1080 - p[0]) + 'px' : 'auto';
+      wm.style.opacity = endOn ? 0 : .55 * Math.min(clamp01(u / .3), clamp01((seg - u) / .3)); }
+    if (SC.follow) { const on = t >= SC.follow._from; $('fhandle').style.opacity = on ? clamp01((t - SC.follow._from - .2) / .3) : 0; }
     flash.style.opacity = flashAmp(t);
     if (doRender) composer.render();
   }
 
   // ---------------- start: called after scene.js defines window.SCENE ----------------
+  K.BRAND = '@coonknows';   // TikTok / socials handle shown as watermark + on the end card
   K.start = function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
     SC.build && SC.build(K);
@@ -222,6 +230,7 @@
     if (SC.receipt) { const r = SC.receipt; r._from = K.T(r.from); r._to = K.T(r.to);
       $('receipt').innerHTML = `<h3>${r.title || 'THE MATH'}</h3>` + r.rows.map(([a, b, cls]) => `<div class="r ${cls || ''}"><span>${a}</span><b>${b}</b></div>`).join(''); }
     if (SC.follow) { SC.follow._from = K.T(SC.follow.from); $('ftitle').textContent = SC.follow.title || ''; }
+    $('wm').textContent = SC.brand || K.BRAND; $('fhandle').textContent = SC.brand || K.BRAND;
     window.step = (n, dt) => { for (let i = 0; i < n; i++) frame(dt, i === n - 1); };
     window.ready = true;
   };

@@ -35,7 +35,7 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
 
   if (preview) {
     const times = pList || Array.from({ length: 12 }, (_, i) => +(0.8 + i * (L - 1.6) / 11).toFixed(2));
-    const tmp = path.join(dir, '.preview'); fs.mkdirSync(tmp, { recursive: true });
+    const tmp = path.join(dir, '.preview'); fs.rmSync(tmp, { recursive: true, force: true }); fs.mkdirSync(tmp, { recursive: true });
     let prev = 0;
     for (let i = 0; i < times.length; i++) {
       await page.evaluate(`window.step(${Math.max(1, Math.round((times[i] - prev) * FPS))},${1 / FPS})`); prev = times[i];

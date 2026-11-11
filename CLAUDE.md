@@ -2,7 +2,8 @@
 
 This repo makes **extreme-quality vertical teaching videos** (TikTok / Instagram Reels / YouTube Shorts)
 with Three.js: finance, history, science, "how things really work." Owner: Brian (NeuronMetric).
-He works mostly from his phone — keep messages short, show previews, ask before spending credits.
+Brand handle (TikTok + socials): **@coonknows** — the engine shows it as a moving watermark and on the
+end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep messages short, show previews, ask before spending credits.
 
 ## The pipeline (always in this order)
 1. **Research** the topic. Use web search. Every number and claim must come from a source.
