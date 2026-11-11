@@ -45,42 +45,55 @@
   K.v3 = (x, y, z) => new THREE.Vector3(x, y, z);
   const { clamp01, ease, easeOut, pop } = K;
 
-  // ---------------- renderer + look ----------------
+  // ---------------- look (style) ----------------
+  // Default = gold-noir. A video picks another look with videos/<slug>/look.js -> window.LOOK = 'blueprint',
+  // and engine/styles/<look>.js fills window.STYLE (colors + extra CSS). Cards/captions/steps stay the same.
+  const ST = K.STYLE = Object.assign({ name: 'gold-noir', bg: 0x000000, fog: [26, 70], floor: 0x8a8a8a, dim: 0x000000, dimOpacity: .74,
+    grid: 0x2a2a2a, dust: 0xffd27a, ink: 0xffc548, body: 0x020100, bloom: [1.15, .4, .52], backGrid: null, css: '' }, window.STYLE || {});
+  if (ST.css) document.head.insertAdjacentHTML('beforeend', '<style>' + ST.css + '</style>');
+  document.body.classList.add('look-' + ST.name);
+
+  // ---------------- renderer ----------------
   const canvas = document.getElementById('c');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
   renderer.setPixelRatio(1); renderer.setSize(W, H, false);
   renderer.outputEncoding = THREE.sRGBEncoding;
-  const scene = K.scene = new THREE.Scene(); scene.background = new THREE.Color(0x000000);
-  scene.fog = new THREE.Fog(0x000000, 26, 70);
+  const scene = K.scene = new THREE.Scene(); scene.background = new THREE.Color(ST.bg);
+  scene.fog = new THREE.Fog(ST.bg, ST.fog[0], ST.fog[1]);
   const camera = K.camera = new THREE.PerspectiveCamera(50, W / H, .1, 400);
   scene.add(new THREE.AmbientLight(0xffffff, .35));
   const key = new THREE.DirectionalLight(0xffffff, .9); key.position.set(5, 10, 8); scene.add(key);
   const composer = new THREE.EffectComposer(renderer);
   composer.addPass(new THREE.RenderPass(scene, camera));
-  composer.addPass(new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), 1.15, .4, .52));
+  composer.addPass(new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), ...ST.bloom));
 
   // reflective floor + dimmer + guide lines + dust
   const FLOOR_W = 600;
-  const refl = new THREE.Reflector(new THREE.PlaneGeometry(FLOOR_W, 80), { textureWidth: 540, textureHeight: 960, color: 0x8a8a8a });
+  const refl = new THREE.Reflector(new THREE.PlaneGeometry(FLOOR_W, 80), { textureWidth: 540, textureHeight: 960, color: ST.floor });
   refl.rotation.x = -Math.PI / 2; refl.position.set(200, 0, 0); scene.add(refl);
-  const dim = new THREE.Mesh(new THREE.PlaneGeometry(FLOOR_W, 80), new THREE.MeshBasicMaterial({ color: 0, transparent: true, opacity: .74 }));
+  const dim = new THREE.Mesh(new THREE.PlaneGeometry(FLOOR_W, 80), new THREE.MeshBasicMaterial({ color: ST.dim, transparent: true, opacity: ST.dimOpacity }));
   dim.rotation.x = -Math.PI / 2; dim.position.set(200, .005, 0); scene.add(dim);
   const origBR = refl.onBeforeRender;
   refl.onBeforeRender = function () { dim.visible = false; origBR.apply(this, arguments); dim.visible = true; };
   { const g = new THREE.BufferGeometry(); const p = []; for (let i = -2; i <= 2; i++) p.push(-100, .01, i * 6, 500, .01, i * 6);
-    g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0x2a2a2a }))); }
+    g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: ST.grid }))); }
+  if (ST.backGrid) { // blueprint paper: a big gridded wall far behind every set
+    const g = new THREE.BufferGeometry(), p = [], z = ST.backGrid.z, step = ST.backGrid.step;
+    for (let x = -60; x <= 520; x += step) p.push(x, 0, z, x, 60, z);
+    for (let y = 0; y <= 60; y += step) p.push(-60, y, z, 520, y, z);
+    g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: ST.backGrid.color }))); }
   { const n = 2400, p = new Float32Array(n * 3); for (let i = 0; i < n; i++) { p[i * 3] = -40 + Math.random() * 480; p[i * 3 + 1] = Math.random() * 16; p[i * 3 + 2] = -16 + Math.random() * 24; }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
-    scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xffd27a, size: .05, transparent: true, opacity: .55 }))); }
+    scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: ST.dust, size: .05, transparent: true, opacity: .55 }))); }
 
   // ---------------- builders ----------------
-  K.GOLD = 0xffc548; K.RED = 0xff3a2c; K.WHITE = 0xffffff; K.BLUE = 0xbfd7ff; K.GREEN = 0x9dffb9; K.SILVER = 0xdedede;
+  K.INK = ST.ink; K.CYAN = 0x5fe3ff; K.GOLD = 0xffc548; K.RED = 0xff3a2c; K.WHITE = 0xffffff; K.BLUE = 0xbfd7ff; K.GREEN = 0x9dffb9; K.SILVER = 0xdedede;
   const lineMats = {};
   function lm(c) { if (!lineMats[c]) { const m = new THREE.LineMaterial({ color: c, linewidth: 3.2 }); m.resolution.set(W, H); lineMats[c] = m; } return lineMats[c]; }
   // wire(geometry, color, parent): glowing edge outline over a near-black body
-  K.wire = function (geo, color = K.GOLD, parent) {
+  K.wire = function (geo, color = K.INK, parent) {
     const g = new THREE.Group();
-    const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: 0x020100, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
+    const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color: ST.body, polygonOffset: true, polygonOffsetFactor: 1, polygonOffsetUnits: 1 }));
     const lg = new THREE.LineSegmentsGeometry().fromEdgesGeometry(new THREE.EdgesGeometry(geo, 20));
     const l = new THREE.LineSegments2(lg, lm(color)); l.computeLineDistances();
     g.add(m, l); (parent || scene).add(g); return g;
@@ -95,7 +108,7 @@
   K.extrude = (pts, depth, x, y, z, parent, color) => { const sh = new THREE.Shape(); sh.moveTo(pts[0][0], pts[0][1]); pts.slice(1).forEach(p => sh.lineTo(p[0], p[1])); sh.lineTo(pts[0][0], pts[0][1]);
     const g = K.wire(new THREE.ExtrudeGeometry(sh, { depth, bevelEnabled: false }), color, parent); g.position.set(x, y, z); return g; };
   K.roof = (w, h, d, x, y, z, parent, color) => K.extrude([[-w / 2, 0], [w / 2, 0], [0, h]], d, x, y, z - d / 2, parent, color);
-  K.ring = (r, x, z, color = K.GOLD) => { const g = new THREE.Mesh(new THREE.RingGeometry(r, r + .06, 64), new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide })); g.rotation.x = -Math.PI / 2; g.position.set(x, .02, z); scene.add(g); return g; };
+  K.ring = (r, x, z, color = K.INK) => { const g = new THREE.Mesh(new THREE.RingGeometry(r, r + .06, 64), new THREE.MeshBasicMaterial({ color, side: THREE.DoubleSide })); g.rotation.x = -Math.PI / 2; g.position.set(x, .02, z); scene.add(g); return g; };
   // tube line through points — charts, paths, money flows. Animate with K.drawTube(t, 0..1)
   K.tube = (pts, color = 0xffd15a, r = .07, parent) => { const curve = new THREE.CatmullRomCurve3(pts.map(p => new THREE.Vector3(...p)), false, 'catmullrom', .1);
     const geo = new THREE.TubeGeometry(curve, Math.max(60, pts.length * 10), r, 6, false); const m = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({ color })); (parent || scene).add(m); m.userData.n = geo.index.count; return m; };

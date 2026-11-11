@@ -72,7 +72,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
   const v=new URLSearchParams(location.search).get('v');
   if(!v){ document.body.innerHTML='<h1 style="color:#fff">add ?v=video-slug</h1>'; return; }
   const load=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error('missing '+src));document.body.appendChild(s);});
-  load('../videos/'+v+'/data.js').then(()=>load('kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>KIT.start())
+  // optional videos/<slug>/look.js sets window.LOOK; engine/styles/<LOOK>.js sets window.STYLE
+  const look=()=>load('../videos/'+v+'/look.js').then(()=>window.LOOK?load('styles/'+window.LOOK+'.js'):0,()=>0);
+  load('../videos/'+v+'/data.js').then(look).then(()=>load('kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>KIT.start())
     .catch(e=>{ window.loadError=String(e); console.error(e); });
 })();
 </script>
