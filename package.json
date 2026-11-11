@@ -4,7 +4,7 @@
   "private": true,
   "description": "Three.js engine for high-quality vertical teaching videos (TikTok / Reels / Shorts)",
   "scripts": {
-    "setup": "npm install && npx playwright install chromium",
+    "setup": "npm install && (test -x /usr/bin/google-chrome || npx playwright install chromium)",
     "tts": "node tools/tts.js",
     "align": "node tools/align.js",
     "render": "node tools/render.js"

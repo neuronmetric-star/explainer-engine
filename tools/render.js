@@ -20,7 +20,9 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
 
 (async () => {
   const launch = { args: flag('--gpu') > -1 ? ['--ignore-gpu-blocklist', '--enable-gpu-rasterization'] : ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] };
+  const sysChrome = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].find(p => fs.existsSync(p));
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
+  else if (sysChrome) launch.executablePath = sysChrome;   // use installed Chrome if there is one
   const browser = await chromium.launch(launch);
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   const errors = []; page.on('pageerror', e => errors.push(String(e))); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
