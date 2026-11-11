@@ -309,8 +309,69 @@
 
   // ---------------- start: called after scene.js defines window.SCENE ----------------
   K.BRAND = '@coonknows';   // TikTok / socials handle shown as watermark + on the end card
-  K.start = function () {
+  // ---------------- 3D models (assets/models/*.glb, CC0) ----------------
+  // In scene.js:  models: { king: 'quaternius/characters/Man_King.glb', ... }   (loaded before build)
+  //   K.model('king', { height: 2.2, x, z, rotY })  -> a fresh copy (skinned characters cloned properly), casts shadows
+  //   K.anim(obj, 'Walk', seconds)                    -> pose it at that moment of a clip (pure function of time)
+  // Clips: the model's own + shared human clips from the Knight and Cyber characters, matched by bone name.
+  const MODELS = K.MODELS = {}, ANIM_SOURCES = ['quaternius/characters/Knight.glb', 'quaternius/characters/_AnimSource_Cyber.glb'];
+  let SHARED = [];
+  const shortName = n => n.split('|').pop();
+  function loadGLB(path) { return new Promise((res, rej) => new THREE.GLTFLoader().load('../assets/models/' + path, res, undefined, e => rej(new Error('model ' + path + ': ' + (e.message || e))))); }
+  async function loadModels(map) {
+    const names = Object.keys(map || {}); if (!names.length) return;
+    const src = await Promise.all(ANIM_SOURCES.map(loadGLB));
+    SHARED = src.flatMap(g => g.animations.map(c => { const k = c.clone(); k.name = shortName(c.name);
+      k.tracks = k.tracks.filter(tr => tr.name.endsWith('.quaternion')); return k; }));
+    await Promise.all(names.map(async n => { MODELS[n] = await loadGLB(map[n]); }));
+  }
+  K.model = function (name, o = {}) {
+    const g = MODELS[name]; if (!g) throw new Error('model "' + name + '" not in SCENE.models');
+    const obj = THREE.SkeletonUtils.clone(g.scene); const holder = new THREE.Group(); holder.add(obj);
+    const box = new THREE.Box3().setFromObject(obj), sz = box.getSize(new THREE.Vector3());
+    const s = o.height ? o.height / sz.y : o.size ? o.size / Math.max(sz.x, sz.y, sz.z) : (o.scale || 1);
+    obj.scale.setScalar(s); obj.position.y = -box.min.y * s;
+    obj.traverse(m => { if (m.isMesh) { m.castShadow = !!ST.shadows; m.receiveShadow = !!ST.shadows; m.frustumCulled = false;
+      if (o.tint && m.material) { m.material = m.material.clone(); m.material.color.lerp(new THREE.Color(o.tint), o.tintAmount ?? .6); } } });
+    holder.position.set(o.x || 0, o.y || 0, o.z || 0); holder.rotation.y = o.rotY || 0;
+    (o.parent || scene).add(holder);
+    const names = new Set(); obj.traverse(n => names.add(n.name));
+    holder.userData.clips = {}; for (const c of [...SHARED, ...g.animations.map(c => { const k = c.clone(); k.name = shortName(c.name); return k; })])
+      holder.userData.clips[c.name] = c;
+    holder.userData.obj = obj; holder.userData.mixer = new THREE.AnimationMixer(obj);
+    if (ST.rig) solidLights();
+    return holder;
+  };
+  K.anim = function (holder, clip, time, o = {}) {
+    const c = holder.userData.clips[clip]; if (!c) throw new Error('no clip "' + clip + '" (have: ' + Object.keys(holder.userData.clips).join(', ') + ')');
+    const mx = holder.userData.mixer; if (holder.userData.cur !== clip) { mx.stopAllAction(); mx.clipAction(c).play(); holder.userData.cur = clip; }
+    const d = c.duration, tt = (o.loop === false) ? Math.min(Math.max(0, time), d - 1e-3) : ((time % d) + d) % d;
+    mx.setTime(tt * (o.speed || 1) % (o.loop === false ? 1e9 : d));
+  };
+
+  // stick(item, holder, 'Head', [dx,dy,dz]): keep a prop (crown, helmet, hat) on a character's bone every frame.
+  // Call it in update() after K.anim. Offsets are in world units, scaled by the character's height.
+  const _bv = new THREE.Vector3();
+  K.stick = function (item, holder, bone = 'Head', off = [0, 0, 0]) {
+    const o = holder.userData.obj; let b = holder.userData['bone_' + bone];
+    if (b === undefined) { b = holder.userData['bone_' + bone] = o.getObjectByName(bone) || null; }
+    holder.updateMatrixWorld(true); if (!b) return; b.getWorldPosition(_bv);
+    item.position.set(_bv.x + off[0], _bv.y + off[1], _bv.z + off[2]); item.rotation.y = holder.rotation.y;
+  };
+  // crown(size, color): a solid gold crown (band + points + jewels) for kings and queens
+  K.crown = function (size = .32, color = 0xf2b51d) {
+    const g = new THREE.Group(); scene.add(g); const r = size / 2;
+    const band = K.solid(new THREE.CylinderGeometry(r, r * .92, size * .45, 24, 1, true), color, g, { metal: .8, rough: .25, glow: .08 }); band.position.y = size * .22;
+    band.children[0].material.side = THREE.DoubleSide;
+    for (let i = 0; i < 6; i++) { const a = i / 6 * Math.PI * 2; const p = K.solid(new THREE.ConeGeometry(size * .1, size * .32, 8), color, g, { metal: .8, rough: .25 });
+      p.position.set(Math.cos(a) * r * .95, size * .58, Math.sin(a) * r * .95);
+      const j = K.solid(new THREE.SphereGeometry(size * .06, 10, 8), i % 2 ? 0xd8202a : 0x2a6be0, g, { metal: .3, rough: .2, glow: .2 }); j.position.set(Math.cos(a) * r * 1.0, size * .2, Math.sin(a) * r * 1.0); }
+    return g;
+  };
+
+  K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
+    try { await loadModels(SC.models); } catch (e) { window.loadError = String(e); throw e; }
     SC.build && SC.build(K);
     SHOTS = (SC.shots || []).map(s => ({ t: K.T(s[0]), p: new THREE.Vector3(...s[1]), q: new THREE.Vector3(...s[2]), d: s[3] || 1 })).sort((a, b) => a.t - b.t);
     (SC.cards || []).forEach(o => K.card(o));

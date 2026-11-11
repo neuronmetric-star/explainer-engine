@@ -20,6 +20,7 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
 
 (async () => {
   const launch = { args: flag('--gpu') > -1 ? ['--ignore-gpu-blocklist', '--enable-gpu-rasterization'] : ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] };
+  launch.args.push('--allow-file-access-from-files');   // 3D models (assets/models/*.glb) load from disk
   const sysChrome = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].find(p => fs.existsSync(p));
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   else if (sysChrome) launch.executablePath = sysChrome;   // use installed Chrome if there is one

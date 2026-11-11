@@ -75,6 +75,12 @@ Put a `[#cue]` before every sentence that should change the picture.
   `videos/<slug>/look.js` for the old styles. In bright, box/cyl/bar/extrude are solid automatically.
   Bright example: `videos/_bright-demo/scene.js`.
 - No voice yet? `node tools/draft-timing.js <slug>` makes placeholder timing so you can preview a scene early.
+- **Real 3D models (CC0, Quaternius)** in `assets/models/quaternius/` — characters (Man_King, Man_Suit, Man_Worker,
+  Man_Farmer, Man_Spacesuit, Man_Swat, Woman_Medieval, Woman_Soldier, Woman_Formal, Woman_Witch, Knight…), village
+  buildings, weapons/helmets, tanks, ships, animals, dinosaurs, trees. List them in `models:{name:'path.glb'}`, then
+  `K.model(name,{height|size,x,z,rotY,tint})`, animate with `K.anim(obj,'Walk'|'Walking'|'Run'|'Idle_Neutral'|'Wave'|
+  'Punch_Right'|'Death'|'Sword_Slash'|'Interact'…, t)`, props with `K.crown()` + `K.stick(item,obj,'Head',[dx,dy,dz])`.
+  Example: `videos/_army-demo/scene.js`. More CC0 models: quaternius.com (allowed host); license notes in assets/models/LICENSES.md.
 - Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
 
 ## Looks (styles)
