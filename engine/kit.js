@@ -144,7 +144,8 @@
     // solids are lit, not glowing: raise the bloom threshold so only emissive parts (reactor, screens) bloom
     bloomPass.threshold = .82; bloomPass.strength = .8;
     // filmic tone mapping keeps close-ups from blowing out to white
-    renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = .95; amb.intensity = .2; key.intensity = .8; }
+    amb.intensity = .2; key.intensity = .8;
+    if ((window.SCENE || {}).tone !== false) { renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = .95; } }  // scene.tone=false keeps colors punchier
   // cutaway: a box-shaped "bite" removed from every solid that uses it: x0 < x < x1 AND z > zCut (front half)
   // and optionally y > yCut. Animate the opening with K.setCut(cut, x0, x1).
   K.cutaway = function (o = {}) {
