@@ -1,7 +1,7 @@
 # The Man Who Bought (Almost) Every Lottery Ticket — STORY MODE (see docs/ricks-clips-study.md)
 # Markup: *gold  !red  {display|spoken}  [#cue]
 
-[#hook] He bought about {*5,000,000|five million} lottery tickets... [#one] for one single drawing.
+[#hook] Why the {F*CK|fuck} would one man buy {*5,000,000|five million} lottery tickets... [#one] for one single drawing?
 [#feb] February, {1992.|nineteen ninety-two.} Virginia's jackpot climbs to {*$27,000,000.|twenty-seven million dollars.}
 [#strange] And lottery officials notice something strange.
 [#blocks] Someone is buying tickets in giant blocks. Thousands at a time.
