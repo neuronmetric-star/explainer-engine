@@ -15,7 +15,7 @@ end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep m
 - CTA is a question + share bait, e.g. "Knowing this, will you start taking morning showers? Send this to your stinky partner."
 - Remove "advice" lines that aren't asked for (e.g. "keep it quick and lukewarm").
 - Real people/news: allegations always attributed, never name private people, faceless figures only.
-- Brian records the voiceover in OpenArt; then run `node tools/align.js <slug>` (rate-based sync) and check cues.
+- Brian records the voiceover in OpenArt; then run `node tools/align.js <slug>` (exact forced alignment via PocketSphinx — `pip install pocketsphinx` if missing; it bundles its model) and check cues.
 - Show a preview before every full render; he may say "wait" — stop the render immediately.
 - Keep messages short (he's on his phone). Post caption + hashtags + pinned-sources comment with each final video.
 

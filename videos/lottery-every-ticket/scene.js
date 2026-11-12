@@ -22,9 +22,9 @@ window.SCENE = {
     { img: 'img/18.jpg', at: 'cta', origin: [45, 40], move: { zoom: [1.25, 1.05] }, fx: 'pulse' },
   ],
   cards: [
-    { l: 'ONE DRAWING', v: '5,000,000', cls: 'big', s: [540, 980], t0: 'one', t1: 'feb', count: [0, 5000000, 'one', 1.2], fmt: n => Math.round(n).toLocaleString('en-US') },
-    { l: 'POSSIBLE TICKETS', v: '7,059,052', cls: 'white', s: [540, 330], t0: 'combos+0.4', t1: 'dollar', count: [0, 7059052, 'combos+0.4', 1.6], fmt: n => Math.round(n).toLocaleString('en-US') },
-    { l: 'COST', v: '$7M', cls: 'green', s: [250, 330], t0: 'dollar+0.2', t1: 'race' },
+    { l: 'ONE DRAWING', v: '5,000,000', cls: 'big', s: [540, 980], t0: 'hook+1.95', t1: 'feb', count: [0, 5000000, 'hook+1.95', .9], fmt: n => Math.round(n).toLocaleString('en-US') },
+    { l: 'POSSIBLE TICKETS', v: '7,059,052', cls: 'white', s: [540, 330], t0: 'combos+3.05', t1: 'dollar', count: [0, 7059052, 'combos+3.05', 1.2], fmt: n => Math.round(n).toLocaleString('en-US') },
+    { l: 'COST', v: '$7M', cls: 'green', s: [250, 330], t0: 'dollar+1.45', t1: 'race' },
     { l: 'PRIZE', v: '$27M', s: [800, 330], t0: 'prize', t1: 'race' },
     { l: 'COVERED', v: '5M of 7M', cls: 'red', s: [540, 330], t0: 'short', t1: 'draw' },
     { l: 'PAID OUT', v: '$27,036,142', cls: 'big', s: [540, 280], t0: 'paid', t1: 'yousee', count: [0, 27036142, 'paid', 1.4] },
