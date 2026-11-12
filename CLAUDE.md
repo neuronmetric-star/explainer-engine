@@ -93,6 +93,7 @@ Put a `[#cue]` before every sentence that should change the picture.
   One panel per beat, crossfades to the next; cards take `s:[x,y]` (screen px) instead of `a`; `shakes`/`flashes`/cards/captions/watermark work on top. No `build` = no WebGL (renders ~5x faster).
 - **Depth layers** (premium parallax): a panel can carry `layers: [{ img:'img/coon-point.png', s:[x,y], w:520, depth:1.8, bob:10, in:['cue',600,.5], flip }]`
   — transparent PNG sprites (characters from ChatGPT on transparent background) placed at s/w when the shot starts, drifting depth× vs the background.
+- **Green-screen characters**: ChatGPT poses on pure #00FF00 → `python3 tools/keygreen.py in.webp out.png` (transparent PNG, despilled, cropped). Reusable poses live in `docs/characters/ref/poses/`.
 - **Sound effects**: `sfx: [['cue+0.2','cash',0.8], …]` with `engine/sfx/{whoosh,hit,slam,tick,cash,riser,pop,shutter,rumble,drill,suction,scrape,clink,drone,flicker}.wav`; `autoWhoosh: true` adds a whoosh on every panel change. Mixed by tools/render.js.
 - **Voice pace**: target 75–80 s. `node tools/voice.js <slug> 1.15 [--pad 1.2]` speeds voice.mp3 without pitch change, optionally adds a silent cold open (mid-action start before the first word), keeps voice-original.mp3 and re-aligns.
 - Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
