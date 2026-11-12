@@ -85,7 +85,7 @@ Put a `[#cue]` before every sentence that should change the picture.
 - Scene object: `build(K)`, `shots`, `cards`, `steps`, `receipt`, `follow`, `shakes`, `flashes`, `update(t,K)`.
 - **Image panels** (2D cartoon story videos, images from ChatGPT in `videos/<slug>/img/`):
   `panels: [{ img:'img/01.png', at:'cue', origin:[50,30], move:{zoom:[1.4,1.05], x:[0,-40], y:[0,20]}, fx:'pulse|flicker|dark', parts:{n:22,speed:.8}, fade:.25 }]`.
-  One panel per beat, crossfades to the next; `shakes`/`flashes`/cards/captions/watermark work on top. No `build` = no WebGL (renders ~5x faster).
+  One panel per beat, crossfades to the next; cards take `s:[x,y]` (screen px) instead of `a`; `shakes`/`flashes`/cards/captions/watermark work on top. No `build` = no WebGL (renders ~5x faster).
 - Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
 
 ## Looks (styles)

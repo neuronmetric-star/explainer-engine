@@ -1,0 +1,37 @@
+// The Man Who Bought (Almost) Every Lottery Ticket — 2D cartoon panels (images from ChatGPT in img/)
+// Cards use screen positions s:[x,y]. Caption zone y 1250–1450 stays clear.
+window.SCENE = {
+  panels: [
+    { img: 'img/01.jpg', at: 0, fade: 0, origin: [50, 22], move: { zoom: [1.9, 1.04], y: [40, 0] }, fx: 'pulse', parts: { n: 22, speed: .8 } },
+    { img: 'img/02.jpg', at: 'feb', origin: [50, 28], move: { zoom: [1.18, 1.04] } },
+    { img: 'img/03.jpg', at: 'strange', origin: [48, 30], move: { zoom: [1.4, 1.55] } },
+    { img: 'img/04.jpg', at: 'blocks', origin: [55, 40], move: { zoom: [1.12, 1.32], x: [0, -30] }, parts: { n: 14, speed: 1.2 } },
+    { img: 'img/05.jpg', at: 'grocery', origin: [50, 18], move: { zoom: [1.7, 1.9], x: [30, -30] } },
+    { img: 'img/06.jpg', at: 'crazy', origin: [35, 50], move: { zoom: [1.05, 1.25] } },
+    { img: 'img/07.jpg', at: 'combos', origin: [50, 62], move: { zoom: [1.0, 1.45] } },
+    { img: 'img/08.jpg', at: 'dollar', origin: [55, 40], move: { zoom: [1.08, 1.22] }, fx: 'pulse' },
+    { img: 'img/09.jpg', at: 'race', origin: [50, 25], move: { zoom: [1.3, 1.05] }, fx: 'flicker', parts: { n: 10, speed: .7 } },
+    { img: 'img/10.jpg', at: 'deadline', origin: [45, 40], move: { zoom: [1.05, 1.2] }, fx: 'flicker' },
+    { img: 'img/11.jpg', at: 'short', origin: [50, 45], move: { zoom: [1.05, 1.3] }, fx: 'pulse' },
+    { img: 'img/12.jpg', at: 'draw', origin: [30, 60], move: { zoom: [1.1, 1.4] } },
+    { img: 'img/13.jpg', at: 'box', origin: [58, 40], move: { zoom: [1.1, 1.45] }, fx: 'pulse' },
+    { img: 'img/14.jpg', at: 'refuse', origin: [45, 45], move: { zoom: [1.05, 1.22], x: [-20, 20] }, fx: 'flicker' },
+    { img: 'img/15.jpg', at: 'pay', origin: [45, 38], move: { zoom: [1.3, 1.1] }, fx: 'flicker' },
+    { img: 'img/16.jpg', at: 'yousee', origin: [55, 40], move: { zoom: [1.05, 1.25] } },
+    { img: 'img/17.jpg', at: 'changed', origin: [70, 35], move: { zoom: [1.0, 1.1] } },
+    { img: 'img/18.jpg', at: 'cta', origin: [45, 40], move: { zoom: [1.25, 1.05] }, fx: 'pulse' },
+  ],
+  cards: [
+    { l: 'ONE DRAWING', v: '5,000,000', cls: 'big', s: [540, 980], t0: 'one', t1: 'feb', count: [0, 5000000, 'one', 1.2], fmt: n => Math.round(n).toLocaleString('en-US') },
+    { l: 'POSSIBLE TICKETS', v: '7,059,052', cls: 'white', s: [540, 330], t0: 'combos+0.4', t1: 'dollar', count: [0, 7059052, 'combos+0.4', 1.6], fmt: n => Math.round(n).toLocaleString('en-US') },
+    { l: 'COST', v: '$7M', cls: 'green', s: [250, 330], t0: 'dollar+0.2', t1: 'race' },
+    { l: 'PRIZE', v: '$27M', s: [800, 330], t0: 'prize', t1: 'race' },
+    { l: 'COVERED', v: '5M of 7M', cls: 'red', s: [540, 330], t0: 'short', t1: 'draw' },
+    { l: 'PAID OUT', v: '$27,036,142', cls: 'big', s: [540, 280], t0: 'paid', t1: 'yousee', count: [0, 27036142, 'paid', 1.4] },
+    { l: 'HIS RULE', v: 'JACKPOT > ALL TICKETS', s: [540, 300], t0: 'rule', t1: 'changed' },
+    { v: '= PROFIT', cls: 'big', s: [540, 470], t0: 'profit', t1: 'changed' },
+  ],
+  follow: { from: 'share+0.3', title: 'MORE MONEY STORIES' },
+  shakes: [['one', .35, .25], ['deadline', .4, .35], ['draw', .4, .3], ['win', .3, .2], ['refuse', .35, .25]],
+  flashes: [['gap', .25, .35], ['refuse', .2, .25]],
+};

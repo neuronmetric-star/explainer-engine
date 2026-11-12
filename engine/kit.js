@@ -183,7 +183,7 @@
     const el = document.createElement('div'); el.className = 'card ' + (o.cls || '');
     el.innerHTML = (o.l ? `<div class="l">${o.l}</div>` : '') + `<div class="v">${o.v || ''}</div>`;
     cardsEl.appendChild(el); o.el = el; o.vEl = el.querySelector('.v');
-    o.anchor = Array.isArray(o.a) ? new THREE.Vector3(...o.a) : o.a; o._t0 = K.T(o.t0); o._t1 = K.T(o.t1);
+    o.anchor = Array.isArray(o.a) ? new THREE.Vector3(...o.a) : (o.a || new THREE.Vector3()); o._t0 = K.T(o.t0); o._t1 = K.T(o.t1);
     if (o.count) { o._cs = K.T(o.count[2]); o._ce = o._cs + (o.count[3] || 1.2); }
     if (o.flip) o._ft = K.T(o.flip[0]);
     o.orig = o.v; CARDS.push(o); return o;
@@ -195,8 +195,8 @@
       if (t < c._t0 || t >= c._t1) { c.el.style.display = 'none'; continue; }
       c.el.style.display = 'block';
       const k = pop(clamp01((t - c._t0) / .32)), out = clamp01((c._t1 - t) / .18);
-      pv.copy(c.anchor).project(camera);
-      const x = (pv.x * .5 + .5) * W, y = (-pv.y * .5 + .5) * H, r = c.el.getBoundingClientRect();
+      let x, y; if (c.s) { x = c.s[0]; y = c.s[1]; } else { pv.copy(c.anchor).project(camera); x = (pv.x * .5 + .5) * W; y = (-pv.y * .5 + .5) * H; }
+      const r = c.el.getBoundingClientRect();
       c.el.style.left = Math.max(28, Math.min(W - 28 - r.width, x - r.width / 2)) + 'px'; c.el.style.top = (y - r.height / 2) + 'px';
       c.el.style.transform = `scale(${(.6 + .4 * k) * (.92 + .08 * out)})`; c.el.style.opacity = Math.min(clamp01((t - c._t0) / .15), out);
       if (c.count) { const [a, b] = c.count; const u = easeOut(clamp01((t - c._cs) / (c._ce - c._cs))); c.vEl.textContent = (c.neg ? '-' : '') + (c.fmt || fmt)(a + (b - a) * u); }
