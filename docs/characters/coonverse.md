@@ -3,7 +3,12 @@
 Style (locked Nov 2026): **rich digital painting, mature anthropomorphic animals**, adult proportions
 (tall, long limbs, normal-sized heads), realistic animal faces and textured fur, tailored clothes,
 cinematic warm-and-cool lighting, visible brush texture. Reference: `ref/coon-main.webp` (attach it to EVERY prompt).
-Mood per video is still open: **historic** (candlelight, oil-painting feel, period settings) or **bright** (sunny, saturated, fun).
+**Mood is picked by topic** (locked Nov 2026) — Coon + the painted style never change, only the light:
+| Topic | Mood | Light / palette line to add to every prompt |
+|---|---|---|
+| History, old money, wars, empires, anything before ~1950 | **Historic** | `period setting, warm candle/gas-lamp light, fog, sepia and deep red tones, oil-painting feel` |
+| Modern money, science, how-things-work, today's world | **Bright** | `modern setting, bright warm sunlight, blue sky, vivid saturated colors, cheerful energy` |
+| Crime, scams, mysteries, investigations (any era) | **Night** | `night, moonlight and neon or desk-lamp light, deep blues with gold highlights, cinematic shadows` |
 
 ## Cast
 | Character | Animal | Plays | Look |
