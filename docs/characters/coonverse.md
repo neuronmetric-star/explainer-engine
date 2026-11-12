@@ -2,7 +2,7 @@
 
 Style (locked Nov 2026): **rich digital painting, mature anthropomorphic animals**, adult proportions
 (tall, long limbs, normal-sized heads), realistic animal faces and textured fur, tailored clothes,
-cinematic warm-and-cool lighting, visible brush texture. Reference: `ref/coon-main.webp` (attach it to EVERY prompt).
+cinematic warm-and-cool lighting, visible brush texture. Reference: `ref/coon-main.webp` + model sheet `ref/coon-sheet.webp` (attach to EVERY prompt).
 **Mood is picked by topic** (locked Nov 2026) — Coon + the painted style never change, only the light:
 | Topic | Mood | Light / palette line to add to every prompt |
 |---|---|---|
@@ -56,3 +56,11 @@ Poses:
 Coon stands INSIDE the scene (dentist office, kitchen, battlefield…) and talks to the viewer; the other
 characters can't see or hear him. Gags: he leans on their equipment, waves a paw in front of their face,
 shrinks down to "tour" the micro-world (inside a mouth, a cell, an engine). He's always fully painted (not a ghost).
+
+## Recurring side characters (approved sheets)
+- **Tim** — scruffy rabbit everyman, bent left ear, stained yellow buck teeth, navy hoodie, ripped jeans, worn sneakers → `ref/tim-sheet.webp`
+- **Doc** — creepy great horned owl dentist/doctor, head mirror, round glasses, orange eyes, stained coat, blue-grey gloves → `ref/doc-sheet.webp`
+
+## Transparent layers — fallback
+If ChatGPT paints a fake checkerboard instead of real transparency, ask for a **solid pure green (#00FF00) background** instead;
+Claude keys it out.
