@@ -272,7 +272,7 @@
     PANELS.forEach((p, i) => {
       const end = i + 1 < PANELS.length ? PANELS[i + 1]._t : VIDEO_LEN();
       const vis = i === cur || (i === cur - 1 && t < PANELS[cur]._t + PANELS[cur].fade);
-      if (!vis) { p._el.style.opacity = 0; return; }
+      if (!vis) { p._el.style.opacity = 0; (p.layers || []).forEach(L => L._el.style.opacity = 0); return; }
       const span = Math.max(.1, end - p._t + (p.fade || 0)), u = clamp01((t - p._t) / span), e = p.ease === 'linear' ? u : ease(u);
       const m = p.move || {}, L = (r, d) => r ? r[0] + (r[1] - r[0]) * e : d;
       const z = L(m.zoom, 1.06), x = L(m.x, 0) + Math.sin(t * 61) * sh * 40, y = L(m.y, 0) + Math.cos(t * 47) * sh * 40;
@@ -281,15 +281,27 @@
       if (p.fx === 'flicker') f = `brightness(${1 + .12 * Math.sin(t * 23) * Math.sin(t * 7.3)})`;
       if (p.fx === 'pulse') f = `brightness(${1 + .08 * Math.sin(t * 4)})`;
       if (p.fx === 'dark') f = `brightness(${1 - .35 * ease(u)})`;
-      p._el.style.opacity = op; p._el.style.zIndex = i === cur ? 2 : 1; p._el.style.filter = f;
+      p._el.style.opacity = op; p._el.style.zIndex = i === cur ? 10 : 5; p._el.style.filter = f;
       p._el.style.transform = `translate(${x}px,${y}px) scale(${z})`;
+      // depth layers: sprites in front of the background that move MORE than it (parallax), bob, and can slide in
+      (p.layers || []).forEach(L => {
+        // s:[x,y] + w = sprite centre/width on screen when the shot starts; afterwards it drifts d× as much as the background (parallax)
+        const d = L.depth || 1.6, ox = (p.origin || [50, 45])[0] / 100 * 1080, oy = (p.origin || [50, 45])[1] / 100 * 1920;
+        const z0 = m.zoom ? m.zoom[0] : 1.06, x0 = m.x ? m.x[0] : 0, y0 = m.y ? m.y[0] : 0, rz = z / z0;
+        const w = L.w || 600, cx = L.s ? L.s[0] : 540, cy = L.s ? L.s[1] : 1100, lz = Math.pow(rz, 1 + (d - 1) * .5);
+        const px = cx + (cx - ox) * (rz - 1) * d + (x - x0) * d, py = cy + (cy - oy) * (rz - 1) * d + (y - y0) * d;
+        const bob = (L.bob || 0) * Math.sin((t - p._t) * (L.bobSpeed || 2.2));
+        const inU = L.in ? easeOut(clamp01((t - K.T(L.in[0])) / (L.in[2] || .5))) : 1, slide = L.in ? (1 - inU) * L.in[1] : 0;
+        L._el.style.width = w * lz + 'px'; L._el.style.zIndex = i === cur ? 11 : 6; L._el.style.opacity = op * (L.in ? clamp01(inU * 3) : 1); L._el.style.filter = (f ? f + ' ' : '') + 'drop-shadow(0 18px 24px rgba(0,0,0,.45))';
+        L._el.style.transform = `translate(${px - w * lz / 2 + slide}px,${py - L._el.naturalHeight / L._el.naturalWidth * w * lz / 2 + bob}px)${L.flip ? ' scaleX(-1)' : ''}`;
+      });
     });
   }
   const VIDEO_LEN = () => window.VIDEO_LENGTH || 1e9;
   // falling paper in front of a panel (pure function of t): panel.parts = { n: 26, speed: 1, size: 1 }
   let PARTS = null;
   function updateParts(t, p) {
-    if (!PARTS) { PARTS = document.createElement('div'); PARTS.style.cssText = 'position:absolute;inset:0;z-index:3'; $('panels').appendChild(PARTS);
+    if (!PARTS) { PARTS = document.createElement('div'); PARTS.style.cssText = 'position:absolute;inset:0;z-index:20'; $('panels').appendChild(PARTS);
       for (let i = 0; i < 40; i++) { const d = document.createElement('div'); d.className = 'pt'; PARTS.appendChild(d); } }
     const cfg = p && p.parts; PARTS.style.display = cfg ? 'block' : 'none'; if (!cfg) return;
     const n = cfg.n || 26, sp = cfg.speed || 1, sz = cfg.size || 1;
@@ -325,8 +337,14 @@
     const loads = (SC.panels || []).map(p => { p._t = K.T(p.at); if (p.fade === undefined) p.fade = .25;
       const el = p._el = document.createElement('img'); el.className = 'panel'; el.style.transformOrigin = (p.origin || [50, 45]).map(v => v + '%').join(' ');
       $('panels').appendChild(el); PANELS.push(p);
-      return new Promise((res, rej) => { el.onload = res; el.onerror = () => rej(new Error('missing image ' + p.img)); el.src = '../videos/' + new URLSearchParams(location.search).get('v') + '/' + p.img; }); });
+      const layerLoads = (p.layers || []).map(L => { const le = L._el = document.createElement('img'); le.className = 'layer'; $('panels').appendChild(le);
+        return new Promise((res, rej) => { le.onload = res; le.onerror = () => rej(new Error('missing image ' + L.img)); le.src = '../videos/' + new URLSearchParams(location.search).get('v') + '/' + L.img; }); });
+      return new Promise((res, rej) => { el.onload = res; el.onerror = () => rej(new Error('missing image ' + p.img)); el.src = '../videos/' + new URLSearchParams(location.search).get('v') + '/' + p.img; }).then(() => Promise.all(layerLoads)); });
     PANELS.sort((a, b) => a._t - b._t);
+    // sound effects: sfx: [['cue+0.2', 'cash', 0.8], ...]; autoWhoosh: true adds a whoosh at every panel change. Read by tools/render.js.
+    const SFX = (SC.sfx || []).map(([at, name, vol]) => [+K.T(at).toFixed(3), name, vol === undefined ? 1 : vol]);
+    if (SC.autoWhoosh) PANELS.forEach((p, i) => { if (i > 0) SFX.push([+Math.max(0, p._t - .25).toFixed(3), 'whoosh', SC.autoWhoosh === true ? .55 : SC.autoWhoosh]); });
+    window.SFX_LIST = SFX;
     Promise.all(loads).then(() => { window.ready = true; }, e => { window.loadError = String(e); });
   };
 })();

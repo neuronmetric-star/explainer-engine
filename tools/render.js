@@ -58,14 +58,19 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
     enc.stdin.end(); await new Promise(r => enc.on('close', r));
     const out = path.join(dir, 'final.mp4'), voice = path.join(dir, 'voice.mp3');
     const music = path.join(dir, 'music.mp3'); // optional quiet music bed
+    // audio: voice + optional quiet music bed + sound effects (window.SFX_LIST from the scene; files in engine/sfx/<name>.wav)
+    const SFX = (await page.evaluate('window.SFX_LIST || []')).filter(([, n]) => fs.existsSync(path.join(ROOT, 'engine', 'sfx', n + '.wav')));
+    const ins = ['-i', silent], parts = []; let k = 1;
+    if (fs.existsSync(voice)) { ins.push('-i', voice); parts.push(`[${k++}:a]apad[a${parts.length}]`); }
+    if (fs.existsSync(music)) { ins.push('-stream_loop', '-1', '-i', music); parts.push(`[${k++}:a]volume=0.12[a${parts.length}]`); }
+    for (const [t, n, v] of SFX) { ins.push('-i', path.join(ROOT, 'engine', 'sfx', n + '.wav')); const ms = Math.max(0, Math.round(t * 1000));
+      parts.push(`[${k++}:a]aresample=48000,adelay=${ms}|${ms},volume=${(0.5 * v).toFixed(3)},apad[a${parts.length}]`); }
     let mux;
-    if (fs.existsSync(voice) && fs.existsSync(music))
-      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-stream_loop', '-1', '-i', music,
-        '-filter_complex', '[1:a]apad[v];[2:a]volume=0.12[m];[v][m]amix=inputs=2:duration=first:normalize=0[a]',
-        '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
-    else if (fs.existsSync(voice))
-      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-af', 'apad', '-t', L.toFixed(3)];
-    else mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
+    if (parts.length) {
+      const fc = parts.join(';') + ';' + parts.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${parts.length}:duration=longest:normalize=0,alimiter=limit=0.95[a]`;
+      mux = ['-y', '-loglevel', 'error', ...ins, '-filter_complex', fc, '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
+      if (SFX.length) console.log(`mixing ${SFX.length} sound effects`);
+    } else mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
     mux.push('-movflags', '+faststart', out);
     spawnSync(ff, mux, { stdio: 'inherit' }); fs.rmSync(silent, { force: true });
     console.log('done ->', path.relative(ROOT, out), `(${L.toFixed(1)}s, ${((Date.now() - t0) / 60000).toFixed(1)} min)`);

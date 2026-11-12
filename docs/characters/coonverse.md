@@ -28,3 +28,26 @@ Real people are never drawn with a recognizable face: hat silhouette, from behin
 ```
 Vertical 9:16 rich digital painting, same art style and the same raccoon character as the attached image: mature anthropomorphic animals with adult proportions, realistic animal faces, textured fur, tailored clothes, visible brush texture, cinematic warm-and-cool lighting, detailed background with depth. Scene: <WHAT HAPPENS, WHICH ANIMALS, WHERE, WHEN, WHAT LIGHT>. Characters fill the middle of the frame, no big empty foreground. Keep the lower-middle of the image calm. No text unless asked, no logos, not in the style of any existing artist, film or brand.
 ```
+
+## Coon reference pack (make once, reuse forever) — attach ref/coon-main.webp to each
+Save results in `docs/characters/ref/` and copy the ones a video needs into `videos/<slug>/img/`.
+
+### Model sheet
+```
+Character model sheet, rich digital painting, the same anthropomorphic raccoon as the attached image: mature adult proportions (tall, slim, long limbs, normal-sized head), realistic raccoon face with long snout, amber eyes, textured grey fur, black bandit mask, thick ringed tail, tailored black three-piece suit, white shirt, gold tie, white pocket square, black oxford shoes, a gold pocket-watch chain on the vest. Show him 4 times side by side on a plain warm-grey background: front view, three-quarter view, side profile, back view. Neutral standing pose, same scale in every view, soft studio lighting. No text, no logos, not in the style of any existing artist, film or brand.
+```
+
+### Pose library (one image per pose, TRANSPARENT background → used as depth layers)
+Template — replace <POSE>:
+```
+Full-body rich digital painting of the same anthropomorphic raccoon as the attached image (mature adult proportions, realistic raccoon face, amber eyes, textured grey fur, black bandit mask, ringed tail, black three-piece suit, gold tie, gold pocket-watch chain). Pose: <POSE>. Soft cinematic key light from the left, subtle rim light. Isolated character on a TRANSPARENT background, PNG, no floor, no shadow, no background, whole body visible including tail and shoes. No text, no logos.
+```
+Poses:
+1. coon-intro — standing facing the viewer, one hand in pocket, calm knowing half-smile, eyebrow slightly raised
+2. coon-point — pointing to his left (viewer's right) with his whole arm, explaining, mouth open mid-sentence
+3. coon-smirk — arms crossed, smug smirk, looking at the viewer from the corner of his eyes
+4. coon-shock — leaning back, eyes wide, paws up, genuinely shocked
+5. coon-think — one paw on his chin, looking up, thinking
+6. coon-watch — checking his gold pocket watch, eyebrows raised (for "time" / deadlines)
+7. coon-cash — fanning a stack of cash in one paw, confident grin (money moments)
+8. coon-whiskey — leaning on an invisible bar with a glass of whiskey, relaxed, for the ending line "Now you know."
