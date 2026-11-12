@@ -12,7 +12,7 @@ end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep m
 - Premium, cinematic sets: mood lighting (night room with moon + lamp, sunrise), real 3D characters
   (Quaternius) at believable scale — a person should fill their bed, not look like a toy on it.
 - Characters fit the topic: soldiers look like soldiers, kings/queens wear crowns (K.crown), etc.
-- CTA is a question + share bait, e.g. "Knowing this, will you start taking morning showers? Send this to your stinky partner."
+- Ending is "And that's why the fuck ___. Share this with <relevant person>." (see Script formula).
 - Remove "advice" lines that aren't asked for (e.g. "keep it quick and lukewarm").
 - Real people/news: allegations always attributed, never name private people, faceless figures only.
 - Brian records the voiceover in OpenArt; then run `node tools/align.js <slug>` (exact forced alignment via PocketSphinx — `pip install pocketsphinx` if missing; it bundles its model) and check cues.
@@ -40,17 +40,21 @@ end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep m
 
 ## Script formula — "WHY THE F*CK…?" format (from Nov 2026, any topic humans wonder about)
 Length **61–75 s** (~170–200 spoken words). Must be over 60 s: TikTok Creator Rewards only pays on videos >1 min.
-1. **Hook (0–3 s)**: "Why the fuck did/does/is ___?" + bridge: "Give me a minute, I'll show you." /
-   "Let me explain." Exactly ONE swear, only in the hook. Caption shows it masked: `{F*CK|fuck}`.
-   Never put the swear in the TikTok caption text, title, hashtags or thumbnail.
+1. **Hook (0–3 s)** — ALWAYS opens with a question word + "the fuck" (Brian's rule, Nov 2026):
+   "**Why / How / When / Where / What the fuck** ___?" then a bridge chosen by topic:
+   - default: "Well, let me explain." / "Let me show you."
+   - spicy (only light, playful topics — never tragedies, deaths, victims, health, real people's suffering):
+     "Let me explain, you stupid fuck." (said with a wink, it's the brand voice)
+   Captions always mask it: `{F*CK|fuck}`. Never put a swear in the post caption, title, hashtags or thumbnail.
 2. **Short answer** (one line, surprising) → "But the real reason is wilder."
 3. **Deep, simple explanation**: 3–4 numbered steps. Each = one concrete picture + one real number.
    Explain like to a smart 12-year-old. Every sentence must be visualizable.
 4. **Twist / catch**: the part most people get wrong ("Here's what nobody tells you…").
 5. **Proof**: real numbers on a receipt, chart or comparison.
 6. **"You" moment**: tie it to the viewer's life ("That's why YOUR ___ …").
-7. **Punchline** (one short line) + **CTA**: "Follow — I explain one of these every day." Optional share bait:
-   "Send this to someone who …".
+7. **Ending (always)**: "**And that's why the fuck** ___." (answers the hook in one line) +
+   "**Share this with** <someone relevant to the topic>." e.g. "Share this with the friend who plays the lottery every week."
+   The FOLLOW button still shows on screen at the end. Max 3 swears per video (hook, optional spicy bridge, ending).
 Rules: short sentences, concrete numbers, no filler. Every fact from a source. History: no myths stated as
 fact ("historians think"). Real people/news: attribute every claim, never present allegations as fact.
 Never give personalized financial/legal/medical advice. See docs/growth-plan.md for monetization rules.
