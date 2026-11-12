@@ -17,6 +17,7 @@ end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep m
 - Real people/news: allegations always attributed, never name private people, faceless figures only.
 - Brian records the voiceover in OpenArt; then run `node tools/align.js <slug>` (exact forced alignment via PocketSphinx — `pip install pocketsphinx` if missing; it bundles its model) and check cues.
 - Show a preview before every full render; he may say "wait" — stop the render immediately.
+- **Characters = the Coonverse** (from Nov 2026): round-head cartoon animals, Coon the raccoon is the host. Cast + ChatGPT prompts in `docs/characters/coonverse.md`. Images come from ChatGPT (Claude writes the prompts).
 - Keep messages short (he's on his phone). Post caption + hashtags + pinned-sources comment with each final video.
 
 
