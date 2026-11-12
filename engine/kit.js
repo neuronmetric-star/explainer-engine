@@ -168,6 +168,7 @@
   // ---------------- UI (DOM overlays, crisp text) ----------------
   const $ = id => document.getElementById(id);
   const ui = $('ui');
+  ui.insertAdjacentHTML('afterbegin', '<div id="panels"></div>');
   ui.insertAdjacentHTML('beforeend', `
     <div id="cards"></div>
     <div id="steps" style="opacity:0"><div class="t"></div><div class="row"></div><div class="labs"></div></div>
@@ -229,6 +230,7 @@
     const sh = shakeAmp(t);
     camera.position.copy(camPos).add(new THREE.Vector3(Math.sin(t * 61) * sh, Math.cos(t * 47) * sh, 0));
     camera.lookAt(camTgt); camera.updateMatrixWorld();
+    updatePanels(t, sh);
     updateCards(t);
     // captions: one word/token at a time
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
@@ -255,7 +257,48 @@
       wm.style.opacity = endOn ? 0 : .55 * Math.min(clamp01(u / .3), clamp01((seg - u) / .3)); }
     if (SC.follow) { const on = t >= SC.follow._from; $('fhandle').style.opacity = on ? clamp01((t - SC.follow._from - .2) / .3) : 0; }
     flash.style.opacity = flashAmp(t);
-    if (doRender) composer.render();
+    if (doRender && !SC._no3d) composer.render();
+  }
+
+  // ---------------- image panels (2D cartoon stories) ----------------
+  // panels: [{ img:'img/01.png', at:'cue', move:{zoom:[1.05,1.18], x:[0,-40], y:[0,30]}, fx:'flicker'|'pulse', fade:.25 }]
+  // Each panel covers the whole 1080x1920 frame from `at` until the next panel (crossfade). x/y in px; zoom about `origin` ([%,%]).
+  // Pure function of t; global shakes also shake the panels.
+  const PANELS = [];
+  function updatePanels(t, sh) {
+    if (!PANELS.length) return;
+    let cur = -1; for (let i = 0; i < PANELS.length; i++) if (t >= PANELS[i]._t) cur = i;
+    updateParts(t, PANELS[cur]);
+    PANELS.forEach((p, i) => {
+      const end = i + 1 < PANELS.length ? PANELS[i + 1]._t : VIDEO_LEN();
+      const vis = i === cur || (i === cur - 1 && t < PANELS[cur]._t + PANELS[cur].fade);
+      if (!vis) { p._el.style.opacity = 0; return; }
+      const span = Math.max(.1, end - p._t + (p.fade || 0)), u = clamp01((t - p._t) / span), e = p.ease === 'linear' ? u : ease(u);
+      const m = p.move || {}, L = (r, d) => r ? r[0] + (r[1] - r[0]) * e : d;
+      const z = L(m.zoom, 1.06), x = L(m.x, 0) + Math.sin(t * 61) * sh * 40, y = L(m.y, 0) + Math.cos(t * 47) * sh * 40;
+      const op = i === cur ? (p.fade ? clamp01((t - p._t) / p.fade) : 1) : 1;
+      let f = '';
+      if (p.fx === 'flicker') f = `brightness(${1 + .12 * Math.sin(t * 23) * Math.sin(t * 7.3)})`;
+      if (p.fx === 'pulse') f = `brightness(${1 + .08 * Math.sin(t * 4)})`;
+      if (p.fx === 'dark') f = `brightness(${1 - .35 * ease(u)})`;
+      p._el.style.opacity = op; p._el.style.zIndex = i === cur ? 2 : 1; p._el.style.filter = f;
+      p._el.style.transform = `translate(${x}px,${y}px) scale(${z})`;
+    });
+  }
+  const VIDEO_LEN = () => window.VIDEO_LENGTH || 1e9;
+  // falling paper in front of a panel (pure function of t): panel.parts = { n: 26, speed: 1, size: 1 }
+  let PARTS = null;
+  function updateParts(t, p) {
+    if (!PARTS) { PARTS = document.createElement('div'); PARTS.style.cssText = 'position:absolute;inset:0;z-index:3'; $('panels').appendChild(PARTS);
+      for (let i = 0; i < 40; i++) { const d = document.createElement('div'); d.className = 'pt'; PARTS.appendChild(d); } }
+    const cfg = p && p.parts; PARTS.style.display = cfg ? 'block' : 'none'; if (!cfg) return;
+    const n = cfg.n || 26, sp = cfg.speed || 1, sz = cfg.size || 1;
+    [...PARTS.children].forEach((d, i) => { if (i >= n) { d.style.display = 'none'; return; } d.style.display = 'block';
+      const r1 = (Math.sin(i * 12.9898) * 43758.5453) % 1, r2 = (Math.sin(i * 78.233) * 12345.678) % 1, a = Math.abs(r1), b = Math.abs(r2);
+      const depth = .5 + b * 1.1, fall = (t * 260 * sp * depth + a * 2400) % 2300 - 200;
+      const x = a * 1080 + Math.sin(t * (1 + b) + i) * 60, rot = t * (90 + 140 * b) * (i % 2 ? 1 : -1) + i * 37;
+      d.style.transform = `translate(${x}px,${fall}px) rotate(${rot}deg) rotateX(${rot * 1.7}deg) scale(${sz * depth})`;
+      d.style.opacity = .9; d.style.filter = depth < .8 ? 'blur(2px)' : ''; });
   }
 
   // ---------------- start: called after scene.js defines window.SCENE ----------------
@@ -264,6 +307,8 @@
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
     SC.build && SC.build(K);
     SHOTS = (SC.shots || []).map(s => ({ t: K.T(s[0]), p: new THREE.Vector3(...s[1]), q: new THREE.Vector3(...s[2]), d: s[3] || 1 })).sort((a, b) => a.t - b.t);
+    if (!SHOTS.length) SHOTS.push({ t: 0, p: new THREE.Vector3(0, 3, 12), q: new THREE.Vector3(0, 2, 0), d: 1 });
+    SC._no3d = !!SC.panels && !SC.build;   // pure image-panel video: skip the WebGL render
     (SC.cards || []).forEach(o => K.card(o));
     SC._shakes = (SC.shakes || []).map(([a, d, amp]) => [K.T(a), d, amp]);
     SC._flashes = (SC.flashes || []).map(([a, d, amp]) => [K.T(a), d, amp]);
@@ -277,6 +322,11 @@
     if (SC.follow) { SC.follow._from = K.T(SC.follow.from); $('ftitle').textContent = SC.follow.title || ''; }
     $('wm').textContent = SC.brand || K.BRAND; $('fhandle').textContent = SC.brand || K.BRAND;
     window.step = (n, dt) => { for (let i = 0; i < n; i++) frame(dt, i === n - 1); };
-    window.ready = true;
+    const loads = (SC.panels || []).map(p => { p._t = K.T(p.at); if (p.fade === undefined) p.fade = .25;
+      const el = p._el = document.createElement('img'); el.className = 'panel'; el.style.transformOrigin = (p.origin || [50, 45]).map(v => v + '%').join(' ');
+      $('panels').appendChild(el); PANELS.push(p);
+      return new Promise((res, rej) => { el.onload = res; el.onerror = () => rej(new Error('missing image ' + p.img)); el.src = '../videos/' + new URLSearchParams(location.search).get('v') + '/' + p.img; }); });
+    PANELS.sort((a, b) => a._t - b._t);
+    Promise.all(loads).then(() => { window.ready = true; }, e => { window.loadError = String(e); });
   };
 })();
