@@ -43,8 +43,8 @@ Length **61–75 s** (~170–200 spoken words). Must be over 60 s: TikTok Creato
 1. **Hook (0–3 s)** — ALWAYS opens with a question word + "the fuck" (Brian's rule, Nov 2026):
    "**Why / How / When / Where / What the fuck** ___?" then a bridge chosen by topic:
    - default: "Well, let me explain." / "Let me show you."
-   - spicy (only light, playful topics — never tragedies, deaths, victims, health, real people's suffering):
-     "Let me explain, you stupid fuck." (said with a wink, it's the brand voice)
+   - spicy (only light, playful topics incl. everyday hygiene — never tragedies, deaths, victims, serious illness, real people's suffering):
+     "Let me explain, you stupid/dirty fuck." — insult fits the topic (dirty = hygiene). Said with a wink, it's the brand voice.
    Captions always mask it: `{F*CK|fuck}`. Never put a swear in the post caption, title, hashtags or thumbnail.
 2. **Short answer** (one line, surprising) → "But the real reason is wilder."
 3. **Deep, simple explanation**: 3–4 numbered steps. Each = one concrete picture + one real number.

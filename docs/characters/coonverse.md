@@ -51,3 +51,8 @@ Poses:
 6. coon-watch — checking his gold pocket watch, eyebrows raised (for "time" / deadlines)
 7. coon-cash — fanning a stack of cash in one paw, confident grin (money moments)
 8. coon-whiskey — leaning on an invisible bar with a glass of whiskey, relaxed, for the ending line "Now you know."
+
+## Format: Coon the invisible narrator (from "brush twice")
+Coon stands INSIDE the scene (dentist office, kitchen, battlefield…) and talks to the viewer; the other
+characters can't see or hear him. Gags: he leans on their equipment, waves a paw in front of their face,
+shrinks down to "tour" the micro-world (inside a mouth, a cell, an engine). He's always fully painted (not a ghost).
