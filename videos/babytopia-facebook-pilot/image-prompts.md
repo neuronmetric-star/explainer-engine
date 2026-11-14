@@ -1,6 +1,6 @@
 # ChatGPT prompts — Babytopia pilot: Facebook explained like you're 5
 Format: **16:9 landscape** (ask ChatGPT for "wide landscape 16:9"). One chat for everything.
-Order: A) Zuck sheet → B) Pal sheet → C) Yahoo exec sheet → scenes 01–13 (attach all three sheets to every scene).
+Order: A) Zuck sheet → B) Pal sheet → C) Yahoo exec sheet → scenes 01–17 (attach all three sheets to every scene).
 
 Babytopia style (in every prompt): premium painted toddlers, NOT glossy plastic toys, not any existing film's
 baby characters; varied hair and skin tones; real tailored clothes; cinematic lighting; rich detailed backgrounds.
@@ -65,11 +65,27 @@ Wide 16:9 premium digital painting, same art style as the attached sheets. A mag
 ```
 Wide 16:9 premium digital painting, same art style as the attached sheets. A toddler sits in a cozy armchair scrolling a phone, smiling, unaware; floating around them are dozens of small glowing ad screens (shoes, snacks, toys), and invisible strings run from the toddler's eyes to a row of suited toddler advertisers holding them like puppet strings. Moody blue and gold lighting, eerie but funny. No text, no logos.
 ```
-12 — "In 2024, Meta made $164 billion. Nearly 98% from ads."
+12 — "when a new kid got popular at the lunch table? He bought them."
 ```
-Wide 16:9 premium digital painting, same art style and characters as the attached sheets. A futuristic glowing headquarters at dusk; inside a huge atrium, a giant waterfall of gold coins pours from a wall of floating ad screens into a pool, and baby Mark, still in his grey t-shirt, stands on a balcony above it, tiny and calm. Epic scale, warm gold and cool blue. No text, no logos.
+Wide 16:9 premium digital painting, same art style and characters as the attached sheets. A sunny preschool cafeteria: baby Mark in his grey t-shirt walks up to a lunch table where two new popular toddlers sit (one with a vintage camera around her neck, one holding a green walkie-talkie) and slides a huge bag of gold coins onto their table; their eyes go wide; other toddlers watch, jealous. Bright, comic, warm light. No text, no logos.
 ```
-13 — "His motto back then? Move fast, and break things."
+13 — "Cambridge Analytica ended up with data from up to 87 million users"
+```
+Wide 16:9 premium digital painting, same art style as the attached sheets. Night: a dark back alley behind a giant glowing blue building; a shadowy toddler in a long trench coat and fedora carries away an enormous sack overflowing with glowing profile cards (tiny toddler photos, no readable text), more profile cards spilling into the air like leaves. Moody blue and red light, film-noir tension. No text, no logos.
+```
+14 — "Uh... Mark?" / "fined Facebook $5 billion, a record for privacy"
+```
+Wide 16:9 premium digital painting, same art style and characters as the attached sheets. A grand marble government hearing room: baby Mark sits alone at a small witness table with a microphone, in a tiny navy suit and tie that's slightly too big, while a row of stern toddler officials in robes looks down from a high bench; one bangs a gavel next to a giant check that reads "$5,000,000,000". Baby Pal in the red hoodie peeks in nervously from the doorway. Cold daylight. No other text, no logos.
+```
+15 — "And by 2024, Meta made $164 billion. Nearly 98% of it from ads."
+```
+Wide 16:9 premium digital painting, same art style and characters as the attached sheets. A futuristic glowing headquarters at dusk; inside a huge atrium, a giant waterfall of gold coins pours from a wall of floating ad screens into a pool, and baby Mark, back in his grey t-shirt, stands on a balcony above it, tiny and calm. Epic scale, warm gold and cool blue. No text, no logos.
+```
+16 — "It doesn't sell you the toys. It sells you."
+```
+Wide 16:9 premium digital painting, same art style as the attached sheets. Back in the giant free toy store: a happy toddler holding a toy stands on a little display pedestal under a spotlight, unaware, while a crowd of suited toddler advertisers raise bidding paddles like at an auction. Funny and slightly unsettling, bright store light with a dramatic spotlight. No text, no logos.
+```
+17 — "His motto back then? Move fast, and break things."
 ```
 Wide 16:9 premium digital painting, same art style and characters as the attached sheets. Baby Mark rides a toy ride-on car at full speed through an office of 2008, crashing through stacks of paper and knocking over a tower of blocks, papers and block pieces flying; on the wall behind him a big hand-painted sign reads "MOVE FAST AND BREAK THINGS". Office toddlers dive out of the way. Dynamic motion, comic energy. No other text, no logos.
 ```

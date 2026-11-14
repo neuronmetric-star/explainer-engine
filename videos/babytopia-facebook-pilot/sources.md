@@ -9,3 +9,9 @@
 - Statista, Meta Platforms facts — https://www.statista.com/stats/278244/leading-social-networks-worldwide/
   Facebook: just over 3 billion monthly users.
 - "Move fast and break things" — Facebook's early internal motto (widely reported; e.g. Business Insider).
+- CNBC, "Facebook bought Instagram because it was scared of Twitter and Google" (2019) — https://www.cnbc.com/2019/09/24/facebook-bought-instagram-because-it-was-scared-of-twitter-and-google.html
+  Instagram: $1B (announced Apr 2012), 13 employees. Also https://fortune.com/2016/04/19/facebook-instagram-acquisitionheres-proof-that-instagram-was-one-of-the-smartest-acquisitions-ever/
+- WhatsApp acquisition $19B (Feb 2014) — https://fourweekmba.com/facebook-acquisitions/ (TODO: confirm with a primary source)
+- Cambridge Analytica: data of up to 87 million users without permission; FTC $5B penalty July 2019, largest privacy penalty ever —
+  https://www.fox4news.com/news/feds-fining-facebook-5-billion-for-privacy-violations ; https://www.goodmorningamerica.com/news/story/us-regulators-fine-facebook-billion-settle-privacy-claims-64533218
+- Facebook FY2019 revenue $70,697M (10-K) → ~$5.9B per month, so $5B < one month — https://www.sec.gov/Archives/edgar/data/1326801/000132680120000013/fb-12312019x10k.htm
