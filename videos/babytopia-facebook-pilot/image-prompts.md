@@ -132,7 +132,7 @@ Wide 16:9 premium digital painting with soft cinematic lighting and visible brus
 
 ### s11 — They settled for $65 million
 ```
-Wide 16:9 premium digital painting with soft cinematic lighting and visible brush texture, same art style and the same toddler characters as the attached sheets (premium painted toddlers in real tailored clothes, not glossy plastic, not 3D toys, not in the style of any existing film or brand), rich detailed background. Scene: a grand courtroom: the rowing twins sit at one tiny table with toddler lawyers in suits, baby Mark sits at another with his lawyers; a toddler judge in robes bangs a gavel next to a giant check that reads "$65,000,000". Warm courtroom light.
+Wide 16:9 premium digital painting with soft cinematic lighting and visible brush texture, same art style and the same toddler characters as the attached sheets (premium painted toddlers in real tailored clothes, not glossy plastic, not 3D toys, not in the style of any existing film or brand), rich detailed background. Scene: a grand courtroom: the rowing twins sit at one tiny table with toddler lawyers in suits, baby Mark sits at another with his lawyers; a toddler judge in robes bangs a gavel next to a giant check that reads "$65,000,000". Warm courtroom light. No other text, no logos.
 ```
 
 ### s12 — CHAPTER 2 — Mark moves to California
@@ -142,7 +142,7 @@ Wide 16:9 premium digital painting with soft cinematic lighting and visible brus
 
 ### s13 — Peter Thiel writes him a check for about $500,000
 ```
-Wide 16:9 premium digital painting with soft cinematic lighting and visible brush texture, same art style and the same toddler characters as the attached sheets (premium painted toddlers in real tailored clothes, not glossy plastic, not 3D toys, not in the style of any existing film or brand), rich detailed background. Scene: a modern sunlit office: an investor toddler in a dark sweater, seen only from behind (face not visible), hands an oversized check that reads "$500,000" to baby Mark, who takes it with a tiny confident smirk.
+Wide 16:9 premium digital painting with soft cinematic lighting and visible brush texture, same art style and the same toddler characters as the attached sheets (premium painted toddlers in real tailored clothes, not glossy plastic, not 3D toys, not in the style of any existing film or brand), rich detailed background. Scene: a modern sunlit office: an investor toddler in a dark sweater, seen only from behind (face not visible), hands an oversized check that reads "$500,000" to baby Mark, who takes it with a tiny confident smirk. No other text, no logos.
 ```
 
 ### s14 — from Harvard, to colleges, then to high schools
@@ -202,7 +202,7 @@ Wide 16:9 premium digital painting with soft cinematic lighting and visible brus
 
 ### s25 — The government fined Facebook $5 billion
 ```
-Wide 16:9 premium digital painting with soft cinematic lighting and visible brush texture, same art style and the same toddler characters as the attached sheets (premium painted toddlers in real tailored clothes, not glossy plastic, not 3D toys, not in the style of any existing film or brand), rich detailed background. Scene: a grand marble government hearing room: baby Mark sits alone at a small witness table with a microphone, in a tiny navy suit and tie that's slightly too big, while stern toddler officials in robes look down from a high bench; one bangs a gavel next to a giant check that reads "$5,000,000,000". Cold daylight.
+Wide 16:9 premium digital painting with soft cinematic lighting and visible brush texture, same art style and the same toddler characters as the attached sheets (premium painted toddlers in real tailored clothes, not glossy plastic, not 3D toys, not in the style of any existing film or brand), rich detailed background. Scene: a grand marble government hearing room: baby Mark sits alone at a small witness table with a microphone, in a tiny navy suit and tie that's slightly too big, while stern toddler officials in robes look down from a high bench; one bangs a gavel next to a giant check that reads "$5,000,000,000". Cold daylight. No other text, no logos.
 ```
 
 ### s26 — by 2024, Meta made $164 billion. Nearly 98% from ads
