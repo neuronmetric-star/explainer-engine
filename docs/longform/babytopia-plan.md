@@ -7,7 +7,7 @@ light, same quality bar as the Coonverse). The joke writes itself: billion-dolla
 Original look — not stick figures, not any existing film's baby characters.
 
 ## Pending decisions (ask Brian)
-1. Channel brand/name, and whether Coon appears (narrator? cameo?) or Babytopia is its own brand.
+1. Channel brand/name. DECIDED: Babytopia is its own world — **no Coon** (Brian, Nov 2026). Host = a baby or a voice-only narrator.
 2. Real people (Zuckerberg etc.): drawn as recognizable baby caricatures (name + signature outfit, not a
    photoreal likeness)? Needs a rule change — current Coonverse rule is "faceless real people".
 3. Format: 16:9 landscape (engine work needed), multi-voice dialogue (narrator + characters), chapters.
