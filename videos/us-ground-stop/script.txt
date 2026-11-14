@@ -1,7 +1,7 @@
 # The Day America's Planes Stopped — Nov 13, 2026 nationwide ground stop
 # Markup: *gold  !red  {display|spoken}  [#cue]   (see engine/script.js)
 
-[#hook] How does *every plane in America stop taking off at once?
+[#hook] Why the !fuck did *America ground !all flights?
 [#nothack] It wasn't weather. It wasn't a !hack.
 [#routers] It was *routers.
 [#how] Here's how it works.
