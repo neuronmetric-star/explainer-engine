@@ -14,7 +14,11 @@
 [#more] [@ZUCK] I think it's worth more.
 [#toy] [@N] Here's the trick. Imagine a toy store that gives away every toy for free. [#watch] But it watches what you play with. [#sells] Then it charges other companies to put the exact toy you want right in front of you. That's an ad.
 [#product] You're not the customer. You're the !product.
-[#lunch] And when a new kid got popular at the lunch table? [#bought] He bought them. [#insta] Instagram: {13|thirteen} employees, {*$1 billion.|one billion dollars.} [#whatsapp] WhatsApp: {*$19 billion.|nineteen billion.}
+[#lunch] And when a new kid got popular at the lunch table? [#insta] Instagram. A photo app with {13|thirteen} employees, about {30 million|thirty million} users, and zero revenue.
+[#who] [@PAL] Who pays a billion dollars for that?
+[#bought] [@N] Facebook did, in {2012.|twenty twelve.} [#email] Years earlier, Zuckerberg had written in an email: "It is better to buy than compete."
+[#whatsapp] Two years later: WhatsApp. {*450 million|Four hundred fifty million} users, about {55|fifty-five} employees. [#price] Price? {*$19 billion.|Nineteen billion dollars.}
+[#today] Today, Instagram alone has over {*2 billion|two billion} users.
 [#scandal] Then, {2018.|twenty eighteen.} A company called Cambridge Analytica ended up with data from up to {!87 million|eighty-seven million} users, without their permission.
 [#uhoh] [@PAL] Uh... Mark?
 [#fine] [@N] The government fined Facebook {!$5 billion,|five billion dollars,} a record for privacy. [#month] That was less than one month of what Facebook made back then.

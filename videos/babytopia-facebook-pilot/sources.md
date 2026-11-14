@@ -15,3 +15,7 @@
 - Cambridge Analytica: data of up to 87 million users without permission; FTC $5B penalty July 2019, largest privacy penalty ever —
   https://www.fox4news.com/news/feds-fining-facebook-5-billion-for-privacy-violations ; https://www.goodmorningamerica.com/news/story/us-regulators-fine-facebook-billion-settle-privacy-claims-64533218
 - Facebook FY2019 revenue $70,697M (10-K) → ~$5.9B per month, so $5B < one month — https://www.sec.gov/Archives/edgar/data/1326801/000132680120000013/fb-12312019x10k.htm
+- Instagram at purchase: ~30M users, no revenue, 13 employees — https://ca.finance.yahoo.com/news/m-flashback-instagram-joins-facebook-050000462.html
+- WhatsApp at purchase (Feb 19, 2014): 450M+ monthly users, ~55 employees, $19B cash + stock — https://fourweekmba.com/facebook-acquisitions/ ; https://business.linkedin.com/talent-solutions/blog/2014/02/how-acquisitions-drive-15-minutes-of-fame-on-linkedin-whatsapp-vs-instagram
+- 2008 Zuckerberg email "It is better to buy than compete", cited at the 2025 FTC trial — https://news.bloomberglaw.com/tech-and-telecom-law/meta-faces-potential-breakup-with-ftc-antitrust-trial-starting ; https://www.dawn.com/news/1904442
+- Instagram has more than 2 billion users — https://www.dawn.com/news/1904442

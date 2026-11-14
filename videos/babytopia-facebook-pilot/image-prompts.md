@@ -65,9 +65,13 @@ Wide 16:9 premium digital painting, same art style as the attached sheets. A mag
 ```
 Wide 16:9 premium digital painting, same art style as the attached sheets. A toddler sits in a cozy armchair scrolling a phone, smiling, unaware; floating around them are dozens of small glowing ad screens (shoes, snacks, toys), and invisible strings run from the toddler's eyes to a row of suited toddler advertisers holding them like puppet strings. Moody blue and gold lighting, eerie but funny. No text, no logos.
 ```
-12 — "when a new kid got popular at the lunch table? He bought them."
+12 — "when a new kid got popular at the lunch table? Instagram…" / "Who pays a billion dollars for that?"
 ```
-Wide 16:9 premium digital painting, same art style and characters as the attached sheets. A sunny preschool cafeteria: baby Mark in his grey t-shirt walks up to a lunch table where two new popular toddlers sit (one with a vintage camera around her neck, one holding a green walkie-talkie) and slides a huge bag of gold coins onto their table; their eyes go wide; other toddlers watch, jealous. Bright, comic, warm light. No text, no logos.
+Wide 16:9 premium digital painting, same art style and characters as the attached sheets. A sunny preschool cafeteria: at a small table, a cool toddler with a vintage instant camera around her neck is surrounded by a crowd of other toddlers posing for her photos; across the room baby Mark in his grey t-shirt watches over his milk carton, eyes narrowed, calculating; baby Pal next to him looks confused. Bright, comic, warm light. No text, no logos.
+```
+12b — "Facebook did… 'It is better to buy than compete.'" / WhatsApp $19 billion
+```
+Wide 16:9 premium digital painting, same art style and characters as the attached sheets. Same cafeteria: baby Mark slides a huge bag of gold coins onto the camera toddler's table, her eyes go wide; behind them, a second toddler holding a green walkie-talkie and surrounded by a huge crowd of chatting toddlers is already looking nervously at Mark, who holds an even bigger bag of gold behind his back. Comic, warm light. No text, no logos.
 ```
 13 — "Cambridge Analytica ended up with data from up to 87 million users"
 ```
