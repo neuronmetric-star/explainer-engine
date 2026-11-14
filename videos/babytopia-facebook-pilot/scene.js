@@ -49,11 +49,11 @@ window.SCENE = {
     P('s17', 'watch', IN),
     P('s18', 'product', { zoom: [1.05, 1.22] }, { fx: 'pulse' }),
     P('s19', 'ipo', OUT, { parts: { n: 24, speed: .9 } }),
-    P('s20', 'lunch', PANR),   // TODO s20 not made yet (popular camera girl at lunch table)
+    P('s21b', 'lunch', PANR),   // stand-in for s20 (Brian chose not to make it)
     P('s21', 'bought', IN),
     P('s21c', 'email', { zoom: [1.06, 1.16], x: [0, -30] }),
     P('s22', 'whatsapp', PANL),
-    P('s23', 'today', OUT),
+    P('s02', 'today', { zoom: [1.22, 1.06], x: [-40, 0] }),   // stand-in for s23: globe reuse + 2 BILLION card
     // ---- chapter 4 ----
     P('s24', 'ch4', { zoom: [1.06, 1.18] }, { fx: 'flicker' }),
     P('s24', 'uhoh', { zoom: [1.18, 1.22], x: [0, -20] }, { fade: .15, layers: [PAL_L('shock', { s: [1720, 660], w: 280, in: ['uhoh', 400, .4] })] }),
