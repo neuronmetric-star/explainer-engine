@@ -19,3 +19,8 @@
 - WhatsApp at purchase (Feb 19, 2014): 450M+ monthly users, ~55 employees, $19B cash + stock — https://fourweekmba.com/facebook-acquisitions/ ; https://business.linkedin.com/talent-solutions/blog/2014/02/how-acquisitions-drive-15-minutes-of-fame-on-linkedin-whatsapp-vs-instagram
 - 2008 Zuckerberg email "It is better to buy than compete", cited at the 2025 FTC trial — https://news.bloomberglaw.com/tech-and-telecom-law/meta-faces-potential-breakup-with-ftc-antitrust-trial-starting ; https://www.dawn.com/news/1904442
 - Instagram has more than 2 billion users — https://www.dawn.com/news/1904442
+- FaceMash (2003): Zuckerberg's Harvard site comparing students' photos; complaints over copyright/privacy, charges dropped — https://www.scribd.com/document/212000200/Facebook (TODO: confirm with The Harvard Crimson archive; he publicly apologized)
+- Winklevoss twins / ConnectU: hired him for HarvardConnection, sued claiming he stole the idea; settled Feb 2008 for $65M (cash + stock) —
+  https://www.lovemoney.com/gallerylist/86551/bitcoin-billionaires-winklevoss-twins-net-worth-facebook-battle ; https://techradar.com/news/internet/winklevoss-twins-finally-settle-with-facebook-for-48-million-969745
+- Peter Thiel: ~$500,000 angel investment, summer 2004 — https://wiki.oatmealdome.me/2003_2006_Thefacebook_Thiel_financial_investment_and_also_name_change (TODO: primary source)
+- IPO May 18, 2012: priced $38, ~$104B valuation, raised ~$16B — https://www.cnbc.com/id/47043815 ; https://www.mprnews.org/story/2012/05/18/facebook-ipo
