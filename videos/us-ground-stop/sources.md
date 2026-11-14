@@ -18,3 +18,13 @@ Note: fact pages were found via web search; direct fetches of faa.gov / cnn.com 
   FAA serves 45,000+ flights and 2.9 million airline passengers per day.
 - **Wikipedia — 2023 FAA system outage** — https://en.wikipedia.org/wiki/2023_FAA_system_outage
   Previous nationwide stop, January 2023, NOTAM system failure.
+
+## Added for script v2
+- **GeekWire — Officials blame aging FAA telecom gear as U.S. airspace reopens** — https://www.geekwire.com/2026/dhs-chief-sees-no-microsoft-link-to-faa-ground-stop-says-possible-ai-role-being-investigated/
+  Aging telecom gear blamed; no cyberattack evidence; no link to Microsoft outage.
+- **Fox Business — Sean Duffy demands $50B to rebuild aging air traffic control system** — https://www.foxbusiness.com/politics/duffy-sounds-alarm-over-aging-faa-system-after-nationwide-air-travel-shutdown
+  Duffy: overloaded switches/routers produced inconsistent information; FAA still relies on 1980s-era copper lines; $50B request.
+- **AVweb — FAA Lifts Nationwide Ground Stop After Communications Outage** — https://avweb.com/aviation-news/faa-nationwide-ground-stop-lifts/
+  Radar and communications instability from ~3:30 p.m. ET; 3,500+ planes airborne when stop issued; fixes deployed to reduce switch overloading.
+- **NPR — FAA lifts the nationwide ground stop for all U.S. airports** — https://www.npr.org/2026/11/13/nx-s1-6040403/faa-nationwide-groundstop-airports
+  Only the second nationwide ground stop since 9/11 (prior: 2023).

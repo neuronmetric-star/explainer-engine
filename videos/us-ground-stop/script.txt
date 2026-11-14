@@ -1,31 +1,23 @@
 # The Day America's Planes Stopped — Nov 13, 2026 nationwide ground stop
 # Markup: *gold  !red  {display|spoken}  [#cue]   (see engine/script.js)
 
-[#hook] Why the !fuck did *America ground !all flights?
-[#nothack] It wasn't weather. It wasn't a !hack.
-[#routers] It was *routers.
-[#how] Here's how it works.
+[#hook] Why the !fuck is the FAA still running American air traffic on {*1980s|nineteen-eighties} tech?
 
-[#maya] *Maya is at her gate in Chicago. [#time] Friday, {3:54 p.m.|three fifty-four p.m.}
+[#maya] Friday, {3:54 p.m.|three fifty-four p.m.} *Maya is boarding in Chicago.
+[#freeze] Then every departure in America !freezes.
+[#radar] Control centers were losing !radar and !radio.
+[#routers] Aging switches and routers got !overloaded, [#bad] and started sending !inconsistent data.
+[#air] Over {*3,500|thirty-five hundred} planes were already in the air. [#landed] They were cleared to *land.
+[#nohack] Officials say there's no sign of a !cyberattack. The investigation is still going.
+[#copper] And the Transportation Secretary says parts still run on {!1980s|nineteen-eighties} copper lines.
 
-[#centers] Big regional control centers talk to every plane cruising overhead.
-[#radio] Those radio calls travel through data *routers on the ground.
+[#question] Quick question. [#job] If your job is keeping thousands of planes moving, shouldn't you plan for equipment to !fail?
+[#right] Stopping flights was the *right call. Bad data is dangerous.
+[#bigger] The bigger question is why one overload could stop a whole country.
+[#math] {!6,600|Sixty-six hundred} flights !canceled. [#hours] Over {*4 hours|four hours} of nothing.
 
-[#jam] Those routers got !overloaded with data.
-[#silent] Several centers started losing their !connection.
+[#after] Fixing it after a breakdown isn't the same as getting ahead of one.
+[#america] This is *America. [#need] A system this important needs reliable gear, *backup lines, and a *tested plan.
 
-[#stop] So the FAA froze !every departure in the country.
-[#land] Planes already flying kept going and *landed safely.
-[#ground] Everyone else stayed on the ground.
-
-[#catch] There's just one catch.
-[#tangle] Lifting the stop doesn't fix the !mess. Planes and crews end up in the wrong cities.
-
-[#math] The FAA handles about {*45,000|forty-five thousand} flights a day.
-[#hours] Over {*4 hours|four hours} of no takeoffs.
-[#cancel] More than {!6,600|sixty-six hundred} flights !canceled.
-
-[#nurse] Picture a nurse in Denver who misses her shift Saturday, [#weekend] because her plane is stuck in Atlanta.
-
-[#punch] If our systems choke on this much data, [#ai] are we really ready for *AI?
-[#cta] Follow for more on how things really work.
+[#ask] So what do you think? [#unavoidable] An unavoidable emergency, [#warning] or a !warning the FAA needs to get ahead of its tech?
+[#cta] Tell me in the comments, and follow for more.
