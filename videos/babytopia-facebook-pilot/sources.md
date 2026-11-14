@@ -11,7 +11,7 @@
 - "Move fast and break things" — Facebook's early internal motto (widely reported; e.g. Business Insider).
 - CNBC, "Facebook bought Instagram because it was scared of Twitter and Google" (2019) — https://www.cnbc.com/2019/09/24/facebook-bought-instagram-because-it-was-scared-of-twitter-and-google.html
   Instagram: $1B (announced Apr 2012), 13 employees. Also https://fortune.com/2016/04/19/facebook-instagram-acquisitionheres-proof-that-instagram-was-one-of-the-smartest-acquisitions-ever/
-- WhatsApp acquisition $19B (Feb 2014) — https://fourweekmba.com/facebook-acquisitions/ (TODO: confirm with a primary source)
+- WhatsApp acquisition $19B (Feb 2014) — https://siliconangle.com/2014/02/19/breaking-news-facebook-buys-whatsapp-for-19-billion/ (quotes the Facebook press release: $4B cash + $12B stock + $3B RSUs, 450M+ monthly users) — VERIFIED
 - Cambridge Analytica: data of up to 87 million users without permission; FTC $5B penalty July 2019, largest privacy penalty ever —
   https://www.fox4news.com/news/feds-fining-facebook-5-billion-for-privacy-violations ; https://www.goodmorningamerica.com/news/story/us-regulators-fine-facebook-billion-settle-privacy-claims-64533218
 - Facebook FY2019 revenue $70,697M (10-K) → ~$5.9B per month, so $5B < one month — https://www.sec.gov/Archives/edgar/data/1326801/000132680120000013/fb-12312019x10k.htm
@@ -19,8 +19,8 @@
 - WhatsApp at purchase (Feb 19, 2014): 450M+ monthly users, ~55 employees, $19B cash + stock — https://fourweekmba.com/facebook-acquisitions/ ; https://business.linkedin.com/talent-solutions/blog/2014/02/how-acquisitions-drive-15-minutes-of-fame-on-linkedin-whatsapp-vs-instagram
 - 2008 Zuckerberg email "It is better to buy than compete", cited at the 2025 FTC trial — https://news.bloomberglaw.com/tech-and-telecom-law/meta-faces-potential-breakup-with-ftc-antitrust-trial-starting ; https://www.dawn.com/news/1904442
 - Instagram has more than 2 billion users — https://www.dawn.com/news/1904442
-- FaceMash (2003): Zuckerberg's Harvard site comparing students' photos; complaints over copyright/privacy, charges dropped — https://www.scribd.com/document/212000200/Facebook (TODO: confirm with The Harvard Crimson archive; he publicly apologized)
+- FaceMash (2003): Zuckerberg's Harvard site comparing students' photos; complaints over copyright/privacy, charges dropped — https://www.thecrimson.com/article/2003/11/4/hot-or-not-website-briefly-judges/ (Harvard Crimson, Nov 4 2003: outrage → he shut it down and sent apology emails) — VERIFIED
 - Winklevoss twins / ConnectU: hired him for HarvardConnection, sued claiming he stole the idea; settled Feb 2008 for $65M (cash + stock) —
   https://www.lovemoney.com/gallerylist/86551/bitcoin-billionaires-winklevoss-twins-net-worth-facebook-battle ; https://techradar.com/news/internet/winklevoss-twins-finally-settle-with-facebook-for-48-million-969745
-- Peter Thiel: ~$500,000 angel investment, summer 2004 — https://wiki.oatmealdome.me/2003_2006_Thefacebook_Thiel_financial_investment_and_also_name_change (TODO: primary source)
+- Peter Thiel: ~$500,000 angel investment, summer 2004 — https://en.wikipedia.org/wiki/Peter_Thiel ; https://www.wtvr.com/2012/08/21/facebooks-first-big-investor-peter-thiel-cashes-out ($500K for 10.2%, first outside investor; most sources say Aug 2004 — script says 'that summer', OK) — VERIFIED
 - IPO May 18, 2012: priced $38, ~$104B valuation, raised ~$16B — https://www.cnbc.com/id/47043815 ; https://www.mprnews.org/story/2012/05/18/facebook-ipo
