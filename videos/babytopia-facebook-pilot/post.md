@@ -6,13 +6,13 @@ How Facebook Makes $164 Billion For Free — Explained Like You're 5
 (alt: The Kid Who Said No to a Billion Dollars | Facebook Explained Like You're 5)
 
 ## Description
-A kid builds a website in his dorm room. Twenty years later, 3 billion people use what he built next, every month, for free. So how does a free website make $164 billion a year? Here's the whole story of Facebook, explained like you're 5.
+Mark Zuckerberg builds a website in his dorm room. Twenty years later, 3 billion people use what he built next — Facebook —, every month, for free. So how does a free website make $164 billion a year? Here's the whole story of Facebook, explained like you're 5.
 
 0:00 Intro
-0:26 Chapter 1: The Website Harvard Shut Down
-1:19 Chapter 2: The Billion-Dollar No
-1:49 Chapter 3: Free Toys
-2:47 Chapter 4: The Price of Free
+0:29 Chapter 1: The Website Harvard Shut Down
+1:23 Chapter 2: The Billion-Dollar No
+1:52 Chapter 3: Free Toys
+2:50 Chapter 4: The Price of Free
 
 Dialogue is dramatized and the story is simplified for education. Characters are cartoon caricatures. Pal and the Yahoo executive are fictional.
 
