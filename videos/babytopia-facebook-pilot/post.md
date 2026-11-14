@@ -6,7 +6,7 @@ How Facebook Makes $164 Billion For Free — Explained Like You're 5
 (alt: The Kid Who Said No to a Billion Dollars | Facebook Explained Like You're 5)
 
 ## Description
-Mark Zuckerberg builds a website in his dorm room. Twenty years later, 3 billion people use what he built next — Facebook —, every month, for free. So how does a free website make $164 billion a year? Here's the whole story of Facebook, explained like you're 5.
+Mark Zuckerberg builds a website in his dorm room. Twenty years later, 3 billion people use what he built next, Facebook, every month, for free. So how does a free website make $164 billion a year? Here's the whole story of Facebook, explained like you're 5.
 
 0:00 Intro
 0:29 Chapter 1: The Website Harvard Shut Down
