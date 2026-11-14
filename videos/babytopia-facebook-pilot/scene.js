@@ -68,7 +68,6 @@ window.SCENE = {
     { l: 'IN 24 HOURS', v: '1,200', cls: 'big', s: [1440, 200], t0: 'signups+1', t1: 'twins', count: [0, 1200, 'signups+1', 1], fmt: n => Math.round(n).toLocaleString('en-US') },
     { l: 'SETTLEMENT', v: '$65M', cls: 'red', s: [420, 200], t0: 'paid+0.8', t1: 'ch2' },
     { l: 'FIRST CHECK', v: '$500K', cls: 'green', s: [1440, 200], t0: 'thiel+1.4', t1: 'spread' },
-    { l: 'YAHOO OFFER', v: '$1B', cls: 'big', s: [960, 200], t0: 'offer', t1: 'faint' },
     { l: 'IPO VALUE', v: '$104B', cls: 'big', s: [960, 200], t0: 'ipo+1.5', t1: 'lunch' },
     { l: 'INSTAGRAM', v: '13 EMPLOYEES', s: [600, 200], t0: 'insta+1.6', t1: 'bought' },
     { l: 'USERS', v: '30M', s: [1320, 200], t0: 'insta+2.6', t1: 'bought' },
