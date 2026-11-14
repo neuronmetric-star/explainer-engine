@@ -8,16 +8,13 @@
 
 [#maya] *Maya is at her gate in Chicago. [#time] Friday, {3:54 p.m.|three fifty-four p.m.}
 
-[#step1] Step one: the *voice.
 [#centers] Big regional control centers talk to every plane cruising overhead.
 [#radio] Those radio calls travel through data *routers on the ground.
 
-[#step2] Step two: the !overload.
 [#jam] Those routers got !overloaded with data.
 [#silent] Several centers started losing their !connection.
 
-[#step3] Step three: the *stop.
-[#stop] The FAA froze !every departure in the country.
+[#stop] So the FAA froze !every departure in the country.
 [#land] Planes already flying kept going and *landed safely.
 [#ground] Everyone else stayed on the ground.
 
