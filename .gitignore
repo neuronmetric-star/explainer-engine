@@ -3,3 +3,4 @@ node_modules/
 videos/*/.preview/
 videos/*/.silent.mp4
 videos/*/.render.log
+videos/*/final.mp4
