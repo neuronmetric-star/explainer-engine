@@ -1,0 +1,3 @@
+[#ch1] [@N] February, {2004.|two thousand four.} He launches The Facebook.
+[#pitch] [@ZUCK] It's a yearbook. But it updates itself.
+[#pal] [@N] Within {24|twenty-four} hours, about {*1,200|twelve hundred} students sign up.

@@ -1,0 +1,24 @@
+/* PARCHMENT look — history. Same card / caption / step systems as gold-noir, warmer skin. */
+@font-face{font-family:CZ;font-weight:900;src:url('../../node_modules/@fontsource/cinzel/files/cinzel-latin-900-normal.woff2')}
+@font-face{font-family:CZ;font-weight:700;src:url('../../node_modules/@fontsource/cinzel/files/cinzel-latin-700-normal.woff2')}
+body.style-parchment #vig{background:radial-gradient(ellipse at 50% 42%,transparent 45%,rgba(20,10,2,.78) 100%)}
+/* paper grain over everything */
+body.style-parchment #ui:before{content:"";position:absolute;inset:0;opacity:.16;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .6 0 0 0 0 .45 0 0 0 0 .25 0 0 0 1.4 -.2'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>")}
+body.style-parchment .card{background:linear-gradient(180deg,rgba(52,34,16,.92),rgba(30,19,8,.92));border:3px solid #e0a83a;border-radius:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.55),inset 0 0 0 2px rgba(0,0,0,.35),inset 0 0 0 7px rgba(224,168,58,.18)}
+body.style-parchment .card .l{font-family:CZ;font-weight:700;letter-spacing:.24em;color:#e9cf98}
+body.style-parchment .card .v{font-family:CZ;font-weight:900;color:#f4c45a;text-shadow:0 2px 0 #3a2208,0 0 16px rgba(255,170,60,.45)}
+body.style-parchment .card.red{border-color:#d4553a} body.style-parchment .card.red .v{color:#ff6a4a;text-shadow:0 2px 0 #3a0e06,0 0 16px rgba(255,80,50,.5)}
+body.style-parchment .card.white{border-color:#efe0bf} body.style-parchment .card.white .v{color:#fbf1da;text-shadow:0 2px 0 #3a2208}
+body.style-parchment .card.tag{background:rgba(30,19,8,.88)} body.style-parchment .card.tag .v{font-family:CZ;color:#fbf1da}
+body.style-parchment #steps .t{font-family:CZ;color:#e9cf98}
+body.style-parchment .sc{background:#24170c;border-color:rgba(240,220,180,.55);font-family:CZ}
+body.style-parchment .sc.on{background:#e0a83a;border-color:#f4c45a;color:#24170c;box-shadow:0 0 22px rgba(240,170,60,.75)}
+body.style-parchment .sc.done{border-color:#e0a83a;color:#f4c45a} body.style-parchment .sl.done{background:#e0a83a}
+body.style-parchment #steps .labs span.on{color:#f4c45a}
+body.style-parchment #receipt{background:#f1e3c4;font-family:CZ;box-shadow:0 20px 60px rgba(0,0,0,.7),inset 0 0 60px rgba(120,80,30,.35)}
+body.style-parchment #receipt:after{background:linear-gradient(-45deg,transparent 16px,#f1e3c4 0),linear-gradient(45deg,transparent 16px,#f1e3c4 0);background-size:32px 32px;background-position:left bottom}
+body.style-parchment #receipt .r{font-family:IN} body.style-parchment #receipt h3{color:#5a3a14}
+body.style-parchment #follow{border-color:#e0a83a;color:#f4c45a;background:rgba(36,23,12,.85)} body.style-parchment #follow.on{background:#e0a83a;color:#24170c}
+body.style-parchment #ftitle{font-family:CZ;color:#e9cf98}

@@ -1,0 +1,2 @@
+# motion test for image panels
+[#hook] He bought about {*5,000,000|five million} lottery tickets... [#one] for one single drawing.

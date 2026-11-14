@@ -7,17 +7,19 @@
 //   {$100M|one hundred million dollars}  -> caption shows "$100M", voice says the words after |
 //   {*$100M|one hundred million dollars} -> same, in gold ({!...} for red)
 //   [#cue-name]             -> invisible marker; scenes use at('cue-name') to sync visuals
+//   [@NAME]                 -> who speaks from here on (N = narrator); not spoken. Tokens get .who
 //   # comment line          -> ignored
 (function (root) {
   function parse(text) {
     const tokens = [];
     const lines = text.split(/\r?\n/).filter(l => !l.trim().startsWith('#'));
     const src = lines.join(' ');
-    const re = /\[#[^\]]+\]|\{[^}]*\}\S*|\S+/g;
-    let m;
+    const re = /\[[#@][^\]]+\]|\{[^}]*\}\S*|\S+/g;
+    let m, who = 'N';
     while ((m = re.exec(src))) {
       let s = m[0];
       if (s.startsWith('[#')) { tokens.push({ cue: s.slice(2, -1).trim() }); continue; }
+      if (s.startsWith('[@')) { who = s.slice(2, -1).trim(); continue; }
       let trail = '';
       if (s[0] === '{') { const i = s.indexOf('}'); trail = s.slice(i + 1); s = s.slice(1, i); }
       let cls = '';
@@ -26,13 +28,21 @@
       if (spoken === undefined) spoken = disp;
       disp += trail; spoken += trail;
       const n = spoken.trim().split(/\s+/).filter(Boolean).length;
-      tokens.push({ disp, spoken, cls, n });
+      tokens.push({ disp, spoken, cls, n, who });
     }
     return tokens;
   }
   function spokenText(text) {
     return parse(text).filter(t => !t.cue).map(t => t.spoken).join(' ').replace(/\s+/g, ' ').trim();
   }
-  const api = { parse, spokenText };
+  // lines grouped by speaker, in order — for recording multi-voice scripts
+  function speakerLines(text) {
+    const out = [];
+    for (const t of parse(text)) { if (t.cue) continue;
+      if (!out.length || out[out.length - 1].who !== t.who) out.push({ who: t.who, text: '' });
+      out[out.length - 1].text = (out[out.length - 1].text + ' ' + t.spoken).trim(); }
+    return out;
+  }
+  const api = { parse, spokenText, speakerLines };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.ScriptParser = api;
 })(this);

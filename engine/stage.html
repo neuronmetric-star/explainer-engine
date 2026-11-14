@@ -45,6 +45,26 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
 #follow{position:absolute;left:50%;top:380px;transform:translateX(-50%);border:4px solid #ffd15a;border-radius:60px;padding:20px 54px;font-weight:900;font-size:52px;color:#ffd15a;background:rgba(0,0,0,.75);box-shadow:0 0 30px rgba(255,190,60,.7);white-space:nowrap}
 #follow.on{background:#ffc63d;color:#1a1000}
 #ftitle{position:absolute;left:0;right:0;top:290px;text-align:center;font-weight:800;font-size:26px;letter-spacing:.38em;color:rgba(255,226,160,.9)}
+/* brand: moving watermark + handle on the end card */
+#wm{position:absolute;font-weight:900;font-size:34px;letter-spacing:.04em;color:#ffd15a;opacity:0;text-shadow:0 0 12px rgba(255,190,60,.6),0 2px 6px #000;white-space:nowrap}
+#fhandle{position:absolute;left:0;right:0;top:540px;text-align:center;font-weight:900;font-size:64px;color:#ffd15a;text-shadow:0 0 22px rgba(255,190,60,.8),0 4px 14px #000;opacity:0}
+#panels{position:absolute;inset:0;overflow:hidden;background:#000;z-index:0}#panels:empty{display:none}
+.pt{position:absolute;left:0;top:0;width:46px;height:64px;background:linear-gradient(#e9506a 0 22%,#fff3e3 22%);border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+/* chapter title card */
+#chap{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.55),rgba(0,0,0,.25) 70%);z-index:5}
+#chap .n{font-weight:800;font-size:30px;letter-spacing:.5em;color:rgba(255,226,160,.95);text-shadow:0 2px 10px #000}
+#chap .t{margin-top:14px;font-weight:900;font-size:76px;color:#fff;text-align:center;max-width:85%;text-shadow:0 6px 24px rgba(0,0,0,.9)}
+/* WIDE 1920x1080 (YouTube long-form) */
+body.wide,html:has(body.wide){width:1920px;height:1080px}
+body.wide #c,body.wide .panel{width:1920px;height:1080px}
+body.wide #cap{top:auto;bottom:54px;left:200px;right:200px;font-size:44px;font-weight:800;line-height:1.25;color:#fff;text-shadow:0 3px 10px rgba(0,0,0,.95),0 0 3px #000;transform:none}
+body.wide #cap span{opacity:.92} body.wide #cap span.on{opacity:1;color:#ffe08a}
+body.wide #cap span.gold{color:#ffd15a} body.wide #cap span.red{color:#ff5a4d}
+body.wide #cap.dlg{font-style:italic;font-family:Georgia,serif;font-weight:700}
+body.wide #wm{font-size:28px}
+body.wide #ftitle{top:330px} body.wide #follow{top:390px} body.wide #fhandle{top:540px}
+.layer{position:absolute;left:0;top:0;opacity:0;transform-origin:50% 50%}
+.panel{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;opacity:0}
 #cursor{position:absolute;width:60px;height:60px}
 #flash{position:absolute;inset:0;background:#ff1e10;opacity:0}
 </style></head>
@@ -56,6 +76,8 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
 <script src="../node_modules/three/examples/js/lines/LineSegmentsGeometry.js"></script>
 <script src="../node_modules/three/examples/js/lines/LineMaterial.js"></script>
 <script src="../node_modules/three/examples/js/lines/LineSegments2.js"></script>
+<script src="../node_modules/three/examples/js/lines/LineGeometry.js"></script>
+<script src="../node_modules/three/examples/js/lines/Line2.js"></script>
 <script src="../node_modules/three/examples/js/shaders/CopyShader.js"></script>
 <script src="../node_modules/three/examples/js/shaders/LuminosityHighPassShader.js"></script>
 <script src="../node_modules/three/examples/js/postprocessing/EffectComposer.js"></script>
@@ -68,7 +90,13 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
   const v=new URLSearchParams(location.search).get('v');
   if(!v){ document.body.innerHTML='<h1 style="color:#fff">add ?v=video-slug</h1>'; return; }
   const load=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error('missing '+src));document.body.appendChild(s);});
-  load('../videos/'+v+'/data.js').then(()=>load('kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>KIT.start())
+  // scene.js only defines window.SCENE (no KIT use at load time), so it loads before kit.js;
+  // that lets the kit read SCENE.style and load engine/styles/<style>.js + .css first.
+  const css=href=>new Promise(res=>{const l=document.createElement('link');l.rel='stylesheet';l.href=href;l.onload=res;l.onerror=res;document.head.appendChild(l);});
+  load('../videos/'+v+'/data.js').then(()=>load('../videos/'+v+'/scene.js')).then(()=>{
+      const st=(window.SCENE&&window.SCENE.style)||'gold-noir'; document.body.classList.add('style-'+st);
+      return st==='gold-noir'?0:Promise.all([load('styles/'+st+'.js'),css('styles/'+st+'.css')]);
+    }).then(()=>load('kit.js')).then(()=>KIT.start())
     .catch(e=>{ window.loadError=String(e); console.error(e); });
 })();
 </script>

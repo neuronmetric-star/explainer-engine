@@ -1,0 +1,29 @@
+# Why the fuck do we have fingerprints?
+# Markup: *gold  !red  {shown|spoken}  [#cue]
+
+[#hook] Why the *fuck do we have fingerprints?
+[#reframe] It's not for grip. Scientists think it's for *feeling. [#how] Here's how it works.
+
+[#setup] *Maya slides her finger across a table.
+[#ridges] Her fingertip is all *ridges.
+
+[#step1] Step one: the grip test.
+[#manchester] Manchester researchers measured it. [#third] Ridges cut skin contact by about a !third. [#weaker] Less friction. A !weaker grip.
+
+[#step2] Step two: the robot finger.
+[#paris] In Paris, scientists built a fake fingertip with ridges.
+[#buzz] The ridges made it *buzz, [#sensor] right at the frequency our deep touch sensors feel best.
+
+[#step3] Step three: the amplifier.
+[#record] Like a needle on a record, ridges turn tiny textures into vibrations *Maya's brain can read.
+
+[#catch] There's just !one !mystery: [#unique] why every pattern is *unique.
+[#womb] Ridges form in the womb around weeks {13 to 19.|thirteen to nineteen.}
+[#twins] Cord length and position shift them, so even identical *twins get different prints.
+
+[#math] Same DNA. [#diff] Different fingerprints.
+
+[#contrast] A cop sees an ID you can't leave at home. [#brain] Your brain sees a texture scanner.
+
+[#punch] Your fingerprints aren't for the police. [#punch2] They're for feeling the *world.
+[#cta] Follow for more *why *the *fuck science.

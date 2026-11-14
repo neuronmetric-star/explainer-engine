@@ -1,0 +1,47 @@
+# Facebook explained like you're 5 — BABYTOPIA (~4:00, 16:9). Crayon-Capital structure: 25 s cold open → 4 stakes chapters.
+# ONE narrator voices everything; [@NAME] marks whose mouth moves (N = narrator, no mouth).
+# Characters: ZUCK (baby Mark) · PAL (dorm friend, fictional) · TWINS (the Winklevoss twins) · YAHOO (exec, fictional)
+
+# ---- COLD OPEN ----
+[#hook] [@N] This kid built a website in his dorm room to rate his classmates' faces. [#name] His name? *Mark *Zuckerberg. [#later] Twenty years later, about {*3 billion|three billion} people use the thing he built next: [#fb] *Facebook. Every month. For free.
+[#tease] He turned down {*a billion dollars|a billion dollars} at {22,|twenty-two,} [#sued] got sued by the twins who said he stole it, [#tease2] and paid the biggest privacy fine in history. [#question] So how does a free website like Facebook make {*$160 billion|a hundred and sixty billion dollars} a year?
+
+# ---- CHAPTER 1: The Website Harvard Shut Down ----
+[#ch1] [#facemash] {2003.|Two thousand three.} Harvard. A sophomore named Mark Zuckerberg builds FaceMash: two student photos, pick the better-looking one. [#viral] It spreads across campus in hours. [#shutdown] Harvard shuts it down, and he has to apologize.
+[#pal1] [@PAL] So... you're done with websites now?
+[#zuck1] [@ZUCK] I'm just getting started.
+[#launch] [@N] February, {2004.|two thousand four.} He launches The Facebook.
+[#pitch] [@ZUCK] It's a yearbook. But it updates itself.
+[#pal2] [@PAL] So people just put their whole lives on it? For free?
+[#yep] [@ZUCK] Yep.
+[#signups] [@N] Within {24|twenty-four} hours, about {*1,200|twelve hundred} students sign up.
+[#twins] But two twins on the rowing team had hired Mark to build a site for them. [#twinsclaim] They said he took their idea and ran.
+[#twinsline] [@TWINS] That was our idea.
+[#zuck2] [@ZUCK] You had an idea. I built a website.
+[#settle] [@N] The fight lasted four years. [#paid] In {2008,|two thousand eight,} they settled for {!$65 million.|sixty-five million dollars.}
+
+# ---- CHAPTER 2: The Billion-Dollar No ----
+[#ch2] [#cali] That summer, Mark moves to California. [#thiel] An investor named Peter Thiel writes him a check for about {*$500,000.|five hundred thousand dollars.} [#spread] The Facebook spreads from Harvard, to colleges across the country, then to high schools.
+[#yahoo] In {2006,|two thousand six,} Yahoo makes an offer.
+[#offer] [@YAHOO] One. Billion. Dollars.
+[#no] [@ZUCK] No thanks.
+[#faint] [@PAL] You said no to a !billion dollars?
+[#more] [@ZUCK] I think it's worth more.
+[#crazy] [@N] He was {22.|twenty-two.} Most people his age were trying to afford a couch.
+
+# ---- CHAPTER 3: Free Toys ----
+[#ch3] [#trick] So how do you make money from something free? [#toy] Imagine a toy store that gives away every toy for free. [#watch] But it watches what you play with. [#sells] Then it charges other companies to put the exact toy you want right in front of you. That's an ad.
+[#product] You're not the customer. You're the !product.
+[#ipo] In {2012,|twenty twelve,} Facebook goes public, valued at about {*$104 billion.|a hundred and four billion dollars.}
+[#lunch] And when a new kid got popular at the lunch table? [#insta] In this case, Instagram. A photo app with {13|thirteen} employees, and about {30 million|thirty million} users.
+[#bought] Facebook paid {*$1 billion|a billion dollars} to acquire it, in {2012.|twenty twelve.} [#email] Years earlier, Zuckerberg had written in an email: "It is better to buy than compete."
+[#whatsapp] Two years later: WhatsApp. {*450 million|Four hundred fifty million} users, about {55|fifty-five} employees. [#price] Price? {*$19 billion.|Nineteen billion dollars.}
+[#today] Today, Instagram alone has over {*2 billion|two billion} users.
+
+# ---- CHAPTER 4: The Price of Free ----
+[#ch4] [#scandal] Then, {2018.|twenty eighteen.} A company called Cambridge Analytica ended up with data from up to {!87 million|eighty-seven million} users, without their permission.
+[#uhoh] [@PAL] Uh... Mark?
+[#fine] [@N] The government fined Facebook {!$5 billion,|five billion dollars,} a record for privacy. [#month] That was less than one month of what Facebook made back then.
+[#answer] And by {2024,|twenty twenty-four,} Meta made {*$164 billion.|a hundred and sixty-four billion dollars.} [#ads] Nearly {*98%|ninety-eight percent} of it from ads.
+[#callback] So how does a free website make billions? [#sellsyou] It doesn't sell you the toys. It sells !you.
+[#motto] His motto back then? [#break] Move fast, and break things.

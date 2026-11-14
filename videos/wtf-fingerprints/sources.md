@@ -1,0 +1,6 @@
+# Sources — Why the fuck do we have fingerprints?
+- **Why Do We Have Fingerprints?** — Live Science — https://livescience.com/why-do-humans-have-fingerprints.html — Grip hypothesis vs touch hypothesis; purpose still debated.
+- **Fingerprints may help us feel texture** — Phys.org (2009, ENS Paris, Science) — https://phys.org/news/2009-04-fingerprints.html — Biomimetic ridged sensor slid over surfaces produced vibrations in the optimal range of Pacinian corpuscles.
+- **Why do we have fingerprints?** — Mental Floss — https://www.mentalfloss.com/science/body/why-do-we-have-fingerprints — Ennos & Warman (Univ. of Manchester, 2009): ridges cut contact area by ~1/3, reducing friction/grip.
+- **Do identical twins have identical fingerprints?** — Live Science — https://www.livescience.com/32247-do-identical-twins-have-identical-fingerprints.html — Ridges form ~weeks 13–19; womb factors (cord length, position) make twins' prints differ.
+- **Why Even Identical Twins Have Different Fingerprints** — HowStuffWorks — https://science.howstuffworks.com/life/cellular-microscopic/why-even-identical-twins-have-different-fingerprints.htm — Same DNA, different prints; uniqueness from developmental environment.
