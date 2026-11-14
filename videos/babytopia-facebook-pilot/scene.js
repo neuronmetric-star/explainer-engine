@@ -3,7 +3,7 @@
 const ZUCK_L = (pose, extra) => Object.assign({ img: `img/zuck-${pose}.png`, talk: `img/zuck-${pose}-open.png`, who: 'ZUCK', s: [560, 600], w: pose === 'calm' ? 250 : 340, depth: 1.3, bob: 4 }, extra || {});
 const PAL_L = (pose, extra) => Object.assign({ img: `img/pal-${pose}.png`, talk: `img/pal-${pose}-open.png`, who: 'PAL', s: [1380, 600], w: 290, depth: 1.4, bob: 4 }, extra || {});
 const TWINS_L = { img: 'img/twins-angry.png', talk: 'img/twins-angry-open.png', who: 'TWINS', s: [1360, 600], w: 570, depth: 1.4, bob: 3 };
-const YAHOO_L = { img: 'img/yahoo-offer.png', talk: 'img/yahoo-offer-open.png', who: 'YAHOO', s: [1400, 640], w: 560, depth: 1.4, bob: 3 };
+const YAHOO_L = { img: 'img/yahoo-offer.png', talk: 'img/yahoo-offer-open.png', who: 'YAHOO', s: [600, 620], w: 760, depth: 1.4, bob: 3 };
 const P = (img, at, move, extra) => Object.assign({ img: `img/${img}.webp`, at, origin: [50, 45], move }, extra || {});
 const IN = { zoom: [1.04, 1.16] }, OUT = { zoom: [1.18, 1.05] }, PANR = { zoom: [1.12, 1.14], x: [40, -40] }, PANL = { zoom: [1.12, 1.14], x: [-40, 40] };
 
@@ -29,8 +29,7 @@ window.SCENE = {
     P('s06', 'viral', PANR),
     P('s07', 'shutdown', OUT, { fx: 'dark' }),
     P('set-dorm', 'pal1', PANL, { layers: [ZUCK_L('laptop'), PAL_L('curious')] }),
-    P('s08b', 'launch', { zoom: [1.05, 1.12], x: [20, -10] }),
-    P('s08', 'launch+1.4', IN, { fx: 'pulse' }),
+    P('s08', 'launch', IN, { fx: 'pulse' }),
     P('set-dorm', 'pitch', { zoom: [1.08, 1.18], x: [-30, 20] }, { layers: [ZUCK_L('laptop'), PAL_L('curious')] }),
     P('s09', 'signups', IN, { parts: { n: 20, speed: .7, size: .7 } }),
     P('s10', 'twins', PANR),
@@ -41,8 +40,8 @@ window.SCENE = {
     P('s12', 'ch2', { zoom: [1.18, 1.04], x: [-40, 20] }),
     P('s13', 'thiel', IN),
     P('s14', 'spread', PANR),
-    P('set-boardroom', 'yahoo', { zoom: [1.06, 1.14] }, { layers: [YAHOO_L] }),
-    P('set-boardroom', 'no', { zoom: [1.12, 1.2], x: [-20, 20] }, { layers: [ZUCK_L('calm'), YAHOO_L] }),
+    P('set-boardroom', 'yahoo', { zoom: [1.06, 1.14] }, { layers: [{ ...YAHOO_L }] }),
+    P('set-boardroom', 'no', { zoom: [1.12, 1.2], x: [-20, 20] }, { layers: [ZUCK_L('calm', { s: [1460, 600], flip: true }), { ...YAHOO_L }] }),
     P('set-boardroom', 'faint', { zoom: [1.14, 1.08] }, { layers: [ZUCK_L('calm'), PAL_L('shock')] }),
     P('s15', 'crazy', OUT),
     // ---- chapter 3 ----
