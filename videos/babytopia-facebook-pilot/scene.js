@@ -19,7 +19,7 @@ window.SCENE = {
   panels: [
     // ---- cold open: already moving at frame 1, fast teaser cuts ----
     P('s01', 0, { zoom: [1.14, 1.04], x: [0, -30] }, { fade: 0 }),
-    P('s02', 'later', OUT, { parts: { n: 18, speed: .6, size: .7 }, layers: [FB('later+0.3', [960, 440], 230)] }),
+    P('s02', 'later', OUT, { parts: { n: 18, speed: .6, size: .7 }, layers: [FB('fb', [960, 440], 230)] }),
     P('s21', 'tease', { zoom: [1.06, 1.2] }, { fade: .12 }),
     P('s10', 'sued', { zoom: [1.2, 1.08] }, { fade: .12 }),
     P('s25', 'tease2', { zoom: [1.06, 1.22] }, { fade: .12 }),
@@ -64,8 +64,8 @@ window.SCENE = {
     P('s28', 'motto', { zoom: [1.2, 1.04] }, { fx: 'flicker' }),
   ],
   cards: [
-    { l: 'THIS KID', v: 'MARK ZUCKERBERG', s: [1330, 190], t0: 'hook+0.6', t1: 'later' },
-    { l: 'FACEBOOK USERS EVERY MONTH', v: '3 BILLION', cls: 'big', s: [960, 200], t0: 'later+1.2', t1: 'tease' },
+    { l: 'THIS KID', v: 'MARK ZUCKERBERG', s: [1330, 190], t0: 'name+0.5', t1: 'later' },
+    { l: 'FACEBOOK USERS EVERY MONTH', v: '3 BILLION', cls: 'big', s: [960, 200], t0: 'later+1.6', t1: 'tease' },
     { l: 'A YEAR', v: '$160B', cls: 'big', s: [960, 200], t0: 'question+1.6', t1: 'ch1' },
     { l: 'IN 24 HOURS', v: '1,200', cls: 'big', s: [1440, 200], t0: 'signups+1', t1: 'twins', count: [0, 1200, 'signups+1', 1], fmt: n => Math.round(n).toLocaleString('en-US') },
     { l: 'SETTLEMENT', v: '$65M', cls: 'red', s: [420, 200], t0: 'paid+0.8', t1: 'ch2' },
@@ -82,8 +82,8 @@ window.SCENE = {
     { l: 'FROM ADS', v: '98%', cls: 'big', s: [1260, 200], t0: 'ads+0.6', t1: 'callback' },
   ],
   sfx: [
-    ['hook+0.1', 'hit', .6], ['hook+0.6', 'pop', .5], ['later+0.3', 'pop', .7], ['question+0.6', 'pop', .5], ['launch+0.9', 'pop', .6],
-    ['later+1.2', 'pop', .6], ['question+1.6', 'cash', .8],
+    ['hook+0.1', 'hit', .6], ['name+0.5', 'pop', .5], ['fb', 'pop', .7], ['question+0.6', 'pop', .5], ['launch+0.9', 'pop', .6],
+    ['later+1.6', 'pop', .6], ['question+1.6', 'cash', .8],
     ['ch1-0.9', 'riser', .6], ['ch2-0.9', 'riser', .6], ['ch3-0.9', 'riser', .6], ['ch4-0.9', 'riser', .6],
     ['facemash+2.5', 'shutter', .8], ['shutdown+0.3', 'slam', .6],
     ['signups+1', 'tick', .6], ['paid+0.8', 'cash', .8], ['thiel+1.4', 'cash', .8],

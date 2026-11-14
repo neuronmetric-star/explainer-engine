@@ -3,8 +3,8 @@
 # Characters: ZUCK (baby Mark) · PAL (dorm friend, fictional) · TWINS (the Winklevoss twins) · YAHOO (exec, fictional)
 
 # ---- COLD OPEN ----
-[#hook] [@N] This kid built a website in his dorm room to rate his classmates' faces. [#later] Twenty years later, about {*3 billion|three billion} people use the thing he built next. Every month. For free.
-[#tease] He turned down {*a billion dollars|a billion dollars} at {22,|twenty-two,} [#sued] got sued by the twins who said he stole it, [#tease2] and paid the biggest privacy fine in history. [#question] So how does a free website make {*$160 billion|a hundred and sixty billion dollars} a year?
+[#hook] [@N] This kid built a website in his dorm room to rate his classmates' faces. [#name] His name? *Mark *Zuckerberg. [#later] Twenty years later, about {*3 billion|three billion} people use the thing he built next: [#fb] *Facebook. Every month. For free.
+[#tease] He turned down {*a billion dollars|a billion dollars} at {22,|twenty-two,} [#sued] got sued by the twins who said he stole it, [#tease2] and paid the biggest privacy fine in history. [#question] So how does a free website like Facebook make {*$160 billion|a hundred and sixty billion dollars} a year?
 
 # ---- CHAPTER 1: The Website Harvard Shut Down ----
 [#ch1] [#facemash] {2003.|Two thousand three.} Harvard. A sophomore named Mark Zuckerberg builds FaceMash: two student photos, pick the better-looking one. [#viral] It spreads across campus in hours. [#shutdown] Harvard shuts it down, and he has to apologize.
