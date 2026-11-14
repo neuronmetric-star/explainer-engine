@@ -1,7 +1,7 @@
 // Babytopia — Facebook explained like you're 5 (16:9 long-form). Built on draft timing; re-check after voice alignment.
 // Layout (1920x1080): Mark stands left facing right, Pal/Twins/Yahoo stand right facing left. Subtitles live below y≈930.
 const ZUCK_L = (pose, extra) => Object.assign({ img: `img/zuck-${pose}.png`, talk: `img/zuck-${pose}-open.png`, who: 'ZUCK', s: [560, 600], w: pose === 'calm' ? 250 : 340, depth: 1.3, bob: 4 }, extra || {});
-const PAL_L = (pose, extra) => Object.assign({ img: `img/pal-${pose}.png`, talk: `img/pal-${pose}-open.png`, who: 'PAL', s: [1380, 600], w: 290, depth: 1.4, bob: 4 }, extra || {});
+const PAL_L = (pose, extra) => Object.assign({ img: `img/pal-${pose}.png`, talk: `img/pal-${pose}-open.png`, who: 'PAL', s: [1380, 600], w: pose === 'curious' ? 455 : 290, depth: 1.4, bob: 4 }, extra || {});
 const TWINS_L = { img: 'img/twins-angry.png', talk: 'img/twins-angry-open.png', who: 'TWINS', s: [1360, 600], w: 570, depth: 1.4, bob: 3 };
 const YAHOO_L = { img: 'img/yahoo-offer.png', talk: 'img/yahoo-offer-open.png', who: 'YAHOO', s: [600, 620], w: 760, depth: 1.4, bob: 3 };
 const P = (img, at, move, extra) => Object.assign({ img: `img/${img}.webp`, at, origin: [50, 45], move }, extra || {});
