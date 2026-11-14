@@ -1,0 +1,34 @@
+# The Day America's Planes Stopped — Nov 13, 2026 nationwide ground stop
+# Markup: *gold  !red  {display|spoken}  [#cue]   (see engine/script.js)
+
+[#hook] How does *every plane in America stop taking off at once?
+[#nothack] It wasn't weather. It wasn't a !hack.
+[#routers] It was *routers.
+[#how] Here's how it works.
+
+[#maya] *Maya is at her gate in Chicago. [#time] Friday, {3:54 p.m.|three fifty-four p.m.}
+
+[#step1] Step one: the *voice.
+[#centers] Big regional control centers talk to every plane cruising overhead.
+[#radio] Those radio calls travel through data *routers on the ground.
+
+[#step2] Step two: the !overload.
+[#jam] Those routers got !overloaded with data.
+[#silent] Several centers started losing their !connection.
+
+[#step3] Step three: the *stop.
+[#stop] The FAA froze !every departure in the country.
+[#land] Planes already flying kept going and *landed safely.
+[#ground] Everyone else stayed on the ground.
+
+[#catch] There's just one catch.
+[#tangle] Lifting the stop doesn't fix the !mess. Planes and crews end up in the wrong cities.
+
+[#math] The FAA handles about {*45,000|forty-five thousand} flights a day.
+[#hours] Over {*4 hours|four hours} of no takeoffs.
+[#cancel] More than {!6,600|sixty-six hundred} flights !canceled.
+
+[#nurse] Picture a nurse in Denver who misses her shift Saturday, [#weekend] because her plane is stuck in Atlanta.
+
+[#punch] The sky never closed. [#phone] The !phone !line did.
+[#cta] Follow for more on how things really work.
