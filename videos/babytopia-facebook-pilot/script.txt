@@ -1,0 +1,17 @@
+# Facebook explained like you're 5 — BABYTOPIA PILOT (~60 s, 16:9, Crayon-Capital style: narrator + dialogue + jokes)
+# Speakers: N = narrator (voice only) · ZUCK = baby Mark Zuckerberg · PAL = his dorm friend (fictional) · YAHOO = Yahoo exec baby (fictional)
+[#hook] [@N] This kid built a website in his dorm room. [#users] Today, about {*3 billion|three billion} people use it every month. [#free] And it's free. [#how] So how does it make {*$160 billion|a hundred and sixty billion dollars} a year?
+[#harvard] [@N] February, {2004.|two thousand four.} Harvard. Mark Zuckerberg launches The Facebook.
+[#pitch] [@ZUCK] It's a yearbook. But it updates itself.
+[#pal] [@PAL] So people just put their whole lives on it? For free?
+[#yep] [@ZUCK] Yep.
+[#signups] [@N] Within {24|twenty-four} hours, about {*1,200|twelve hundred} students signed up.
+[#yahoo] [@N] Two years later, Yahoo offered {*$1 billion|one billion dollars} to buy it. He was {22.|twenty-two.}
+[#offer] [@YAHOO] One. Billion. Dollars.
+[#no] [@ZUCK] No thanks.
+[#faint] [@PAL] You said no to a !billion dollars?
+[#more] [@ZUCK] I think it's worth more.
+[#toy] [@N] Here's the trick. Imagine a toy store that gives away every toy for free. [#sells] It makes money by selling your attention to anyone who wants to show you an ad.
+[#product] [@N] You're not the customer. You're the !product.
+[#money] [@N] In {2024,|twenty twenty-four,} Meta made {*$164 billion.|a hundred and sixty-four billion dollars.} [#ads] Nearly {*98%|ninety-eight percent} from ads.
+[#motto] [@N] His motto back then? [#break] Move fast, and break things.
