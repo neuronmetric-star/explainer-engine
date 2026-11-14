@@ -27,5 +27,5 @@
 
 [#nurse] Picture a nurse in Denver who misses her shift Saturday, [#weekend] because her plane is stuck in Atlanta.
 
-[#punch] The sky never closed. [#phone] The !phone !line did.
+[#punch] If our systems choke on this much data, [#ai] are we really ready for *AI?
 [#cta] Follow for more on how things really work.
