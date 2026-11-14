@@ -4,7 +4,7 @@ const ZUCK_L = (pose, extra) => Object.assign({ img: `img/zuck-${pose}.png`, tal
 const PAL_L = (pose, extra) => Object.assign({ img: `img/pal-${pose}.png`, talk: `img/pal-${pose}-open.png`, who: 'PAL', s: [1380, 650], w: 480, depth: 1.4, bob: 4 }, extra || {});
 const TWINS_L = { img: 'img/twins-angry.png', talk: 'img/twins-angry-open.png', who: 'TWINS', s: [1360, 620], w: 720, depth: 1.4, bob: 3 };
 const YAHOO_L = { img: 'img/yahoo-offer.png', talk: 'img/yahoo-offer-open.png', who: 'YAHOO', s: [1400, 620], w: 560, depth: 1.4, bob: 3 };
-const P = (img, at, move, extra) => Object.assign({ img: `img/${img}.png`, at, origin: [50, 45], move }, extra || {});
+const P = (img, at, move, extra) => Object.assign({ img: `img/${img}.webp`, at, origin: [50, 45], move }, extra || {});
 const IN = { zoom: [1.04, 1.16] }, OUT = { zoom: [1.18, 1.05] }, PANR = { zoom: [1.12, 1.14], x: [40, -40] }, PANL = { zoom: [1.12, 1.14], x: [-40, 40] };
 
 window.SCENE = {
@@ -34,7 +34,8 @@ window.SCENE = {
     P('s09', 'signups', IN, { parts: { n: 20, speed: .7, size: .7 } }),
     P('s10', 'twins', PANR),
     P('set-courtyard', 'twinsline', PANL, { layers: [ZUCK_L('calm'), TWINS_L] }),
-    P('s11', 'settle', { zoom: [1.06, 1.18], x: [30, -20] }),
+    P('s11b', 'settle', { zoom: [1.05, 1.14], x: [20, -20] }),
+    P('s11', 'paid', { zoom: [1.08, 1.2] }),
     // ---- chapter 2 ----
     P('s12', 'ch2', { zoom: [1.18, 1.04], x: [-40, 20] }),
     P('s13', 'thiel', IN),
