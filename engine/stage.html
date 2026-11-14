@@ -50,6 +50,19 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
 #fhandle{position:absolute;left:0;right:0;top:540px;text-align:center;font-weight:900;font-size:64px;color:#ffd15a;text-shadow:0 0 22px rgba(255,190,60,.8),0 4px 14px #000;opacity:0}
 #panels{position:absolute;inset:0;overflow:hidden;background:#000;z-index:0}#panels:empty{display:none}
 .pt{position:absolute;left:0;top:0;width:46px;height:64px;background:linear-gradient(#e9506a 0 22%,#fff3e3 22%);border-radius:3px;box-shadow:0 2px 6px rgba(0,0,0,.35)}
+/* chapter title card */
+#chap{position:absolute;left:0;right:0;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,rgba(0,0,0,.55),rgba(0,0,0,.25) 70%);z-index:5}
+#chap .n{font-weight:800;font-size:30px;letter-spacing:.5em;color:rgba(255,226,160,.95);text-shadow:0 2px 10px #000}
+#chap .t{margin-top:14px;font-weight:900;font-size:76px;color:#fff;text-align:center;max-width:85%;text-shadow:0 6px 24px rgba(0,0,0,.9)}
+/* WIDE 1920x1080 (YouTube long-form) */
+body.wide,html:has(body.wide){width:1920px;height:1080px}
+body.wide #c,body.wide .panel{width:1920px;height:1080px}
+body.wide #cap{top:auto;bottom:54px;left:200px;right:200px;font-size:44px;font-weight:800;line-height:1.25;color:#fff;text-shadow:0 3px 10px rgba(0,0,0,.95),0 0 3px #000;transform:none}
+body.wide #cap span{opacity:.92} body.wide #cap span.on{opacity:1;color:#ffe08a}
+body.wide #cap span.gold{color:#ffd15a} body.wide #cap span.red{color:#ff5a4d}
+body.wide #cap.dlg{font-style:italic;font-family:Georgia,serif;font-weight:700}
+body.wide #wm{font-size:28px}
+body.wide #ftitle{top:330px} body.wide #follow{top:390px} body.wide #fhandle{top:540px}
 .layer{position:absolute;left:0;top:0;opacity:0;transform-origin:50% 50%}
 .panel{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;opacity:0}
 #cursor{position:absolute;width:60px;height:60px}

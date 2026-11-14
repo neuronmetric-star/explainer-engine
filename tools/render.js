@@ -24,7 +24,9 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   else if (sysChrome) launch.executablePath = sysChrome;   // use installed Chrome if there is one
   const browser = await chromium.launch(launch);
-  const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
+  const WIDE = /format\s*:\s*['"]wide['"]/.test(fs.readFileSync(path.join(dir, 'scene.js'), 'utf8'));
+  const VW = WIDE ? 1920 : 1080, VH = WIDE ? 1080 : 1920;
+  const page = await browser.newPage({ viewport: { width: VW, height: VH }, deviceScaleFactor: 1 });
   const errors = []; page.on('pageerror', e => errors.push(String(e))); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
   await page.goto('file://' + path.join(ROOT, 'engine', 'stage.html') + '?v=' + encodeURIComponent(slug));
   await page.waitForFunction('window.ready===true || window.loadError', null, { timeout: 60000 });
@@ -42,7 +44,7 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
       await page.screenshot({ path: path.join(tmp, `p${String(i).padStart(2, '0')}.jpg`), type: 'jpeg', quality: 75, timeout: 180000 });
     }
     const cols = Math.min(6, times.length), rows = Math.ceil(times.length / cols);
-    spawnSync(ff, ['-y', '-loglevel', 'error', '-i', path.join(tmp, 'p%02d.jpg'), '-vf', `scale=270:480,tile=${cols}x${rows}`, '-frames:v', '1', path.join(dir, 'preview.jpg')]);
+    spawnSync(ff, ['-y', '-loglevel', 'error', '-i', path.join(tmp, 'p%02d.jpg'), '-vf', `scale=${WIDE ? '480:270' : '270:480'},tile=${cols}x${rows}`, '-frames:v', '1', path.join(dir, 'preview.jpg')]);
     console.log('preview at', times.join(', '), 's ->', path.relative(ROOT, path.join(dir, 'preview.jpg')));
   } else {
     const n = Math.round(L * FPS), silent = path.join(dir, '.silent.mp4');

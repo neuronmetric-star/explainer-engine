@@ -22,7 +22,10 @@
   ST.palette = Object.assign({}, GOLD_NOIR.palette, ST.palette); K.styleName = STYLE_NAME;
   // col(hex): colour for LIT materials. Looks with linear:true author colours in sRGB (what you see in a colour picker)
   K.col = c => ST.linear ? new THREE.Color(c).convertSRGBToLinear() : new THREE.Color(c);
-  const W = 1080, H = 1920; K.W = W; K.H = H;
+  // format: 'wide' = 1920x1080 YouTube long-form (scene.js: format:'wide'); default = 1080x1920 vertical Shorts
+  const WIDE = !!(window.SCENE && window.SCENE.format === 'wide');
+  const W = WIDE ? 1920 : 1080, H = WIDE ? 1080 : 1920; K.W = W; K.H = H; K.WIDE = WIDE;
+  if (WIDE) document.body.classList.add('wide');
   const DATA = window.VIDEO_DATA;   // from videos/<slug>/data.js (made by tools/tts.js or tools/align.js)
   if (!DATA) throw new Error('VIDEO_DATA missing: run tools/tts.js or tools/align.js first');
 
@@ -37,12 +40,17 @@
       if (tk.cue) { pending.push(tk.cue); continue; }
       const w0 = WORDS[Math.min(wi, WORDS.length - 1)], w1 = WORDS[Math.min(wi + tk.n - 1, WORDS.length - 1)];
       pending.forEach(c => CUES[c] = w0.start); pending.length = 0;
-      CAPS.push({ t: w0.start, end: w1.end, txt: tk.disp, cls: tk.cls });
+      CAPS.push({ t: w0.start, end: w1.end, txt: tk.disp, cls: tk.cls, who: tk.who || 'N' });
       wi += tk.n;
     }
     pending.forEach(c => CUES[c] = DATA.audioLength);
     if (wi !== WORDS.length) console.warn('word count mismatch: script', wi, 'audio', WORDS.length);
   })();
+  // subtitle chunks for wide mode: break at sentence ends, speaker changes, or 8 words
+  const CHUNKS = []; { let cur = null;
+    for (const c of CAPS) { if (!cur || cur.who !== c.who || cur.items.length >= 8) { cur = { t: c.t, end: c.end, who: c.who, items: [] }; CHUNKS.push(cur); }
+      cur.items.push(c); cur.end = c.end; if (/[.?!]$/.test(c.txt)) cur = null; } }
+  K.speaking = (who, t) => CAPS.some(c => c.who === who && t >= c.t - .02 && t <= c.end + .02);
   K.cues = CUES;
   K.at = function (cue) { if (!(cue in CUES)) throw new Error('Unknown cue [#' + cue + '] — add it to script.txt'); return CUES[cue]; };
   // T('cue'), T('cue+0.4'), T('cue-0.2'), T(12.5)
@@ -175,7 +183,7 @@
     <div id="receipt" style="opacity:0"></div>
     <div id="ftitle" style="opacity:0"></div><div id="follow" style="opacity:0">+ FOLLOW</div>
     <svg id="cursor" viewBox="0 0 24 24" style="opacity:0"><path d="M3 2l17 9-7 2-3 7z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
-    <div id="cap"></div><div id="wm"></div><div id="fhandle"></div><div id="flash"></div>`);
+    <div id="chap" style="opacity:0"></div><div id="cap"></div><div id="wm"></div><div id="fhandle"></div><div id="flash"></div>`);
   const cardsEl = $('cards'), cap = $('cap'), flash = $('flash');
   const CARDS = [];
   // card({l:'label', v:'value', cls:'red|white|big|tag', a:[x,y,z] anchor, t0:'cue', t1:'cue', count:[from,to,'cue',seconds], neg, flip:['cue','new value']})
@@ -233,9 +241,23 @@
     updatePanels(t, sh);
     updateCards(t);
     // captions: one word/token at a time
+    if (WIDE) {   // long-form: subtitle lines (up to ~8 words), current word highlighted; character lines in italics
+      let ci = -1; for (let i = 0; i < CHUNKS.length; i++) { if (CHUNKS[i].t <= t) ci = i; else break; }
+      const ch = ci > -1 ? CHUNKS[ci] : null;
+      if (ch && t <= ch.end + .5) { let html = '';
+        ch.items.forEach(x => { const on = t >= x.t && t <= x.end + .05; html += `<span class="${x.cls || ''}${on ? ' on' : ''}">${x.txt}</span> `; });
+        if (cap._k !== ci + ':' + html) { cap.innerHTML = html.trim(); cap._k = ci + ':' + html; }
+        cap.className = ch.who !== 'N' ? 'dlg' : ''; cap.style.opacity = 1; } else cap.style.opacity = 0;
+    } else {
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
     if (c && t <= c.end + .45) { if (cap.textContent !== c.txt) cap.textContent = c.txt; cap.className = c.cls;
       cap.style.transform = `scale(${.85 + .15 * clamp01((t - c.t) / .12)})`; cap.style.opacity = 1; } else cap.style.opacity = 0;
+    }
+    // chapter title cards: chapters: [{ at:'ch1', n:'CHAPTER 1', title:'The Website Harvard Shut Down', dur:2.4 }]
+    if (SC.chapters) { const el = $('chap'); let on = null; for (const c of SC.chapters) if (t >= c._t && t < c._t + (c.dur || 2.4)) on = c;
+      if (on) { const u = (t - on._t) / (on.dur || 2.4); el.style.opacity = Math.min(clamp01(u / .12), clamp01((1 - u) / .15));
+        if (el._c !== on) { el.innerHTML = `<div class="n">${on.n || ''}</div><div class="t">${on.title}</div>`; el._c = on; }
+        el.querySelector('.t').style.transform = `translateY(${(1 - easeOut(clamp01(u / .25))) * 30}px)`; } else el.style.opacity = 0; }
     // step tracker
     if (SC.steps) { const s = SC.steps, el = $('steps'); const on = t >= s._from && t < s._to; el.style.opacity = on ? Math.min(1, (t - s._from) / .3) : 0;
       let st = 0; s._marks.forEach((m, i) => { if (t >= m) st = i + 1; });
@@ -250,10 +272,10 @@
         fo.className = clicked ? 'on' : ''; fo.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cu.style.opacity = ct > .5 ? 1 : 0;
         const u = easeOut(clamp01((ct - .5) / 1)); cu.style.left = (760 - 150 * u) + 'px'; cu.style.top = (620 - 160 * u + (clicked && ct < 1.8 ? 6 : 0)) + 'px'; } else cu.style.opacity = 0; }
     // brand watermark: hops between 4 safe corners every 5 s (hard to crop or blur out), hidden under the end card
-    { const wm = $('wm'), P = [[44, 160, 0], [44, 1478, 0], [1036, 160, 1], [1036, 1478, 1]];
+    { const wm = $('wm'), P = WIDE ? [[48, 50, 0], [48, 900, 0], [W - 48, 50, 1], [W - 48, 900, 1]] : [[44, 160, 0], [44, 1478, 0], [1036, 160, 1], [1036, 1478, 1]];
       const seg = 5, i = Math.floor(t / seg), u = t - i * seg, p = P[(i * 3 + 1) % 4];
       const endOn = SC.follow && t >= SC.follow._from - .3;
-      wm.style.top = p[1] + 'px'; wm.style.left = p[2] ? 'auto' : p[0] + 'px'; wm.style.right = p[2] ? (1080 - p[0]) + 'px' : 'auto';
+      wm.style.top = p[1] + 'px'; wm.style.left = p[2] ? 'auto' : p[0] + 'px'; wm.style.right = p[2] ? (W - p[0]) + 'px' : 'auto';
       wm.style.opacity = endOn ? 0 : .55 * Math.min(clamp01(u / .3), clamp01((seg - u) / .3)); }
     if (SC.follow) { const on = t >= SC.follow._from; $('fhandle').style.opacity = on ? clamp01((t - SC.follow._from - .2) / .3) : 0; }
     flash.style.opacity = flashAmp(t);
@@ -272,7 +294,7 @@
     PANELS.forEach((p, i) => {
       const end = i + 1 < PANELS.length ? PANELS[i + 1]._t : VIDEO_LEN();
       const vis = i === cur || (i === cur - 1 && t < PANELS[cur]._t + PANELS[cur].fade);
-      if (!vis) { p._el.style.opacity = 0; (p.layers || []).forEach(L => L._el.style.opacity = 0); return; }
+      if (!vis) { p._el.style.opacity = 0; (p.layers || []).forEach(L => { L._el.style.opacity = 0; if (L._open) L._open.style.opacity = 0; }); return; }
       const span = Math.max(.1, end - p._t + (p.fade || 0)), u = clamp01((t - p._t) / span), e = p.ease === 'linear' ? u : ease(u);
       const m = p.move || {}, L = (r, d) => r ? r[0] + (r[1] - r[0]) * e : d;
       const z = L(m.zoom, 1.06), x = L(m.x, 0) + Math.sin(t * 61) * sh * 40, y = L(m.y, 0) + Math.cos(t * 47) * sh * 40;
@@ -286,7 +308,7 @@
       // depth layers: sprites in front of the background that move MORE than it (parallax), bob, and can slide in
       (p.layers || []).forEach(L => {
         // s:[x,y] + w = sprite centre/width on screen when the shot starts; afterwards it drifts d× as much as the background (parallax)
-        const d = L.depth || 1.6, ox = (p.origin || [50, 45])[0] / 100 * 1080, oy = (p.origin || [50, 45])[1] / 100 * 1920;
+        const d = L.depth || 1.6, ox = (p.origin || [50, 45])[0] / 100 * W, oy = (p.origin || [50, 45])[1] / 100 * H;
         const z0 = m.zoom ? m.zoom[0] : 1.06, x0 = m.x ? m.x[0] : 0, y0 = m.y ? m.y[0] : 0, rz = z / z0;
         const w = L.w || 600, cx = L.s ? L.s[0] : 540, cy = L.s ? L.s[1] : 1100, lz = Math.pow(rz, 1 + (d - 1) * .5);
         const px = cx + (cx - ox) * (rz - 1) * d + (x - x0) * d, py = cy + (cy - oy) * (rz - 1) * d + (y - y0) * d;
@@ -294,6 +316,10 @@
         const inU = L.in ? easeOut(clamp01((t - K.T(L.in[0])) / (L.in[2] || .5))) : 1, slide = L.in ? (1 - inU) * L.in[1] : 0;
         L._el.style.width = w * lz + 'px'; L._el.style.zIndex = i === cur ? 11 : 6; L._el.style.opacity = op * (L.in ? clamp01(inU * 3) : 1); L._el.style.filter = (f ? f + ' ' : '') + 'drop-shadow(0 18px 24px rgba(0,0,0,.45))';
         L._el.style.transform = `translate(${px - w * lz / 2 + slide}px,${py - L._el.naturalHeight / L._el.naturalWidth * w * lz / 2 + bob}px)${L.flip ? ' scaleX(-1)' : ''}`;
+        if (L._open) { // mouth flap ~4x/s while this character's words are being spoken
+          const talking = K.speaking(L.who, t), open = talking && Math.floor((t - p._t) * 8) % 2 === 0;
+          for (const k of ['width', 'zIndex', 'filter', 'transform']) L._open.style[k] = L._el.style[k];
+          L._open.style.opacity = open ? L._el.style.opacity : 0; if (open) L._el.style.opacity = 0; }
       });
     });
   }
@@ -307,8 +333,8 @@
     const n = cfg.n || 26, sp = cfg.speed || 1, sz = cfg.size || 1;
     [...PARTS.children].forEach((d, i) => { if (i >= n) { d.style.display = 'none'; return; } d.style.display = 'block';
       const r1 = (Math.sin(i * 12.9898) * 43758.5453) % 1, r2 = (Math.sin(i * 78.233) * 12345.678) % 1, a = Math.abs(r1), b = Math.abs(r2);
-      const depth = .5 + b * 1.1, fall = (t * 260 * sp * depth + a * 2400) % 2300 - 200;
-      const x = a * 1080 + Math.sin(t * (1 + b) + i) * 60, rot = t * (90 + 140 * b) * (i % 2 ? 1 : -1) + i * 37;
+      const depth = .5 + b * 1.1, fall = (t * 260 * sp * depth + a * 2400) % (H + 380) - 200;
+      const x = a * W + Math.sin(t * (1 + b) + i) * 60, rot = t * (90 + 140 * b) * (i % 2 ? 1 : -1) + i * 37;
       d.style.transform = `translate(${x}px,${fall}px) rotate(${rot}deg) rotateX(${rot * 1.7}deg) scale(${sz * depth})`;
       d.style.opacity = .9; d.style.filter = depth < .8 ? 'blur(2px)' : ''; });
   }
@@ -332,13 +358,19 @@
     if (SC.receipt) { const r = SC.receipt; r._from = K.T(r.from); r._to = K.T(r.to);
       $('receipt').innerHTML = `<h3>${r.title || 'THE MATH'}</h3>` + r.rows.map(([a, b, cls]) => `<div class="r ${cls || ''}"><span>${a}</span><b>${b}</b></div>`).join(''); }
     if (SC.follow) { SC.follow._from = K.T(SC.follow.from); $('ftitle').textContent = SC.follow.title || ''; }
-    $('wm').textContent = SC.brand || K.BRAND; $('fhandle').textContent = SC.brand || K.BRAND;
+    (SC.chapters || []).forEach(c => c._t = K.T(c.at));
+    const BR = SC.brand !== undefined ? SC.brand : K.BRAND;   // brand:'' hides the watermark (other channels)
+    $('wm').textContent = BR; $('fhandle').textContent = BR; if (!BR) $('wm').style.display = 'none';
     window.step = (n, dt) => { for (let i = 0; i < n; i++) frame(dt, i === n - 1); };
     const loads = (SC.panels || []).map(p => { p._t = K.T(p.at); if (p.fade === undefined) p.fade = .25;
       const el = p._el = document.createElement('img'); el.className = 'panel'; el.style.transformOrigin = (p.origin || [50, 45]).map(v => v + '%').join(' ');
       $('panels').appendChild(el); PANELS.push(p);
-      const layerLoads = (p.layers || []).map(L => { const le = L._el = document.createElement('img'); le.className = 'layer'; $('panels').appendChild(le);
-        return new Promise((res, rej) => { le.onload = res; le.onerror = () => rej(new Error('missing image ' + L.img)); le.src = '../videos/' + new URLSearchParams(location.search).get('v') + '/' + L.img; }); });
+      const VS = '../videos/' + new URLSearchParams(location.search).get('v') + '/';
+      const ld = (el, src) => new Promise((res, rej) => { el.onload = res; el.onerror = () => rej(new Error('missing image ' + src)); el.src = VS + src; });
+      const layerLoads = (p.layers || []).flatMap(L => { const le = L._el = document.createElement('img'); le.className = 'layer'; $('panels').appendChild(le);
+        const out = [ld(le, L.img)];
+        if (L.talk) { const lo = L._open = document.createElement('img'); lo.className = 'layer'; $('panels').appendChild(lo); out.push(ld(lo, L.talk)); }
+        return out; });
       return new Promise((res, rej) => { el.onload = res; el.onerror = () => rej(new Error('missing image ' + p.img)); el.src = '../videos/' + new URLSearchParams(location.search).get('v') + '/' + p.img; }).then(() => Promise.all(layerLoads)); });
     PANELS.sort((a, b) => a._t - b._t);
     // sound effects: sfx: [['cue+0.2', 'cash', 0.8], ...]; autoWhoosh: true adds a whoosh at every panel change. Read by tools/render.js.
