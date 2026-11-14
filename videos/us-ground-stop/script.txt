@@ -3,8 +3,7 @@
 
 [#hook] Why the !fuck is the FAA still running American air traffic on {*1980s|nineteen-eighties} tech?
 
-[#maya] Friday, {3:54 p.m.|three fifty-four p.m.} *Maya is boarding in Chicago.
-[#freeze] Then every departure in America !freezes.
+[#freeze] Friday, {3:54 p.m.|three fifty-four p.m.} Every departure in America !freezes.
 [#radar] Control centers were losing !radar and !radio.
 [#routers] Aging switches and routers got !overloaded, [#bad] and started sending !inconsistent data.
 [#air] Over {*3,500|thirty-five hundred} planes were already in the air. [#landed] They were cleared to *land.
