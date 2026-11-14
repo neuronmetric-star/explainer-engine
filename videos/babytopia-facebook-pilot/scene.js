@@ -50,6 +50,7 @@ window.SCENE = {
     P('s18', 'product', { zoom: [1.05, 1.22] }, { fx: 'pulse' }),
     P('s19', 'ipo', OUT, { parts: { n: 24, speed: .9 } }),
     P('s20', 'lunch', PANR),
+    P('s20b', 'insta', { zoom: [1.06, 1.16], x: [0, -30] }),
     P('s21', 'bought', IN),
     P('s22', 'whatsapp', PANL),
     P('s23', 'today', OUT),
