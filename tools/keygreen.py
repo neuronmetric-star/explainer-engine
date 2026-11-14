@@ -2,7 +2,8 @@
 """Remove a pure-green (#00FF00) background from a ChatGPT character image -> transparent PNG with soft fur edges.
 Usage: python3 tools/keygreen.py in.(png|webp|jpg) out.png
        python3 tools/keygreen.py --pair closed.webp open.webp closed.png open.png
-         (talking poses: both are cropped to the SAME box so the mouth flap never jumps)"""
+         (talking poses: both are cropped to the SAME box so the mouth flap never jumps, and the open frame keeps
+          ONLY its mouth(s) pasted onto the closed frame, so the body doesn't shimmer when ChatGPT repaints it)"""
 import sys, numpy as np
 from PIL import Image, ImageFilter
 
@@ -28,6 +29,13 @@ if sys.argv[1] == '--pair':
     if a.size != b.size: sys.exit('pair images must be the same size')
     ba, bb = bbox(a), bbox(b)
     u = (min(ba[0], bb[0]), min(ba[1], bb[1]), max(ba[2], bb[2]), max(ba[3], bb[3]))
+    # mouth-only patch: strongest local differences in the top 45% (faces); handles several mouths (twins)
+    d = np.abs(np.asarray(a.convert('RGB')).astype(int) - np.asarray(b.convert('RGB')).astype(int)).sum(2).astype(np.float32)
+    d[int(u[1] + (u[3] - u[1]) * .45):] = 0
+    m = Image.fromarray(np.clip(d, 0, 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(6))
+    m = m.point(lambda v: 255 if v > 45 else 0).filter(ImageFilter.MaxFilter(31)).filter(ImageFilter.GaussianBlur(8))
+    b = Image.composite(b, a, m)
+    print('mouth patch area:', m.point(lambda v: 255 if v > 128 else 0).getbbox())
     for img, dst in ((a, sys.argv[4]), (b, sys.argv[5])):
         img = crop(img, u); img.save(dst); print(f'{dst}: {img.width}x{img.height}')
 else:
