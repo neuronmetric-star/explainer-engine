@@ -1,22 +1,22 @@
 # The Day America's Planes Stopped — Nov 13, 2026 nationwide ground stop
 # Markup: *gold  !red  {display|spoken}  [#cue]   (see engine/script.js)
 
-[#hook] Why the !fuck is the FAA still running American air traffic on {*1980s|nineteen-eighties} tech?
+[#hook] Why the !fuck is the FAA still running American air traffic on [#tech] {*1980s|nineteen-eighties} tech?
 
-[#freeze] Friday, {3:54 p.m.|three fifty-four p.m.} Every departure in America !freezes.
+[#freeze] Friday, {3:54 p.m.|three fifty-four p.m.} [#every] Every departure in America !freezes.
 [#radar] Control centers were losing !radar and !radio.
-[#routers] Aging switches and routers got !overloaded, [#bad] and started sending !inconsistent data.
+[#routers] Aging switches and routers got !overloaded, [#bad] and started sending [#data] !inconsistent data.
 [#air] Over {*3,500|thirty-five hundred} planes were already in the air. [#landed] They were cleared to *land.
 [#nohack] Officials say there's no sign of a !cyberattack. The investigation is still going.
-[#copper] And the Transportation Secretary says parts still run on {!1980s|nineteen-eighties} copper lines.
+[#copper] And the Transportation Secretary says parts still run on [#eighties] {!1980s|nineteen-eighties} copper lines.
 
-[#question] Quick question. [#job] If your job is keeping thousands of planes moving, shouldn't you plan for equipment to !fail?
-[#right] Stopping flights was the *right call. Bad data is dangerous.
-[#bigger] The bigger question is why one overload could stop a whole country.
+[#question] Quick question. [#job] If your job is keeping thousands of planes moving, shouldn't you plan for equipment [#fail] to !fail?
+[#right] Stopping flights was the *right call. [#baddata] Bad data is dangerous.
+[#bigger] The bigger question is why one overload could [#stopc] stop a whole country.
 [#math] {!6,600|Sixty-six hundred} flights !canceled. [#hours] Over {*4 hours|four hours} of nothing.
 
-[#after] Fixing it after a breakdown isn't the same as getting ahead of one.
-[#america] This is *America. [#need] A system this important needs reliable gear, *backup lines, and a *tested plan.
+[#after] Fixing it after a [#breakdown] breakdown isn't the same as [#ahead] getting ahead of one.
+[#america] This is *America. [#need] A system this important needs [#gear] reliable gear, [#backup] *backup lines, [#plan] and a *tested plan.
 
 [#ask] So what do you think? [#unavoidable] An unavoidable emergency, [#warning] or a !warning the FAA needs to get ahead of its tech?
 [#cta] Tell me in the comments, [#follow] and just !fucking follow me. [#bestie] Love you *bestie.

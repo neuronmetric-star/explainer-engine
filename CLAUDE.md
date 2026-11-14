@@ -61,6 +61,12 @@ Put a `[#cue]` before every sentence that should change the picture.
   `tube([[x,y,z]...],color,radius,parent)` + `drawTube(tube,0..1)`, `ring(r,x,z)`, `group(x,y,z)`,
   `person(x,z,{tie:true,scale,color})`, `fly(obj,t,start,dur,fromVec,toVec)`, `hop(obj,t,'cue')`.
 - Scene object: `build(K)`, `shots`, `cards`, `steps`, `receipt`, `follow`, `shakes`, `flashes`, `update(t,K)`.
+- Photos (images made in ChatGPT, saved in `videos/<slug>/images/`): `L = K.photo('images/x.png',{slices:10})`, then in
+  `update`: `L.set({op,s,x,y,r,f,glitch},t)` (push-ins, pans, CSS filters, glitch tears); `L.glow(x%,y%,size,color)` for lights
+  on the photo; `K.noise(amount,t)` TV static; `K.wash(color,amount)`. Scene `covered(t)` → skip 3D render while a photo fills
+  the frame. Cards over photos use screen coords `s:[x,y]` instead of `a:[x,y,z]`. Example: `videos/us-ground-stop/scene.js`.
+- Sound effects: scene `sfx: [['cue+0.2','hit',0.8], ...]` → mixed under the voice at render. Library in `engine/sfx/`
+  (hit thud whoosh static glitch buzz alarm beep ding pop tick count jet riser click), rebuilt by `node tools/sfx.js`.
 - Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
 
 ## Looks (styles)

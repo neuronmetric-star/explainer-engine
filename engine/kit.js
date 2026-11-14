@@ -131,7 +131,48 @@
     <svg id="cursor" viewBox="0 0 24 24" style="opacity:0"><path d="M3 2l17 9-7 2-3 7z" fill="#fff" stroke="#000" stroke-width="1.2"/></svg>
     <div id="cap"></div><div id="flash"></div>`);
   const cardsEl = $('cards'), cap = $('cap'), flash = $('flash');
+
+  // ---------------- photo layers (still images animated in code) ----------------
+  // L = K.photo('images/x.png', {slices: 12}) ; in update(): L.set({op, s, x, y, r, f, glitch}, t)
+  //   op opacity, s scale (1 = cover the frame), x/y offset px, r rotation deg, f CSS filter, glitch 0..1 (tears slices)
+  //   L.glow(xPct, yPct, sizePx, color) -> overlay light that moves with the photo; set .style.opacity yourself
+  const SLUG = K.slug = new URLSearchParams(location.search).get('v');
+  const photoRoot = document.createElement('div'); photoRoot.id = 'photos'; ui.insertBefore(photoRoot, ui.firstChild);
+  const LOADS = []; K.photos = [];
+  const hash = (a, b) => { const x = Math.sin(a * 127.1 + b * 311.7) * 43758.5453; return x - Math.floor(x); }; K.hash = hash;
+  K.photo = function (src, opts = {}) {
+    const el = document.createElement('div'); el.className = 'ph'; el.style.opacity = 0;
+    const wrap = document.createElement('div'); wrap.className = 'pw'; el.appendChild(wrap);
+    const url = '../videos/' + SLUG + '/' + src;
+    const im = new Image(); im.src = url; wrap.appendChild(im);
+    const L = { el, wrap, im, slices: [], glows: [] };
+    const n = opts.slices || 0;
+    for (let i = 0; i < n; i++) { const d = document.createElement('div'); d.className = 'slc'; const c = new Image(); c.src = url; d.appendChild(c);
+      d.style.clipPath = `inset(${(i * 100 / n).toFixed(2)}% 0 ${(100 - (i + 1) * 100 / n).toFixed(2)}% 0)`; d.style.display = 'none'; wrap.appendChild(d); L.slices.push(d); }
+    LOADS.push(im.decode().then(() => { const k = Math.max(W / im.naturalWidth, H / im.naturalHeight);
+      wrap.style.width = im.naturalWidth * k + 'px'; wrap.style.height = im.naturalHeight * k + 'px'; }).catch(() => { throw new Error('missing image ' + src); }));
+    L.glow = (xp, yp, size, color) => { const g = document.createElement('div'); g.className = 'glow';
+      g.style.cssText = `left:${xp}%;top:${yp}%;width:${size}px;height:${size}px;background:radial-gradient(circle,${color} 0%,transparent 65%);opacity:0`; wrap.appendChild(g); L.glows.push(g); return g; };
+    L.set = function (o, t = 0) {
+      const op = o.op === undefined ? 1 : o.op; el.style.opacity = op; el.style.display = op <= 0.001 ? 'none' : 'block'; if (op <= 0.001) return;
+      wrap.style.transform = `translate(-50%,-50%) translate(${o.x || 0}px,${o.y || 0}px) scale(${o.s || 1}) rotate(${o.r || 0}deg)`;
+      wrap.style.filter = o.f || 'none';
+      const gl = o.glitch || 0, fr = Math.floor(t * 24);
+      L.slices.forEach((d, i) => { const on = gl > .04 && hash(i, fr) < .25 + gl * .6; d.style.display = on ? 'block' : 'none';
+        if (on) { d.style.transform = `translateX(${((hash(i + 9, fr) - .5) * 220 * gl).toFixed(1)}px)`; d.style.filter = hash(i + 3, fr) < .5 ? 'hue-rotate(90deg) saturate(2)' : 'brightness(1.6)'; } });
+    };
+    photoRoot.appendChild(el); K.photos.push(L); return L;
+  };
+  // full-frame overlays: TV static and a colored wash
+  const noise = document.createElement('canvas'); noise.id = 'noise'; noise.width = 180; noise.height = 320; ui.insertBefore(noise, $('cards'));
+  const nctx = noise.getContext('2d'), nimg = nctx.createImageData(180, 320);
+  K.noise = function (amount, t) { noise.style.opacity = amount; if (amount <= 0) return; const fr = Math.floor(t * 30);
+    for (let i = 0; i < nimg.data.length; i += 4) { const v = hash(i * .013, fr) * 255; nimg.data[i] = nimg.data[i + 1] = nimg.data[i + 2] = v; nimg.data[i + 3] = 255; }
+    nctx.putImageData(nimg, 0, 0); };
+  const wash = document.createElement('div'); wash.id = 'wash'; ui.insertBefore(wash, $('cards'));
+  K.wash = function (color, amount) { wash.style.background = color; wash.style.opacity = amount; };
   const CARDS = [];
+  // o.s = [screenX, screenY] (px) instead of a: pins the card on screen (for cards over photos)
   // card({l:'label', v:'value', cls:'red|white|big|tag', a:[x,y,z] anchor, t0:'cue', t1:'cue', count:[from,to,'cue',seconds], neg, flip:['cue','new value']})
   K.card = function (o) {
     const el = document.createElement('div'); el.className = 'card ' + (o.cls || '');
@@ -149,8 +190,8 @@
       if (t < c._t0 || t >= c._t1) { c.el.style.display = 'none'; continue; }
       c.el.style.display = 'block';
       const k = pop(clamp01((t - c._t0) / .32)), out = clamp01((c._t1 - t) / .18);
-      pv.copy(c.anchor).project(camera);
-      const x = (pv.x * .5 + .5) * W, y = (-pv.y * .5 + .5) * H, r = c.el.getBoundingClientRect();
+      let x, y; if (c.s) { x = c.s[0]; y = c.s[1]; } else { pv.copy(c.anchor).project(camera); x = (pv.x * .5 + .5) * W; y = (-pv.y * .5 + .5) * H; }
+      const r = c.el.getBoundingClientRect();
       c.el.style.left = Math.max(28, Math.min(W - 28 - r.width, x - r.width / 2)) + 'px'; c.el.style.top = (y - r.height / 2) + 'px';
       c.el.style.transform = `scale(${(.6 + .4 * k) * (.92 + .08 * out)})`; c.el.style.opacity = Math.min(clamp01((t - c._t0) / .15), out);
       if (c.count) { const [a, b] = c.count; const u = easeOut(clamp01((t - c._cs) / (c._ce - c._cs))); c.vEl.textContent = (c.neg ? '-' : '') + (c.fmt || fmt)(a + (b - a) * u); }
@@ -176,6 +217,7 @@
   // ---------------- frame loop ----------------
   let time = 0, SC;
   const shakeAmp = t => { let a = 0; for (const [s, d, amp] of SC._shakes) if (t > s && t < s + d) a = Math.max(a, (1 - (t - s) / d) * amp); return a; };
+  K.shakeAmp = t => SC ? shakeAmp(t) : 0;
   const flashAmp = t => { let a = 0; for (const [s, d, amp] of SC._flashes) if (t > s && t < s + d) a = Math.max(a, (1 - (t - s) / d) * amp); return a; };
   function frame(dt, doRender) {
     time += dt; const t = time;
@@ -203,7 +245,7 @@
         fo.className = clicked ? 'on' : ''; fo.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cu.style.opacity = ct > .5 ? 1 : 0;
         const u = easeOut(clamp01((ct - .5) / 1)); cu.style.left = (760 - 150 * u) + 'px'; cu.style.top = (620 - 160 * u + (clicked && ct < 1.8 ? 6 : 0)) + 'px'; } else cu.style.opacity = 0; }
     flash.style.opacity = flashAmp(t);
-    if (doRender) composer.render();
+    if (doRender && !(SC.covered && SC.covered(t))) composer.render();
   }
 
   // ---------------- start: called after scene.js defines window.SCENE ----------------
@@ -222,7 +264,9 @@
     if (SC.receipt) { const r = SC.receipt; r._from = K.T(r.from); r._to = K.T(r.to);
       $('receipt').innerHTML = `<h3>${r.title || 'THE MATH'}</h3>` + r.rows.map(([a, b, cls]) => `<div class="r ${cls || ''}"><span>${a}</span><b>${b}</b></div>`).join(''); }
     if (SC.follow) { SC.follow._from = K.T(SC.follow.from); $('ftitle').textContent = SC.follow.title || ''; }
+    // sound effects: [[cue, name, volume]] -> window.SFX for tools/render.js (files in engine/sfx/<name>.wav)
+    window.SFX = (SC.sfx || []).map(([c, name, vol]) => ({ t: K.T(c), name, vol: vol === undefined ? .5 : vol }));
     window.step = (n, dt) => { for (let i = 0; i < n; i++) frame(dt, i === n - 1); };
-    window.ready = true;
+    Promise.all(LOADS).then(() => { window.ready = true; }, e => { window.loadError = String(e); });
   };
 })();
