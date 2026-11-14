@@ -4,6 +4,9 @@ This repo makes **premium vertical teaching videos** (TikTok / Reels / Shorts): 
 "how things really work." Owner: Brian (NeuronMetric). Brand: **@coonknows** — every video shows it as a
 moving watermark + on the end card (`K.BRAND` in engine/kit.js). Never ship a video without it.
 
+**Two brands — read `docs/HANDOFF.md` first.** Sections 1–4 below are for @coonknows Shorts. **Babytopia** (16:9 long-form,
+"explained like you're 5", no Coon, no @coonknows watermark) has its own rules in `docs/HANDOFF.md` + `docs/longform/`.
+
 These rules are permanent. They apply to every session and every new video automatically.
 Never change finished videos unless Brian asks — always move forward with new ones.
 
