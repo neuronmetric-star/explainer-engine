@@ -42,7 +42,10 @@ Read `references/slop-check.md` before you review any generation.
 
 Read the script, then ask only what you can't decide yourself, in one compact message:
 
-1. **2D or 3D?**
+0. **Which type of video?** Always ask this first, every time, unless the user already said it.
+   - **Short:** 9:16, 45-70 s, for YouTube Shorts / Reels / TikTok. The opening line starts with **Why, Who, What, When or How** whenever the story allows it (see `references/format.md` → Hook rules).
+   - **"Explained Like I'm 5":** long-form 16:9, about 8-20 min, in chapters. Use the channel's own series name (see `references/format.md` → Series names), never Crayon Capital's "Explained Like You're 5". Long-form is far more expensive in credits. Quote it first, and use the hybrid method in `references/format.md` → Long-form.
+1. **2D or 3D?** The channel default is **3D**; only ask if the user hasn't set it.
    - **2D**: flat hand-drawn cartoon characters with thick outlines, in a soft 3D world.
    - **3D**: fully 3D characters with real fabric, hair and props, white ball heads with drawn faces, in a stylised 3D world.
 

@@ -17,7 +17,13 @@ Best length in the sample: **58-67 s with a single mechanism**. The 31-35 s ques
 
 ## Hook rules
 
-1. The first line is a **scene**, not a question: a concrete noun and a contradiction in at most 14 words.
+0. **Shorts always open with a question word, when the story allows it:** Why / Who / What / When / How. This is the channel rule. Make the question concrete, then put the scene right behind it in the same breath. The research shows that a bare, abstract question with no character underperforms ("How do painkillers know where the pain is?" got 323K views), while a Why/How title with an odd concrete moment wins.
+   - Good: "Why does every quarter have 119 ridges? Because 300 years ago, people shaved money."
+   - Good: "How did one island keep its fortune at the bottom of the sea?"
+   - Bad: "Why is money important?" It is abstract, with nothing to show in frame 1.
+
+   If no question word fits naturally, say so to the user and use a scene opener instead.
+1. The first line is a **scene**, not a bare question: a concrete noun and a contradiction in at most 14 words.
    - Weak: "How do painkillers know where the pain is?" (323K views)
    - Strong: "He put a bronze ball in a dragon's mouth…" (34.7M)
 2. Use a number when it's real and striking (Crayon: "only served 22 months").
@@ -50,3 +56,26 @@ Best length in the sample: **58-67 s with a single mechanism**. The 31-35 s ques
 
 - Rick's Clips: the "You see," pivot, the exact mocked-inventor template, unlabelled dramatised history.
 - Crayon Capital: "Explained Like You're 5", the crayon look, long-form density.
+
+## Series names (long-form)
+
+The long-form series promises "explained so a 5-year-old gets it" without copying Crayon Capital's exact title template ("X Explained Like You're 5"). Use the series name the user chose. It is stored in `assets/channel.json` → `"eli5_title"`. If it isn't set, ask once and save the answer.
+
+## Long-form ("Explained Like I'm 5" type)
+
+- **Structure** (adapted from the Crayon Capital study):
+  1. A cold open with stakes and a real number.
+  2. A Why/How question.
+  3. A small human scene, voiced by the narrator.
+  4. 3-5 chapters, each opening on a mini-hook, because the viewer replay graph peaks at chapter starts.
+  5. A turning point.
+  6. Today.
+  7. A one-line moral or proof.
+- **Pace:** ~150 words per minute. One idea per scene, with a simple analogy for every hard concept ("like you're 5" = show it with everyday objects).
+- **Budget, hybrid method.** Animating every shot of a 10-minute video costs far more than one account can cover. So:
+  1. Make keyframes for every scene.
+  2. Animate only the key moments (the hook, the chapter openers and the payoffs) with PixVerse.
+  3. Show the rest as stills with a slow camera move. Put the image path as `clip` in `plan.json`; `assemble.py` adds the push-in automatically.
+
+  Quote the split (stills vs. clips) before production.
+- **Format:** 16:9 (`"width": 1920, "height": 1080` in `plan.json`) and 16:9 keyframes.

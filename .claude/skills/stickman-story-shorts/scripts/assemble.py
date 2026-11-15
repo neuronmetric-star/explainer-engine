@@ -19,7 +19,7 @@ plan.json (paths are relative to the plan file):
 }
 Per shot: the clip is cropped/scaled to fill the frame and time-fitted to `dur` (trimmed; if too
 short, slowed up to 1.35x, then the last frame is held). `sfx` multiplies sfx_volume for that shot
-(0 = mute). `vo`, if given, is placed at the shot start. Captions: 1-2 words at a time, timed to the
+(0 = mute). A still image (.png/.jpg/.webp) as `clip` gets a slow push-in (`"zoom": 1.10` = end scale). `vo`, if given, is placed at the shot start. Captions: 1-2 words at a time, timed to the
 speech inside each vo file (pauses detected), words spread by length.
 """
 import json, math, os, re, subprocess, sys, tempfile
@@ -66,7 +66,8 @@ def main():
     td = tempfile.mkdtemp(prefix='asm_'); segs = []; caps = []; t0 = 0.0
     for i, s in enumerate(P['shots']):
         clip = R(s['clip']); dur = float(s['dur'])
-        cdur, has_a = probe(clip)
+        still = clip.lower().endswith(('.png', '.jpg', '.jpeg', '.webp'))
+        cdur, has_a = (dur, False) if still else probe(clip)
         a_in = float(s.get('src_in') or 0); a_out = float(s['src_out']) if s.get('src_out') else cdur
         avail = max(0.1, a_out - a_in)
         f = min(1.35, dur / avail) if avail < dur else 1.0
@@ -74,8 +75,14 @@ def main():
         if f > 1.0: vf.append(f'setpts=PTS*{f:.4f}')
         vf += [f'fps={FPS}', f'scale={W}:{H}:force_original_aspect_ratio=increase', f'crop={W}:{H}', 'setsar=1',
                f'tpad=stop_mode=clone:stop_duration={dur + 1:.2f}', f'trim=duration={dur:.3f}']
+        if still:  # slow push-in on a still image (long-form hybrid method)
+            n = max(2, int(round(dur * FPS))); z = float(s.get('zoom', 1.10))
+            vf = [f'scale={W*2}:{H*2}:force_original_aspect_ratio=increase', f'crop={W*2}:{H*2}',
+                  f"zoompan=z='1+({z-1:.3f})*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS}",
+                  'setsar=1', f'trim=duration={dur:.3f}']
+            f = 1.0; avail = dur
         vol = sfxv * float(s.get('sfx', 1.0))
-        inputs = ['-i', clip]; fc = [f'[0:v]{",".join(vf)}[v]']
+        inputs = (['-loop', '1', '-t', f'{dur:.3f}', '-i', clip] if still else ['-i', clip]); fc = [f'[0:v]{",".join(vf)}[v]']
         if has_a and vol > 0:
             fc.append(f'[0:a]atrim=start={a_in}:end={a_out},asetpts=PTS-STARTPTS,aresample=48000,volume={vol:.3f},apad,atrim=duration={dur:.3f}[sfx]')
         else:
