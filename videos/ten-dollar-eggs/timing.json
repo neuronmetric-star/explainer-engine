@@ -1,0 +1,142 @@
+{
+ "total": 66.81,
+ "wps": 2.7,
+ "source": "estimate",
+ "shots": [
+  {
+   "n": 1,
+   "text": "How many eggs could ten dollars buy over the last 80 years?",
+   "words": 12.6,
+   "speech": 4.67,
+   "dur": 4.92,
+   "start": 0.0,
+   "gen": 6
+  },
+  {
+   "n": 2,
+   "text": "Meet Ray. Same ten-dollar bill, same grocery store, every decade since 1950.",
+   "words": 13.8,
+   "speech": 5.11,
+   "dur": 5.36,
+   "start": 4.92,
+   "gen": 7
+  },
+  {
+   "n": 3,
+   "text": "1950. Eggs cost about 60 cents a dozen. Ray carries out 16 dozen.",
+   "words": 16.0,
+   "speech": 5.93,
+   "dur": 6.18,
+   "start": 10.28,
+   "gen": 7
+  },
+  {
+   "n": 4,
+   "text": "1960: 17 dozen. 1970: still 16.",
+   "words": 10.8,
+   "speech": 4.0,
+   "dur": 4.25,
+   "start": 16.46,
+   "gen": 5
+  },
+  {
+   "n": 5,
+   "text": "1980. Prices jump. Down to 11.",
+   "words": 8.4,
+   "speech": 3.11,
+   "dur": 3.36,
+   "start": 20.71,
+   "gen": 5
+  },
+  {
+   "n": 6,
+   "text": "1990: 9 dozen.",
+   "words": 4.8,
+   "speech": 1.78,
+   "dur": 2.03,
+   "start": 24.07,
+   "gen": 4
+  },
+  {
+   "n": 7,
+   "text": "2000. Eggs actually got cheaper. Back up to 10.",
+   "words": 11.4,
+   "speech": 4.22,
+   "dur": 4.47,
+   "start": 26.1,
+   "gen": 6
+  },
+  {
+   "n": 8,
+   "text": "2010: 6. 2020: still 6.",
+   "words": 8.6,
+   "speech": 3.19,
+   "dur": 3.44,
+   "start": 30.57,
+   "gen": 5
+  },
+  {
+   "n": 9,
+   "text": "Today, a dozen costs 2 dollars 32. Ray gets 4.",
+   "words": 10.6,
+   "speech": 3.93,
+   "dur": 4.18,
+   "start": 34.01,
+   "gen": 5
+  },
+  {
+   "n": 10,
+   "text": "From 16 dozen to 4. Three quarters of the cart, gone.",
+   "words": 11.6,
+   "speech": 4.3,
+   "dur": 4.55,
+   "start": 38.19,
+   "gen": 6
+  },
+  {
+   "n": 11,
+   "text": "But there's a catch. Ray's paycheck changed too.",
+   "words": 8,
+   "speech": 2.96,
+   "dur": 3.21,
+   "start": 42.74,
+   "gen": 4
+  },
+  {
+   "n": 12,
+   "text": "In 1950, minimum wage was 75 cents. That ten dollars took over 13 hours of work.",
+   "words": 19.0,
+   "speech": 7.04,
+   "dur": 7.29,
+   "start": 45.95,
+   "gen": 8
+  },
+  {
+   "n": 13,
+   "text": "Today, it takes about an hour and 23 minutes.",
+   "words": 9.6,
+   "speech": 3.56,
+   "dur": 3.81,
+   "start": 53.24,
+   "gen": 5
+  },
+  {
+   "n": 14,
+   "text": "So ten dollars buys fewer eggs than ever. But one hour of work buys more.",
+   "words": 15,
+   "speech": 5.56,
+   "dur": 5.81,
+   "start": 57.05,
+   "gen": 7
+  },
+  {
+   "n": 15,
+   "text": "Follow for more money, so simple a 5-year-old gets it.",
+   "words": 10.0,
+   "speech": 3.7,
+   "dur": 3.95,
+   "start": 62.86,
+   "gen": 5
+  }
+ ]
+}
