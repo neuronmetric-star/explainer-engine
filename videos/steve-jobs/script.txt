@@ -1,0 +1,33 @@
+# Steve Jobs — how a fired founder made Apple the most valuable company
+# Markup: *gold  !red  {display|spoken}  [#cue]   (see engine/script.js)
+
+[#hook] How did a man !fired from his own company make it the most *valuable on Earth?
+[#reframe] It wasn't luck. It was one word: *no.
+[#how] Here's the story.
+
+[#garage] In {1976|nineteen seventy-six}, *Steve *Jobs co-founds Apple in a garage.
+[#fired] Nine years later, his board [#out] pushes him !out.
+
+[#step1] Step one: the *return.
+[#dying] By {1997|nineteen ninety-seven}, Apple is !dying. [#loss] It loses {!$1,000,000,000|a billion dollars} in one year.
+[#next] Apple buys his company, NeXT, [#price] for {*$429M,|four hundred twenty-nine million,} [#back] and Jobs is *back.
+[#dell] A rival CEO says he'd !shut Apple !down.
+
+[#step2] Step two: *cut.
+[#grid] Jobs draws four boxes. [#axes] Home or pro. Desktop or laptop.
+[#killed] Anything that doesn't fit gets !killed.
+
+[#step3] Step three: make them *great.
+[#imac] The *iMac. [#ipod] The *iPod. [#iphone] The *iPhone.
+
+[#risk] The !risk?
+[#flop] With four products, one !flop sinks everything.
+
+[#normal] Most struggling companies do the opposite: [#more] add more products, and pray.
+
+[#math] {1997:|Nineteen ninety-seven:} [#m1] a {!$1B|billion-dollar} loss.
+[#m3] {2011:|Twenty eleven:} worth {*$337B,|three hundred thirty-seven billion,} [#exxon] more than Exxon.
+[#resign] Two weeks later, he stepped down.
+
+[#punch] He didn't save Apple by doing more. [#no] He saved it by saying *no.
+[#cta] Follow for more stories behind the *giants.
