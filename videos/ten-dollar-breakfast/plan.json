@@ -1,0 +1,92 @@
+{
+ "out": "final_no_vo.mp4",
+ "width": 1080,
+ "height": 1920,
+ "fps": 30,
+ "sfx_volume": 0.6,
+ "captions": false,
+ "music": null,
+ "shots": [
+  {
+   "clip": "clips/01.mp4",
+   "dur": 4.92,
+   "text": "How much breakfast could ten dollars buy over the last 80 years?"
+  },
+  {
+   "clip": "clips/02.mp4",
+   "dur": 5.06,
+   "text": "Meet Ray. Every decade, he takes the same ten-dollar bill to the store."
+  },
+  {
+   "clip": "clips/03.mp4",
+   "dur": 5.81,
+   "text": "His list never changes: a loaf of bread, a dozen eggs, a gallon of milk."
+  },
+  {
+   "clip": "clips/04.mp4",
+   "dur": 6.69,
+   "text": "1950. That list costs about a dollar 57. Ray walks out with 6 full bags."
+  },
+  {
+   "clip": "clips/05.mp4",
+   "dur": 3.44,
+   "text": "1960: 5 bags. 1970: 4.",
+   "src_in": 0.6,
+   "src_out": 4.1
+  },
+  {
+   "clip": "clips/06.mp4",
+   "dur": 3.88,
+   "text": "1980. Prices jump. Ray can't even afford 3."
+  },
+  {
+   "clip": "clips/07.mp4",
+   "dur": 3.81,
+   "text": "1990 and 2000: 2 bags each.",
+   "src_in": 0.6
+  },
+  {
+   "clip": "clips/08.mp4",
+   "dur": 4.18,
+   "text": "2010. Down to 1. 2020: still 1."
+  },
+  {
+   "clip": "clips/09.mp4",
+   "dur": 6.99,
+   "text": "Today, the list costs 8 dollars 28. Ray gets 1 bag and a dollar 72 in change.",
+   "src_out": 4.85
+  },
+  {
+   "clip": "clips/10.mp4",
+   "dur": 2.1,
+   "text": "Six bags, down to one.",
+   "src_in": 0.9
+  },
+  {
+   "clip": "clips/11.mp4",
+   "dur": 3.21,
+   "text": "But there's a catch. Ray's paycheck changed too."
+  },
+  {
+   "clip": "clips/12.mp4",
+   "dur": 6.69,
+   "text": "In 1950, minimum wage was 75 cents. One bag took over 2 hours of work."
+  },
+  {
+   "clip": "clips/13.mp4",
+   "dur": 2.84,
+   "text": "Today, it takes just over 1 hour.",
+   "src_out": 1.6
+  },
+  {
+   "clip": "clips/14.mp4",
+   "dur": 5.81,
+   "text": "So ten dollars buys less food than ever. But an hour of work buys more."
+  },
+  {
+   "clip": "clips/15.mp4",
+   "dur": 3.95,
+   "text": "Follow for more money, so simple a 5-year-old gets it."
+  }
+ ]
+}

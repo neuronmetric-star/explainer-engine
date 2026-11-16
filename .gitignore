@@ -2,3 +2,5 @@ node_modules/
 .env
 videos/*/.preview/
 videos/*/.silent.mp4
+videos/*/keyframes/*.png
+videos/*/refs/*.png
