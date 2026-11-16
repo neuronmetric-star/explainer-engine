@@ -1,0 +1,208 @@
+# Voice script: Tesla Was 3 Days From Dying
+
+## Voice direction (paste into the voice tool's style / instructions box)
+
+```
+Warm, confident male storyteller, documentary pace (about 150 words per minute), curious on questions, punchy on every number and date, a beat of tension before 'the deal closes', quiet and reflective on the final quote. No music, no effects.
+```
+
+## Narration (paste as is; keep the blank lines, they become pauses)
+
+Generate as ONE file (or one file per chapter for long videos, named ch01.mp3, ch02.mp3…). Do not add or skip words.
+
+```
+
+[Cold open]
+December twenty-fourth, two thousand eight. Six p.m. Christmas Eve.
+
+Tesla has almost no money left.
+
+In two days, its workers' paychecks would bounce.
+
+Its boss has put in nearly everything he owns.
+
+He says he even borrowed from friends to pay rent.
+
+Then, in the last hour, the deal closes.
+
+Twelve years later, Tesla is the most valuable car company on Earth.
+
+Worth more than Toyota, the company that sells the most cars in the world.
+
+
+[Promise]
+So how does a company three days from dying end up on top?
+
+And why didn't the man who saved it even start it?
+
+It starts in a tiny office in California.
+
+
+[Origin]
+July two thousand three. Two engineers, Martin Eberhard and Marc Tarpenning, start a car company.
+
+They name it after the inventor Nikola Tesla.
+
+Their idea: an electric car that's fast and fun, not slow and boxy.
+
+But building cars costs a fortune. They need an investor.
+
+Early two thousand four, they pitch a young internet millionaire.
+
+In our retelling, Martin says: we want to make electric cars cool.
+
+And Elon says: fast and cool? Then I'm in.
+
+He puts in six point five million of the first seven point five million raised.
+
+He becomes chairman, the head of the board.
+
+But he's not the CEO. Not yet.
+
+
+[Chapter 1: The Rich-Person Toy]
+Tesla's first car, the Roadster, starts at one hundred nine thousand dollars.
+
+That's on purpose. Elon writes a secret master plan.
+
+Step one: build a pricey sports car.
+
+Step two: use that money to build a cheaper car. Then an even cheaper one.
+
+Like selling fancy lemonade first, to pay for a bigger stand.
+
+But building it is much harder than planned.
+
+In two thousand seven, the board pushes founder Martin Eberhard out as CEO.
+
+In two thousand eight, Roadsters are finally built, in an old car dealer's repair bays.
+
+By January two thousand nine, Tesla has delivered just one hundred forty-seven cars.
+
+And just then, the whole economy crashes.
+
+
+[Chapter 2: Three Days Left]
+Fall two thousand eight. Big banks fail. Even America's biggest carmakers are going broke.
+
+Who lends money to a tiny electric-car startup now? Nobody.
+
+Tesla's big fundraising round falls apart.
+
+October two thousand eight: Elon makes himself CEO.
+
+And his other company is in trouble too.
+
+SpaceX rockets have failed three times in a row.
+
+In his words, there's money for one last launch.
+
+September twenty-eighth, two thousand eight: the fourth rocket reaches orbit.
+
+But Tesla is still bleeding cash.
+
+So Elon puts in the last of his PayPal money.
+
+He says he didn't even own a house anymore.
+
+Now he needs his investors to chip in too.
+
+The deal is an I-O-U that can later turn into a slice of the company.
+
+The total: about forty million dollars.
+
+Reports say one big investor tries to slow it down.
+
+The clock ticks toward Christmas.
+
+Six p.m., December twenty-fourth: the deal closes.
+
+In Elon's words, payroll would have bounced two days later.
+
+That same December, NASA hands SpaceX a one point six billion dollar contract.
+
+Both companies survive. Barely.
+
+
+[Chapter 3: The Real Car]
+Twenty ten: the U.S. government lends Tesla four hundred sixty-five million dollars.
+
+June twenty-ninth, twenty ten: Tesla starts selling shares to the public at seventeen dollars each.
+
+That makes the whole company worth about one point five billion dollars.
+
+Think of a pizza: one slice's price times the number of slices.
+
+Tesla buys an old car factory in Fremont, California, for forty-two million dollars.
+
+It used to belong to GM and Toyota together.
+
+June twenty twelve: the first Model S family cars go to customers.
+
+Twenty thirteen: Tesla pays back the government loan, nine years early.
+
+Now for step three of the plan.
+
+March thirty-first, twenty sixteen: Elon shows the cheaper Model 3.
+
+In one week, about three hundred twenty-five thousand people put down roughly a thousand dollars each.
+
+Now Tesla has to actually build them. Fast.
+
+Elon promises five thousand cars a week.
+
+
+[Chapter 4: Production Hell]
+In spring twenty eighteen, Tesla averages about two thousand two hundred a week, less than half the goal.
+
+The robots keep getting stuck.
+
+Elon later admits Tesla relied too much on robots.
+
+He spends nights sleeping inside the factory.
+
+So the team builds a new assembly line inside a giant tent.
+
+Elon says it went up in about two weeks.
+
+Last week of June twenty eighteen: they make five thousand thirty-one Model 3s.
+
+But the danger was real.
+
+Elon says Tesla came about a month from bankruptcy.
+
+He calls those two years production and logistics hell.
+
+Then the cars start flowing, and so does the money. Four profitable quarters in a row, a first.
+
+July first, twenty twenty: Tesla passes Toyota, worth about two hundred nine billion dollars.
+
+Twelve years after Christmas Eve, it's the most valuable carmaker on Earth.
+
+
+[Today]
+Today, Tesla is worth about one point five trillion dollars.
+
+That's roughly a thousand times its value on day one.
+
+Toyota is worth about two hundred fifty-three billion dollars, so Tesla is worth about six times more.
+
+Yet in twenty twenty-five, Toyota sold about eleven point three million cars.
+
+Tesla sold about one point six million.
+
+Why? Because a stock price is a bet on tomorrow, not today.
+
+People are paying for the lemonade stand they think it will become.
+
+Will that bet pay off? Nobody knows yet.
+
+
+[Payoff]
+Back in two thousand eight, Elon put in his last money...
+
+even though, as he put it, I thought we would still fail.
+
+Follow for more money, so simple a five-year-old gets it.
+
+```

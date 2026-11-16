@@ -1,0 +1,84 @@
+=== scene 001: December 24th, 2008. 6 p.m. Christmas Eve.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (Elon keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: Elon lifts his chin off his clasped hands and drums the fingers of one hand on the desk, then turns his head up toward the wall clock on the left and his shoulders sag as its minute hand ticks once. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow push-in.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 003: In 2 days, its workers' paychecks would bounce.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (the worker keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The three envelopes bounce up and down like rubber balls; the worker lunges and grabs at the nearest one, it bounces out of his gloves, and he clutches both hands to the sides of his head in panic. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: locked-off.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 006: Then, in the last hour, the deal closes.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (Elon keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: Elon finishes the signature with a big looping flourish, lifts the pen and drops it on the desk, pumps his fist once with a grin, and leans back in the chair as the desk lamp glows a little warmer. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow push-in.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 037: SpaceX rockets have failed 3 times in a row.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits, the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The rocket lifts a few metres on a weak flame and wobbles side to side as if struggling, the flame sputters out, and it drops back onto the pad with a small bounce and a puff of grey smoke.
+CAMERA: locked-off.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 039: September 28, 2008: the 4th rocket reaches orbit.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits, the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The rocket glides steadily forward above the glowing curve of the Earth; its engine flame pulses in one triumphant flare and then burns steady.
+CAMERA: slow pan following the rocket.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 048: 6 p.m., December 24th: the deal closes.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (Elon keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: Elon tips his head back against the chair and lets out a long breath, then throws both arms up in relief and laughs, his shoulders shaking. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow push-in.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 058: June 2012: the first Model S family cars go to customers.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (crowd member keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The white sedan rolls slowly forward toward the camera; the crowd on both sides claps excitedly, the person at the front of the left group points at the car, and the person nearest the car on the right raises both arms in a cheer. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow pull-out.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 062: In 1 week, about 325,000 people put down roughly $1,000 each.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (crowd member keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The long line shuffles forward step by step; the front person slides the cash bundle across the desk, the seated clerk gives a thumbs-up, the front person does a happy little fist pump and steps aside, and the next person eagerly steps up holding out their cash. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow crane up.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 065: In spring 2018, Tesla averages about 2,200 a week, less than half the goal.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (the worker keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The line crawls slowly with big empty gaps; the worker taps his wrist twice, throws both hands up in frustration, then folds his arms and shakes his head. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow pan along the line.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 069: So the team builds a new assembly line inside a giant tent.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits, the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The tent fabric ripples gently in the breeze as a blue sedan rolls out of the glowing opening; the three people on the left point at it and turn to each other nodding, and the person with the clipboard on the right ticks the clipboard and gives a thumbs-up. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow push-in.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 075: Then the cars start flowing, and so does the money. 4 profitable quarters in a row, a first.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits, the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The finished blue sedans glide smoothly along the line bumper to bumper, each giving a tiny bounce on its suspension; the orange robot arms above swing up and down in a steady rhythm.
+CAMERA: slow pan right.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 076: July 1, 2020: Tesla passes Toyota, worth about $209 billion.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits, the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: The white sedan on the top step gives a proud little bounce on its suspension and flashes its headlights twice; the beige car on the lower step sinks slightly on its springs like a sigh; a golden spotlight fades up on the white sedan.
+CAMERA: locked-off.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 086: Back in 2008, Elon put in his last money…
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (Elon keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: Elon looks down at his empty pockets, lets them drop, gives a big slow shrug with both palms up, tilts his head and smiles. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: slow push-in.
+AUDIO: No music, no speech, no voices, no singing.
+
+=== scene 088: Follow for more money, so simple a 5-year-old gets it.
+Animate this frame. LOCK: keep the exact 3D clay art style, the characters' designs and outfits (Elon keeps the exact same design and outfit), the set and every object exactly as in the start frame; heads stay smooth white balls with flat drawn faces; exactly two arms and two legs per character; no objects appear or disappear; one continuous shot, no cuts.
+ACTION: Elon waves big at the camera, then points straight at the camera with a grin as the red sports car zooms past behind him. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.
+CAMERA: locked-off.
+AUDIO: No music, no speech, no voices, no singing.
+

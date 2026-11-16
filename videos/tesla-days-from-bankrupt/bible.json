@@ -1,0 +1,1555 @@
+{
+ "title": "Tesla Was 3 Days From Dying",
+ "slug": "tesla-days-from-bankrupt",
+ "type": "long",
+ "voice": {
+  "direction": "Warm, confident male storyteller, documentary pace (about 150 words per minute), curious on questions, punchy on every number and date, a beat of tension before 'the deal closes', quiet and reflective on the final quote. No music, no effects."
+ },
+ "characters": [
+  {
+   "id": "ELON",
+   "name": "Elon",
+   "gender": "male",
+   "descriptor": "an adult male stickman, tall and lean: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines; short dark-brown hair swept back sitting on top of the ball head like a cap; a plain black crew-neck cotton T-shirt under an open dark charcoal-grey bomber jacket with black ribbed collar, cuffs and hem and a silver zip; dark-grey slim jeans; plain black sneakers with white soles; white mitten hands with 4 fingers."
+  },
+  {
+   "id": "MARTIN",
+   "name": "Martin",
+   "gender": "male",
+   "descriptor": "an adult male stickman of average build: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines; short neat silver-grey hair sitting on top of the ball head; thin rectangular silver-rimmed glasses resting on the ball face; a light sky-blue long-sleeved button-down shirt tucked into tan khaki trousers with a brown leather belt; brown leather shoes; white mitten hands with 4 fingers."
+  },
+  {
+   "id": "MARC",
+   "name": "Marc",
+   "gender": "male",
+   "descriptor": "an adult male stickman of average build: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines; short dark-brown hair sitting on top of the ball head; an olive-green short-sleeved polo shirt; beige chino trousers; grey canvas sneakers; a black digital wristwatch on the left wrist; white mitten hands with 4 fingers."
+  },
+  {
+   "id": "INVESTOR",
+   "name": "the investor",
+   "gender": "male",
+   "descriptor": "an adult male stickman, slightly heavy build: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines; neat slicked-back grey hair sitting on top of the ball head; a dark navy-blue two-piece business suit, crisp white shirt, solid crimson-red tie; polished black leather shoes; a gold wristwatch; white mitten hands with 4 fingers."
+  },
+  {
+   "id": "WORKER",
+   "name": "the worker",
+   "gender": "male",
+   "descriptor": "an adult male stickman of sturdy build: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines; a plain light-grey work coverall with rolled sleeves and a zip front, no logos; clear safety glasses with red frames pushed up on the ball head; black work gloves; black steel-toe boots."
+  },
+  {
+   "id": "FRIEND",
+   "name": "the friend",
+   "gender": "male",
+   "descriptor": "an adult male stickman of average build: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines; short curly black hair sitting on top of the ball head; a mustard-yellow hooded sweatshirt; dark-blue jeans; white sneakers; white mitten hands with 4 fingers."
+  },
+  {
+   "id": "CROWD",
+   "name": "crowd member",
+   "gender": "mixed",
+   "descriptor": "a generic everyday adult stickman: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines; simple short hair in varied natural colours; plain casual clothes in muted varied colours (teal, rust, cream, grey); sneakers; white mitten hands. When several appear they share this simple design with only small colour changes."
+  }
+ ],
+ "locations": [
+  {
+   "id": "OFFICE",
+   "descriptor": "a small cluttered startup CEO office at night: on the LEFT wall a paper wall calendar with a large blank page and a round white analogue wall clock above it; in the CENTRE a plain wooden desk with a black desk phone, a green-shaded desk lamp and scattered papers, a black office chair behind it; on the RIGHT a tall window showing dark-blue night sky and distant small city lights; grey carpet; warm pool of light from the desk lamp, cool blue light from the window; camera faces the desk from the front."
+  },
+  {
+   "id": "STARTUP",
+   "descriptor": "a tiny bare early-2000s startup office in daylight: on the LEFT a large whiteboard on the wall; in the CENTRE a small light-wood table with three mismatched chairs, two beige computer monitors and coffee mugs; on the RIGHT a single window with venetian blinds and a potted plant; plain off-white walls, worn blue carpet; soft morning sunlight through the blinds; camera at the doorway facing the table."
+  },
+  {
+   "id": "BOARDROOM",
+   "descriptor": "a corporate boardroom: a long polished dark-walnut table running from the foreground to the back; at the FAR END the head-of-table seat, a tall black leather executive chair; black leather chairs along both sides; floor-to-ceiling windows on the RIGHT showing a pale daytime sky; beige wall with a blank grey screen on the LEFT; cool even daylight; camera at the near end of the table looking down its length."
+  },
+  {
+   "id": "APARTMENT",
+   "descriptor": "a small sparse rented apartment: on the LEFT an open plain white front door to a beige hallway; in the CENTRE a nearly empty room with bare light-wood floor and a few cardboard moving boxes; on the RIGHT a window with no curtains showing evening sky; one bare ceiling bulb giving warm light; camera at eye level facing the door side of the room."
+  },
+  {
+   "id": "CITY",
+   "descriptor": "a financial-district street in 2008 under a heavy grey overcast sky: on the LEFT and RIGHT tall stone bank buildings with big columns and heavy bronze doors, no signs; in the CENTRE a wide empty sidewalk running into the distance; scattered loose papers blowing on the pavement; cold grey light; camera at eye level looking down the street."
+  },
+  {
+   "id": "GARAGE",
+   "descriptor": "the service bays of an old car dealership turned into a tiny car workshop: on the LEFT a red rolling toolbox and a workbench with parts; in the CENTRE one hydraulic car lift on a stained concrete floor; on the RIGHT a roll-up garage door half open to daylight; fluorescent tube lights on the ceiling; pale-yellow painted cinder-block walls; camera at eye level facing the lift."
+  },
+  {
+   "id": "LAUNCH",
+   "descriptor": "a tiny tropical island rocket launch site: in the CENTRE a small steel launch tower and flat concrete pad; on the LEFT a low white equipment shed and a palm tree; on the RIGHT turquoise ocean meeting the horizon; bright blue sky with a few white clouds; strong midday sun; camera low and wide facing the pad."
+  },
+  {
+   "id": "ORBIT",
+   "descriptor": "outer space just above Earth: the curved blue-and-white Earth filling the BOTTOM third of the frame with a thin glowing blue atmosphere line; deep black starry space above; the sun as a soft flare at the top RIGHT; camera looking slightly upward from above the atmosphere."
+  },
+  {
+   "id": "EXCHANGE",
+   "descriptor": "a stock exchange trading floor: in the CENTRE a raised balcony podium with a small brass bell; below it a crowded floor area with trading booths and many blank glowing blue screens; on the LEFT and RIGHT tall columns; falling paper confetti in the air; warm bright stage lighting; camera at floor level looking up at the balcony."
+  },
+  {
+   "id": "FACTORY",
+   "descriptor": "a huge car factory interior: a long assembly line conveyor runs from the LEFT foreground diagonally to the RIGHT background; tall orange robotic arms stand along both sides of the line; high steel roof with skylights and rows of white lights; polished pale-grey concrete floor with yellow safety lines; bright clean white light; camera at eye level beside the line.",
+   "variants": [
+    {
+     "id": "FACTORY_RED",
+     "changes": "the light is a hot dim red-orange glow, steam and haze in the air, sparks near the robots, warning lights flashing."
+    }
+   ]
+  },
+  {
+   "id": "FACTORY_EXT",
+   "descriptor": "the outside of an enormous long white factory building with a flat roof: in the CENTRE a row of very large roll-up doors at ground level; a wide grey parking lot with painted lines in the foreground; low brown-green hills in the background on the RIGHT; clear blue sky; afternoon sun; camera wide at eye level facing the doors; blank signboard frame on the roof with no lettering.",
+   "variants": [
+    {
+     "id": "FACTORY_STORM",
+     "changes": "dark purple-grey storm clouds, heavy wind, dim stormy light, puddles on the parking lot."
+    }
+   ]
+  },
+  {
+   "id": "TENT",
+   "descriptor": "a giant long white fabric tent beside a big white factory: the tent runs from the LEFT foreground into the RIGHT background, its open front end in the CENTRE showing a lit assembly line inside; the factory wall behind on the LEFT; grey concrete pad; low hills on the horizon; clear sky; golden late-afternoon light; camera wide at eye level."
+  },
+  {
+   "id": "STAGE",
+   "descriptor": "a dark product-launch stage: in the CENTRE a glossy black stage floor with a single bright white spotlight circle; a huge blank glowing white screen at the back; dark audience silhouettes in the foreground edges; cool blue rim lights at both sides; camera from the audience at eye level."
+  },
+  {
+   "id": "CLIFF",
+   "descriptor": "a rocky cliff edge at dusk: the cliff top on the LEFT two thirds, flat brown rock ending in a sharp edge; a sheer drop into misty darkness on the RIGHT third; orange-purple dusk sky; wind-blown dust; camera low and side-on to the edge."
+  },
+  {
+   "id": "CONCEPT",
+   "descriptor": "a clean infinite studio backdrop for explainer visuals: seamless soft warm-cream floor curving up into the wall, no corners, no furniture; soft even key light from upper left with gentle shadows; camera at eye level, centred."
+  }
+ ],
+ "props": [
+  {
+   "id": "ROADSTER",
+   "descriptor": "a small low two-seat open-top electric sports car in glossy candy-red with black seats, no logos, no badges, no plate",
+   "plural": "red sports cars",
+   "singular": "red sports car"
+  },
+  {
+   "id": "MODELS",
+   "descriptor": "a sleek full-size four-door electric family sedan in pearl white with a black glass roof and chrome-free smooth front, no logos, no plate",
+   "plural": "white sedans",
+   "singular": "white sedan"
+  },
+  {
+   "id": "MODEL3",
+   "descriptor": "a compact smooth four-door electric sedan in deep midnight-blue with a black glass roof and smooth grille-less front, no logos, no plate",
+   "plural": "blue compact sedans",
+   "singular": "blue compact sedan"
+  },
+  {
+   "id": "PLAINCAR",
+   "descriptor": "a generic ordinary gasoline family car, beige-silver four-door hatchback with a front grille, no logos, no badges, no plate",
+   "plural": "beige ordinary cars",
+   "singular": "beige ordinary car"
+  },
+  {
+   "id": "CASHBOX",
+   "descriptor": "a small grey metal cash box with its lid open",
+   "plural": "cash boxes",
+   "singular": "cash box"
+  },
+  {
+   "id": "PAYCHECK",
+   "descriptor": "a white paper paycheck envelope with a small clear window, no readable text",
+   "plural": "paycheck envelopes",
+   "singular": "paycheck envelope"
+  },
+  {
+   "id": "CASH",
+   "descriptor": "neat bundles of simplified green paper money bound with paper bands, no readable text",
+   "plural": "cash bundles",
+   "singular": "cash bundle"
+  },
+  {
+   "id": "DEAL",
+   "descriptor": "a thick stack of white contract papers with a black fountain pen lying on top, no readable text",
+   "plural": "contract stacks",
+   "singular": "contract stack"
+  },
+  {
+   "id": "PIZZA",
+   "descriptor": "a round golden-crust cheese pizza cut into 8 equal slices, on a round wooden board, representing a company",
+   "plural": "pizzas",
+   "singular": "pizza"
+  },
+  {
+   "id": "CHECK",
+   "descriptor": "an oversized cardboard presentation check, pale green with a blank signature line and no readable text, about the width of a person's arm span",
+   "plural": "giant checks",
+   "singular": "giant check"
+  },
+  {
+   "id": "ROCKET",
+   "descriptor": "a slim white two-stage rocket about ten storeys tall with a black band and a pointed white nose, no logos",
+   "plural": "rockets",
+   "singular": "rocket"
+  },
+  {
+   "id": "COIL",
+   "descriptor": "a tall copper-wound Tesla coil on a wooden base topped with a silver ring, shooting bright purple-white lightning arcs",
+   "plural": "Tesla coils",
+   "singular": "Tesla coil"
+  },
+  {
+   "id": "LEMONADE",
+   "descriptor": "a small wooden lemonade stand with a yellow-and-white striped awning, a glass pitcher of lemonade and paper cups on the counter, no sign text",
+   "plural": "lemonade stands",
+   "singular": "lemonade stand"
+  },
+  {
+   "id": "ROBOT",
+   "descriptor": "a large orange industrial robotic arm with black joints and a grey gripper",
+   "plural": "robot arms",
+   "singular": "robot arm"
+  }
+ ],
+ "scenes": [
+  {
+   "n": 1,
+   "chapter": "Cold open",
+   "line": "December 24th, 2008. 6 p.m. Christmas Eve.",
+   "spoken": "December twenty-fourth, two thousand eight. Six p.m. Christmas Eve.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [],
+   "moment": "Elon sits behind the desk staring at the silent desk phone, chin on his hands; the wall calendar shows the date and the wall clock shows six o'clock.",
+   "camera": "medium-wide, eye level, Elon centre, calendar and clock visible on the left",
+   "animate": true,
+   "text": "DEC 24",
+   "motion": "Elon lifts his chin off his clasped hands and drums the fingers of one hand on the desk, then turns his head up toward the wall clock on the left and his shoulders sag as its minute hand ticks once. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow push-in"
+  },
+  {
+   "n": 2,
+   "chapter": "Cold open",
+   "line": "Tesla has almost no money left.",
+   "spoken": "Tesla has almost no money left.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "CASHBOX"
+   ],
+   "moment": "The open grey cash box sits alone in the middle of the floor, empty except for one single coin at the bottom, under a lonely spotlight.",
+   "camera": "close-up, slightly high angle looking into the box",
+   "animate": false
+  },
+  {
+   "n": 3,
+   "chapter": "Cold open",
+   "line": "In 2 days, its workers' paychecks would bounce.",
+   "spoken": "In two days, its workers' paychecks would bounce.",
+   "chars": [
+    "WORKER"
+   ],
+   "location": "CONCEPT",
+   "props": [
+    "PAYCHECK"
+   ],
+   "moment": "Three paycheck envelopes bounce high in the air like rubber balls while the worker reaches up for them with a worried face.",
+   "camera": "medium-wide, eye level",
+   "animate": true,
+   "count": {
+    "PAYCHECK": 3
+   },
+   "motion": "The three envelopes bounce up and down like rubber balls; the worker lunges and grabs at the nearest one, it bounces out of his gloves, and he clutches both hands to the sides of his head in panic. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "locked-off"
+  },
+  {
+   "n": 4,
+   "chapter": "Cold open",
+   "line": "Its boss has put in nearly everything he owns.",
+   "spoken": "Its boss has put in nearly everything he owns.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [],
+   "moment": "Elon stands beside the desk pulling both trouser pockets inside-out, showing they are empty, with a tired face.",
+   "camera": "medium shot, eye level",
+   "animate": false
+  },
+  {
+   "n": 5,
+   "chapter": "Cold open",
+   "line": "He says he even borrowed from friends to pay rent.",
+   "spoken": "He says he even borrowed from friends to pay rent.",
+   "chars": [
+    "ELON",
+    "FRIEND"
+   ],
+   "location": "APARTMENT",
+   "props": [
+    "CASH"
+   ],
+   "moment": "At the open front door, the friend hands Elon one small bundle of cash; Elon takes it with an embarrassed half-smile.",
+   "camera": "medium shot, eye level, both in profile at the door",
+   "animate": false
+  },
+  {
+   "n": 6,
+   "chapter": "Cold open",
+   "line": "Then, in the last hour, the deal closes.",
+   "spoken": "Then, in the last hour, the deal closes.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [
+    "DEAL"
+   ],
+   "moment": "Elon signs the last page of the contract stack on the desk with the fountain pen, mid-flourish.",
+   "camera": "medium close-up, slightly high angle over the desk",
+   "animate": true,
+   "motion": "Elon finishes the signature with a big looping flourish, lifts the pen and drops it on the desk, pumps his fist once with a grin, and leans back in the chair as the desk lamp glows a little warmer. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow push-in"
+  },
+  {
+   "n": 7,
+   "chapter": "Cold open",
+   "line": "12 years later, Tesla is the most valuable car company on Earth.",
+   "spoken": "Twelve years later, Tesla is the most valuable car company on Earth.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "MODELS",
+    "PLAINCAR"
+   ],
+   "moment": "A white three-step winner's podium: the white sedan sits on the tallest middle step under a golden spotlight; two beige ordinary cars sit on the lower side steps.",
+   "camera": "wide, eye level",
+   "animate": false,
+   "count": {
+    "PLAINCAR": 2
+   }
+  },
+  {
+   "n": 8,
+   "chapter": "Cold open",
+   "line": "Worth more than Toyota, the company that sells the most cars in the world.",
+   "spoken": "Worth more than Toyota, the company that sells the most cars in the world.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "MODELS",
+    "PLAINCAR"
+   ],
+   "moment": "A giant brass balance scale: the single white sedan on the left pan sinks lower than a heaped pile of beige ordinary cars on the right pan.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 9,
+   "chapter": "Promise",
+   "line": "So how does a company 3 days from dying end up on top?",
+   "spoken": "So how does a company three days from dying end up on top?",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CONCEPT",
+   "props": [],
+   "moment": "Elon stands small at the bottom of a giant white staircase that rises up into soft clouds, looking up.",
+   "camera": "wide, low angle from behind Elon",
+   "animate": false
+  },
+  {
+   "n": 10,
+   "chapter": "Promise",
+   "line": "And why didn't the man who saved it even start it?",
+   "spoken": "And why didn't the man who saved it even start it?",
+   "chars": [
+    "MARTIN",
+    "MARC"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Martin and Marc stand side by side in the office, arms crossed, looking straight at the camera with raised eyebrows.",
+   "camera": "medium shot, eye level",
+   "animate": false
+  },
+  {
+   "n": 11,
+   "chapter": "Promise",
+   "line": "It starts in a tiny office in California.",
+   "spoken": "It starts in a tiny office in California.",
+   "chars": [],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "The empty little office in soft morning light, dust floating in the sunbeams.",
+   "camera": "wide establishing, eye level",
+   "animate": false,
+   "text": "2003"
+  },
+  {
+   "n": 12,
+   "chapter": "Origin",
+   "line": "July 2003. 2 engineers, Martin Eberhard and Marc Tarpenning, start a car company.",
+   "spoken": "July two thousand three. Two engineers, Martin Eberhard and Marc Tarpenning, start a car company.",
+   "chars": [
+    "MARTIN",
+    "MARC"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Martin draws the outline of a sleek sports car on the whiteboard with a marker while Marc watches, excited, holding a coffee mug.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 13,
+   "chapter": "Origin",
+   "line": "They name it after the inventor Nikola Tesla.",
+   "spoken": "They name it after the inventor Nikola Tesla.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "COIL"
+   ],
+   "moment": "The Tesla coil crackles with bright purple-white lightning arcs in a dark version of the studio.",
+   "camera": "medium, low angle",
+   "animate": false
+  },
+  {
+   "n": 14,
+   "chapter": "Origin",
+   "line": "Their idea: an electric car that's fast and fun, not slow and boxy.",
+   "spoken": "Their idea: an electric car that's fast and fun, not slow and boxy.",
+   "chars": [
+    "MARTIN"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Martin holds up two paper sketches: in his left hand a sleek low sports car, in his right a boxy little car that he is crumpling.",
+   "camera": "medium shot, eye level",
+   "animate": false
+  },
+  {
+   "n": 15,
+   "chapter": "Origin",
+   "line": "But building cars costs a fortune. They need an investor.",
+   "spoken": "But building cars costs a fortune. They need an investor.",
+   "chars": [
+    "MARC"
+   ],
+   "location": "STARTUP",
+   "props": [
+    "CASHBOX"
+   ],
+   "moment": "Marc tips the open grey cash box upside down over the table; nothing falls out.",
+   "camera": "medium close-up, eye level",
+   "animate": false
+  },
+  {
+   "n": 16,
+   "chapter": "Origin",
+   "line": "Early 2004, they pitch a young internet millionaire.",
+   "spoken": "Early two thousand four, they pitch a young internet millionaire.",
+   "chars": [
+    "ELON",
+    "MARTIN",
+    "MARC"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Elon sits on one side of the small table, arms folded; Martin and Marc sit across from him, leaning forward eagerly.",
+   "camera": "medium-wide, eye level, Elon on the right facing left",
+   "animate": false
+  },
+  {
+   "n": 17,
+   "chapter": "Origin",
+   "line": "“We want to make electric cars cool.” (dramatised)",
+   "spoken": "In our retelling, Martin says: we want to make electric cars cool.",
+   "chars": [
+    "MARTIN",
+    "ELON"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Martin, mid-sentence, gestures with both hands toward the sports car drawing on the whiteboard; Elon listens with one eyebrow raised.",
+   "camera": "over-the-shoulder from behind Elon onto Martin",
+   "animate": false
+  },
+  {
+   "n": 18,
+   "chapter": "Origin",
+   "line": "“Fast and cool? Then I'm in.” (dramatised)",
+   "spoken": "And Elon says: fast and cool? Then I'm in.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Elon leans forward and grins, pointing one finger at the whiteboard sketch.",
+   "camera": "medium close-up on Elon, eye level",
+   "animate": false
+  },
+  {
+   "n": 19,
+   "chapter": "Origin",
+   "line": "He puts in $6.5 million of the first $7.5 million raised.",
+   "spoken": "He puts in six point five million of the first seven point five million raised.",
+   "chars": [
+    "ELON",
+    "MARTIN"
+   ],
+   "location": "STARTUP",
+   "props": [
+    "CASH"
+   ],
+   "moment": "Elon slides a tall stack of cash bundles across the table toward Martin, whose mouth drops open.",
+   "camera": "medium-wide, slightly high angle",
+   "animate": false
+  },
+  {
+   "n": 20,
+   "chapter": "Origin",
+   "line": "He becomes chairman, the head of the board.",
+   "spoken": "He becomes chairman, the head of the board.",
+   "chars": [
+    "ELON",
+    "INVESTOR"
+   ],
+   "location": "BOARDROOM",
+   "props": [],
+   "moment": "Elon sits at the head of the long table in the tall leather chair; the investor sits along the side, turned toward him.",
+   "camera": "wide, eye level from the near end of the table",
+   "animate": false
+  },
+  {
+   "n": 21,
+   "chapter": "Origin",
+   "line": "But he's not the CEO. Not yet.",
+   "spoken": "But he's not the CEO. Not yet.",
+   "chars": [],
+   "location": "BOARDROOM",
+   "props": [],
+   "moment": "The tall black leather head chair stands empty, lit by a single spotlight, the boardroom dim around it.",
+   "camera": "medium, low angle on the chair",
+   "animate": false
+  },
+  {
+   "n": 22,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "Tesla's first car, the Roadster, starts at $109,000.",
+   "spoken": "Tesla's first car, the Roadster, starts at one hundred nine thousand dollars.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "ROADSTER"
+   ],
+   "moment": "The red sports car gleams alone under a bright spotlight, three-quarter front view.",
+   "camera": "medium-wide, low three-quarter angle",
+   "animate": false
+  },
+  {
+   "n": 23,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "That's on purpose. Elon writes a “secret master plan.”",
+   "spoken": "That's on purpose. Elon writes a secret master plan.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Elon sits alone at the table writing in a small black notebook, shielding it with his arm with a sly look.",
+   "camera": "medium close-up, eye level",
+   "animate": false
+  },
+  {
+   "n": 24,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "Step 1: build a pricey sports car.",
+   "spoken": "Step one: build a pricey sports car.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "ROADSTER"
+   ],
+   "moment": "Three giant white steps rising left to right; the red sports car sits glowing on the lowest step; the other two steps are empty.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 25,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "Step 2: use that money to build a cheaper car. Then an even cheaper one.",
+   "spoken": "Step two: use that money to build a cheaper car. Then an even cheaper one.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "ROADSTER",
+    "MODELS",
+    "MODEL3"
+   ],
+   "moment": "The same three giant white steps: the red sports car on the lowest step, the white sedan on the middle step, the blue compact sedan on the top step.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 26,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "Like selling fancy lemonade first, to pay for a bigger stand.",
+   "spoken": "Like selling fancy lemonade first, to pay for a bigger stand.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CONCEPT",
+   "props": [
+    "LEMONADE"
+   ],
+   "moment": "Elon stands behind the small lemonade stand handing over one tall fancy glass of lemonade garnished with a lemon slice.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 27,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "But building it is much harder than planned.",
+   "spoken": "But building it is much harder than planned.",
+   "chars": [
+    "WORKER"
+   ],
+   "location": "GARAGE",
+   "props": [
+    "ROADSTER"
+   ],
+   "moment": "The red sports car sits on the lift with its panels off and parts scattered across the floor; the worker scratches his ball head, confused.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 28,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "In 2007, the board pushes founder Martin Eberhard out as CEO.",
+   "spoken": "In two thousand seven, the board pushes founder Martin Eberhard out as CEO.",
+   "chars": [
+    "MARTIN"
+   ],
+   "location": "STARTUP",
+   "props": [],
+   "moment": "Martin walks toward the door carrying a cardboard box with a potted plant and a coffee mug in it, looking down.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 29,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "In 2008, Roadsters are finally built, in an old car dealer's repair bays.",
+   "spoken": "In two thousand eight, Roadsters are finally built, in an old car dealer's repair bays.",
+   "chars": [
+    "WORKER"
+   ],
+   "location": "GARAGE",
+   "props": [
+    "ROADSTER"
+   ],
+   "moment": "The worker tightens a wheel on the finished red sports car raised on the lift, proud.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 30,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "By January 2009, Tesla has delivered just 147 cars.",
+   "spoken": "By January two thousand nine, Tesla has delivered just one hundred forty-seven cars.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [],
+   "moment": "Many tiny toy-sized red sports cars lined up in neat rows on the floor, viewed from above like a parking lot.",
+   "camera": "high angle, wide",
+   "animate": false
+  },
+  {
+   "n": 31,
+   "chapter": "Chapter 1: The Rich-Person Toy",
+   "line": "And just then, the whole economy crashes.",
+   "spoken": "And just then, the whole economy crashes.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [],
+   "moment": "A tall house of playing cards mid-collapse, cards flying outward.",
+   "camera": "medium, eye level",
+   "animate": false
+  },
+  {
+   "n": 32,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "Fall 2008. Big banks fail. Even America's biggest carmakers are going broke.",
+   "spoken": "Fall two thousand eight. Big banks fail. Even America's biggest carmakers are going broke.",
+   "chars": [],
+   "location": "CITY",
+   "props": [],
+   "moment": "Cracks run up the stone columns of the bank buildings; papers swirl down the empty street.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 33,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "Who lends money to a tiny electric-car startup now? Nobody.",
+   "spoken": "Who lends money to a tiny electric-car startup now? Nobody.",
+   "chars": [
+    "INVESTOR"
+   ],
+   "location": "CITY",
+   "props": [],
+   "moment": "The investor steps inside a bank building and slams its heavy bronze door shut, scowling over his shoulder.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 34,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "Tesla's big fundraising round falls apart.",
+   "spoken": "Tesla's big fundraising round falls apart.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [
+    "DEAL"
+   ],
+   "moment": "Elon stands at the desk as the contract stack tears in half in his hands, pages flying.",
+   "camera": "medium shot, eye level",
+   "animate": false
+  },
+  {
+   "n": 35,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "October 2008: Elon makes himself CEO.",
+   "spoken": "October two thousand eight: Elon makes himself CEO.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "BOARDROOM",
+   "props": [],
+   "moment": "Elon sits down firmly in the tall black leather head chair, determined, hands on the armrests.",
+   "camera": "medium, low angle",
+   "animate": false
+  },
+  {
+   "n": 36,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "And his other company is in trouble too.",
+   "spoken": "And his other company is in trouble too.",
+   "chars": [],
+   "location": "LAUNCH",
+   "props": [
+    "ROCKET"
+   ],
+   "moment": "The rocket stands on the pad beside the launch tower, steam venting, a lonely calm before launch.",
+   "camera": "wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 37,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "SpaceX rockets have failed 3 times in a row.",
+   "spoken": "SpaceX rockets have failed three times in a row.",
+   "chars": [],
+   "location": "LAUNCH",
+   "props": [
+    "ROCKET"
+   ],
+   "moment": "The rocket hovers just above the pad with a weak sputtering flame and grey smoke.",
+   "camera": "wide, low angle",
+   "animate": true,
+   "motion": "The rocket lifts a few metres on a weak flame and wobbles side to side as if struggling, the flame sputters out, and it drops back onto the pad with a small bounce and a puff of grey smoke.",
+   "camera_move": "locked-off"
+  },
+  {
+   "n": 38,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "In his words, there's money for 1 last launch.",
+   "spoken": "In his words, there's money for one last launch.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "LAUNCH",
+   "props": [
+    "ROCKET"
+   ],
+   "moment": "Elon stands small in the foreground, hands in jacket pockets, looking up at the single rocket on the pad.",
+   "camera": "wide, low angle from behind Elon",
+   "animate": false
+  },
+  {
+   "n": 39,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "September 28, 2008: the 4th rocket reaches orbit.",
+   "spoken": "September twenty-eighth, two thousand eight: the fourth rocket reaches orbit.",
+   "chars": [],
+   "location": "ORBIT",
+   "props": [
+    "ROCKET"
+   ],
+   "moment": "The rocket's upper stage flies above the curve of the Earth, engine glowing, sunlight flaring.",
+   "camera": "wide, slightly low",
+   "animate": true,
+   "motion": "The rocket glides steadily forward above the glowing curve of the Earth; its engine flame pulses in one triumphant flare and then burns steady.",
+   "camera_move": "slow pan following the rocket"
+  },
+  {
+   "n": 40,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "But Tesla is still bleeding cash.",
+   "spoken": "But Tesla is still bleeding cash.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "ROADSTER",
+    "CASH"
+   ],
+   "moment": "The red sports car sits parked with green money bundles spilling out from underneath it like a leak.",
+   "camera": "medium-wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 41,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "So Elon puts in the last of his PayPal money.",
+   "spoken": "So Elon puts in the last of his PayPal money.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [
+    "CASHBOX",
+    "CASH"
+   ],
+   "moment": "Elon empties his last few cash bundles into the open grey cash box on the desk.",
+   "camera": "medium shot, slightly high angle",
+   "animate": false
+  },
+  {
+   "n": 42,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "He says he didn't even own a house anymore.",
+   "spoken": "He says he didn't even own a house anymore.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "APARTMENT",
+   "props": [],
+   "moment": "Elon sits alone on a single cardboard moving box in the middle of the bare room under the bare bulb.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 43,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "Now he needs his investors to chip in too.",
+   "spoken": "Now he needs his investors to chip in too.",
+   "chars": [
+    "ELON",
+    "INVESTOR"
+   ],
+   "location": "BOARDROOM",
+   "props": [],
+   "moment": "Elon stands at the head of the table, palms pressed on it, leaning toward the seated investor.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 44,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "The deal is an IOU that can later turn into a slice of the company.",
+   "spoken": "The deal is an I-O-U that can later turn into a slice of the company.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "PIZZA"
+   ],
+   "moment": "A single sheet of paper floating in the air magically morphing into one slice of the pizza, sparkles between them; the pizza with one slice missing below.",
+   "camera": "medium, eye level",
+   "animate": false
+  },
+  {
+   "n": 45,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "The total: about $40 million.",
+   "spoken": "The total: about forty million dollars.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "CASH"
+   ],
+   "moment": "A large neat pile of green cash bundles in the middle of the floor under warm light.",
+   "camera": "medium-wide, slightly high",
+   "animate": false
+  },
+  {
+   "n": 46,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "Reports say one big investor tries to slow it down.",
+   "spoken": "Reports say one big investor tries to slow it down.",
+   "chars": [
+    "INVESTOR"
+   ],
+   "location": "BOARDROOM",
+   "props": [],
+   "moment": "The investor sits back in his chair, holding up a round red stop-sign paddle with no text, smirking.",
+   "camera": "medium shot, eye level",
+   "animate": false
+  },
+  {
+   "n": 47,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "The clock ticks toward Christmas.",
+   "spoken": "The clock ticks toward Christmas.",
+   "chars": [],
+   "location": "OFFICE",
+   "props": [],
+   "moment": "Close view of the wall clock showing almost six o'clock and the wall calendar beside it.",
+   "camera": "close-up on the left wall",
+   "animate": false,
+   "text": "DEC 24"
+  },
+  {
+   "n": 48,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "6 p.m., December 24th: the deal closes.",
+   "spoken": "Six p.m., December twenty-fourth: the deal closes.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [
+    "DEAL"
+   ],
+   "moment": "Elon slumps back in his chair with a huge relieved exhale, the signed contract stack on the desk.",
+   "camera": "medium shot, eye level",
+   "animate": true,
+   "motion": "Elon tips his head back against the chair and lets out a long breath, then throws both arms up in relief and laughs, his shoulders shaking. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow push-in"
+  },
+  {
+   "n": 49,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "In Elon's words, payroll would have bounced 2 days later.",
+   "spoken": "In Elon's words, payroll would have bounced two days later.",
+   "chars": [
+    "WORKER"
+   ],
+   "location": "GARAGE",
+   "props": [
+    "PAYCHECK"
+   ],
+   "moment": "The worker holds his paycheck envelope up to the light with a big relieved smile.",
+   "camera": "medium close-up, eye level",
+   "animate": false
+  },
+  {
+   "n": 50,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "That same December, NASA hands SpaceX a $1.6 billion contract.",
+   "spoken": "That same December, NASA hands SpaceX a one point six billion dollar contract.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CONCEPT",
+   "props": [
+    "DEAL"
+   ],
+   "moment": "Elon holds the thick contract stack high above his head with both arms, beaming.",
+   "camera": "medium-wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 51,
+   "chapter": "Chapter 2: Three Days Left",
+   "line": "Both companies survive. Barely.",
+   "spoken": "Both companies survive. Barely.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [],
+   "moment": "Elon sits on the floor with his back against the wall below the window, exhausted, a tired small smile.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 52,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "2010: the U.S. government lends Tesla $465 million.",
+   "spoken": "Twenty ten: the U.S. government lends Tesla four hundred sixty-five million dollars.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CONCEPT",
+   "props": [
+    "CHECK"
+   ],
+   "moment": "Elon holds the giant check across his chest with both hands, grinning.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 53,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "June 29, 2010: Tesla starts selling shares to the public at $17 each.",
+   "spoken": "June twenty-ninth, twenty ten: Tesla starts selling shares to the public at seventeen dollars each.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "EXCHANGE",
+   "props": [],
+   "moment": "Elon stands on the balcony podium ringing the small brass bell as confetti falls.",
+   "camera": "wide, low angle from the floor",
+   "animate": false
+  },
+  {
+   "n": 54,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "That makes the whole company worth about $1.5 billion.",
+   "spoken": "That makes the whole company worth about one point five billion dollars.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "PIZZA"
+   ],
+   "moment": "The whole pizza on its board sits in the centre under a spotlight.",
+   "camera": "medium, slightly high angle",
+   "animate": false
+  },
+  {
+   "n": 55,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "Think of a pizza: 1 slice's price times the number of slices.",
+   "spoken": "Think of a pizza: one slice's price times the number of slices.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "PIZZA"
+   ],
+   "moment": "One slice lifted slightly out of the pizza with cheese stretching, a small blank paper price tag tied to it.",
+   "camera": "close-up, slightly high angle",
+   "animate": false
+  },
+  {
+   "n": 56,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "Tesla buys an old car factory in Fremont, California, for $42 million.",
+   "spoken": "Tesla buys an old car factory in Fremont, California, for forty-two million dollars.",
+   "chars": [],
+   "location": "FACTORY_EXT",
+   "props": [],
+   "moment": "The huge empty factory with closed doors and an empty parking lot, quiet.",
+   "camera": "wide establishing, eye level",
+   "animate": false
+  },
+  {
+   "n": 57,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "It used to belong to GM and Toyota together.",
+   "spoken": "It used to belong to GM and Toyota together.",
+   "chars": [
+    "WORKER"
+   ],
+   "location": "FACTORY_EXT",
+   "props": [],
+   "moment": "The worker on a ladder unscrews an old faded blank sign board from beside the factory doors.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 58,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "June 2012: the first Model S family cars go to customers.",
+   "spoken": "June twenty twelve: the first Model S family cars go to customers.",
+   "chars": [
+    "CROWD"
+   ],
+   "location": "FACTORY_EXT",
+   "props": [
+    "MODELS"
+   ],
+   "moment": "The white sedan rolls out of an open factory door while a small crowd claps in the parking lot.",
+   "camera": "wide, eye level",
+   "animate": true,
+   "motion": "The white sedan rolls slowly forward toward the camera; the crowd on both sides claps excitedly, the person at the front of the left group points at the car, and the person nearest the car on the right raises both arms in a cheer. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow pull-out"
+  },
+  {
+   "n": 59,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "2013: Tesla pays back the government loan, 9 years early.",
+   "spoken": "Twenty thirteen: Tesla pays back the government loan, nine years early.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CONCEPT",
+   "props": [
+    "CHECK"
+   ],
+   "moment": "Elon holds the giant check out at arm's length, handing it back, with a proud smile.",
+   "camera": "medium-wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 60,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "Now for step 3 of the plan.",
+   "spoken": "Now for step three of the plan.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "ROADSTER",
+    "MODELS",
+    "MODEL3"
+   ],
+   "moment": "The three giant white steps again: the red sports car and white sedan on the lower steps are dimmed, the blue compact sedan on the top step glows brightly.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 61,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "March 31, 2016: Elon shows the cheaper Model 3.",
+   "spoken": "March thirty-first, twenty sixteen: Elon shows the cheaper Model 3.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "STAGE",
+   "props": [
+    "MODEL3"
+   ],
+   "moment": "Elon stands in the spotlight, one arm stretched toward the blue compact sedan beside him.",
+   "camera": "wide, eye level from the audience",
+   "animate": false
+  },
+  {
+   "n": 62,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "In 1 week, about 325,000 people put down roughly $1,000 each.",
+   "spoken": "In one week, about three hundred twenty-five thousand people put down roughly a thousand dollars each.",
+   "chars": [
+    "CROWD"
+   ],
+   "location": "CONCEPT",
+   "props": [
+    "CASH"
+   ],
+   "moment": "An endless line of crowd members snakes into the far distance, each holding one cash bundle, the front person handing theirs over a small desk.",
+   "camera": "wide, high angle",
+   "animate": true,
+   "motion": "The long line shuffles forward step by step; the front person slides the cash bundle across the desk, the seated clerk gives a thumbs-up, the front person does a happy little fist pump and steps aside, and the next person eagerly steps up holding out their cash. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow crane up"
+  },
+  {
+   "n": 63,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "Now Tesla has to actually build them. Fast.",
+   "spoken": "Now Tesla has to actually build them. Fast.",
+   "chars": [],
+   "location": "FACTORY",
+   "props": [],
+   "moment": "The long assembly line stands completely empty, robots frozen, waiting.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 64,
+   "chapter": "Chapter 3: The Real Car",
+   "line": "Elon promises 5,000 cars a week.",
+   "spoken": "Elon promises five thousand cars a week.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "FACTORY",
+   "props": [],
+   "moment": "Elon stands by the line pointing up at a large hanging goal board.",
+   "camera": "medium-wide, low angle",
+   "animate": false,
+   "text": "5,000"
+  },
+  {
+   "n": 65,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "In spring 2018, Tesla averages about 2,200 a week, less than half the goal.",
+   "spoken": "In spring twenty eighteen, Tesla averages about two thousand two hundred a week, less than half the goal.",
+   "chars": [
+    "WORKER"
+   ],
+   "location": "FACTORY",
+   "props": [
+    "MODEL3"
+   ],
+   "moment": "Only a few blue compact sedans crawl along the line with big gaps; the worker taps his wrist impatiently.",
+   "camera": "wide, eye level",
+   "animate": true,
+   "motion": "The line crawls slowly with big empty gaps; the worker taps his wrist twice, throws both hands up in frustration, then folds his arms and shakes his head. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow pan along the line"
+  },
+  {
+   "n": 66,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "The robots keep getting stuck.",
+   "spoken": "The robots keep getting stuck.",
+   "chars": [],
+   "location": "FACTORY",
+   "props": [
+    "ROBOT"
+   ],
+   "moment": "Two orange robot arms are tangled together over a half-built car body, frozen mid-move, a warning light flashing.",
+   "camera": "medium, eye level",
+   "animate": false
+  },
+  {
+   "n": 67,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "Elon later admits Tesla relied too much on robots.",
+   "spoken": "Elon later admits Tesla relied too much on robots.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "FACTORY",
+   "props": [
+    "ROBOT"
+   ],
+   "moment": "Elon stands under a tangled orange robot arm with one hand over his face in a facepalm.",
+   "camera": "medium shot, eye level",
+   "animate": false
+  },
+  {
+   "n": 68,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "He spends nights sleeping inside the factory.",
+   "spoken": "He spends nights sleeping inside the factory.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "FACTORY",
+   "props": [],
+   "moment": "Elon sleeps curled up on a flattened cardboard sheet on the floor beside the line, lights dimmed.",
+   "camera": "medium-wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 69,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "So the team builds a new assembly line inside a giant tent.",
+   "spoken": "So the team builds a new assembly line inside a giant tent.",
+   "chars": [],
+   "location": "TENT",
+   "props": [
+    "MODEL3"
+   ],
+   "moment": "The giant white tent with its open end glowing; blue compact sedans visible moving inside.",
+   "camera": "wide, eye level",
+   "animate": true,
+   "motion": "The tent fabric ripples gently in the breeze as a blue sedan rolls out of the glowing opening; the three people on the left point at it and turn to each other nodding, and the person with the clipboard on the right ticks the clipboard and gives a thumbs-up. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow push-in"
+  },
+  {
+   "n": 70,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "Elon says it went up in about 2 weeks.",
+   "spoken": "Elon says it went up in about two weeks.",
+   "chars": [
+    "WORKER"
+   ],
+   "location": "TENT",
+   "props": [],
+   "moment": "The worker and other workers haul a tall tent pole upright, the tent half raised.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 71,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "Last week of June 2018: they make 5,031 Model 3s.",
+   "spoken": "Last week of June twenty eighteen: they make five thousand thirty-one Model 3s.",
+   "chars": [
+    "WORKER",
+    "ELON"
+   ],
+   "location": "FACTORY",
+   "props": [],
+   "moment": "Workers and Elon cheer with fists in the air under a large hanging board.",
+   "camera": "wide, low angle",
+   "animate": false,
+   "text": "5,031"
+  },
+  {
+   "n": 72,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "But the danger was real.",
+   "spoken": "But the danger was real.",
+   "chars": [],
+   "location": "FACTORY_STORM",
+   "props": [],
+   "moment": "The factory under dark storm clouds, rain lashing the parking lot.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 73,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "Elon says Tesla came “about a month” from bankruptcy.",
+   "spoken": "Elon says Tesla came about a month from bankruptcy.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CLIFF",
+   "props": [],
+   "moment": "Elon stands at the very edge of the cliff, toes over the edge, arms out for balance, looking down into the drop.",
+   "camera": "side-on medium-wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 74,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "He calls those 2 years “production and logistics hell.”",
+   "spoken": "He calls those two years production and logistics hell.",
+   "chars": [],
+   "location": "FACTORY_RED",
+   "props": [],
+   "moment": "The assembly line glowing in hot red light, steam rising, sparks near the robots.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 75,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "Then the cars start flowing, and so does the money. 4 profitable quarters in a row, a first.",
+   "spoken": "Then the cars start flowing, and so does the money. Four profitable quarters in a row, a first.",
+   "chars": [],
+   "location": "FACTORY",
+   "props": [
+    "MODEL3"
+   ],
+   "moment": "A tight steady stream of finished blue compact sedans rolls along the bright line, bumper to bumper.",
+   "camera": "wide, eye level",
+   "animate": true,
+   "motion": "The finished blue sedans glide smoothly along the line bumper to bumper, each giving a tiny bounce on its suspension; the orange robot arms above swing up and down in a steady rhythm.",
+   "camera_move": "slow pan right"
+  },
+  {
+   "n": 76,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "July 1, 2020: Tesla passes Toyota, worth about $209 billion.",
+   "spoken": "July first, twenty twenty: Tesla passes Toyota, worth about two hundred nine billion dollars.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "MODELS",
+    "PLAINCAR"
+   ],
+   "moment": "The white sedan rolls up onto the top step of the winner's podium while a beige ordinary car slides down to the second step.",
+   "camera": "wide, eye level",
+   "animate": true,
+   "motion": "The white sedan on the top step gives a proud little bounce on its suspension and flashes its headlights twice; the beige car on the lower step sinks slightly on its springs like a sigh; a golden spotlight fades up on the white sedan.",
+   "camera_move": "locked-off"
+  },
+  {
+   "n": 77,
+   "chapter": "Chapter 4: Production Hell",
+   "line": "12 years after Christmas Eve, it's the most valuable carmaker on Earth.",
+   "spoken": "Twelve years after Christmas Eve, it's the most valuable carmaker on Earth.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [],
+   "moment": "Elon stands by the wall calendar, looking at it thoughtfully, a small gold trophy on the desk.",
+   "camera": "medium-wide, eye level",
+   "animate": false,
+   "text": "DEC 24"
+  },
+  {
+   "n": 78,
+   "chapter": "Today",
+   "line": "Today, Tesla is worth about $1.5 trillion.",
+   "spoken": "Today, Tesla is worth about one point five trillion dollars.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "PIZZA"
+   ],
+   "moment": "A gigantic pizza towering as tall as a building fills the frame from floor to ceiling.",
+   "camera": "wide, very low angle",
+   "animate": false
+  },
+  {
+   "n": 79,
+   "chapter": "Today",
+   "line": "That's roughly 1,000 times its value on day 1.",
+   "spoken": "That's roughly a thousand times its value on day one.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "PIZZA"
+   ],
+   "moment": "A tiny pizza the size of a coin sits on the floor next to the base of the gigantic pizza.",
+   "camera": "wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 80,
+   "chapter": "Today",
+   "line": "Toyota is worth about $253 billion, so Tesla is worth about 6 times more.",
+   "spoken": "Toyota is worth about two hundred fifty-three billion dollars, so Tesla is worth about six times more.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "MODELS",
+    "PLAINCAR"
+   ],
+   "moment": "The giant balance scale: the single white sedan side is pressed all the way down, the single beige car side high in the air.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 81,
+   "chapter": "Today",
+   "line": "Yet in 2025, Toyota sold about 11.3 million cars.",
+   "spoken": "Yet in twenty twenty-five, Toyota sold about eleven point three million cars.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "PLAINCAR"
+   ],
+   "moment": "A huge mountain of tiny beige ordinary cars piled high.",
+   "camera": "wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 82,
+   "chapter": "Today",
+   "line": "Tesla sold about 1.6 million.",
+   "spoken": "Tesla sold about one point six million.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "MODEL3"
+   ],
+   "moment": "A much smaller pile of tiny blue compact sedans, about one seventh the height of a mountain.",
+   "camera": "wide, eye level",
+   "animate": false
+  },
+  {
+   "n": 83,
+   "chapter": "Today",
+   "line": "Why? Because a stock price is a bet on tomorrow, not today.",
+   "spoken": "Why? Because a stock price is a bet on tomorrow, not today.",
+   "chars": [
+    "CROWD"
+   ],
+   "location": "CONCEPT",
+   "props": [],
+   "moment": "A row of crowd members peer through brass telescopes toward a glowing horizon.",
+   "camera": "medium-wide, from behind the crowd",
+   "animate": false
+  },
+  {
+   "n": 84,
+   "chapter": "Today",
+   "line": "People are paying for the lemonade stand they think it will become.",
+   "spoken": "People are paying for the lemonade stand they think it will become.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [
+    "LEMONADE"
+   ],
+   "moment": "The small lemonade stand casts a long shadow on the wall shaped like a tall skyscraper.",
+   "camera": "wide, low angle",
+   "animate": false
+  },
+  {
+   "n": 85,
+   "chapter": "Today",
+   "line": "Will that bet pay off? Nobody knows yet.",
+   "spoken": "Will that bet pay off? Nobody knows yet.",
+   "chars": [],
+   "location": "CONCEPT",
+   "props": [],
+   "moment": "A single gold coin spins on its edge on the floor, motion-blurred, under a spotlight.",
+   "camera": "close-up, eye level",
+   "animate": false
+  },
+  {
+   "n": 86,
+   "chapter": "Payoff",
+   "line": "Back in 2008, Elon put in his last money…",
+   "spoken": "Back in two thousand eight, Elon put in his last money...",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [],
+   "moment": "Elon stands beside the desk at night pulling his trouser pockets inside-out, a small rueful smile.",
+   "camera": "medium shot, eye level",
+   "animate": true,
+   "motion": "Elon looks down at his empty pockets, lets them drop, gives a big slow shrug with both palms up, tilts his head and smiles. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "slow push-in"
+  },
+  {
+   "n": 87,
+   "chapter": "Payoff",
+   "line": "…“even though I thought we would still fail.”",
+   "spoken": "even though, as he put it, I thought we would still fail.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "OFFICE",
+   "props": [],
+   "moment": "Elon stands at the night window, back half-turned, looking out at the city lights.",
+   "camera": "medium-wide, from behind the desk",
+   "animate": false
+  },
+  {
+   "n": 88,
+   "chapter": "Payoff",
+   "line": "Follow for more money, so simple a 5-year-old gets it.",
+   "spoken": "Follow for more money, so simple a five-year-old gets it.",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CONCEPT",
+   "props": [
+    "ROADSTER"
+   ],
+   "moment": "Elon waves at the camera while the red sports car drives past behind him.",
+   "camera": "medium-wide, eye level",
+   "animate": true,
+   "motion": "Elon waves big at the camera, then points straight at the camera with a grin as the red sports car zooms past behind him. Gestures are big, clear and cartoon-snappy; hands stay separate and fully visible.",
+   "camera_move": "locked-off"
+  }
+ ],
+ "thumbnails": [
+  {
+   "id": "A",
+   "chars": [
+    "ELON"
+   ],
+   "moment": "Close-up of Elon on the right with a shocked face, pulling out empty pockets; behind him a dark office with a single desk lamp and a wall clock at six.",
+   "overlay": "3 DAYS LEFT"
+  },
+  {
+   "id": "B",
+   "chars": [
+    "ELON"
+   ],
+   "moment": "Split screen: left, Elon sitting on a cardboard box in a bare room; right, a white electric sedan on a golden winner's podium; a jagged gold line between them.",
+   "overlay": "BROKE TO #1"
+  },
+  {
+   "id": "C",
+   "chars": [
+    "ELON"
+   ],
+   "location": "CLIFF",
+   "moment": "Elon balancing at a cliff edge at dusk, toes over the drop, a red sports car parked just behind him.",
+   "overlay": "ALMOST GONE"
+  }
+ ]
+}
