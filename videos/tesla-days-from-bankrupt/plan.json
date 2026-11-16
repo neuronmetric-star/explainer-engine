@@ -1,0 +1,638 @@
+{
+ "out": "final.mp4",
+ "width": 1920,
+ "height": 1080,
+ "fps": 30,
+ "sfx_volume": 0.55,
+ "vo_volume": 1.7,
+ "captions": true,
+ "music": null,
+ "end_card": "FOLLOW FOR MORE",
+ "end_card_dur": 2.4,
+ "shots": [
+  {
+   "clip": "clips/s001.mp4",
+   "dur": 5.85,
+   "text": "December 24th, 2008. 6 p.m. Christmas Eve.",
+   "vo": "vo/vo_01.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s002.mp4",
+   "dur": 3.104,
+   "text": "Tesla has almost no money left.",
+   "vo": "vo/vo_02.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s003.mp4",
+   "dur": 3.631,
+   "text": "In 2 days, its workers' paychecks would bounce.",
+   "vo": "vo/vo_03.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s004.mp4",
+   "dur": 3.307,
+   "text": "Its boss has put in nearly everything he owns.",
+   "vo": "vo/vo_04.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s005.mp4",
+   "dur": 3.402,
+   "text": "He says he even borrowed from friends to pay rent.",
+   "vo": "vo/vo_05.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s006.mp4",
+   "dur": 4.226,
+   "text": "Then, in the last hour, the deal closes.",
+   "vo": "vo/vo_06.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s007.mp4",
+   "dur": 5.128,
+   "text": "12 years later, Tesla is the most valuable car company on Earth.",
+   "vo": "vo/vo_07.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s008.mp4",
+   "dur": 4.969,
+   "text": "Worth more than Toyota, the company that sells the most cars in the world.",
+   "vo": "vo/vo_08.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s009.mp4",
+   "dur": 4.342,
+   "text": "So how does a company 3 days from dying end up on top?",
+   "vo": "vo/vo_09.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s010.mp4",
+   "dur": 3.527,
+   "text": "And why didn't the man who saved it even start it?",
+   "vo": "vo/vo_10.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s011.mp4",
+   "dur": 3.489,
+   "text": "It starts in a tiny office in California.",
+   "vo": "vo/vo_11.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s012.mp4",
+   "dur": 7.23,
+   "text": "July 2003. 2 engineers, Martin Eberhard and Marc Tarpenning, start a car company.",
+   "vo": "vo/vo_12.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s013.mp4",
+   "dur": 3.272,
+   "text": "They name it after the inventor Nikola Tesla.",
+   "vo": "vo/vo_13.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s014.mp4",
+   "dur": 5.984,
+   "text": "Their idea: an electric car that's fast and fun, not slow and boxy.",
+   "vo": "vo/vo_14.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s015.mp4",
+   "dur": 4.801,
+   "text": "But building cars costs a fortune. They need an investor.",
+   "vo": "vo/vo_15.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s016.mp4",
+   "dur": 4.288,
+   "text": "Early 2004, they pitch a young internet millionaire.",
+   "vo": "vo/vo_16.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s017.mp4",
+   "dur": 4.675,
+   "text": "\u201cWe want to make electric cars cool.\u201d (dramatised)",
+   "vo": "vo/vo_17.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s018.mp4",
+   "dur": 4.161,
+   "text": "\u201cFast and cool? Then I'm in.\u201d (dramatised)",
+   "vo": "vo/vo_18.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s019.mp4",
+   "dur": 5.211,
+   "text": "He puts in $6.5 million of the first $7.5 million raised.",
+   "vo": "vo/vo_19.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s020.mp4",
+   "dur": 2.661,
+   "text": "He becomes chairman, the head of the board.",
+   "vo": "vo/vo_20.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s021.mp4",
+   "dur": 3.42,
+   "text": "But he's not the CEO. Not yet.",
+   "vo": "vo/vo_21.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s022.mp4",
+   "dur": 5.422,
+   "text": "Tesla's first car, the Roadster, starts at $109,000.",
+   "vo": "vo/vo_22.wav",
+   "sfx": 1.0,
+   "title": "Chapter 1: The Rich-Person Toy",
+   "title_dur": 2.0
+  },
+  {
+   "clip": "clips/s023.mp4",
+   "dur": 4.317,
+   "text": "That's on purpose. Elon writes a \u201csecret master plan.\u201d",
+   "vo": "vo/vo_23.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s024.mp4",
+   "dur": 3.419,
+   "text": "Step 1: build a pricey sports car.",
+   "vo": "vo/vo_24.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s025.mp4",
+   "dur": 5.714,
+   "text": "Step 2: use that money to build a cheaper car. Then an even cheaper one.",
+   "vo": "vo/vo_25.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s026.mp4",
+   "dur": 4.168,
+   "text": "Like selling fancy lemonade first, to pay for a bigger stand.",
+   "vo": "vo/vo_26.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s027.mp4",
+   "dur": 3.175,
+   "text": "But building it is much harder than planned.",
+   "vo": "vo/vo_27.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s028.mp4",
+   "dur": 5.525,
+   "text": "In 2007, the board pushes founder Martin Eberhard out as CEO.",
+   "vo": "vo/vo_28.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s029.mp4",
+   "dur": 6.008,
+   "text": "In 2008, Roadsters are finally built, in an old car dealer's repair bays.",
+   "vo": "vo/vo_29.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s030.mp4",
+   "dur": 5.998,
+   "text": "By January 2009, Tesla has delivered just 147 cars.",
+   "vo": "vo/vo_30.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s031.mp4",
+   "dur": 3.994,
+   "text": "And just then, the whole economy crashes.",
+   "vo": "vo/vo_31.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s032.mp4",
+   "dur": 7.21,
+   "text": "Fall 2008. Big banks fail. Even America's biggest carmakers are going broke.",
+   "vo": "vo/vo_32.wav",
+   "sfx": 1.0,
+   "title": "Chapter 2: Three Days Left",
+   "title_dur": 2.0
+  },
+  {
+   "clip": "clips/s033.mp4",
+   "dur": 3.67,
+   "text": "Who lends money to a tiny electric-car startup now? Nobody.",
+   "vo": "vo/vo_33.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s034.mp4",
+   "dur": 4.688,
+   "text": "Tesla's big fundraising round falls apart.",
+   "vo": "vo/vo_34.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s035.mp4",
+   "dur": 5.084,
+   "text": "October 2008: Elon makes himself CEO.",
+   "vo": "vo/vo_35.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s036.mp4",
+   "dur": 2.45,
+   "text": "And his other company is in trouble too.",
+   "vo": "vo/vo_36.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s037.mp4",
+   "dur": 3.751,
+   "text": "SpaceX rockets have failed 3 times in a row.",
+   "vo": "vo/vo_37.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s038.mp4",
+   "dur": 4.186,
+   "text": "In his words, there's money for 1 last launch.",
+   "vo": "vo/vo_38.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s039.mp4",
+   "dur": 5.208,
+   "text": "September 28, 2008: the 4th rocket reaches orbit.",
+   "vo": "vo/vo_39.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s040.mp4",
+   "dur": 2.869,
+   "text": "But Tesla is still bleeding cash.",
+   "vo": "vo/vo_40.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s041.mp4",
+   "dur": 3.237,
+   "text": "So Elon puts in the last of his PayPal money.",
+   "vo": "vo/vo_41.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s042.mp4",
+   "dur": 2.76,
+   "text": "He says he didn't even own a house anymore.",
+   "vo": "vo/vo_42.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s043.mp4",
+   "dur": 3.05,
+   "text": "Now he needs his investors to chip in too.",
+   "vo": "vo/vo_43.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s044.mp4",
+   "dur": 4.87,
+   "text": "The deal is an IOU that can later turn into a slice of the company.",
+   "vo": "vo/vo_44.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s045.mp4",
+   "dur": 3.272,
+   "text": "The total: about $40 million.",
+   "vo": "vo/vo_45.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s046.mp4",
+   "dur": 3.82,
+   "text": "Reports say one big investor tries to slow it down.",
+   "vo": "vo/vo_46.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s047.mp4",
+   "dur": 2.558,
+   "text": "The clock ticks toward Christmas.",
+   "vo": "vo/vo_47.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s048.mp4",
+   "dur": 2.707,
+   "text": "6 p.m., December 24th: the deal closes.",
+   "vo": "vo/vo_48.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s049.mp4",
+   "dur": 5.651,
+   "text": "In Elon's words, payroll would have bounced 2 days later.",
+   "vo": "vo/vo_49.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s050.mp4",
+   "dur": 5.802,
+   "text": "That same December, NASA hands SpaceX a $1.6 billion contract.",
+   "vo": "vo/vo_50.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s051.mp4",
+   "dur": 3.027,
+   "text": "Both companies survive. Barely.",
+   "vo": "vo/vo_51.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s052.mp4",
+   "dur": 6.161,
+   "text": "2010: the U.S. government lends Tesla $465 million.",
+   "vo": "vo/vo_52.wav",
+   "sfx": 1.0,
+   "title": "Chapter 3: The Real Car",
+   "title_dur": 2.0
+  },
+  {
+   "clip": "clips/s053.mp4",
+   "dur": 6.617,
+   "text": "June 29, 2010: Tesla starts selling shares to the public at $17 each.",
+   "vo": "vo/vo_53.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s054.mp4",
+   "dur": 4.474,
+   "text": "That makes the whole company worth about $1.5 billion.",
+   "vo": "vo/vo_54.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s055.mp4",
+   "dur": 4.587,
+   "text": "Think of a pizza: 1 slice's price times the number of slices.",
+   "vo": "vo/vo_55.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s056.mp4",
+   "dur": 5.703,
+   "text": "Tesla buys an old car factory in Fremont, California, for $42 million.",
+   "vo": "vo/vo_56.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s057.mp4",
+   "dur": 3.271,
+   "text": "It used to belong to GM and Toyota together.",
+   "vo": "vo/vo_57.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s058.mp4",
+   "dur": 5.189,
+   "text": "June 2012: the first Model S family cars go to customers.",
+   "vo": "vo/vo_58.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s059.mp4",
+   "dur": 5.642,
+   "text": "2013: Tesla pays back the government loan, 9 years early.",
+   "vo": "vo/vo_59.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s060.mp4",
+   "dur": 2.505,
+   "text": "Now for step 3 of the plan.",
+   "vo": "vo/vo_60.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s061.mp4",
+   "dur": 5.417,
+   "text": "March 31, 2016: Elon shows the cheaper Model 3.",
+   "vo": "vo/vo_61.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s062.mp4",
+   "dur": 6.53,
+   "text": "In 1 week, about 325,000 people put down roughly $1,000 each.",
+   "vo": "vo/vo_62.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s063.mp4",
+   "dur": 2.514,
+   "text": "Now Tesla has to actually build them. Fast.",
+   "vo": "vo/vo_63.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s064.mp4",
+   "dur": 4.362,
+   "text": "Elon promises 5,000 cars a week.",
+   "vo": "vo/vo_64.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s065.mp4",
+   "dur": 6.795,
+   "text": "In spring 2018, Tesla averages about 2,200 a week, less than half the goal.",
+   "vo": "vo/vo_65.wav",
+   "sfx": 1.0,
+   "title": "Chapter 4: Production Hell",
+   "title_dur": 2.0
+  },
+  {
+   "clip": "clips/s066.mp4",
+   "dur": 2.283,
+   "text": "The robots keep getting stuck.",
+   "vo": "vo/vo_66.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s067.mp4",
+   "dur": 3.798,
+   "text": "Elon later admits Tesla relied too much on robots.",
+   "vo": "vo/vo_67.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s068.mp4",
+   "dur": 2.945,
+   "text": "He spends nights sleeping inside the factory.",
+   "vo": "vo/vo_68.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s069.mp4",
+   "dur": 4.686,
+   "text": "So the team builds a new assembly line inside a giant tent.",
+   "vo": "vo/vo_69.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s070.mp4",
+   "dur": 2.785,
+   "text": "Elon says it went up in about 2 weeks.",
+   "vo": "vo/vo_70.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s071.mp4",
+   "dur": 5.645,
+   "text": "Last week of June 2018: they make 5,031 Model 3s.",
+   "vo": "vo/vo_71.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s072.mp4",
+   "dur": 1.894,
+   "text": "But the danger was real.",
+   "vo": "vo/vo_72.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s073.mp4",
+   "dur": 3.443,
+   "text": "Elon says Tesla came \u201cabout a month\u201d from bankruptcy.",
+   "vo": "vo/vo_73.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s074.mp4",
+   "dur": 4.024,
+   "text": "He calls those 2 years \u201cproduction and logistics hell.\u201d",
+   "vo": "vo/vo_74.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s075.mp4",
+   "dur": 7.455,
+   "text": "Then the cars start flowing, and so does the money. 4 profitable quarters in a row, a first.",
+   "vo": "vo/vo_75.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s076.mp4",
+   "dur": 7.076,
+   "text": "July 1, 2020: Tesla passes Toyota, worth about $209 billion.",
+   "vo": "vo/vo_76.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s077.mp4",
+   "dur": 5.208,
+   "text": "12 years after Christmas Eve, it's the most valuable carmaker on Earth.",
+   "vo": "vo/vo_77.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s078.mp4",
+   "dur": 4.441,
+   "text": "Today, Tesla is worth about $1.5 trillion.",
+   "vo": "vo/vo_78.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s079.mp4",
+   "dur": 3.625,
+   "text": "That's roughly 1,000 times its value on day 1.",
+   "vo": "vo/vo_79.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s080.mp4",
+   "dur": 6.732,
+   "text": "Toyota is worth about $253 billion, so Tesla is worth about 6 times more.",
+   "vo": "vo/vo_80.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s081.mp4",
+   "dur": 5.537,
+   "text": "Yet in 2025, Toyota sold about 11.3 million cars.",
+   "vo": "vo/vo_81.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s082.mp4",
+   "dur": 2.906,
+   "text": "Tesla sold about 1.6 million.",
+   "vo": "vo/vo_82.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s083.mp4",
+   "dur": 3.465,
+   "text": "Why? Because a stock price is a bet on tomorrow, not today.",
+   "vo": "vo/vo_83.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s084.mp4",
+   "dur": 5.291,
+   "text": "People are paying for the lemonade stand they think it will become.",
+   "vo": "vo/vo_84.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s085.mp4",
+   "dur": 3.114,
+   "text": "Will that bet pay off? Nobody knows yet.",
+   "vo": "vo/vo_85.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s086.mp4",
+   "dur": 3.764,
+   "text": "Back in 2008, Elon put in his last money\u2026",
+   "vo": "vo/vo_86.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s087.mp4",
+   "dur": 3.979,
+   "text": "\u2026\u201ceven though I thought we would still fail.\u201d",
+   "vo": "vo/vo_87.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s088.mp4",
+   "dur": 3.73,
+   "text": "Follow for more money, so simple a 5-year-old gets it.",
+   "vo": "vo/vo_88.wav",
+   "sfx": 1.0
+  }
+ ]
+}

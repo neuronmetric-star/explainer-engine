@@ -6,3 +6,4 @@ videos/*/images/*.png
 videos/*/clips/s*.mp4
 videos/*/vo/vo_*.wav
 __pycache__/
+videos/*/final*.mp4
