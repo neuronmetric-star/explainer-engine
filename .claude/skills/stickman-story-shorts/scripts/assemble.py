@@ -25,7 +25,7 @@ speech inside each vo file (pauses detected), words spread by length.
 import json, math, os, re, subprocess, sys, tempfile
 
 def run(cmd):
-    r = subprocess.run(cmd, capture_output=True, text=True)
+    r = subprocess.run(cmd, capture_output=True, text=True, stdin=subprocess.DEVNULL)
     if r.returncode: sys.exit('ffmpeg failed:\n' + ' '.join(cmd) + '\n' + r.stderr[-3000:])
     return r
 

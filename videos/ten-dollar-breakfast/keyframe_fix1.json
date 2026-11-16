@@ -1,0 +1,207 @@
+{
+ "order": [
+  "04",
+  "05a",
+  "05b",
+  "06",
+  "07a",
+  "07b",
+  "09"
+ ],
+ "requests": [
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:cvez2PYA2bl3dEq1vC9H",
+      "label": "Shot 04 keyframe to edit"
+     },
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Edit Image 1. Keep EVERYTHING in Image 1 identical: same camera angle and framing, same 3D clay render style and lighting, same Ray (character sheet Image 2: white ball head with drawn face, brown flat cap, mustard cardigan, navy trousers), same pose and expression, same cashier, same counter shape, same shop window and car. CHANGE ONLY: the bags on the counter: there must be EXACTLY 6 full grocery bags, standing apart from each other with small gaps in one single straight row along the back of the counter, all fully visible, none hidden behind Ray, nothing else on the counter top except the cash register. Grocery bags look exactly like the bag in the prop sheet (Image 3): brown paper bag with the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap sticking out. No text, no numbers, no logos, no watermark, no extra limbs."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:BvpAk2Rju4i3bPe5TjKv",
+      "label": "Shot 05a keyframe to edit"
+     },
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Edit Image 1. Keep EVERYTHING in Image 1 identical: same camera angle and framing, same 3D clay render style and lighting, same Ray (character sheet Image 2: white ball head with drawn face, brown flat cap, mustard cardigan, navy trousers), same pose and expression, same cashier, same counter shape, same shop window and car. CHANGE ONLY: the bags on the counter: there must be EXACTLY 5 full grocery bags, standing apart from each other with small gaps in one single straight row along the back of the counter, all fully visible, none hidden behind Ray, nothing else on the counter top except the cash register. Also repaint the walls a 1960s turquoise blue instead of mint green. Grocery bags look exactly like the bag in the prop sheet (Image 3): brown paper bag with the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap sticking out. No text, no numbers, no logos, no watermark, no extra limbs."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:AXTH05cHcwfzFrjo6FFZ",
+      "label": "Shot 05b keyframe to edit"
+     },
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Edit Image 1. Keep EVERYTHING in Image 1 identical: same camera angle and framing, same 3D clay render style and lighting, same Ray (character sheet Image 2: white ball head with drawn face, brown flat cap, mustard cardigan, navy trousers), same pose and expression, same cashier, same counter shape, same shop window and car. CHANGE ONLY: the bags on the counter: there must be EXACTLY 4 full grocery bags, standing apart from each other with small gaps in one single straight row along the back of the counter, all fully visible, none hidden behind Ray, nothing else on the counter top except the cash register. Grocery bags look exactly like the bag in the prop sheet (Image 3): brown paper bag with the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap sticking out. No text, no numbers, no logos, no watermark, no extra limbs."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:XwhGtoKJYqLt0NjRHxU7",
+      "label": "Shot 06 keyframe to edit"
+     },
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Edit Image 1. Keep EVERYTHING in Image 1 identical: same camera angle and framing, same 3D clay render style and lighting, same Ray (character sheet Image 2: white ball head with drawn face, brown flat cap, mustard cardigan, navy trousers), same pose and expression, same cashier, same counter shape, same shop window and car. CHANGE ONLY: the bags on the counter: EXACTLY 2 full grocery bags standing apart in a row along the back of the counter, plus a third bag beside them that is only half full: it has the bread and the egg carton but NO milk jug; no loose eggs or cartons anywhere; all three bags fully visible, none hidden behind Ray. Grocery bags look exactly like the bag in the prop sheet (Image 3): brown paper bag with the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap sticking out. No text, no numbers, no logos, no watermark, no extra limbs."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:t3RDODAUvgPlLY7L95mo",
+      "label": "Shot 07a keyframe to edit"
+     },
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Edit Image 1. Keep EVERYTHING in Image 1 identical: same camera angle and framing, same 3D clay render style and lighting, same Ray (character sheet Image 2: white ball head with drawn face, brown flat cap, mustard cardigan, navy trousers), same pose and expression, same cashier, same counter shape, same shop window and car. CHANGE ONLY: the bags on the counter: there must be EXACTLY 2 full grocery bags, standing apart from each other with small gaps in one single straight row along the back of the counter, all fully visible, none hidden behind Ray, nothing else on the counter top except the cash register. Also repaint the walls 1990s white with a teal stripe instead of mint green, and replace the old chrome cash register with a 1990s beige electronic register with a barcode scanner. Grocery bags look exactly like the bag in the prop sheet (Image 3): brown paper bag with the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap sticking out. No text, no numbers, no logos, no watermark, no extra limbs."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:4ecH5tcH9Tg5r8zxSOl0",
+      "label": "Shot 07b keyframe to edit"
+     },
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Edit Image 1. Keep EVERYTHING in Image 1 identical: same camera angle and framing, same 3D clay render style and lighting, same Ray (character sheet Image 2: white ball head with drawn face, brown flat cap, mustard cardigan, navy trousers), same pose and expression, same cashier, same counter shape, same shop window and car. CHANGE ONLY: the bags on the counter: there must be EXACTLY 2 full grocery bags, standing apart from each other with small gaps in one single straight row along the back of the counter, all fully visible, none hidden behind Ray, nothing else on the counter top except the cash register. Also repaint the walls a 2000s pale grey-blue instead of mint green, use bright fluorescent ceiling lighting, and replace the old chrome cash register with a 2000s black register with a small flat monitor. Grocery bags look exactly like the bag in the prop sheet (Image 3): brown paper bag with the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap sticking out. No text, no numbers, no logos, no watermark, no extra limbs."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:a8yLvw6kfALd1tzEoDvp",
+      "label": "Shot 09 keyframe to edit"
+     },
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:G6NinjYcHrTYXte8ubFX",
+      "label": "Cashier reference"
+     }
+    ],
+    "prompt": "Edit Image 1. Keep EVERYTHING in Image 1 identical: same camera angle and framing, same 3D clay render style and lighting, same Ray (character sheet Image 2: white ball head with drawn face, brown flat cap, mustard cardigan, navy trousers), same pose and expression, same cashier, same counter shape, same shop window and car. CHANGE ONLY: the cashier: replace her with the cashier from Image 4 (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), standing in the same spot behind the counter. Grocery bags look exactly like the bag in the prop sheet (Image 3): brown paper bag with the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap sticking out. No text, no numbers, no logos, no watermark, no extra limbs."
+   }
+  }
+ ]
+}

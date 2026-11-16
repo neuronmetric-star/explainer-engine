@@ -25,7 +25,7 @@ def main():
     with tempfile.TemporaryDirectory() as td:
         for i, t in enumerate(times):
             f = os.path.join(td, f'{i:03d}.jpg')
-            subprocess.run(['ffmpeg', '-v', 'error', '-ss', f'{t:.3f}', '-i', a.video, '-frames:v', '1', '-vf', f'scale={a.tile}:-2', '-y', f], check=True)
+            subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-ss', f'{t:.3f}', '-i', a.video, '-frames:v', '1', '-vf', f'scale={a.tile}:-2', '-y', f], check=True)
             tiles.append((t, Image.open(f).convert('RGB')))
     w, h = tiles[0][1].size; cols = a.cols; rows = (len(tiles) + cols - 1) // cols
     sheet = Image.new('RGB', (cols * w, rows * (h + 18)), (20, 20, 20))

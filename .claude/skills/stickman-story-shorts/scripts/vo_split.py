@@ -49,7 +49,7 @@ def main():
     starts = [s_start] + [c[1] for c in cuts]; ends = [c[0] for c in cuts] + [s_end]
     for i, (s, e) in enumerate(zip(starts, ends)):
         f = os.path.join(outdir, f'vo_{i+1:02d}.wav')
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-ss', f'{max(0, s-0.05):.3f}', '-to', f'{e+0.08:.3f}', '-i', a.voice, '-ac', '1', '-ar', '48000', f], check=True)
+        subprocess.run(['ffmpeg', '-nostdin', '-v', 'error', '-y', '-ss', f'{max(0, s-0.05):.3f}', '-to', f'{e+0.08:.3f}', '-i', a.voice, '-ac', '1', '-ar', '48000', f], check=True)
         res.append(dict(n=i + 1, file=os.path.relpath(f), start=round(s, 3), end=round(e, 3), speech=round(e - s, 3), text=lines[i]))
         print(f'{i+1:02d} {s:6.2f}-{e:6.2f} ({e-s:4.2f}s) {lines[i][:60]}')
     json.dump(dict(source=a.voice, lines=res), open(os.path.join(outdir, 'bounds.json'), 'w'), indent=1, ensure_ascii=False)

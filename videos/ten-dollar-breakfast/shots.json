@@ -1,1 +1,136 @@
-{"refs": {"ray_sheet": "resource:5xw7o0Wy5StNEgILm0Ce", "props": "resource:FTwHOpLjMv8t9uuFCTua"}, "shots": {}}
+{
+ "refs": {
+  "ray_sheet": "resource:5xw7o0Wy5StNEgILm0Ce",
+  "props": "resource:FTwHOpLjMv8t9uuFCTua"
+ },
+ "shots": {
+  "01": {
+   "kf_job": "cBqJxUWpe1xK2BYcnD1Y",
+   "kf": "resource:us3Lzl3WFLz1oHVjJxQC",
+   "clip_job": "YKhUcBP3dQD3DQINgXFW",
+   "clip": "clips/01.mp4"
+  },
+  "02": {
+   "kf_job": "8rjJohqA4svXERk32t9W",
+   "kf": "resource:htR8yuwNXNT1E1QRkAEB",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787708713_5187b7ff_1794787709215_a39e4003.png",
+   "clip_job": "ONrCVvKQH96He75LfP21"
+  },
+  "03": {
+   "kf_job": "zQCygX0BG8AbLxtnbQuQ",
+   "kf": "resource:z4yVg0FpBDO3VBKfZJ9F",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787703637_56b9a411_1794787704176_c1e370f3.png",
+   "clip_job": "0vSjsQvin7AZRQPaA3UU"
+  },
+  "04": {
+   "kf_job": "IDlk7N4J3PaZPTwklnkP",
+   "kf": "resource:cvez2PYA2bl3dEq1vC9H",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787710841_9375683c_1794787711351_f4c10815.png",
+   "kf_v2": "resource:7DPvJxfnxZDwG3FQtWId",
+   "kf_v2_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787856062_72b01d59_1794787856474_90820c5e.png"
+  },
+  "05a": {
+   "kf_job": "FlotFvlkvOeIM9i62TYJ",
+   "kf": "resource:BvpAk2Rju4i3bPe5TjKv",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787714116_4c11e4e7_1794787714319_0f2476d4.png",
+   "kf_v2": "resource:mT3cnrMZr0jF4m27PAcF",
+   "kf_v2_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787859245_29d16daa_1794787859838_23f267eb.png"
+  },
+  "05b": {
+   "kf_job": "RhZsvvmlAlfQ7ZWeN3Wg",
+   "kf": "resource:AXTH05cHcwfzFrjo6FFZ",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787711661_8d3705e2_1794787712464_33d12384.png",
+   "kf_v2": "resource:DmitNudBnW1ZIym1mFNB",
+   "kf_v2_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787859507_0d26c390_1794787860032_36e67390.png"
+  },
+  "06": {
+   "kf_job": "YYTbwo6MaOcRvccQE2Nb",
+   "kf": "resource:XwhGtoKJYqLt0NjRHxU7",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787709616_f0b6c7df_1794787710430_bdfbaf21.png",
+   "kf_v2": "resource:gR9OQ4ZTFddxJNpm9M2V",
+   "kf_v2_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787861011_218566ff_1794787862128_1c39cf4a.png"
+  },
+  "07a": {
+   "kf_job": "MyeNT1lJ9JZI51dZ9ZCs",
+   "kf": "resource:t3RDODAUvgPlLY7L95mo",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787712999_e3f1bdc2_1794787713706_d10dfbc6.png",
+   "kf_v2": "resource:wVzLhUofkNRKljfBYAiM",
+   "kf_v2_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787862116_b43d4b32_1794787862724_7d318dde.png"
+  },
+  "07b": {
+   "kf_job": "rakPetpRHcyFAyixwqFD",
+   "kf": "resource:4ecH5tcH9Tg5r8zxSOl0",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787712079_e05913dd_1794787712707_97df5a81.png",
+   "kf_v2": "resource:VKd3TYNHUENtNrpU0qRu",
+   "kf_v2_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787864192_f884138f_1794787864343_52465cb5.png"
+  },
+  "08a": {
+   "kf_job": "LpweeqvryiMCDmKWxybQ",
+   "kf": "resource:VQ8ClS1yTQmN6DVSvxsZ",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787710914_f8dfc5d8_1794787711492_c141fa1f.png"
+  },
+  "08b": {
+   "kf_job": "5fGmOTCnGi72t4E6elo0",
+   "kf": "resource:G6NinjYcHrTYXte8ubFX",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787711424_615ae623_1794787711941_539d143d.png"
+  },
+  "09": {
+   "kf_job": "pIRsSFIu0rder7bcwOl3",
+   "kf": "resource:a8yLvw6kfALd1tzEoDvp",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787714328_7e9e5ff0_1794787715243_8e4eb0ca.png",
+   "kf_v2": "resource:vUYvctqNLPheIf8loOCK",
+   "kf_v2_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787874741_59555ca3_1794787875054_b9a0a298.png"
+  },
+  "10": {
+   "kf_job": "FJamq0AR72p5s2uJWEVK",
+   "kf": "resource:gOy5fINNSL961qvj3VJ8",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787715925_b3eb743d_1794787716771_176dd073.png",
+   "clip_job": "iWCMzNYxTDEMrrcLswKi"
+  },
+  "11": {
+   "kf_job": "fdL1LJuWTE4yhv577e0t",
+   "kf": "resource:6vq1uJLWPRVcglc54hXn",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787716629_a6ec837d_1794787716749_0b8a4d64.png",
+   "clip_job": "lZM79y6IrjiJSTDTSrkU"
+  },
+  "12": {
+   "kf_job": "Cg6yQNAoNL5YpE7TkPlY",
+   "kf": "resource:ssYxUxFac0WnDBfvH0zM",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787719827_23ac9442_1794787720764_3d79978d.png",
+   "clip_job": "dYa1XtCATW0Itj4xblpe"
+  },
+  "14": {
+   "kf_job": "ze9uBqNuNFJd9I6AoDeK",
+   "kf": "resource:VeycNR4tX4dG2E4uXlOf",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787723644_f58f2ae9_1794787725328_0f839fe9.png",
+   "clip_job": "158znWRB3LWg0NTFa3PK"
+  },
+  "15": {
+   "kf_job": "zbOo2DhyzyG3OGCjCkQT",
+   "kf": "resource:kAZSGmtYmmndNsOYjREf",
+   "kf_url": "https://cdn.openart.ai/openart-ai/production/2026-11/create-image/uKEewDJpuD7NJ5BxX3AR/image_1794787721136_797f5b17_1794787721752_97e65104.png",
+   "clip_job": "9fNE7pC8DoVJWVLhreYU"
+  },
+  "08": {
+   "clip_job": "VIRIwkXpMN4sSx0SRNEE"
+  }
+ },
+ "fix_jobs": {
+  "04": "lfRIR80In2Xtohh0ubpf",
+  "05a": "5nov6TfDyk7LtNDEqao2",
+  "05b": "PaoeC3p0YvZhSgDAU4AC",
+  "06": "x2dHgiDYR1zWR1YsO7lR",
+  "07a": "j2Qn2fUvesl7qYWFAWnt",
+  "07b": "qOmHb5M0dY9VzX7Y1Wl3",
+  "09": "lqAWpeU7iojfnDsuSHOi"
+ },
+ "handles": {
+  "e04": "resource:FNk0ngGgw63D76TBTO2E",
+  "e05a": "resource:LrqKkRu5D5ffQYF3dm0z",
+  "e05b": "resource:t3xvslod5zk0IeQYvPQ2",
+  "e06": "resource:pBQg2IdSNjduw190VoPt",
+  "e07a": "resource:ptTzP3Q2lGUhjblZw530",
+  "e07b": "resource:foJmckJ66hiB46qpJaRp",
+  "kf13": "resource:RY6uvW7VdkueL08nCEtE"
+ }
+}

@@ -1,0 +1,434 @@
+{
+ "order": [
+  "02",
+  "03",
+  "04",
+  "05a",
+  "05b",
+  "06",
+  "07a",
+  "07b",
+  "08a",
+  "08b",
+  "09",
+  "10",
+  "11",
+  "12",
+  "14",
+  "15"
+ ],
+ "requests": [
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 1950s: pastel mint-green walls, chrome-and-red counter, checkerboard floor, chrome vintage register, a pastel 1950s car outside.\nMOMENT: Ray has just walked in through the shop door, holding up a single green ten-dollar bill toward the camera with a cheerful grin; the counter is empty, no bags yet.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet.\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSETTING: the same 1950s grocery store from Image-1-style world, softly blurred in the background (mint-green walls, shelves of cans).\nMOMENT: Ray holds up a small paper shopping list in his left mitten hand (no readable writing on it); floating in mid-air beside him, softly glowing, are exactly three items: the clear-bagged sliced bread loaf, the grey egg carton and the white milk jug with red cap.\nCAMERA: medium close-up, eye level, Ray and the three floating items centred.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 1950s: pastel mint-green walls, chrome-and-red counter, checkerboard floor, chrome vintage register, a pastel 1950s car outside.\nMOMENT: EXACTLY 6 full grocery bags stand in one straight neat row along the counter top; Ray stands beside them with both arms open wide in delight, big grin; the cashier smiles.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 1960s: turquoise walls, chrome counter, a 1960s sedan with tail fins outside.\nMOMENT: EXACTLY 5 full grocery bags in one straight neat row on the counter; Ray stands beside them, pleased, holding the green ten-dollar bill.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 1970s: orange and brown wood-panel walls, harvest-gold counter, mechanical register, a brown 1970s station wagon outside.\nMOMENT: EXACTLY 4 full grocery bags in one straight neat row on the counter; Ray stands beside them, slightly surprised, eyebrows raised.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 1980s: beige walls with pink neon accents, electronic register with a small digital display, a boxy 1980s car outside.\nMOMENT: EXACTLY 2 full grocery bags in a straight row on the counter, plus a third bag that is half empty with no milk jug in it; the register display glows red; Ray looks shocked, mouth open, holding the green ten-dollar bill.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, a little closer on Ray.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 1990s: white and teal walls, a barcode scanner on the counter, a 1990s minivan outside.\nMOMENT: EXACTLY 2 full grocery bags in a straight row on the counter; Ray shrugs with both palms up.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 2000s: bright fluorescent lighting, a small flat computer monitor on the register, a 2000s SUV outside.\nMOMENT: EXACTLY 2 full grocery bags in a straight row on the counter; Ray shrugs with both palms up.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 2010s: grey modern walls, a card terminal and a flat touchscreen register, a 2010s hatchback outside.\nMOMENT: EXACTLY 1 full grocery bag on the counter; Ray looks at it sadly, shoulders slumped.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: early 2020s: modern white store, a clear plexiglass shield on the counter, a card tap terminal, a 2020s crossover car outside.\nMOMENT: EXACTLY 1 full grocery bag on the counter; Ray looks at it sadly, shoulders slumped.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: today: minimal bright white store with LED strip lights, a sleek tap-to-pay terminal, an electric car outside.\nMOMENT: Ray holds EXACTLY 1 full grocery bag in his left arm and holds out his right mitten palm showing a single green one-dollar bill and a few silver coins of change; he looks at the change with a wry face.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: today: minimal bright white store with LED strip lights, a sleek tap-to-pay terminal, an electric car outside.\nMOMENT: on the counter stands ONE solid full grocery bag, and beside it in the same row five faint translucent ghost outlines of grocery bags, fading away; Ray looks at the ghost bags wistfully.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet.\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSETTING: the modern white grocery store, softly blurred in the background.\nMOMENT: Ray holds a small brown paper pay envelope in both mitten hands; warm golden light glows out of the envelope onto his face; curious expression.\nCAMERA: close-up, slight low angle, envelope and Ray's face centred.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet.\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSETTING: a 1950s workshop: a wooden workbench with simple hand tools, brick wall, a big round white wall clock on the wall behind Ray, warm tungsten light.\nMOMENT: Ray works at the bench with a small hammer, looking up at the wall clock; ONE full grocery bag sits at the end of the bench.\nCAMERA: medium shot, eye level, Ray, the clock and the bag all clearly visible.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet.\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSETTING: a clean warm studio space with a soft gradient backdrop in mustard and cream.\nMOMENT: Ray stands beside a big brass balance scale; one pan holds a small round alarm clock and THREE full grocery bags piled on it and sits low; the other pan holds a single green ten-dollar bill and sits high; Ray points at the heavy side with a knowing smile.\nCAMERA: medium-wide, eye level, Ray and the whole scale in frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  },
+  {
+   "model": "nano-banana-pro",
+   "mode": "image2image",
+   "params": {
+    "aspectRatio": "9:16",
+    "resolution": "2K",
+    "imageCount": 1,
+    "visualReferences": [
+     {
+      "type": "image",
+      "id": "resource:5xw7o0Wy5StNEgILm0Ce",
+      "label": "Ray character sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:FTwHOpLjMv8t9uuFCTua",
+      "label": "Prop sheet"
+     },
+     {
+      "type": "image",
+      "id": "resource:us3Lzl3WFLz1oHVjJxQC",
+      "label": "THE PLACE store set"
+     }
+    ],
+    "prompt": "Vertical 9:16 frame from a stylised 3D animated short, soft clay-like 3D render, warm Pixar-short lighting. Image 1 is RAY's character sheet, Image 2 is the prop sheet, Image 3 is THE PLACE (the store set).\nRAY exactly as in Image 1: perfectly smooth white ball head with a flat drawn black-line face and no ears, dark-brown flat cap, mustard-yellow cardigan with 4 brown buttons over a white collared shirt, navy trousers, brown shoes, white mitten hands, thin black neck; exactly two arms and two legs.\nGROCERY BAGS exactly as in Image 2: identical brown paper bags, each holding the clear-bagged SLICED white bread loaf with a red twist tie, the grey egg carton and the white gallon milk jug with a red cap.\nSTORE: keep the exact layout, size and camera angle of Image 3: checkout counter on the left with the cash register and the cashier behind it (woman stickman, white ball head with drawn face, short dark bob haircut, green apron), Ray standing in the centre, shelves of goods behind him, a big shop window on the right showing the street. Only the era decoration changes: 1950s: pastel mint-green walls, chrome-and-red counter, checkerboard floor, chrome vintage register, a pastel 1950s car outside.\nMOMENT: Ray tips his brown flat cap to the camera with a friendly smile; behind him EXACTLY 6 full grocery bags stand in one straight neat row on the counter; the cashier waves.\nCAMERA: medium-wide eye-level shot, same framing as Image 3, Ray and the bags in the middle 60% of the frame.\nKeep the top 8% and the bottom 20% of the frame free of important detail. No text, no numbers, no captions, no logos, no watermark, no extra limbs, no realistic human faces."
+   }
+  }
+ ]
+}
