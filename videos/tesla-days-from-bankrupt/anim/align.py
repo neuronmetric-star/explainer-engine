@@ -174,7 +174,9 @@ def main():
     out = []
     for v in VO:
         n = v['n']; sw = align_line(env, thr, max(0.0, v['start'] - 0.03), v['end'] + 0.03, spoken[n - 1])
-        out.append(dict(n=n, spoken=sw, words=map_display(disp[n], sw)))
+        d = disp[n]
+        if '(dramatised)' in d.lower(): d = spoken[n - 1]   # caption the retelling exactly as spoken
+        out.append(dict(n=n, spoken=sw, words=map_display(d, sw)))
     json.dump(out, open(os.path.join(EP, 'vo', 'words.json'), 'w'), indent=1)
     print('aligned', len(out), 'lines')
 
