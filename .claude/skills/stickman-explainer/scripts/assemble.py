@@ -12,6 +12,8 @@ plan.json (paths are relative to the plan file):
   "captions": false,            # true only once the voice-over exists (or force with "captions_from": "estimate")
   "caption_y": auto, "caption_size": auto, "caption_font": "Inter Display",  # auto: 16:9 -> y=0.83H, size=0.068H; 9:16 -> 1330 / 92
   "music": null,                # or {"file": "music.mp3", "volume": 0.12}
+  "layout": "full",             # or "framed": 9:16 cut-down (1080x1920) with the 16:9 picture centred on a blurred copy;
+                                # framed also takes "headline": "WHY $10 BUYS LESS" shown above the picture
   "shots": [
     {"clip": "clips/01.mp4", "dur": 3.2, "text": "The richest family kept its money underwater.",
      "src_in": 0.0, "src_out": null, "sfx": 1.0, "vo": "vo/vo_01.wav"}
@@ -139,26 +141,45 @@ def main():
     lst = os.path.join(td, 'list.txt'); open(lst, 'w').write(''.join(f"file '{p}'\n" for p in segs))
     joined = os.path.join(td, 'joined.mp4')
     run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', joined])
+    if P.get('end_card'): titles.append((max(0, t0 - float(P.get('end_card_dur', 2.2))), t0, P['end_card']))
+    framed = P.get('layout') == 'framed'          # vertical 9:16 cut-down: 16:9 picture centred on a blurred copy
+    CW, CH = (P.get('canvas_width', 1080), P.get('canvas_height', 1920)) if framed else (W, H)
+    fh = round(CW * H / W)                          # height of the 16:9 picture inside the canvas
     vf = 'null'
-    if caps or titles:
-        assf = os.path.join(td, 'caps.ass'); y = P.get('caption_y', 1330 if vertical else round(H * 0.83))
-        csize = P.get('caption_size', 92 if vertical else round(H * 0.068))
-        head = ('[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\nWrapStyle: 2\n\n[V4+ Styles]\n'
+    headline = P.get('headline')
+    if caps or titles or headline:
+        assf = os.path.join(td, 'caps.ass')
+        if framed:
+            y = P.get('caption_y', round(CH / 2 + fh / 2 + 150)); csize = P.get('caption_size', 84)
+            ty = round(CH / 2); hy = round(CH / 2 - fh / 2 - 190)
+        else:
+            y = P.get('caption_y', 1330 if vertical else round(H * 0.83)); csize = P.get('caption_size', 92 if vertical else round(H * 0.068))
+            ty = round(H * 0.42); hy = round(H * 0.12)
+        font = P.get('caption_font', 'Inter Display')
+        head = ('[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\nWrapStyle: 0\n\n[V4+ Styles]\n'
                 'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n'
                 'Style: C,%s,%d,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,5,40,40,0,1\n'
-                'Style: T,%s,%d,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,1,0,0,0,100,100,2,0,3,18,0,5,40,40,0,1\n\n'
-                '[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n') % (W, H, P.get('caption_font', 'Inter Display'), csize, P.get('caption_font', 'Inter Display'), round(csize * 1.25))
-        ev = ''.join(f'Dialogue: 0,{ass_time(a)},{ass_time(b)},C,,0,0,0,,{{\\pos({W//2},{y})\\fad(0,0)}}{c.upper()}\n' for a, b, c in caps)
-        ev += ''.join(f'Dialogue: 1,{ass_time(a)},{ass_time(b)},T,,0,0,0,,{{\\pos({W//2},{round(H*0.42)})\\fad(150,150)}}{c.upper()}\n' for a, b, c in titles)
+                'Style: T,%s,%d,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,1,0,0,0,100,100,2,0,3,18,0,5,40,40,0,1\n'
+                'Style: H,%s,%d,&H0040C8FF,&H0040C8FF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,6,2,5,70,70,0,1\n\n'
+                '[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n') % (
+                    CW, CH, font, csize, font, round(csize * 1.25), font, P.get('headline_size', 78))
+        ev = ''.join(f'Dialogue: 0,{ass_time(a)},{ass_time(b)},C,,0,0,0,,{{\\pos({CW//2},{y})}}{c.upper()}\n' for a, b, c in caps)
+        ev += ''.join(f'Dialogue: 1,{ass_time(a)},{ass_time(b)},T,,0,0,0,,{{\\pos({CW//2},{ty})\\fad(150,150)}}{c.upper()}\n' for a, b, c in titles)
+        if headline: ev += f'Dialogue: 2,{ass_time(0)},{ass_time(t0)},H,,0,0,0,,{{\\pos({CW//2},{hy})}}{headline.upper()}\n'
         open(assf, 'w', encoding='utf8').write(head + ev); vf = f"ass='{assf}'"
+    if framed:
+        vchain = (f"[0:v]split[va][vb];[va]scale={CW}:{CH}:force_original_aspect_ratio=increase,crop={CW}:{CH},boxblur=40:3,"
+                  f"eq=brightness=-0.18:saturation=0.8[bg];[vb]scale={CW}:{fh}[fg];[bg][fg]overlay=0:(H-h)/2,{vf}[v]")
+    else:
+        vchain = f"[0:v]{vf}[v]"
     out = R(P.get('out', 'final.mp4')); mus = P.get('music')
     cmd = ['ffmpeg', '-v', 'error', '-y', '-i', joined]
     if mus:
         cmd += ['-stream_loop', '-1', '-i', R(mus['file'])]
         af = f'[1:a]volume={mus.get("volume", 0.12)},atrim=duration={t0:.3f},afade=t=out:st={max(0, t0-1.5):.2f}:d=1.5[m];[0:a][m]amix=inputs=2:normalize=0:duration=first[a]'
-        cmd += ['-filter_complex', f'[0:v]{vf}[v];{af}', '-map', '[v]', '-map', '[a]']
+        cmd += ['-filter_complex', f'{vchain};{af}', '-map', '[v]', '-map', '[a]']
     else:
-        cmd += ['-vf', vf, '-map', '0:v', '-map', '0:a']
+        cmd += ['-filter_complex', vchain, '-map', '[v]', '-map', '0:a']
     cmd += ['-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', out]
     run(cmd); print(f'wrote {out}  ({t0:.2f}s, {len(segs)} shots, {len(caps)} captions)')
 

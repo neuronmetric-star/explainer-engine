@@ -1,16 +1,51 @@
 {
   "style": "3d",
   "aspect": "16:9",
-  "output": {"width": 1920, "height": 1080, "fps": 30},
-  "images": {"source": "user (ChatGPT agent) from prompt_pack.md", "min_width": 3840, "min_height": 2160, "format": "png"},
-  "animation": {"model": "pixverseV6", "mode": "image2video", "resolution": "720p",
-                "generateAudio": {"long": false, "short": true}},
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "images": {
+    "source": "user (ChatGPT agent) from prompt_pack.md",
+    "min_width": 3840,
+    "min_height": 2160,
+    "format": "png"
+  },
+  "animation": {
+    "model": "pixverseV6",
+    "mode": "image2video",
+    "resolution": "720p",
+    "generateAudio": {
+      "long": false,
+      "short": true
+    }
+  },
   "formats": {
-    "long": {"name": "So Simple a 5-Year-Old Gets It", "minutes": "6-10", "structure": "references/format-long.md", "animated_scenes": "15-20"},
-    "short": {"minutes": "0.75-1.1", "structure": "references/format-short.md", "hook": "Start with Why / Who / What / When / How when the story allows it"}
+    "long": {
+      "name": "So Simple a 5-Year-Old Gets It",
+      "minutes": "6-10",
+      "structure": "references/format-long.md",
+      "animated_scenes": "15-20"
+    },
+    "short": {
+      "minutes": "0.75-1.1",
+      "structure": "references/format-short.md",
+      "hook": "Start with Why / Who / What / When / How when the story allows it"
+    }
   },
   "eli5_title": "So Simple a 5-Year-Old Gets It",
   "cta": "Follow for more money, so simple a 5-year-old gets it.",
   "hashtags_max": 5,
-  "captions": "burned in, 1-2 words, white bold with black outline, lower band"
+  "captions": "burned in, 1-2 words, white bold with black outline, lower band",
+  "cutdowns": {
+    "per_episode": "4-6",
+    "length_s": "30-60",
+    "layout": "framed",
+    "size": [
+      1080,
+      1920
+    ],
+    "end_card": "FULL STORY ON THE CHANNEL"
+  }
 }

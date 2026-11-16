@@ -1,6 +1,6 @@
 ---
 name: stickman-explainer
-description: End-to-end studio for fact-based 3D stickman explainer videos in 16:9. Long-form "So Simple a 5-Year-Old Gets It" episodes (6+ min, chaptered, in the storytelling style learned from Crayon Capital) and Shorts (45-70 s, in the hook-and-payoff style learned from Rick's Clips). Claude researches the facts, writes the script, and hands over a copy-paste image prompt pack (character sheets, location plates, prop sheets, every scene keyframe) for the user to generate in ChatGPT, plus a voice script. When the user returns the images and voice, Claude animates the chosen scenes with OpenArt PixVerse, assembles the video with captions, and writes the publishing pack (thumbnail options, titles, caption, at most 5 hashtags). Use when the user picks or sends a story or topic for a video, asks for a long video, a Short, a "so simple a 5-year-old gets it" episode, a prompt pack, a voice script, or sends images or a voice-over for such a video. Also use for follow-ups such as "redo scene 12" or "re-time to my new voice".
+description: End-to-end studio for fact-based 3D stickman explainer videos in 16:9, plus vertical 9:16 Shorts cut from each long episode. Long-form "So Simple a 5-Year-Old Gets It" episodes (6+ min, chaptered, in the storytelling style learned from Crayon Capital) and Shorts (45-70 s, in the hook-and-payoff style learned from Rick's Clips). Claude researches the facts, writes the script, and hands over a copy-paste image prompt pack (character sheets, location plates, prop sheets, every scene keyframe) for the user to generate in ChatGPT, plus a voice script. When the user returns the images and voice, Claude animates the chosen scenes with OpenArt PixVerse, assembles the video with captions, and writes the publishing pack (thumbnail options, titles, caption, at most 5 hashtags). Use when the user picks or sends a story or topic for a video, asks for a long video, a Short, a "so simple a 5-year-old gets it" episode, a prompt pack, a voice script, or sends images or a voice-over for such a video. Also use for follow-ups such as "redo scene 12" or "re-time to my new voice".
 ---
 
 # Stickman Explainer Studio
@@ -117,7 +117,25 @@ Write `videos/<slug>/publish.md` from `references/voice-and-publish.md`:
 - **the post caption**, 2-4 lines with a sources line;
 - **at most 5 hashtags.**
 
-Deliver: `final.mp4`, `publish.md`, and a 3-5 line summary covering what was trimmed or regenerated, the credits spent, and what the user should check by ear.
+Deliver: `final.mp4`, `publish.md` (and the vertical Shorts from Phase 8 for long-form), and a 3-5 line summary covering what was trimmed or regenerated, the credits spent, and what the user should check by ear.
+
+## Phase 8 — Vertical cut-downs (every long-form episode)
+
+From each finished long-form episode, make **4-6 vertical Shorts of 30-60 s** (1080×1920). They are real YouTube Shorts (vertical, under 3 min) and point viewers to the full episode.
+
+1. **Pick self-contained ranges of scenes** from `plan.json`: a chapter opener through its turn, the turning point, the biggest reveal, the cold open. Each range must:
+   - **start on a hook line**: a question, a striking number, or an odd action;
+   - **end on a payoff line**.
+
+   Never start mid-thought ("And then…", "But…").
+2. **Write a headline for each** (at most 7 words, shown above the picture the whole time). It frames the clip's question, e.g. "WHY $10 BUYS LESS EVERY DECADE".
+3. **Run** `python3 scripts/cutdown.py videos/<slug>/plan.json --scenes 12-21 --headline "…" [--end-card "FULL STORY ON THE CHANNEL"]`. It reuses the clips, 4K stills, voice lines and captions, and renders the **framed layout**: the full 16:9 picture centred on a blurred copy of itself, the headline above, captions below and an end card. Output: `shorts/short_NNN-NNN.mp4`.
+4. **Check** each Short with `contact_sheet.py` and look at it. Then add to `publish.md`, per Short:
+   - the headline/title;
+   - a 1-2 line caption that points to the full episode;
+   - at most 5 hashtags, including #shorts.
+
+The framed layout keeps 720p animated clips sharp. Never crop a 720p clip to full-screen vertical (it blurs). A full-screen vertical crop is only acceptable for a range made entirely of 4K stills, and only if the user asks.
 
 ## Revisions
 
