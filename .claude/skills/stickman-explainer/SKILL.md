@@ -1,6 +1,6 @@
 ---
 name: stickman-explainer
-description: End-to-end studio for fact-based 3D stickman explainer videos in 16:9, plus vertical 9:16 Shorts cut from each long episode. Long-form "So Simple a 5-Year-Old Gets It" episodes (6+ min, chaptered, in the storytelling style learned from Crayon Capital) and Shorts (45-70 s, in the hook-and-payoff style learned from Rick's Clips). Claude researches the facts, writes the script, and hands over a copy-paste image prompt pack (character sheets, location plates, prop sheets, every scene keyframe) for the user to generate in ChatGPT, plus a voice script. When the user returns the images and voice, Claude animates the chosen scenes with OpenArt PixVerse, assembles the video with captions, and writes the publishing pack (thumbnail options, titles, caption, at most 5 hashtags). Use when the user picks or sends a story or topic for a video, asks for a long video, a Short, a "so simple a 5-year-old gets it" episode, a prompt pack, a voice script, or sends images or a voice-over for such a video. Also use for follow-ups such as "redo scene 12" or "re-time to my new voice".
+description: Studio for fact-based 3D stickman explainer videos in 16:9: long-form "So Simple a 5-Year-Old Gets It" episodes (6+ min, chaptered, Crayon-Capital-style storytelling) and Shorts (Rick's-Clips-style hook and payoff), plus vertical 9:16 Shorts cut from each episode. Claude researches facts, writes the script, gives a copy-paste image prompt pack (character sheets, locations, props, every scene, thumbnails) for ChatGPT and a voice script, then animates chosen scenes with OpenArt PixVerse, assembles with captions and writes the publishing pack (thumbnails, titles, caption, max 5 hashtags). Use when the user picks a topic or story for a video, asks for a long video, Short, prompt pack or voice script, sends images or a voice-over, or asks to redo a scene or re-time to a new voice.
 ---
 
 # Stickman Explainer Studio
@@ -18,7 +18,7 @@ Read before starting:
 - `references/voice-and-publish.md`, which covers the voice script and publishing pack templates;
 - `references/openart.md` and `references/slop-check.md` before animating.
 
-The evidence behind the formats is in `research/creator-study-ricks-clips-crayon-capital.md` (repo root).
+The evidence behind the formats is summarised in the two format files (the full study, if present, is `research/creator-study-ricks-clips-crayon-capital.md` at the repo root).
 
 ## Phase 0 — Intake (one message, ask once)
 
