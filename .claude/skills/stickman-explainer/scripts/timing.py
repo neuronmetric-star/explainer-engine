@@ -37,8 +37,10 @@ def main():
     t = 0.0; shots = []
     for i, text in enumerate(lines):
         words = spoken_words(text)
-        speech = vo['lines'][i]['speech'] if vo else words / a.wps
-        dur = round(max(1.2, speech + a.pad), 2)
+        L = vo['lines'][i] if vo else None
+        speech = L['speech'] if vo else words / a.wps
+        # with a voice-over, each shot lasts exactly its voice segment (line start to next line start)
+        dur = round(L['seg_end'] - L['seg_start'], 3) if (vo and 'seg_end' in L) else round(max(1.2, speech + a.pad), 2)
         gen = int(min(8, max(4, math.ceil(speech + 1))))
         shots.append(dict(n=i + 1, text=text, words=round(words, 1), speech=round(speech, 2), dur=dur, start=round(t, 2), gen=gen))
         t += dur

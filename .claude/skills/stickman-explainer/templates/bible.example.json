@@ -1,0 +1,164 @@
+{
+  "title": "How Much Breakfast Did $10 Buy? (example)",
+  "slug": "example-ten-dollar-breakfast",
+  "type": "short",
+  "voice": {
+    "direction": "Warm, confident male storyteller, brisk documentary pace (about 165 words per minute), curious on the opening question, punchy on every number, a wry smile on the twist. No music, no effects."
+  },
+  "characters": [
+    {
+      "id": "RAY",
+      "name": "Ray",
+      "gender": "male",
+      "descriptor": "an adult male stickman of average build: perfectly smooth glossy white ball head, no ears, no nose, no hair, face drawn in flat black lines; a dark chocolate-brown wool flat cap sitting on top of the ball head; a mustard-yellow knit cardigan with exactly 4 round brown buttons over a crisp white collared shirt; dark navy trousers; small brown leather shoes; white mitten hands with 4 fingers."
+    },
+    {
+      "id": "CASHIER",
+      "name": "the cashier",
+      "gender": "female",
+      "descriptor": "an adult female stickman, slim shoulders, no beard or stubble: perfectly smooth glossy white ball head, no ears, no nose, face drawn in flat black lines with small eyelashes; a short glossy dark-brown bob haircut sitting on the ball head; a simple green apron over a white short-sleeved shirt; black trousers; white mitten hands."
+    }
+  ],
+  "locations": [
+    {
+      "id": "STORE",
+      "descriptor": "a small American corner grocery store seen from the customer side: on the LEFT a long checkout counter running from the foreground toward the back with a cash register at its front end and the cashier's spot behind it; in the CENTRE open floor where the customer stands; at the BACK wooden shelves full of colourful cans and boxes; on the RIGHT a large shop window showing the street and one parked car; black-and-white checkerboard floor; warm morning light from the window.",
+      "variants": [
+        {
+          "id": "STORE_1950",
+          "changes": "1950s look: pastel mint-green walls, chrome-and-red counter, chrome vintage cash register, a pastel-green 1950s car outside."
+        },
+        {
+          "id": "STORE_TODAY",
+          "changes": "today's look: bright white walls with LED strip lights, white modern counter, sleek tap-to-pay terminal instead of a cash register, a white electric car outside."
+        }
+      ]
+    }
+  ],
+  "props": [
+    {
+      "id": "BREAD",
+      "descriptor": "a classic white sliced bread loaf in a clear plastic bag with a red twist tie",
+      "plural": "bread loaves",
+      "singular": "bread loaf"
+    },
+    {
+      "id": "EGGS",
+      "descriptor": "a closed grey pulp-paper egg carton holding one dozen eggs",
+      "plural": "egg cartons",
+      "singular": "egg carton"
+    },
+    {
+      "id": "MILK",
+      "descriptor": "a white plastic one-gallon milk jug with a red cap and a plain white label with no words",
+      "plural": "milk jugs",
+      "singular": "milk jug"
+    },
+    {
+      "id": "BAG",
+      "descriptor": "a brown paper grocery bag standing upright, full, with the sliced bread loaf, the grey egg carton and the white milk jug sticking out of the top",
+      "plural": "full grocery bags",
+      "singular": "full grocery bag"
+    },
+    {
+      "id": "BILL",
+      "descriptor": "a single green US ten-dollar bill, simplified, with no readable text",
+      "plural": "ten-dollar bills",
+      "singular": "ten-dollar bill"
+    }
+  ],
+  "scenes": [
+    {
+      "n": 1,
+      "chapter": "Hook",
+      "line": "How much breakfast could $10 buy over the last 80 years?",
+      "spoken": "How much breakfast could ten dollars buy over the last eighty years?",
+      "chars": [
+        "RAY",
+        "CASHIER"
+      ],
+      "location": "STORE_1950",
+      "props": [
+        "BAG",
+        "BILL"
+      ],
+      "count": {
+        "BAG": 6
+      },
+      "moment": "Ray slaps a single ten-dollar bill flat onto the counter with a proud grin; beside him on the counter stand the grocery bags; the cashier smiles behind the register.",
+      "camera": "medium-wide, eye level, Ray in the centre third facing camera",
+      "animate": true,
+      "motion": "Ray lifts his hand and slaps the bill down on the counter, then turns to the camera with a proud grin; the cashier claps once.",
+      "camera_move": "slow push-in, Ray keeps facing camera",
+      "sfx": "paper slap, vintage register bell, soft store ambience"
+    },
+    {
+      "n": 2,
+      "chapter": "1950",
+      "line": "1950. The list costs about $1.57.",
+      "spoken": "Nineteen fifty. The list costs about a dollar fifty-seven.",
+      "chars": [
+        "RAY"
+      ],
+      "location": "STORE_1950",
+      "props": [
+        "BREAD",
+        "EGGS",
+        "MILK"
+      ],
+      "moment": "Ray holds up a small paper shopping list; the bread loaf, the egg carton and the milk jug float beside him, softly glowing.",
+      "camera": "medium close-up, eye level",
+      "animate": false
+    },
+    {
+      "n": 3,
+      "chapter": "Today",
+      "line": "Today: $8.28. One bag, and $1.72 in change.",
+      "spoken": "Today: eight dollars twenty-eight. One bag, and a dollar seventy-two in change.",
+      "chars": [
+        "RAY",
+        "CASHIER"
+      ],
+      "location": "STORE_TODAY",
+      "props": [
+        "BAG"
+      ],
+      "count": {
+        "BAG": 1
+      },
+      "moment": "Ray holds one grocery bag in his left arm and stares at a single one-dollar bill and a few coins in his open right hand, unimpressed.",
+      "camera": "medium shot, eye level",
+      "animate": true,
+      "motion": "Ray looks down at the change in his hand, sighs, then looks at the camera with a wry face.",
+      "camera_move": "slow tilt down to the hand, then back up to his face",
+      "sfx": "coins clinking, modern checkout beep"
+    }
+  ],
+  "thumbnails": [
+    {
+      "id": "A",
+      "chars": [
+        "RAY"
+      ],
+      "location": "STORE_1950",
+      "moment": "close-up of Ray's shocked face on the right, holding a ten-dollar bill toward camera; on the left a towering stack of six grocery bags.",
+      "overlay": "$10 IN 1950?"
+    },
+    {
+      "id": "B",
+      "chars": [
+        "RAY"
+      ],
+      "moment": "split screen: left half 1950 with Ray grinning beside six bags, right half today with Ray frowning holding one bag, a jagged red line between them.",
+      "overlay": "6 BAGS → 1"
+    },
+    {
+      "id": "C",
+      "chars": [
+        "RAY"
+      ],
+      "moment": "Ray peering into a single nearly empty grocery bag with one egg inside, dramatic top light, dark background.",
+      "overlay": "WHERE DID IT GO?"
+    }
+  ]
+}

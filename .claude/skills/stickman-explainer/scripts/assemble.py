@@ -6,11 +6,11 @@
 plan.json (paths are relative to the plan file):
 {
   "out": "final.mp4",
-  "width": 1080, "height": 1920, "fps": 30,
+  "width": 1920, "height": 1080, "fps": 30,      # 16:9 default (channel standard)
   "sfx_volume": 0.5,            # clip sound effects
   "vo_volume": 1.0,
   "captions": false,            # true only once the voice-over exists (or force with "captions_from": "estimate")
-  "caption_y": 1330, "caption_size": 92, "caption_font": "Inter Display",
+  "caption_y": auto, "caption_size": auto, "caption_font": "Inter Display",  # auto: 16:9 -> y=0.83H, size=0.068H; 9:16 -> 1330 / 92
   "music": null,                # or {"file": "music.mp3", "volume": 0.12}
   "shots": [
     {"clip": "clips/01.mp4", "dur": 3.2, "text": "The richest family kept its money underwater.",
@@ -19,7 +19,7 @@ plan.json (paths are relative to the plan file):
 }
 Per shot: the clip is cropped/scaled to fill the frame and time-fitted to `dur` (trimmed; if too
 short, slowed up to 1.35x, then the last frame is held). `sfx` multiplies sfx_volume for that shot
-(0 = mute). A still image (.png/.jpg/.webp) as `clip` gets a slow push-in (`"zoom": 1.10` = end scale). `vo`, if given, is placed at the shot start. Captions: 1-2 words at a time, timed to the
+(0 = mute). A still image (.png/.jpg/.webp) as `clip` gets a slow camera move: `"move"` in|out|left|right (default alternates), `"zoom"` 1.10. `"title"` shows a chapter card (big centred text, 1.8 s). `vo`, if given, is placed at the shot start. Captions: 1-2 words at a time, timed to the
 speech inside each vo file (pauses detected), words spread by length.
 """
 import json, math, os, re, subprocess, sys, tempfile
@@ -79,7 +79,8 @@ def ass_time(t):
 def main():
     plan_path = os.path.abspath(sys.argv[1]); base = os.path.dirname(plan_path)
     P = json.load(open(plan_path)); R = lambda p: os.path.join(base, p)
-    W, H, FPS = P.get('width', 1080), P.get('height', 1920), P.get('fps', 30)
+    W, H, FPS = P.get('width', 1920), P.get('height', 1080), P.get('fps', 30)
+    vertical = H > W; titles = []
     sfxv, vov = P.get('sfx_volume', 0.5), P.get('vo_volume', 1.0)
     td = tempfile.mkdtemp(prefix='asm_'); segs = []; caps = []; t0 = 0.0
     for i, s in enumerate(P['shots']):
@@ -95,8 +96,13 @@ def main():
                f'tpad=stop_mode=clone:stop_duration={dur + 1:.2f}', f'trim=duration={dur:.3f}']
         if still:  # slow push-in on a still image (long-form hybrid method)
             n = max(2, int(round(dur * FPS))); z = float(s.get('zoom', 1.10))
+            mv = s.get('move') or ['in', 'right', 'out', 'left'][i % 4]   # alternate so stills never feel alike
+            if mv == 'in': zx, xx = f"1+({z-1:.3f})*on/{n}", "iw/2-(iw/zoom/2)"
+            elif mv == 'out': zx, xx = f"{z:.3f}-({z-1:.3f})*on/{n}", "iw/2-(iw/zoom/2)"
+            elif mv == 'left': zx, xx = f"{z:.3f}", f"(iw-iw/zoom)*(1-on/{n})"
+            else: zx, xx = f"{z:.3f}", f"(iw-iw/zoom)*on/{n}"
             vf = [f'scale={W*2}:{H*2}:force_original_aspect_ratio=increase', f'crop={W*2}:{H*2}',
-                  f"zoompan=z='1+({z-1:.3f})*on/{n}':x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS}",
+                  f"zoompan=z='{zx}':x='{xx}':y='ih/2-(ih/zoom/2)':d={n}:s={W}x{H}:fps={FPS}",
                   'setsar=1', f'trim=duration={dur:.3f}']
             f = 1.0; avail = dur
         vol = sfxv * float(s.get('sfx', 1.0))
@@ -123,6 +129,7 @@ def main():
                 ch = chunk_words(s.get('text', '')); wts = [len(c) + 2 for c in ch]; tot = sum(wts) or 1; acc = 0
                 for c, wt in zip(ch, wts):
                     a = t0 + 0.1 + (dur - 0.3) * acc / tot; acc += wt; caps.append((a, t0 + 0.1 + (dur - 0.3) * acc / tot, c))
+        if s.get('title'): titles.append((t0 + 0.15, t0 + min(dur, float(s.get('title_dur', 1.8))), s['title']))
         seg = os.path.join(td, f'seg_{i:03d}.mp4')
         run(['ffmpeg', '-v', 'error', '-y', *inputs, '-filter_complex', ';'.join(fc), '-map', '[v]', '-map', '[a]',
              '-c:v', 'libx264', '-preset', 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-r', str(FPS),
@@ -133,13 +140,16 @@ def main():
     joined = os.path.join(td, 'joined.mp4')
     run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-c', 'copy', joined])
     vf = 'null'
-    if caps:
-        assf = os.path.join(td, 'caps.ass'); y = P.get('caption_y', 1330)
+    if caps or titles:
+        assf = os.path.join(td, 'caps.ass'); y = P.get('caption_y', 1330 if vertical else round(H * 0.83))
+        csize = P.get('caption_size', 92 if vertical else round(H * 0.068))
         head = ('[Script Info]\nScriptType: v4.00+\nPlayResX: %d\nPlayResY: %d\nWrapStyle: 2\n\n[V4+ Styles]\n'
                 'Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding\n'
-                'Style: C,%s,%d,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,5,40,40,0,1\n\n'
-                '[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n') % (W, H, P.get('caption_font', 'Inter Display'), P.get('caption_size', 92))
+                'Style: C,%s,%d,&H00FFFFFF,&H00FFFFFF,&H00000000,&H80000000,1,0,0,0,100,100,0,0,1,7,2,5,40,40,0,1\n'
+                'Style: T,%s,%d,&H00FFFFFF,&H00FFFFFF,&H00000000,&HA0000000,1,0,0,0,100,100,2,0,3,18,0,5,40,40,0,1\n\n'
+                '[Events]\nFormat: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text\n') % (W, H, P.get('caption_font', 'Inter Display'), csize, P.get('caption_font', 'Inter Display'), round(csize * 1.25))
         ev = ''.join(f'Dialogue: 0,{ass_time(a)},{ass_time(b)},C,,0,0,0,,{{\\pos({W//2},{y})\\fad(0,0)}}{c.upper()}\n' for a, b, c in caps)
+        ev += ''.join(f'Dialogue: 1,{ass_time(a)},{ass_time(b)},T,,0,0,0,,{{\\pos({W//2},{round(H*0.42)})\\fad(150,150)}}{c.upper()}\n' for a, b, c in titles)
         open(assf, 'w', encoding='utf8').write(head + ev); vf = f"ass='{assf}'"
     out = R(P.get('out', 'final.mp4')); mus = P.get('music')
     cmd = ['ffmpeg', '-v', 'error', '-y', '-i', joined]

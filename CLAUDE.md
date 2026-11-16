@@ -4,6 +4,10 @@ This repo makes **extreme-quality vertical teaching videos** (TikTok / Instagram
 with Three.js: finance, history, science, "how things really work." Owner: Brian (NeuronMetric).
 He works mostly from his phone — keep messages short, show previews, ask before spending credits.
 
+## Two production lines
+- **3D stickman explainers** (long-form "So Simple a 5-Year-Old Gets It" episodes and Shorts, 16:9; images made by Brian in ChatGPT from a prompt pack; animation in OpenArt PixVerse 720p): use the `stickman-explainer` skill in `.claude/skills/stickman-explainer/`. It has its own workflow, prompt-pack generator and assembler.
+- **Gold-noir motion graphics** (Three.js engine in this repo): the pipeline below.
+
 ## The pipeline (always in this order)
 1. **Research** the topic. Use web search. Every number and claim must come from a source.
    Save sources to `videos/<slug>/sources.md` (title + URL + the fact it supports).
