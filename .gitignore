@@ -3,3 +3,6 @@ node_modules/
 videos/*/.preview/
 videos/*/.silent.mp4
 videos/*/images/*.png
+videos/*/clips/s*.mp4
+videos/*/vo/vo_*.wav
+__pycache__/

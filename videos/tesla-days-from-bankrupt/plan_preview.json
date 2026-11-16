@@ -1,0 +1,54 @@
+{
+ "out": "preview.mp4",
+ "width": 1920,
+ "height": 1080,
+ "fps": 30,
+ "sfx_volume": 0.55,
+ "vo_volume": 1.7,
+ "captions": true,
+ "music": null,
+ "shots": [
+  {
+   "clip": "clips/s001.mp4",
+   "dur": 5.85,
+   "text": "December 24th, 2008. 6 p.m. Christmas Eve.",
+   "vo": "vo/vo_01.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s002.mp4",
+   "dur": 3.104,
+   "text": "Tesla has almost no money left.",
+   "vo": "vo/vo_02.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s003.mp4",
+   "dur": 3.631,
+   "text": "In 2 days, its workers' paychecks would bounce.",
+   "vo": "vo/vo_03.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s004.mp4",
+   "dur": 3.307,
+   "text": "Its boss has put in nearly everything he owns.",
+   "vo": "vo/vo_04.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s005.mp4",
+   "dur": 3.402,
+   "text": "He says he even borrowed from friends to pay rent.",
+   "vo": "vo/vo_05.wav",
+   "sfx": 1.0
+  },
+  {
+   "clip": "clips/s006.mp4",
+   "dur": 4.226,
+   "text": "Then, in the last hour, the deal closes.",
+   "vo": "vo/vo_06.wav",
+   "sfx": 1.0
+  }
+ ]
+}

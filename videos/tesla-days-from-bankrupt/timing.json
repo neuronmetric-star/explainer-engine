@@ -1,0 +1,799 @@
+{
+ "total": 385.88,
+ "wps": 2.7,
+ "source": "vo",
+ "shots": [
+  {
+   "n": 1,
+   "text": "December 24th, 2008. 6 p.m. Christmas Eve.",
+   "words": 9.4,
+   "speech": 4.97,
+   "dur": 5.85,
+   "start": 0.0,
+   "gen": 6
+  },
+  {
+   "n": 2,
+   "text": "Tesla has almost no money left.",
+   "words": 6,
+   "speech": 2.44,
+   "dur": 3.104,
+   "start": 5.85,
+   "gen": 4
+  },
+  {
+   "n": 3,
+   "text": "In 2 days, its workers' paychecks would bounce.",
+   "words": 8.0,
+   "speech": 2.96,
+   "dur": 3.631,
+   "start": 8.95,
+   "gen": 4
+  },
+  {
+   "n": 4,
+   "text": "Its boss has put in nearly everything he owns.",
+   "words": 9,
+   "speech": 2.78,
+   "dur": 3.307,
+   "start": 12.59,
+   "gen": 4
+  },
+  {
+   "n": 5,
+   "text": "He says he even borrowed from friends to pay rent.",
+   "words": 10,
+   "speech": 2.55,
+   "dur": 3.402,
+   "start": 15.89,
+   "gen": 4
+  },
+  {
+   "n": 6,
+   "text": "Then, in the last hour, the deal closes.",
+   "words": 8,
+   "speech": 3.31,
+   "dur": 4.226,
+   "start": 19.29,
+   "gen": 5
+  },
+  {
+   "n": 7,
+   "text": "12 years later, Tesla is the most valuable car company on Earth.",
+   "words": 12.6,
+   "speech": 4.61,
+   "dur": 5.128,
+   "start": 23.52,
+   "gen": 6
+  },
+  {
+   "n": 8,
+   "text": "Worth more than Toyota, the company that sells the most cars in the world.",
+   "words": 14,
+   "speech": 4.03,
+   "dur": 4.969,
+   "start": 28.65,
+   "gen": 6
+  },
+  {
+   "n": 9,
+   "text": "So how does a company 3 days from dying end up on top?",
+   "words": 13.0,
+   "speech": 3.63,
+   "dur": 4.342,
+   "start": 33.62,
+   "gen": 5
+  },
+  {
+   "n": 10,
+   "text": "And why didn't the man who saved it even start it?",
+   "words": 11,
+   "speech": 2.55,
+   "dur": 3.527,
+   "start": 37.96,
+   "gen": 4
+  },
+  {
+   "n": 11,
+   "text": "It starts in a tiny office in California.",
+   "words": 8,
+   "speech": 2.8,
+   "dur": 3.489,
+   "start": 41.49,
+   "gen": 4
+  },
+  {
+   "n": 12,
+   "text": "July 2003. 2 engineers, Martin Eberhard and Marc Tarpenning, start a car company.",
+   "words": 14.8,
+   "speech": 6.62,
+   "dur": 7.23,
+   "start": 44.97,
+   "gen": 8
+  },
+  {
+   "n": 13,
+   "text": "They name it after the inventor Nikola Tesla.",
+   "words": 8,
+   "speech": 2.53,
+   "dur": 3.272,
+   "start": 52.2,
+   "gen": 4
+  },
+  {
+   "n": 14,
+   "text": "Their idea: an electric car that's fast and fun, not slow and boxy.",
+   "words": 13,
+   "speech": 5.18,
+   "dur": 5.984,
+   "start": 55.48,
+   "gen": 7
+  },
+  {
+   "n": 15,
+   "text": "But building cars costs a fortune. They need an investor.",
+   "words": 10,
+   "speech": 3.83,
+   "dur": 4.801,
+   "start": 61.46,
+   "gen": 5
+  },
+  {
+   "n": 16,
+   "text": "Early 2004, they pitch a young internet millionaire.",
+   "words": 9.8,
+   "speech": 3.62,
+   "dur": 4.288,
+   "start": 66.26,
+   "gen": 5
+  },
+  {
+   "n": 17,
+   "text": "“We want to make electric cars cool.” (dramatised)",
+   "words": 8,
+   "speech": 4.08,
+   "dur": 4.675,
+   "start": 70.55,
+   "gen": 6
+  },
+  {
+   "n": 18,
+   "text": "“Fast and cool? Then I'm in.” (dramatised)",
+   "words": 7,
+   "speech": 3.25,
+   "dur": 4.161,
+   "start": 75.22,
+   "gen": 5
+  },
+  {
+   "n": 19,
+   "text": "He puts in $6.5 million of the first $7.5 million raised.",
+   "words": 12.2,
+   "speech": 4.66,
+   "dur": 5.211,
+   "start": 79.39,
+   "gen": 6
+  },
+  {
+   "n": 20,
+   "text": "He becomes chairman, the head of the board.",
+   "words": 8,
+   "speech": 2.12,
+   "dur": 2.661,
+   "start": 84.6,
+   "gen": 4
+  },
+  {
+   "n": 21,
+   "text": "But he's not the CEO. Not yet.",
+   "words": 7,
+   "speech": 2.46,
+   "dur": 3.42,
+   "start": 87.26,
+   "gen": 4
+  },
+  {
+   "n": 22,
+   "text": "Tesla's first car, the Roadster, starts at $109,000.",
+   "words": 11.0,
+   "speech": 4.91,
+   "dur": 5.422,
+   "start": 90.68,
+   "gen": 6
+  },
+  {
+   "n": 23,
+   "text": "That's on purpose. Elon writes a “secret master plan.”",
+   "words": 9,
+   "speech": 3.61,
+   "dur": 4.317,
+   "start": 96.1,
+   "gen": 5
+  },
+  {
+   "n": 24,
+   "text": "Step 1: build a pricey sports car.",
+   "words": 7.0,
+   "speech": 2.77,
+   "dur": 3.419,
+   "start": 100.42,
+   "gen": 4
+  },
+  {
+   "n": 25,
+   "text": "Step 2: use that money to build a cheaper car. Then an even cheaper one.",
+   "words": 15.0,
+   "speech": 5.15,
+   "dur": 5.714,
+   "start": 103.84,
+   "gen": 7
+  },
+  {
+   "n": 26,
+   "text": "Like selling fancy lemonade first, to pay for a bigger stand.",
+   "words": 11,
+   "speech": 3.22,
+   "dur": 4.168,
+   "start": 109.55,
+   "gen": 5
+  },
+  {
+   "n": 27,
+   "text": "But building it is much harder than planned.",
+   "words": 8,
+   "speech": 2.45,
+   "dur": 3.175,
+   "start": 113.72,
+   "gen": 4
+  },
+  {
+   "n": 28,
+   "text": "In 2007, the board pushes founder Martin Eberhard out as CEO.",
+   "words": 12.8,
+   "speech": 4.73,
+   "dur": 5.525,
+   "start": 116.89,
+   "gen": 6
+  },
+  {
+   "n": 29,
+   "text": "In 2008, Roadsters are finally built, in an old car dealer's repair bays.",
+   "words": 14.8,
+   "speech": 5.25,
+   "dur": 6.008,
+   "start": 122.42,
+   "gen": 7
+  },
+  {
+   "n": 30,
+   "text": "By January 2009, Tesla has delivered just 147 cars.",
+   "words": 12.0,
+   "speech": 5.26,
+   "dur": 5.998,
+   "start": 128.43,
+   "gen": 7
+  },
+  {
+   "n": 31,
+   "text": "And just then, the whole economy crashes.",
+   "words": 7,
+   "speech": 3.04,
+   "dur": 3.994,
+   "start": 134.42,
+   "gen": 5
+  },
+  {
+   "n": 32,
+   "text": "Fall 2008. Big banks fail. Even America's biggest carmakers are going broke.",
+   "words": 13.8,
+   "speech": 6.54,
+   "dur": 7.21,
+   "start": 138.42,
+   "gen": 8
+  },
+  {
+   "n": 33,
+   "text": "Who lends money to a tiny electric-car startup now? Nobody.",
+   "words": 10,
+   "speech": 3.02,
+   "dur": 3.67,
+   "start": 145.63,
+   "gen": 5
+  },
+  {
+   "n": 34,
+   "text": "Tesla's big fundraising round falls apart.",
+   "words": 6,
+   "speech": 3.68,
+   "dur": 4.688,
+   "start": 149.3,
+   "gen": 5
+  },
+  {
+   "n": 35,
+   "text": "October 2008: Elon makes himself CEO.",
+   "words": 7.8,
+   "speech": 4.31,
+   "dur": 5.084,
+   "start": 153.99,
+   "gen": 6
+  },
+  {
+   "n": 36,
+   "text": "And his other company is in trouble too.",
+   "words": 8,
+   "speech": 1.77,
+   "dur": 2.45,
+   "start": 159.07,
+   "gen": 4
+  },
+  {
+   "n": 37,
+   "text": "SpaceX rockets have failed 3 times in a row.",
+   "words": 9.0,
+   "speech": 3.03,
+   "dur": 3.751,
+   "start": 161.52,
+   "gen": 5
+  },
+  {
+   "n": 38,
+   "text": "In his words, there's money for 1 last launch.",
+   "words": 9.0,
+   "speech": 3.19,
+   "dur": 4.186,
+   "start": 165.27,
+   "gen": 5
+  },
+  {
+   "n": 39,
+   "text": "September 28, 2008: the 4th rocket reaches orbit.",
+   "words": 10.4,
+   "speech": 4.51,
+   "dur": 5.208,
+   "start": 169.46,
+   "gen": 6
+  },
+  {
+   "n": 40,
+   "text": "But Tesla is still bleeding cash.",
+   "words": 6,
+   "speech": 2.24,
+   "dur": 2.869,
+   "start": 174.66,
+   "gen": 4
+  },
+  {
+   "n": 41,
+   "text": "So Elon puts in the last of his PayPal money.",
+   "words": 10,
+   "speech": 2.57,
+   "dur": 3.237,
+   "start": 177.53,
+   "gen": 4
+  },
+  {
+   "n": 42,
+   "text": "He says he didn't even own a house anymore.",
+   "words": 9,
+   "speech": 2.0,
+   "dur": 2.76,
+   "start": 180.77,
+   "gen": 4
+  },
+  {
+   "n": 43,
+   "text": "Now he needs his investors to chip in too.",
+   "words": 9,
+   "speech": 2.58,
+   "dur": 3.05,
+   "start": 183.53,
+   "gen": 4
+  },
+  {
+   "n": 44,
+   "text": "The deal is an IOU that can later turn into a slice of the company.",
+   "words": 15,
+   "speech": 4.28,
+   "dur": 4.87,
+   "start": 186.58,
+   "gen": 6
+  },
+  {
+   "n": 45,
+   "text": "The total: about $40 million.",
+   "words": 5.6,
+   "speech": 2.68,
+   "dur": 3.272,
+   "start": 191.45,
+   "gen": 4
+  },
+  {
+   "n": 46,
+   "text": "Reports say one big investor tries to slow it down.",
+   "words": 10,
+   "speech": 3.19,
+   "dur": 3.82,
+   "start": 194.72,
+   "gen": 5
+  },
+  {
+   "n": 47,
+   "text": "The clock ticks toward Christmas.",
+   "words": 5,
+   "speech": 1.87,
+   "dur": 2.558,
+   "start": 198.54,
+   "gen": 4
+  },
+  {
+   "n": 48,
+   "text": "6 p.m., December 24th: the deal closes.",
+   "words": 7.6,
+   "speech": 2.11,
+   "dur": 2.707,
+   "start": 201.1,
+   "gen": 4
+  },
+  {
+   "n": 49,
+   "text": "In Elon's words, payroll would have bounced 2 days later.",
+   "words": 10.0,
+   "speech": 5.01,
+   "dur": 5.651,
+   "start": 203.81,
+   "gen": 7
+  },
+  {
+   "n": 50,
+   "text": "That same December, NASA hands SpaceX a $1.6 billion contract.",
+   "words": 10.6,
+   "speech": 5.23,
+   "dur": 5.802,
+   "start": 209.46,
+   "gen": 7
+  },
+  {
+   "n": 51,
+   "text": "Both companies survive. Barely.",
+   "words": 4,
+   "speech": 2.26,
+   "dur": 3.027,
+   "start": 215.26,
+   "gen": 4
+  },
+  {
+   "n": 52,
+   "text": "2010: the U.S. government lends Tesla $465 million.",
+   "words": 11.0,
+   "speech": 5.45,
+   "dur": 6.161,
+   "start": 218.29,
+   "gen": 7
+  },
+  {
+   "n": 53,
+   "text": "June 29, 2010: Tesla starts selling shares to the public at $17 each.",
+   "words": 16.0,
+   "speech": 6.03,
+   "dur": 6.617,
+   "start": 224.45,
+   "gen": 8
+  },
+  {
+   "n": 54,
+   "text": "That makes the whole company worth about $1.5 billion.",
+   "words": 9.6,
+   "speech": 3.88,
+   "dur": 4.474,
+   "start": 231.07,
+   "gen": 5
+  },
+  {
+   "n": 55,
+   "text": "Think of a pizza: 1 slice's price times the number of slices.",
+   "words": 12.0,
+   "speech": 3.86,
+   "dur": 4.587,
+   "start": 235.54,
+   "gen": 5
+  },
+  {
+   "n": 56,
+   "text": "Tesla buys an old car factory in Fremont, California, for $42 million.",
+   "words": 12.6,
+   "speech": 5.13,
+   "dur": 5.703,
+   "start": 240.13,
+   "gen": 7
+  },
+  {
+   "n": 57,
+   "text": "It used to belong to GM and Toyota together.",
+   "words": 9,
+   "speech": 2.52,
+   "dur": 3.271,
+   "start": 245.83,
+   "gen": 4
+  },
+  {
+   "n": 58,
+   "text": "June 2012: the first Model S family cars go to customers.",
+   "words": 12.8,
+   "speech": 4.5,
+   "dur": 5.189,
+   "start": 249.1,
+   "gen": 6
+  },
+  {
+   "n": 59,
+   "text": "2013: Tesla pays back the government loan, 9 years early.",
+   "words": 11.8,
+   "speech": 4.89,
+   "dur": 5.642,
+   "start": 254.29,
+   "gen": 6
+  },
+  {
+   "n": 60,
+   "text": "Now for step 3 of the plan.",
+   "words": 7.0,
+   "speech": 1.77,
+   "dur": 2.505,
+   "start": 259.93,
+   "gen": 4
+  },
+  {
+   "n": 61,
+   "text": "March 31, 2016: Elon shows the cheaper Model 3.",
+   "words": 11.4,
+   "speech": 4.76,
+   "dur": 5.417,
+   "start": 262.44,
+   "gen": 6
+  },
+  {
+   "n": 62,
+   "text": "In 1 week, about 325,000 people put down roughly $1,000 each.",
+   "words": 15.8,
+   "speech": 5.98,
+   "dur": 6.53,
+   "start": 267.85,
+   "gen": 7
+  },
+  {
+   "n": 63,
+   "text": "Now Tesla has to actually build them. Fast.",
+   "words": 8,
+   "speech": 2.13,
+   "dur": 2.514,
+   "start": 274.38,
+   "gen": 4
+  },
+  {
+   "n": 64,
+   "text": "Elon promises 5,000 cars a week.",
+   "words": 7.8,
+   "speech": 3.76,
+   "dur": 4.362,
+   "start": 276.9,
+   "gen": 5
+  },
+  {
+   "n": 65,
+   "text": "In spring 2018, Tesla averages about 2,200 a week, less than half the goal.",
+   "words": 17.6,
+   "speech": 6.19,
+   "dur": 6.795,
+   "start": 281.26,
+   "gen": 8
+  },
+  {
+   "n": 66,
+   "text": "The robots keep getting stuck.",
+   "words": 5,
+   "speech": 1.69,
+   "dur": 2.283,
+   "start": 288.05,
+   "gen": 4
+  },
+  {
+   "n": 67,
+   "text": "Elon later admits Tesla relied too much on robots.",
+   "words": 9,
+   "speech": 3.2,
+   "dur": 3.798,
+   "start": 290.34,
+   "gen": 5
+  },
+  {
+   "n": 68,
+   "text": "He spends nights sleeping inside the factory.",
+   "words": 7,
+   "speech": 2.32,
+   "dur": 2.945,
+   "start": 294.14,
+   "gen": 4
+  },
+  {
+   "n": 69,
+   "text": "So the team builds a new assembly line inside a giant tent.",
+   "words": 12,
+   "speech": 4.15,
+   "dur": 4.686,
+   "start": 297.08,
+   "gen": 6
+  },
+  {
+   "n": 70,
+   "text": "Elon says it went up in about 2 weeks.",
+   "words": 9.0,
+   "speech": 2.11,
+   "dur": 2.785,
+   "start": 301.77,
+   "gen": 4
+  },
+  {
+   "n": 71,
+   "text": "Last week of June 2018: they make 5,031 Model 3s.",
+   "words": 13.6,
+   "speech": 5.08,
+   "dur": 5.645,
+   "start": 304.55,
+   "gen": 7
+  },
+  {
+   "n": 72,
+   "text": "But the danger was real.",
+   "words": 5,
+   "speech": 1.32,
+   "dur": 1.894,
+   "start": 310.2,
+   "gen": 4
+  },
+  {
+   "n": 73,
+   "text": "Elon says Tesla came “about a month” from bankruptcy.",
+   "words": 9,
+   "speech": 2.83,
+   "dur": 3.443,
+   "start": 312.09,
+   "gen": 4
+  },
+  {
+   "n": 74,
+   "text": "He calls those 2 years “production and logistics hell.”",
+   "words": 9.0,
+   "speech": 3.39,
+   "dur": 4.024,
+   "start": 315.53,
+   "gen": 5
+  },
+  {
+   "n": 75,
+   "text": "Then the cars start flowing, and so does the money. 4 profitable quarters in a row, a first.",
+   "words": 18.0,
+   "speech": 6.76,
+   "dur": 7.455,
+   "start": 319.56,
+   "gen": 8
+  },
+  {
+   "n": 76,
+   "text": "July 1, 2020: Tesla passes Toyota, worth about $209 billion.",
+   "words": 13.0,
+   "speech": 6.49,
+   "dur": 7.076,
+   "start": 327.01,
+   "gen": 8
+  },
+  {
+   "n": 77,
+   "text": "12 years after Christmas Eve, it's the most valuable carmaker on Earth.",
+   "words": 12.6,
+   "speech": 4.54,
+   "dur": 5.208,
+   "start": 334.09,
+   "gen": 6
+  },
+  {
+   "n": 78,
+   "text": "Today, Tesla is worth about $1.5 trillion.",
+   "words": 7.6,
+   "speech": 3.9,
+   "dur": 4.441,
+   "start": 339.3,
+   "gen": 5
+  },
+  {
+   "n": 79,
+   "text": "That's roughly 1,000 times its value on day 1.",
+   "words": 10.8,
+   "speech": 3.02,
+   "dur": 3.625,
+   "start": 343.74,
+   "gen": 5
+  },
+  {
+   "n": 80,
+   "text": "Toyota is worth about $253 billion, so Tesla is worth about 6 times more.",
+   "words": 15.2,
+   "speech": 6.12,
+   "dur": 6.732,
+   "start": 347.36,
+   "gen": 8
+  },
+  {
+   "n": 81,
+   "text": "Yet in 2025, Toyota sold about 11.3 million cars.",
+   "words": 12.0,
+   "speech": 4.97,
+   "dur": 5.537,
+   "start": 354.09,
+   "gen": 6
+  },
+  {
+   "n": 82,
+   "text": "Tesla sold about 1.6 million.",
+   "words": 5.6,
+   "speech": 2.29,
+   "dur": 2.906,
+   "start": 359.63,
+   "gen": 4
+  },
+  {
+   "n": 83,
+   "text": "Why? Because a stock price is a bet on tomorrow, not today.",
+   "words": 12,
+   "speech": 3.19,
+   "dur": 3.465,
+   "start": 362.54,
+   "gen": 5
+  },
+  {
+   "n": 84,
+   "text": "People are paying for the lemonade stand they think it will become.",
+   "words": 12,
+   "speech": 4.63,
+   "dur": 5.291,
+   "start": 366.0,
+   "gen": 6
+  },
+  {
+   "n": 85,
+   "text": "Will that bet pay off? Nobody knows yet.",
+   "words": 8,
+   "speech": 2.48,
+   "dur": 3.114,
+   "start": 371.29,
+   "gen": 4
+  },
+  {
+   "n": 86,
+   "text": "Back in 2008, Elon put in his last money…",
+   "words": 10.8,
+   "speech": 3.17,
+   "dur": 3.764,
+   "start": 374.41,
+   "gen": 5
+  },
+  {
+   "n": 87,
+   "text": "…“even though I thought we would still fail.”",
+   "words": 8,
+   "speech": 3.29,
+   "dur": 3.979,
+   "start": 378.17,
+   "gen": 5
+  },
+  {
+   "n": 88,
+   "text": "Follow for more money, so simple a 5-year-old gets it.",
+   "words": 10.0,
+   "speech": 3.37,
+   "dur": 3.73,
+   "start": 382.15,
+   "gen": 5
+  }
+ ]
+}

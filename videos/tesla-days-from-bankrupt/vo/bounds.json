@@ -1,0 +1,885 @@
+{
+ "source": "vo/voice.mp3",
+ "lines": [
+  {
+   "n": 1,
+   "file": "vo/vo_01.wav",
+   "start": 0.0,
+   "end": 4.968,
+   "speech": 4.968,
+   "seg_start": 0.0,
+   "seg_end": 5.85,
+   "text": "December twenty-fourth, two thousand eight. Six p.m. Christmas Eve."
+  },
+  {
+   "n": 2,
+   "file": "vo/vo_02.wav",
+   "start": 5.97,
+   "end": 8.411,
+   "speech": 2.441,
+   "seg_start": 5.85,
+   "seg_end": 8.954,
+   "text": "Tesla has almost no money left."
+  },
+  {
+   "n": 3,
+   "file": "vo/vo_03.wav",
+   "start": 9.074,
+   "end": 12.036,
+   "speech": 2.962,
+   "seg_start": 8.954,
+   "seg_end": 12.585,
+   "text": "In two days, its workers' paychecks would bounce."
+  },
+  {
+   "n": 4,
+   "file": "vo/vo_04.wav",
+   "start": 12.705,
+   "end": 15.486,
+   "speech": 2.781,
+   "seg_start": 12.585,
+   "seg_end": 15.892,
+   "text": "Its boss has put in nearly everything he owns."
+  },
+  {
+   "n": 5,
+   "file": "vo/vo_05.wav",
+   "start": 16.012,
+   "end": 18.564,
+   "speech": 2.552,
+   "seg_start": 15.892,
+   "seg_end": 19.294,
+   "text": "He says he even borrowed from friends to pay rent."
+  },
+  {
+   "n": 6,
+   "file": "vo/vo_06.wav",
+   "start": 19.414,
+   "end": 22.727,
+   "speech": 3.314,
+   "seg_start": 19.294,
+   "seg_end": 23.52,
+   "text": "Then, in the last hour, the deal closes."
+  },
+  {
+   "n": 7,
+   "file": "vo/vo_07.wav",
+   "start": 23.64,
+   "end": 28.248,
+   "speech": 4.608,
+   "seg_start": 23.52,
+   "seg_end": 28.648,
+   "text": "Twelve years later, Tesla is the most valuable car company on Earth."
+  },
+  {
+   "n": 8,
+   "file": "vo/vo_08.wav",
+   "start": 28.768,
+   "end": 32.8,
+   "speech": 4.032,
+   "seg_start": 28.648,
+   "seg_end": 33.617,
+   "text": "Worth more than Toyota, the company that sells the most cars in the world."
+  },
+  {
+   "n": 9,
+   "file": "vo/vo_09.wav",
+   "start": 33.737,
+   "end": 37.37,
+   "speech": 3.633,
+   "seg_start": 33.617,
+   "seg_end": 37.959,
+   "text": "So how does a company three days from dying end up on top?"
+  },
+  {
+   "n": 10,
+   "file": "vo/vo_10.wav",
+   "start": 38.079,
+   "end": 40.633,
+   "speech": 2.554,
+   "seg_start": 37.959,
+   "seg_end": 41.486,
+   "text": "And why didn't the man who saved it even start it?"
+  },
+  {
+   "n": 11,
+   "file": "vo/vo_11.wav",
+   "start": 41.606,
+   "end": 44.405,
+   "speech": 2.799,
+   "seg_start": 41.486,
+   "seg_end": 44.975,
+   "text": "It starts in a tiny office in California."
+  },
+  {
+   "n": 12,
+   "file": "vo/vo_12.wav",
+   "start": 45.095,
+   "end": 51.717,
+   "speech": 6.622,
+   "seg_start": 44.975,
+   "seg_end": 52.205,
+   "text": "July two thousand three. Two engineers, Martin Eberhard and Marc Tarpenning, start a car company."
+  },
+  {
+   "n": 13,
+   "file": "vo/vo_13.wav",
+   "start": 52.325,
+   "end": 54.854,
+   "speech": 2.529,
+   "seg_start": 52.205,
+   "seg_end": 55.477,
+   "text": "They name it after the inventor Nikola Tesla."
+  },
+  {
+   "n": 14,
+   "file": "vo/vo_14.wav",
+   "start": 55.596,
+   "end": 60.781,
+   "speech": 5.184,
+   "seg_start": 55.477,
+   "seg_end": 61.461,
+   "text": "Their idea: an electric car that's fast and fun, not slow and boxy."
+  },
+  {
+   "n": 15,
+   "file": "vo/vo_15.wav",
+   "start": 61.581,
+   "end": 65.408,
+   "speech": 3.827,
+   "seg_start": 61.461,
+   "seg_end": 66.262,
+   "text": "But building cars costs a fortune. They need an investor."
+  },
+  {
+   "n": 16,
+   "file": "vo/vo_16.wav",
+   "start": 66.382,
+   "end": 70.006,
+   "speech": 3.624,
+   "seg_start": 66.262,
+   "seg_end": 70.55,
+   "text": "Early two thousand four, they pitch a young internet millionaire."
+  },
+  {
+   "n": 17,
+   "file": "vo/vo_17.wav",
+   "start": 70.671,
+   "end": 74.752,
+   "speech": 4.082,
+   "seg_start": 70.55,
+   "seg_end": 75.225,
+   "text": "In our retelling, Martin says: we want to make electric cars cool."
+  },
+  {
+   "n": 18,
+   "file": "vo/vo_18.wav",
+   "start": 75.345,
+   "end": 78.596,
+   "speech": 3.251,
+   "seg_start": 75.225,
+   "seg_end": 79.386,
+   "text": "And Elon says: fast and cool? Then I'm in."
+  },
+  {
+   "n": 19,
+   "file": "vo/vo_19.wav",
+   "start": 79.506,
+   "end": 84.167,
+   "speech": 4.661,
+   "seg_start": 79.386,
+   "seg_end": 84.597,
+   "text": "He puts in six point five million of the first seven point five million raised."
+  },
+  {
+   "n": 20,
+   "file": "vo/vo_20.wav",
+   "start": 84.717,
+   "end": 86.838,
+   "speech": 2.121,
+   "seg_start": 84.597,
+   "seg_end": 87.258,
+   "text": "He becomes chairman, the head of the board."
+  },
+  {
+   "n": 21,
+   "file": "vo/vo_21.wav",
+   "start": 87.378,
+   "end": 89.843,
+   "speech": 2.465,
+   "seg_start": 87.258,
+   "seg_end": 90.678,
+   "text": "But he's not the CEO. Not yet."
+  },
+  {
+   "n": 22,
+   "file": "vo/vo_22.wav",
+   "start": 90.799,
+   "end": 95.709,
+   "speech": 4.911,
+   "seg_start": 90.678,
+   "seg_end": 96.1,
+   "text": "Tesla's first car, the Roadster, starts at one hundred nine thousand dollars."
+  },
+  {
+   "n": 23,
+   "file": "vo/vo_23.wav",
+   "start": 96.22,
+   "end": 99.832,
+   "speech": 3.613,
+   "seg_start": 96.1,
+   "seg_end": 100.417,
+   "text": "That's on purpose. Elon writes a secret master plan."
+  },
+  {
+   "n": 24,
+   "file": "vo/vo_24.wav",
+   "start": 100.537,
+   "end": 103.308,
+   "speech": 2.771,
+   "seg_start": 100.417,
+   "seg_end": 103.836,
+   "text": "Step one: build a pricey sports car."
+  },
+  {
+   "n": 25,
+   "file": "vo/vo_25.wav",
+   "start": 103.956,
+   "end": 109.106,
+   "speech": 5.15,
+   "seg_start": 103.836,
+   "seg_end": 109.55,
+   "text": "Step two: use that money to build a cheaper car. Then an even cheaper one."
+  },
+  {
+   "n": 26,
+   "file": "vo/vo_26.wav",
+   "start": 109.67,
+   "end": 112.886,
+   "speech": 3.216,
+   "seg_start": 109.55,
+   "seg_end": 113.718,
+   "text": "Like selling fancy lemonade first, to pay for a bigger stand."
+  },
+  {
+   "n": 27,
+   "file": "vo/vo_27.wav",
+   "start": 113.838,
+   "end": 116.29,
+   "speech": 2.452,
+   "seg_start": 113.718,
+   "seg_end": 116.893,
+   "text": "But building it is much harder than planned."
+  },
+  {
+   "n": 28,
+   "file": "vo/vo_28.wav",
+   "start": 117.013,
+   "end": 121.741,
+   "speech": 4.728,
+   "seg_start": 116.893,
+   "seg_end": 122.418,
+   "text": "In two thousand seven, the board pushes founder Martin Eberhard out as CEO."
+  },
+  {
+   "n": 29,
+   "file": "vo/vo_29.wav",
+   "start": 122.538,
+   "end": 127.789,
+   "speech": 5.251,
+   "seg_start": 122.418,
+   "seg_end": 128.426,
+   "text": "In two thousand eight, Roadsters are finally built, in an old car dealer's repair bays."
+  },
+  {
+   "n": 30,
+   "file": "vo/vo_30.wav",
+   "start": 128.546,
+   "end": 133.805,
+   "speech": 5.259,
+   "seg_start": 128.426,
+   "seg_end": 134.424,
+   "text": "By January two thousand nine, Tesla has delivered just one hundred forty-seven cars."
+  },
+  {
+   "n": 31,
+   "file": "vo/vo_31.wav",
+   "start": 134.544,
+   "end": 137.579,
+   "speech": 3.035,
+   "seg_start": 134.424,
+   "seg_end": 138.418,
+   "text": "And just then, the whole economy crashes."
+  },
+  {
+   "n": 32,
+   "file": "vo/vo_32.wav",
+   "start": 138.538,
+   "end": 145.078,
+   "speech": 6.54,
+   "seg_start": 138.418,
+   "seg_end": 145.628,
+   "text": "Fall two thousand eight. Big banks fail. Even America's biggest carmakers are going broke."
+  },
+  {
+   "n": 33,
+   "file": "vo/vo_33.wav",
+   "start": 145.748,
+   "end": 148.768,
+   "speech": 3.02,
+   "seg_start": 145.628,
+   "seg_end": 149.298,
+   "text": "Who lends money to a tiny electric-car startup now? Nobody."
+  },
+  {
+   "n": 34,
+   "file": "vo/vo_34.wav",
+   "start": 149.418,
+   "end": 153.1,
+   "speech": 3.682,
+   "seg_start": 149.298,
+   "seg_end": 153.986,
+   "text": "Tesla's big fundraising round falls apart."
+  },
+  {
+   "n": 35,
+   "file": "vo/vo_35.wav",
+   "start": 154.106,
+   "end": 158.42,
+   "speech": 4.314,
+   "seg_start": 153.986,
+   "seg_end": 159.07,
+   "text": "October two thousand eight: Elon makes himself CEO."
+  },
+  {
+   "n": 36,
+   "file": "vo/vo_36.wav",
+   "start": 159.19,
+   "end": 160.96,
+   "speech": 1.77,
+   "seg_start": 159.07,
+   "seg_end": 161.52,
+   "text": "And his other company is in trouble too."
+  },
+  {
+   "n": 37,
+   "file": "vo/vo_37.wav",
+   "start": 161.64,
+   "end": 164.672,
+   "speech": 3.032,
+   "seg_start": 161.52,
+   "seg_end": 165.271,
+   "text": "SpaceX rockets have failed three times in a row."
+  },
+  {
+   "n": 38,
+   "file": "vo/vo_38.wav",
+   "start": 165.391,
+   "end": 168.585,
+   "speech": 3.194,
+   "seg_start": 165.271,
+   "seg_end": 169.457,
+   "text": "In his words, there's money for one last launch."
+  },
+  {
+   "n": 39,
+   "file": "vo/vo_39.wav",
+   "start": 169.577,
+   "end": 174.089,
+   "speech": 4.512,
+   "seg_start": 169.457,
+   "seg_end": 174.665,
+   "text": "September twenty-eighth, two thousand eight: the fourth rocket reaches orbit."
+  },
+  {
+   "n": 40,
+   "file": "vo/vo_40.wav",
+   "start": 174.785,
+   "end": 177.028,
+   "speech": 2.243,
+   "seg_start": 174.665,
+   "seg_end": 177.534,
+   "text": "But Tesla is still bleeding cash."
+  },
+  {
+   "n": 41,
+   "file": "vo/vo_41.wav",
+   "start": 177.654,
+   "end": 180.223,
+   "speech": 2.569,
+   "seg_start": 177.534,
+   "seg_end": 180.771,
+   "text": "So Elon puts in the last of his PayPal money."
+  },
+  {
+   "n": 42,
+   "file": "vo/vo_42.wav",
+   "start": 180.891,
+   "end": 182.886,
+   "speech": 1.995,
+   "seg_start": 180.771,
+   "seg_end": 183.531,
+   "text": "He says he didn't even own a house anymore."
+  },
+  {
+   "n": 43,
+   "file": "vo/vo_43.wav",
+   "start": 183.651,
+   "end": 186.233,
+   "speech": 2.582,
+   "seg_start": 183.531,
+   "seg_end": 186.581,
+   "text": "Now he needs his investors to chip in too."
+  },
+  {
+   "n": 44,
+   "file": "vo/vo_44.wav",
+   "start": 186.701,
+   "end": 190.983,
+   "speech": 4.282,
+   "seg_start": 186.581,
+   "seg_end": 191.451,
+   "text": "The deal is an I-O-U that can later turn into a slice of the company."
+  },
+  {
+   "n": 45,
+   "file": "vo/vo_45.wav",
+   "start": 191.571,
+   "end": 194.252,
+   "speech": 2.681,
+   "seg_start": 191.451,
+   "seg_end": 194.723,
+   "text": "The total: about forty million dollars."
+  },
+  {
+   "n": 46,
+   "file": "vo/vo_46.wav",
+   "start": 194.843,
+   "end": 198.036,
+   "speech": 3.193,
+   "seg_start": 194.723,
+   "seg_end": 198.543,
+   "text": "Reports say one big investor tries to slow it down."
+  },
+  {
+   "n": 47,
+   "file": "vo/vo_47.wav",
+   "start": 198.663,
+   "end": 200.534,
+   "speech": 1.871,
+   "seg_start": 198.543,
+   "seg_end": 201.101,
+   "text": "The clock ticks toward Christmas."
+  },
+  {
+   "n": 48,
+   "file": "vo/vo_48.wav",
+   "start": 201.221,
+   "end": 203.329,
+   "speech": 2.108,
+   "seg_start": 201.101,
+   "seg_end": 203.808,
+   "text": "Six p.m., December twenty-fourth: the deal closes."
+  },
+  {
+   "n": 49,
+   "file": "vo/vo_49.wav",
+   "start": 203.928,
+   "end": 208.942,
+   "speech": 5.014,
+   "seg_start": 203.808,
+   "seg_end": 209.459,
+   "text": "In Elon's words, payroll would have bounced two days later."
+  },
+  {
+   "n": 50,
+   "file": "vo/vo_50.wav",
+   "start": 209.579,
+   "end": 214.81,
+   "speech": 5.231,
+   "seg_start": 209.459,
+   "seg_end": 215.261,
+   "text": "That same December, NASA hands SpaceX a one point six billion dollar contract."
+  },
+  {
+   "n": 51,
+   "file": "vo/vo_51.wav",
+   "start": 215.381,
+   "end": 217.637,
+   "speech": 2.256,
+   "seg_start": 215.261,
+   "seg_end": 218.288,
+   "text": "Both companies survive. Barely."
+  },
+  {
+   "n": 52,
+   "file": "vo/vo_52.wav",
+   "start": 218.408,
+   "end": 223.862,
+   "speech": 5.454,
+   "seg_start": 218.288,
+   "seg_end": 224.449,
+   "text": "Twenty ten: the U.S. government lends Tesla four hundred sixty-five million dollars."
+  },
+  {
+   "n": 53,
+   "file": "vo/vo_53.wav",
+   "start": 224.569,
+   "end": 230.596,
+   "speech": 6.027,
+   "seg_start": 224.449,
+   "seg_end": 231.066,
+   "text": "June twenty-ninth, twenty ten: Tesla starts selling shares to the public at seventeen dollars each."
+  },
+  {
+   "n": 54,
+   "file": "vo/vo_54.wav",
+   "start": 231.186,
+   "end": 235.065,
+   "speech": 3.879,
+   "seg_start": 231.066,
+   "seg_end": 235.54,
+   "text": "That makes the whole company worth about one point five billion dollars."
+  },
+  {
+   "n": 55,
+   "file": "vo/vo_55.wav",
+   "start": 235.66,
+   "end": 239.518,
+   "speech": 3.858,
+   "seg_start": 235.54,
+   "seg_end": 240.127,
+   "text": "Think of a pizza: one slice's price times the number of slices."
+  },
+  {
+   "n": 56,
+   "file": "vo/vo_56.wav",
+   "start": 240.247,
+   "end": 245.382,
+   "speech": 5.135,
+   "seg_start": 240.127,
+   "seg_end": 245.83,
+   "text": "Tesla buys an old car factory in Fremont, California, for forty-two million dollars."
+  },
+  {
+   "n": 57,
+   "file": "vo/vo_57.wav",
+   "start": 245.95,
+   "end": 248.469,
+   "speech": 2.519,
+   "seg_start": 245.83,
+   "seg_end": 249.101,
+   "text": "It used to belong to GM and Toyota together."
+  },
+  {
+   "n": 58,
+   "file": "vo/vo_58.wav",
+   "start": 249.221,
+   "end": 253.72,
+   "speech": 4.499,
+   "seg_start": 249.101,
+   "seg_end": 254.29,
+   "text": "June twenty twelve: the first Model S family cars go to customers."
+  },
+  {
+   "n": 59,
+   "file": "vo/vo_59.wav",
+   "start": 254.41,
+   "end": 259.304,
+   "speech": 4.894,
+   "seg_start": 254.29,
+   "seg_end": 259.932,
+   "text": "Twenty thirteen: Tesla pays back the government loan, nine years early."
+  },
+  {
+   "n": 60,
+   "file": "vo/vo_60.wav",
+   "start": 260.052,
+   "end": 261.824,
+   "speech": 1.772,
+   "seg_start": 259.932,
+   "seg_end": 262.437,
+   "text": "Now for step three of the plan."
+  },
+  {
+   "n": 61,
+   "file": "vo/vo_61.wav",
+   "start": 262.557,
+   "end": 267.322,
+   "speech": 4.765,
+   "seg_start": 262.437,
+   "seg_end": 267.854,
+   "text": "March thirty-first, twenty sixteen: Elon shows the cheaper Model 3."
+  },
+  {
+   "n": 62,
+   "file": "vo/vo_62.wav",
+   "start": 267.974,
+   "end": 273.951,
+   "speech": 5.977,
+   "seg_start": 267.854,
+   "seg_end": 274.384,
+   "text": "In one week, about three hundred twenty-five thousand people put down roughly a thousand dollars each."
+  },
+  {
+   "n": 63,
+   "file": "vo/vo_63.wav",
+   "start": 274.504,
+   "end": 276.639,
+   "speech": 2.135,
+   "seg_start": 274.384,
+   "seg_end": 276.898,
+   "text": "Now Tesla has to actually build them. Fast."
+  },
+  {
+   "n": 64,
+   "file": "vo/vo_64.wav",
+   "start": 277.018,
+   "end": 280.78,
+   "speech": 3.762,
+   "seg_start": 276.898,
+   "seg_end": 281.26,
+   "text": "Elon promises five thousand cars a week."
+  },
+  {
+   "n": 65,
+   "file": "vo/vo_65.wav",
+   "start": 281.38,
+   "end": 287.572,
+   "speech": 6.192,
+   "seg_start": 281.26,
+   "seg_end": 288.055,
+   "text": "In spring twenty eighteen, Tesla averages about two thousand two hundred a week, less than half the goal."
+  },
+  {
+   "n": 66,
+   "file": "vo/vo_66.wav",
+   "start": 288.175,
+   "end": 289.86,
+   "speech": 1.685,
+   "seg_start": 288.055,
+   "seg_end": 290.338,
+   "text": "The robots keep getting stuck."
+  },
+  {
+   "n": 67,
+   "file": "vo/vo_67.wav",
+   "start": 290.458,
+   "end": 293.66,
+   "speech": 3.202,
+   "seg_start": 290.338,
+   "seg_end": 294.136,
+   "text": "Elon later admits Tesla relied too much on robots."
+  },
+  {
+   "n": 68,
+   "file": "vo/vo_68.wav",
+   "start": 294.256,
+   "end": 296.573,
+   "speech": 2.317,
+   "seg_start": 294.136,
+   "seg_end": 297.081,
+   "text": "He spends nights sleeping inside the factory."
+  },
+  {
+   "n": 69,
+   "file": "vo/vo_69.wav",
+   "start": 297.201,
+   "end": 301.351,
+   "speech": 4.15,
+   "seg_start": 297.081,
+   "seg_end": 301.767,
+   "text": "So the team builds a new assembly line inside a giant tent."
+  },
+  {
+   "n": 70,
+   "file": "vo/vo_70.wav",
+   "start": 301.887,
+   "end": 303.996,
+   "speech": 2.109,
+   "seg_start": 301.767,
+   "seg_end": 304.552,
+   "text": "Elon says it went up in about two weeks."
+  },
+  {
+   "n": 71,
+   "file": "vo/vo_71.wav",
+   "start": 304.672,
+   "end": 309.755,
+   "speech": 5.083,
+   "seg_start": 304.552,
+   "seg_end": 310.197,
+   "text": "Last week of June twenty eighteen: they make five thousand thirty-one Model 3s."
+  },
+  {
+   "n": 72,
+   "file": "vo/vo_72.wav",
+   "start": 310.317,
+   "end": 311.633,
+   "speech": 1.316,
+   "seg_start": 310.197,
+   "seg_end": 312.091,
+   "text": "But the danger was real."
+  },
+  {
+   "n": 73,
+   "file": "vo/vo_73.wav",
+   "start": 312.211,
+   "end": 315.041,
+   "speech": 2.83,
+   "seg_start": 312.091,
+   "seg_end": 315.534,
+   "text": "Elon says Tesla came about a month from bankruptcy."
+  },
+  {
+   "n": 74,
+   "file": "vo/vo_74.wav",
+   "start": 315.654,
+   "end": 319.044,
+   "speech": 3.39,
+   "seg_start": 315.534,
+   "seg_end": 319.558,
+   "text": "He calls those two years production and logistics hell."
+  },
+  {
+   "n": 75,
+   "file": "vo/vo_75.wav",
+   "start": 319.678,
+   "end": 326.436,
+   "speech": 6.758,
+   "seg_start": 319.558,
+   "seg_end": 327.013,
+   "text": "Then the cars start flowing, and so does the money. Four profitable quarters in a row, a first."
+  },
+  {
+   "n": 76,
+   "file": "vo/vo_76.wav",
+   "start": 327.133,
+   "end": 333.625,
+   "speech": 6.492,
+   "seg_start": 327.013,
+   "seg_end": 334.089,
+   "text": "July first, twenty twenty: Tesla passes Toyota, worth about two hundred nine billion dollars."
+  },
+  {
+   "n": 77,
+   "file": "vo/vo_77.wav",
+   "start": 334.209,
+   "end": 338.753,
+   "speech": 4.544,
+   "seg_start": 334.089,
+   "seg_end": 339.297,
+   "text": "Twelve years after Christmas Eve, it's the most valuable carmaker on Earth."
+  },
+  {
+   "n": 78,
+   "file": "vo/vo_78.wav",
+   "start": 339.417,
+   "end": 343.317,
+   "speech": 3.9,
+   "seg_start": 339.297,
+   "seg_end": 343.738,
+   "text": "Today, Tesla is worth about one point five trillion dollars."
+  },
+  {
+   "n": 79,
+   "file": "vo/vo_79.wav",
+   "start": 343.858,
+   "end": 346.877,
+   "speech": 3.019,
+   "seg_start": 343.738,
+   "seg_end": 347.363,
+   "text": "That's roughly a thousand times its value on day one."
+  },
+  {
+   "n": 80,
+   "file": "vo/vo_80.wav",
+   "start": 347.483,
+   "end": 353.607,
+   "speech": 6.124,
+   "seg_start": 347.363,
+   "seg_end": 354.095,
+   "text": "Toyota is worth about two hundred fifty-three billion dollars, so Tesla is worth about six times more."
+  },
+  {
+   "n": 81,
+   "file": "vo/vo_81.wav",
+   "start": 354.215,
+   "end": 359.19,
+   "speech": 4.975,
+   "seg_start": 354.095,
+   "seg_end": 359.632,
+   "text": "Yet in twenty twenty-five, Toyota sold about eleven point three million cars."
+  },
+  {
+   "n": 82,
+   "file": "vo/vo_82.wav",
+   "start": 359.752,
+   "end": 362.045,
+   "speech": 2.293,
+   "seg_start": 359.632,
+   "seg_end": 362.538,
+   "text": "Tesla sold about one point six million."
+  },
+  {
+   "n": 83,
+   "file": "vo/vo_83.wav",
+   "start": 362.658,
+   "end": 365.849,
+   "speech": 3.191,
+   "seg_start": 362.538,
+   "seg_end": 366.003,
+   "text": "Why? Because a stock price is a bet on tomorrow, not today."
+  },
+  {
+   "n": 84,
+   "file": "vo/vo_84.wav",
+   "start": 366.123,
+   "end": 370.749,
+   "speech": 4.626,
+   "seg_start": 366.003,
+   "seg_end": 371.294,
+   "text": "People are paying for the lemonade stand they think it will become."
+  },
+  {
+   "n": 85,
+   "file": "vo/vo_85.wav",
+   "start": 371.414,
+   "end": 373.89,
+   "speech": 2.476,
+   "seg_start": 371.294,
+   "seg_end": 374.408,
+   "text": "Will that bet pay off? Nobody knows yet."
+  },
+  {
+   "n": 86,
+   "file": "vo/vo_86.wav",
+   "start": 374.528,
+   "end": 377.697,
+   "speech": 3.169,
+   "seg_start": 374.408,
+   "seg_end": 378.172,
+   "text": "Back in two thousand eight, Elon put in his last money..."
+  },
+  {
+   "n": 87,
+   "file": "vo/vo_87.wav",
+   "start": 378.292,
+   "end": 381.587,
+   "speech": 3.295,
+   "seg_start": 378.172,
+   "seg_end": 382.151,
+   "text": "even though, as he put it, I thought we would still fail."
+  },
+  {
+   "n": 88,
+   "file": "vo/vo_88.wav",
+   "start": 382.271,
+   "end": 385.639,
+   "speech": 3.368,
+   "seg_start": 382.151,
+   "seg_end": 385.881,
+   "text": "Follow for more money, so simple a five-year-old gets it."
+  }
+ ]
+}
