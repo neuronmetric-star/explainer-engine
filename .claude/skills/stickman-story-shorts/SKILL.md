@@ -151,7 +151,7 @@ Deliver the MP4 and `timing.md`. In 3-5 lines, say:
 
 Change only what was asked.
 
-- **7a. Voice-over arrives.** Put it at `vo/voice.wav` (or `.mp3`) and run `python3 scripts/vo_split.py vo/voice.wav lines.txt`. It splits the file into `vo/vo_NN.wav` at the pauses and writes `vo/bounds.json`. Then set each shot's `dur` to its line's speech + 0.25 s (`python3 scripts/timing.py lines.txt --from-vo vo/bounds.json`), add `vo` paths and `"captions": true` to `plan.json`, and re-assemble. The clips stay; each is re-timed.
+- **7a. Voice-over arrives.** Put it at `vo/voice.wav` (or `.mp3`) and run `python3 scripts/vo_split.py vo/voice.wav lines.txt`. It splits the file into `vo/vo_NN.wav` at the pauses and writes `vo/bounds.json`. **Check the split:** print each segment's length next to its line's word count. Voice tools often pause inside lines (after a year, a comma or a list item), and the splitter can then cut in the wrong pause. If a segment is clearly too short or too long, list the speech stretches with `silencedetect` and match them to the lines by hand. Cut each line's file from just before its first word (−0.12 s) to just before the next line, so your natural pauses stay in. If a line runs much longer than its clip's clean footage, split that shot in two: the clip for the first half, and its keyframe as a still with a push-in for the rest. Then set each shot's `dur` to its line's speech + 0.25 s (`python3 scripts/timing.py lines.txt --from-vo vo/bounds.json`), add `vo` paths and `"captions": true` to `plan.json`, and re-assemble. The clips stay; each is re-timed.
 - **One bad shot:** regenerate only that shot, slop-check it, swap it in `plan.json`, re-assemble.
 - **2D ↔ 3D:**
   1. Make a new sheet in the other style.

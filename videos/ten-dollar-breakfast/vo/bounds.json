@@ -1,0 +1,155 @@
+{
+ "source": "vo/voice.mp3",
+ "lines": [
+  {
+   "n": 1,
+   "file": "vo/vo_01.wav",
+   "start": 0.0,
+   "end": 3.94,
+   "speech": 3.94,
+   "seg_start": 0.0,
+   "seg_end": 4.49,
+   "text": "How much breakfast could ten dollars buy over the last 80 years?"
+  },
+  {
+   "n": 2,
+   "file": "vo/vo_02.wav",
+   "start": 4.61,
+   "end": 9.08,
+   "speech": 4.47,
+   "seg_start": 4.49,
+   "seg_end": 9.52,
+   "text": "Meet Ray. Every decade, he takes the same ten-dollar bill to the store."
+  },
+  {
+   "n": 3,
+   "file": "vo/vo_03.wav",
+   "start": 9.64,
+   "end": 14.5,
+   "speech": 4.86,
+   "seg_start": 9.52,
+   "seg_end": 15.07,
+   "text": "His list never changes: a loaf of bread, a dozen eggs, a gallon of milk."
+  },
+  {
+   "n": 4,
+   "file": "vo/vo_04.wav",
+   "start": 15.19,
+   "end": 21.95,
+   "speech": 6.76,
+   "seg_start": 15.07,
+   "seg_end": 22.51,
+   "text": "1950. That list costs about a dollar 57. Ray walks out with 6 full bags."
+  },
+  {
+   "n": 5,
+   "file": "vo/vo_05.wav",
+   "start": 22.63,
+   "end": 26.96,
+   "speech": 4.33,
+   "seg_start": 22.51,
+   "seg_end": 27.54,
+   "text": "1960: 5 bags. 1970: 4."
+  },
+  {
+   "n": 6,
+   "file": "vo/vo_06.wav",
+   "start": 27.66,
+   "end": 32.1,
+   "speech": 4.44,
+   "seg_start": 27.54,
+   "seg_end": 32.66,
+   "text": "1980. Prices jump. Ray can't even afford 3."
+  },
+  {
+   "n": 7,
+   "file": "vo/vo_07.wav",
+   "start": 32.78,
+   "end": 34.46,
+   "speech": 1.68,
+   "seg_start": 32.66,
+   "seg_end": 34.82,
+   "text": "1990 and 2000: 2 bags each."
+  },
+  {
+   "n": 8,
+   "file": "vo/vo_08.wav",
+   "start": 34.94,
+   "end": 38.57,
+   "speech": 3.63,
+   "seg_start": 34.82,
+   "seg_end": 39.09,
+   "text": "2010. Down to 1. 2020: still 1."
+  },
+  {
+   "n": 9,
+   "file": "vo/vo_09.wav",
+   "start": 39.21,
+   "end": 48.36,
+   "speech": 9.15,
+   "seg_start": 39.09,
+   "seg_end": 48.77,
+   "text": "Today, the list costs 8 dollars 28. Ray gets 1 bag and a dollar 72 in change."
+  },
+  {
+   "n": 10,
+   "file": "vo/vo_10.wav",
+   "start": 48.89,
+   "end": 51.03,
+   "speech": 2.14,
+   "seg_start": 48.77,
+   "seg_end": 51.58,
+   "text": "Six bags, down to one."
+  },
+  {
+   "n": 11,
+   "file": "vo/vo_11.wav",
+   "start": 51.7,
+   "end": 54.89,
+   "speech": 3.19,
+   "seg_start": 51.58,
+   "seg_end": 55.38,
+   "text": "But there's a catch. Ray's paycheck changed too."
+  },
+  {
+   "n": 12,
+   "file": "vo/vo_12.wav",
+   "start": 55.5,
+   "end": 61.68,
+   "speech": 6.18,
+   "seg_start": 55.38,
+   "seg_end": 62.11,
+   "text": "In 1950, minimum wage was 75 cents. One bag took over 2 hours of work."
+  },
+  {
+   "n": 13,
+   "file": "vo/vo_13.wav",
+   "start": 62.23,
+   "end": 64.44,
+   "speech": 2.21,
+   "seg_start": 62.11,
+   "seg_end": 64.84,
+   "text": "Today, it takes just over 1 hour."
+  },
+  {
+   "n": 14,
+   "file": "vo/vo_14.wav",
+   "start": 64.96,
+   "end": 70.25,
+   "speech": 5.29,
+   "seg_start": 64.84,
+   "seg_end": 70.76,
+   "text": "So ten dollars buys less food than ever. But an hour of work buys more."
+  },
+  {
+   "n": 15,
+   "file": "vo/vo_15.wav",
+   "start": 70.88,
+   "end": 74.37,
+   "speech": 3.49,
+   "seg_start": 70.76,
+   "seg_end": 75.17,
+   "text": "Follow for more money, so simple a 5-year-old gets it."
+  }
+ ]
+}

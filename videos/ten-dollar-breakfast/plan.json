@@ -1,92 +1,116 @@
 {
- "out": "final_no_vo.mp4",
+ "out": "final.mp4",
  "width": 1080,
  "height": 1920,
  "fps": 30,
- "sfx_volume": 0.6,
- "captions": false,
+ "sfx_volume": 0.35,
+ "captions": true,
  "music": null,
  "shots": [
   {
    "clip": "clips/01.mp4",
-   "dur": 4.92,
-   "text": "How much breakfast could ten dollars buy over the last 80 years?"
+   "dur": 4.49,
+   "text": "How much breakfast could ten dollars buy over the last 80 years?",
+   "vo": "vo/vo_01.wav"
   },
   {
    "clip": "clips/02.mp4",
-   "dur": 5.06,
-   "text": "Meet Ray. Every decade, he takes the same ten-dollar bill to the store."
+   "dur": 5.03,
+   "text": "Meet Ray. Every decade, he takes the same ten-dollar bill to the store.",
+   "vo": "vo/vo_02.wav"
   },
   {
    "clip": "clips/03.mp4",
-   "dur": 5.81,
-   "text": "His list never changes: a loaf of bread, a dozen eggs, a gallon of milk."
+   "dur": 5.55,
+   "text": "His list never changes: a loaf of bread, a dozen eggs, a gallon of milk.",
+   "vo": "vo/vo_03.wav"
   },
   {
    "clip": "clips/04.mp4",
-   "dur": 6.69,
-   "text": "1950. That list costs about a dollar 57. Ray walks out with 6 full bags."
+   "dur": 7.44,
+   "text": "1950. That list costs about a dollar 57. Ray walks out with 6 full bags.",
+   "vo": "vo/vo_04.wav"
   },
   {
    "clip": "clips/05.mp4",
-   "dur": 3.44,
+   "dur": 5.03,
    "text": "1960: 5 bags. 1970: 4.",
    "src_in": 0.6,
-   "src_out": 4.1
+   "src_out": 4.1,
+   "vo": "vo/vo_05.wav"
   },
   {
    "clip": "clips/06.mp4",
-   "dur": 3.88,
-   "text": "1980. Prices jump. Ray can't even afford 3."
+   "dur": 5.12,
+   "text": "1980. Prices jump. Ray can't even afford 3.",
+   "vo": "vo/vo_06.wav"
   },
   {
    "clip": "clips/07.mp4",
-   "dur": 3.81,
+   "dur": 2.16,
    "text": "1990 and 2000: 2 bags each.",
-   "src_in": 0.6
+   "src_in": 0.6,
+   "vo": "vo/vo_07.wav"
   },
   {
    "clip": "clips/08.mp4",
-   "dur": 4.18,
-   "text": "2010. Down to 1. 2020: still 1."
+   "dur": 4.27,
+   "text": "2010. Down to 1. 2020: still 1.",
+   "vo": "vo/vo_08.wav"
   },
   {
    "clip": "clips/09.mp4",
-   "dur": 6.99,
-   "text": "Today, the list costs 8 dollars 28. Ray gets 1 bag and a dollar 72 in change.",
-   "src_out": 4.85
+   "dur": 6.07,
+   "text": "Today, the list costs 8 dollars 28.",
+   "src_out": 4.85,
+   "vo": "vo/vo_09a.wav"
+  },
+  {
+   "clip": "keyframes/09_v3.png",
+   "dur": 3.61,
+   "text": "Ray gets 1 bag and a dollar 72 in change.",
+   "vo": "vo/vo_09b.wav",
+   "zoom": 1.12,
+   "sfx": 0
   },
   {
    "clip": "clips/10.mp4",
-   "dur": 2.1,
+   "dur": 2.81,
    "text": "Six bags, down to one.",
-   "src_in": 0.9
+   "src_in": 0.9,
+   "vo": "vo/vo_10.wav"
   },
   {
    "clip": "clips/11.mp4",
-   "dur": 3.21,
-   "text": "But there's a catch. Ray's paycheck changed too."
+   "dur": 3.8,
+   "text": "But there's a catch. Ray's paycheck changed too.",
+   "vo": "vo/vo_11.wav"
   },
   {
    "clip": "clips/12.mp4",
-   "dur": 6.69,
-   "text": "In 1950, minimum wage was 75 cents. One bag took over 2 hours of work."
+   "dur": 6.73,
+   "text": "In 1950, minimum wage was 75 cents. One bag took over 2 hours of work.",
+   "vo": "vo/vo_12.wav"
   },
   {
    "clip": "clips/13.mp4",
-   "dur": 2.84,
+   "dur": 2.73,
    "text": "Today, it takes just over 1 hour.",
-   "src_out": 1.6
+   "src_out": 1.6,
+   "vo": "vo/vo_13.wav"
   },
   {
    "clip": "clips/14.mp4",
-   "dur": 5.81,
-   "text": "So ten dollars buys less food than ever. But an hour of work buys more."
+   "dur": 5.92,
+   "text": "So ten dollars buys less food than ever. But an hour of work buys more.",
+   "vo": "vo/vo_14.wav"
   },
   {
    "clip": "clips/15.mp4",
-   "dur": 3.95,
-   "text": "Follow for more money, so simple a 5-year-old gets it."
+   "dur": 4.41,
+   "text": "Follow for more money, so simple a 5-year-old gets it.",
+   "vo": "vo/vo_15.wav"
   }
- ]
+ ],
+ "vo_volume": 1.0
 }

@@ -34,15 +34,33 @@ def probe(p):
     j = json.loads(r.stdout)
     return float(j['format']['duration']), any(s['codec_type'] == 'audio' for s in j.get('streams', []))
 
-def speech_bounds(p):
+def speech_segments(p):
+    """Non-silent stretches [(start, end), ...] inside a voice file (pauses >= 0.12 s removed)."""
     d, _ = probe(p)
-    r = subprocess.run(['ffmpeg', '-hide_banner', '-i', p, '-af', 'silencedetect=noise=-35dB:d=0.12', '-f', 'null', '-'], capture_output=True, text=True)
-    st, en = 0.0, d
-    m = re.findall(r'silence_start: ([\d.]+)|silence_end: ([\d.]+)', r.stderr)
-    ev = [(float(a), 's') if a else (float(b), 'e') for a, b in m]
-    if ev and ev[0][1] == 's' and ev[0][0] < 0.05 and len(ev) > 1: st = ev[1][0]
-    if ev and ev[-1][1] == 's': en = ev[-1][0]
-    return st, max(st + 0.2, en)
+    r = subprocess.run(['ffmpeg', '-nostdin', '-hide_banner', '-i', p, '-af', 'silencedetect=noise=-35dB:d=0.12', '-f', 'null', '-'], capture_output=True, text=True)
+    sil = []; s0 = None
+    for a, b in re.findall(r'silence_start: ([\d.]+)|silence_end: ([\d.]+)', r.stderr):
+        if a: s0 = float(a)
+        elif s0 is not None: sil.append((s0, float(b))); s0 = None
+    if s0 is not None: sil.append((s0, d))
+    segs = []; t = 0.0
+    for a, b in sil:
+        if a > t + 0.05: segs.append((t, a))
+        t = max(t, b)
+    if d > t + 0.05: segs.append((t, d))
+    return segs or [(0.0, d)]
+
+def speech_bounds(p):
+    segs = speech_segments(p)
+    return segs[0][0], max(segs[0][0] + 0.2, segs[-1][1])
+
+def spread(segs, frac):
+    """Map 0..1 of speaking time to a real time inside the file, skipping the pauses."""
+    total = sum(b - a for a, b in segs); left = frac * total
+    for a, b in segs:
+        if left <= (b - a) + 1e-9: return a + left
+        left -= (b - a)
+    return segs[-1][1]
 
 def chunk_words(text):
     words = text.split(); out = []; i = 0
@@ -93,12 +111,12 @@ def main():
             inputs += ['-i', R(s['vo'])]
             fc.append(f'[{k}:a]aresample=48000,volume={vov},apad,atrim=duration={dur:.3f}[vo]')
             fc.append('[sfx][vo]amix=inputs=2:normalize=0:duration=first[a]')
-            st, en = speech_bounds(R(s['vo']))
             if P.get('captions'):
-                ch = chunk_words(s.get('text', '')); wts = [len(c) + 2 for c in ch]; tot = sum(wts) or 1; acc = 0
+                sg = speech_segments(R(s['vo']))
+                ch = chunk_words(s.get('text', '')); wts = [len(c) + 2 + 3 * sum(x.isdigit() for x in c) for c in ch]; tot = sum(wts) or 1; acc = 0
                 for c, wt in zip(ch, wts):
-                    a = t0 + st + (en - st) * acc / tot; acc += wt; b = t0 + st + (en - st) * acc / tot
-                    caps.append((a, b, c))
+                    a = t0 + spread(sg, acc / tot); acc += wt; b = t0 + spread(sg, acc / tot)
+                    caps.append((a, min(b + 0.08, t0 + dur), c))
         else:
             fc.append('[sfx]anull[a]')
             if P.get('captions') and P.get('captions_from') == 'estimate':
