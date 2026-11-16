@@ -23,7 +23,7 @@ def main():
         sh = dict(clip=clip, dur=round(s['dur'], 3), text=B[n]['line'], vo=VO[n]['file'], sfx=1.0)
         if n in CHAPTER_CARDS: sh['title'] = CHAPTER_CARDS[n]; sh['title_dur'] = 2.0
         shots.append(sh)
-    plan = dict(out=final, width=1920, height=1080, fps=30, sfx_volume=0.55, vo_volume=1.7, captions=True, music=None, shots=shots)
+    plan = dict(out=final, width=1920, height=1080, fps=30, sfx_volume=0.55, vo_volume=1.7, captions=True, music=None, end_card='FOLLOW FOR MORE', end_card_dur=2.4, shots=shots)
     json.dump(plan, open(os.path.join(EP, out), 'w'), indent=1)
     print(out, len(shots), 'shots', round(sum(x['dur'] for x in shots), 2), 's')
 

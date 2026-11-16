@@ -69,6 +69,62 @@ def inpaint_roi(img, mask, pad=40, radius=7):
     out = img.copy(); r = out[y0:y1, x0:x1]; blend(r, fill, np.maximum(a, (m > 0)))
     return out
 
+
+def smooth_fill(img, mask, sigma=60, pad=None):
+    """fill mask with a smooth multi-scale blend of the surrounding background (plain studio backdrops)."""
+    ys, xs = np.nonzero(mask)
+    if len(xs) == 0: return img
+    pad = pad or int(sigma * 6)
+    x0, y0, x1, y1 = roi_clip(xs.min() - pad, ys.min() - pad, xs.max() + pad, ys.max() + pad)
+    q = 4; roi = img[y0:y1, x0:x1].astype(np.float32); m = (mask[y0:y1, x0:x1] > 0)
+    w = (~m).astype(np.float32); sz = ((x1 - x0) // q, (y1 - y0) // q)
+    sm0 = cv2.resize(roi * w[..., None], sz, interpolation=cv2.INTER_AREA); sw0 = cv2.resize(w, sz, interpolation=cv2.INTER_AREA)
+    fill = None
+    for sg in (sigma * 16, sigma * 8, sigma * 4, sigma * 2, sigma):
+        sm = cv2.GaussianBlur(sm0, (0, 0), sg / q); sw = cv2.GaussianBlur(sw0, (0, 0), sg / q)
+        f = sm / np.maximum(sw[..., None], 1e-6)
+        if fill is None: fill = f
+        else: k = np.clip(sw / 0.25, 0, 1)[..., None]; fill = f * k + fill * (1 - k)
+    fill = cv2.resize(fill, (x1 - x0, y1 - y0), interpolation=cv2.INTER_CUBIC)
+    fill += np.random.default_rng(0).normal(0, 0.8, fill.shape).astype(np.float32)   # keep a hint of grain
+    a = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 3)
+    a = np.maximum(a, m)[..., None]
+    out = img.copy(); out[y0:y1, x0:x1] = np.clip(roi * (1 - a) + fill * a, 0, 255).astype(np.uint8)
+    return out
+
+def poly_backdrop(img, exclude, deg=3):
+    """least-squares 2D polynomial fit of the backdrop (pixels outside `exclude`), evaluated on the whole frame."""
+    q = 16; h, w = img.shape[:2]
+    sm = cv2.resize(img, (w // q, h // q), interpolation=cv2.INTER_AREA).astype(np.float32)
+    ex = cv2.resize(exclude, (w // q, h // q), interpolation=cv2.INTER_NEAREST) > 0
+    yy, xx = np.mgrid[0:h // q, 0:w // q].astype(np.float32); xx /= (w // q); yy /= (h // q)
+    terms = [xx ** i * yy ** j for i in range(deg + 1) for j in range(deg + 1 - i)]
+    A = np.stack([t[~ex] for t in terms], 1)
+    out = np.zeros_like(sm)
+    for c in range(3):
+        coef, *_ = np.linalg.lstsq(A, sm[..., c][~ex], rcond=None)
+        out[..., c] = sum(k * t for k, t in zip(coef, terms))
+    return cv2.resize(out, (w, h), interpolation=cv2.INTER_CUBIC)
+
+def row_fill(img, mask):
+    """fill each masked run by interpolating between the unmasked pixels left and right of it (keeps horizontal edges)."""
+    out = img.copy(); m = mask > 0
+    ys = np.nonzero(m.any(1))[0]
+    for y in ys:
+        row = m[y]; xs = np.nonzero(row)[0]
+        runs = np.split(xs, np.nonzero(np.diff(xs) > 1)[0] + 1)
+        for r in runs:
+            a, b = r[0] - 1, r[-1] + 1
+            ca = out[y, max(a, 0)].astype(np.float32) if a >= 0 else None
+            cb = out[y, min(b, img.shape[1] - 1)].astype(np.float32) if b < img.shape[1] else None
+            if ca is None: ca = cb
+            if cb is None: cb = ca
+            u = np.linspace(0, 1, len(r) + 2)[1:-1, None]
+            out[y, r] = (ca * (1 - u) + cb * u).astype(np.uint8)
+    blur = cv2.GaussianBlur(out, (0, 0), 3)
+    a = cv2.GaussianBlur(m.astype(np.float32), (0, 0), 2)[..., None]
+    return (out * (1 - a) + blur * a).astype(np.uint8)
+
 def poly_mask(shape, pts):
     m = np.zeros(shape[:2], np.uint8); cv2.fillPoly(m, [np.array(pts, np.int32)], 255); return m
 
@@ -233,6 +289,7 @@ class Part:
             f = fg_mask(img, s['fg'], s.get('tol', 26), s.get('bg'))
             m = f if 'poly' not in s and 'ellipse' not in s and 'rect' not in s else (m & f)
         if s.get('grow'): m = cv2.dilate(m, np.ones((s['grow'], s['grow']), np.uint8))
+        for e in s.get('exclude', []): cv2.ellipse(m, (e[0], e[1]), (e[2], e[3]), 0, 0, 360, 0, -1)
         ys, xs = np.nonzero(m); pad = s.get('pad', 600)
         self.roi = roi_clip(xs.min() - pad, ys.min() - pad, xs.max() + pad, ys.max() + pad)
         x0, y0, x1, y1 = self.roi
@@ -240,7 +297,8 @@ class Part:
         self.alpha = cv2.GaussianBlur(m[y0:y1, x0:x1].astype(np.float32) / 255, (0, 0), s.get('feather', 2))
         self.pivot = s.get('pivot', ((xs.min() + xs.max()) / 2, (ys.min() + ys.max()) / 2))
         if s.get('fill', True):
-            sc.plate = inpaint_roi(sc.plate, cv2.dilate(m, np.ones((s.get('fill_grow', 21),) * 2, np.uint8)), pad=60, radius=s.get('fill_radius', 9))
+            mm = cv2.dilate(m, np.ones((s.get('fill_grow', 21),) * 2, np.uint8))
+            sc.plate = row_fill(sc.plate, mm) if s.get('rows') else smooth_fill(sc.plate, mm, s.get('sigma', 60)) if s.get('smooth') else inpaint_roi(sc.plate, mm, pad=60, radius=s.get('fill_radius', 9))
 
     def draw(self, frame, t):
         p = self.fn(t)
@@ -454,7 +512,82 @@ class Flash:
             col = np.float32(self.s.get('color', (255, 255, 255)))
             frame[...] = np.clip(frame * (1 - k * 0.5) + col * k, 0, 255).astype(np.uint8)
 
-LAYERS = dict(part=Part, clock=ClockHand, glow=Glow, grade=Grade, particles=Particles, arcs=Arcs, flash=Flash)
+
+class Reveal:
+    """progressively draw the dark strokes inside rect (whiteboard sketch, signature). wipe left->right."""
+    def __init__(self, sc, s):
+        self.s = s; x0, y0, x1, y1 = s['rect']; img = sc.img
+        g = cv2.cvtColor(img[y0:y1, x0:x1], cv2.COLOR_BGR2GRAY)
+        m = (g < s.get('thr', 140)).astype(np.uint8) * 255
+        m = cv2.dilate(m, np.ones((5, 5), np.uint8))
+        full = np.zeros(img.shape[:2], np.uint8); full[y0:y1, x0:x1] = m
+        sc.plate = inpaint_roi(sc.plate, cv2.dilate(full, np.ones((7, 7), np.uint8)), pad=30, radius=5)
+        self.patch = img[y0:y1, x0:x1].copy()
+        self.alpha = cv2.GaussianBlur(m.astype(np.float32) / 255, (0, 0), 1.2)
+        xs = np.arange(x1 - x0, dtype=np.float32)[None, :]
+        self.xs = xs
+    def draw(self, frame, t):
+        s = self.s; x0, y0, x1, y1 = s['rect']
+        p = ease(clamp01((t - s['t0']) / (s['t1'] - s['t0'])))
+        if p <= 0: return
+        front = p * (x1 - x0 + 2 * s.get('soft', 40)) - s.get('soft', 40)
+        w = np.clip((front - self.xs) / s.get('soft', 40), 0, 1)
+        blend(frame[y0:y1, x0:x1], self.patch, self.alpha * w)
+
+class PopIn:
+    """objects (connected foreground blobs inside rect) appear one after another with a springy pop."""
+    def __init__(self, sc, s):
+        self.s = s; img = sc.img; x0, y0, x1, y1 = s['rect']
+        if s.get('sat'):
+            x0, y0, x1, y1 = s['rect']; hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
+            m = np.zeros(img.shape[:2], np.uint8)
+            sub = ((hsv[y0:y1, x0:x1, 1] > s['sat']) | (hsv[y0:y1, x0:x1, 2] < s.get('dark', 90))).astype(np.uint8) * 255
+            sub = cv2.morphologyEx(sub, cv2.MORPH_CLOSE, np.ones((11, 11), np.uint8))
+            sub = cv2.morphologyEx(sub, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+            m[y0:y1, x0:x1] = sub
+        else:
+            m = fg_mask(img, s['rect'], s.get('tol', 26), s.get('bg'))
+        n, lab, st, cen = cv2.connectedComponentsWithStats(m)
+        comps = []; G = s.get('hull_grow', 0); allm = np.zeros_like(m)
+        for i in range(1, n):
+            if st[i, cv2.CC_STAT_AREA] < s.get('min_area', 4000): continue
+            bx, by, bw, bh = st[i, :4]; pad = 12 + G
+            bx0, by0, bx1, by1 = roi_clip(bx - pad, by - pad, bx + bw + pad, by + bh + pad)
+            cm = (lab[by0:by1, bx0:bx1] == i).astype(np.uint8) * 255
+            if G:
+                cs, _ = cv2.findContours(cm, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+                cm = np.zeros_like(cm); cv2.fillPoly(cm, [cv2.convexHull(np.vstack(cs))], 255)
+                cm = cv2.dilate(cm, np.ones((G, G), np.uint8))
+            allm[by0:by1, bx0:bx1] |= cm
+            a = cv2.GaussianBlur(cv2.dilate(cm, np.ones((7, 7), np.uint8)).astype(np.float32) / 255, (0, 0), 1.5 + G / 6)
+            comps.append(((bx0, by0, bx1, by1), img[by0:by1, bx0:bx1].copy(), a, cen[i]))
+        if G: m = allm
+        rh = s.get('row_h', 300)
+        comps.sort(key=lambda c: (round(c[3][1] / rh), c[3][0]))
+        self.comps = comps
+        mm = cv2.dilate(m, np.ones((15, 15), np.uint8))
+        if s.get('backdrop'):
+            bd = poly_backdrop(sc.img, cv2.dilate(m, np.ones((161, 161), np.uint8)))
+            area = cv2.GaussianBlur(cv2.dilate(m, np.ones((s['backdrop'], s['backdrop']), np.uint8)).astype(np.float32) / 255, (0, 0), 25)[..., None]
+            noise = np.random.default_rng(1).normal(0, 0.8, bd.shape).astype(np.float32)
+            sc.plate = np.clip(sc.plate * (1 - area) + (bd + noise) * area, 0, 255).astype(np.uint8)
+        else:
+            sc.plate = smooth_fill(sc.plate, mm, s.get('sigma', 60)) if s.get('smooth') else inpaint_roi(sc.plate, mm, pad=40, radius=7)
+    def draw(self, frame, t):
+        s = self.s
+        for i, ((x0, y0, x1, y1), patch, a, c) in enumerate(self.comps):
+            ta = s['t0'] + i * s['dt']
+            if t < ta: continue
+            k = back_out(clamp01((t - ta) / s.get('pop', 0.25)), 2.2)
+            if k >= 0.999 and t - ta > 0.3:
+                blend(frame[y0:y1, x0:x1], patch, a); continue
+            w, h = x1 - x0, y1 - y0; px, py = w / 2, h * 0.9
+            M = np.float32([[k, 0, px * (1 - k)], [0, k, py * (1 - k)]])
+            pw = cv2.warpAffine(patch, M, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE)
+            aw = cv2.warpAffine(a, M, (w, h), flags=cv2.INTER_LINEAR)
+            blend(frame[y0:y1, x0:x1], pw, aw)
+
+LAYERS = dict(popin=PopIn, reveal=Reveal, part=Part, clock=ClockHand, glow=Glow, grade=Grade, particles=Particles, arcs=Arcs, flash=Flash)
 
 # ------------------------------------------------------------------ text (screen space)
 def text_overlay(s, size=74):
@@ -525,7 +658,7 @@ class Scene:
         for (rgb, a), tx in self.texts:
             if t < tx.get('t0', 0) or t > tx.get('t1', 1e9): continue
             k = min(1, (t - tx.get('t0', 0)) / 0.25) * (1 - win(t, tx.get('t1', 1e9) - 0.25, tx.get('t1', 1e9)))
-            px, py = tx.get('pos', (64, 150)); h, w = rgb.shape[:2]
+            px, py = tx.get('pos', (64, 150)); h, w = rgb.shape[:2]; px = max(40, min(px, OW - w - 40))
             r = out[py:py + h, px:px + w]; blend(r, rgb, a * k)
         return out
 
