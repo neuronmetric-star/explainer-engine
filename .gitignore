@@ -2,3 +2,10 @@ node_modules/
 .env
 videos/*/.preview/
 videos/*/.silent.mp4
+
+# per-video build cache, source stills and renders (re-extract from the zips)
+videos/*/.build/
+videos/week-before-the-alert/assets/scenes/
+videos/week-before-the-alert/assets/locations/
+videos/week-before-the-alert/assets/thumbs/
+videos/week-before-the-alert/*.mp4
