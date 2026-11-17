@@ -1,0 +1,18 @@
+# 17 Countries Are Telling People to Stock Up — script v1 (awaiting approval)
+# ~60 s, ~165 spoken words. Same hook as the viral clip; the payoff is the real, sourced answer.
+
+[#hook] {17|Seventeen} countries are telling people to *stock up.
+[#hook2] They're preparing for something.
+[#reframe] It's real. But it's !not a November seventeenth shutdown.
+[#how] Here's what's actually going on.
+[#eu] In March twenty twenty-five, the *European Union told four hundred fifty million people:
+[#eu2] keep *seventy-two hours of food, water and medicine at home.
+[#sweden] Sweden mailed a booklet to every household. Title: "If Crisis or War Comes."
+[#germany] Germany says ten days of food. Norway and Sweden say about a week.
+[#why] Why now? Three reasons. War in Ukraine. Cyberattacks. And storms knocking out power.
+[#catch] So where does November seventeenth come from?
+[#rumor] An old *W E F cyberattack drill, a phone alert test, and that seventy-two-hour advice — stitched into one post.
+[#nogrid] There's no "world power grid" to switch off. Every country runs its own.
+[#kit] What they actually want in your closet: water, canned food, a radio, a flashlight, cash, your meds.
+[#punch] They're not preparing for a date. They're preparing for a bad week.
+[#cta] Follow for more of what's really behind the headlines.
