@@ -69,3 +69,15 @@ Planned looks to add as `engine/styles/*` when a topic needs them: **parchment**
 low-poly dioramas, maps, lantern light), **blueprint** (science/engineering: cyan lines on navy,
 cutaways and exploded views), **chalk** (math: white lines on dark green). Keep the same card,
 caption and step systems across looks so the brand stays recognizable.
+
+## The cast + toy world (engine/cast.js) — use these characters in every video
+- Set `style: 'toy'` in scene.js for the soft daylight world (light ground, shadows, no bloom). Default stays gold-noir.
+- `K.char(name, x, z)` builds a rigged cast member. Originals (from Brian's sheets): `hoodie`, `sam`, `sweater`,
+  `worker`, `boss`. Extended, diverse cast: `maya`, `leo`, `amira`, `kenji`, `zara`, `marcus`, `rosa`, `dev`, `nia`.
+  Add new characters to `K.CAST` (skin: porcelain|light|tan|brown|deep|ebony; top: hoodie|sweater|coverall|suit|jacket|cardigan|tee;
+  hair: messy|short|afro|curls|locs|braids|bun|hijab; hands: glove|blackglove|skin; shoes: sneaker|boot|dress; goggles/tie/watch).
+- Animate in `update(t)`: `K.pose(c, K.poses.walk(t))` (idle, walk, run, point, pump, panic, shrug, talk, reach, wave, sit),
+  `K.face(c, 'surprised')` (smile, happy, surprised, smug, worried, scream, talk, blink), `K.talkFace(c, t, t0, t1)`.
+  Move with `c.root.position` / `c.root.rotation.y`. Use `K.tmat(color)` for world props so colours are correct.
+- Keep casting diverse: mix skin tones and hair styles in every crowd and every set of "normal people".
+- Example: `videos/cast-demo/scene.js` (line-up, faces, town street).

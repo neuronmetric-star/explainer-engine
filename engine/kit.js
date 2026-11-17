@@ -53,11 +53,11 @@
   const scene = K.scene = new THREE.Scene(); scene.background = new THREE.Color(0x000000);
   scene.fog = new THREE.Fog(0x000000, 26, 70);
   const camera = K.camera = new THREE.PerspectiveCamera(50, W / H, .1, 400);
-  scene.add(new THREE.AmbientLight(0xffffff, .35));
+  const amb = new THREE.AmbientLight(0xffffff, .35); scene.add(amb);
   const key = new THREE.DirectionalLight(0xffffff, .9); key.position.set(5, 10, 8); scene.add(key);
   const composer = new THREE.EffectComposer(renderer);
   composer.addPass(new THREE.RenderPass(scene, camera));
-  composer.addPass(new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), 1.15, .4, .52));
+  const bloom = new THREE.UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), 1.15, .4, .52); composer.addPass(bloom);
 
   // reflective floor + dimmer + guide lines + dust
   const FLOOR_W = 600;
@@ -68,10 +68,29 @@
   const origBR = refl.onBeforeRender;
   refl.onBeforeRender = function () { dim.visible = false; origBR.apply(this, arguments); dim.visible = true; };
   { const g = new THREE.BufferGeometry(); const p = []; for (let i = -2; i <= 2; i++) p.push(-100, .01, i * 6, 500, .01, i * 6);
-    g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); scene.add(new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0x2a2a2a }))); }
+    g.setAttribute('position', new THREE.Float32BufferAttribute(p, 3)); K._lines = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: 0x2a2a2a })); scene.add(K._lines); }
   { const n = 2400, p = new Float32Array(n * 3); for (let i = 0; i < n; i++) { p[i * 3] = -40 + Math.random() * 480; p[i * 3 + 1] = Math.random() * 16; p[i * 3 + 2] = -16 + Math.random() * 24; }
     const g = new THREE.BufferGeometry(); g.setAttribute('position', new THREE.BufferAttribute(p, 3));
-    scene.add(new THREE.Points(g, new THREE.PointsMaterial({ color: 0xffd27a, size: .05, transparent: true, opacity: .55 }))); }
+    K._dust = new THREE.Points(g, new THREE.PointsMaterial({ color: 0xffd27a, size: .05, transparent: true, opacity: .55 })); scene.add(K._dust); }
+
+  // ---------------- looks ----------------
+  // 'gold-noir' (default): black void, reflective floor, bloom.  'toy': soft studio daylight world for the cast (engine/cast.js).
+  K.style = 'gold-noir';
+  K.setStyle = function (name) {
+    K.style = name; if (name !== 'toy') return;
+    const bg = new THREE.Color(0xc9ced4).convertSRGBToLinear(); scene.background = bg; scene.fog = new THREE.Fog(bg, 40, 120);
+    const vg = document.getElementById('vig'); if (vg) vg.style.display = 'none';
+    refl.visible = false; dim.visible = false; K._lines.visible = false; K._dust.visible = false;
+    bloom.strength = .12; bloom.threshold = .92;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+    renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    amb.intensity = .15; scene.add(new THREE.HemisphereLight(0xffffff, 0x7d828a, .55));
+    key.intensity = 1.15; key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -.0004; key.shadow.radius = 4;
+    const sc = key.shadow.camera; sc.left = -14; sc.right = 14; sc.top = 14; sc.bottom = -14; sc.near = 1; sc.far = 60; scene.add(key.target);
+    const gm = new THREE.MeshStandardMaterial({ color: 0xb7bcc2, roughness: .95 }); gm.color.convertSRGBToLinear(); const ground = new THREE.Mesh(new THREE.PlaneGeometry(2000, 400), gm);
+    ground.rotation.x = -Math.PI / 2; ground.position.y = -.001; ground.receiveShadow = true; scene.add(ground); K.ground = ground;
+  };
+  K.followLight = function (tgt) { if (K.style !== 'toy') return; key.position.set(tgt.x + 6, 14, tgt.z + 9); key.target.position.copy(tgt); key.target.updateMatrixWorld(); };
 
   // ---------------- builders ----------------
   K.GOLD = 0xffc548; K.RED = 0xff3a2c; K.WHITE = 0xffffff; K.BLUE = 0xbfd7ff; K.GREEN = 0x9dffb9; K.SILVER = 0xdedede;
@@ -183,7 +202,7 @@
     cameraAt(t, SC.distance || 1.5);
     const sh = shakeAmp(t);
     camera.position.copy(camPos).add(new THREE.Vector3(Math.sin(t * 61) * sh, Math.cos(t * 47) * sh, 0));
-    camera.lookAt(camTgt); camera.updateMatrixWorld();
+    camera.lookAt(camTgt); camera.updateMatrixWorld(); K.followLight(camTgt);
     updateCards(t);
     // captions: one word/token at a time
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
@@ -209,6 +228,7 @@
   // ---------------- start: called after scene.js defines window.SCENE ----------------
   K.start = function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
+    if (SC.style) K.setStyle(SC.style);
     SC.build && SC.build(K);
     SHOTS = (SC.shots || []).map(s => ({ t: K.T(s[0]), p: new THREE.Vector3(...s[1]), q: new THREE.Vector3(...s[2]), d: s[3] || 1 })).sort((a, b) => a.t - b.t);
     (SC.cards || []).forEach(o => K.card(o));

@@ -1,0 +1,2 @@
+# Cast + world demo (no voice). Timing is hand-made in data.js.
+[#a] Meet the cast. [#b] Everyone belongs here. [#c] Real faces. [#d] And a whole world to live in.
