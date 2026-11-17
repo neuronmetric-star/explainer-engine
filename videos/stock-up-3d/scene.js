@@ -231,7 +231,7 @@ window.SCENE = {
     const { at, ease, easeOut, pop, clamp01, setBar, fly, drawTube } = K, S = this.s;
     if (!S.fontsDone && document.fonts && document.fonts.check('900 100px IN')) { S.tex.forEach(f => f()); S.fontsDone = true; }
     // A: flags rise, calendar slams in and gets crossed out
-    S.flags.forEach((f, i) => { const u = pop(clamp01((t - at('real') + .25 - f.userData.d) / .5)); f.position.y = -1 + (f.userData.y + 1) * u; f.visible = u > .01;
+    S.flags.forEach((f, i) => { const u = pop(clamp01((t - at('real') + 1.0 - f.userData.d * .6) / .5)); f.position.y = -1 + (f.userData.y + 1) * u; f.visible = u > .01;
       f.rotation.x = Math.sin(t * 1.3 + i) * .04; });
     const cu = easeOut(clamp01((t - at('not')) / .45)); S.cal.position.z = 3.2 + (1 - cu) * 9; S.cal.rotation.y = (1 - cu) * .9; S.cal.visible = t >= at('not');
     S.calX.scale.setScalar(pop(clamp01((t - at('not') - .6) / .3)));
