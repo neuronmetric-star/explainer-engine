@@ -1,7 +1,7 @@
-# 17 Countries Are Telling People to Stock Up — script v1 (awaiting approval)
-# ~60 s, ~165 spoken words. Same hook as the viral clip; the payoff is the real, sourced answer.
+# 17 Countries Are Telling People to Stock Up — APPROVED script (matches voice.mp3, 72.1 s)
+# On screen the hook is censored as "f***"; the voiceover says it in full.
 
-[#hook] {17|Seventeen} countries are telling people to *stock up.
+[#hook] Why the f*** are 17 countries telling people to *stock up?
 [#hook2] They're preparing for something.
 [#reframe] It's real. But it's !not a November seventeenth shutdown.
 [#how] Here's what's actually going on.

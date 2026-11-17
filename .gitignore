@@ -16,3 +16,7 @@ videos/week-before-the-alert/*.srt
 videos/week-before-the-alert/voice.mp3
 videos/week-before-the-alert/covers/
 videos/17-countries-stock-up/*.mp4
+videos/17-countries-stock-up/assets/
+videos/17-countries-stock-up/voice.mp3
+videos/17-countries-stock-up/.build/
+videos/*/__pycache__/
