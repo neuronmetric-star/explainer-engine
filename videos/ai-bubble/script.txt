@@ -1,18 +1,18 @@
-# What is an AI bubble — and why it matters to you. Story-driven, no numbered steps. ~90 s.
+# What is an AI bubble — and why it matters to you. Story-driven, no numbered steps. Target 90 s.
 # Look: toy world + cast (engine/cast.js). Markup: *gold  !red  {shown|spoken}  [#cue]
 
-[#hook] What the {f***|fuck} does an *AI *bubble mean, [#hook2] and why should you even care?
-[#reframe] Because it's not about robots. [#money] It's about *your *money.
-[#maya] Picture Maya's lemonade stand. [#future] One day, everyone decides lemonade is the future.
-[#buy] Strangers start buying pieces of her stand. [#double] The price doubles. [#triple] Then it triples.
-[#cups] But she hasn't sold more cups. [#bet] People are just betting that she will.
+[#hook] What the {f***|fuck} does an *AI *bubble mean, [#hook2] and why should you care?
+[#reframe] It's not about robots. [#money] It's about *your *money.
+[#maya] Picture Maya's lemonade stand. [#future] Everyone decides lemonade is the future.
+[#buy] People buy pieces of her stand. [#double] The price doubles. [#triple] Then triples.
+[#cups] She hasn't sold more cups. [#bet] They're just betting she will.
 [#bubble] That's a bubble: the !price runs way ahead of the *profit.
-[#ai] Now swap the lemonade for A.I. [#spend] Tech giants are pouring around {*$539B|five hundred thirty-nine billion dollars} into it this year, [#before] mostly before the profits show up.
-[#nvidia] And the company selling the shovels, Nvidia, got so big [#weight] it's about {*6 to 8%|six to eight percent} of the entire S&P five hundred.
-[#you] So if your retirement account holds an index fund, [#piece] you already own a piece of the stand.
+[#ai] Now swap lemonade for A.I. [#spend] Tech giants are pouring about {*$539B|five hundred thirty-nine billion dollars} into it this year, [#before] before the profits show up.
+[#nvidia] Nvidia, which sells the chips, [#weight] is now about {*6 to 8%|six to eight percent} of the whole S&P five hundred.
+[#you] If your retirement account holds an index fund, [#piece] you already own a piece of the stand.
 [#pop] Bubbles pop when people stop believing the profits are coming.
-[#cisco] It's happened before. In {2000|two thousand}, Cisco was the most valuable company on Earth. [#crash] Two years later, its stock was down about {!85%.|eighty-five percent.} [#years] It took {25|twenty five} years to climb back. [#internet] And the internet was real.
-[#jensen] Now, on November twelfth, Nvidia's C.E.O., Jensen Huang, !resigned. [#noreason] The company didn't say why. [#slide] And the stock kept sliding.
-[#mean] Does that pop the bubble? [#notalone] Not by itself. The chips still sell. [#confidence] But bubbles run on *confidence, [#face] and the face of A.I. just walked off the stage.
+[#cisco] In {2000,|two thousand,} Cisco was the most valuable company on Earth. [#crash] Two years later, it was down about {!85%.|eighty-five percent.} [#years] It took {25|twenty five} years to climb back. [#internet] And the internet was real.
+[#jensen] On November twelfth, Nvidia's C.E.O., Jensen Huang, !resigned. [#noreason] The company didn't say why. [#slide] The stock kept sliding.
+[#mean] Does that pop the bubble? [#notalone] Not by itself. [#confidence] But bubbles run on *confidence, [#face] and the face of A.I. just walked off the stage.
 [#punch] The tech can be *real, and still be !overpriced. [#yours] And your money's already in it.
 [#cta] Follow for more of what's really behind the headlines.
