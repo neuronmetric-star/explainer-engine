@@ -242,9 +242,31 @@ def caption_cards(text):
             cards.append(wrap2(words[:n]) or [words[0]]); words = words[n:]
     return cards
 
+def read_phrases():
+    """phrases.csv: one row per spoken phrase on the master timeline (start,end,scene,caption,...)."""
+    p = os.path.join(HERE, 'phrases.csv')
+    if not os.path.exists(p): return []
+    with open(p, newline='', encoding='utf-8') as f: return list(csv.DictReader(f))
+
+def phrase_captions(r, t0, t1, phrases):
+    """Cards timed to each measured phrase; long phrases are split by length. Relative to shot start."""
+    if r['status'] == 'OMIT_UNVERIFIED': return []
+    mine = [p for p in phrases if p['scene'] == r['scene'] and p['caption'].strip() and p.get('status') != 'OMIT_UNVERIFIED']
+    out = []
+    for i, p in enumerate(mine):
+        a, b = float(p['start']) - t0, float(p['end']) - t0
+        nxt = float(mine[i + 1]['start']) - t0 if i + 1 < len(mine) else t1 - t0 - 0.05
+        b_hold = min(nxt, b + 0.35, t1 - t0 - 0.05)          # linger a moment, never across the cut
+        cards = caption_cards(p['caption']); lens = [sum(len(l) for l in c) + 4 for c in cards]; acc = 0
+        for c, L in zip(cards, lens):
+            ca = a + (b - a) * acc / sum(lens); acc += L
+            cb = a + (b - a) * acc / sum(lens) if acc < sum(lens) else b_hold
+            out.append((max(0, ca), cb, c, 'Cap'))
+    return out
+
 def shot_captions(r, t0, t1, speech_dur):
     """Return [(start,end,lines,style)] relative to shot start."""
-    if r['status'] == 'OMIT_UNVERIFIED': return []
+    if r['status'] == 'OMIT_UNVERIFIED' or r['caption'].strip() == '-': return []
     if r['status'] == 'PENDING_LINE' and not r['caption']:
         return [(0.15, t1 - t0 - 0.1, [f"LINE PENDING · {r['scene'][:-4]}"], 'Pending')]
     text = re.sub(r'\[[^\]]*\]', '', r['caption'] or r['narration']).strip()
@@ -344,8 +366,8 @@ def cmd_render(args):
         rows = [r for r in rows if lo <= scene_num(r) <= hi]
     allow_missing = '--allow-missing' in args
     scratch = '--scratch-tts' in args
-    voice = os.path.join(HERE, 'voice.mp3')
-    voice = voice if os.path.exists(voice) else None
+    voice = next((v for v in (os.path.join(CACHE, 'voice_master.wav'), os.path.join(HERE, 'voice.mp3')) if os.path.exists(v)), None)
+    phrases = read_phrases() if voice else []
     # normalise to a contiguous timeline starting at 0
     base = float(rows[0]['start'])
     for i, r in enumerate(rows):
@@ -371,7 +393,7 @@ def cmd_render(args):
     for i, r in enumerate(rows):
         f0, f1 = round(r['_s'] * FPS), round(r['_e'] * FPS)
         sp = probe_dur(tts[r['scene']]) if r['scene'] in tts else None
-        caps = shot_captions(r, f0 / FPS, f1 / FPS, sp)
+        caps = phrase_captions(r, f0 / FPS, f1 / FPS, phrases) if phrases else shot_captions(r, f0 / FPS, f1 / FPS, sp)
         for a, b, lines, st in caps:
             if st == 'Cap': srt.append((f0 / FPS + a, f0 / FPS + b, lines))
         segs.append(render_segment(r, i, f1 - f0, caps, label, allow_missing))
@@ -504,6 +526,25 @@ def cmd_check():
               f'(offset {"?" if onset is None else f"{1000 * (onset - t):+.0f} ms"}); silence before it {gap:.2f}s',
               'PASS' if onset is not None and abs(onset - t) < 0.05 and gap >= 0.8 else 'CHECK')
 
+def cmd_voice_edit():
+    """Build .build/voice_master.wav from voice.mp3 using voice_edits.json (spans removed -> short silent gap)."""
+    cfg = json.load(open(os.path.join(HERE, 'voice_edits.json')))
+    src = os.path.join(HERE, cfg.get('source', 'voice.mp3')); os.makedirs(CACHE, exist_ok=True)
+    keep, t = [], 0.0
+    for c in sorted(cfg.get('cuts', []), key=lambda c: c['from']):
+        keep.append((t, c['from'], c.get('gap', 1.0))); t = c['to']
+    keep.append((t, probe_dur(src), 0))
+    parts, labels = [], []
+    for i, (a, b, gap) in enumerate(keep):
+        parts.append(f"[0:a]atrim={a:.3f}:{b:.3f},asetpts=PTS-STARTPTS,aresample={SR},afade=t=in:d=0.02,afade=t=out:st={max(0, b - a - 0.04):.3f}:d=0.04[k{i}]")
+        labels.append(f'[k{i}]')
+        if gap: parts.append(f"anullsrc=r={SR}:cl=mono,atrim=0:{gap:.3f}[g{i}]"); labels.append(f'[g{i}]')
+    parts.append(''.join(labels) + f"concat=n={len(labels)}:v=0:a=1,aformat=channel_layouts=mono,"
+                 f"loudnorm=I={cfg.get('loudnorm', -16)}:TP=-2:LRA=9,aresample={SR},pan=stereo|c0=c0|c1=c0[out]")
+    out = os.path.join(CACHE, 'voice_master.wav')
+    sh(['ffmpeg', '-v', 'error', '-y', '-i', src, '-filter_complex', ';'.join(parts), '-map', '[out]', out])
+    print(f'wrote {out} ({probe_dur(out):.2f}s from {probe_dur(src):.2f}s)')
+
 if __name__ == '__main__':
     a = sys.argv[1:]
     if not a: print(__doc__); sys.exit(0)
@@ -514,4 +555,5 @@ if __name__ == '__main__':
     elif a[0] == 'render': cmd_render(a[1:])
     elif a[0] == 'sfx': cmd_sfx()
     elif a[0] == 'check': cmd_check()
+    elif a[0] == 'voice-edit': cmd_voice_edit()
     else: print(__doc__)

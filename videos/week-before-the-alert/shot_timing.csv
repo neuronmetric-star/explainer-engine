@@ -1,40 +1,40 @@
 scene,start,end,narration,caption,status,animated,motion,hold,sfx,motion_note
-scene_001.png,0.000,3.500,,,PENDING_LINE,,"z=1.04>1.12 f=0.50,0.50>0.50,0.44",,crt,Hook: already moving; push in on the masked Watcher lit by the phone
-scene_002.png,3.500,6.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.42>0.50,0.39",,tick,"Push into the clock face, settle on the hands"
-scene_003.png,6.500,10.000,,,PENDING_LINE,,"z=1.00>1.09 f=0.50,0.55>0.62,0.36",,crt,Drift over the sofa and land on the static TV
-scene_004.png,10.000,14.000,,,PENDING_LINE,,"z=1.02>1.12 f=0.50,0.50>0.68,0.44",,crt,Push toward the cracked phone held out to camera
-scene_005.png,14.000,18.000,,,PENDING_LINE,,"z=1.00>1.08 f=0.50,0.45>0.68,0.40",,rain;rumble,Slow push from storm sky toward the coastline and the red glow
-scene_006.png,18.000,22.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.50>0.48,0.42",,crt,"Push down the aisle, settle on the figure facing the sad-face monitors"
-scene_007.png,22.000,26.500,,,PENDING_LINE,,"z=1.02>1.16 f=0.55,0.50>0.76,0.62",,tick,"Drift off the empty chair, land on the chip on the desk"
-scene_008.png,26.500,31.000,,,PENDING_LINE,,"z=1.10>1.00 f=0.62,0.45>0.55,0.45",1.0,water,Slow pull back to reveal the riverboat at the dock; let it read
-scene_009.png,31.000,36.500,,,PENDING_LINE,,"z=1.14>1.08 f=0.45,0.78>0.50,0.28",1.5,water;rumble,Tilt up from the riverboat to the red ship looming over it; hold the reveal
-scene_010.png,36.500,41.000,,,PENDING_LINE,,"z=1.10>1.05 f=0.42,0.28>0.50,0.50",,water;rumble,"Start on the capsized riverboat, settle down onto the swimmers and life rings"
-scene_011.png,41.000,44.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.50,0.40",,water,"Push into the empty wheelhouse, land on the wheel"
-scene_012.png,44.500,48.000,,,PENDING_LINE,,"z=1.00>1.08 f=0.50,0.40>0.55,0.30",,,Push past the traveler toward the red departure boards
-scene_013.png,48.000,51.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.40>0.50,0.24",,crt,Push over the operator's shoulder into the green map
-scene_014.png,51.500,54.500,,,PENDING_LINE,,"z=1.00>1.12 f=0.50,0.55>0.48,0.60",,crt,Push into the router and its single green light
-scene_015.png,54.500,58.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.62,0.32",,crt,Push toward the ATM screen full of static
-scene_016.png,58.000,61.500,,,PENDING_LINE,,"z=1.02>1.12 f=0.50,0.50>0.45,0.52",,crt,Push into the waveform on the Watcher's phone
-scene_017.png,61.500,65.500,,,PENDING_LINE,,"z=1.14>1.00 f=0.44,0.48>0.50,0.50",,crt,Pull back from one phone to reveal the swarm of phones
-scene_018.png,65.500,69.000,,,PENDING_LINE,,"z=1.00>1.08 f=0.50,0.45>0.52,0.52",,rumble,Slow push toward the base gate
-scene_019.png,69.000,72.500,,,PENDING_LINE,,"z=1.00>1.09 f=0.50,0.50>0.32,0.55",,rain,Push toward the soldier at the checkpoint
-scene_020.png,72.500,76.000,,,PENDING_LINE,,"z=1.00>1.08 f=0.50,0.50>0.80,0.55",,rain,Drift right and land on the one lit window
-scene_021.png,76.000,80.000,,,PENDING_LINE,,"z=1.00>1.12 f=0.50,0.50>0.72,0.36",,rumble,Push past the passenger to the object outside the window
-scene_022.png,80.000,83.500,,,PENDING_LINE,,"z=1.00>1.08 f=0.50,0.45>0.45,0.58",,rain,Push toward the children walking in under umbrellas
-scene_023.png,83.500,86.500,,,PENDING_LINE,,"z=1.00>1.04 f=0.50,0.50>0.50,0.50",,crt,Night-vision plate; near-still so 024 can match-cut on the same framing
-scene_024.png,86.500,91.500,,,PENDING_LINE,,"z=1.04>1.16 f=0.50,0.50>0.62,0.36",1.5,crt;rumble,"Matched cut from 023 (same framing): creature appears, then push in and HOLD so it reads"
-scene_025.png,91.500,95.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.40>0.46,0.18",,crt,Push up to the winged shape over the rooftops (archival look)
-scene_026.png,95.500,100.000,,,PENDING_LINE,,"z=1.02>1.14 f=0.50,0.50>0.74,0.30",1.0,crt;rumble,Push toward the glitching creature's head; hold
-scene_027.png,100.000,103.500,,,PENDING_LINE,,"z=1.00>1.08 f=0.45,0.50>0.58,0.32",,rumble,Empty farm path; push along the wall toward the horizon glow
-scene_028.png,103.500,107.000,,,PENDING_LINE,,"z=1.00>1.12 f=0.50,0.40>0.50,0.20",,rumble,Rooftop watcher; push past him up to the single light in the sky
-scene_029.png,107.000,110.500,,,PENDING_LINE,,"z=1.10>1.10 f=0.48,0.68>0.62,0.26",1.0,rumble,Tilt up from the village to the red tendrils in the sky; let it read
-scene_030.png,110.500,114.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.66,0.36",,rumble,Plane window; push into the dark shape against the red horizon
-scene_031.png,114.000,118.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.45,0.40>0.62,0.28",,rumble,Past the passenger to the dark shape over the clouds
-scene_032.png,118.000,122.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.66,0.24",,rumble,Cockpit: push toward the streak of light
-scene_033.png,122.000,125.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.48,0.50",,tick,Empty locker room; land on the helmet on the bench
-scene_034.png,125.500,129.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.50,0.32",,crt,Push into the seated Watcher's mask
-scene_035.png,129.000,133.500,,,PENDING_LINE,,"z=1.14>1.00 f=0.50,0.36>0.50,0.45",1.0,crt;rumble,Pull back from one Watcher to reveal the rows of Watchers; hold
-scene_036.png,133.500,137.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.34,0.48",,crt,Push to the cracked phone in the Watcher's hand
-scene_037.png,137.000,140.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.40>0.50,0.24",,crt,Push up to the mask
-scene_038.png,140.500,144.500,,,PENDING_LINE,,"z=1.00>1.06 f=0.50,0.45>0.50,0.42",1.2,crt,"Intact mask close-up; slow push, let it read; ~1.2 s of silence before the cut"
-scene_039.png,144.500,148.000,,,PENDING_LINE,,"z=1.06>1.12 f=0.50,0.42>0.50,0.42",,scream,MATCHED CUT from 038 (same framing): mask is cracked; scream hits on the cut
+scene_001.png,0.000,4.490,[unclear opening words] America's getting ready for something nobody will name.,,VERIFY,,"z=1.04>1.12 f=0.50,0.50>0.50,0.44",,crt,Hook: already moving; push in on the masked Watcher lit by the phone
+scene_002.png,4.490,6.850,"Tomorrow, 2:20 PM.",,VERIFY,,"z=1.00>1.10 f=0.50,0.42>0.50,0.39",,tick,"Push into the clock face, settle on the hands"
+scene_003.png,6.850,11.980,Every TV and every radio in America gets interrupted. All at once.,,OK,,"z=1.00>1.09 f=0.50,0.55>0.62,0.36",,crt,Drift over the sofa and land on the static TV
+scene_004.png,11.980,18.610,A nationwide test. First one in three years. Now look at the week leading up to it.,,VERIFY,,"z=1.02>1.12 f=0.50,0.50>0.68,0.44",,crt,Push toward the cracked phone held out to camera
+scene_005.png,18.610,27.020,"Wednesday. Casablanca goes black. The storm takes out four power lines. All four, including the backups.",,VERIFY,,"z=1.00>1.08 f=0.50,0.45>0.68,0.40",,rain;rumble,Slow push from storm sky toward the coastline and the red glow
+scene_006.png,27.020,31.290,Thursday. Microsoft email goes down around the world.,,VERIFY,,"z=1.00>1.10 f=0.50,0.50>0.48,0.42",,crt,"Push down the aisle, settle on the figure facing the sad-face monitors"
+scene_007.png,31.290,32.900,"Same day, Jensen Huang, the man behind the chips that run AI, walks away from his own company. [...] suspected Chinese spy.",,OMIT_UNVERIFIED,,"z=1.02>1.16 f=0.55,0.50>0.76,0.62",,tick,"Drift off the empty chair, land on the chip on the desk"
+scene_008.png,32.900,36.950,"Friday the 13th. 12:30 PM, New Orleans.",,VERIFY,,"z=1.10>1.00 f=0.62,0.45>0.55,0.45",1.0,water,Slow pull back to reveal the riverboat at the dock; let it read
+scene_009.png,36.950,42.340,The tanker's steering locks. It slams straight into a cruise ship [full of?] old people.,,VERIFY,,"z=1.14>1.08 f=0.45,0.78>0.50,0.28",1.5,water;rumble,Tilt up from the riverboat to the red ship looming over it; hold the reveal
+scene_010.png,42.340,49.140,"The boat rolls onto its side. A hundred people in the Mississippi. Somehow, nobody died.",,VERIFY,,"z=1.10>1.05 f=0.42,0.28>0.50,0.50",,water;rumble,"Start on the capsized riverboat, settle down onto the swimmers and life rings"
+scene_011.png,49.140,52.180,And they still don't know why the steering failed.,,VERIFY,,"z=1.00>1.10 f=0.50,0.45>0.50,0.40",,water,"Push into the empty wheelhouse, land on the wheel"
+scene_012.png,52.180,59.610,"Three and a half hours later, the FAA stops every departing plane in America. ""Extraordinary circumstances.""",,VERIFY,,"z=1.00>1.08 f=0.50,0.40>0.55,0.30",,,Push past the traveler toward the red departure boards
+scene_013.png,59.610,63.240,Three thousand five hundred planes already in the sky.,,VERIFY,,"z=1.00>1.10 f=0.50,0.40>0.50,0.24",,crt,Push over the operator's shoulder into the green map
+scene_014.png,63.240,65.820,Their answer? A router.,,VERIFY,,"z=1.00>1.12 f=0.50,0.55>0.48,0.60",,crt,Push into the router and its single green light
+scene_015.png,65.820,68.880,"Today, people couldn't get into their bank accounts.",,VERIFY,,"z=1.00>1.10 f=0.50,0.45>0.62,0.32",,crt,Push toward the ATM screen full of static
+scene_016.png,68.880,75.210,[Then?] a fake clip of Donald Trump saying the power goes out for ninety days. [unclear],,VERIFY,,"z=1.02>1.12 f=0.50,0.50>0.45,0.52",,crt,Push into the waveform on the Watcher's phone
+scene_017.png,75.210,77.380,Millions shared it anyway.,,VERIFY,,"z=1.14>1.00 f=0.44,0.48>0.50,0.50",,crt,Pull back from one phone to reveal the swarm of phones
+scene_018.png,77.380,82.420,Why is the Pentagon getting bases ready to survive ninety days with no grid?,,VERIFY,,"z=1.00>1.08 f=0.50,0.45>0.52,0.52",,rumble,Slow push toward the base gate
+scene_019.png,82.420,86.410,Why are the people running this country moving into those places?,,VERIFY,,"z=1.00>1.09 f=0.50,0.50>0.32,0.55",,rain,Push toward the soldier at the checkpoint
+scene_020.png,86.410,94.090,Marco Rubio [unclear]. Last week [unclear]. Threats. They won't say what kind.,,VERIFY,,"z=1.00>1.08 f=0.50,0.50>0.80,0.55",,rain,Drift right and land on the one lit window
+scene_021.png,94.090,100.830,Europe. Nineteen planes hit with bomb threats in one day. Fighter jets riding next to passengers.,,VERIFY,,"z=1.00>1.12 f=0.50,0.50>0.72,0.36",,rumble,Push past the passenger to the object outside the window
+scene_022.png,100.830,106.330,Three hundred schools in Italy emptied. No bombs. Nobody caught.,,VERIFY,,"z=1.00>1.08 f=0.50,0.45>0.45,0.58",,rain,Push toward the children walking in under umbrellas
+scene_023.png,106.330,111.030,"[unclear place], Mexico. A camera catches something. [Four feet tall?]",,VERIFY,,"z=1.00>1.04 f=0.50,0.50>0.50,0.50",,crt,Night-vision plate; near-still so 024 can match-cut on the same framing
+scene_024.png,111.030,114.640,No hair. Long fingers. A tail.,,OK,,"z=1.04>1.16 f=0.50,0.50>0.62,0.36",1.5,crt;rumble,"Matched cut from 023 (same framing): creature appears, then push in and HOLD so it reads"
+scene_025.png,114.640,120.780,"Two weeks later, same city, a security camera films something huge flying over the rooftops.",,VERIFY,,"z=1.00>1.10 f=0.50,0.40>0.46,0.18",,crt,Push up to the winged shape over the rooftops (archival look)
+scene_026.png,120.780,126.750,People are calling it a pterodactyl. Experts say a heron. And parts of the video were faked.,,VERIFY,,"z=1.02>1.14 f=0.50,0.50>0.74,0.30",1.0,crt;rumble,Push toward the glitching creature's head; hold
+scene_027.png,126.750,130.230,So why [unclear] is it always [unclear]?,,VERIFY,,"z=1.00>1.08 f=0.45,0.50>0.58,0.32",,rumble,Empty farm path; push along the wall toward the horizon glow
+scene_028.png,130.230,136.170,[unclear] Mexico City. A light sits over the skyline. Then it's gone.,,VERIFY,,"z=1.00>1.12 f=0.50,0.40>0.50,0.20",,rumble,Rooftop watcher; push past him up to the single light in the sky
+scene_029.png,136.170,145.890,[unclear] red flashes over France. Alien invasion? Not quite. [unclear] And people swear they saw tentacles.,,VERIFY,,"z=1.10>1.10 f=0.48,0.68>0.62,0.26",1.0,rumble,Tilt up from the village to the red tendrils in the sky; let it read
+scene_030.png,145.890,149.020,Black shapes streak past airplane windows.,,VERIFY,,"z=1.00>1.10 f=0.50,0.45>0.66,0.36",,rumble,Plane window; push into the dark shape against the red horizon
+scene_031.png,149.020,152.300,They seem to show up before something big happens.,,VERIFY,,"z=1.00>1.10 f=0.45,0.40>0.62,0.28",,rumble,Past the passenger to the dark shape over the clouds
+scene_032.png,152.300,157.780,Donald Trump says pilots told him something up there moves three times faster than our jets.,,VERIFY,,"z=1.00>1.10 f=0.50,0.45>0.66,0.24",,rumble,Cockpit: push toward the streak of light
+scene_033.png,157.780,163.380,"And today, Mayor Zohran Mamdani shut down the NYPD unit that polices protests.",,VERIFY,,"z=1.00>1.10 f=0.50,0.45>0.48,0.50",,tick,Empty locker room; land on the helmet on the bench
+scene_034.png,163.380,167.380,"In March, someone threw homemade bombs outside his house.",,VERIFY,,"z=1.00>1.10 f=0.50,0.45>0.50,0.32",,crt,Push into the seated Watcher's mask
+scene_035.png,167.380,174.250,Every single one of these has an explanation. So [unclear] nobody's telling us the whole thing?,,OK,,"z=1.14>1.00 f=0.50,0.36>0.50,0.45",1.0,crt;rumble,Pull back from one Watcher to reveal the rows of Watchers; hold
+scene_036.png,174.250,178.430,"Tomorrow at 2:20, every screen screams at once.",,VERIFY,,"z=1.00>1.10 f=0.50,0.45>0.34,0.48",,crt,Push to the cracked phone in the Watcher's hand
+scene_037.png,178.430,181.460,The voice tells you it's only a test.,,OK,,"z=1.00>1.10 f=0.50,0.40>0.50,0.24",,crt,Push up to the mask
+scene_038.png,181.460,184.670,[unclear final line — 'Or are we all ...?'],,VERIFY,,"z=1.00>1.06 f=0.50,0.45>0.50,0.42",1.2,crt,"Intact mask close-up; slow push, let it read; ~1.2 s of silence before the cut"
+scene_039.png,184.670,187.670,[SCREAM],,OK,,"z=1.06>1.12 f=0.50,0.42>0.50,0.42",,scream,MATCHED CUT from 038 (same framing): mask is cracked; scream hits on the cut

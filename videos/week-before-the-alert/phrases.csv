@@ -1,0 +1,71 @@
+scene,start,end,rec_start,rec_end,status,confidence,narration_heard,caption
+scene_001.png,0.000,3.920,0.0,3.92,VERIFY,med,[unclear opening words] America's getting ready for something nobody will name.,America's getting ready for something nobody will name.
+scene_002.png,4.570,6.310,4.57,6.31,VERIFY,high,"Tomorrow, 2:20 PM.","Tomorrow, 2:20 PM."
+scene_003.png,6.930,10.270,6.93,10.27,OK,med,Every TV and every radio in America gets interrupted.,Every TV and every radio in America gets interrupted.
+scene_003.png,10.750,11.480,10.75,11.48,OK,high,All at once.,All at once.
+scene_004.png,12.060,13.480,12.06,13.48,VERIFY,low,A nationwide test.,A nationwide test.
+scene_004.png,13.910,15.610,13.91,15.61,VERIFY,high,First one in three years.,First one in three years.
+scene_004.png,16.220,17.950,16.22,17.95,OK,high,Now look at the week leading up to it.,Now look at the week leading up to it.
+scene_005.png,18.690,19.230,18.69,19.23,VERIFY,high,Wednesday.,Wednesday.
+scene_005.png,19.750,21.160,19.75,21.16,VERIFY,high,Casablanca goes black.,Casablanca goes black.
+scene_005.png,21.640,23.820,21.64,23.82,VERIFY,high,The storm takes out four power lines.,The storm takes out four power lines.
+scene_005.png,24.230,26.360,24.23,26.36,VERIFY,high,"All four, including the backups.","All four, including the backups."
+scene_006.png,27.100,27.630,27.1,27.63,VERIFY,high,Thursday.,Thursday.
+scene_006.png,28.180,30.780,28.18,30.78,VERIFY,high,Microsoft email goes down around the world.,Microsoft email goes down around the world.
+scene_007.png,31.300,31.300,31.37,37.36,OMIT_UNVERIFIED,med,"Same day, Jensen Huang, the man behind the chips that run AI, walks away from his own company.",
+scene_007.png,31.300,31.300,37.8,39.57,OMIT_UNVERIFIED,med,[...] suspected Chinese spy.,
+scene_008.png,32.980,34.130,40.46,41.61,VERIFY,high,Friday the 13th.,Friday the 13th.
+scene_008.png,34.560,36.400,42.04,43.88,VERIFY,high,"12:30 PM, New Orleans.","12:30 PM, New Orleans."
+scene_009.png,37.030,38.700,44.51,46.18,VERIFY,high,The tanker's steering locks.,The tanker's steering locks.
+scene_009.png,39.060,41.880,46.54,49.36,VERIFY,med,It slams straight into a cruise ship [full of?] old people.,It slams straight into a cruise ship.
+scene_010.png,42.420,44.000,49.9,51.48,VERIFY,high,The boat rolls onto its side.,The boat rolls onto its side.
+scene_010.png,44.570,46.350,52.05,53.83,VERIFY,high,A hundred people in the Mississippi.,A hundred people in the Mississippi.
+scene_010.png,46.930,48.720,54.41,56.2,VERIFY,med,"Somehow, nobody died.","Somehow, nobody died."
+scene_011.png,49.220,51.520,56.7,59.0,VERIFY,high,And they still don't know why the steering failed.,And they still don't know why the steering failed.
+scene_012.png,52.260,56.790,59.74,64.27,VERIFY,high,"Three and a half hours later, the FAA stops every departing plane in America.","Three and a half hours later, the FAA stops every departing plane in America."
+scene_012.png,57.370,59.190,64.85,66.67,VERIFY,high,"""Extraordinary circumstances.""","""Extraordinary circumstances."""
+scene_013.png,59.690,62.750,67.17,70.23,VERIFY,high,Three thousand five hundred planes already in the sky.,"3,500 planes already in the sky."
+scene_014.png,63.320,63.850,70.8,71.33,VERIFY,low,Their answer?,
+scene_014.png,64.390,65.010,71.87,72.49,VERIFY,med,A router.,A router.
+scene_015.png,65.900,68.370,73.38,75.85,VERIFY,high,"Today, people couldn't get into their bank accounts.","Today, people couldn't get into their bank accounts."
+scene_016.png,68.960,73.400,76.44,80.88,VERIFY,med,[Then?] a fake clip of Donald Trump saying the power goes out for ninety days.,A fake clip of Donald Trump saying the power goes out for 90 days.
+scene_016.png,73.890,74.870,81.37,82.35,VERIFY,low,[unclear],
+scene_017.png,75.290,76.710,82.77,84.19,VERIFY,high,Millions shared it anyway.,Millions shared it anyway.
+scene_018.png,77.460,81.900,84.94,89.38,VERIFY,high,Why is the Pentagon getting bases ready to survive ninety days with no grid?,Why is the Pentagon getting bases ready to survive 90 days with no grid?
+scene_019.png,82.500,85.870,89.98,93.35,VERIFY,high,Why are the people running this country moving into those places?,Why are the people running this country moving into those places?
+scene_020.png,86.490,88.430,93.97,95.91,VERIFY,low,Marco Rubio [unclear].,
+scene_020.png,88.820,90.440,96.3,97.92,VERIFY,low,Last week [unclear].,
+scene_020.png,90.990,91.640,98.47,99.12,VERIFY,med,Threats.,Threats.
+scene_020.png,92.140,93.220,99.62,100.7,VERIFY,high,They won't say what kind.,They won't say what kind.
+scene_021.png,94.170,94.590,101.65,102.07,VERIFY,low,Europe.,Europe.
+scene_021.png,95.030,98.020,102.51,105.5,VERIFY,high,Nineteen planes hit with bomb threats in one day.,19 planes hit with bomb threats in one day.
+scene_021.png,98.450,100.500,105.93,107.98,VERIFY,med,Fighter jets riding next to passengers.,Fighter jets riding next to passengers.
+scene_022.png,100.910,103.380,108.39,110.86,VERIFY,high,Three hundred schools in Italy emptied.,300 schools in Italy emptied.
+scene_022.png,103.910,105.610,111.39,113.09,VERIFY,high,No bombs. Nobody caught.,No bombs. Nobody caught.
+scene_023.png,106.410,107.800,113.89,115.28,VERIFY,low,"[unclear place], Mexico.",
+scene_023.png,108.260,110.590,115.74,118.07,VERIFY,med,A camera catches something. [Four feet tall?],A camera catches something.
+scene_024.png,111.110,111.720,118.59,119.2,OK,high,No hair.,No hair.
+scene_024.png,112.110,113.080,119.59,120.56,OK,high,Long fingers.,Long fingers.
+scene_024.png,113.480,114.040,120.96,121.52,OK,high,A tail.,A tail.
+scene_025.png,114.720,120.320,122.2,127.8,VERIFY,high,"Two weeks later, same city, a security camera films something huge flying over the rooftops.","Two weeks later, same city, a security camera films something huge flying over the rooftops."
+scene_026.png,120.860,122.450,128.34,129.93,OK,med,People are calling it a pterodactyl.,People are calling it a pterodactyl.
+scene_026.png,123.050,124.360,130.53,131.84,VERIFY,high,Experts say a heron.,Experts say a heron.
+scene_026.png,124.800,126.290,132.28,133.77,VERIFY,high,And parts of the video were faked.,And parts of the video were faked.
+scene_027.png,126.830,129.400,134.31,136.88,VERIFY,low,So why [unclear] is it always [unclear]?,
+scene_028.png,130.310,132.020,137.79,139.5,VERIFY,med,[unclear] Mexico City.,Mexico City.
+scene_028.png,132.570,134.270,140.05,141.75,VERIFY,med,A light sits over the skyline.,A light sits over the skyline.
+scene_028.png,134.860,135.530,142.34,143.01,OK,high,Then it's gone.,Then it's gone.
+scene_029.png,136.250,138.890,143.73,146.37,VERIFY,med,[unclear] red flashes over France.,Red flashes over France.
+scene_029.png,139.390,140.290,146.87,147.77,OK,med,Alien invasion?,Alien invasion?
+scene_029.png,140.900,141.460,148.38,148.94,OK,high,Not quite.,Not quite.
+scene_029.png,141.860,142.700,149.34,150.18,VERIFY,low,[unclear],
+scene_029.png,143.270,145.520,150.75,153.0,VERIFY,med,And people swear they saw tentacles.,And people swear they saw tentacles.
+scene_030.png,145.970,148.520,153.45,156.0,VERIFY,low,Black shapes streak past airplane windows.,Black shapes streak past airplane windows.
+scene_031.png,149.100,151.680,156.58,159.16,VERIFY,med,They seem to show up before something big happens.,They seem to show up before something big happens.
+scene_032.png,152.380,157.230,159.86,164.71,VERIFY,high,Donald Trump says pilots told him something up there moves three times faster than our jets.,Donald Trump says pilots told him something up there moves three times faster than our jets.
+scene_033.png,157.860,162.940,165.34,170.42,VERIFY,med,"And today, Mayor Zohran Mamdani shut down the NYPD unit that polices protests.","And today, Mayor Zohran Mamdani shut down the NYPD unit that polices protests."
+scene_034.png,163.460,166.760,170.94,174.24,VERIFY,high,"In March, someone threw homemade bombs outside his house.","In March, someone threw homemade bombs outside his house."
+scene_035.png,167.460,173.790,174.94,181.27,OK,med,Every single one of these has an explanation. So [unclear] nobody's telling us the whole thing?,Every single one of these has an explanation. … Nobody's telling us the whole thing.
+scene_036.png,174.330,178.080,181.81,185.56,VERIFY,med,"Tomorrow at 2:20, every screen screams at once.","Tomorrow at 2:20, every screen screams at once."
+scene_037.png,178.510,181.030,185.99,188.51,OK,high,The voice tells you it's only a test.,The voice tells you it's only a test.
+scene_038.png,181.540,183.370,189.02,190.85,VERIFY,low,[unclear final line — 'Or are we all ...?'],

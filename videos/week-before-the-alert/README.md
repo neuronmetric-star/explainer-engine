@@ -34,6 +34,22 @@ python3 build.py time --voice voice.mp3
 python3 build.py render
 ```
 
+## Current cut: timed to the supplied voiceover
+- `voice.mp3` (not committed) is the OpenArt voiceover, 3:11 long.
+- `voice_edits.json` removes the unverified Jensen Huang passage (recording 31.30–40.38 s) and puts a 1.6 s silent beat in its place.
+  Running `python3 build.py voice-edit` writes `.build/voice_master.wav`, normalised to −16 LUFS. That edited file is the timing master.
+- `phrases.csv` has one row per spoken phrase, with:
+  - its time in the edited timeline (`start`/`end`) and in the original recording (`rec_*`);
+  - what was heard and the caption burned in;
+  - a confidence level.
+
+  An empty caption means no caption: those phrases were unclear. Fix wording here, then run `render` again.
+- Each shot starts 0.08 s before the first phrase of its scene. Scene 038 holds 1.3 s of silence after the last word, and
+  scene 039 starts on the scream.
+
+To swap in a new recording, replace `voice.mp3`, update `voice_edits.json` and the times in `phrases.csv` and `shot_timing.csv`,
+then run `voice-edit`, `render` and `check`.
+
 ## Editing a cut
 Change `start`/`end` in the CSV. Shots must stay contiguous: each start equals the previous end.
 Only the shots you change are re-rendered (segments are cached in `.build/`).

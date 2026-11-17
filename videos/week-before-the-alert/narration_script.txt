@@ -1,3 +1,77 @@
-# The Week Before the Alert: narration script
-# STATUS: PENDING. prompt_pack(3).md has not been supplied, so no "Line:" entries could be extracted.
-# Run:  python3 build.py pack "prompt_pack(3).md"   (this rewrites this file with the lines in scene order)
+# The Week Before the Alert — narration, scene order
+# SOURCE: transcribed from the supplied voiceover with an offline recognizer + manual reconstruction.
+#   prompt_pack(3).md was NOT supplied, so this is NOT the original wording. Replace from the pack.
+# [OMIT] = removed from the playable cut (unverified allegation). [VERIFY] = time-sensitive / real incident / named person.
+# [unclear] / [?] = could not be made out; those phrases are left uncaptioned.
+
+scene_001    0.00s  [VERIFY] [unclear opening words] America's getting ready for something nobody will name.  (conf: med)
+scene_002    4.57s  [VERIFY] Tomorrow, 2:20 PM.
+scene_003    6.93s  Every TV and every radio in America gets interrupted.  (conf: med)
+scene_003   10.75s  All at once.
+scene_004   12.06s  [VERIFY] A nationwide test.  (conf: low)
+scene_004   13.91s  [VERIFY] First one in three years.
+scene_004   16.22s  Now look at the week leading up to it.
+scene_005   18.69s  [VERIFY] Wednesday.
+scene_005   19.75s  [VERIFY] Casablanca goes black.
+scene_005   21.64s  [VERIFY] The storm takes out four power lines.
+scene_005   24.23s  [VERIFY] All four, including the backups.
+scene_006   27.10s  [VERIFY] Thursday.
+scene_006   28.18s  [VERIFY] Microsoft email goes down around the world.
+scene_007   31.37s  [OMIT] Same day, Jensen Huang, the man behind the chips that run AI, walks away from his own company.  (conf: med)
+scene_007   37.80s  [OMIT] [...] suspected Chinese spy.  (conf: med)
+scene_008   40.46s  [VERIFY] Friday the 13th.
+scene_008   42.04s  [VERIFY] 12:30 PM, New Orleans.
+scene_009   44.51s  [VERIFY] The tanker's steering locks.
+scene_009   46.54s  [VERIFY] It slams straight into a cruise ship [full of?] old people.  (conf: med)
+scene_010   49.90s  [VERIFY] The boat rolls onto its side.
+scene_010   52.05s  [VERIFY] A hundred people in the Mississippi.
+scene_010   54.41s  [VERIFY] Somehow, nobody died.  (conf: med)
+scene_011   56.70s  [VERIFY] And they still don't know why the steering failed.
+scene_012   59.74s  [VERIFY] Three and a half hours later, the FAA stops every departing plane in America.
+scene_012   64.85s  [VERIFY] "Extraordinary circumstances."
+scene_013   67.17s  [VERIFY] Three thousand five hundred planes already in the sky.
+scene_014   70.80s  [VERIFY] Their answer?  (conf: low)
+scene_014   71.87s  [VERIFY] A router.  (conf: med)
+scene_015   73.38s  [VERIFY] Today, people couldn't get into their bank accounts.
+scene_016   76.44s  [VERIFY] [Then?] a fake clip of Donald Trump saying the power goes out for ninety days.  (conf: med)
+scene_016   81.37s  [VERIFY] [unclear]  (conf: low)
+scene_017   82.77s  [VERIFY] Millions shared it anyway.
+scene_018   84.94s  [VERIFY] Why is the Pentagon getting bases ready to survive ninety days with no grid?
+scene_019   89.98s  [VERIFY] Why are the people running this country moving into those places?
+scene_020   93.97s  [VERIFY] Marco Rubio [unclear].  (conf: low)
+scene_020   96.30s  [VERIFY] Last week [unclear].  (conf: low)
+scene_020   98.47s  [VERIFY] Threats.  (conf: med)
+scene_020   99.62s  [VERIFY] They won't say what kind.
+scene_021  101.65s  [VERIFY] Europe.  (conf: low)
+scene_021  102.51s  [VERIFY] Nineteen planes hit with bomb threats in one day.
+scene_021  105.93s  [VERIFY] Fighter jets riding next to passengers.  (conf: med)
+scene_022  108.39s  [VERIFY] Three hundred schools in Italy emptied.
+scene_022  111.39s  [VERIFY] No bombs. Nobody caught.
+scene_023  113.89s  [VERIFY] [unclear place], Mexico.  (conf: low)
+scene_023  115.74s  [VERIFY] A camera catches something. [Four feet tall?]  (conf: med)
+scene_024  118.59s  No hair.
+scene_024  119.59s  Long fingers.
+scene_024  120.96s  A tail.
+scene_025  122.20s  [VERIFY] Two weeks later, same city, a security camera films something huge flying over the rooftops.
+scene_026  128.34s  People are calling it a pterodactyl.  (conf: med)
+scene_026  130.53s  [VERIFY] Experts say a heron.
+scene_026  132.28s  [VERIFY] And parts of the video were faked.
+scene_027  134.31s  [VERIFY] So why [unclear] is it always [unclear]?  (conf: low)
+scene_028  137.79s  [VERIFY] [unclear] Mexico City.  (conf: med)
+scene_028  140.05s  [VERIFY] A light sits over the skyline.  (conf: med)
+scene_028  142.34s  Then it's gone.
+scene_029  143.73s  [VERIFY] [unclear] red flashes over France.  (conf: med)
+scene_029  146.87s  Alien invasion?  (conf: med)
+scene_029  148.38s  Not quite.
+scene_029  149.34s  [VERIFY] [unclear]  (conf: low)
+scene_029  150.75s  [VERIFY] And people swear they saw tentacles.  (conf: med)
+scene_030  153.45s  [VERIFY] Black shapes streak past airplane windows.  (conf: low)
+scene_031  156.58s  [VERIFY] They seem to show up before something big happens.  (conf: med)
+scene_032  159.86s  [VERIFY] Donald Trump says pilots told him something up there moves three times faster than our jets.
+scene_033  165.34s  [VERIFY] And today, Mayor Zohran Mamdani shut down the NYPD unit that polices protests.  (conf: med)
+scene_034  170.94s  [VERIFY] In March, someone threw homemade bombs outside his house.
+scene_035  174.94s  Every single one of these has an explanation. So [unclear] nobody's telling us the whole thing?  (conf: med)
+scene_036  181.81s  [VERIFY] Tomorrow at 2:20, every screen screams at once.  (conf: med)
+scene_037  185.99s  The voice tells you it's only a test.
+scene_038  189.02s  [VERIFY] [unclear final line — 'Or are we all ...?']  (conf: low)
+scene_039: [SCREAM] (sound cue on the 038→039 cut)

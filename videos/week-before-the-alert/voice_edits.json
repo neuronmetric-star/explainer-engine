@@ -1,0 +1,12 @@
+{
+ "source": "voice.mp3",
+ "loudnorm": -16,
+ "cuts": [
+  {
+   "from": 31.3,
+   "to": 40.38,
+   "gap": 1.6,
+   "reason": "Unverified allegation about a named person (Jensen Huang / \"suspected Chinese spy\"). Removed pending a verified replacement."
+  }
+ ]
+}
