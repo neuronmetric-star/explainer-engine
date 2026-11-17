@@ -49,6 +49,75 @@ window.SCENE = {
     const flagTex = code => texture(300, 200, g => FL[code](g));
     const flag = (code, w, x, y, z, parent) => panel(flagTex(code), w, w / 1.5, x, y, z, parent, GOLD, 0xa8a8a8);
 
+    // ---------- HOOK: 3D supermarket panic with stick people (x=-40) ----------
+    const X0 = -40;
+    S.stickMat = new THREE.MeshLambertMaterial({ color: 0x7c7c7c });
+    S.girlMat = new THREE.MeshLambertMaterial({ color: 0x9a6d78 });
+    const Y = new THREE.Vector3(0, 1, 0);
+    S.mkStick = (x, z, girl) => {
+      const g = group(x, 0, z), mat = girl ? S.girlMat : S.stickMat, P = {};
+      const seg = r => { const m = new THREE.Mesh(new THREE.CylinderGeometry(r, r, 1, 8), mat); g.add(m); return m; };
+      const jnt = r => { const m = new THREE.Mesh(new THREE.SphereGeometry(r, 10, 8), mat); g.add(m); return m; };
+      P.torso = seg(.075); P.head = jnt(.27);
+      ['uaL', 'faL', 'uaR', 'faR', 'thL', 'shL', 'thR', 'shR'].forEach(k => P[k] = seg(.055));
+      ['hdL', 'hdR', 'ftL', 'ftR', 'elL', 'elR', 'knL', 'knR'].forEach(k => P[k] = jnt(.07));
+      if (girl) { P.skirt = new THREE.Mesh(new THREE.ConeGeometry(.42, .62, 14, 1, true), mat); g.add(P.skirt);
+        P.tail = jnt(.13); }
+      return { g, P, girl };
+    };
+    const limb = (m, a, b) => { m.position.copy(a).add(b).multiplyScalar(.5); const d = b.clone().sub(a); m.scale.set(1, d.length(), 1); m.quaternion.setFromUnitVectors(Y, d.normalize()); };
+    // pose: {bob, lean, aL:[pitch,abduct,elbow], aR:[...], lL:[pitch,knee], lR:[...]}
+    S.pose = (F, o) => {
+      const P = F.P, V = (x, y, z) => new THREE.Vector3(x, y, z);
+      const hip = V(0, 1.0 + (o.bob || 0), 0), lean = o.lean || 0;
+      const neck = hip.clone().add(V(0, .85 * Math.cos(lean), .85 * Math.sin(lean)));
+      limb(P.torso, hip, neck); P.head.position.copy(neck).add(V(0, .36 * Math.cos(lean), .36 * Math.sin(lean)));
+      const arm = (side, [a, c, b], ua, fa, el, hd) => {
+        const sh = neck.clone().add(V(side * .24, -.06, 0));
+        const d1 = V(side * Math.sin(c), -Math.cos(a) * Math.cos(c), Math.sin(a) * Math.cos(c));
+        const e = sh.clone().add(d1.multiplyScalar(.46));
+        const a2 = a + b, c2 = c * (o.inward ? -1.4 : .6);
+        const d2 = V(side * Math.sin(c2), -Math.cos(a2) * Math.cos(c2), Math.sin(a2) * Math.cos(c2));
+        const h = e.clone().add(d2.multiplyScalar(.42)); limb(ua, sh, e); limb(fa, e, h); el.position.copy(e); hd.position.copy(h); return h; };
+      F.hL = arm(-1, o.aL, P.uaL, P.faL, P.elL, P.hdL); F.hR = arm(1, o.aR, P.uaR, P.faR, P.elR, P.hdR);
+      const leg = (side, [p, k], th, shn, kn, ft) => {
+        const hp = hip.clone().add(V(side * .14, 0, 0)); const kk = hp.clone().add(V(0, -Math.cos(p) * .5, Math.sin(p) * .5));
+        const f = kk.clone().add(V(0, -Math.cos(p - k) * .52, Math.sin(p - k) * .52)); limb(th, hp, kk); limb(shn, kk, f); kn.position.copy(kk); ft.position.copy(f); };
+      leg(-1, o.lL, P.thL, P.shL, P.knL, P.ftL); leg(1, o.lR, P.thR, P.shR, P.knR, P.ftR);
+      if (P.skirt) { P.skirt.position.copy(hip).add(V(0, -.12, 0)); P.tail.position.copy(P.head.position).add(V(0, -.05, -.3)); }
+    };
+    S.run = (t, sp = 9, off = 0) => { const f = t * sp + off, s1 = Math.sin(f);
+      return { bob: .07 * Math.abs(Math.cos(f)), lean: .22, aL: [-.8 * s1, .15, 1.4], aR: [.8 * s1, .15, 1.4],
+        lL: [.75 * s1, .3 + .7 * Math.max(0, Math.cos(f + .4))], lR: [-.75 * s1, .3 + .7 * Math.max(0, -Math.cos(f + .4))] }; };
+    // aisle: two shelving runs, products (instanced), ceiling lights
+    S.prod = []; const pg = new THREE.BoxGeometry(.28, .34, .26);
+    const pm2 = new THREE.MeshBasicMaterial({ color: 0xffffff });
+    const slots = []; [-1, 1].forEach(side => { const sx = X0 + side * 2.1;
+      box(.12, 2.9, 17, sx + side * .55, 1.45, -5.5, undefined, SILVER);
+      [.45, 1.25, 2.05, 2.85].forEach(y => box(1.05, .06, 17, sx, y, -5.5, undefined, SILVER));
+      for (const y of [.45, 1.25, 2.05]) for (let z = 2.6; z > -13.6; z -= .36) slots.push([sx + (Math.random() - .5) * .3, y + .2, z]); });
+    S.products = new THREE.InstancedMesh(pg, pm2, slots.length); K.scene.add(S.products);
+    const pal = [0xffc548, 0x6fa8ff, 0xff5a4a, 0x9dffb9, 0xe8e8e8, 0xffffff];
+    S.slots = slots.map((p, i) => { S.products.setColorAt(i, new THREE.Color(pal[i % pal.length]).multiplyScalar(.55));
+      return { p, gone: Math.random() < .45 ? -1 : Math.random() * 5.5 }; });
+    S.lights = [-1, -5, -9, -13].map(z => { const m = new THREE.Mesh(new THREE.BoxGeometry(.25, .08, 2.6), new THREE.MeshBasicMaterial({ color: 0xeef6ff })); m.position.set(X0, 4.3, z); K.scene.add(m); return m; });
+    // cart full of water
+    const mkCart = (x, z) => { const g = group(x, 0, z); box(.95, .6, 1.25, 0, .85, 0, g, SILVER); box(.7, .04, 1.1, 0, .35, 0, g, SILVER);
+      [[-.4, .5], [.4, .5], [-.4, -.5], [.4, -.5]].forEach(([wx, wz]) => cyl(.09, .06, wx, .09, wz, g, SILVER, 10).rotation.z = Math.PI / 2);
+      for (let i = 0; i < 6; i++) cyl(.11, .45, -.25 + (i % 3) * .25, 1.15 + Math.floor(i / 3) * .12, -.25 + Math.floor(i / 3) * .4, g, BLUE, 8);
+      cyl(.06, .9, 0, 1.2, -.65, g, SILVER, 6).rotation.z = Math.PI / 2; return g; };
+    // cast
+    S.cast = {
+      cartGuy: S.mkStick(X0 - .4, -10, false), cart: mkCart(X0 - .4, -9),
+      reachGirl: S.mkStick(X0 - 1.15, -4.2, true), panicGirl: S.mkStick(X0 + .3, -7.5, true),
+      tugA: S.mkStick(X0 - .75, -2.0, false), tugB: S.mkStick(X0 + .85, -2.0, true),
+      runner: S.mkStick(X0 - 3, -12.2, false), runner2: S.mkStick(X0 + .6, -5.5, false),
+    };
+    S.grab = new THREE.Mesh(new THREE.BoxGeometry(.28, .34, .26), new THREE.MeshBasicMaterial({ color: 0xffc548 })); K.scene.add(S.grab);
+    S.water = group(0, 0, 0); box(.5, .32, .34, 0, 0, 0, S.water, BLUE);
+    for (let i = 0; i < 6; i++) cyl(.07, .3, -.17 + (i % 3) * .17, .02, -.08 + Math.floor(i / 3) * .16, S.water, BLUE, 8);
+    S.boxes2 = [0, 1, 2].map(() => { const m = new THREE.Mesh(new THREE.BoxGeometry(.26, .3, .24), new THREE.MeshBasicMaterial({ color: 0x9dffb9 })); K.scene.add(m); return m; });
+
     // ---------- A: 17 flags + "Nov 17" calendar (x=0) ----------
     const codes = ['GB', 'IE', 'FR', 'DE', 'NL', 'DK', 'NO', 'SE', 'FI', 'EE', 'LV', 'LT', 'PL', 'CZ', 'AT', 'CH', 'HR'];
     S.flags = codes.map((c, i) => { const row = Math.floor(i / 6), k = i % 6, n = row < 2 ? 6 : 5;
@@ -170,7 +239,8 @@ window.SCENE = {
   },
 
   shots: [
-    [0,          [0, 3.2, 18],     [0, 2.8, -2],    2],
+    [0,          [-40, 2.2, 6.2],  [-40, 1.4, -6],  2.6],
+    ['prep',     [-39.95, 2.2, 3.4], [-39.95, 1.45, -2.0], .9],
     ['real',     [0, 3.4, 18.5],   [0, 2.7, -2.5],  2.6],
     ['not',      [1.3, 3.2, 12.5], [0, 2.8, 2],     1.4],
     ['how',      [11, 6.5, 17],    [20, 3, -3],     1.8],
@@ -199,6 +269,8 @@ window.SCENE = {
   ],
 
   cards: [
+    { v: '0 COUNTRIES', cls: 'big', a: [-40, 3.7, -6], t0: 'hook+0.5', t1: 'prep', count: [0, 17, 'hook+0.7', 1.3], fmt: n => Math.round(n) + ' COUNTRIES' },
+    { v: 'PREPARING FOR WHAT?', cls: 'red', a: [-39.95, 2.85, -2], t0: 'prep+0.25', t1: 'real' },
     { v: 'NO EVIDENCE', cls: 'red', a: [0, 5.4, 3.2], t0: 'not+1.1', t1: 'how' },
     { l: 'People told to prepare', v: '0', a: [20, 3.4, -1], t0: 'eu+0.6', t1: 'keep', count: [0, 450000000, 'eu+1.0', 2.4], fmt: n => Math.round(n).toLocaleString('en-US') },
     { v: '0 HOURS', cls: 'big', a: [34, 7.9, -2], t0: 'keep', t1: 'sweden', count: [0, 72, 'keep+0.1', 1.6], fmt: n => Math.round(n) + ' HOURS' },
@@ -224,12 +296,43 @@ window.SCENE = {
   receipt: { from: 'week+2.6', to: 'cta+1.4', title: 'WHAT THEY ACTUALLY SAID', rows: [
     ['EU', '72 HOURS'], ['SWEDEN / NORWAY', '~1 WEEK'], ['GERMANY', '10 DAYS'], ['STOCK UP', 'WATER · FOOD · MEDS', 'g'], ['NOV 17 SHUTDOWN', 'NO SOURCE', 'k']] },
   follow: { from: 'cta+1.4', title: "WHAT'S REALLY BEHIND THE HEADLINES" },
-  shakes: [['not+0.6', .5, .12], ['storms+0.7', .8, .15], ['stitch+0.4', .5, .1], ['date+0.5', .4, .1]],
+  shakes: [[0, 4.6, .035], ['prep', 1.7, .04], ['not+0.6', .5, .12], ['storms+0.7', .8, .15], ['stitch+0.4', .5, .1], ['date+0.5', .4, .1]],
   flashes: [['not+0.6', .35, .22], ['storms+0.7', .3, .3], ['date+0.5', .3, .18]],
 
   update(t, K) {
     const { at, ease, easeOut, pop, clamp01, setBar, fly, drawTube } = K, S = this.s;
     if (!S.fontsDone && document.fonts && document.fonts.check('900 100px IN')) { S.tex.forEach(f => f()); S.fontsDone = true; }
+    // HOOK: shelves empty, lights flicker, stick people panic
+    S.slots.forEach((sl, i) => { const on = sl.gone >= 0 && t < sl.gone; const m = new THREE.Matrix4();
+      m.compose(new THREE.Vector3(...sl.p), new THREE.Quaternion(), new THREE.Vector3(on ? 1 : .001, on ? 1 : .001, on ? 1 : .001)); S.products.setMatrixAt(i, m); });
+    S.products.instanceMatrix.needsUpdate = true;
+    S.lights.forEach((l, i) => l.material.color.setHex(i === 1 && Math.sin(t * 23) > .6 ? 0x333333 : 0xeef6ff));
+    const C = S.cast, X0 = -40;
+    if (t < 7) {
+      // cart guy sprints toward camera pushing an overflowing cart
+      const cz = -10 + t * 2.0; C.cartGuy.g.position.set(X0 - .4, 0, cz); C.cart.position.set(X0 - .4, 0, cz + 1.0);
+      const r = S.run(t, 10); r.aL = [1.25, .1, .25]; r.aR = [1.25, .1, .25]; r.lean = .35; S.pose(C.cartGuy, r);
+      // woman stretches for the top shelf, grabs, pulls it down, repeats
+      const ph = (t * .9) % 1, up = Math.sin(Math.min(ph, .5) * 2 * Math.PI / 2);
+      C.reachGirl.g.rotation.y = -Math.PI / 2; S.pose(C.reachGirl, { bob: 0, lean: .05, aL: [.4, .2, .5], aR: [1.2 + 1.6 * up, .1, .2 - .2 * up], lL: [0, 0], lR: [.1, .1], inward: false });
+      const hand = C.reachGirl.hR.clone().applyMatrix4(C.reachGirl.g.matrixWorld.clone().makeRotationY(-Math.PI / 2)).add(C.reachGirl.g.position);
+      S.grab.position.copy(hand); S.grab.visible = ph > .35;
+      // woman in the middle panics: hands on head, turning side to side
+      C.panicGirl.g.rotation.y = Math.sin(t * 2.4) * .9;
+      S.pose(C.panicGirl, { bob: .04 * Math.abs(Math.sin(t * 7)), lean: -.1, aL: [2.75, .75, 2.1], aR: [2.75, .75, 2.1], lL: [.15 * Math.sin(t * 7), .1], lR: [-.15 * Math.sin(t * 7), .1], inward: true });
+      // tug of war over the last pack of water
+      const tug = Math.sin(t * 5) * .18;
+      C.tugA.g.rotation.y = Math.PI / 2; C.tugB.g.rotation.y = -Math.PI / 2;
+      C.tugA.g.position.x = X0 - .75 + tug; C.tugB.g.position.x = X0 + .85 + tug;
+      S.pose(C.tugA, { lean: -.32, aL: [1.5, .05, 0], aR: [1.5, .05, 0], lL: [.35, .2], lR: [-.25, .15] });
+      S.pose(C.tugB, { lean: -.32, aL: [1.5, .05, 0], aR: [1.5, .05, 0], lL: [.35, .2], lR: [-.25, .15] });
+      S.water.position.set(X0 + .05 + tug, 1.55, -2.0);
+      // runners: one crosses the far end of the aisle, one carries boxes away
+      C.runner.g.position.set(X0 - 3 + ((t * 2.6) % 7), 0, -12.2); C.runner.g.rotation.y = Math.PI / 2; S.pose(C.runner, S.run(t, 11, 1));
+      const r2 = S.run(t, 10, 2); r2.aL = [1.4, .1, .9]; r2.aR = [1.4, .1, .9]; C.runner2.g.rotation.y = Math.PI; C.runner2.g.position.z = -5.5 - t * 1.6; S.pose(C.runner2, r2);
+      S.boxes2.forEach((b, i) => { b.position.set(X0 + .6, 1.45 + i * .3, C.runner2.g.position.z - .55); });
+    }
+
     // A: flags rise, calendar slams in and gets crossed out
     S.flags.forEach((f, i) => { const u = pop(clamp01((t - at('real') + 1.0 - f.userData.d * .6) / .5)); f.position.y = -1 + (f.userData.y + 1) * u; f.visible = u > .01;
       f.rotation.x = Math.sin(t * 1.3 + i) * .04; });
