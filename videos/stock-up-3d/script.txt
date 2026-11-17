@@ -1,0 +1,30 @@
+# 17 Countries Are Telling People to Stock Up — 3D version (voice: OpenArt, voice.mp3)
+# Markup: *gold  !red  {display|spoken}  [#cue]   (see engine/script.js)
+
+[#hook] Why the {f***|fuck} are {*17|seventeen} countries telling people to *stock *up?
+[#prep] They're preparing for !something.
+[#real] It's *real.
+[#not] But it's !not a {!November|November} {!17|seventeenth} !shutdown.
+[#how] Here's what's actually going on.
+[#eu] In {*March 2025,|March twenty twenty five,} the *European *Union told {*450M|four hundred fifty million} people:
+[#keep] keep {*72|seventy two} *hours of food, water and medicine at home.
+[#sweden] Sweden mailed a booklet to every household.
+[#title] Title: *If *Crisis *or *War *Comes.
+[#germany] Germany says {*10|ten} *days of food.
+[#norway] Norway and Sweden say about a *week.
+[#why] Why now? [#three] Three reasons.
+[#war] !War in !Ukraine.
+[#cyber] !Cyberattacks.
+[#storms] And storms knocking out !power.
+[#where] So where does {*November|November} {*17|seventeenth} come from?
+[#wef] An old {*WEF|W E F} cyberattack drill,
+[#alert] a phone alert test,
+[#advice] and that {*72-hour|seventy two hour} advice,
+[#stitch] stitched into !one !post.
+[#nogrid] There's no world power grid to switch off.
+[#own] Every country runs its *own.
+[#closet] What they actually want in your closet:
+[#water] *water [#cans] *canned *food, [#radio] *radio [#flash] *flashlight, [#cash] *cash, [#meds] *your *meds.
+[#date] They're not preparing for a !date.
+[#week] They're preparing for a *bad *week.
+[#cta] Follow for more of what's really behind the headlines.

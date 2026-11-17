@@ -20,3 +20,7 @@ videos/17-countries-stock-up/assets/
 videos/17-countries-stock-up/voice.mp3
 videos/17-countries-stock-up/.build/
 videos/*/__pycache__/
+videos/stock-up-3d/voice.mp3
+videos/stock-up-3d/*.mp4
+videos/stock-up-3d/.mix.wav
+videos/stock-up-3d/.thunder.wav
