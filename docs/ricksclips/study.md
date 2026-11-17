@@ -4,12 +4,11 @@ Source: the 20 most recent explainer Shorts (Oct 17 – Nov 15, 2026). Full clea
 timestamps are in `transcripts.md` next to this file. Older uploads on the channel are comic dubs
 ("I only do the voice"), so they were skipped.
 
-> **What this covers and what it doesn't.** This is a study of the **writing**: script, structure,
-> pacing and voice. I could **not** watch the videos. This cloud environment blocks every YouTube
-> host (youtube.com, i.ytimg.com, googlevideo.com), so I saw no frames, thumbnails or motion.
-> Nothing below about lighting, shadows, camera moves or cuts was observed. Section 7 lists only what
-> the script *implies*, labeled as inference. The next steps for a real frame-by-frame study are at
-> the bottom.
+> **What this covers and what it doesn't.** Sections 1–6 cover the **writing**, from all 20 transcripts.
+> Section 7 covers the **look**, from the still frames YouTube publishes for the top 5 videos
+> (Jar, Railroads, Japan Job, Storm Oil, Grave Bell): about 3 different frames per video, 15 in all.
+> Stills show style, lighting, color, composition and captions. They **can't** show motion, camera
+> moves, cut rhythm, transitions or sound. Those still need the actual mp4s (see section 8).
 
 ---
 
@@ -130,27 +129,71 @@ Takeaways:
 claims must be checked against `videos/buy-borrow-die/sources.md` before any audio is made. "Never
 paid tax" is simplified: estate tax can still apply. That needs a qualifying line or a source.)*
 
-## 7. Visuals: what the script implies (inference, not observed)
+## 7. Visuals: what the frames show (15 stills from the top 5)
 
-- **A new picture every sentence (about every 3 s).** Each sentence carries a new physical action
-  ("he bolts the wood onto a cart" → "into every hole goes…" → "he twists all the strings…").
-- **One hero object per video** that can be lit like a product shot: the jar, the button, the
-  tree, the gap in the rail, the pink cell, the bell on the grave.
-- **Before/after and A/B shots built in:** the perfect rail vs the gapped rail, the circle loop vs
-  the clothoid loop, the oily patch vs the rough sea.
-- **The ending needs the biggest visual event:** rubble, a rail kicking sideways, a rogue wave, 82
-  rockets launching.
+**Art style: 2D cartoon characters placed in fully 3D, lit worlds.**
+- **Characters** are flat, hand-drawn figures: big round white heads, dot or ring eyes, thick black
+  outlines, stick limbs, and a single soft gradient on bodies and clothes. All personality comes from
+  the **face**: crying-laughing emperor, smug bowler-hat boss, sweating neighbor. Costume tells you
+  the role at once (helmet = guard, top hat = rich, chef hat = cook, conductor cap).
+- **Worlds** are real 3D scenes with stylized, low-poly materials and real lighting: a castle wall
+  with a moonlit sea, a canyon with layered orange rock, a glass-roofed train station, an open ocean,
+  an office, a small-town garden. A few **hero objects** are rendered richly in 3D: the bronze dragon
+  jar has metallic gold PBR material, sculpted scales and a sun flare behind it.
 
-Still unknown until frames are visible: art style (3D vs 2D), lighting setup, shadow style, color
-grade, camera language, cut rhythm, caption style, sound design, and whether it really loops.
+**Lighting and color**
+- **Every scene has a color temperature that matches its mood:** moonlit blue night (castle),
+  golden-hour orange and pink (canyon, graveyard), deep navy storm (sea), cool white daylight (office)
+  turning to blue night with a warm lamp cone at the low point of the story.
+- **Warm against cool in nearly every frame:** orange torches against a blue night; an orange canyon
+  against teal and blue clothes; a warm sunset behind the gold jar against green fields; a warm porch
+  lantern against a blue night.
+- **Dark scenes are never crushed to black.** Night is mid-blue, so shapes stay readable on a phone.
+  This is the opposite of our gold-noir black void.
+- **Light effects are saved for the big moments:** volumetric light shafts and a rim-lit rogue wave
+  at the storm-oil climax, sun bloom behind the dragon jar. Ordinary story frames are evenly lit.
+- **Saturation is high everywhere.** Primary reds, yellows and blues, like a kids' animated series.
+- **Shadows are soft and low-contrast.** Contrast comes from color and value, not deep shadows.
 
-## 8. How to get the real visual study (30 fps)
+**Composition and camera (from the stills)**
+- **Varied angles even in 3 frames:** a symmetrical low angle on the throne, first-person POV with
+  the viewer's own hand and phone in frame (Japan), a viewer's-eye view looking up the gravel at the
+  rail (Railroads), a tilted wide-angle shot of the conductor, a deep wide shot with a crowd reaching
+  into the distance (Grave Bell), a macro close-up of the jar.
+- **Foreground framing creates depth:** rocks and gravel, the rail, a dug grave, a porch post in front
+  of the subject.
+- **Characters sit roughly in the middle third; the top 15% is sky or ceiling** (it gets covered by
+  app UI anyway).
 
-1. **Best:** download 3–5 of the top videos (Jar, Railroads, Japan Job, Storm Oil, Grave Bell) and
-   put the `.mp4` files in `videos/_reference/ricksclips/`. I'll extract every frame at 30 fps with
-   ffmpeg and measure cut points, motion, brightness and contrast, the color palette, and caption
-   timing.
-2. **Partial:** allow `www.youtube.com` and `i.ytimg.com` in this environment's network settings. That
-   gives YouTube's storyboard sprites, which are low-res and a few frames per second at most, not
-   30 fps. Full video downloads also need `*.googlevideo.com`, which can only be added in Settings,
-   and YouTube often blocks cloud servers anyway.
+**Information lives inside the world, not on cards.** No overlay cards, counters or trackers in any
+frame. Facts are props: a station banner "FIRST LINE IN GETS IT ALL!", a wall calendar "APR MON 7",
+a phone showing "Inbox (0) — No new mail", a "JULY" calendar on a toolbox, and the **rail glowing
+yellow to pink to show heat** (thermal expansion explained with color, never named).
+
+**Captions:** one word at a time (sometimes two: "a cannonball," "six and"), white heavy sans-serif
+with a **thick black stroke and drop shadow**, centered at about **65% of the screen height** (about
+y 1250 of 1920). That's the same slot and the same one-word style as our engine. The difference is
+the heavy outline, which keeps it readable over any background, white figures included.
+
+### What this means for our engine
+| Theirs | Ours today | Change |
+|---|---|---|
+| Bright, saturated, mood-colored 3D worlds | Black void, gold wireframes | Add lit, colored environment looks (the planned parchment/blueprint looks are a start; we need daylight, sunset and night presets) |
+| Expressive cartoon characters | Faceless white blobs | Characters need faces and costumes. Three.js can render flat-shaded figures with outlines and swappable face textures |
+| Diegetic text (banners, calendars, phone screens) | Floating DOM cards | Add "prop text" builders: sign, banner, calendar, phone, newspaper, receipt *in* the scene |
+| Warm/cool lighting rigs, light shafts at the climax | One ambient light + bloom on everything | Per-shot lighting presets; save volumetric and bloom for the payoff |
+| Outlined captions | Plain captions (the white-on-white problem) | Thick black stroke + shadow on captions — quick fix |
+
+Our asset hosts (kenney.nl, quaternius.com, poly.pizza) already have low-poly environment kits in
+this style, so the worlds are within reach. Characters are the hard part. And a caution: learn the
+principles, but don't copy his character design. Our figures should be recognizably ours.
+
+## 8. Still needed for a full 30 fps study
+Motion, camera moves, cut rate, transitions, effects timing and sound can't be read from stills.
+YouTube blocks this server from the video itself, so the remaining path is: download 3–5 of the top
+videos and put the `.mp4` files in `videos/_reference/ricksclips/`. I'll then measure every frame at
+30 fps: cut points, shot length, camera motion, brightness and contrast curves, palette per shot,
+and caption timing.
+
+*(The frames studied here aren't committed because they're his images. To regenerate them:
+`https://i.ytimg.com/vi/<id>/oardefault.jpg` (vertical cover) and `maxres1/2/3.jpg` (auto stills).)*
