@@ -25,10 +25,10 @@ scene_023.png,83.500,86.500,,,PENDING_LINE,,"z=1.00>1.04 f=0.50,0.50>0.50,0.50",
 scene_024.png,86.500,91.500,,,PENDING_LINE,,"z=1.04>1.16 f=0.50,0.50>0.62,0.36",1.5,crt;rumble,"Matched cut from 023 (same framing): creature appears, then push in and HOLD so it reads"
 scene_025.png,91.500,95.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.40>0.46,0.18",,crt,Push up to the winged shape over the rooftops (archival look)
 scene_026.png,95.500,100.000,,,PENDING_LINE,,"z=1.02>1.14 f=0.50,0.50>0.74,0.30",1.0,crt;rumble,Push toward the glitching creature's head; hold
-scene_027.png,100.000,103.500,,,PENDING_LINE,,"z=1.00>1.06 f=0.50,0.50>0.50,0.48",,,(image not supplied yet: default slow push)
-scene_028.png,103.500,107.000,,,PENDING_LINE,,"z=1.00>1.06 f=0.50,0.50>0.50,0.48",,,(image not supplied yet: default slow push)
-scene_029.png,107.000,110.500,,,PENDING_LINE,,"z=1.00>1.06 f=0.50,0.50>0.50,0.48",,,(image not supplied yet: default slow push)
-scene_030.png,110.500,114.000,,,PENDING_LINE,,"z=1.00>1.06 f=0.50,0.50>0.50,0.48",,,(image not supplied yet: default slow push)
+scene_027.png,100.000,103.500,,,PENDING_LINE,,"z=1.00>1.08 f=0.45,0.50>0.58,0.32",,rumble,Empty farm path; push along the wall toward the horizon glow
+scene_028.png,103.500,107.000,,,PENDING_LINE,,"z=1.00>1.12 f=0.50,0.40>0.50,0.20",,rumble,Rooftop watcher; push past him up to the single light in the sky
+scene_029.png,107.000,110.500,,,PENDING_LINE,,"z=1.10>1.10 f=0.48,0.68>0.62,0.26",1.0,rumble,Tilt up from the village to the red tendrils in the sky; let it read
+scene_030.png,110.500,114.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.66,0.36",,rumble,Plane window; push into the dark shape against the red horizon
 scene_031.png,114.000,118.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.45,0.40>0.62,0.28",,rumble,Past the passenger to the dark shape over the clouds
 scene_032.png,118.000,122.000,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.66,0.24",,rumble,Cockpit: push toward the streak of light
 scene_033.png,122.000,125.500,,,PENDING_LINE,,"z=1.00>1.10 f=0.50,0.45>0.48,0.50",,tick,Empty locker room; land on the helmet on the bench
