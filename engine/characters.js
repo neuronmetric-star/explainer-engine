@@ -63,6 +63,7 @@
   const OUTFITS = {
     oxford: { shirt: 0x8fb3e6, pants: 0xc8ac7c, shoes: 0x6b3a1e, belt: 0x5a3418, sleeves: 'long', glasses: true, build: 'slim' },
     polo:   { shirt: 0x5b6b2e, pants: 0xcdb98e, shoes: 0x6e6e72, sleeves: 'short', watch: 0x222222, build: 'slim', sneakers: true },
+    hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
     suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
 
@@ -70,8 +71,9 @@
     const o = Object.assign({}, OUTFITS[opts.outfit || 'oxford'], opts), env = opts.envMap;
     const B = o.build === 'stocky'
       ? { w: .36, d: .29, th: .66, leg: .78, lr: .135, ar: .088, R: .36, hand: .115 }
+      : o.hoodie ? { w: .3, d: .22, th: .62, leg: .9, lr: .108, ar: .082, R: .34, hand: .1 }
       : { w: .26, d: .18, th: .62, leg: .9, lr: .1, ar: .068, R: .34, hand: .1 };
-    const shirtM = cloth(o.shirt), pantsM = cloth(o.pants), whiteM = glossy(0xf2f2f4, env, .24), blackM = new THREE.MeshStandardMaterial({ color: 0x151515, roughness: .45 });
+    const shirtM = o.hoodie ? Object.assign(cloth(o.shirt, .97), { bumpScale: .009 }) : cloth(o.shirt), pantsM = cloth(o.pants), whiteM = glossy(0xf2f2f4, env, .24), blackM = new THREE.MeshStandardMaterial({ color: 0x151515, roughness: .45 });
     const shoeM = o.sneakers ? cloth(o.shoes, .8) : Object.assign(glossy(o.shoes, env, .5), { envMapIntensity: .3, clearcoat: .5 }), soleM = new THREE.MeshStandardMaterial({ color: o.sneakers ? 0xf0f0f0 : 0x1a120c, roughness: .7 });
     const root = new THREE.Group(), ch = { root, opts: o, B };
     const shoeH = .1, L1 = B.leg * .5, L2 = B.leg * .5, hipY = shoeH + L1 + L2;
@@ -107,7 +109,16 @@
     const neck = ch.neck = grp(spine, 0, B.th - .02, 0);
     mesh(new THREE.CylinderGeometry(.035, .04, .16, 12), blackM, neck, 0, .06, 0);
     // collar
-    if (o.jacket) {
+    if (o.hoodie) {
+      const rib = cloth(new THREE.Color(o.shirt).multiplyScalar(.86), .97);
+      const hem = mesh(new THREE.CylinderGeometry(B.w * .93, B.w * .92, .07, 32), rib, spine, 0, .02, 0); hem.scale.z = B.d / B.w;
+      const hood = mesh(new THREE.TorusGeometry(.13, .07, 12, 24), shirtM, spine, 0, B.th + .01, -.02); hood.rotation.x = Math.PI / 2; hood.scale.set(1.15, 1, 1);
+      const back = mesh(new THREE.SphereGeometry(1, 20, 14), shirtM, spine, 0, B.th - .03, -B.d * .75); back.scale.set(.2, .15, .12);
+      const pocket = mesh(plate([[-.15, 0], [.15, 0], [.12, .15], [-.12, .15]], .02), rib, spine, 0, .07, B.d * 1.0); pocket.rotation.x = .05;
+      const cord = new THREE.MeshStandardMaterial({ color: 0xf2efe6, roughness: .6 }), tip = metal(0xcfcfcf, env);
+      for (const s of [-1, 1]) { mesh(new THREE.CylinderGeometry(.008, .008, .17, 6), cord, spine, s * .045, B.th - .13, B.d * .92 + .02);
+        mesh(new THREE.CylinderGeometry(.011, .011, .03, 6), tip, spine, s * .045, B.th - .23, B.d * .92 + .02); }
+    } else if (o.jacket) {
       const v = mesh(plate([[-.13, 0], [.13, 0], [0, -.26]], .06), cloth(0xf4f4f4, .7), spine, 0, B.th - .04, chestZ * .78); v.rotation.x = -.2;
       const tie = mesh(plate([[-.03, 0], [.03, 0], [.045, -.06], [.02, -.3], [0, -.33], [-.02, -.3], [-.045, -.06]], .012), cloth(o.tie, .55), spine, 0, B.th - .06, chestZ * .78 + .07); tie.rotation.x = -.2;
       for (const s of [-1, 1]) { const lap = mesh(plate([[0, 0], [s * .15, -.02], [s * .02, -.32]], .05), cloth(0x161c40), spine, s * .05, B.th - .05, chestZ * .8); lap.rotation.x = -.2; }
@@ -131,7 +142,7 @@
       const el = grp(sh, 0, -UA, 0);
       if (o.sleeves === 'short') { mesh(new THREE.SphereGeometry(B.ar * .62, 12, 10), whiteM, el); mesh(new THREE.CylinderGeometry(B.ar * .6, B.ar * .58, FA, 14), whiteM, el, 0, -FA / 2, 0); }
       else { mesh(new THREE.SphereGeometry(B.ar * .95, 14, 10), shirtM, el); mesh(new THREE.CylinderGeometry(B.ar * .95, B.ar * .9, FA, 16), shirtM, el, 0, -FA / 2, 0);
-        mesh(new THREE.CylinderGeometry(B.ar * .93, B.ar * .93, .04, 16), o.jacket ? cloth(0xf4f4f4, .7) : shirtM, el, 0, -FA + .01, 0); }
+        mesh(new THREE.CylinderGeometry(B.ar * (o.hoodie ? .85 : .93), B.ar * (o.hoodie ? .85 : .93), o.hoodie ? .07 : .04, 16), o.jacket ? cloth(0xf4f4f4, .7) : o.hoodie ? cloth(new THREE.Color(o.shirt).multiplyScalar(.86), .97) : shirtM, el, 0, -FA + .02, 0); }
       const wr = grp(el, 0, -FA, 0);
       const palm = mesh(new THREE.SphereGeometry(B.hand, 20, 16), whiteM, wr, 0, -B.hand * .85, 0); palm.scale.set(.95, 1, .8);
       const thumb = mesh(new THREE.SphereGeometry(B.hand * .38, 12, 10), whiteM, wr, s * -B.hand * .2, -B.hand * .55, B.hand * .62); thumb.scale.set(1, 1.3, 1);

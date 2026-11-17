@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Plate lab</title>
+<!-- 2D painted plate + 3D characters. The 3D camera is matched to the painting (horizon, eye height, fov);
+     zoom/pan crop the plate and the 3D view together via setViewOffset, so feet stay planted. -->
+<style>
+@font-face{font-family:IN;font-weight:900;src:url('../../node_modules/@fontsource/inter/files/inter-latin-900-normal.woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family:IN,sans-serif}
+#c{position:fixed;inset:0;width:1080px;height:1920px}
+#cap{position:fixed;left:0;right:0;top:1270px;text-align:center;font-weight:900;font-size:92px;color:#fff;
+  -webkit-text-stroke:16px #000;paint-order:stroke fill;text-shadow:0 8px 0 rgba(0,0,0,.55)}
+</style></head><body>
+<canvas id="c"></canvas><div id="cap"></div>
+<script src="../../node_modules/three/build/three.min.js"></script>
+<script src="../../node_modules/three/examples/js/environments/RoomEnvironment.js"></script>
+<script src="../characters.js"></script>
+<script>
+const W = 1080, H = 1920, ART = '../../videos/_style-test/art/';
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.autoClear = false;
+renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const env = new THREE.PMREMGenerator(renderer).fromScene(new THREE.RoomEnvironment(), .04).texture;
+const lin = c => new THREE.Color(c).convertSRGBToLinear();
+
+// ---------- plate layer (2D painting) ----------
+const bgScene = new THREE.Scene(), bgCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+const bgMat = new THREE.MeshBasicMaterial({ toneMapped: false, depthTest: false, depthWrite: false });
+bgScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), bgMat));
+const loader = new THREE.TextureLoader(), TEX = {};
+function loadTex(name) { return new Promise(r => loader.load(ART + name, t => { t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; TEX[name] = t; r(); })); }
+
+// ---------- 3D layer ----------
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(55, W / H, .1, 500);
+const catcher = new THREE.Mesh(new THREE.PlaneGeometry(200, 200).rotateX(-Math.PI / 2), new THREE.ShadowMaterial({ opacity: .45 }));
+catcher.receiveShadow = true; scene.add(catcher);
+const key = new THREE.DirectionalLight(0xffffff, 2); key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -.0004; key.shadow.normalBias = .02;
+Object.assign(key.shadow.camera, { left: -14, right: 14, top: 14, bottom: -14, near: 1, far: 80 }); key.shadow.radius = 3;
+const hemi = new THREE.HemisphereLight(0xffffff, 0xffffff, .5), rim = new THREE.DirectionalLight(0xffffff, 0);
+const lampA = new THREE.PointLight(0xffb050, 0, 9, 1.6), lampB = new THREE.PointLight(0xffb050, 0, 9, 1.6);
+const front = new THREE.DirectionalLight(0xffffff, .8); front.position.set(3, 4, 12);   // soft fill from the camera side so faces/fronts read
+scene.add(key, key.target, hemi, rim, lampA, lampB, front);
+const blobTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d'); const gr = g.createRadialGradient(64, 64, 4, 64, 64, 62);
+  gr.addColorStop(0, 'rgba(0,0,0,.55)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c); })();
+const cast = { hoodie: CHAR.make({ outfit: 'hoodie', envMap: env }), suit: CHAR.make({ outfit: 'suit', envMap: env }) };
+for (const c of Object.values(cast)) {
+  scene.add(c.root);
+  const b = new THREE.Mesh(new THREE.PlaneGeometry(1.1, .8).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ map: blobTex, transparent: true, depthWrite: false }));
+  b.position.y = .01; c.root.add(b);
+  c.root.traverse(o => { if (o.material) [].concat(o.material).forEach(m => { if (m.__lin) return; m.__lin = 1; if (m.color) m.color.convertSRGBToLinear(); }); });
+}
+const place = (c, x, y, z, ry) => { c.root.position.set(x, y, z); c.root.rotation.y = ry; c.root.visible = true; };
+const hide = c => c.root.visible = false;
+
+// ---------- plate presets: measured from each painting ----------
+// hz = horizon as fraction from top, vx = vanishing point x fraction, fov0 = vertical fov of the full painting
+const PLATES = {
+  day:   { img: 'st_street_wide_day.png',   hz: .42, vx: .48, fov0: 55, camH: 1.9,
+           light() { key.color.copy(lin(0xffb46e)); key.intensity = 2.7; key.position.set(-12, 6, -9); hemi.color.copy(lin(0xc0aaff)); hemi.groundColor.copy(lin(0xe8a070)); hemi.intensity = .65;
+             rim.color.copy(lin(0xffc890)); rim.intensity = .6; rim.position.set(-4, 5, -20); lampA.intensity = lampB.intensity = 0; front.color.copy(lin(0xffe2d0)); front.intensity = 1.1; catcher.material.color.copy(lin(0x4a2a6a)); catcher.material.opacity = .42; } },
+  night: { img: 'st_street_wide_night.png', hz: .42, vx: .48, fov0: 55, camH: 1.9,
+           light() { key.color.copy(lin(0x8ea4ff)); key.intensity = .9; key.position.set(-12, 9, -6); hemi.color.copy(lin(0x6878d8)); hemi.groundColor.copy(lin(0x403058)); hemi.intensity = .9;
+             rim.color.copy(lin(0xffb060)); rim.intensity = .5; rim.position.set(6, 4, -14); lampA.position.set(-3.6, 3.4, -8.5); lampB.position.set(3.4, 3.4, -12); lampA.intensity = 5; lampB.intensity = 3.5; front.color.copy(lin(0x8a90ff)); front.intensity = .75;
+             catcher.material.color.copy(lin(0x0a0a30)); catcher.material.opacity = .5; } },
+  bank:  { img: 'st_bank_medium_day.png',   hz: .57, vx: .5, fov0: 50, camH: 1.5,
+           light() { key.color.copy(lin(0xffb46e)); key.intensity = 2.6; key.position.set(-12, 7, 2); hemi.color.copy(lin(0xc0aaff)); hemi.groundColor.copy(lin(0xe8a070)); hemi.intensity = .7;
+             rim.intensity = 0; lampA.intensity = lampB.intensity = 0; front.color.copy(lin(0xffe2d0)); front.intensity = 1.0; catcher.material.color.copy(lin(0x4a2a6a)); catcher.material.opacity = .4; } },
+};
+// zoom >= 1 pushes in; panX in [-1,1] slides across the extra width; both apply to plate and 3D identically
+function usePlate(name, zoom = 1, panX = 0, panY = 0) {
+  const P = PLATES[name], tex = TEX[P.img]; P.light();
+  const FH = H * zoom, FW = FH * (tex.image.width / tex.image.height);
+  const ox = (FW - W) / 2 * (1 + panX), oy = (FH - H) / 2 * (1 + panY);
+  camera.fov = P.fov0; camera.aspect = FW / FH; camera.setViewOffset(FW, FH, ox, oy, W, H); camera.updateProjectionMatrix();
+  const tH = Math.tan(THREE.MathUtils.degToRad(P.fov0 / 2));
+  camera.position.set(0, P.camH, 0); camera.rotation.order = 'YXZ';
+  camera.rotation.x = -Math.atan((.5 - P.hz) * 2 * tH); camera.rotation.y = -Math.atan((P.vx - .5) * 2 * tH * FW / FH);
+  camera.updateMatrixWorld();
+  bgMat.map = tex; tex.repeat.set(W / FW, H / FH); tex.offset.set(ox / FW, 1 - (oy + H) / FH); bgMat.needsUpdate = true;
+}
+function draw(cap) { document.getElementById('cap').textContent = cap || ''; renderer.clear(); renderer.render(bgScene, bgCam); renderer.clearDepth(); renderer.render(scene, camera); }
+
+// ---------- stills ----------
+const SHOTS = [
+  () => { usePlate('day'); place(cast.hoodie, -.2, 0, -7.5, .12); cast.hoodie.face('smile'); cast.hoodie.pose({ t: 1 });
+          place(cast.suit, 3.3, 0, -14, -.7); cast.suit.face('smirk'); cast.suit.pose({ t: 2 }); draw('Victor'); },
+  () => { usePlate('night'); place(cast.hoodie, -.6, 0, -7.2, .35); cast.hoodie.face('worried'); cast.hoodie.pose({ t: 3, look: .3 });
+          place(cast.suit, 3.1, 0, -13, -.9); cast.suit.face('smirk'); cast.suit.pose({ t: 4, armR: { raise: .9 } }); draw('never'); },
+  () => { usePlate('bank'); place(cast.suit, 0, 1.45, -12, 0); cast.suit.face('smirk'); cast.suit.pose({ t: 5 });
+          place(cast.hoodie, -.95, 0, -6.2, 1.25); cast.hoodie.face('surprised'); cast.hoodie.pose({ t: 6, look: .45, nod: -.14 }); draw('borrowed'); },
+];
+window.SHOT_COUNT = SHOTS.length; window.renderShot = i => { SHOTS[i](); return true; };
+
+// ---------- motion test: walk in, notice, react, hard cut ----------
+const E = x => { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
+const WORDS = [[0,'He'],[.3,'walked'],[.7,'past'],[1.0,'the'],[1.15,'bank'],[1.6,'every'],[2.0,'single'],[2.4,'day.'],[3.1,'Then'],[3.45,'he'],[3.6,'saw'],[3.9,'HIM.'],[4.5,'Victor'],[5.0,'never'],[5.4,'pays.']];
+const V = 2.6, STOP = 3.2, DEC = .6;
+const dist = t => t < STOP ? V * t : V * STOP + V * Math.min(t - STOP, DEC) - V * Math.min(t - STOP, DEC) ** 2 / (2 * DEC);
+window.CLIP_LEN = 6.2;
+window.renderAt = function (t) {
+  const h = cast.hoodie, s = cast.suit;
+  let w = ''; for (const [t0, x] of WORDS) if (t >= t0) w = x;
+  if (t < 4.4) {
+    usePlate('day', 1 + .14 * E(t / 4.4), -.15 + .5 * E((t - 3.3) / 1.1));
+    place(h, -.2, 0, -19 + dist(t) * 1.0, .08); const amt = 1 - E((t - STOP) / DEC), look = E((t - 3.4) / .4) * .9;
+    h.pose({ t, walk: dist(t) / 1.4, walkAmt: amt, look }); h.face(t > 3.75 ? 'surprised' : (t > 1.7 && t < 1.82) ? 'blink' : 'smile');
+    place(s, 3.3, 0, -12.5, -.9); s.face('smirk'); s.pose({ t, look: -.1 });
+  } else {
+    usePlate('bank', 1.04 + .08 * E((t - 4.4) / 1.8)); hide(h);
+    place(s, 0, 1.45, -12, 0); s.face(t > 5.3 ? 'happy' : 'smirk'); s.pose({ t, armR: { raise: E((t - 5.2) / .35) * .95 } });
+  }
+  draw(w); return true;
+};
+Promise.all(Object.values(PLATES).map(p => loadTex(p.img))).then(() => { window.ready = true; });
+</script></body></html>

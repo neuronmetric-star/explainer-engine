@@ -1,15 +1,16 @@
 // Render the character-lab shots to stills + a contact sheet.
-// Usage: node engine/lab/render-lab.js [outDir]
+// Usage: node engine/lab/render-lab.js [outDir] [--page plate-lab.html] [--clip]
 const path = require('path'), fs = require('fs');
 const { spawnSync } = require('child_process');
 const { chromium } = require('playwright');
-const out = path.resolve(process.argv.slice(2).find(a => !a.startsWith('--')) || path.join(__dirname, 'out')); fs.mkdirSync(out, { recursive: true });
+const out = path.resolve(process.argv.slice(2).find((a, i, arr) => !a.startsWith('--') && arr[i - 1] !== '--page') || path.join(__dirname, 'out')); fs.mkdirSync(out, { recursive: true });
 (async () => {
   const exe = ['/opt/pw-browsers/chromium', '/usr/bin/google-chrome', '/usr/bin/chromium'].find(p => fs.existsSync(p) && fs.statSync(p).isFile());
-  const browser = await chromium.launch({ executablePath: exe, args: ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] });
+  const browser = await chromium.launch({ executablePath: exe, args: ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist', '--allow-file-access-from-files'] });
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   const errs = []; page.on('pageerror', e => errs.push(String(e))); page.on('console', m => m.type() === 'error' && errs.push(m.text()));
-  await page.goto('file://' + path.join(__dirname, 'char-lab.html'));
+  const pi = process.argv.indexOf('--page'), pageFile = pi > -1 ? process.argv[pi + 1] : 'char-lab.html';
+  await page.goto('file://' + path.join(__dirname, pageFile));
   await page.waitForFunction('window.ready===true', null, { timeout: 120000 }).catch(() => { throw new Error(errs.join('\n')); });
   await page.evaluate('document.fonts.ready.then(()=>1)');
   if (process.argv.includes('--clip')) {   // 30 fps motion test -> clip.mp4
