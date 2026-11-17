@@ -1,0 +1,3 @@
+# The Week Before the Alert: narration script
+# STATUS: PENDING. prompt_pack(3).md has not been supplied, so no "Line:" entries could be extracted.
+# Run:  python3 build.py pack "prompt_pack(3).md"   (this rewrites this file with the lines in scene order)
