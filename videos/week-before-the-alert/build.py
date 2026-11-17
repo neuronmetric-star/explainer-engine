@@ -331,7 +331,8 @@ def render_segment(r, idx, nframes, ass_events, draft_label, allow_missing):
     vf += f",subtitles='{ass}':fontsdir=/usr/share/fonts/opentype/inter,format=yuv420p"
     sh(['ffmpeg', '-v', 'error', '-y', *inp, '-frames:v', str(nframes), '-vf', vf,
         '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-profile:v', 'high', '-level', '5.2',
-        '-pix_fmt', 'yuv420p', '-r', str(FPS), '-video_track_timescale', '15360', '-an', out])
+        '-pix_fmt', 'yuv420p', '-r', str(FPS), '-video_track_timescale', '15360', '-an', '-f', 'mp4', out + '.part'])
+    os.replace(out + '.part', out)          # atomic: an interrupted render never leaves a bad cache entry
     return out
 
 # ------------------------------------------------------------------ render
@@ -375,6 +376,10 @@ def cmd_render(args):
             if st == 'Cap': srt.append((f0 / FPS + a, f0 / FPS + b, lines))
         segs.append(render_segment(r, i, f1 - f0, caps, label, allow_missing))
         print(f"  [{i + 1}/{len(rows)}] {r['scene']} {f0 / FPS:7.2f}-{f1 / FPS:7.2f}  {r['status'] or 'OK'}", flush=True)
+    write_ass(os.path.join(CACHE, 'captions_full.ass'), [(a, b, l, 'Cap') for a, b, l in srt], '')
+    json.dump({'out': out_name, 'cuts': [round(r['_s'] * FPS) for r in rows[1:]], 'total': total,
+               'scream_cuts': [round(r['_s'] * FPS) for r in rows if 'scream' in r['sfx']]},
+              open(os.path.join(CACHE, 'last_render.json'), 'w'))
     with open(os.path.join(HERE, out_name.replace('.mp4', '.srt')), 'w', encoding='utf-8') as f:
         for n, (a, b, lines) in enumerate(srt, 1):
             f.write(f'{n}\n{srt_time(a)} --> {srt_time(b)}\n' + '\n'.join(lines) + '\n\n')
@@ -435,6 +440,70 @@ def cmd_render(args):
     if missing: print('missing scenes:', ', '.join(missing))
     if pending: print('lines pending/omitted/verify:', ', '.join(pending))
 
+def cmd_check():
+    """Verify the last render: specs, first/last + every cut boundary, caption box, ending audio."""
+    info = json.load(open(os.path.join(CACHE, 'last_render.json')))
+    out = os.path.join(HERE, info['out']); chk = os.path.join(HERE, 'check'); os.makedirs(chk, exist_ok=True)
+    p = json.loads(sh(['ffprobe', '-v', 'error', '-show_streams', '-show_format', '-of', 'json', out]).stdout)
+    v = next(x for x in p['streams'] if x['codec_type'] == 'video'); a = next(x for x in p['streams'] if x['codec_type'] == 'audio')
+    head = open(out, 'rb').read(1 << 20)
+    res = {'width': v['width'], 'height': v['height'], 'codec': v['codec_name'], 'pix_fmt': v['pix_fmt'],
+           'fps': v['r_frame_rate'], 'frames': int(v['nb_frames']), 'audio': a['codec_name'], 'sample_rate': a['sample_rate'],
+           'duration': float(p['format']['duration']), 'faststart': 0 < head.find(b'moov') < (head.find(b'mdat') if b'mdat' in head else 1 << 30)}
+    ok = res['width'] == W and res['height'] == H and res['codec'] == 'h264' and res['pix_fmt'] == 'yuv420p' \
+        and res['fps'] == '30/1' and res['audio'] == 'aac' and res['faststart']
+    print('SPEC', 'PASS' if ok else 'FAIL', res)
+    # frames: first, last, and both sides of every cut -> contact sheets of 8 cuts each
+    nf = res['frames']; cuts = info['cuts']
+    pairs = [(0, 0)] + [(c - 1, c) for c in cuts] + [(nf - 1, nf - 1)]
+    sel = sorted({f for pr in pairs for f in pr})
+    tmp = os.path.join(CACHE, 'frames'); shutil.rmtree(tmp, ignore_errors=True); os.makedirs(tmp)
+    sh(['ffmpeg', '-v', 'error', '-i', out, '-vf', "select='" + '+'.join(f'eq(n,{f})' for f in sel) + "',scale=216:384",
+        '-vsync', '0', os.path.join(tmp, 'f%04d.png')])
+    files = sorted(os.listdir(tmp)); fmap = dict(zip(sel, files))
+    order = [fmap[f] for pr in pairs for f in pr]
+    for k in range(0, len(order), 16):
+        lst = os.path.join(tmp, f'l{k}.txt')
+        with open(lst, 'w') as f:
+            for fn in order[k:k + 16]: f.write(f"file '{os.path.join(tmp, fn)}'\nduration 1\n")
+        sh(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst, '-vf', 'tile=8x2:padding=6:color=white',
+            '-frames:v', '1', os.path.join(chk, f'cuts_{k // 16 + 1:02d}.jpg')])
+    # black-frame / duplicate check at each cut: the two sides must differ
+    print(f'CUTS {len(cuts)} boundaries + first/last frames -> check/cuts_*.jpg')
+    # caption clearance: render captions alone over black and measure the union bounding box
+    from PIL import Image
+    proc = subprocess.Popen(['ffmpeg', '-v', 'error', '-f', 'lavfi', '-i', f'color=black:s={W}x{H}:r=2:d={res["duration"]:.2f}',
+                             '-vf', f"subtitles='{os.path.join(CACHE, 'captions_full.ass')}':fontsdir=/usr/share/fonts/opentype/inter,format=gray",
+                             '-f', 'rawvideo', '-'], stdout=subprocess.PIPE)
+    boxes = []
+    while True:
+        buf = proc.stdout.read(W * H)
+        if len(buf) < W * H: break
+        bb = Image.frombytes('L', (W, H), buf).point(lambda v: 255 if v > 40 else 0).getbbox()
+        if bb: boxes.append((bb[0], bb[2], bb[1], bb[3]))
+    proc.wait()
+    if boxes:
+        x1, x2, y1, y2 = min(b[0] for b in boxes), max(b[1] for b in boxes), min(b[2] for b in boxes), max(b[3] for b in boxes)
+        print(f'CAPTIONS union box x {x1}-{x2}, y {y1}-{y2}  (bottom clearance {H - y2}px = {100 * (H - y2) / H:.0f}% of height; '
+              f'right clearance {W - x2}px)', 'PASS' if H - y2 >= 760 and y1 >= 280 and x1 >= 56 and x2 <= W - 56 else 'FAIL')
+    else: print('CAPTIONS none burned in (all lines pending/omitted)')
+    # ending audio: silence before the scream cut, onset at the cut, true peak
+    st = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-i', out, '-vn', '-af', 'ebur128=peak=true', '-f', 'null', '-'],
+                        capture_output=True, text=True).stderr
+    tp = re.findall(r'Peak:\s+([-\d.]+) dBFS', st); I = re.findall(r'I:\s+([-\d.]+) LUFS', st)
+    print(f'AUDIO integrated {I[-1] if I else "?"} LUFS, true peak {tp[-1] if tp else "?"} dBFS', 'PASS' if tp and float(tp[-1]) <= -0.5 else 'CHECK')
+    for c in info['scream_cuts']:
+        t = c / FPS
+        sd = subprocess.run(['ffmpeg', '-hide_banner', '-nostats', '-ss', f'{max(0, t - 3):.3f}', '-t', '4', '-i', out, '-vn',
+                             '-af', 'silencedetect=n=-50dB:d=0.25', '-f', 'null', '-'], capture_output=True, text=True).stderr
+        ends = [float(x) + max(0, t - 3) for x in re.findall(r'silence_end: ([\d.]+)', sd)]
+        starts = [float(x) + max(0, t - 3) for x in re.findall(r'silence_start: ([\d.]+)', sd)]
+        onset = min(ends, key=lambda e: abs(e - t)) if ends else None
+        gap = (onset - max([s for s in starts if s < (onset or t)], default=onset)) if onset else 0
+        print(f'SCREAM cut at {t:.3f}s; audio onset {onset if onset is None else round(onset, 3)}s '
+              f'(offset {"?" if onset is None else f"{1000 * (onset - t):+.0f} ms"}); silence before it {gap:.2f}s',
+              'PASS' if onset is not None and abs(onset - t) < 0.05 and gap >= 0.8 else 'CHECK')
+
 if __name__ == '__main__':
     a = sys.argv[1:]
     if not a: print(__doc__); sys.exit(0)
@@ -444,4 +513,5 @@ if __name__ == '__main__':
         cmd_time(v)
     elif a[0] == 'render': cmd_render(a[1:])
     elif a[0] == 'sfx': cmd_sfx()
+    elif a[0] == 'check': cmd_check()
     else: print(__doc__)
