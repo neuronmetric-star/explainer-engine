@@ -85,7 +85,7 @@ Write down what the viewer will discover. Then pick the question word that the e
   Step two: the loop. Step three: the bulb."). Build the story around **a broken or misused version of the thing**,
   so the clue is a failure in one of those steps (the snapped filament is the gap in the loop). No side trivia
   (speeds, records, history) unless it IS the answer. Keep it simple: the light-switch race story was rejected
-  for this; see `videos/light-switch/script.txt` (approved shape) vs `script-short-v1.txt` (rejected).
+  for this; see `videos/light-switch/script.txt` (mechanism-first rewrite) vs `script-short-v1.txt` (rejected).
 
 ### 1.4 Line craft (from the RicksClips study)
 - **Concrete, oddly specific numbers** (82 holes, every 39 feet, 15 times its weight in air).
