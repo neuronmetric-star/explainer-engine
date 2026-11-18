@@ -1,0 +1,19 @@
+# SHORT FORM (~1:10). How Netflix chooses what to show you.
+# Payoff: Netflix doesn't just pick the movie, it picks the POSTER: a different picture for each person, from what you watch.
+# Plant: Gary "only watches documentaries". Clue: his poster is two people kissing. Callback: Netflix exposed Gary.
+# Doug and Gary are fictional; the Netflix facts are real (sources.md).
+[#q] How the {*f*ck|fuck} does Netflix choose what to show {*you?|you?}
+[#problem] See, Doug had a problem. He found the perfect movie, and Gary didn't believe him.
+[#doug] Doug goes, "Bro, it's a comedy. The poster's just a guy laughing."
+[#gary] Gary, who swears he only watches documentaries, goes, "Doug. It's a love story. The poster's two people kissing."
+[#bet] Same movie. Same night. {*Five|Five} bucks on the line.
+[#phones] So they hold up their phones. [#reveal] And they're both right.
+[#bet2] Honestly? I'd have bet one of them was blind.
+[#aside] Now you're thinking, how? I'mma tell you.
+[#stack] Netflix doesn't make one poster. It makes a whole {*stack.|stack.} [#pick] Then it shows you the one you're most likely to click, based on everything you've watched.
+[#example] They really did this with Good Will Hunting. Romance fans got the couple. Comedy fans got Robin Williams.
+[#why] Why? Because you quit after about {!sixty|sixty} to ninety seconds of scrolling. So the picks have to land fast.
+[#eighty] About {*80%|eighty percent} of what people watch comes from those picks. Netflix says it saves them over a {*billion|billion} dollars a year.
+[#callback] Which means Netflix knew something about Gary. [#exposed] Gary's been watching rom-coms. A lot of {!rom-coms.|rom-coms.}
+[#end] They watched it together. It's a drama. Nobody won the five bucks. [#netflix] {*Netflix|Netflix} did.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
