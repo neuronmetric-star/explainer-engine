@@ -356,6 +356,8 @@ faces and props out of the top 140 px and the bottom 380 px (app UI).
 
 ## 4. The world: 2D paintings from ChatGPT
 
+**Recurring objects must look identical in every image** (Brian's note, electric-car video: "the car changes every time"). Lock them: exact visual description in the START block, first image defines it, later prompts reference that file by name ("the exact car from 01_…, do not redesign it"), and if needed Brian attaches the first image as a reference. See prompt-pack "Lock recurring objects".
+
 Full prompt pack: `docs/prompt-pack.md`. The essentials:
 
 **The rules** for every image:
