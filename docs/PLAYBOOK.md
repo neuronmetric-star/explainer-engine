@@ -81,6 +81,12 @@ Write down what the viewer will discover. Then pick the question word that the e
 - **No side bets between characters** ("Five bucks on the line" was cut). The disagreement itself is the stakes;
   a wager adds a prop and a payoff that pull focus from the real answer. Only the narrator "bets", as an opinion.
 
+- **"How does X work" topics: the mechanism IS the video.** Explain it in plain numbered steps ("Step one: the switch.
+  Step two: the loop. Step three: the bulb."). Build the story around **a broken or misused version of the thing**,
+  so the clue is a failure in one of those steps (the snapped filament is the gap in the loop). No side trivia
+  (speeds, records, history) unless it IS the answer. Keep it simple: the light-switch race story was rejected
+  for this; see `videos/light-switch/script.txt` (approved shape) vs `script-short-v1.txt` (rejected).
+
 ### 1.4 Line craft (from the RicksClips study)
 - **Concrete, oddly specific numbers** (82 holes, every 39 feet, 15 times its weight in air).
   Precision makes a strange act sound deliberate.

@@ -55,6 +55,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
   Once a term is named ("thumbnail"), use that exact word every time after: no synonyms.
   Mechanism as an if-then example; say the surprise out loud; every number gets a yardstick and a cause.
 - No side bets between characters (the disagreement is the stakes). Last line mirrors a line from the middle.
+- "How does X work" topics: the mechanism is the video, in plain numbered steps; the story is a broken version
+  of the thing, and the clue is the failed step. No side trivia.
 - Narrator bets early, changes their mind with us, voices the listener's question when it arises.
 - Specific numbers, a joke/simile ~every 10 s, everyday analogy for the science, explanation held to
   ~60–75%, dry last line, then the **follow CTA** (PLAYBOOK §1.12, rotate A–E, default C: "Still here? Then that means you enjoyed the video. So follow and like for more.") No filler. Every sentence picturable.
