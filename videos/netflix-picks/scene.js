@@ -19,17 +19,16 @@
       '03': { img: '03_control_room.png', hz: .47, vx: .55, fov0: 55, camH: 1.7, light: 'night' },
     },
     props: { P01: 'P01_phone_comedy.png', P02: 'P02_phone_romance.png', P03: 'P03_poster_stack.png', P04: 'P04_stopwatch.png',
-      P05: 'P05_donut_80.png', P06: 'P06_money_pile.png', P07: 'P07_romcom_tower.png', P08: 'P08_five_dollar_bill.cut.png',
-      P09: 'P09_popcorn.png', P10: 'P10_netflix_word.png' },
+      P05: 'P05_donut_80.png', P06: 'P06_money_pile.png', P07: 'P07_romcom_tower.png', P09: 'P09_popcorn.png', P10: 'P10_netflix_word.png' },
     cast: { doug: 'hoodie', gary: 'oxford' },
     shots: [
       { at: 'q', plate: '01', zoom: [1.0, 1.15], focus: [[.5, .5], [.5, .55]] },
+      { at: 'ground', plate: '01', zoom: [1.25, 1.7], focus: [[.3, .4], [.12, .3]] },
       { at: 'problem', plate: '01', zoom: [1.3, 1.36], focus: [[.45, .55], [.45, .56]] },
       { at: 'doug', plate: '01', zoom: [1.15, 1.3], focus: [[.45, .55], [.45, .56]] },
       { at: 'gary', plate: '02', zoom: [1.1, 1.25], focus: [[.55, .55], [.55, .56]] },
-      { at: 'bet', plate: '01', zoom: [1.25, 1.3], focus: [[.45, .55], [.45, .55]] },
       { at: 'phones', plate: '01', zoom: [1.6, 1.65], focus: [[.5, .45], [.5, .45]] },
-      { at: 'bet2', plate: '02', zoom: [1.35, 1.45], focus: [[.55, .55], [.55, .55]] },
+      { at: 'bet', plate: '02', zoom: [1.35, 1.45], focus: [[.55, .55], [.55, .55]] },
       { at: 'aside', plate: '03', zoom: [1.0, 1.15], focus: [[.5, .5], [.55, .48]] },
       { at: 'stack', plate: '03', zoom: [1.15, 1.25], focus: [[.5, .45], [.5, .45]] },
       { at: 'pick', plate: '03', zoom: [1.0, 1.05], focus: [[.5, .55], [.5, .55]] },
@@ -57,6 +56,12 @@
           const tn = wordAt(K, 'netflix', 'q'), u = K.ease((t - tn - 1.1) / .6), tv = K.img(100, 440);
           if (t >= tn) K.prop('P10', { x: K.lerp(540, tv.x, u), y: K.lerp(300, tv.y, u), w: K.lerp(860, 170 * K.imgScale(), u) * popIn(K, t, tn, .3), layer: u >= 1 ? 'back' : 'front' });
           break; }
+        case 'ground': { // push into the TV's tiles: every movie is a little picture; on "thumbnail" one pops out
+          onTV(K);
+          const th = wordAt(K, 'thumbnail', 'ground'), tc = wordAt(K, 'click', 'ground');
+          if (t >= th) { const tap = t > tc && t < tc + .25 ? .92 : 1;
+            K.prop('P01', { x: 640, y: 760, w: 440 * popIn(K, t, th) * tap, rot: .05 + Math.sin((t - th) * 3) * .02 }); }
+          break; }
         case 'problem': onTV(K);
           K.place('doug', -.3, 0, -6.2, .2); face(D, 'happy', t); D.pose({ t, gesture: 'tada', gw: K.ease((L - .2) / .4) }); break;
         case 'doug': {
@@ -64,18 +69,14 @@
           D.pose({ t, gesture: 'point', gw: K.ease((L - .3) / .4), look: -.35 });
           K.prop('P01', { x: 760, y: 720, w: 420 * popIn(K, t, at('doug') + .15), rot: .06 + Math.sin(L * 3) * .02 }); break; }
         case 'gary': {
-          K.place('gary', .9, 0, -6.2, -.35); const pt = L > 2.6; face(G, 'flat', t);
-          G.pose({ t, gesture: pt ? 'point' : 'cross', gw: pt ? K.ease((L - 2.6) / .4) : 1, look: pt ? .35 : 0 });
-          K.prop('P02', { x: 320, y: 720, w: 420 * popIn(K, t, at('gary') + 2.6), rot: -.06 + Math.sin(L * 3) * .02 }); break; }
-        case 'bet': {
-          K.place('doug', -.6, 0, -6.2, .25); face(D, 'smirk', t); D.pose({ t, gesture: 'hips', gw: K.ease(L / .4) });
-          const tf = wordAt(K, 'five', 'bet'), s = popIn(K, t, tf, .5);
-          if (t >= tf) K.prop('P08', { x: 720, y: 640, w: 520 * s * Math.max(.15, Math.abs(Math.cos(L * 4))), rot: Math.sin(L * 2) * .15 }); break; }
+          K.place('gary', .9, 0, -6.2, -.35); const tp = wordAt(K, 'doug', 'gary'), pt = t > tp; face(G, 'flat', t);
+          G.pose({ t, gesture: pt ? 'point' : 'cross', gw: pt ? K.ease((t - tp) / .4) : 1, look: pt ? .35 : 0 });
+          K.prop('P02', { x: 320, y: 720, w: 420 * popIn(K, t, tp), rot: -.06 + Math.sin(L * 3) * .02 }); break; }
         case 'phones': { // both phones side by side; they wiggle on "both right"
           const wig = t > at('reveal') ? Math.sin((t - at('reveal')) * 22) * .08 * Math.max(0, 1 - (t - at('reveal')) / 1.2) : 0;
           K.prop('P01', { x: 300, y: 800, w: 440 * popIn(K, t, at('phones') + .2), rot: -.08 + wig });
           K.prop('P02', { x: 780, y: 800, w: 440 * popIn(K, t, at('phones') + .7), rot: .08 - wig }); break; }
-        case 'bet2': {
+        case 'bet': {
           K.place('gary', .4, 0, -6.2, -.15); face(G, 'worried', t);
           G.pose({ t, gesture: 'think', gw: K.ease(L / .4), lean: .1, look: .25, tilt: .1, nod: -.1 }); break; }
         case 'aside': break;
@@ -86,10 +87,12 @@
           K.place('doug', -.95, 0, -6, .35); K.place('gary', .95, 0, -6, -.35);
           face(D, 'happy', t); face(G, 'surprised', t, 1);
           D.pose({ t, armR: { raise: .3, fwd: -.9 }, look: .1 }); G.pose({ t, armL: { raise: .3, fwd: -.9 }, look: -.1 });
-          const u = K.easeOut((L - .4) / .9), hd = K.screenOf(D.arm[1].wr), hg = K.screenOf(G.arm[-1].wr);
-          K.prop('P03', { x: 540, y: 560, w: 520, a: 1 - K.clamp01((L - .2) / .5) });
-          K.prop('P01', { x: K.lerp(540, hd.x, u), y: K.lerp(560, hd.y - 45, u), w: K.lerp(300, 90, u) });
-          K.prop('P02', { x: K.lerp(540, hg.x, u), y: K.lerp(560, hg.y - 45, u), w: K.lerp(300, 90, u) }); break; }
+          // the stack waits while "a computer program looks"; the funny thumbnail flies to Doug on "comedies", the kiss to Gary on "love"
+          const tD = wordAt(K, 'comedies', 'pick'), tG = wordAt(K, 'love', 'pick');
+          const uD = K.easeOut((t - tD) / .8), uG = K.easeOut((t - tG) / .8), hd = K.screenOf(D.arm[1].wr), hg = K.screenOf(G.arm[-1].wr);
+          K.prop('P03', { x: 540, y: 560, w: 520, a: 1 - K.clamp01((t - tG - .4) / .5) });
+          if (t >= tD - .1) K.prop('P01', { x: K.lerp(540, hd.x, uD), y: K.lerp(560, hd.y - 45, uD), w: K.lerp(300, 90, uD) });
+          if (t >= tG - .1) K.prop('P02', { x: K.lerp(540, hg.x, uG), y: K.lerp(560, hg.y - 45, uG), w: K.lerp(300, 90, uG) }); break; }
         case 'example': { // the real case: romance fans got the couple, comedy fans got the laugh
           K.prop('P03', { x: 540, y: 640, w: 900, a: .55 });
           K.prop('P02', { x: 760, y: 700, w: 400 * popIn(K, t, wordAt(K, 'romance', 'example')), rot: .07 });
@@ -115,9 +118,7 @@
           face(D, 'flat', t); face(G, 'flat', t, 1.3);
           D.pose({ t, look: -.5, nod: -.05 }); G.pose({ t, look: -.6, gesture: L > 3 ? 'shrug' : 'cross', gw: 1 });
           K.prop('P09', { x: 540, y: 1080, w: 260 * popIn(K, t, at('end') + .2), layer: 'front' }); break; }
-        case 'netflix': { // the five bucks fly into the wall; NETFLIX slams in
-          const u = K.ease(L / .9);
-          K.prop('P08', { x: K.lerp(540, 560, u), y: K.lerp(1000, 520, u), w: K.lerp(520, 30, u), rot: u * 6, a: 1 - K.clamp01((u - .85) / .15) });
+        case 'netflix': { // "Netflix wasn't." NETFLIX slams in over the brain wall
           K.prop('P10', { x: 540, y: 400, w: 860 * popIn(K, t, at('netflix') + .15, .3) }); break; }
         case 'cta': {
           K.place('doug', -1.0, 0, -6.6, .3); K.place('gary', 1.0, 0, -6.6, -.3);

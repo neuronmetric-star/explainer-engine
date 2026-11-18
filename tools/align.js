@@ -1,7 +1,7 @@
 // Estimate per-word timings for a voiceover you made elsewhere (e.g. OpenArt / ElevenLabs website).
 // Usage:  put the MP3 at videos/<slug>/voice.mp3, then:  node tools/align.js <video-slug>
-// How:    finds the pauses in the audio, pins sentence/comma ends to them, spreads words by length in between.
-//         Good to ~0.1-0.2s. For exact timing use tools/tts.js (ElevenLabs API).
+// How:    finds the pauses in the audio, pins sentence/comma ends to them, spreads words by syllables in between,
+//         then snaps each word start to the nearest loudness dip. Good to ~0.05-0.1s. For exact timing use tools/tts.js (ElevenLabs API).
 const { fs, path, vdir, readScript, writeData, ScriptParser, ffmpegPath, spawnSync, ffprobeDuration } = require('./lib');
 
 const slug = process.argv[2]; if (!slug) { console.error('usage: node tools/align.js <video-slug>'); process.exit(1); }
@@ -64,12 +64,29 @@ const anchors = [[0, speechStart]];
 for (const [k, j] of chain) if (k < K) anchors.push([j + 1, gaps[k][1], gaps[k][0]]);
 anchors.push([words.length, speechEnd]);
 
-// 4) spread words by length between anchors
+// 4) inside each anchored stretch: spread words by syllables, then snap every word start to the
+//    nearest dip in loudness (the tiny gap between words) within ±0.14 s.
+const SR = 16000, HOP = 160;   // 10 ms frames
+const pcm = spawnSync(ffmpegPath(), ['-hide_banner', '-loglevel', 'error', '-i', mp3, '-ac', '1', '-ar', String(SR), '-f', 's16le', '-'], { maxBuffer: 1 << 30 }).stdout;
+const nF = Math.floor(pcm.length / 2 / HOP), env = new Float64Array(nF);
+for (let f = 0; f < nF; f++) { let e = 0; for (let i = 0; i < HOP; i++) { const v = pcm.readInt16LE((f * HOP + i) * 2) / 32768; e += v * v; } env[f] = Math.sqrt(e / HOP); }
+const sm = new Float64Array(nF); for (let f = 0; f < nF; f++) { let a = 0, n = 0; for (let d = -2; d <= 2; d++) if (env[f + d] !== undefined) { a += env[f + d]; n++; } sm[f] = a / n; }
+const syl = w => { const x = w.toLowerCase().replace(/[^a-z]/g, ''); if (!x) return 1; const g = (x.replace(/e$/, '').match(/[aeiouy]+/g) || []).length; return Math.max(1, g); };
+const sw = words.map(x => syl(x.w) + .35);
+const fr = t => Math.max(0, Math.min(nF - 1, Math.round(t * SR / HOP)));
+function snap(t, lo, hi) {   // lowest smoothed energy near t, only if it is a real dip
+  const a = fr(Math.max(lo, t - .14)), b = fr(Math.min(hi, t + .14)); let best = fr(t), bv = Infinity;
+  for (let f = a; f <= b; f++) { const v = sm[f] * (1 + 1.5 * Math.abs(f - fr(t)) / 14); if (v < bv) { bv = v; best = f; } }
+  let peak = 0; for (let f = a; f <= b; f++) peak = Math.max(peak, sm[f]);
+  return sm[best] < peak * .55 ? best * HOP / SR : t;
+}
 for (let a = 0; a < anchors.length - 1; a++) {
   const [k0, t0] = anchors[a], [k1, , pauseStart] = anchors[a + 1];
   const t1 = a + 1 === anchors.length - 1 ? speechEnd : pauseStart;
-  const tot = wt.slice(k0, k1).reduce((x, y) => x + y, 0); let t = t0;
-  for (let k = k0; k < k1; k++) { const d = wt[k] / tot * (t1 - t0); words[k].start = +t.toFixed(3); words[k].end = +(t + d).toFixed(3); t += d; }
+  const tot = sw.slice(k0, k1).reduce((x, y) => x + y, 0); const st = []; let t = t0;
+  for (let k = k0; k < k1; k++) { st.push(t); t += sw[k] / tot * (t1 - t0); }
+  for (let i = 1; i < st.length; i++) st[i] = Math.max(st[i - 1] + .06, Math.min(snap(st[i], st[i - 1] + .06, t1 - .06 * (st.length - i)), t1 - .06 * (st.length - i)));
+  for (let i = 0; i < st.length; i++) { const k = k0 + i; words[k].start = +st[i].toFixed(3); words[k].end = +(i + 1 < st.length ? st[i + 1] : t1).toFixed(3); }
 }
 console.log(`found ${gaps.length} pauses, pinned ${anchors.length - 2} of them to punctuation`);
 writeData(slug, script, words, dur);
