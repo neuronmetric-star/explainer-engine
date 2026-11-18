@@ -42,6 +42,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 7. **Preview** stills → Read them yourself → fix (feet planted, light matches painting, faces readable,
    caption band clear, clue visible before it's explained) → send Brian the preview.
 8. **Render** 30 fps with voice (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
+9. **Cover + caption**: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` → `cover.jpg`. **The cover always shows
+   the character** (a real frame with the cast and a clear, expressive face; no captions), headline in the top quarter.
+   Write `post.md` (TikTok/Reels caption + hashtags, YouTube Shorts title) and send both to Brian.
 
 ## Story rules (short version of PLAYBOOK §1)
 - Choose the question word from the payoff: Why (reason) / Who (identity) / When (moment) /

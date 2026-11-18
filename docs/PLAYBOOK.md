@@ -459,6 +459,14 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 
 ---
 
+## 6b. Posting kit (every video)
+- **Cover:** `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` grabs a real frame (no captions, no follow
+  button) and adds the headline (line 1 white, the rest gold, thick outline, top quarter). **The cover always shows the
+  character** (Brian's rule): pick a moment with the cast on screen and a big, readable reaction (`surprised`, `worried`,
+  `shrug`), next to the subject (the empty hood, the dead bulb).
+- **Caption:** `post.md` with a TikTok/Reels caption (a curiosity line + the payoff in a few words + one Doug joke,
+  6–7 hashtags) and a YouTube Shorts title (≤ 100 chars, ends with #shorts).
+
 ## 7. Topic bank (any subject works; pick ones with a hidden mechanism or a twist)
 
 | Topic | Question | Shape | Who gets it wrong / who notices |
