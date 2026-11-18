@@ -1,0 +1,14 @@
+# v3 (Claude draft), superseded by Brian's own script (script.txt).
+# Payoff: there's no engine and no gas. The floor is a giant battery; press the pedal and electricity flows into a
+# motor, where coils turn into magnets that push and pull the middle around. That spin turns the wheels.
+# Clue: the empty hood + the plug where gas should go. Doug is fictional.
+[#q] How the {*f*ck|fuck} does an electric car even {*run?|run?}
+[#card] See, Doug had a problem. He bought an electric car, and he can't find the {!engine.|engine.}
+[#hood] He pops the hood. Nothing. Just an empty trunk. [#plug] He looks for where the gas goes. No gas. Just a plug. [#stole] Doug goes, "They stole my engine."
+[#bet] Honestly? I'd have called the cops too.
+[#ground] A gas car runs on tiny explosions of gasoline. An electric car runs on electricity. [#floor] The whole floor is a {*battery:|battery:} thousands of thumb-size cells that store electricity, like a tank stores water. [#fill] Plug in, and the tank fills.
+[#pedal] So Doug presses the pedal, and electricity flows from the battery into the {*motor,|motor,} a metal drum down by the wheels. [#coils] Inside, the electricity turns coils of wire into magnets. [#spin] They push and pull on the middle part, the middle spins, and that spin turns the wheels. [#harder] Press harder, more electricity, faster spin.
+[#hum] Doug glides away with a quiet hum. Doug thinks it's broken. Again.
+[#reveal] So, the stolen engine? [#bam] Bam. That drum is it. One main moving part, where a gas engine has hundreds.
+[#end] Doug found his engine. He still drives around going "vroom" himself.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

@@ -1,6 +1,6 @@
 # Sources: How an electric car works
 
-**Doug and the "stolen engine" are fictional.** The produced script is `script.txt` (v3, how an EV runs); rows about
+**Doug and the "stolen engine" are fictional.** The produced script is `script.txt` (Brian's own script, how an EV runs); rows about
 downhill regen belong to the rejected v2 (`script-v2-downhill.txt`).
 The mechanism is real.
 
@@ -16,3 +16,6 @@ The mechanism is real.
 | "One main moving part, where a gas engine has hundreds": the motor's rotor is its main moving part; gas engines have 100+ moving parts (counts vary by source and are approximate) | Jalopnik, "Why EVs Have Motors, Not Engines": https://www.jalopnik.com/1945404/why-evs-have-motors-not-engines/ · MakeUseOf, "How does an EV motor work?": https://www.makeuseof.com/how-does-an-ev-motor-work/ · Mazda USA (above) |
 | "A quiet hum": US rule FMVSS 141 requires EVs to emit a warning sound below 18.6 mph, because they're otherwise nearly silent | Federal Register, Feb 26 2018 (FMVSS 141): https://www.govinfo.gov/content/pkg/FR-2018-02-26/html/2018-03721.htm · Insurance Journal: https://www.insurancejournal.com/magazines/mag-features/2016/12/05/434163.htm |
 | A gas car runs on tiny explosions of gasoline (combustion pushing pistons) | See `videos/gas-vs-water/sources.md` |
+| "That pedal tells a little computer, 'More power, please.' The computer sends electricity from the battery to the motor" (the power electronics controller manages the flow of electricity from the battery and controls the motor's speed) | AFDC, "How Do All-Electric Cars Work?" (component list: power electronics controller): https://afdc.energy.gov/vehicles/how-do-all-electric-cars-work · Edmunds (above) |
+| "A simple gearbox": most EVs use a single-speed reduction gear instead of a multi-gear transmission | Jalopnik (above) · MakeUseOf (above) |
+| Battery pack usually under the floor | CleanTechnica / InsideEVs teardowns (above) |

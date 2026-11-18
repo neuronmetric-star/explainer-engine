@@ -1,14 +1,16 @@
-# SHORT (~1:05). How an electric car even runs. Hook → middle → end (PLAYBOOK §1.11), mechanism woven into the story.
-# Payoff: there's no engine and no gas. The floor is a giant battery; press the pedal and electricity flows into a
-# motor, where coils turn into magnets that push and pull the middle around. That spin turns the wheels.
-# Clue: the empty hood + the plug where gas should go. Doug is fictional.
-[#q] How the {*f*ck|fuck} does an electric car even {*run?|run?}
-[#card] See, Doug had a problem. He bought an electric car, and he can't find the {!engine.|engine.}
-[#hood] He pops the hood. Nothing. Just an empty trunk. [#plug] He looks for where the gas goes. No gas. Just a plug. [#stole] Doug goes, "They stole my engine."
-[#bet] Honestly? I'd have called the cops too.
-[#ground] A gas car runs on tiny explosions of gasoline. An electric car runs on electricity. [#floor] The whole floor is a {*battery:|battery:} thousands of thumb-size cells that store electricity, like a tank stores water. [#fill] Plug in, and the tank fills.
-[#pedal] So Doug presses the pedal, and electricity flows from the battery into the {*motor,|motor,} a metal drum down by the wheels. [#coils] Inside, the electricity turns coils of wire into magnets. [#spin] They push and pull on the middle part, the middle spins, and that spin turns the wheels. [#harder] Press harder, more electricity, faster spin.
-[#hum] Doug glides away with a quiet hum. Doug thinks it's broken. Again.
-[#reveal] So, the stolen engine? [#bam] Bam. That drum is it. One main moving part, where a gas engine has hundreds.
-[#end] Doug found his engine. He still drives around going "vroom" himself.
-[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
+# SHORT (~1:10). How an electric car runs. Brian's script (approved), marked up with cues.
+# Payoff: no engine: battery (under the floor) → little computer → motor (magnets spin a shaft) → simple gearbox → wheels;
+# slowing down, the motor works as a generator and refills the battery a little. Doug is fictional.
+[#q] How the {*heck|heck} does an electric car even {*run?|run?}
+[#card] Doug has a problem. He bought an electric car, [#hood] popped the hood, and couldn't find the {!engine.|engine.}
+[#steal] "Did they steal it?"
+[#bet] Honestly, Doug, I'd check the security cameras too.
+[#gas] A gas car burns fuel to make power. [#battery] An all-electric car stores energy in a big {*battery|battery} pack, usually underneath the floor. [#plug] Plug it in, and the battery stores electricity for the trip.
+[#pedal] Now Doug presses the pedal. [#computer] That pedal tells a little computer, "More power, please."
+[#flow] The computer sends electricity from the battery to the {*motor.|motor.} [#magnets] The motor uses magnetic forces to spin a shaft. [#gearbox] That spinning motion goes through a simple gearbox and turns the {*wheels.|wheels.}
+[#gentle] Press gently, and the motor turns slowly. [#harder] Press harder, and it gets more power and spins faster.
+[#trip] That's the whole trip: battery to motor, motor to wheels.
+[#regen] And when Doug slows down, the motor can work like a generator. [#back] It grabs some of the car's motion and sends a little energy back into the battery. [#refill] It's like getting a tiny refill every time he brakes.
+[#reveal] So, where's the engine? Doug was looking for the wrong thing. [#motor2] The electric motor is the part that makes the car move, and it has far fewer moving parts than a gas engine.
+[#end] Doug found it. He still makes the "vroom" noise himself.
+[#cta] Still here? You must've enjoyed the video. *Follow and *like for more.
