@@ -1,6 +1,7 @@
 # Sources: How an electric car works
 
-**Doug, the mountain, the 2% → 8% climb and the "haunted" car are fictional** (a real effect, dramatized).
+**Doug and the "stolen engine" are fictional.** The produced script is `script.txt` (v3, how an EV runs); rows about
+downhill regen belong to the rejected v2 (`script-v2-downhill.txt`).
 The mechanism is real.
 
 | Claim in the script | Source |
@@ -11,3 +12,7 @@ The mechanism is real.
 | "Lift your foot, and the wheels spin the motor instead… the motor makes electricity, back into the battery" (regenerative braking) | AFDC (above) · Mazda USA, "What Is Regenerative Braking?": https://www.mazdausa.com/resource-center/what-is-regenerative-braking · Renault Group (above) |
 | Battery charge can rise on a long downhill | TFLcar, "How Much Can You Recharge An EV By Driving It Down A Mountain?": https://tflcar.com/2022/01/mini-cooper-se-regen-test-video/ · ZigWheels, Kia EV6 downhill regen test: https://zigwheels.com/news-features/ev-news/watch-we-find-out-how-effective-brake-energy-regen-is-down-a-steep-road-with-the-kia-ev6/51557/?is_amp=1 |
 | "Climbing costs more than rolling down gives back": regen recovers only part of the energy (often ~60–70% of braking energy), so a round trip up and down always loses charge | EVKX, "Regenerative braking calculations": https://evkx.net/technology/regen/calculations/ · Green Car Reports, "How high a hill could recharge a coasting Tesla?": https://www.greencarreports.com/news/1108324_how-high-a-hill-could-recharge-a-coasting-tesla-electric-car-completely |
+| Many EVs have a "frunk": a front trunk where a gas car's engine would be (not every EV has one) | EVKX, "Front trunks (frunks)": https://evkx.net/technology/cargoandtowing/frunkcargo/ · Chase, "What is a frunk?": https://www.chase.com/personal/auto/education/maintenance/what-is-a-frunk |
+| "One main moving part, where a gas engine has hundreds": the motor's rotor is its main moving part; gas engines have 100+ moving parts (counts vary by source and are approximate) | Jalopnik, "Why EVs Have Motors, Not Engines": https://www.jalopnik.com/1945404/why-evs-have-motors-not-engines/ · MakeUseOf, "How does an EV motor work?": https://www.makeuseof.com/how-does-an-ev-motor-work/ · Mazda USA (above) |
+| "A quiet hum": US rule FMVSS 141 requires EVs to emit a warning sound below 18.6 mph, because they're otherwise nearly silent | Federal Register, Feb 26 2018 (FMVSS 141): https://www.govinfo.gov/content/pkg/FR-2018-02-26/html/2018-03721.htm · Insurance Journal: https://www.insurancejournal.com/magazines/mag-features/2016/12/05/434163.htm |
+| A gas car runs on tiny explosions of gasoline (combustion pushing pistons) | See `videos/gas-vs-water/sources.md` |

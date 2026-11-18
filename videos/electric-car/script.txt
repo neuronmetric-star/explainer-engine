@@ -1,13 +1,14 @@
-# SHORT (~1:05). How an electric car works. Hook → middle → end (PLAYBOOK §1.11), mechanism woven into the story.
-# Payoff: an electric car is a giant battery feeding a motor; magnets spin the wheels, and when you lift your foot
-# the hill spins the motor backward, which puts electricity back into the battery.
-# Clue: the battery percent climbs while Doug rolls downhill. Doug and the mountain are fictional.
-[#q] How the {*f*ck|fuck} does an electric car even {*work?|work?}
-[#card] See, Doug had a problem. Top of a mountain. Electric car. {!Two|Two} percent battery.
-[#ground] An electric car has no gas and no engine. Just a giant {*battery|battery} and a {*motor.|motor.} [#floor] The battery is the whole floor: thousands of thumb-size cells that store electricity, like a tank stores water. [#plug] Plug in, and the tank fills.
-[#pedal] When Doug presses the pedal, electricity flows from the battery into the motor. [#magnets] Magnets inside push and pull, the motor spins, and the wheels spin. No gas. No explosions.
-[#coast] So Doug lifts his foot and rolls downhill, praying. [#clue] And the battery goes up. Three percent. Five. {*Eight.|Eight.} [#haunted] Doug thinks the car is haunted.
-[#bet] Honestly? I'd have called a priest.
-[#aside] Now you're thinking, how does a car fill itself up? I'mma tell you. [#flip] When you lift your foot, the motor flips. The hill spins the wheels, the wheels spin the motor, and a spinning motor makes electricity. [#back] Right back into the battery. [#bam] Bam. Not haunted. Just a hill.
-[#end] So Doug drives back up to do it again. But climbing costs more than rolling down gives back. [#dead] {!Zero|Zero} percent. Halfway up a mountain.
+# SHORT (~1:05). How an electric car even runs. Hook → middle → end (PLAYBOOK §1.11), mechanism woven into the story.
+# Payoff: there's no engine and no gas. The floor is a giant battery; press the pedal and electricity flows into a
+# motor, where coils turn into magnets that push and pull the middle around. That spin turns the wheels.
+# Clue: the empty hood + the plug where gas should go. Doug is fictional.
+[#q] How the {*f*ck|fuck} does an electric car even {*run?|run?}
+[#card] See, Doug had a problem. He bought an electric car, and he can't find the {!engine.|engine.}
+[#hood] He pops the hood. Nothing. Just an empty trunk. [#plug] He looks for where the gas goes. No gas. Just a plug. [#stole] Doug goes, "They stole my engine."
+[#bet] Honestly? I'd have called the cops too.
+[#ground] A gas car runs on tiny explosions of gasoline. An electric car runs on electricity. [#floor] The whole floor is a {*battery:|battery:} thousands of thumb-size cells that store electricity, like a tank stores water. [#fill] Plug in, and the tank fills.
+[#pedal] So Doug presses the pedal, and electricity flows from the battery into the {*motor,|motor,} a metal drum down by the wheels. [#coils] Inside, the electricity turns coils of wire into magnets. [#spin] They push and pull on the middle part, the middle spins, and that spin turns the wheels. [#harder] Press harder, more electricity, faster spin.
+[#hum] Doug glides away with a quiet hum. Doug thinks it's broken. Again.
+[#reveal] So, the stolen engine? [#bam] Bam. That drum is it. One main moving part, where a gas engine has hundreds.
+[#end] Doug found his engine. He still drives around going "vroom" himself.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

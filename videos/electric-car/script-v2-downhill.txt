@@ -1,0 +1,13 @@
+# v2 (downhill regen story), rejected by Brian: the video should be about how an EV runs at all.
+# Payoff: an electric car is a giant battery feeding a motor; magnets spin the wheels, and when you lift your foot
+# the hill spins the motor backward, which puts electricity back into the battery.
+# Clue: the battery percent climbs while Doug rolls downhill. Doug and the mountain are fictional.
+[#q] How the {*f*ck|fuck} does an electric car even {*work?|work?}
+[#card] See, Doug had a problem. Top of a mountain. Electric car. {!Two|Two} percent battery.
+[#ground] An electric car has no gas and no engine. Just a giant {*battery|battery} and a {*motor.|motor.} [#floor] The battery is the whole floor: thousands of thumb-size cells that store electricity, like a tank stores water. [#plug] Plug in, and the tank fills.
+[#pedal] When Doug presses the pedal, electricity flows from the battery into the motor. [#magnets] Magnets inside push and pull, the motor spins, and the wheels spin. No gas. No explosions.
+[#coast] So Doug lifts his foot and rolls downhill, praying. [#clue] And the battery goes up. Three percent. Five. {*Eight.|Eight.} [#haunted] Doug thinks the car is haunted.
+[#bet] Honestly? I'd have called a priest.
+[#aside] Now you're thinking, how does a car fill itself up? I'mma tell you. [#flip] When you lift your foot, the motor flips. The hill spins the wheels, the wheels spin the motor, and a spinning motor makes electricity. [#back] Right back into the battery. [#bam] Bam. Not haunted. Just a hill.
+[#end] So Doug drives back up to do it again. But climbing costs more than rolling down gives back. [#dead] {!Zero|Zero} percent. Halfway up a mountain.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
