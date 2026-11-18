@@ -33,7 +33,7 @@ BATCH 1 (backgrounds 01–06)
 ```
 
 ```
-BATCH 2 (props P01–P05, all on solid pure green #00FF00)
+BATCH 2 (5 props, all on solid pure green #00FF00)
 P01_security_camera.png: A cartoon home security camera on a small wall bracket, white with a dark round lens and a tiny red light. Centered on a solid pure green #00FF00 background, no text.
 
 P02_little_computer.png: A small friendly metal box with its lid off, showing a green circuit board inside and one glowing blue chip in the middle, two thick orange cables coming out of the sides. Centered on a solid pure green #00FF00 background, no text, no logos.
