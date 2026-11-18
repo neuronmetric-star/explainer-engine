@@ -22,7 +22,8 @@ What it's built from:
 | 2 | Research, every claim sourced | Claude | `videos/<slug>/sources.md` |
 | 3 | Script (section 1) | Claude → **Brian approves** | `script.txt` + narration in one copyable block |
 | 4 | Shot list + image prompts (section 4) | Claude | `shotlist.md` |
-| 5 | Paint the worlds and props: ChatGPT (Brian), **or OpenArt** (Claude, credits pre-approved by Brian) | Brian / Claude | long form ≈ 30–45 backgrounds + 20–30 props → `videos/<slug>/art/` |
+| 5 | Paint the worlds and props in **ChatGPT, always** (Brian), from the batch prompt file `videos/<slug>/art-prompts.md` | Brian | long form ≈ 30–45 backgrounds + 20–30 props → `videos/<slug>/art/` |
+| 5b | *(Optional)* AI video inserts in **OpenArt** for shots the engine can't do well (§4.1) | Claude (pre-approved; report credits) | 5–10 s clips → `videos/<slug>/clips/` |
 | 6 | Voiceover (ElevenLabs/OpenArt, or `tools/tts.js` with a key) | Brian / Claude | `voice.mp3` → `node tools/align.js <slug>` |
 | 7 | Build the scene: plates, cast, acting, camera (sections 2–3) | Claude | `scene.js` |
 | 8 | Preview stills, fix, repeat | Claude | `preview.jpg`, sent to Brian |
@@ -289,8 +290,26 @@ Reply only with the image.
 **Per long-form video (8+ min):** about 12–18 locations × 2–3 angles (≈ 30–45 backgrounds),
 plus 1–3 diagram plates, plus 20–30 props (including evidence props: receipts, texts, mugshot-style
 cards, headlines, and "imagined" gag props). **Per short video:** ≈ 7–12 backgrounds plus 6–10 props.
-**OpenArt option:** Claude can generate the set with Nano Banana 2 (≈ 20 credits per image, so ≈ 1,000–1,500
-credits per long video). Brian has pre-approved OpenArt use. Still show the style test first. Templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
+**Images are always made by Brian in ChatGPT.** For big sets, Claude writes one batch file per video,
+`videos/<slug>/art-prompts.md` (template in `docs/prompt-pack.md` → "Batch file"). Brian pastes it into one
+ChatGPT chat and generates the images in order, in batches.
+
+### 4.1 OpenArt video inserts (only when they look better or we need them)
+Brian has pre-approved OpenArt **video** credits. Use them sparingly, for shots the engine can't sell:
+- water, fire, smoke and explosions at scale
+- crowds and stampedes
+- vehicles crashing or flipping
+- transformations and anything that needs real physics or complex motion
+
+Rules:
+- **Start from Brian's ChatGPT painting** (image-to-video), so the style matches. Prompt only camera and
+  motion ("slow push-in, the wave rises and curls, rain"). **Keep our cast out of AI clips.** Characters
+  stay in the engine so they stay consistent and silent.
+- **5–10 s per clip**, used as a cut-in. The engine still adds captions, voice and cuts on top.
+- **One test clip first**, then the rest. Pick the cheapest model that looks right (e.g. PixVerse V6
+  ≈ 50, Wan 3.0 ≈ 100, Veo 3.1 ≈ 120 credits per clip). Check `openart_model_cost` before each run.
+- **Budget:** about 3–8 inserts per long video (≈ 300–1,000 credits). Tell Brian the credits spent after each batch.
+- Mark them in the shot plan as `OPENART:` with the source image and motion prompt. Templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
 TABLETOP · DIAGRAM/CUTAWAY · PROP · PROP WITH EXACT TEXT · FOREGROUND LAYER · CHANGE THE MOOD
 (night, storm, abandoned).
 

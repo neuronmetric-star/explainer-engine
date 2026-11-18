@@ -107,3 +107,36 @@ Same image, but [at night / in a thunderstorm / in heavy snow / abandoned and du
 
 After the style test comes back, I'll send the **exact shot list** (every image you need, with its
 filled-in prompt) once the script is approved.
+
+---
+
+## Batch file (for big sets, one per video: `videos/<slug>/art-prompts.md`)
+
+Claude writes this file. Brian opens a **new ChatGPT chat**, pastes **everything from START to the
+first BATCH line**, then sends each batch when ChatGPT finishes the last one. All images stay in one
+chat, so the style stays consistent.
+
+```
+START
+You are the background artist for a vertical animated explainer series. [style bible pasted here in full]
+
+HOW TO WORK: I'll send prompts in numbered batches. Make every image in the batch one after another,
+in order, portrait 2:3. Above each image write only its file name (e.g. "07_bank_lobby_wide_day.png").
+Props go on solid pure green #00FF00. No people in any image. When a batch is done, say "BATCH DONE".
+
+BATCH 1 (backgrounds 01–06)
+01_street_wide_day.png: [prompt]
+02_street_wide_night.png: Same as 01, now at night. [mood prompt]
+...
+BATCH 2 (backgrounds 07–12)
+...
+BATCH 5 (props P01–P06)
+P01_prop_receipt.png: [prompt]
+...
+```
+
+Rules for writing it:
+- Batches of **4–6 images**; backgrounds first, then props.
+- Use the numbered file names, so Brian saves them straight into `videos/<slug>/art/`.
+- "Same as 0X, now…" for mood or angle variants of the same place, in the same batch.
+- Every prompt stands alone: place, angle, light direction, open floor, "no people".

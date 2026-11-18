@@ -9,7 +9,8 @@ Worked example: `videos/why-cars-need-gas/`.
 
 ## The format (every video)
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
-- **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`).
+- **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
+  Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
 - **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
   Victor (suit), polo guy. They act with gaze, posture, gestures, faces and timing.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
@@ -26,8 +27,11 @@ Worked example: `videos/why-cars-need-gas/`.
 3. **Script** → `videos/<slug>/script.txt` (PLAYBOOK §1). Show Brian the narration in one copyable
    block (timing, direction, sources outside it) and **wait for approval**.
 4. **Shot list** → `videos/<slug>/shotlist.md` (PLAYBOOK §5): background + prop prompts and a shot
-   plan with camera and acting per cue. Brian paints them in ChatGPT, **or Claude generates them in OpenArt**
-   (Brian pre-approved credits; Nano Banana 2 ≈ 20 credits/image; do a 3-image style test first) → `videos/<slug>/art/`.
+   plan with camera and acting per cue. **Images: always Brian in ChatGPT.** For big sets, write the batch file
+   `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") → `videos/<slug>/art/`.
+   **OpenArt = video inserts only** (PLAYBOOK §4.1): when a shot looks better as AI video or the engine can't do it
+   (water, fire, crowds, crashes). Image-to-video from Brian's painting, no cast in clips, one test clip first,
+   report credits spent. Brian pre-approved this.
 5. **Voice**: if `ELEVENLABS_API_KEY` is set, `node tools/tts.js <slug>`; otherwise Brian records it in
    ElevenLabs/OpenArt from the spoken text, saves `videos/<slug>/voice.mp3`, then `node tools/align.js <slug>`.
    Print spoken text with

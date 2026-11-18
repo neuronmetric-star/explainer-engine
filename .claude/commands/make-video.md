@@ -15,7 +15,9 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/why-ca
    and the clean-opening option. Wait for "approved" (or edits).
 4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop
    prompts, and the shot plan table (picture · camera · face/pose/gesture per cue). Tell me how many images.
-   Offer: Brian paints them in ChatGPT, or Claude generates them in OpenArt (pre-approved).
+   Also write `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") for Brian to paste into ChatGPT.
+   Mark any OpenArt video inserts (PLAYBOOK §4.1) in the shot plan; generate them only after the art arrives,
+   one test clip first, and report credits.
 5. Voice: if ELEVENLABS_API_KEY is set run `node tools/tts.js <slug>`; otherwise give me the spoken text,
    wait for `voice.mp3`, then run `node tools/align.js <slug>`.
 6. When the art is in `videos/<slug>/art/`: build the scene (plates matched per painting, cast, acting,
