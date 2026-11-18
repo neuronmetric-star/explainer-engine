@@ -50,7 +50,7 @@ BATCH 3 (backgrounds 09–12)
 ```
 
 ```
-BATCH 4 (props P01–P09, each on solid pure green #00FF00)
+BATCH 4 (props P01–P05, each on solid pure green #00FF00)
 P01_helicopter_side.png: A white utility helicopter seen exactly from the side, facing right, chunky cartoon proportions, same storybook style, rotor blades visible. The window openings are completely empty holes with no glass, showing solid pure green #00FF00 through them. No text, no logos. Centered on a solid pure green #00FF00 background.
 
 P02_armored_truck_side.png: A tan military armored truck seen exactly from the side, facing right, chunky cartoon proportions, same storybook style. The window openings are completely empty holes with no glass, showing solid pure green #00FF00 through them. No text, no logos. Centered on a solid pure green #00FF00 background.
@@ -60,7 +60,10 @@ P03_helmet.png: A single olive-drab army helmet, three-quarter view, chunky cart
 P04_blue_helmet.png: A single light sky-blue helmet like the ones worn by international peacekeepers, three-quarter view, chunky cartoon proportions, same storybook style, soft light from the left. No letters, no logos. Centered on a solid pure green #00FF00 background.
 
 P05_clipboard_three_boxes.png: A brown clipboard with a sheet of cream paper showing three big empty square checkboxes in a column, nothing written, chunky cartoon proportions, same storybook style. Centered on a solid pure green #00FF00 background.
+```
 
+```
+BATCH 5 (props P06–P09, each on solid pure green #00FF00)
 P06_gold_check.png: A big bold shiny gold check mark, like a stamp, chunky and simple, same storybook style. Centered on a solid pure green #00FF00 background.
 
 P07_red_x.png: A big bold red X, like a rubber stamp mark with slightly rough edges, same storybook style. Centered on a solid pure green #00FF00 background.
