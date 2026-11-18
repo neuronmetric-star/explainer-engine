@@ -120,6 +120,9 @@ something to follow the next line, the script is broken.
 - **Introduce every name**: people, films, companies, places. "Robin Williams, the comedy legend",
   "Good Will Hunting, a 1997 movie about a janitor who's a math genius". Never assume they know who or what it is.
 - **Numbers get a yardstick.** "$1 billion a year: about $1,900 every single minute." "60–90 seconds: less time than microwaving popcorn."
+- **Name it once, then use that exact name every time.** Once a term is defined ("thumbnail"), every later mention
+  uses the same word: no synonyms ("picture", "poster", "image"). A new word makes a newcomer think it's a new thing.
+  Same for characters and objects ("Gary", not "the documentary guy"; "the bill", not "the cash" then "the money").
 - **No skipped steps in a mechanism.** If step B needs A, say A. Track one object through every step.
 - **One new idea per sentence.** Don't stack two unknowns in one line.
 - **Test before showing Brian:** read each line as a 12-year-old who's never seen the thing. Any "wait, what's that?"
@@ -406,7 +409,8 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] Subject on screen during the question; action starts in sentence two
 - [ ] A choice, apparent success, a clue seen before it's explained, an observer, a consequence
 - [ ] The narrator bets early and changes their mind
-- [ ] Zero-knowledge pass (§1.6a): the basics set up first; every term, name and number explained in plain words
+- [ ] Zero-knowledge pass (§1.6a): the basics set up first; every term, name and number explained in plain words;
+      each term keeps the same name after it's defined (no synonyms)
 - [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
 - [ ] 290–310 words (short); every claim sourced; fiction labeled
 - [ ] Dry last line, then the follow CTA
