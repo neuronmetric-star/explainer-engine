@@ -1,106 +1,90 @@
 # Explainer Engine — rules for Claude Code
 
-This repo makes **extreme-quality vertical teaching videos** (TikTok / Instagram Reels / YouTube Shorts)
-with Three.js: finance, history, science, "how things really work." Owner: Brian (NeuronMetric).
-Brand handle (TikTok + socials): **@coonknows** — the engine shows it as a moving watermark and on the
-end card (`K.BRAND` in engine/kit.js). He works mostly from his phone — keep messages short, show previews, ask before spending credits.
+This repo makes **story-driven vertical explainer videos** (TikTok / Reels / Shorts) about *anything*:
+science, money, history, "how things really work." Owner: Brian (NeuronMetric).
+He works mostly from his phone — keep messages short, show previews, ask before spending credits.
 
-## Brian's preferences (learned while making the first videos — follow these)
-- Stay on the question. Cut anything that doesn't answer it (e.g. no morning-breath tangent in a shower video).
-- Hyper-educational: name the real things (glands, bacteria species, parts) and explain what each does, simply.
-- Story beats > fact lists: e.g. "your night, hour by hour" with a ticking clock tracker.
-- Premium, cinematic sets: mood lighting (night room with moon + lamp, sunrise), real 3D characters
-  (Quaternius) at believable scale — a person should fill their bed, not look like a toy on it.
-- Characters fit the topic: soldiers look like soldiers, kings/queens wear crowns (K.crown), etc.
-- CTA is a question + share bait, e.g. "Knowing this, will you start taking morning showers? Send this to your stinky partner."
-- Remove "advice" lines that aren't asked for (e.g. "keep it quick and lukewarm").
-- Real people/news: allegations always attributed, never name private people, faceless figures only.
-- Brian records the voiceover in OpenArt; then run `node tools/align.js <slug>` (rate-based sync) and check cues.
-- Show a preview before every full render; he may say "wait" — stop the render immediately.
-- Keep messages short (he's on his phone). Post caption + hashtags + pinned-sources comment with each final video.
+**The full method is `docs/PLAYBOOK.md`. Read it before starting any video and follow it.**
+Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` is an older draft).
+
+## The format (every video)
+- **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
+- **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
+  Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
+- **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
+  Victor (suit), polo guy. They act with gaze, posture, gestures, faces and timing.
+- **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
+  zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
+- **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
+- **Two lengths, one format**: long form 8:00–9:30 (1,300–1,500 words) and short form ≈ 1:05
+  (175–190 story words + CTA; just over TikTok's 1-minute payout line, never under 1:02; hook → middle → end). Both use Ray's skeleton + Xevi's narrator personality (PLAYBOOK §1.9–1.11,
+  `docs/creators/ray-xevi-study.md`); short form is the same format compressed (§1.11).
+- **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
 
 ## The pipeline (always in this order)
-1. **Research** the topic. Use web search. Every number and claim must come from a source.
-   Save sources to `videos/<slug>/sources.md` (title + URL + the fact it supports).
-2. **Script** → `videos/<slug>/script.txt` using the formula below. Show Brian the script and
-   **wait for approval** before making audio (audio costs money).
-3. **Voice**:
-   - If `ELEVENLABS_API_KEY` is set: `node tools/tts.js <slug>` (exact word timing).
-   - Otherwise: ask Brian to make the voiceover in OpenArt/ElevenLabs with the *spoken* text
-     (print it with `node -e "console.log(require('./engine/script.js').spokenText(require('fs').readFileSync('videos/<slug>/script.txt','utf8')))"`),
-     save it as `videos/<slug>/voice.mp3`, then run `node tools/align.js <slug>`.
-4. **Scene** → `videos/<slug>/scene.js`. Copy `videos/_template/` and study `videos/buy-borrow-die/scene.js`.
-5. **Preview**: `node tools/render.js <slug> --preview` → look at `videos/<slug>/preview.jpg` yourself
-   (Read the image). Fix overlaps, cut-off cards, empty frames, unreadable text. Repeat until clean.
-6. **Render**: `node tools/render.js <slug>` → `videos/<slug>/final.mp4` (voice mixed in; `music.mp3`
-   in the folder is mixed in quietly if present). Software rendering takes ~10–15 min per minute of video.
-7. Commit the folder (not the mp4s if they're huge) and tell Brian where the video is.
+0. **Length first:** if Brian didn't say "long" or "short", ASK him (long ≈ 8–9.5 min or short ≈ 1:05) before any research, script or other work. There is no default.
+1. **Payoff → topic.** Write the one-sentence answer the viewer will discover.
+2. **Research** with web search; every claim sourced in `videos/<slug>/sources.md` (title + URL + fact).
+   Label invented characters and reconstructions.
+3. **Script** → `videos/<slug>/script.txt` (PLAYBOOK §1). Show Brian the narration in one copyable
+   block (timing, direction, sources outside it) and **wait for approval**.
+4. **Shot list** → `videos/<slug>/shotlist.md` (PLAYBOOK §5): background + prop prompts and a shot
+   plan with camera and acting per cue. **Images: always Brian in ChatGPT.** For big sets, write the batch file
+   `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") → `videos/<slug>/art/`.
+   **OpenArt = video inserts only** (PLAYBOOK §4.1): when a shot looks better as AI video or the engine can't do it
+   (water, fire, crowds, crashes). Image-to-video from Brian's painting, no cast in clips, one test clip first,
+   report credits spent. Brian pre-approved this.
+5. **Voice**: if `ELEVENLABS_API_KEY` is set, `node tools/tts.js <slug>`; otherwise Brian records it in
+   ElevenLabs/OpenArt from the spoken text, saves `videos/<slug>/voice.mp3`, then `node tools/align.js <slug>`.
+   Print spoken text with
+   `node -e "console.log(require('./engine/script.js').spokenText(require('fs').readFileSync('videos/<slug>/script.txt','utf8')))"`.
+6. **Scene**: plates + cast + acting + camera per the shot plan (PLAYBOOK §2–3).
+7. **Preview** stills → Read them yourself → fix (feet planted, light matches painting, faces readable,
+   caption band clear, clue visible before it's explained) → send Brian the preview.
+8. **Render** 30 fps with voice (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
 
-## Script formula — "WHY THE F*CK…?" format (from Nov 2026, any topic humans wonder about)
-Length **61–75 s** (~170–200 spoken words). Must be over 60 s: TikTok Creator Rewards only pays on videos >1 min.
-1. **Hook (0–3 s)**: "Why the fuck did/does/is ___?" + bridge: "Give me a minute, I'll show you." /
-   "Let me explain." Exactly ONE swear, only in the hook. Caption shows it masked: `{F*CK|fuck}`.
-   Never put the swear in the TikTok caption text, title, hashtags or thumbnail.
-2. **Short answer** (one line, surprising) → "But the real reason is wilder."
-3. **Deep, simple explanation**: 3–4 numbered steps. Each = one concrete picture + one real number.
-   Explain like to a smart 12-year-old. Every sentence must be visualizable.
-4. **Twist / catch**: the part most people get wrong ("Here's what nobody tells you…").
-5. **Proof**: real numbers on a receipt, chart or comparison.
-6. **"You" moment**: tie it to the viewer's life ("That's why YOUR ___ …").
-7. **Punchline** (one short line) + **CTA**: "Follow — I explain one of these every day." Optional share bait:
-   "Send this to someone who …".
-Rules: short sentences, concrete numbers, no filler. Every fact from a source. History: no myths stated as
-fact ("historians think"). Real people/news: attribute every claim, never present allegations as fact.
-Never give personalized financial/legal/medical advice. See docs/growth-plan.md for monetization rules.
+## Story rules (short version of PLAYBOOK §1)
+- Choose the question word from the payoff: Why (reason) / Who (identity) / When (moment) /
+  What (object/event) / How (process). Coon style opens "How the f*ck…" — captions show "f*ck";
+  offer a clean version ("How the heck") if Brian wants ad-safe openings.
+- Subject on screen during the question. Action starts in sentence two.
+- Middle = a choice with a reason to expect success → apparent success → someone notices a detail we
+  already saw → consequence back to someone we know. For mechanisms, track one object.
+- **Zero-knowledge viewer** (PLAYBOOK §1.6a): assume they've never heard of the topic. Set up what the thing is
+  before the twist; explain every term, name and number in plain words the first time; no skipped steps.
+  Once a term is named ("thumbnail"), use that exact word every time after: no synonyms.
+  Mechanism as an if-then example; say the surprise out loud; every number gets a yardstick and a cause.
+- No side bets between characters (the disagreement is the stakes). Last line mirrors a line from the middle.
+- "How does X work" topics: the mechanism is the video, in plain numbered steps; the story is a broken version
+  of the thing, and the clue is the failed step. No side trivia.
+- Narrator bets early, changes their mind with us, voices the listener's question when it arises.
+- Specific numbers, a joke/simile ~every 10 s, everyday analogy for the science, explanation held to
+  ~60–75%, dry last line, then the **follow CTA** (PLAYBOOK §1.12, rotate A–E, default C: "Still here? Then that means you enjoyed the video. So follow and like for more.") No filler. Every sentence picturable.
+- Never give personalized financial/legal/medical advice — explain how things work. History: no myths as fact.
 
 ## Script markup (`script.txt`)
-`*word` gold · `!word` red · `{shown|spoken}` e.g. `{$23.8%|twenty-three point eight percent}` ·
-`[#cue]` invisible sync point used by scene.js · lines starting `#` are comments.
-Write numbers as words in the spoken part so the voice reads them right.
-Put a `[#cue]` before every sentence that should change the picture.
+`*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` invisible sync point
+before every picture change · lines starting `#` are comments. Numbers as words in the spoken part.
 
-## Visual rules (the quality bar)
-- **Default look = bright** (sunny sky, warm ground, solid toy-like shapes, soft shadows, NO outlines).
-  New videos get it automatically. Old videos pin theirs in `look.js` (gold-noir / blueprint).
-- **Something changes every 2–3 seconds**: camera move, card pop, counter, object growing.
-- **One idea per shot.** Each set lives at its own x position (0, 20, 40, 60…); shots jump between them.
-- Hook frame = the most striking image in the video, already moving at frame 1. No fade-ins.
-- Cards: max 2 on screen at once (plus the step tracker). Keep cards out of the caption zone
-  (screen y 1250–1450) and inside x 28–1052. Big numbers = `cls:'big'`.
-- Color meaning is fixed: **gold** = wealth/win/key term, **red** = tax/loss/danger,
-  **white** = neutral facts/people, **green** = cash, **blue** = ordinary-person world.
-- Captions are automatic (one word at a time). Never put other text at the caption position.
-- Safe zone: nothing important in the top 140 px or bottom 380 px (app UI covers it).
-- End on the receipt / summary, then the FOLLOW button.
-- Always check the preview image before a full render.
+## Engine reference
+- **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo', envMap})` →
+  `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
+  `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw})`;
+  gestures `point|wave|shrug|cross|think|facepalm|hips|tada`. Pure functions of time.
+- **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a
+  painting (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
+  `setViewOffset`; shadow catcher + blob shadows; convert material colors sRGB→linear.
+- **Test renders** `node engine/lab/render-lab.js <outDir> --page plate-lab.html [--clip]`
+  (Chromium needs `--allow-file-access-from-files`).
+- **Legacy** gold-noir engine (`engine/kit.js`, `stage.html`, `tools/render.js`, `videos/buy-borrow-die`)
+  still renders the old wireframe look. Wiring plates + cast into `scene.js`/`render.js` is the next
+  build step (do it with `gas-vs-water`). Everything in `update` must be a pure function of `t`.
 
-## Engine reference (engine/kit.js, available as `K` in scene.js)
-- Time: `K.at('cue')`, `K.T('cue+0.4')`, `K.prog(t,'cue',dur)` (0→1), `K.ease/easeOut/pop/clamp01`.
-- Build: `box(w,h,d,x,y,z,parent,color)`, `cyl(r,h,x,y,z,parent,color)`, `bar(w,d,x,z,parent,color)` +
-  `setBar(bar,height)`, `roof(w,h,d,x,y,z,parent,color)`, `extrude([[x,y]...],depth,x,y,z,parent,color)`,
-  `tube([[x,y,z]...],color,radius,parent)` + `drawTube(tube,0..1)`, `ring(r,x,z)`, `group(x,y,z)`,
-  `person(x,z,{tie:true,scale,color})`, `fly(obj,t,start,dur,fromVec,toVec)`, `hop(obj,t,'cue')`.
-- Scene object: `build(K)`, `shots`, `cards`, `steps`, `receipt`, `follow`, `shakes`, `flashes`, `update(t,K)`.
-- **Cutaways (solid machines)**: `K.solid(geo,color,parent,{cut,inner,glow,metal,rough})`, `K.hull([[x,r]...],color,parent,opts)`
-  (body of revolution along x), `K.cutaway({z,x0,x1})` + `K.setCut(cut,x0,x1)` to peel the front open,
-  and `callouts:[{n,l,cls,a:[x,y,z],at:[screenX,screenY],t0,t1}]` for numbered labels. Show ≤2 callouts at once.
-  Full example: `videos/_cutaway-demo/scene.js`. Use our own models only — never copy someone's cutaway art.
-- Looks: no `look.js` = **bright** (engine/styles/bright.js). `window.LOOK = 'gold-noir' | 'blueprint'` in
-  `videos/<slug>/look.js` for the old styles. In bright, box/cyl/bar/extrude are solid automatically.
-  Bright example: `videos/_bright-demo/scene.js`.
-- No voice yet? `node tools/draft-timing.js <slug>` makes placeholder timing so you can preview a scene early.
-- **Real 3D models (CC0, Quaternius)** in `assets/models/quaternius/` — characters (Man_King, Man_Suit, Man_Worker,
-  Man_Farmer, Man_Spacesuit, Man_Swat, Woman_Medieval, Woman_Soldier, Woman_Formal, Woman_Witch, Knight…), village
-  buildings, weapons/helmets, tanks, ships, animals, dinosaurs, trees. List them in `models:{name:'path.glb'}`, then
-  `K.model(name,{height|size,x,z,rotY,tint})`, animate with `K.anim(obj,'Walk'|'Walking'|'Run'|'Idle_Neutral'|'Wave'|
-  'Punch_Right'|'Death'|'Sword_Slash'|'Interact'…, t)`, props with `K.crown()` + `K.stick(item,obj,'Head',[dx,dy,dz])`.
-  Example: `videos/_army-demo/scene.js`. More CC0 models: quaternius.com (allowed host); license notes in assets/models/LICENSES.md.
-- Everything in `update` must be a pure function of `t` (no accumulating state) so renders are exact.
-
-## Looks (styles)
-Default: **bright** (sunny, solid, shadows). Also available: **gold-noir** (black void, glowing gold
-wireframes) and **blueprint** (cyan lines on navy).
-Planned looks to add as `engine/styles/*` when a topic needs them: **parchment** (history: warm
-low-poly dioramas, maps, lantern light), **blueprint** (science/engineering: cyan lines on navy,
-cutaways and exploded views), **chalk** (math: white lines on dark green). Keep the same card,
-caption and step systems across looks so the brand stays recognizable.
+## Legacy kit.js engine extras (from the Nov 11 videos: house, submarine, Nvidia, shower)
+Videos without an `art/` folder render through `engine/stage.html` + `engine/kit.js`. That engine also has:
+- Looks: no `look.js` = **bright** (sunny, solid shapes, soft shadows); `window.LOOK = 'gold-noir' | 'blueprint'`
+  in `videos/<slug>/look.js` (`engine/styles/*`). Old videos pin theirs.
+- Solid models, cutaways + numbered callouts (`videos/_cutaway-demo/`); real CC0 Quaternius 3D models in
+  `assets/models/` via `models:{}` + `K.model / K.anim / K.crown / K.stick` (`videos/_army-demo/`).
+- Time-of-day lighting inside a video (`K.lights`, `K.keyOffset`, `K.skyTexture`, `K.bloom`; see `videos/why-shower-morning/`).
+- @coonknows moving watermark + end-card handle (`K.BRAND`); `tools/draft-timing.js` for placeholder timing.

@@ -1,0 +1,24 @@
+# SHORT FORM (~1:30). Why a car needs gas, and why it can't run on water.
+# Format: Coon question → Ray skeleton compressed (PLAYBOOK §1.11) → Xevi narrator personality.
+# Payoff: a car doesn't drink gas, it blows it up; water is the LEFTOVERS of that explosion. It's already burned.
+# Plant: the tailpipe drip (Doug's "proof"). Observer: Gary watches the puffs. Callback: "That drip? Leftovers."
+# Doug and Gary are fictional; the chemistry and numbers are real (sources.md).
+[#q] Why the {*f*ck|fuck} does your car need gas? And why the {*f*ck|fuck} can't it just run on {*water?|water?}
+[#problem] See, Doug had a problem. Gas was expensive, and Doug had a theory.
+[#drip] Every morning, his tailpipe dripped water. Actual water.
+[#logic] So Doug goes, "If the car makes water, the car runs on water. The gas station's been robbing me."
+[#gary] His neighbor Gary goes, "Doug. No." [#yes] Doug goes, "Gary. Yes."
+[#hose] So Doug fills the tank with the garden hose. To the top. {*Free.|Free.}
+[#start] And here's the thing. The car *started.
+[#wave] Tailpipe puffing, Doug waving at the whole street like he just beat the oil companies.
+[#bet] Honestly? I'd have put five bucks on Doug.
+[#watch] But Gary wasn't watching Doug. He was watching the tailpipe. [#small] The puffs were getting smaller.
+[#until] Until, one block later, they stopped. [#stall] So did the car. Right in the {!intersection.|intersection.}
+[#aside] Now you're thinking, how did his car make water in the first place? I'mma tell you.
+[#boom] Your car doesn't drink gas. It blows it up. [#spark] A spark sets off a mist of gas and air, [#bang] {!boom,|boom,} [#rate] about {*80|eighty} times a second. [#piston] Every boom shoves a piston that turns the wheels.
+[#leftovers] And when gas explodes, what's left over is carbon dioxide, and *water. [#gallon] Burn a gallon of gas, and roughly a {*gallon|gallon} of water comes out the back.
+[#callback] That drip? Leftovers.
+[#ash] Water isn't fuel. It's what fuel turns into when it's done. It's already burned. Running a car on water is like lighting a fire with {!ashes.|ashes.}
+[#split] Split it back into fuel? Sure, if you want to spend more energy than you'll ever get back.
+[#tow] {!Bam.|Bam.} Tow truck. Fish tank drained. [#end] And Gary kept his hose.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

@@ -1,0 +1,19 @@
+# SHORT FORM (~1:30). Why the light turns on when you flip the switch. The mechanism, step by step.
+# Payoff: the switch closes a gap so the push can run through a complete loop of wire, and inside the bulb a
+# hair-thin wire gets so hot it glows. One gap anywhere (like a snapped filament) and nothing lights.
+# Clue: the snapped filament is visible in the first shot of the dead bulb. Doug and Gary are fictional.
+[#q] Why the {*f*ck|fuck} does the light turn on when you flip the {*switch?|switch?}
+[#card] See, Doug had a problem. His light stopped working, and Doug is sure it's the {!switch.|switch.}
+[#flip] So he flips it. Click. Nothing. [#clicks] Click, click, click. Nothing. [#fifty] Fifty clicks. Doug goes, "It's broken."
+[#gary] Gary from next door unscrews the bulb and shakes it. [#rattle] It rattles. Gary says nothing.
+[#bet] Honestly? I'd have blamed the switch too.
+[#aside] Now you're thinking, why does a rattle matter? I'mma tell you how a light actually works. [#three] Three steps.
+[#step1] Step one: the {*switch.|switch.} Behind that little flap on your wall are two pieces of metal. [#off] Off, they're apart, with a tiny gap of air. [#on] On, they touch.
+[#step2] Step two: the {*loop.|loop.} Copper wire runs from the power lines outside, through the switch, to the bulb, and back. One big loop. [#electrons] Copper is full of tiny particles called electrons, and electricity is just a push that moves them along the wire. [#rule] The catch: the push can't jump air. One gap anywhere, and everything stops. [#closed] Flip the switch, the metal touches, and the push runs the whole loop instantly.
+[#step3] Step three: the {*bulb.|bulb.} Inside the glass is a wire thinner than a hair, called the {*filament.|filament.} [#crash] The push crams electrons through it, and all that crashing heats it past {!four|four} thousand degrees. [#oven] That's eight times hotter than your oven. [#glow] So hot, it glows white. That glow is your light.
+[#led] Newer bulbs, called LEDs, use a tiny chip instead, but the switch and the loop work the same.
+[#reveal] So, the rattle. [#snapped] The filament is snapped in half. A gap. Right in the middle of the {!loop.|loop.}
+[#callback] Doug could flip that switch a thousand times. The switch closed its gap. The bulb had its own.
+[#fix] Gary screws in a new bulb. [#light] Click. {*Light.|Light.}
+[#end] Doug goes, "See? Told you it was the switch." Doug is still sure it's the switch.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

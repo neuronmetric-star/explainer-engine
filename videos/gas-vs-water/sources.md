@@ -1,0 +1,14 @@
+# Sources: Why a car needs gas, and why it can't run on water
+
+**Doug, Gary, the hose and the tow are fictional.** The chemistry, mechanism and numbers are real.
+
+| Claim in the script | Source |
+|---|---|
+| A tailpipe dripping water is normal: combustion produces water vapor, which condenses in a cold exhaust and drips out until it warms up | Jalopnik, "Why some tailpipes drip water": https://jalopnik.com/1895800/why-tailpipe-drips-water-explained/ · SlashGear: https://www.slashgear.com/1877034/car-exhaust-pipes-drip-water-reason/ |
+| "It blows it up… a spark sets off a mist of gas and air… shoves a piston that turns the wheels": the four-stroke cycle (intake, compression, spark ignition pushes the piston down, crankshaft turns) | Haynes: https://haynes.com/en-us/tips-tutorials/what-four-stroke-engine · TestingAutos: https://www.testingautos.com/car_care/four-stroke-engine.html |
+| "about eighty times a second": a four-stroke cylinder fires every 2 revolutions; 4 cylinders × 2,500 rpm ÷ 2 = 5,000 per minute ≈ 83 per second (**our calculation**; varies with rpm) | same four-stroke sources |
+| "what's left over is carbon dioxide, and water": octane (the main gasoline component) burns as 2 C₈H₁₈ + 25 O₂ → 16 CO₂ + 18 H₂O | Ohio University, Applied Thermodynamics, Ch. 11 Combustion: https://people.ohio.edu/urieli/thermo/Applied/Chapt.7_11/Chapter11.html · fueleconomy.gov CO₂ note: https://www.fueleconomy.gov/feg/contentIncludes/CO2_inc.htm |
+| "Burn a gallon of gas, and roughly a gallon of water comes out": by the equation, 1 kg octane → about 1.42 kg water. A gallon of gasoline ≈ 2.8 kg (density about 0.74 kg/L), so ≈ 4 kg ≈ 1 gallon of water (**our calculation**; gasoline is a blend, so "roughly") | equation above; gasoline density about 0.71–0.77 kg/L (standard reference value, e.g. Wikipedia "Gasoline") |
+| "Water… is already burned": burning hydrogen with oxygen makes water. Hydrogen fuel cells' only byproducts are water and heat | US DOE fuel cell fact sheet: https://www.energy.gov/sites/default/files/2015/11/f27/fcto_fuel_cells_fact_sheet.pdf · DOE fuel cell animation: https://www.energy.gov/node/805966 |
+| "Split it back into fuel? …spend more energy than you'll ever get back": electrolysis uses electricity to split water; hydrogen is an energy **carrier**, not a source | DOE, Hydrogen Production: Electrolysis: https://www.energy.gov/eere/fuelcells/hydrogen-production-electrolysis · DOE hydrogen production fact sheet: https://www.energy.gov/sites/prod/files/2014/09/f18/fcto_hydrogen_production_fs_0.pdf (energy conservation: you can't get back more than you put in) |
+| "Fish tank drained": water in a tank sinks to the fuel pump pickup and stalls the engine; heavy contamination usually means a shop drains the tank | Jalopnik: https://jalopnik.com/2012488/water-in-gas-tank-what-happens/ · Kwik Fit: https://kwik-fit.com/blog/what-happens-when-water-gets-into-fuel-tank |

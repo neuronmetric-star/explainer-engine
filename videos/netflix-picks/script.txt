@@ -1,0 +1,24 @@
+# Netflix picks, v2 (zero-knowledge rewrite, PLAYBOOK §1.6a). This is the produced script. v1 = script-v1.txt.
+#  - ground first: Netflix = "the movie app"; the thumbnail is defined before the twist
+#  - "thumbnail" every time after it's defined (never "picture" / "poster"); "these picks" removed (sneaky new term)
+#  - documentaries, Good Will Hunting, Robin Williams, rom-coms all explained the first time
+#  - mechanism as if-then ("Lots of comedies? You get the funny thumbnail.")
+#  - surprise said out loud ("Same movie. Two different thumbnails.")
+#  - numbers with yardstick + cause (popcorn; eight out of ten; "because people stay instead of canceling")
+#  - no side bet ("Five bucks on the line" cut); last line mirrors "they're both right"
+[#q] How the {*f*ck|fuck} does Netflix choose what to show {*you?|you?}
+[#ground] See, on Netflix, the movie app, every movie shows up as a little picture. It's called a {*thumbnail.|thumbnail.} You see it, you like it, you click it.
+[#problem] Now, Doug had a problem. He found the perfect movie, and his buddy Gary didn't believe him.
+[#doug] Doug goes, "Bro, it's a comedy. The thumbnail is just a guy laughing."
+[#gary] Gary, who swears he only watches documentaries, true stories about whales and wars, goes, "Doug. It's a love story. The thumbnail is two people kissing."
+[#phones] So they hold up their phones. [#reveal] And they're both right. Same movie. Two different {*thumbnails.|thumbnails.}
+[#bet] Honestly? I'd have bet one of them was blind.
+[#aside] Now you're thinking, how? I'mma tell you.
+[#stack] Netflix doesn't make one thumbnail per movie. It makes a whole {*stack.|stack.} A funny one. A romantic one. A sad one.
+[#pick] Then a computer program looks at everything you've watched. Lots of comedies? You get the funny thumbnail. Lots of love stories? You get the kissing thumbnail.
+[#example] They really did this with Good Will Hunting, a movie about a janitor who's secretly a math genius. Romance fans got a thumbnail of the couple. Comedy fans got a thumbnail of Robin Williams, one of the funniest actors ever.
+[#why] Why bother? Because most people quit after about {!sixty|sixty} to ninety seconds of scrolling. That's less time than microwaving popcorn. So the thumbnail has to grab you fast.
+[#eighty] And it works. About {*80%|eighty percent} of what people watch, they found because Netflix put it in front of them. Eight out of ten. [#billion] Netflix says that saves them over a {*billion|billion} dollars a year, because people stay instead of canceling.
+[#callback] Which means Netflix knew something about Gary. [#exposed] Gary's been watching rom-coms. Romantic comedies. A lot of {!rom-coms.|rom-coms.}
+[#end] They watched it together. It's a drama. Turns out they were both {!wrong.|wrong.} [#netflix] {*Netflix|Netflix} wasn't.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
