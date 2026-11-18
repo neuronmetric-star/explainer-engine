@@ -70,12 +70,15 @@ Write down what the viewer will discover. Then pick the question word that the e
 
 ### 1.3 The narrator changes their mind in our company
 - Speak to **one friend**. Use "I'd have…", "Honestly?".
-- **Place your bet early** ("I'd have put five bucks on Doug"), and know which detail will make you
+- **Place your bet early** ("Honestly? I'd have bet on Doug."), and know which detail will make you
   regret it.
 - **Stay with the person who still believes it for one more beat.**
 - When a new name or term raises a real question, **ask it when the listener would** ("Wait,
   practiced?"), then answer it.
 - **Give a costly consequence room to land.** Don't rush the last line.
+
+- **No side bets between characters** ("Five bucks on the line" was cut). The disagreement itself is the stakes;
+  a wager adds a prop and a payoff that pull focus from the real answer. Only the narrator "bets", as an opinion.
 
 ### 1.4 Line craft (from the RicksClips study)
 - **Concrete, oddly specific numbers** (82 holes, every 39 feet, 15 times its weight in air).
@@ -92,7 +95,8 @@ Write down what the viewer will discover. Then pick the question word that the e
   the 1–2 people we follow (Doug, Gary).
 - **Hold back the explanation until about 60–75% of the runtime.** The question opens at second 0
   and the answer arrives around second 55–65 of 90.
-- **End on the payoff image and a dry final line, then the follow CTA (§1.12).**
+- **End on the payoff image and a dry final line, then the follow CTA (§1.12).** Best last line: **mirror a line
+  from the middle** so it flips ("they're both right" → "Turns out they were both wrong. Netflix wasn't.").
 
 ### 1.5 Format and length
 | Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
@@ -123,12 +127,24 @@ something to follow the next line, the script is broken.
 - **Name it once, then use that exact name every time.** Once a term is defined ("thumbnail"), every later mention
   uses the same word: no synonyms ("picture", "poster", "image"). A new word makes a newcomer think it's a new thing.
   Same for characters and objects ("Gary", not "the documentary guy"; "the bill", not "the cash" then "the money").
+- **Watch for sneaky new terms**, especially in the last third ("these picks", "the system", "the feed").
+  Swap them for a word already defined or for plain words ("what Netflix put in front of them").
+- **Define with a joke when you can:** the definition doubles as the 10-second laugh
+  ("documentaries, true stories about whales and wars").
+- **Explain the mechanism with an if-then example, not an abstract phrase.** Not "based on your viewing history"
+  but "Lots of comedies? You get the funny thumbnail. Lots of love stories? You get the kissing thumbnail."
+- **Say the surprise out loud** in one short line right after the reveal ("Same movie. Two different thumbnails.").
+  Don't trust the viewer to work it out from the picture alone.
+- **Every number gets its cause**: say *why* it happens or why it matters
+  ("over a billion dollars a year, because people stay instead of canceling").
 - **No skipped steps in a mechanism.** If step B needs A, say A. Track one object through every step.
 - **One new idea per sentence.** Don't stack two unknowns in one line.
 - **Test before showing Brian:** read each line as a 12-year-old who's never seen the thing. Any "wait, what's that?"
   → add a few words or a picture. Simplify; never dumb it down or talk down (the narrator's sarcasm targets the
   characters, never the viewer).
 - Budget: about **10–15% of the words** go to setup and definitions (≈ 30–45 words in a short, ~150–200 in long form).
+- **Worked example:** `videos/netflix-picks/script-v2.txt` (the Netflix script rewritten with every rule here;
+  compare with `script.txt`, the version we produced before this rule existed).
 
 ### 1.7 Turning ANY topic into a story (the recipe)
 1. **What's the surprising true answer?** That's the payoff.
@@ -410,7 +426,9 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] A choice, apparent success, a clue seen before it's explained, an observer, a consequence
 - [ ] The narrator bets early and changes their mind
 - [ ] Zero-knowledge pass (§1.6a): the basics set up first; every term, name and number explained in plain words;
-      each term keeps the same name after it's defined (no synonyms)
+      each term keeps the same name after it's defined (no synonyms, no sneaky new terms)
+- [ ] The mechanism told as an if-then example; the surprise said out loud; every number has a yardstick and a cause
+- [ ] No side bets between characters; the last line mirrors a line from the middle
 - [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
 - [ ] 290–310 words (short); every claim sourced; fiction labeled
 - [ ] Dry last line, then the follow CTA
