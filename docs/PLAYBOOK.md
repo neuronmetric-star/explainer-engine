@@ -187,7 +187,7 @@ story's word count.
 **Rotate these so viewers don't hear the same ask every time** (default: C):
 | | Line | Lever |
 |---|---|---|
-| **C (default)** | "Still here? Then you liked it. Don't lie. You didn't waste a minute, you learned something. So follow and like for more." | you stayed + you got value |
+| **C (default, Brian's line)** | "Still here? Then that means you enjoyed the video. So follow and like for more." | you stayed, so you enjoyed it |
 | A | "If you don't feel like you just wasted a minute of your life, follow. That's the deal. I bring the facts, you bring the follow." | fairness: value for a follow |
 | B | "If you're still here, it means you liked this. Don't lie. Follow and like, and I'll keep bringing you videos like this." | you stayed, so you liked it |
 | D | "[Smart character] followed. [Fool] didn't, and look what happened to [fool]. If this was worth your minute, follow and like for more." | story callback (adapt names) |

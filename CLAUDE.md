@@ -51,7 +51,7 @@ Worked example: `videos/why-cars-need-gas/`.
   already saw → consequence back to someone we know. For mechanisms, track one object.
 - Narrator bets early, changes their mind with us, voices the listener's question when it arises.
 - Specific numbers, a joke/simile ~every 10 s, everyday analogy for the science, explanation held to
-  ~60–75%, dry last line, then the **follow CTA** (PLAYBOOK §1.12, rotate A–E, default C: "Still here? Then you liked it. Don't lie. You didn't waste a minute, you learned something. So follow and like for more.") No filler. Every sentence picturable.
+  ~60–75%, dry last line, then the **follow CTA** (PLAYBOOK §1.12, rotate A–E, default C: "Still here? Then that means you enjoyed the video. So follow and like for more.") No filler. Every sentence picturable.
 - Never give personalized financial/legal/medical advice — explain how things work. History: no myths as fact.
 
 ## Script markup (`script.txt`)
