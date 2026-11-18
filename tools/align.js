@@ -29,17 +29,39 @@ const speech = segs.reduce((a, s) => a + s[1] - s[0], 0);
 const toReal = x => { let left = x * speech; for (const s of segs) { const d = s[1] - s[0]; if (left <= d) return s[0] + left; left -= d; } return speechEnd; };
 let acc = 0; const est = words.map((_, i) => { const st = toReal(acc / total); acc += wt[i]; return [st, toReal(acc / total)]; });
 
-// 3) pin punctuation-ending words to the nearest pause (in order)
-const anchors = [[0, speechStart]]; let lastIdx = -1;
-for (const g of gaps) {
-  let best = -1, bd = 1e9;
-  for (let i = lastIdx + 1; i < words.length - 1; i++) {
-    if (!/[,.?!:;]$/.test(words[i].w)) continue;
-    const d = Math.abs(est[i][1] - g[0]); if (d < bd) { bd = d; best = i; }
-    if (est[i][1] > g[0] + 3) break;
-  }
-  if (best >= 0 && bd < 2.5) { anchors.push([best + 1, g[1], g[0]]); lastIdx = best; }
+// 3) match pauses to word boundaries with dynamic programming (global best fit, not greedy):
+//    a pause usually follows punctuation, and the speaking rate between matched pauses should stay steady.
+//    One stray pause can no longer shift every caption after it.
+const B = words.length, K = gaps.length;
+const CW = [0]; wt.forEach(x => CW.push(CW[CW.length - 1] + x));
+const str = j => /[.?!]["\u201d]?$/.test(words[j].w) ? 2 : /[,;:]["\u201d]?$/.test(words[j].w) ? 1 : 0;
+const S2 = [0]; for (let j = 0; j < B; j++) S2.push(S2[j] + (str(j) === 2 ? 1 : 0));
+const R = total / speech;
+const pEnd = k => k < 0 ? speechStart : gaps[k][1], pStart = k => k >= K ? speechEnd : gaps[k][0];
+const punct = j => j >= B - 1 ? 0 : [2.5, 0, -0.5][str(j)];
+const skip = k => 1 + 4 * Math.max(0, gaps[k][1] - gaps[k][0] - .25);
+const INF = 1e18, dp = [], from = [];
+for (let k = -1; k <= K; k++) { dp[k + 1] = new Float64Array(B + 1).fill(INF); from[k + 1] = new Int32Array((B + 1) * 2).fill(-1); }
+dp[0][0] = 0;   // virtual start: pause -1 at boundary -1
+for (let k = 0; k <= K; k++) for (let j = 0; j < B; j++) {
+  if (k === K && j !== B - 1) continue;   // virtual end pause sits after the last word
+  if (k < K && j === B - 1) continue;
+  for (let kp = Math.max(-1, k - 4); kp < k; kp++) {
+    let sk = 0; for (let q = kp + 1; q < k; q++) sk += skip(q);
+    for (let jp = Math.max(-1, j - 45); jp < j; jp++) {
+      const base = dp[kp + 1][jp + 1]; if (base >= INF) continue;
+      let inner = 0; for (let q = kp + 1; q < k; q++) inner += gaps[q][1] - gaps[q][0];
+      const dur = pStart(k) - pEnd(kp) - inner; if (dur <= .05) continue;
+      const rate = (CW[j + 1] - CW[jp + 1]) / dur;
+      const missed = S2[j] - S2[jp + 1];   // sentence ends inside the segment with no pause
+      const c = base + 4 * Math.log(rate / R) ** 2 + sk + punct(j) + .4 * missed;
+      if (c < dp[k + 1][j + 1]) { dp[k + 1][j + 1] = c; from[k + 1][(j + 1) * 2] = kp; from[k + 1][(j + 1) * 2 + 1] = jp; }
+    } }
 }
+const chain = []; { let k = K, j = B - 1; while (k >= 0) { chain.push([k, j]); const kp = from[k + 1][(j + 1) * 2], jp = from[k + 1][(j + 1) * 2 + 1]; k = kp; j = jp; } }
+chain.reverse();
+const anchors = [[0, speechStart]];
+for (const [k, j] of chain) if (k < K) anchors.push([j + 1, gaps[k][1], gaps[k][0]]);
 anchors.push([words.length, speechEnd]);
 
 // 4) spread words by length between anchors

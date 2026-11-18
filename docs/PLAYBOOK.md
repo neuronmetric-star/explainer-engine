@@ -430,6 +430,9 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
   - Uses a shadow catcher plus blob shadows.
   - Colors must be converted sRGB → linear.
 - `node engine/lab/render-lab.js <out> --page plate-lab.html [--clip]`: stills or a 30 fps test clip.
+- **Caption timing for a voice made outside the API** (ElevenLabs web/OpenArt): `node tools/align.js <slug>` matches
+  pauses to punctuation with dynamic programming (good to roughly 0.1–0.2 s). For exact word timing, either set
+  `ELEVENLABS_API_KEY` (tts.js) or allow installing Whisper (`faster-whisper`, model from huggingface.co).
 - **Green-screen props:** key with `colorkey=0x00FF00:0.22:0.06` (ffmpeg) or the same distance-to-pure-green
   in a shader. **No despill:** it turns teal/green props blue. Tested clean on `gas-vs-water/P01_car_side.png`.
 - Chromium needs `--allow-file-access-from-files` to load plates.
