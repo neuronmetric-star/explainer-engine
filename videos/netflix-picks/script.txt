@@ -13,7 +13,7 @@
 [#stack] Netflix doesn't make one poster. It makes a whole {*stack.|stack.} [#pick] Then it shows you the one you're most likely to click, based on everything you've watched.
 [#example] They really did this with Good Will Hunting. Romance fans got the couple. Comedy fans got Robin Williams.
 [#why] Why? Because you quit after about {!sixty|sixty} to ninety seconds of scrolling. So the picks have to land fast.
-[#eighty] About {*80%|eighty percent} of what people watch comes from those picks. Netflix says it saves them over a {*billion|billion} dollars a year.
+[#eighty] About {*80%|eighty percent} of what people watch comes from those picks. [#billion] Netflix says it saves them over a {*billion|billion} dollars a year.
 [#callback] Which means Netflix knew something about Gary. [#exposed] Gary's been watching rom-coms. A lot of {!rom-coms.|rom-coms.}
 [#end] They watched it together. It's a drama. Nobody won the five bucks. [#netflix] {*Netflix|Netflix} did.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
