@@ -21,6 +21,7 @@ across them.
 | **Horizon at about 45% from the top** for wide shots | So the 3D characters' feet line up with the floor |
 | **No text** unless the prompt says so | AI text is often wrong; I add text where needed |
 | **Props on solid pure green #00FF00** | I cut the green out automatically |
+| **Match the prop's angle to the background** (a side-view car needs a road running LEFT-TO-RIGHT across the frame, "side-scrolling" view) | A side-view car on a road that runs away from the camera looks like it's driving into the houses (electric-car video) |
 | **Lock recurring objects** (a car, a phone, a bulb that appears in several images) | ChatGPT redesigns them every time. Describe the object in exact detail in START (color, shape, lights, wheels…), make it in the FIRST image, then every later prompt says "the exact car from 01_….png, do not redesign it". If it still drifts, save that first image and **attach it** to the next prompt as the reference |
 
 **File names:** `<video>_<place>_<angle>_<time>.png`, for example `bbd_bank_wide_day.png`.

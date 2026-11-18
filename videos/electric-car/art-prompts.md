@@ -44,3 +44,8 @@ P05_rotor.png: The spinning middle part of an electric motor, seen straight on f
 
 P07_charge_bolt.png: A chunky cartoon lightning bolt, bright yellow with a soft glow. Centered on a solid pure green #00FF00 background, no text.
 ```
+
+```
+FIX (driving shots need a side-view road)
+09_street_side_view.png: A sunny suburban street seen exactly from the side, like a side-scrolling cartoon: the road runs perfectly straight and FLAT from the left edge to the right edge of the frame, across the lower-middle of the picture (about 55% to 75% from the top), with a sidewalk and grass strip just behind it, then a row of houses, trees and a few parked-car-free driveways in the background, blue sky with soft clouds at the top. Same storybook style, warm sun from the left. No cars, no people, no text.
+```
