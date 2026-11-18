@@ -434,8 +434,8 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
   pauses to punctuation with dynamic programming (good to roughly 0.1–0.2 s). For exact word timing, either set
   `ELEVENLABS_API_KEY` (tts.js) or allow installing Whisper (`faster-whisper`, model from huggingface.co).
 - **Green-screen props:** key with `colorkey=0x00FF00:0.22:0.06` (ffmpeg) or the same distance-to-pure-green
-- **Green subjects (cash, bills, leaves):** the key eats them. Run `python3 tools/cutout.py videos/<slug>/art/<file>.png` → `<file>.cut.png` (only green touching the border is removed) and point `SC.props` at the `.cut.png`; the kit skips keying for `*.cut.png`.
   in a shader. **No despill:** it turns teal/green props blue. Tested clean on `gas-vs-water/P01_car_side.png`.
+- **Green subjects (cash, bills, leaves):** the key eats them. Run `python3 tools/cutout.py videos/<slug>/art/<file>.png` → `<file>.cut.png` (only green touching the border is removed) and point `SC.props` at the `.cut.png`; the kit skips keying for `*.cut.png`.
 - Chromium needs `--allow-file-access-from-files` to load plates.
 - **Status:** the plate and cast system lives in the lab pages. The production pipeline
   (`kit.js`/`stage.html`/`render.js`) still drives the old gold-noir look. Wiring plates, cast and
