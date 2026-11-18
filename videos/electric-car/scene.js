@@ -45,6 +45,7 @@
       '06': { img: '06_motor_cutaway_front.png', hz: .5, vx: .5, fov0: 55, camH: 1.6, light: 'night' },
       '07': { img: '07_gas_engine_cutaway.png', hz: .5, vx: .5, fov0: 55, camH: 1.6, light: 'interior' },
       '08': { img: '08_street_wide_morning.png', hz: .30, vx: .48, fov0: 55, camH: 2.3, light: 'day' },
+      '09': { img: '09_street_side_view.png', hz: .555, vx: .5, fov0: 55, camH: 1.6, light: 'day' },
     },
     props: { P01: 'P01_security_camera.png', P02: 'P02_little_computer.png', P03: 'P03_electron.png', P04: 'P04_ev_side.png',
       P05: 'P05_rotor.png', P06: 'P06_explosion.png', P07: 'P07_charge_bolt.png' },
@@ -62,12 +63,12 @@
       { at: 'computer', plate: '03', zoom: [1.1, 1.15], focus: [[.5, .5], [.5, .5]] },
       { at: 'flow', plate: '03', zoom: [1.3, 1.6], focus: [[.45, .57], [.25, .58]] },
       { at: 'magnets', plate: '06', zoom: [1.0, 1.2], focus: [[.5, .45], [.52, .42]] },
-      { at: 'gearbox', plate: '08', zoom: [1.25, 1.3], focus: [[.5, .42], [.5, .42]] },
+      { at: 'gearbox', plate: '09', zoom: [1.0, 1.05], focus: [[.5, .68], [.5, .68]] },
       { at: 'trip', plate: '03', zoom: [1.0, 1.05], focus: [[.5, .5], [.5, .52]] },
       { at: 'regen', plate: '03', zoom: [1.3, 1.4], focus: [[.35, .57], [.4, .57]] },
-      { at: 'refill', plate: '08', zoom: [1.25, 1.3], focus: [[.5, .42], [.5, .42]] },
+      { at: 'refill', plate: '09', zoom: [1.05, 1.1], focus: [[.5, .68], [.5, .68]] },
       { at: 'reveal', plate: '06', zoom: [1.0, 1.25], focus: [[.5, .45], [.52, .42]] },
-      { at: 'end', plate: '08', zoom: [1.3, 1.35], focus: [[.5, .45], [.5, .45]] },
+      { at: 'end', plate: '09', zoom: [1.15, 1.2], focus: [[.5, .68], [.5, .68]] },
       { at: 'cta', plate: '01', zoom: [1.35, 1.35], focus: [[.6, .3], [.6, .3]] },
     ],
     shakes: [['pedal+0.6', .3, .5], ['gas+0.3', .25, .3]],
@@ -99,14 +100,14 @@
         case 'gearbox': { // the car rolls in: gentle, then harder
           const t0 = at('gearbox'), tg = at('gentle'), th = at('harder'), tt = at('trip');
           const x = t < tg ? K.lerp(-4.5, -2.8, (t - t0) / (tg - t0)) : t < th ? K.lerp(-2.8, -1.8, (t - tg) / (th - tg)) : K.lerp(-1.8, 5, Math.pow(K.clamp01((t - th) / (tt - th)), 1.4));
-          carDoug(K, t, x, -22, { face: t > th ? 'happy' : 'smile' }); break; }
+          carDoug(K, t, x, -24, { face: t > th ? 'happy' : 'smile' }); break; }
         case 'trip': batteryGlow(K, t); dots(K, t, TO_MOTOR, 9, .7); break;
         case 'regen': { batteryGlow(K, t); dots(K, t, TO_MOTOR, 7, .45, -1); break; }
         case 'refill': { // the car slows to a stop; a little bolt pops over it
           const u = K.clamp01(L / 2.2), x = -3.5 + 3.5 * (1 - Math.pow(1 - u, 2));
-          const c = carDoug(K, t, x, -22, { face: 'smirk' }); K.prop('P07', { x: c.x, y: c.y - 110, w: 120 * popIn(K, t, wordAt(K, 'refill', 'refill')), a: .95 }); break; }
+          const c = carDoug(K, t, x, -24, { face: 'smirk' }); K.prop('P07', { x: c.x, y: c.y - 110, w: 120 * popIn(K, t, wordAt(K, 'refill', 'refill')), a: .95 }); break; }
         case 'reveal': rotor(K, (t - at('reveal')) * 4); break;
-        case 'end': carDoug(K, t, 0, -16, { face: 'happy' }); break;
+        case 'end': carDoug(K, t, 0, -22, { face: 'happy' }); break;
         case 'cta': stand(-.15); face(D, 'smirk', t); D.pose({ t, gesture: 'shrug', gw: K.ease((L - .8) / .4) }); break;
       }
     },
