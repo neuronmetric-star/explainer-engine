@@ -43,4 +43,6 @@ Optional: drop a `music.mp3` in the video folder and it's mixed in quietly under
 - `engine/` — the shared 3D engine (`kit.js`), page (`stage.html`), script parser
 - `tools/` — voice, timing and render scripts
 - `videos/<slug>/` — one folder per video: `script.txt`, `scene.js`, `voice.mp3`, `data.js`, `sources.md`, `final.mp4`
-- `docs/research.md` — what we learned from @richardknows22 and @playmalo.com
+- `docs/PLAYBOOK.md` — **the full method: story, cast & acting, camera, ChatGPT art, pipeline, checklists**
+- `docs/prompt-pack.md` — ChatGPT prompts for the 2D worlds · `docs/ricksclips/` — channel study
+- `docs/research.md` — earlier research (@richardknows22, @playmalo.com)

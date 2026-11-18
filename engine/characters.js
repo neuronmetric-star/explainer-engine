@@ -3,7 +3,8 @@
 //  CHAR.make({outfit:'oxford'|'polo'|'suit', glasses, envMap}) -> character
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
-//    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, lean})
+//    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw})
+//    gestures: point | wave | shrug | cross | think | facepalm | hips | tada   (gw = blend 0..1)
 //  Everything is a pure function of the pose values, so renders stay frame-exact.
 // =====================================================================
 (function () {
@@ -170,8 +171,22 @@
     }
 
     ch.face = name => { headMat.map = faceTex(name); };
+    // Gestures: silent characters act with their hands. pose({gesture:'cross', gw:0..1}) blends one in.
+    // Arm "R" = ch.arm[1], arm "L" = ch.arm[-1] (screen right/left when facing camera).
+    const G = {
+      point:    { 1: [-1.45, 0, .12, -.1, 0] },
+      wave:     { 1: [-.15, 0, 2.5, null, 0] },
+      shrug:    { 1: [-.3, 0, .35, -1.35, .7], [-1]: [-.3, 0, -.35, -1.35, -.7], up: .05, tilt: .12 },
+      cross:    { 1: [-.62, .25, -.18, -1.95, -1.1], [-1]: [-.55, -.25, .18, -1.85, 1.1] },
+      think:    { 1: [-.55, .3, -.25, -2.45, -.45], [-1]: [-.4, -.2, .2, -1.55, .95], nod: .1, tilt: -.08 },
+      facepalm: { 1: [-.95, .3, -.32, -2.5, -.35], nod: .32 },
+      hips:     { 1: [.15, 0, .75, -1.35, -1.25], [-1]: [.15, 0, -.75, -1.35, 1.25] },
+      tada:     { 1: [-.7, 0, 1.0, -.25, 0], [-1]: [-.7, 0, -1.0, -.25, 0] },
+    };
+    ch.gestures = Object.keys(G);
     ch.pose = function (p = {}) {
       const ph = (p.walk || 0) * TAU, a = p.walkAmt || 0, sw = Math.sin(ph), t = p.t || 0;
+      const g = G[p.gesture] || null, gw = g ? (p.gw === undefined ? 1 : p.gw) : 0, mix = (x, y) => y === null || y === undefined ? x : x + (y - x) * gw;
       for (const s of [-1, 1]) {
         const L = ch.leg[s], legPh = s === -1 ? sw : -sw;
         L.hip.rotation.x = -legPh * .5 * a;
@@ -179,15 +194,16 @@
         L.knee.rotation.x = (swing * .85 + .08) * a;
         L.ankle.rotation.x = -(L.hip.rotation.x + L.knee.rotation.x) * .55;
         const A = ch.arm[s], ar = (s === 1 ? p.armR : p.armL) || {}, rz = ar.raise || 0;
-        A.sh.rotation.x = legPh * .42 * a - rz * .5 + (ar.fwd || 0);
-        A.sh.rotation.z = s * (.1 + rz * 1.15);
-        A.el.rotation.x = -(.22 + .18 * a) - rz * 1.9;
-        A.el.rotation.z = -s * rz * .3;
+        let sx = legPh * .42 * a - rz * .5 + (ar.fwd || 0), sy = 0, sz = s * (.1 + rz * 1.15), ex = -(.22 + .18 * a) - rz * 1.9, ez = -s * rz * .3;
+        const tg = g && g[s];
+        if (tg) { sx = mix(sx, tg[0]); sy = mix(sy, tg[1]); sz = mix(sz, tg[2]); ex = mix(ex, tg[3] === null ? -.35 - .55 * (.5 + .5 * Math.sin(t * 11)) : tg[3]); ez = mix(ez, tg[4]); }
+        A.sh.rotation.set(sx, sy, sz); A.el.rotation.set(ex, 0, ez);
+        A.sh.position.y = B.th * .84 + (g && g.up ? g.up * gw : 0);
       }
       hips.position.y = hipY - .02 * a + .035 * a * Math.abs(Math.cos(ph)) + Math.sin(t * 2.1) * .004;
       spine.rotation.y = sw * .07 * a; spine.rotation.x = (p.lean || 0) + .03 * a;
-      neck.rotation.y = -sw * .05 * a + (p.look || 0); neck.rotation.x = (p.nod || 0) + Math.sin(t * 2.1 + 1) * .01;
-      neck.rotation.z = (p.tilt || 0);
+      neck.rotation.y = -sw * .05 * a + (p.look || 0); neck.rotation.x = (p.nod || 0) + (g && g.nod ? g.nod * gw : 0) + Math.sin(t * 2.1 + 1) * .01;
+      neck.rotation.z = (p.tilt || 0) + (g && g.tilt ? g.tilt * gw : 0);
     };
     ch.pose({});
     return ch;

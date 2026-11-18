@@ -81,33 +81,38 @@ A gas pump display panel in the same storybook style with the exact text "$40.00
 
 ---
 
-## Shot plan (how the images get used; each line ≈ 2–3 s)
+## Shot plan (picture · camera · acting; each row ≈ 2–4 s)
 
-| Cue | Picture | Characters / motion |
-|---|---|---|
-| q | 1 gas station; slow push-in to the rainbow puddle | Doug stares at the puddle, head tilted |
-| plan | 1, closer | Doug turns to camera, smirk, walks off |
-| logic | 2 street wide | Doug at his driveway, raises one finger per "liquid" |
-| hose | 3 driveway | Doug proudly points at the hose |
-| fill | 3, push-in on the fuel door | Doug waits, arms crossed; the hose wobbles |
-| start | 2 street + 8 car | Car rolls out, tailpipe puffs (clue) |
-| wave | 2 + 8, car crosses frame | Doug's arm waving through the window; Gary on the porch |
-| bet | 4 porch | Gary watching, arms crossed |
-| block | 5 intersection + 8 | Car drives in; puffs shrinking (clue the viewer sees first) |
-| gary | 4 porch, push-in | Gary leans forward, squints |
-| small/stop | 5 + 8 | The last puff, the car stops dead mid-intersection; hold |
-| reveal | 4 porch | Gary's face: smirk; slow push-in |
-| drop | 6 cutaway + 10 drop | The drop travels up into the engine |
-| mist | 6 + mist particles | The drop bursts into mist and air swirls in |
-| squeeze | 6 + 11 piston | The piston rises, squeezing a glow |
-| spark/boom | 6 + 13 explosion | Flash, screen shake, red BOOM caption |
-| crank | 6 + 11 + 12 | The piston shoves down, the crank spins, cut to wheels turning |
-| rate | 6, fast loop | Firing loop speeds up to a blur |
-| puffs | 5 + 8 | Tailpipe puffs in slow motion |
-| water | 6 tank view (blue water sinks) | Gary, arms crossed |
-| lines | 5 + 8 | The stalled car, tiny last puff |
-| heat | 6 cutaway glowing red-hot | — |
-| heater | 14 space heater rolls across 2 street | Doug stands next to it, shrugging |
-| saved | 16 pump display $40 | Doug thumbs-up |
-| tow | 5 + 9 tow truck, then 7 garage + 15 bucket | Tow driver (polo) hooks the car; in the garage the same guy pours out the bucket, a goldfish looks up |
-| end | 4 porch | Gary pulls his hose reel inside; Doug, worried, in the foreground. Hold. |
+Faces: smile, happy, surprised, smirk, worried, flat, blink · Gestures: point, wave, shrug, cross,
+think, facepalm, hips, tada (see PLAYBOOK §2). Camera on paintings: zoom/pan only, hard cuts on cue words.
+
+| Cue | Picture | Camera | Acting (face · pose · gesture) |
+|---|---|---|---|
+| q | 1 gas station | low wide, slow push-in 1.0→1.12 toward the rainbow puddle | Doug `flat`, `tilt` .15, staring down at the puddle; blink on "two-ton" |
+| plan | 1 | cut closer (zoom 1.3) | Doug turns to camera, `smirk`, `hips` |
+| logic | 2 street wide | low wide, gentle pan right | Doug at the driveway, `think` → `point` up on each "liquid" (2 beats) |
+| hose | 3 driveway | cut, medium | Doug `happy`, `tada` toward the hose |
+| fill | 3 | slow push-in on the fuel door | Doug `smile`, `cross`, tapping foot (small bob); blink |
+| start | 2 + 8 car | cut wide; the car rolls out of the driveway; tailpipe puffs **big** (clue) | Doug's head in the window, `happy` |
+| wave | 2 + 8 | pan with the car | Doug's arm out the window, `wave`; Gary small on the porch, `flat` |
+| bet | 4 porch | cut medium, static | Gary `flat`, `cross`; narrator's bet |
+| block | 5 intersection + 8 | low wide; the car drives in, **puffs visibly shrinking** (the viewer sees it first) | Doug `smile` |
+| gary | 4 porch | slow push-in 1.0→1.14 on Gary | Gary `lean` .1 forward, `look` toward the street, `tilt` |
+| small | 5 + 8 | cut, tighter on the tailpipe | tiny puffs |
+| stop | 5 + 8 | hold wide; the last puff; the car stops dead mid-intersection; **hold 1.2 s** | Doug `blink` → `worried` |
+| reveal | 4 porch | hard cut to Gary, push-in | Gary `smirk`, then `point` toward the street |
+| drop | 6 cutaway + 10 drop | the camera follows the drop (pan up) | none; the drop travels up the fuel line |
+| mist | 6 + mist particles | slow push-in on the chamber | the drop bursts into mist; air swirls in |
+| squeeze | 6 + 11 piston | static | the piston rises, the chamber glows brighter |
+| spark | 6 | static | a spark plug flicker |
+| boom | 6 + 13 explosion | **flash + 3-frame shake**, red BOOM caption | none |
+| crank | 6 + 11 + 12 | pull back 1.12→1.0 to reveal the crank | the piston shoves down, the crank spins (3 beats on the 3 sentences) |
+| rate | 6 | static | the firing loop speeds up to a blur |
+| puffs | 5 + 8 (flashback) | cut, slow push-in on the tailpipe | puffs in slow motion |
+| water | 6, tank view: blue water sinks to the pump pickup | static | none |
+| lines | 5 + 8 | wide, static | Doug in the car, `worried` |
+| heat | 6, cutaway glowing red-hot | slow push-in | none |
+| heater | 2 street + 14 space heater rolling across | static wide | Doug next to it, `shrug`, `flat` |
+| saved | 16 $40 pump display | insert, quick push-in | Doug `happy`, `armR` raise (fist pump) |
+| tow | 5 + 9 tow truck → 7 garage + 15 fish bucket | cut, cut | the polo guy hooks the car, `flat`; in the garage the same guy pours out the bucket, the goldfish looks up; Doug `facepalm` |
+| end | 4 porch | over-the-shoulder: Doug foreground, Gary on the porch; slow push-in; **hold 1.5 s, hard stop** | Gary `smirk`, `cross`, pulls the hose reel inside; Doug `worried` |

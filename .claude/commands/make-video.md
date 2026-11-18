@@ -1,22 +1,22 @@
 ---
-description: Research, script, voice, build and render a full teaching video for a topic
-argument-hint: <topic, e.g. "how credit card companies make money">
+description: Research, script, shot list, voice, build and render a full story-driven explainer video for any topic
+argument-hint: <topic, e.g. "why airlines overbook flights">
 ---
-Make a teaching video about: **$ARGUMENTS**
+Make a video about: **$ARGUMENTS**
 
-Follow CLAUDE.md exactly. Steps:
+Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/why-cars-need-gas/`.
 
-1. Pick a short slug (lowercase-with-dashes). Copy `videos/_template/` to `videos/<slug>/`.
-2. Research with web search. Collect at least 3 solid sources. Write `videos/<slug>/sources.md`.
-3. Write `videos/<slug>/script.txt` with the script formula and markup (cues before every visual change).
-   Aim for 150–175 spoken words. Then STOP and show me:
-   - the hook line,
-   - the full spoken script (plain text),
-   - a one-line plan for what's on screen in each part.
-   Wait for my "approved" (or edits) before continuing.
-4. Voice: if ELEVENLABS_API_KEY is set, run `node tools/tts.js <slug>`. If not, give me the plain spoken
-   text in a code block to paste into OpenArt, wait for me to add `voice.mp3`, then run `node tools/align.js <slug>`.
-5. Build `scene.js` (use buy-borrow-die as the reference for quality and structure). One set per idea.
-6. `node tools/render.js <slug> --preview`, Read `preview.jpg`, fix problems, repeat until every frame is clean.
-   Send me the preview image.
-7. `node tools/render.js <slug>` for the final video. Commit and push. Tell me the file path.
+1. Write the **payoff** (one sentence the viewer will discover) and pick the question word that it answers.
+   Pick a short slug and create `videos/<slug>/`.
+2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
+3. Write `videos/<slug>/script.txt` (PLAYBOOK §1, short form 290–310 words, cues before every picture change).
+   STOP and show me: the narration in one copyable block, then voice direction, the fact list with sources,
+   and the clean-opening option. Wait for "approved" (or edits).
+4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop
+   prompts, and the shot plan table (picture · camera · face/pose/gesture per cue). Tell me how many images.
+5. Voice: if ELEVENLABS_API_KEY is set run `node tools/tts.js <slug>`; otherwise give me the spoken text,
+   wait for `voice.mp3`, then run `node tools/align.js <slug>`.
+6. When the art is in `videos/<slug>/art/`: build the scene (plates matched per painting, cast, acting,
+   camera moves and hard cuts per the shot plan).
+7. Render preview stills, Read them, fix problems, repeat until clean. Send me the preview.
+8. Render the final 30 fps video with voice. Commit and push. Tell me the file path.

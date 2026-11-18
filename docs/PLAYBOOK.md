@@ -1,0 +1,330 @@
+# The Playbook: how we make every video
+
+One format, any topic. **One narrator's voice. A flat illustrated 2D world. Silent 3D sphere-head
+characters. Camera that never sits still. Captions one word at a time.** Short form ≈ 1:30, long
+form ≈ 8:00.
+
+What it's built from:
+- **Story:** the Coon Knows storytelling guide ("write the question from the answer").
+- **Pacing and line craft:** our study of @RicksClips3000's 20 most recent Shorts (`docs/ricksclips/study.md`).
+- **Look:** your ChatGPT paintings (`docs/prompt-pack.md`) plus the 3D cast in `engine/characters.js`.
+- **Camera and compositing:** the plate lab (`engine/lab/plate-lab.html`).
+- **Worked example:** `videos/why-cars-need-gas/`.
+
+---
+
+## 0. The whole pipeline on one screen
+
+| # | Step | Who | Output |
+|---|---|---|---|
+| 1 | Pick the topic, find the **payoff** | Claude (Brian approves topic) | one sentence: what the viewer will discover |
+| 2 | Research, every claim sourced | Claude | `videos/<slug>/sources.md` |
+| 3 | Script (section 1) | Claude → **Brian approves** | `script.txt` + narration in one copyable block |
+| 4 | Shot list + image prompts (section 4) | Claude | `shotlist.md` |
+| 5 | Paint the worlds and props in ChatGPT | Brian | 12–18 backgrounds + 5–10 props → `videos/<slug>/art/` |
+| 6 | Voiceover (ElevenLabs/OpenArt, or `tools/tts.js` with a key) | Brian / Claude | `voice.mp3` → `node tools/align.js <slug>` |
+| 7 | Build the scene: plates, cast, acting, camera (sections 2–3) | Claude | `scene.js` |
+| 8 | Preview stills, fix, repeat | Claude | `preview.jpg`, sent to Brian |
+| 9 | Render 30 fps, voice mixed | Claude | `final.mp4`, committed, path sent |
+
+Images (5) and voice (6) can happen at the same time, right after the script is approved.
+
+---
+
+## 1. Story: write the question from the answer
+
+### 1.1 Payoff first, then the first word
+Write down what the viewer will discover. Then pick the question word that the ending actually answers:
+
+| The payoff is a… | Open with | Example |
+|---|---|---|
+| reason or motive | **Why the f\*ck** | Why the f\*ck do pilots dump fuel before landing? |
+| identity | **Who the f\*ck** | Who the f\*ck opened the door? (answer: the guard) |
+| decisive moment | **When the f\*ck** | When the f\*ck did the Titanic actually become unsinkable? |
+| object or event | **What the f\*ck** | What the f\*ck is the white stuff in a bird's poop? |
+| process or sequence | **How the f\*ck** | How the f\*ck does a puddle of gasoline move a two-ton car? |
+
+- **Show the subject during the question** (the puddle, the door, the plane).
+- **Start the action in sentence two:** "Doug decided to find out by never buying it again."
+- *Clean version:* "How the heck / How on earth." Captions display "f\*ck" either way. Note that
+  YouTube may limit ads on strong profanity in the opening seconds. Choose per platform.
+
+### 1.2 Build the middle around a choice and its result
+1. Give someone a **goal** and a **reason to expect their plan to work** (Doug: "gas is a liquid,
+   water is a liquid").
+2. **Show the choice** (the hose into the tank).
+3. **Stay with the apparent success** long enough to believe it ("The car *started*").
+4. Let **another person notice a detail we already saw** (Gary watches the tailpipe puffs shrink).
+5. **Follow the consequence back to someone we know** (Doug pays for the tow).
+
+**Adapt the shape to the material:**
+| Material | Shape |
+|---|---|
+| A repeated scheme | Show the first attempt, then jump to the observer who recognizes the pattern |
+| A known disaster | Rewind to the early success that encouraged the next decision |
+| A disputed account | Attribute the claim right away, then follow the evidence |
+| A mechanism | **Track one object** until its motion reveals the hidden cause (one drop of gas) |
+
+### 1.3 The narrator changes their mind in our company
+- Speak to **one friend**. Use "I'd have…", "Honestly?".
+- **Place your bet early** ("I'd have put five bucks on Doug"), and know which detail will make you
+  regret it.
+- **Stay with the person who still believes it for one more beat.**
+- When a new name or term raises a real question, **ask it when the listener would** ("Wait,
+  practiced?"), then answer it.
+- **Give a costly consequence room to land.** Don't rush the last line.
+
+### 1.4 Line craft (from the RicksClips study)
+- **Concrete, oddly specific numbers** (82 holes, every 39 feet, 15 times its weight in air).
+  Precision makes a strange act sound deliberate.
+- **A skeptic voices the viewer's doubt as a joke.** Our characters are silent, so the narrator
+  says it for them ("His commander basically asked if they were fighting or grating cheese").
+- **A comic simile or exaggeration about every 10 seconds** ("a space heater that occasionally goes
+  places", "a fish tank with seatbelts").
+- **An everyday analogy for the science:** blowing on soup, catching a falling phone. Point at
+  something the viewer has already felt.
+- **Time markers move the story:** "Next morning…", "By July…", "One block later…". Each marker
+  is a new shot.
+- **Archetypes over names.** "His neighbor" or "the banker" need no setup. Use a first name only for
+  the 1–2 people we follow (Doug, Gary).
+- **Hold back the explanation until about 60–75% of the runtime.** The question opens at second 0
+  and the answer arrives around second 55–65 of 90.
+- **End on the payoff image and a dry final line.** No "follow for more". Hard stop.
+
+### 1.5 Format and length
+| Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
+|---|---|---|---|
+| **Short** | ~1:30 | **290–310** | One chain of events. The first explanation earns trust, a clue changes it, stay for the consequence |
+| **Long** | ~8:00 | ~1,500–1,650 | One central question across several scenes, each with a decision, discovery or setback. Bring back an early detail once the viewer can finally read it |
+
+Time the read aloud. Leave about 0.5 s after each reveal line.
+
+### 1.6 Script rules
+- Every sentence must be **picturable**: a person does something, or an object moves.
+- Short sentences. No filler ("so basically", "in today's video").
+- **Verify every factual claim** in `sources.md`. **Label invented characters and reconstructions**
+  in the sources file. The story can be fictional; the mechanism must be real.
+- No personalized financial, legal or medical advice. Explain how things work.
+- Deliver the narration in **one clean copyable block**, with timing, direction and sources outside it.
+
+### 1.7 Turning ANY topic into a story (the recipe)
+1. **What's the surprising true answer?** That's the payoff.
+2. **Who would get it wrong?** Invent a confident fool, or find a real person who did (Doug).
+3. **What do they try, and why do they think it'll work?** That's the choice.
+4. **What detail exposes it, and who notices?** That's the clue and the observer (Gary, the tailpipe).
+5. **What's the one object we can track to show the mechanism?** (one drop, one coin, one email.)
+6. **What does it cost them?** That's the consequence, then a dry last line.
+
+### 1.8 Script markup (`script.txt`)
+`*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before
+every picture change · `#` comment lines. Write numbers as words in the spoken part.
+
+---
+
+## 2. The cast: silent 3D characters
+
+**Look:** glossy white sphere head with a drawn face, a black stick neck, white cartoon gloves, real
+clothes. Built in code (`engine/characters.js`). No model files, renders exactly the same every time.
+
+| Character | Outfit (`CHAR.make({outfit})`) | Typical role |
+|---|---|---|
+| **Doug** | `hoodie`: mustard hoodie, jeans, white sneakers | the confident everyman who gets it wrong |
+| **Gary** | `oxford`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
+| **Victor** | `suit`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
+| **Polo guy** | `polo`: olive polo, khakis, gray sneakers, watch | the worker: tow driver, cashier, guard, mechanic |
+
+Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
+topic needs one (chef, pilot, doctor…).
+
+### 2.1 Acting rules (they never talk)
+- **Mouths stay still.** No lip-sync, ever. The narrator alone speaks.
+- They act through **gaze, posture, hands and timing**.
+- **Reaction beat:** look → 0.3 s hold → face change → gesture. Never all at once.
+- **Blink** every 3–5 s, plus on emotional beats (0.12 s `blink` face).
+- **Hold reveals 1–1.5 s.** Let the viewer recognize the earlier clue in its new context.
+- **The one who realizes last** gets the close-up.
+
+### 2.2 The acting toolkit (what the engine can do today)
+**Faces** (`ch.face(name)`, swapped on the exact word):
+| Face | Use for |
+|---|---|
+| `smile` | default, confidence, small wins |
+| `happy` | big win, celebration (eyes closed, open grin) |
+| `surprised` | the reveal hits, "wait, what?" |
+| `smirk` | knowing, scheming, "I told you so" |
+| `worried` | doubt, the plan is failing |
+| `flat` | deadpan, unimpressed |
+| `blink` | blink frame, plus comic timing after a dumb idea |
+
+**Body** (`ch.pose({...})`, every value a pure function of time):
+| Control | What it does |
+|---|---|
+| `walk`, `walkAmt` | walk cycle phase (cycles) + strength 0..1. Ease `walkAmt` to stop naturally |
+| `look`, `nod`, `tilt` | head turn, nod, tilt (radians). Gaze is the strongest acting tool |
+| `lean` | lean forward (interest) or back (shock) |
+| `armR / armL: {raise}` | raise an arm, e.g. a fist pump |
+| `gesture` + `gw` | blend in a gesture (0→1 over ~0.3 s) |
+
+**Gestures:** `point` · `wave` (animated) · `shrug` · `cross` (arms crossed: skeptic) · `think`
+(hand to chin) · `facepalm` · `hips` (hands on hips: impatient, proud) · `tada` (arms out: "behold").
+
+**Recipes:**
+| Beat | Acting |
+|---|---|
+| Confident plan | `smile` + `hips`, small nod |
+| Bragging | `happy` + `wave` or `tada` |
+| Skeptic watching | `flat` → `smirk`, `cross` |
+| Realizing something | `look` toward the clue, hold, `surprised`, `lean` back |
+| Plan failing | `worried`, `facepalm` |
+| Explaining / pointing at the clue | `point` toward the object, `smirk` |
+| "Who, me?" | `shrug` + `flat` |
+
+---
+
+## 3. Camera and editing grammar
+
+The rule: **something changes every 2–3 seconds** (a cut, a camera move, a gesture, an object
+arriving). The first frame is already moving. **No fade-ins.**
+
+### 3.1 Shot types
+| Shot | How | When |
+|---|---|---|
+| **Establishing wide, low** | camera at about knee height, horizon around 42%, slow push-in | a new place, the opening question |
+| **Tracking walk-in** | character walks toward the camera while it pulls back slightly, then stops | introducing a character or plan |
+| **Push-in on reaction** | slow zoom (1.0 → 1.12 over 2–4 s) onto a face | realization, doubt, the clue |
+| **Hard cut to close-up** | instant cut on the reveal word | the reveal, the smirk, the punchline |
+| **Over-the-shoulder two-shot** | a foreground head or shoulder at the frame edge, the other character facing camera | confrontations, the observer |
+| **Insert / prop** | a prop fills the frame (gauge, receipt, $40 pump) | numbers, evidence |
+| **Diagram plate** | a cutaway or diagram plate with props animating on it | the mechanism (tracking one object) |
+
+### 3.2 Moves on painted plates
+- **Zoom (push-in or pull-back) and pan only.** These keep the 3D characters' feet planted on the
+  painting, because the engine crops the plate and the 3D view together.
+- **No dolly through a painting.** Real camera travel only happens in full-3D scenes.
+- Push-ins: ease in and out, 2–4 s, about 6–14% zoom. Pans: small, eased, to follow action or reveal a clue.
+- **Cut, don't dissolve.** Cut on the beat word. A flash plus shake (2–4 frames) sells a BOOM.
+
+### 3.3 Lighting the cast to the painting
+Every plate gets a preset: horizon height, eye height, field of view, and **light direction and color
+matched to the painting**:
+- **Day / golden hour:** warm key from the painted sun side, lavender sky fill, warm bounce,
+  shadows tinted purple.
+- **Night:** cool moon key, warm point lights at the painted lamps, blue fill.
+- **Interior:** key from the painted window or door.
+
+Characters always get a soft front fill so faces read, plus contact shadows on the painted ground.
+
+### 3.4 Captions
+One word at a time, white heavy sans with a thick black outline, centered at about y 1270 of 1920.
+Gold = key term or win, red = loss or danger. Nothing else ever sits in the caption band. Keep
+faces and props out of the top 140 px and the bottom 380 px (app UI).
+
+---
+
+## 4. The world: 2D paintings from ChatGPT
+
+Full prompt pack: `docs/prompt-pack.md`. The essentials:
+
+**The rules** for every image:
+- Portrait 2:3 (1024×1536).
+- **No people.**
+- A clear, flat floor in the lower-middle where characters can stand.
+- State the light direction.
+- Horizon about 45% from the top for wide shots.
+- No text unless the exact words are given.
+- Props on solid **#00FF00** green.
+
+**Style bible.** Paste this first in a fresh ChatGPT chat for each video, then make every image in that chat:
+```
+You are the background artist for a vertical animated explainer series. For every image I ask for, follow this style bible exactly:
+
+STYLE: flat 2D storybook illustration for a modern animated show. Clean, simple shapes with soft painterly gradients, subtle paper grain, bold readable silhouettes, slightly exaggerated cartoon proportions (chunky buildings, rounded trees, oversized props). No outlines on the background, or very thin darker outlines only.
+COLOR & LIGHT: rich, saturated but harmonious colors. Always a clear light direction: warm light on lit sides, cool blue or purple in shadows. Gentle atmospheric haze that makes distant things lighter and bluer. Dark scenes are deep blue, never pure black.
+COMPOSITION: portrait 2:3. Leave the lower-middle of the frame as an open, flat floor or ground where characters can stand. Keep the top 10% simple (sky, ceiling). Strong depth: something in the foreground, the main subject in the middle, a background far away.
+STRICT: no people, no characters, no animals unless asked, no faces, no hands. No text, letters or logos unless I specify exact words.
+Reply only with the image.
+```
+
+**Per short video:** about 5–7 locations × 1–3 angles (≈ 7–12 backgrounds), plus 1 diagram plate
+for the mechanism, plus 6–10 props. Templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
+TABLETOP · DIAGRAM/CUTAWAY · PROP · PROP WITH EXACT TEXT · FOREGROUND LAYER · CHANGE THE MOOD
+(night, storm, abandoned).
+
+**Tricks that worked:**
+- **Vehicles as props with empty, green window openings**, so the 3D character's head shows through.
+- **Paint a big object into the plate** when characters interact with it (the car and hose in the
+  driveway). Use a cut-out prop when it has to move.
+- **Diagram plates leave the moving parts out** (an empty cylinder). The parts come as props and the engine animates them.
+- **The same chat, "same image but at night"** gives a mood change with the exact same layout.
+
+File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<slug>/art/`.
+
+---
+
+## 5. Shot list format (what Claude hands Brian per video)
+
+`videos/<slug>/shotlist.md` contains:
+1. **Cast** for this video (from section 2).
+2. **Background prompts**, numbered and named, ready to paste.
+3. **Prop prompts** on green.
+4. **Shot plan table**, one row per cue:
+
+| Cue | Picture (plate + props) | Camera | Characters (face · pose · gesture) |
+|---|---|---|---|
+| q | gas station wide | low, slow push-in to the puddle | Doug `flat`, `tilt` .15, staring at the puddle |
+
+---
+
+## 6. Quality checklists
+
+**Script**
+- [ ] Payoff written first; the question word matches it
+- [ ] Subject on screen during the question; action starts in sentence two
+- [ ] A choice, apparent success, a clue seen before it's explained, an observer, a consequence
+- [ ] The narrator bets early and changes their mind
+- [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
+- [ ] 290–310 words (short); every claim sourced; fiction labeled
+- [ ] Dry last line, hard stop
+
+**Images**
+- [ ] All from one ChatGPT chat with the style bible; portrait; no people
+- [ ] Open floor where characters stand; light direction consistent per location
+- [ ] Props on clean green; exact text only where requested
+
+**Preview (before the full render)**
+- [ ] Feet on the ground, shadows matching the painting's direction
+- [ ] Faces readable (front fill), the caption band clear, nothing in the top 140 / bottom 380 px
+- [ ] Something changes every 2–3 s; reveals held 1–1.5 s
+- [ ] The clue is visible before the narrator mentions it
+
+---
+
+## 7. Topic bank (any subject works; pick ones with a hidden mechanism or a twist)
+
+| Topic | Question | Shape | Who gets it wrong / who notices |
+|---|---|---|---|
+| Why a car needs gas ✅ example | How the f\*ck does a puddle of gas move a two-ton car? | mechanism | Doug fills up with water / Gary watches the tailpipe |
+| Why planes dump fuel | Why the f\*ck would a pilot pour fuel into the sky? | mechanism | Passenger panics at the "leak" / pilot knows the landing-weight limit |
+| How credit card points are paid for | Who the f\*ck pays for your free flight? | repeated scheme | Doug brags about free trips / a cashier notices the price |
+| Why casinos have no clocks | What the f\*ck happened to the time? | mechanism | Doug "just one more hand" / the waitress who's seen it a thousand times |
+| How a microwave heats food | How the f\*ck does a box with no fire cook a burrito? | mechanism | Doug thinks it heats from the outside / track one water molecule |
+| Why airlines overbook | Why the f\*ck would they sell 110 seats for 100? | repeated scheme | the gate agent sees the same no-shows every week |
+| The Titanic's "unsinkable" claim | When the f\*ck did "unsinkable" become a problem? | known disaster | rewind to the confident early voyage |
+| How vaccines train the immune system | How the f\*ck does a fake intruder protect you? | mechanism | track one "wanted poster" through the body |
+
+---
+
+## 8. Engine reference (for Claude)
+
+- `engine/characters.js`: `CHAR.make({outfit, envMap})` → `ch.root`, `ch.face(name)`, `ch.pose({...})`.
+- `engine/lab/plate-lab.html`: plate compositing.
+  - `usePlate(name, zoom, panX, panY)` matches the 3D camera to a painting through `setViewOffset`.
+  - Plate presets hold `hz` (horizon fraction), `vx` (vanishing x), `fov0`, `camH`, and a light preset.
+  - Uses a shadow catcher plus blob shadows.
+  - Colors must be converted sRGB → linear.
+- `node engine/lab/render-lab.js <out> --page plate-lab.html [--clip]`: stills or a 30 fps test clip.
+- Chromium needs `--allow-file-access-from-files` to load plates.
+- **Status:** the plate and cast system lives in the lab pages. The production pipeline
+  (`kit.js`/`stage.html`/`render.js`) still drives the old gold-noir look. Wiring plates, cast and
+  gestures into `scene.js` + `render.js` is the next build step, done with the first real video
+  (`why-cars-need-gas`).

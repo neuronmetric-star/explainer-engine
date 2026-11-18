@@ -90,7 +90,9 @@ const SHOTS = [
   () => { usePlate('bank'); place(cast.suit, 0, 1.45, -12, 0); cast.suit.face('smirk'); cast.suit.pose({ t: 5 });
           place(cast.hoodie, -.95, 0, -6.2, 1.25); cast.hoodie.face('surprised'); cast.hoodie.pose({ t: 6, look: .45, nod: -.14 }); draw('borrowed'); },
 ];
-window.SHOT_COUNT = SHOTS.length; window.renderShot = i => { SHOTS[i](); return true; };
+window.SHOT_COUNT = SHOTS.length;
+window.renderGesture = (name, face) => { usePlate('bank', 1.25, -.2, .35); hide(cast.suit); place(cast.hoodie, 0, 0, -6.2, .15);
+  cast.hoodie.face(face || 'smile'); cast.hoodie.pose({ t: 2, gesture: name }); draw(name); return true; }; window.renderShot = i => { SHOTS[i](); return true; };
 
 // ---------- motion test: walk in, notice, react, hard cut ----------
 const E = x => { x = Math.max(0, Math.min(1, x)); return x * x * (3 - 2 * x); };
