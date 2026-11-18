@@ -49,6 +49,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - Subject on screen during the question. Action starts in sentence two.
 - Middle = a choice with a reason to expect success → apparent success → someone notices a detail we
   already saw → consequence back to someone we know. For mechanisms, track one object.
+- **Zero-knowledge viewer** (PLAYBOOK §1.6a): assume they've never heard of the topic. Set up what the thing is
+  before the twist; explain every term, name and number in plain words the first time; no skipped steps.
 - Narrator bets early, changes their mind with us, voices the listener's question when it arises.
 - Specific numbers, a joke/simile ~every 10 s, everyday analogy for the science, explanation held to
   ~60–75%, dry last line, then the **follow CTA** (PLAYBOOK §1.12, rotate A–E, default C: "Still here? Then that means you enjoyed the video. So follow and like for more.") No filler. Every sentence picturable.

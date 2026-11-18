@@ -110,6 +110,23 @@ Time the read aloud. Leave about 0.5 s after each reveal line.
 - No personalized financial, legal or medical advice. Explain how things work.
 - Deliver the narration in **one clean copyable block**, with timing, direction and sources outside it.
 
+### 1.6a The viewer knows nothing (zero-knowledge rule)
+Write for someone who has **never heard of the topic**: smart, but no background. If they'd have to Google
+something to follow the next line, the script is broken.
+- **Set the ground before the twist.** One plain sentence on what the thing is and how it normally looks or works,
+  before we surprise them. ("When you open Netflix, every movie is a little picture called a thumbnail.")
+- **Define every term the first time, in the same breath**, with everyday words, and show it on screen.
+  No jargon left alone: "algorithm" → "a program that guesses what you'll click". Prefer the everyday word outright.
+- **Introduce every name**: people, films, companies, places. "Robin Williams, the comedy legend",
+  "Good Will Hunting, a 1997 movie about a janitor who's a math genius". Never assume they know who or what it is.
+- **Numbers get a yardstick.** "$1 billion a year: about $1,900 every single minute." "60–90 seconds: less time than microwaving popcorn."
+- **No skipped steps in a mechanism.** If step B needs A, say A. Track one object through every step.
+- **One new idea per sentence.** Don't stack two unknowns in one line.
+- **Test before showing Brian:** read each line as a 12-year-old who's never seen the thing. Any "wait, what's that?"
+  → add a few words or a picture. Simplify; never dumb it down or talk down (the narrator's sarcasm targets the
+  characters, never the viewer).
+- Budget: about **10–15% of the words** go to setup and definitions (≈ 30–45 words in a short, ~150–200 in long form).
+
 ### 1.7 Turning ANY topic into a story (the recipe)
 1. **What's the surprising true answer?** That's the payoff.
 2. **Who would get it wrong?** Invent a confident fool, or find a real person who did (Doug).
@@ -162,7 +179,7 @@ Everything from §1.9–1.10 applies. Just fewer beats:
 | Time (of ~1:30) | Beat (long-form equivalent) |
 |---|---|
 | 0:00–0:03 | **Coon question + cold-open line** ("What the f\*ck…? See, Doug had a problem.") |
-| 0:03–0:10 | **Character card in one sentence** (name + the trait that causes everything) |
+| 0:03–0:10 | **Character card in one sentence** (name + the trait that causes everything) + **one plain line of ground** so a newcomer knows what the thing is (§1.6a) |
 | 0:10–0:35 | **"So one day…" + the plan in 2–3 steps** (track the object) |
 | 0:35–0:50 | **Apparent success + one number**, and the narrator's bet ("Honestly? I'd have bet on Doug.") |
 | 0:50–1:00 | **The observer notices the clue** (planted earlier, visible before it's explained) |
@@ -389,6 +406,7 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] Subject on screen during the question; action starts in sentence two
 - [ ] A choice, apparent success, a clue seen before it's explained, an observer, a consequence
 - [ ] The narrator bets early and changes their mind
+- [ ] Zero-knowledge pass (§1.6a): the basics set up first; every term, name and number explained in plain words
 - [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
 - [ ] 290–310 words (short); every claim sourced; fiction labeled
 - [ ] Dry last line, then the follow CTA
