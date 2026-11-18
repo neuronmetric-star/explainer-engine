@@ -94,7 +94,7 @@
         case 'hose': K.place('doug', -.6, 0, -5.6, .7); face(D, 'happy', t); D.pose({ t, gesture: 'tada', gw: K.ease(L / .4), look: .4 }); break;
         case 'start': { // drive across the street, big puffs, wave once rolling
           const u = (t - at('start')) / (at('bet') - at('start'));
-          carDoug(K, t, -6 + 9 * K.ease(u), -11, 1, { wave: t > at('wave'), face: 'happy' }); break; }
+          carDoug(K, t, -3.6 + 7 * K.ease(u), -11, 1, { wave: t > at('wave'), face: 'happy' }); break; }
         case 'small': { // into the intersection, puffs shrinking, stops on "stall"
           const stopT = at('stall'), u = K.clamp01((t - at('small')) / (stopT - at('small')));
           const x = -9 + 9 * (1 - Math.pow(1 - u, 2)), puff = t < at('until') ? 1 - .7 * K.clamp01((t - at('small')) / (at('until') - at('small'))) : .3 * (1 - K.clamp01((t - at('until')) / 2.5));
@@ -102,7 +102,7 @@
         case 'aside': case 'piston': { engine(K, t); break; }
         case 'callback': drip(K, t, 641, 700, 70, 26, 1.1); break;
         case 'ash': { // Doug tries to light the ashes
-          K.place('doug', .9, 0, -7, -.5); face(D, L > 6 ? 'worried' : 'smile', t);
+          K.place('doug', .25, 0, -6.6, -.5); face(D, L > 6 ? 'worried' : 'smile', t);
           D.pose({ t, armR: { raise: .25, fwd: -.9 }, look: -.2, nod: -.15 });
           const h = K.screenOf(D.arm[1].wr), drop = K.clamp01((L - 7) / .6);
           K.prop('P12', { x: h.x + 10, y: h.y - 40 + drop * 260, w: 120, rot: .3 + drop * 1.8 + Math.sin(L * 5) * .05, a: 1 - drop * .6 }); break; }
