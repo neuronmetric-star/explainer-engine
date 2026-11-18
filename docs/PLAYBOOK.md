@@ -179,15 +179,25 @@ Shots: ≈ 30–35 cuts, 7–12 backgrounds, 6–10 props (one ChatGPT batch fil
 A long-form story can also be **cut down into a short** that ends on its first "until" or its reveal.
 
 ### 1.12 The follow CTA (every video, short and long)
-After the last story line, a short beat (about 0.4 s), then the narrator says it in the same voice:
-> **"If you enjoyed this, follow. The algorithm is crazy, you might never see me again. So follow if you want more facts."**
+**The psychology:** "I showed you something and gave you value, so give me a follow." It's reciprocity,
+plus the viewer's own behavior ("you're still here, so you liked it"). After the last story line, a short
+beat (about 0.4 s), then the narrator says it in the same voice, about 20–25 words, ≈ 6–8 s, on top of the
+story's word count.
 
-- Small wording variations are fine ("If you enjoyed this one…"). Keep the idea: **the algorithm is
-  crazy, you might never see me again, follow for more facts.** About 22 words, ≈ 6–7 s. It's on top of the
-  story's word count.
-- **Picture:** hold the final story image, then the **+ FOLLOW** button pops in, a cursor taps it, and it
-  becomes **✓ FOLLOWING**. A cast member reacts: Doug `point`s at the button, Gary `cross` + `smirk`.
-- Captions keep running one word at a time. "follow" is gold.
+**Rotate these so viewers don't hear the same ask every time** (default: C):
+| | Line | Lever |
+|---|---|---|
+| **C (default)** | "Still here? Then you liked it. Don't lie. You didn't waste a minute, you learned something. So follow and like for more." | you stayed + you got value |
+| A | "If you don't feel like you just wasted a minute of your life, follow. That's the deal. I bring the facts, you bring the follow." | fairness: value for a follow |
+| B | "If you're still here, it means you liked this. Don't lie. Follow and like, and I'll keep bringing you videos like this." | you stayed, so you liked it |
+| D | "[Smart character] followed. [Fool] didn't, and look what happened to [fool]. If this was worth your minute, follow and like for more." | story callback (adapt names) |
+| E | "The algorithm is crazy, you might never see me again. If this was worth your minute, follow for more facts." | scarcity |
+
+For long form, "a minute" → "these eight minutes."
+
+**Picture:** hold the final story image, then the **+ FOLLOW** button pops in, a cursor taps it, and it
+becomes **✓ FOLLOWING**. A cast member reacts: the smart one `point`s at the button or `cross` + `smirk`s;
+in D, the smart one taps it and the fool `facepalm`s. "follow" and "like" are gold in the captions.
 
 ### 1.8 Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before
