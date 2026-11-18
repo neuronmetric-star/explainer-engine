@@ -4,8 +4,8 @@
 camera moves, the faces, the captions and the voice in our engine. So the images must have
 **no people in them**. Your characters get dropped in afterwards, lit to match.
 
-**Per 1:30 video, expect about** 5–7 locations × 2–3 camera angles (≈ 12–18 backgrounds) plus 5–10
-props. A new picture every 2–3 seconds comes from cutting between those and moving the camera
+**Per short (~1:05), expect about** 5–8 backgrounds plus 4–6 props (≈ 10–12 images). A long video needs
+roughly 3–4× that. A new picture every 2–3 seconds comes from cutting between those and moving the camera
 across them.
 
 ---

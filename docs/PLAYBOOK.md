@@ -2,7 +2,7 @@
 
 One format, any topic. **One narrator's voice. A flat illustrated 2D world. Silent 3D sphere-head
 characters. Camera that never sits still. Captions one word at a time.**
-**Two lengths, one format:** **long form 8+ minutes** and **short form ≈ 1:30**. **No default:** if Brian didn't
+**Two lengths, one format:** **long form 8+ minutes** and **short form ≈ 1:05** (just over TikTok's 1-minute payout line). **No default:** if Brian didn't
 say which, ask him before doing any research or writing. Both use the same
 story method, Ray's skeleton, Xevi's narrator personality, cast, camera and art. Short form is just compressed (§1.11).
 
@@ -112,7 +112,7 @@ script, shot list or anything else. Never assume.
 | Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
 |---|---|---|---|
 | **Long** | **8:00–9:30** | **1,300–1,500** (~160–170 wpm, conversational) | Ray's skeleton (§1.9): 6–8 scenes, each with a decision, discovery or setback; 2–3 "until" flips; plant early details and pay them off once the viewer can read them |
-| **Short** | ~1:30 | 290–310 (~200–215 wpm) | Same format compressed (§1.11): one chain of events, one "until" flip, one callback |
+| **Short** | ~1:05 (never under 1:02) | 175–190 story words + CTA (≈ 3 words/s after tightening) | Hook, middle, end (§1.11): one chain of events, the mechanism in 2–3 steps, one callback |
 
 Time the read aloud. Leave about 0.5 s after each reveal line.
 
@@ -152,7 +152,7 @@ something to follow the next line, the script is broken.
 - **Test before showing Brian:** read each line as a 12-year-old who's never seen the thing. Any "wait, what's that?"
   → add a few words or a picture. Simplify; never dumb it down or talk down (the narrator's sarcasm targets the
   characters, never the viewer).
-- Budget: about **10–15% of the words** go to setup and definitions (≈ 30–45 words in a short, ~150–200 in long form).
+- Budget: about **10–15% of the words** go to setup and definitions (≈ 20–30 words in a short, ~150–200 in long form).
 - **Worked example:** `videos/netflix-picks/script-v2.txt` (the Netflix script rewritten with every rule here;
   compare with `script.txt`, the version we produced before this rule existed).
 
@@ -202,26 +202,25 @@ something to follow the next line, the script is broken.
 - **End on an understated quote** from the subject, or "the rest is history."
 - Keep the slang natural to the narrator voice we cast. Personality, not imitation.
 
-### 1.11 Short form (≈ 1:30): the same format, compressed
-Everything from §1.9–1.10 applies. Just fewer beats:
+### 1.11 Short form (≈ 1:05): hook, middle, end
+**Why this length:** TikTok's Creator Rewards Program only pays for videos **over 1 minute**. So a short is
+just past that line: **final video 1:05–1:10, never under 1:02.** That's **≈ 175–190 story words + the CTA**
+(our voices run ≈ 3 words/s after the 1.2× tightening). Same narrator, same rules, just tighter.
+Every short must be **very clear for someone who has never heard of the topic** (§1.6a).
 
-| Time (of ~1:30) | Beat (long-form equivalent) |
-|---|---|
-| 0:00–0:03 | **Coon question + cold-open line** ("What the f\*ck…? See, Doug had a problem.") |
-| 0:03–0:10 | **Character card in one sentence** (name + the trait that causes everything) + **one plain line of ground** so a newcomer knows what the thing is (§1.6a) |
-| 0:10–0:35 | **"So one day…" + the plan in 2–3 steps** (track the object) |
-| 0:35–0:50 | **Apparent success + one number**, and the narrator's bet ("Honestly? I'd have bet on Doug.") |
-| 0:50–1:00 | **The observer notices the clue** (planted earlier, visible before it's explained) |
-| 1:00–1:15 | **One "until" flip + the mechanism/reveal** (callback to the plant) |
-| 1:15–1:30 | **"Bam," the consequence + a deadpan last line**, then the follow CTA (§1.12) |
+| Part | Time (of ~1:05) | What happens |
+|---|---|---|
+| **Hook** | 0:00–0:05 | Coon question with the subject on screen + "See, Doug had a problem." in one line |
+| **Middle** | 0:05–0:50 | One plain line of ground (what the thing is) → the wrong belief or choice → plant the clue on screen → the narrator's bet → the mechanism in **2–3 plain numbered steps** ("Step one…") |
+| **End** | 0:50–1:05 | The clue pays off ("So, the rattle.") → one consequence → a deadpan last line that mirrors a middle line → the follow CTA (§1.12) |
 
-Xevi's personality stays, scaled down:
-- 1–2 performed dialogue exchanges, not 10.
-- One running-gag word.
-- One aside to the viewer.
-- One euphemism or two.
-
-Shots: ≈ 30–35 cuts, 7–12 backgrounds, 6–10 props (one ChatGPT batch file).
+Personality, scaled down: one performed line per character, one aside ("I'mma tell you"), one running gag,
+a joke or simile about every 10 s.
+**Cut first:** second examples, extra numbers, side trivia, extra characters. **Never cut:** the ground line,
+the definitions, the steps, the clue, the mirror line.
+**Length check:** after `align.js`, the final (voice + tail) must be ≥ 1:02. If it's shorter, tighten the voice
+with `atempo=1.1` instead of 1.2, or trim fewer pauses; if it's over 1:15, cut words before recording.
+Shots: ≈ 20–25 cuts, 5–8 backgrounds, 4–6 props (≈ 10–12 images, one ChatGPT batch file).
 A long-form story can also be **cut down into a short** that ends on its first "until" or its reveal.
 
 ### 1.12 The follow CTA (every video, short and long)
@@ -440,7 +439,7 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] The mechanism told as an if-then example; the surprise said out loud; every number has a yardstick and a cause
 - [ ] No side bets between characters; the last line mirrors a line from the middle
 - [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
-- [ ] 290–310 words (short); every claim sourced; fiction labeled
+- [ ] Short: 175–190 story words + CTA, final 1:05–1:10 (≥ 1:02); every claim sourced; fiction labeled
 - [ ] Dry last line, then the follow CTA
 
 **Images**

@@ -16,13 +16,13 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
-- **Two lengths, one format**: long form 8:00–9:30 (1,300–1,500 words) and short form ≈ 1:30
-  (290–310 words). Both use Ray's skeleton + Xevi's narrator personality (PLAYBOOK §1.9–1.11,
+- **Two lengths, one format**: long form 8:00–9:30 (1,300–1,500 words) and short form ≈ 1:05
+  (175–190 story words + CTA; just over TikTok's 1-minute payout line, never under 1:02; hook → middle → end). Both use Ray's skeleton + Xevi's narrator personality (PLAYBOOK §1.9–1.11,
   `docs/creators/ray-xevi-study.md`); short form is the same format compressed (§1.11).
 - **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
 
 ## The pipeline (always in this order)
-0. **Length first:** if Brian didn't say "long" or "short", ASK him (long ≈ 8–9.5 min or short ≈ 1:30) before any research, script or other work. There is no default.
+0. **Length first:** if Brian didn't say "long" or "short", ASK him (long ≈ 8–9.5 min or short ≈ 1:05) before any research, script or other work. There is no default.
 1. **Payoff → topic.** Write the one-sentence answer the viewer will discover.
 2. **Research** with web search; every claim sourced in `videos/<slug>/sources.md` (title + URL + fact).
    Label invented characters and reconstructions.
