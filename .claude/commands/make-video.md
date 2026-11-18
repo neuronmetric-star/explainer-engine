@@ -9,11 +9,13 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/why-ca
 1. Write the **payoff** (one sentence the viewer will discover) and pick the question word that it answers.
    Pick a short slug and create `videos/<slug>/`.
 2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
-3. Write `videos/<slug>/script.txt` (PLAYBOOK §1, short form 290–310 words, cues before every picture change).
+3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; default long form
+   1,300–1,500 words ≈ 8–9.5 min; short form 290–310 only if asked; cues before every picture change).
    STOP and show me: the narration in one copyable block, then voice direction, the fact list with sources,
    and the clean-opening option. Wait for "approved" (or edits).
 4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop
    prompts, and the shot plan table (picture · camera · face/pose/gesture per cue). Tell me how many images.
+   Offer: Brian paints them in ChatGPT, or Claude generates them in OpenArt (pre-approved).
 5. Voice: if ELEVENLABS_API_KEY is set run `node tools/tts.js <slug>`; otherwise give me the spoken text,
    wait for `voice.mp3`, then run `node tools/align.js <slug>`.
 6. When the art is in `videos/<slug>/art/`: build the scene (plates matched per painting, cast, acting,

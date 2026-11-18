@@ -15,7 +15,9 @@ Worked example: `videos/why-cars-need-gas/`.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
-- **Short form ≈ 1:30 (290–310 words)**; long form ≈ 8:00.
+- **Default = long form 8:00–9:30 (1,300–1,500 words)**: Ray's skeleton + Xevi's narrator personality
+  (PLAYBOOK §1.9–1.10, `docs/creators/ray-xevi-study.md`). Short form ≈ 1:30 (290–310 words) for teasers.
+- **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
 
 ## The pipeline (always in this order)
 1. **Payoff → topic.** Write the one-sentence answer the viewer will discover.
@@ -24,7 +26,8 @@ Worked example: `videos/why-cars-need-gas/`.
 3. **Script** → `videos/<slug>/script.txt` (PLAYBOOK §1). Show Brian the narration in one copyable
    block (timing, direction, sources outside it) and **wait for approval**.
 4. **Shot list** → `videos/<slug>/shotlist.md` (PLAYBOOK §5): background + prop prompts and a shot
-   plan with camera and acting per cue. Brian paints them in ChatGPT → `videos/<slug>/art/`.
+   plan with camera and acting per cue. Brian paints them in ChatGPT, **or Claude generates them in OpenArt**
+   (Brian pre-approved credits; Nano Banana 2 ≈ 20 credits/image; do a 3-image style test first) → `videos/<slug>/art/`.
 5. **Voice**: if `ELEVENLABS_API_KEY` is set, `node tools/tts.js <slug>`; otherwise Brian records it in
    ElevenLabs/OpenArt from the spoken text, saves `videos/<slug>/voice.mp3`, then `node tools/align.js <slug>`.
    Print spoken text with

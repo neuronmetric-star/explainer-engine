@@ -1,12 +1,13 @@
 # The Playbook: how we make every video
 
 One format, any topic. **One narrator's voice. A flat illustrated 2D world. Silent 3D sphere-head
-characters. Camera that never sits still. Captions one word at a time.** Short form ≈ 1:30, long
-form ≈ 8:00.
+characters. Camera that never sits still. Captions one word at a time.**
+**Default: long form, 8+ minutes** (Ray's structure, Xevi's personality, see §1.9–1.10). Short form ≈ 1:30 for teasers.
 
 What it's built from:
 - **Story:** the Coon Knows storytelling guide ("write the question from the answer").
 - **Pacing and line craft:** our study of @RicksClips3000's 20 most recent Shorts (`docs/ricksclips/study.md`).
+- **Long-form structure and narrator personality:** Ray (@realraywilliam) and Xevi (@xeviuniverse) (`docs/creators/ray-xevi-study.md`).
 - **Look:** your ChatGPT paintings (`docs/prompt-pack.md`) plus the 3D cast in `engine/characters.js`.
 - **Camera and compositing:** the plate lab (`engine/lab/plate-lab.html`).
 - **Worked example:** `videos/why-cars-need-gas/`.
@@ -21,11 +22,11 @@ What it's built from:
 | 2 | Research, every claim sourced | Claude | `videos/<slug>/sources.md` |
 | 3 | Script (section 1) | Claude → **Brian approves** | `script.txt` + narration in one copyable block |
 | 4 | Shot list + image prompts (section 4) | Claude | `shotlist.md` |
-| 5 | Paint the worlds and props in ChatGPT | Brian | 12–18 backgrounds + 5–10 props → `videos/<slug>/art/` |
+| 5 | Paint the worlds and props: ChatGPT (Brian), **or OpenArt** (Claude, credits pre-approved by Brian) | Brian / Claude | long form ≈ 30–45 backgrounds + 20–30 props → `videos/<slug>/art/` |
 | 6 | Voiceover (ElevenLabs/OpenArt, or `tools/tts.js` with a key) | Brian / Claude | `voice.mp3` → `node tools/align.js <slug>` |
 | 7 | Build the scene: plates, cast, acting, camera (sections 2–3) | Claude | `scene.js` |
 | 8 | Preview stills, fix, repeat | Claude | `preview.jpg`, sent to Brian |
-| 9 | Render 30 fps, voice mixed | Claude | `final.mp4`, committed, path sent |
+| 9 | Render 30 fps, voice mixed | Claude | `final.mp4`, committed, path sent (software render ≈ 20 min per minute of video, so ≈ 3 h for 8 min in the cloud, faster with `--gpu` on a desktop) |
 
 Images (5) and voice (6) can happen at the same time, right after the script is approved.
 
@@ -94,8 +95,8 @@ Write down what the viewer will discover. Then pick the question word that the e
 ### 1.5 Format and length
 | Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
 |---|---|---|---|
-| **Short** | ~1:30 | **290–310** | One chain of events. The first explanation earns trust, a clue changes it, stay for the consequence |
-| **Long** | ~8:00 | ~1,500–1,650 | One central question across several scenes, each with a decision, discovery or setback. Bring back an early detail once the viewer can finally read it |
+| **Long (default)** | **8:00–9:30** | **1,300–1,500** (~160–170 wpm, conversational) | Ray's skeleton (§1.9): 6–8 scenes, each with a decision, discovery or setback; 2–3 "until" flips; plant early details and pay them off once the viewer can read them |
+| **Short (teaser)** | ~1:30 | 290–310 (~200–215 wpm) | One chain of events. The first explanation earns trust, a clue changes it, stay for the consequence |
 
 Time the read aloud. Leave about 0.5 s after each reveal line.
 
@@ -114,6 +115,44 @@ Time the read aloud. Leave about 0.5 s after each reveal line.
 4. **What detail exposes it, and who notices?** That's the clue and the observer (Gary, the tailpipe).
 5. **What's the one object we can track to show the mechanism?** (one drop, one coin, one email.)
 6. **What does it cost them?** That's the consequence, then a dry last line.
+
+### 1.9 Long-form skeleton (from Ray, @realraywilliam)
+| Time (of ~8:30) | Beat | Line pattern |
+|---|---|---|
+| 0:00–0:10 | **Coon question + cold open** | "What the f\*ck happened to…?" + the outcome in one line ("…is about to lose everything over a pack of nuts") |
+| 0:10–0:30 | **Character card** | "Now, his name is Doug, and Doug is 34, living in…" + one defining trait |
+| 0:30–1:00 | **Desire or flaw** | what they want and why that's a problem |
+| 1:00 | **Inciting decision** | "So one day in [year]…" |
+| 1:00–2:30 | **Plan mechanics, step by step** | "So here's what they do. First…" (track the object, Coon §1.2) |
+| 2:30–3:30 | **Apparent success + a number** | "And this works perfectly." Escalation montage with a bigger number each time |
+| 3:30–4:30 | **"Now here's the problem…"** | the observer appears (the person who notices the pattern) |
+| 4:30–5:30 | **Near-miss / false ending #1** | "And that's the end of that, right? Right? Wrong." |
+| 5:30–7:00 | **Escalation 2, until #2** | "…they're never gonna get caught… until…" (hold a beat of silence) |
+| 7:00–8:00 | **Callback payoff** | "Remember how I said…? Well…" + "Bam," then evidence on screen |
+| 8:00–8:30 | **Aftermath + verdict** | the cost in numbers, then one dry line ("So good for him."). No CTA |
+
+**Ray's rules:**
+- Numbers on every beat.
+- Honesty asides ("I actually looked into it…", "allegedly", "I'm speculating here").
+- A sarcastic one-liner after each dumb move.
+- **Imagined-visual jokes** ("I imagine they look like this"), so we cut to a silly prop.
+- Connectors: "So / And so / Now, / Anyway, / Meanwhile,".
+- "Meanwhile" cross-cuts to the person who doesn't know yet.
+
+### 1.10 Narrator personality (from Xevi, @xeviuniverse)
+- **"See, ___ had a problem."** opens the story, and opens each new character.
+- **Perform both sides of every exchange** in quick invented back-and-forth ("They said 'Doug.' He
+  said 'huh.' They said…"). On screen, the silent characters act it out with gestures, never mouths.
+- **Comic timing inside the dialogue:** a character forgets their own point, a boss says "not you."
+- **A euphemism dictionary per topic**, funny and platform-safe (steal = "forever borrow", jail =
+  "timeout", police = "the popo", punched = "got bonked"). Plus **one running-gag word** that keeps coming back.
+- **Talk straight to the viewer:** "you remember X, right?", "now you're thinking, who's Gary?
+  I'mma tell you", "I forgot to tell you…", "listen closely".
+- **A self-correction gag** ("actually that's the wrong car, that was the first one he borrowed").
+- **The hinge:** "here's where it starts to get wicked" / "but it all comes to a head when…"
+- **Sound effects in the voice** ("vroom vroom", "kaboom").
+- **End on an understated quote** from the subject, or "the rest is history."
+- Keep the slang natural to the narrator voice we cast. Personality, not imitation.
 
 ### 1.8 Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before
@@ -139,6 +178,8 @@ topic needs one (chef, pilot, doctor…).
 ### 2.1 Acting rules (they never talk)
 - **Mouths stay still.** No lip-sync, ever. The narrator alone speaks.
 - They act through **gaze, posture, hands and timing**.
+- When the narrator performs a line of dialogue (Xevi style), the **speaker gestures on their line**
+  and the **listener reacts on the next beat** (look → face → gesture). Cut between them like a conversation.
 - **Reaction beat:** look → 0.3 s hold → face change → gesture. Never all at once.
 - **Blink** every 3–5 s, plus on emotional beats (0.12 s `blink` face).
 - **Hold reveals 1–1.5 s.** Let the viewer recognize the earlier clue in its new context.
@@ -245,8 +286,11 @@ STRICT: no people, no characters, no animals unless asked, no faces, no hands. N
 Reply only with the image.
 ```
 
-**Per short video:** about 5–7 locations × 1–3 angles (≈ 7–12 backgrounds), plus 1 diagram plate
-for the mechanism, plus 6–10 props. Templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
+**Per long-form video (8+ min):** about 12–18 locations × 2–3 angles (≈ 30–45 backgrounds),
+plus 1–3 diagram plates, plus 20–30 props (including evidence props: receipts, texts, mugshot-style
+cards, headlines, and "imagined" gag props). **Per short video:** ≈ 7–12 backgrounds plus 6–10 props.
+**OpenArt option:** Claude can generate the set with Nano Banana 2 (≈ 20 credits per image, so ≈ 1,000–1,500
+credits per long video). Brian has pre-approved OpenArt use. Still show the style test first. Templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
 TABLETOP · DIAGRAM/CUTAWAY · PROP · PROP WITH EXACT TEXT · FOREGROUND LAYER · CHANGE THE MOOD
 (night, storm, abandoned).
 
