@@ -18,9 +18,9 @@ HOW TO WORK: I'll send prompts in numbered batches. Make every image in the batc
 
 ```
 BATCH 1 (the room + the switch, 01–05)
-01_living_room_dark.png: A cozy small living room at dusk with the lights OFF. Eye-level wide shot, horizon about 45% from the top. On the LEFT wall at shoulder height, a big clearly visible white light switch plate with one toggle flap. On the RIGHT, a tall floor lamp with a bare clear glass light bulb on top and NO lampshade, the bulb dark. A couch in the middle distance, a window behind showing a deep blue evening sky. Open wooden floor in the lower-middle for characters to stand. Only cool blue light from the window. No people.
+01_living_room_dark.png: A cozy small living room at dusk with the lights OFF. Eye-level wide shot, horizon about 45% from the top. On the LEFT wall at shoulder height, a big clearly visible white light switch plate with one toggle flap. Hanging from the middle of the ceiling on a black cord, a single bare clear glass light bulb with NO lampshade, the bulb dark, hanging low at about head height above the open floor (slightly right of center). A couch in the middle distance, a window behind showing a deep blue evening sky. Open wooden floor in the lower-middle for characters to stand. Only cool blue light from the window. No people.
 
-02_living_room_lit.png: The exact same living room as 01, same camera, same furniture in the same places, but now the bare bulb on the floor lamp is ON and glowing bright warm white, filling the room with warm golden light from the right. The window is still deep blue. Open floor in the lower-middle. No people.
+02_living_room_lit.png: The exact same living room as 01, same camera, same furniture in the same places, but now the bare bulb hanging from the ceiling is ON and glowing bright warm white, filling the room with warm golden light from above. The window is still deep blue. Open floor in the lower-middle. No people.
 
 03_switch_closeup.png: Close-up of the white wall light switch from 01 on a painted wall, filling the middle of the frame, the toggle flap pointing down (off), soft cool light from the left, a little wall texture and a bit of a picture frame edge at the side. No hands, no text.
 
@@ -31,7 +31,7 @@ BATCH 1 (the room + the switch, 01–05)
 
 ```
 BATCH 2 (the loop + the bulb, 06–09)
-06_house_loop_cutaway.png: A dollhouse-style cutaway of a small two-story house at night, front wall removed so we see inside, with a utility pole and power line outside on the left. One single bright copper-orange wire is clearly drawn as a big LOOP: from the power line, into the wall, up to a wall switch in the living room, across the ceiling to a floor lamp with a bare bulb, and back down through the wall to the power line. The wire path is thick, simple and easy to follow, like a clean diagram painted into the scene. Leave open floor in the living room. No people, no text, no arrows.
+06_house_loop_cutaway.png: A dollhouse-style cutaway of a small two-story house at night, front wall removed so we see inside, with a utility pole and power line outside on the left. One single bright copper-orange wire is clearly drawn as a big LOOP: from the power line, into the wall, up to a wall switch in the living room, across the ceiling to a bare light bulb hanging from the ceiling on a cord, and back down through the wall to the power line. The wire path is thick, simple and easy to follow, like a clean diagram painted into the scene. Leave open floor in the living room. No people, no text, no arrows.
 
 07_bulb_closeup_off.png: A giant close-up of one classic clear glass light bulb, screw base at the bottom, standing in the middle of the frame. Inside the glass you can clearly see a thin coiled metal wire (the filament) held up by two small support wires. The bulb is OFF, cool and glassy. Deep dark-blue background with a soft vignette. No text.
 
