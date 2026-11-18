@@ -1,5 +1,7 @@
 # Sources: Why the light turns on when you flip the switch
 
+Short version uses rows 1–4 and the filament row (generator, 60 Hz and LED rows are for the long draft `script-long.txt`).
+
 **Doug, Gary, Victor, Kevin the electron, the races, the extension cord and the phone call are fictional.**
 The power plant "thirty miles away" is an illustrative distance. The physics is real.
 

@@ -2,7 +2,8 @@
 
 One format, any topic. **One narrator's voice. A flat illustrated 2D world. Silent 3D sphere-head
 characters. Camera that never sits still. Captions one word at a time.**
-**Two lengths, one format:** **long form 8+ minutes** (default) and **short form ≈ 1:30**. Both use the same
+**Two lengths, one format:** **long form 8+ minutes** and **short form ≈ 1:30**. **No default:** if Brian didn't
+say which, ask him before doing any research or writing. Both use the same
 story method, Ray's skeleton, Xevi's narrator personality, cast, camera and art. Short form is just compressed (§1.11).
 
 What it's built from:
@@ -99,9 +100,12 @@ Write down what the viewer will discover. Then pick the question word that the e
   from the middle** so it flips ("they're both right" → "Turns out they were both wrong. Netflix wasn't.").
 
 ### 1.5 Format and length
+**Ask first.** If the request doesn't say "long" or "short", stop and ask Brian which one before research,
+script, shot list or anything else. Never assume.
+
 | Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
 |---|---|---|---|
-| **Long (default)** | **8:00–9:30** | **1,300–1,500** (~160–170 wpm, conversational) | Ray's skeleton (§1.9): 6–8 scenes, each with a decision, discovery or setback; 2–3 "until" flips; plant early details and pay them off once the viewer can read them |
+| **Long** | **8:00–9:30** | **1,300–1,500** (~160–170 wpm, conversational) | Ray's skeleton (§1.9): 6–8 scenes, each with a decision, discovery or setback; 2–3 "until" flips; plant early details and pay them off once the viewer can read them |
 | **Short** | ~1:30 | 290–310 (~200–215 wpm) | Same format compressed (§1.11): one chain of events, one "until" flip, one callback |
 
 Time the read aloud. Leave about 0.5 s after each reveal line.

@@ -6,11 +6,13 @@ Make a video about: **$ARGUMENTS**
 
 Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs-water/`.
 
+0. **Length:** if my request doesn't say "long" or "short", STOP and ask me which one (long ≈ 8–9.5 min,
+   short ≈ 1:30) before any research or writing. Don't assume.
 1. Write the **payoff** (one sentence the viewer will discover) and pick the question word that it answers.
    Pick a short slug and create `videos/<slug>/`.
 2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
-3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; default long form
-   1,300–1,500 words ≈ 8–9.5 min; if I say "short": same format compressed per §1.11, 290–310 words ≈ 1:30; cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
+3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; long form
+   1,300–1,500 words ≈ 8–9.5 min; short: same format compressed per §1.11, 290–310 words ≈ 1:30; cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
    STOP and show me: the narration in one copyable block, then voice direction, the fact list with sources,
    and the clean-opening option. Wait for "approved" (or edits).
 4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop

@@ -1,43 +1,19 @@
-# LONG FORM (~8:30). Why the light turns on the instant you flip the switch.
-# Payoff: the wire is already full of electrons. Flipping the switch closes a gap in a loop, and the push goes
-# through the whole loop at once, at least half the speed of light, even though each electron crawls slower than a snail.
-# Plant: Gary's garden hose (already full of water). Track one object: Kevin the electron.
-# Doug, Gary, Victor, Kevin, the races and the phone call are fictional; the physics is real (sources.md).
+# SHORT FORM (~1:30). Why the light turns on the instant you flip the switch.
+# Payoff: the wire is already full of electrons. The switch closes a gap in a loop, and the push goes through the
+# whole loop at once, even though each electron crawls slower than a snail.
+# Plant: Gary's garden hose (already full of water). Doug, Gary and the races are fictional; the physics is real (sources.md).
 [#q] Why the {*f*ck|fuck} does the light turn on the second you flip the {*switch?|switch?}
-[#cold] Because Doug is about to lose a race to a light bulb. {!Forty-one|Forty-one} times.
-[#card] See, Doug had a problem. Doug is twenty-nine, he lives alone with one lamp, and he's the fastest guy on his Tuesday night kickball team. [#team] He has beaten every single guy on that team. There are four guys on that team.
-[#flaw] And Doug's problem is that Doug thinks everything is a race. The microwave. The elevator. His own shadow.
-[#ground] Now, before Doug embarrasses himself, you need to know three things. [#switch] One: the switch. That little flap on your wall. [#wire] Two: the wire. Inside your walls are wires, long strings of copper metal wrapped in plastic. One wire runs from the power plant, the giant factory that makes your electricity, all the way to your lamp, and another one runs back. [#loop] Out and back. A big loop. Scientists call that loop a circuit. We'll just call it the {*loop.|loop.}
-[#electrons] Three: electrons. Everything is made of tiny particles. Copper is packed with super tiny ones called {*electrons,|electrons,} and some of them float around loose inside the metal. [#push] Push those loose electrons along the wire, and that push is what we call electricity. From now on, we'll just call it the {*push.|push.}
-[#cast] Switch. Loop. Electrons. Push. That's the whole cast. Plus Doug.
-[#bill] So one night, Doug reads his electric bill, and it says the push comes from a power plant {*thirty|thirty} miles away. Well, it says "electricity." Same thing. [#math] Doug does the math. Thirty miles. That's a road trip. The push has to come all that way every time he flips the switch, and his lamp is only fifteen feet from the switch. Doug goes, "I can beat that."
-[#plan] So here's the plan. First, flip the switch. Second, sprint across the living room. Third, slap the lamp before the light comes on. [#socks] Socks off for grip. Gary from next door on the stopwatch.
-[#gary] Now you're thinking, who's Gary? I'mma tell you. See, Gary had a problem too. Gary was watering his lawn when Doug yelled, "Gary, I need a witness." So Gary came over still holding his garden hose. [#hose] Nobody knows why Gary brought the hose. Gary doesn't know why Gary brought the hose.
-[#race1] Race one. Doug crouches. Click. The light is on before Doug even turns around. [#false] Doug goes, "False start." Gary goes, "Light."
-[#bet] Honestly? I'd have bet on Doug. Thirty miles versus fifteen feet? That's not a race. That's a mismatch.
-[#race5] Race two. Light. Race five. Light. Doug got cooked by a lamp.
-[#closer] So Doug gets smart. Ish. He thinks the problem is distance, so he moves the lamp right next to the switch. Two feet. [#closer2] Click. Light.
-[#cord] Then he flips the idea around: make the push take the long way. He buys a hundred-foot extension cord, that's a long wire with a plug on one end and a spot to plug things in on the other, and he wraps it around the living room five times. [#laps] Now the push has to run laps. [#race20] Click. Light. Race twenty. Light. [#race41] Race forty-one. {!Light.|Light.} Doug has now lost to a light bulb forty-one times. Gary stopped using the stopwatch around race twelve. Gary just says "light."
-[#problem] Now here's the problem.
-[#squeeze] Around race thirty-eight, Gary gets bored and squeezes the hose to water Doug's dead plant. And the water comes out instantly. [#faucet] The faucet is outside, fifty feet away. But the water didn't have to travel fifty feet. The hose was already full of water. Gary squeezed, and the water already sitting at the end just came out.
-[#notice] Gary looks at the hose. Gary looks at the extension cord. Gary goes, "Doug. The wire's already full."
-[#full] Wait, full of what? Electrons. Remember those loose electrons in the copper? They aren't waiting at the power plant. They're already inside every inch of the wire. In your walls. In the cord. In the lamp. Right now. [#count] One inch of house wire holds billions of trillions of them.
-[#kevin] Let's follow one. We'll call him Kevin. Kevin is a loose electron sitting in the wire right next to Doug's switch.
-[#gap] When the switch is off, it makes a gap in the loop. A tiny gap of air between two pieces of metal. And the push can't jump across air. [#click] Doug flips the switch. Click. The two pieces of metal touch. Gap closed. The loop is complete.
-[#once] And the push goes through the whole loop at once. Kevin pushes the electron next to him, who pushes the next one, who pushes the next one, all the way around. [#marbles] It's like a tube already packed with marbles. Push one marble in this end, and one pops out the other end immediately. Nobody had to travel.
-[#fast] And that push is fast. At least half the speed of light. Fast enough to go around the whole Earth more than {*three|three} times in one second. [#room] It crosses Doug's living room in about thirty billionths of a second. Doug crosses it in about two seconds.
-[#until] So Doug's just slow. Case closed, right? Right? Wrong. Because here's where it gets wicked.
-[#slow] Kevin is slow. Like, really slow. The push flies, but Kevin himself barely moves. A lamp pushes him about two hundredths of a millimeter per second. [#snail] That's about {!fifty|fifty} times slower than a snail. [#days] I actually did the math. If Kevin had to cross Doug's living room himself, it would take him about three days.
-[#chacha] And it gets worse. The push in your house is the back-and-forth kind. The power plant pushes, then pulls, then pushes, {*sixty|sixty} times every second. So Kevin goes forward a tiny bit, then back a tiny bit. Forward. Back. [#dance] Kevin is basically doing the cha-cha. Kevin never goes anywhere.
-[#faster] Which means Doug is faster than Kevin. Doug is faster than every single electron in that wire. He'd beat all of them. [#still] And he'd still lose. Because Doug was never racing the electrons. He was racing the {*push.|push.}
-[#plant] Now you're thinking, then what's the power plant doing thirty miles away? I'mma tell you. The power plant doesn't send electrons. It makes the push. [#generator] Inside is a giant machine called a generator. Basically, a huge magnet spinning next to coils of wire. When a magnet moves past a wire, it pushes the loose electrons inside it. [#spin] Spin the magnet, and you get push, pull, push, pull, sixty times a second. Most power plants spin it with steam. Some use falling water, or wind.
-[#ride] The push rides the wires all the way to Doug's wall. The electrons stay home.
-[#buying] So Doug isn't buying electrons. He's buying the push. Which explains his next move.
-[#victor] See, Victor had a problem. Victor answers the phones at the power company, the people who send Doug's bill, and at eleven thirty at night, Victor gets a call. [#call] "Hi, yeah. I'd like to return my electrons." Victor goes, "Sir?" Doug goes, "They never left my house. So I want a refund. You've been charging me for delivery." [#push2] Victor goes, "Sir, you pay for the push." Doug goes, "Then the push owes me forty-one races." [#hangup] Victor hangs up.
-[#bulb] Okay. So the push reaches the lamp. But why does that make light? Inside an old-school light bulb is a super thin wire called a {*filament,|filament,} made of a metal called tungsten. [#squeeze2] It's so thin that when the push moves electrons through it, they crash into the metal like a crowd squeezing through one door. All that crashing makes heat. [#hot] The filament gets over {!four|four} thousand degrees Fahrenheit. Your oven tops out around five hundred. At that heat, the metal glows white. That glow is your light.
-[#waste] But about {!ninety|ninety} percent of the push turns into heat, not light. That's why an old bulb burns your fingers. It's a space heater that occasionally helps you find your keys.
-[#led] Newer bulbs are called LEDs, and they skip the fire. Inside is a tiny chip. When the push moves electrons across that chip, the chip gives off light directly. No glowing wire. [#doe] That's why the U.S. Department of Energy says LEDs need at least {*seventy-five|seventy-five} percent less push, and last up to twenty-five times longer.
-[#remember] So remember Gary's hose? [#bam] Bam. That's the whole thing. The hose was already full of water. The wire is already full of electrons. [#answer] Flip the switch, and you're not sending anything thirty miles. You're closing a gap, and the push goes through the full loop at once.
-[#race42] Race forty-two. Doug changes the plan. Gary flips the switch, and Doug just stands at the lamp with his hand already on it. Gary flips. Click. Light. [#win] Doug goes, "I was here first. I win." Doug throws his arms up, steps back, catches his foot on a hundred feet of extension cord, and takes the lamp down with him. [#crash] Kaboom. [#dark] The bulb is in pieces. The room is dark.
-[#end] Doug said he could beat that. Forty-two races later, Doug finally beat the light. He just had to {!break|break} it first.
+[#card] See, Doug had a problem. Doug thinks everything is a race.
+[#ground] Basics: a loop of copper wire runs from the power plant to your lamp and back. [#electrons] Copper is full of tiny loose particles called {*electrons.|electrons.} Pushing them is electricity. [#push] We'll call it the {*push.|push.}
+[#bill] Doug's bill says the push comes from a power plant {*thirty|thirty} miles away. His lamp? Fifteen feet. Doug goes, "I can beat that."
+[#plan] The plan: flip the switch, sprint, slap the lamp first. [#gary] Gary holds the stopwatch. And, for some reason, his garden hose.
+[#race1] Click. Light. [#bet] Honestly? I'd have bet on Doug.
+[#wire] So Doug adds a hundred feet of extra wire to make the push take the long way. [#race41] Click. Light. Forty-one {!losses.|losses.}
+[#squeeze] Then Gary squeezes the hose. Instant water. The faucet's fifty feet away. The hose was already full. [#notice] Gary goes, "Doug. The wire's already full."
+[#full] Full of electrons, every inch. [#gap] Switch off means a tiny air gap in the loop. The push can't jump air. [#click] Flip it, metal touches, gap closed.
+[#marbles] Now the push crosses the whole loop at once, like a tube of marbles: push one in, one pops out the end. [#fast] That's at least half the speed of light: around the Earth {*three|three} times a second.
+[#until] The wild part? The electrons themselves crawl {!fifty|fifty} times slower than a snail. [#faster] Doug's faster than all of them. He was never racing the electrons. He was racing the {*push.|push.}
+[#bulb] In the bulb, the push crams electrons through a hair-thin wire, the filament. [#hot] It hits {!four|four} thousand degrees, eight times hotter than your oven, and glows. That's your light.
+[#race42] Race forty-two. Doug waits at the lamp. Click. Light. [#win] "I win." Then he trips on the extra wire. Lamp down. [#dark] Kaboom. Dark.
+[#end] Doug said he could beat that. He finally beat the light. He just had to {!break|break} it.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
