@@ -1,0 +1,30 @@
+# Why a car needs gasoline. Coon Knows storytelling, short form (~1:30), sarcastic narrator.
+# Payoff: a car doesn't "drink" gas, it blows it up, about 80 times a second. So the question is HOW.
+# Clue the viewer sees before the narrator explains it: the tailpipe puffs shrinking.
+# Doug, Gary and the tow driver are fictional; the engine mechanics and numbers are real (see sources.md).
+[#q] How the {*f*ck|fuck} does a puddle of gasoline move a {*two-ton|two ton} car?
+[#plan] Doug decided to find out by never buying it again.
+[#logic] His logic was airtight. Gas is a liquid. Water is a liquid. [#hose] And water comes out of the garden hose for {*free.|free.}
+[#fill] So he filled the tank with the hose. To the very top.
+[#start] And here's the thing. The car *started.
+[#wave] Tailpipe puffing, Doug waving at the street like he just beat the oil companies.
+[#bet] Honestly? I'd have put five bucks on Doug.
+[#block] He made it one whole block.
+[#gary] But Gary, from next door, wasn't watching Doug. He was watching the tailpipe.
+[#small] The puffs were getting smaller.
+[#stop] Then they stopped. And so did the car. In the middle of the {!intersection.|intersection.}
+[#reveal] Because here's what Gary knew. Your car doesn't drink gas. It blows it *up.
+[#drop] Follow one drop. A pump pulls it from the tank to the engine.
+[#mist] An injector sprays it into a mist, mixed with about fifteen times its weight in air.
+[#squeeze] A piston squeezes that mist into a tiny space. [#spark] Then the spark plug fires.
+[#boom] {!BOOM.|Boom.}
+[#crank] The blast shoves the piston down. The piston spins the crankshaft. The crankshaft turns the wheels.
+[#rate] Cruising along, a four cylinder engine does that about {*80|eighty} times a second.
+[#puffs] Those little puffs? Exhaust from every single explosion.
+[#water] Water doesn't explode. It's heavier than gas, so it sank right where the fuel pump drinks from.
+[#lines] The car only started on the gas still left in the lines.
+[#heat] Even with real gas, less than a third of each boom moves you. The rest is mostly heat.
+[#heater] Your car is basically a space heater that occasionally goes places.
+[#saved] Doug saved {*$40|forty bucks} on gas.
+[#tow] Then paid for a tow truck, and a mechanic to drain a {!fish tank|fish tank} out of his car.
+[#end] Gary still won't lend him the hose.
