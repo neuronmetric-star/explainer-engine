@@ -81,11 +81,13 @@ Write down what the viewer will discover. Then pick the question word that the e
 - **No side bets between characters** ("Five bucks on the line" was cut). The disagreement itself is the stakes;
   a wager adds a prop and a payoff that pull focus from the real answer. Only the narrator "bets", as an opinion.
 
-- **"How does X work" topics: the mechanism IS the video.** Explain it in plain numbered steps ("Step one: the switch.
-  Step two: the loop. Step three: the bulb."). Build the story around **a broken or misused version of the thing**,
-  so the clue is a failure in one of those steps (the snapped filament is the gap in the loop). No side trivia
-  (speeds, records, history) unless it IS the answer. Keep it simple: the light-switch race story was rejected
-  for this; see `videos/light-switch/script.txt` (mechanism-first rewrite) vs `script-short-v1.txt` (rejected).
+- **"How does X work" topics: the mechanism IS the video**, told simply, but **woven into the story, never as a
+  numbered list.** No "Step one / Step two", no "three steps", no lesson-style signposting: Brian rejected that.
+  Explain each part **as the story reaches it** ("When Doug presses the pedal, electricity flows into the motor…"),
+  in cause → effect order. Build the story around **a broken, surprising or misused version of the thing**, so the
+  clue is the part that behaves unexpectedly (the snapped filament; the battery filling up downhill). No side trivia
+  (speeds, records, history) unless it IS the answer. The light-switch race story was rejected as too complicated
+  (`videos/light-switch/script-short-v1.txt`); the light-switch "Step one…" structure was then also retired.
 
 ### 1.4 Line craft (from the RicksClips study)
 - **Concrete, oddly specific numbers** (82 holes, every 39 feet, 15 times its weight in air).
@@ -211,7 +213,7 @@ Every short must be **very clear for someone who has never heard of the topic** 
 | Part | Time (of ~1:05) | What happens |
 |---|---|---|
 | **Hook** | 0:00–0:05 | Coon question with the subject on screen + "See, Doug had a problem." in one line |
-| **Middle** | 0:05–0:50 | One plain line of ground (what the thing is) → the wrong belief or choice → plant the clue on screen → the narrator's bet → the mechanism in **2–3 plain numbered steps** ("Step one…") |
+| **Middle** | 0:05–0:50 | One plain line of ground (what the thing is) → the wrong belief or choice → plant the clue on screen → the narrator's bet → the mechanism explained **inside the story**, cause → effect (never "Step one…" or "three steps") |
 | **End** | 0:50–1:05 | The clue pays off ("So, the rattle.") → one consequence → a deadpan last line that mirrors a middle line → the follow CTA (§1.12) |
 
 Personality, scaled down: one performed line per character, one aside ("I'mma tell you"), one running gag,
