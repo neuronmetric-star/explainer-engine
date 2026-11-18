@@ -1,0 +1,58 @@
+# Sources: Why did El Salvador send thousands of troops to Haiti?
+
+Research date: **2026-11-18**. This is a live news story; numbers moved daily. Re-check the status of the four
+airmen and the troop count right before publishing.
+
+## What's labeled
+- **Cast are stand-ins, not likenesses.** Victor plays "the president" (Bukele); four polo guys play the four
+  technicians; Gary plays "human rights groups". Real people are never drawn or shown as themselves.
+- **Performed dialogue (Xevi style), paraphrase / invented:** "You good with this?" (paraphrase of Axios: Bukele called
+  "to make sure he had no problem with" the escalation) and "Say less." (**invented** comic beat). Trump's line
+  "Do what you have to do" **is reported** (Axios, then confirmed by Trump on the record).
+- **Narrator interpretation, flagged on air** ("I'm reading between the lines"): that the rescue also served as "the door"
+  for Bukele's long-offered crackdown. Officially El Salvador calls it a rescue only.
+- **Our calculations / yardsticks:** stadium analogy, 900 people (1% of ~90,000), ~15 school buses (~60 seats each),
+  625 soldiers per missing man (2,500 ÷ 4), ~1,200 miles (great-circle San Salvador → Port-au-Prince ≈ 1,880 km),
+  "New York to Miami" (≈ 1,090 mi), "four pizzas, get one" (1,563 ÷ 5,550 ≈ 28%), Philadelphia ≈ 1.55 million people.
+- The lawn/frisbee neighbor is an analogy, not a claim.
+
+## Claims
+| Claim in the script | Source |
+|---|---|
+| Oct 18, 2026: gunmen hit an armored vehicle carrying four Salvadoran aviation technicians in Santo, Croix-des-Bouquets, just outside Port-au-Prince; explosives, vehicle set on fire, the men got out; returning to base from a supermarket run | AP via PBS, "Haitian gangs target foreign troops in biggest attack since force began operations": https://www.pbs.org/newshour/world/haitian-gangs-target-foreign-troops-in-biggest-attack-since-force-began-operations · Al Jazeera, Oct 19: https://www.aljazeera.com/news/2026/10/19/search-under-way-for-four-soldiers-missing-after-gang-attack-in-haiti |
+| Accounts conflict: Haiti says missing, El Salvador says abducted, one gang leader says dead; no gang claimed it | Al Jazeera, Oct 22: https://www.aljazeera.com/news/2026/10/22/el-salvadors-bukele-threatens-haitian-gangs-over-abducted-soldiers · Fox News: https://www.foxnews.com/world/bukeles-warning-haitian-gang-leaders-forces-finish-el-salvador · Washington Times: https://www.washingtontimes.com/news/2026/oct/28/el-salvador-reportedly-sends-hundreds-troops-haiti-gang-ambush/ (note: a Reuters/NYT item of Oct 24 reported bodies "believed to be" theirs; not confirmed since, and Salvadoran and US officials say they believe all four survived: https://www.investing.com/news/commodities-news/bodies-of-ambushed-salvadoran-soldiers-found-in-haiti-new-york-timesreports-4970997) |
+| Bukele post in Haitian Creole: "We have already finished with the gangs in El Salvador, and we can finish with you too"; offered return to the previous situation if the four were released | Al Jazeera, Oct 22 (above) · Daily Wire: https://www.dailywire.com/news/salvadoran-president-warns-haitian-gangs-holding-hostages-we-can-finish-with-you-too |
+| Oct 22: ~100 special forces deployed (some outlets say 200) | AP via News4Jax: https://www.news4jax.com/news/world/2026/10/22/el-salvador-deploys-special-forces-to-haiti-to-help-find-4-missing-soldiers-who-came-under-attack/ · Saudi Gazette (200): https://saudigazette.com.sa/article/665683/world/el-salvador-deploys-200-troops-to-haiti-to-rescue-four-kidnapped-military-technicians |
+| Oct 27: Reuters, ~1,000 troops | US News/Reuters: https://www.usnews.com/news/world/articles/2026-10-27/around-1-000-soldiers-from-el-salvador-have-deployed-to-haiti-source-says |
+| Oct 28: foreign ministry, more than 2,000; later AP ~2,500 | UPI: https://www.upi.com/Top_News/World-News/2026/10/29/latam-elsalvador-troops-Haiti-gangs/2631793288234/ · Jamaica Observer (~2,500), Nov 16: https://www.jamaicaobserver.com/2026/11/16/el-salvador-withdraw-haiti-airmen-rescued-says-minister/ · AJC/AP: https://www.ajc.com/news/2026/11/haitian-leader-to-visit-el-salvador-to-discuss-future-of-salvadoran-troops-offensive-in-haiti/ |
+| More Salvadoran troops than the whole GSF; most are **not** part of the GSF; mandate/rules of engagement opaque | CNN, Oct 29: https://www.cnn.com/2026/10/29/americas/haiti-bukele-salvador-soldiers-intl-latam |
+| Before the ambush El Salvador had ~124 personnel in the GSF (UN report), mostly pilots/technicians for medical evacuation | Political.org, Oct 29: https://political.org/2026/10/29/el-salvador-pledges-more-than-2000-troops-to-haiti-as-search-continues-for-four-missing-airmen/ · SCMP: https://www.scmp.com/news/world/americas/article/3372387/el-salvador-deploys-1000-troops-haiti-after-gang-ambush |
+| At least one US flight carried Salvadoran troops (US Southern Command) | NYT via dnyuz: https://dnyuz.com/?p=316867 |
+| Bukele called Trump; Trump: "Do what you have to do"; later on record: "They killed some of his people. I said… You have to do what you have to do." Haiti's government agreed | Axios, Oct 30: https://www.axios.com/2026/10/30/trump-bukele-haiti-troop-surge · IBTimes: https://www.ibtimes.com/trump-backs-bukele-haiti-military-operation-3809206 |
+| "This is not an operation against the Haitian people, nor an invasion of the country of Haiti" | Diario El Mundo: https://diario.elmundo.sv/politica/bukele-a-haitianos-esto-no-es-una-operacion-contra-el-pueblo-haitiano-ni-una-invasion-a-haiti |
+| El Salvador pays "90% of the expenses… with our own small budget" (Bukele, Oct 29) | Diario El Mundo: https://diario.elmundo.sv/politica/bukele-dice-que-el-salvador-paga-el-90-de-los-gastos-de-la-operacion-de-rescate-de-los-cuatro-soldados-salvadorenos |
+| Strike on 400 Mawozo HQ in Croix-des-Bouquets (announced Nov 10): Haitian police + Salvadoran troops, explosive drones, four armed helicopters; ~20 killed per media reports; leader Wilson "Lanmò San Jou" Joseph not present | Al Jazeera, Nov 10: https://www.aljazeera.com/news/2026/11/10/salvadoran-troops-target-haitian-gang-leaving-20-dead · UPI, Nov 11: https://www.upi.com/Top_News/World-News/2026/11/11/latam-haiti-salvadoran-troops-gang-headquarters/4941794411502/ |
+| 400 Mawozo kidnapped 17 missionaries (16 US, 1 Canadian) in Oct 2021 | 400 Mawozo (Wikipedia): https://en.wikipedia.org/wiki/400_Mawozo |
+| Nov 12: Sylvio Cator national stadium, gang-held since Feb 2024, retaken and handed to Salvadoran troops as a base | Rio Times: https://www.riotimesonline.com/haiti-sylvio-cator-stadium-salvadoran-army-base-bukele/ · Latin Times: https://www.latintimes.com/salvadoran-haitian-forces-seize-haiti-stadium-601282 |
+| Nov 18: Bukele says troops demolished the home of gang leader "Jeff"; unclear if he was killed | WLRN/Miami Herald, Nov 18: https://www.wlrn.org/americas/2026-11-18/el-salvadors-president-confirms-and-celebrates-attack-on-home-of-key-haitian-gang-leader |
+| Nov 3: police found the burned shell of the vehicle, no trace of the four | Latin Times: https://www.latintimes.com/salvadoran-technicians-missing-haiti-gang-ambush-601077 |
+| Haiti's PM Fils-Aimé thanked El Salvador and defended the deployment | AP via ClickOnDetroit, Nov 3: https://www.clickondetroit.com/news/world/2026/11/03/haitis-prime-minister-fils-aime-speaks-out-as-concerns-over-el-salvadors-troops-deepen/ |
+| Nov 16: Security Minister Gustavo Villatoro: "if they reappear tomorrow… we will leave"; Haiti's security minister Patrick Pelissier: Haiti wants the deployment extended | Jamaica Observer, Nov 16 (above) · Citizen Digital: https://citizen.digital/article/el-salvador-to-withdraw-from-haiti-once-airmen-rescued-minister-1-n394051 |
+| Nov 17: Haitians protest in support of the deployment | Al Jazeera: https://www.aljazeera.com/news/2026/11/17/haitians-protest-in-support-of-el-salvadors-anti-gang-troop-deployment |
+| Amnesty International urged safeguards on Salvadoran operations in Haiti | AJC/AP (above) · Al Jazeera, Nov 5: https://www.aljazeera.com/news/2026/11/5/el-salvadors-bukele-touts-military-intervention-in-haiti |
+| March 2024 offer: Haiti can be fixed, with three conditions: UNSC resolution, host-country consent, all mission expenses covered | Tico Times: https://ticotimes.net/2024/03/11/el-salvadors-bukele-offers-to-tackle-haitis-turmoil · Le Nouvelliste: https://lenouvelliste.com/en/article/247157/el-salvadors-president-offers-solution-for-haitis-security-crisis |
+| GSF: UNSC Resolution 2793, Sept 30, 2025 (12-0-3), replaces Kenya-led MSS; authorized 5,550 | UN press: https://press.un.org/en/2025/sc16185.doc.htm · UN Digital Library: https://digitallibrary.un.org/record/4089907 |
+| GSF had 1,563 uniformed personnel as of Oct 12, 2026 | Political.org (citing UN), above · Al Jazeera Nov 10 (above) |
+| Kenya-led mission underfunded and understaffed | Washington Post/AP, Nov 3: https://www.washingtonpost.com/world/2026/11/03/haiti-prime-minister-el-salvador-gangs-un/3a045c7e-d7c6-11f1-930a-e08f8086f5ac_story.html · WLRN 2024: https://www.wlrn.org/americas/2024-05-21/haitis-gangs-grow-stronger-as-kenyan-led-force-prepares-to-deploy |
+| Gangs control up to ~90% of Port-au-Prince (estimates 70–90%) | UN News, Jul 2025: https://news.un.org/en/story/2025/07/1165373 · NPR: https://www.npr.org/2025/07/03/nx-s1-5455540/haiti-gangs-capital-port-au-prince-violence |
+| 1.5 million+ Haitians displaced (UN, June 2026) | Euronews: https://euronews.com/2026/06/16/un-chief-visits-haiti-as-gang-violence-soars-and-number-of-displaced-hits-15-million · Global Voices: https://globalvoices.org/2026/06/25/haiti-fleeing-is-not-enough-in-port-au-prince-and-other-major-cities/ |
+| President Jovenel Moïse killed at home, July 7, 2021; no elected president since; gangs expanded | WLRN (above) · Chatham House: https://www.chathamhouse.org/2026/01/roadmap-security-and-governance-reform-haiti/background |
+| El Salvador 2015: ~103 homicides per 100,000, most violent in the Western Hemisphere | InSight Crime: https://insightcrime.org/news-analysis/insight-crime-homicide-round-up-2015-latin-america-caribbean · WOLA: https://www.wola.org/2016/01/el-salvador-worlds-new-murder-capital/ |
+| State of exception approved Mar 27, 2022 after a surge of gang killings; 90,000+ detained; CECOT capacity 40,000 | Tico Times (51st extension): https://ticotimes.net/2026/05/31/el-salvador-extends-state-of-exception-for-51st-time · CBS Fact Check Team: https://cbsaustin.com/news/nation-world/el-salvador-turnaround-from-murder-capital-to-safe-haven-nayib-bukele-cecot |
+| 2025 homicide rate 1.3 per 100,000 (**government figure**, not independently verified) | América Económica: https://americaeconomica.com/noticia/el-salvador/el-salvador-reports-historic-drop-in-homicides-as-bukele-security-strategy-draws-international-attention.html/amp |
+| Rights groups document arbitrary arrests, abuse and deaths in custody; government acknowledged ~1% "margin of error" | 2022 Salvadoran gang crackdown (Wikiwand): https://wikiwand.com/en/articles/2022_Salvadoran_gang_crackdown · Cristosal / Human Rights Watch reports cited there |
+| Bukele: born July 24, 1981 (45); president since June 2019; re-elected Feb 2024 by a landslide | Nayib Bukele (Wikipedia): https://en.wikipedia.org/wiki/Nayib_Bukele |
+| El Salvador ≈ 21,041 km² (New Jersey ≈ 22,591 km²), ≈ 6.3 million people | CIA World Factbook, El Salvador: https://www.cia.gov/the-world-factbook/countries/el-salvador/ |
+
+**Network note:** direct page fetches were blocked in this session (only search snippets were readable), so
+quotes are as reported in the search results above. The Wikipedia/CIA rows are standard reference facts.
