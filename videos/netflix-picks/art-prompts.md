@@ -1,4 +1,4 @@
-# ChatGPT batch file: netflix-picks (12 images)
+# ChatGPT batch file: netflix-picks (13 images)
 
 **How to use:** open a **new ChatGPT chat**. Paste everything from **START** down to the **BATCH 1** line and send.
 Then paste BATCH 1. When ChatGPT says "BATCH DONE", paste BATCH 2. Save each image with the file name written above it
@@ -32,7 +32,7 @@ P03_poster_stack.png: A fanned-out stack of 7 different cartoon movie posters fo
 ```
 
 ```
-BATCH 2 (props P04–P09)
+BATCH 2 (props P04–P10)
 P04_stopwatch.png: A chunky cartoon stopwatch with a red button and a big white face with simple tick marks and one hand, no numbers or text. Centered on a solid pure green #00FF00 background.
 
 P05_donut_80.png: A big chunky donut chart (ring chart) in the same storybook style: 80% of the ring is bright red, the remaining 20% is light gray. No text, no numbers. Centered on a solid pure green #00FF00 background.
@@ -44,4 +44,6 @@ P07_romcom_tower.png: A tall, wobbly, teetering tower of DVD cases, every case p
 P08_five_dollar_bill.png: A cartoon five-dollar bill, slightly curled, green, with the exact text "5" in two corners and nothing else written, no portrait. Centered on a solid pure green #00FF00 background.
 
 P09_popcorn.png: A big bowl of popcorn overflowing, red-and-white striped bowl, a few kernels flying. Centered on a solid pure green #00FF00 background.
+
+P10_netflix_word.png: The exact word "NETFLIX" in tall, bold, condensed, bright red capital letters with a subtle soft shadow and a slight downward curve, like a glowing title card, nothing else written. Centered on a solid pure green #00FF00 background.
 ```

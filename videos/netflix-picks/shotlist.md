@@ -1,7 +1,7 @@
 # Shot list: "How Netflix chooses what to show you" (short, ~1:12)
 
 **Cast (3D, silent, mouths still):** **Doug** = `hoodie` · **Gary** = `oxford` (swears he only watches documentaries).
-**Art:** 3 backgrounds + 9 props = **12 images**, all in ChatGPT from `art-prompts.md` (2 batches). Save as named into
+**Art:** 3 backgrounds + 10 props = **13 images**, all in ChatGPT from `art-prompts.md` (2 batches). Save as named into
 `videos/netflix-picks/art/`.
 **OpenArt video inserts:** none needed.
 **The clue:** Gary's phone shows two people kissing (shot `gary`). The viewer sees it before the narrator explains it,
@@ -22,11 +22,12 @@ and it pays off at `exposed` (his rom-com tower).
 | P07 | `P07_romcom_tower.png` | A teetering tower of DVD cases covered in hearts |
 | P08 | `P08_five_dollar_bill.png` | A cartoon five-dollar bill |
 | P09 | `P09_popcorn.png` | A big bowl of popcorn |
+| P10 | `P10_netflix_word.png` | The word "NETFLIX" in bold red letters (name only, not the official logo, so there's no implied sponsorship) |
 
 ## Shot plan (picture · camera · acting)
 | Cue | Picture | Camera | Acting (face · pose · gesture) |
 |---|---|---|---|
-| q | 01 living room, TV glow | low wide, slow push-in 1.0→1.15 | Doug `flat`, looking down at his phone (`nod` -.2), P01 small in hand |
+| q | 01 living room, TV glow + **P10 "NETFLIX" pops in big at the top on "Netflix"**, then shrinks onto the TV | low wide, slow push-in 1.0→1.15 | Doug `flat`, looking down at his phone (`nod` -.2), P01 small in hand |
 | problem | 01 | cut closer (zoom 1.3) | Doug `happy`, `tada` |
 | doug | 01 + **P01 phone big insert** (pop in center) | quick push-in | Doug `point` at the phone |
 | gary | 02 Gary's room + **P02 phone insert** | hard cut, push-in | Gary `flat`, `cross` → `point` at his phone |
