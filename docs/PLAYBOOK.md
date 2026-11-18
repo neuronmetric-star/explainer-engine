@@ -2,7 +2,8 @@
 
 One format, any topic. **One narrator's voice. A flat illustrated 2D world. Silent 3D sphere-head
 characters. Camera that never sits still. Captions one word at a time.**
-**Default: long form, 8+ minutes** (Ray's structure, Xevi's personality, see §1.9–1.10). Short form ≈ 1:30 for teasers.
+**Two lengths, one format:** **long form 8+ minutes** (default) and **short form ≈ 1:30**. Both use the same
+story method, Ray's skeleton, Xevi's narrator personality, cast, camera and art. Short form is just compressed (§1.11).
 
 What it's built from:
 - **Story:** the Coon Knows storytelling guide ("write the question from the answer").
@@ -97,7 +98,7 @@ Write down what the viewer will discover. Then pick the question word that the e
 | Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
 |---|---|---|---|
 | **Long (default)** | **8:00–9:30** | **1,300–1,500** (~160–170 wpm, conversational) | Ray's skeleton (§1.9): 6–8 scenes, each with a decision, discovery or setback; 2–3 "until" flips; plant early details and pay them off once the viewer can read them |
-| **Short (teaser)** | ~1:30 | 290–310 (~200–215 wpm) | One chain of events. The first explanation earns trust, a clue changes it, stay for the consequence |
+| **Short** | ~1:30 | 290–310 (~200–215 wpm) | Same format compressed (§1.11): one chain of events, one "until" flip, one callback |
 
 Time the read aloud. Leave about 0.5 s after each reveal line.
 
@@ -154,6 +155,28 @@ Time the read aloud. Leave about 0.5 s after each reveal line.
 - **Sound effects in the voice** ("vroom vroom", "kaboom").
 - **End on an understated quote** from the subject, or "the rest is history."
 - Keep the slang natural to the narrator voice we cast. Personality, not imitation.
+
+### 1.11 Short form (≈ 1:30): the same format, compressed
+Everything from §1.9–1.10 applies. Just fewer beats:
+
+| Time (of ~1:30) | Beat (long-form equivalent) |
+|---|---|
+| 0:00–0:03 | **Coon question + cold-open line** ("What the f\*ck…? See, Doug had a problem.") |
+| 0:03–0:10 | **Character card in one sentence** (name + the trait that causes everything) |
+| 0:10–0:35 | **"So one day…" + the plan in 2–3 steps** (track the object) |
+| 0:35–0:50 | **Apparent success + one number**, and the narrator's bet ("Honestly? I'd have bet on Doug.") |
+| 0:50–1:00 | **The observer notices the clue** (planted earlier, visible before it's explained) |
+| 1:00–1:15 | **One "until" flip + the mechanism/reveal** (callback to the plant) |
+| 1:15–1:30 | **"Bam," the consequence + a deadpan last line.** Hard stop |
+
+Xevi's personality stays, scaled down:
+- 1–2 performed dialogue exchanges, not 10.
+- One running-gag word.
+- One aside to the viewer.
+- One euphemism or two.
+
+Shots: ≈ 30–35 cuts, 7–12 backgrounds, 6–10 props (one ChatGPT batch file).
+A long-form story can also be **cut down into a short** that ends on its first "until" or its reveal.
 
 ### 1.8 Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before

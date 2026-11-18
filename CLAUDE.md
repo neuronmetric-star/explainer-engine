@@ -16,8 +16,9 @@ Worked example: `videos/why-cars-need-gas/`.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
-- **Default = long form 8:00–9:30 (1,300–1,500 words)**: Ray's skeleton + Xevi's narrator personality
-  (PLAYBOOK §1.9–1.10, `docs/creators/ray-xevi-study.md`). Short form ≈ 1:30 (290–310 words) for teasers.
+- **Two lengths, one format**: long form 8:00–9:30 (1,300–1,500 words, default) and short form ≈ 1:30
+  (290–310 words). Both use Ray's skeleton + Xevi's narrator personality (PLAYBOOK §1.9–1.11,
+  `docs/creators/ray-xevi-study.md`); short form is the same format compressed (§1.11).
 - **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
 
 ## The pipeline (always in this order)

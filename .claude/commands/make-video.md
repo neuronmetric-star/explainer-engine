@@ -10,7 +10,7 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/why-ca
    Pick a short slug and create `videos/<slug>/`.
 2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
 3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; default long form
-   1,300–1,500 words ≈ 8–9.5 min; short form 290–310 only if asked; cues before every picture change).
+   1,300–1,500 words ≈ 8–9.5 min; if I say "short": same format compressed per §1.11, 290–310 words ≈ 1:30; cues before every picture change).
    STOP and show me: the narration in one copyable block, then voice direction, the fact list with sources,
    and the clean-opening option. Wait for "approved" (or edits).
 4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop
