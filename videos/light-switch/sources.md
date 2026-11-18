@@ -1,6 +1,14 @@
 # Sources: Why the light turns on when you flip the switch
 
-Short version uses rows 1–4 and the filament row (generator, 60 Hz and LED rows are for the long draft `script-long.txt`).
+**Produced version = `script.txt` (short, mechanism-first).** It uses: the switch/gap/loop row, the loose-electrons row,
+the "instant" (push speed) row, the filament row, the LED row, and the burnout row below. Other rows are for the long draft.
+
+| Claim (short version) | Source |
+|---|---|
+| A bulb "burns out" when its tungsten filament breaks: the filament slowly evaporates and thins until a spot snaps, often at switch-on; the break is a gap in the loop | Physics Forums, "Why does a light bulb burn out?": https://www.physicsforums.com/threads/why-does-a-light-bulb-burn-out.162514/post-1283460 · Gizmodo, "Why do light bulbs burn out just as they're turned on?": https://gizmodo.com/why-do-light-bulbs-burn-out-just-as-they-re-turned-on-5628229 |
+| Shaking a dead bulb and hearing a rattle (loose filament pieces) | Common household check; story detail, not a measured claim. |
+| "Eight times hotter than your oven": ~4,000 °F filament vs ~500 °F oven | Filament row below + oven yardstick (general knowledge). |
+
 
 **Doug, Gary, Victor, Kevin the electron, the races, the extension cord and the phone call are fictional.**
 The power plant "thirty miles away" is an illustrative distance. The physics is real.

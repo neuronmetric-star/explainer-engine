@@ -1,0 +1,19 @@
+# SHORT v1 (race story), rejected by Brian: too complicated. Kept for reference.
+# Payoff: the wire is already full of electrons. The switch closes a gap in a loop, and the push goes through the
+# whole loop at once, even though each electron crawls slower than a snail.
+# Plant: Gary's garden hose (already full of water). Doug, Gary and the races are fictional; the physics is real (sources.md).
+[#q] Why the {*f*ck|fuck} does the light turn on the second you flip the {*switch?|switch?}
+[#card] See, Doug had a problem. Doug thinks everything is a race.
+[#ground] Basics: a loop of copper wire runs from the power plant to your lamp and back. [#electrons] Copper is full of tiny loose particles called {*electrons.|electrons.} Pushing them is electricity. [#push] We'll call it the {*push.|push.}
+[#bill] Doug's bill says the push comes from a power plant {*thirty|thirty} miles away. His lamp? Fifteen feet. Doug goes, "I can beat that."
+[#plan] The plan: flip the switch, sprint, slap the lamp first. [#gary] Gary holds the stopwatch. And, for some reason, his garden hose.
+[#race1] Click. Light. [#bet] Honestly? I'd have bet on Doug.
+[#wire] So Doug adds a hundred feet of extra wire to make the push take the long way. [#race41] Click. Light. Forty-one {!losses.|losses.}
+[#squeeze] Then Gary squeezes the hose. Instant water. The faucet's fifty feet away. The hose was already full. [#notice] Gary goes, "Doug. The wire's already full."
+[#full] Full of electrons, every inch. [#gap] Switch off means a tiny air gap in the loop. The push can't jump air. [#click] Flip it, metal touches, gap closed.
+[#marbles] Now the push crosses the whole loop at once, like a tube of marbles: push one in, one pops out the end. [#fast] That's at least half the speed of light: around the Earth {*three|three} times a second.
+[#until] The wild part? The electrons themselves crawl {!fifty|fifty} times slower than a snail. [#faster] Doug's faster than all of them. He was never racing the electrons. He was racing the {*push.|push.}
+[#bulb] In the bulb, the push crams electrons through a hair-thin wire, the filament. [#hot] It hits {!four|four} thousand degrees, eight times hotter than your oven, and glows. That's your light.
+[#race42] Race forty-two. Doug waits at the lamp. Click. Light. [#win] "I win." Then he trips on the extra wire. Lamp down. [#dark] Kaboom. Dark.
+[#end] Doug said he could beat that. He finally beat the light. He just had to {!break|break} it.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
