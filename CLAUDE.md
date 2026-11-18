@@ -53,6 +53,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
   before the twist; explain every term, name and number in plain words the first time; no skipped steps.
   Once a term is named ("thumbnail"), use that exact word every time after: no synonyms.
   Mechanism as an if-then example; say the surprise out loud; every number gets a yardstick and a cause.
+- **Everyone can follow** (PLAYBOOK §1.6b, Brian's rule for every script): write for any level of comprehension.
+  Full simple sentences (who did what), everyday words, no slang/idioms/fragments the viewer must decode, say the
+  "so"/"because" out loud, ≤ 14 words a sentence. Check with `node tools/readability.js <slug>` (grade ≤ 5).
 - No side bets between characters (the disagreement is the stakes). Last line mirrors a line from the middle.
 - Narrator bets early, changes their mind with us, voices the listener's question when it arises.
 - Specific numbers, a joke/simile ~every 10 s, everyday analogy for the science, explanation held to

@@ -1,30 +1,30 @@
 # SHORT FORM (~1:30). Why did El Salvador send thousands of troops to Haiti?
 # Format: Coon question → Ray skeleton compressed (PLAYBOOK §1.11) → Xevi narrator personality.
-# Payoff: officially it's a rescue of four missing airmen, and it is. But the rescue also met, dropped or skipped all
-#   three conditions of Bukele's 2024 "we can fix it" offer, so his gang crackdown got into Haiti.
-# Plant: the three conditions + the four guys' truck. Observer: human rights groups (Gary). Until: "we leave"... until Haiti asks them to stay.
-# Callback: the three conditions as a checklist. Last line mirrors the bet ("rescue mission").
-# Cast are silent STAND-INS, not likenesses: Victor = the president (Bukele); polo guy ×4 = the four guys; Gary = human rights groups.
-# Running gag: "Four guys." Euphemism: prison = "timeout". Long version parked in script-long.txt.
+# Plain-language pass (PLAYBOOK §1.6b): anyone can follow. Full sentences, everyday words, say who did what, say the "so" out loud.
+# Payoff: officially it's a rescue of four missing men, and it is. But the rescue also met, dropped or skipped all three
+#   conditions of Bukele's 2024 offer, so he finally got into Haiti to fight the gangs.
+# Plant: the three conditions + the four men's truck. Observer: human rights groups (Gary). Until: "we go home"... until Haiti asks them to stay.
+# Callback: the three conditions as a checklist. Last line mirrors the bet ("a rescue mission for four men").
+# Cast are silent STAND-INS, not likenesses: Victor = the president (Bukele); polo guy ×4 = the four men; Gary = human rights groups.
+# Running gag: "four men" (same words every time). Long version parked in script-long.txt.
 [#q] Why the {*f*ck|fuck} did El Salvador send {*2,500|two thousand five hundred} soldiers to {*Haiti?|Haiti?}
-[#cold] See, El Salvador had a problem. It was missing {*four|four} guys.
-[#card] El Salvador's a tiny Central American country that used to be run by gangs, [#gangs] armed groups that rule whole neighborhoods.
-[#timeout] Then its president, Nayib Bukele, put {*90,000|ninety thousand} gang suspects in timeout. [#murders] Murders almost {*stopped.|stopped.}
-[#haiti] Haiti, in the Caribbean, has the same problem now: [#capital] gangs run up to {!90%|ninety percent} of its capital.
-[#offer] In twenty twenty-four, Bukele offered to fix it. [#three] Three conditions: the UN, the club of almost every country, votes yes. Haiti says yes. Somebody else pays. [#nobody] Nobody bit.
-[#unforce] The UN sent its own force instead. [#mechanics] El Salvador sent helicopter mechanics.
-[#oneday] This October, four of them go grocery shopping.
-[#ambush] Gunmen hit their armored truck. {!Boom.|Boom.} [#gone] The four guys? Gone.
-[#bet] Honestly? I figured: rescue mission. Four guys. Go get them, come home.
-[#creole] Bukele posts in Haitian Creole: [#quote] "We finished with the gangs in El Salvador. We can finish with you too."
-[#count] A {*thousand|thousand} soldiers. [#count3] {*Two thousand.|Two thousand.} [#count4] {*Two thousand five hundred.|Two thousand five hundred.} [#forfour] For four guys.
-[#bigger] More than the entire UN force.
-[#trump] Donald Trump, the US president, says: "Do what you have to do."
-[#rubble] A gang headquarters? {*Rubble.|Rubble.} [#stadium] Haiti's national stadium? His base now. [#march] Haitians march. In {*support.|support.}
-[#gary] But human rights groups notice a detail. [#most] Most of those soldiers aren't part of the UN force. [#rules] Their rules? {!Unclear.|Unclear.}
-[#truck] Police find the four guys' truck. Burned. [#empty] {!Empty.|Empty.} [#still] Still {!missing.|missing.}
-[#leave] El Salvador says, "When they turn up, we leave." [#until] Until... [#stay] Haiti asks them to stay.
-[#check] Remember the three conditions? [#c2] Haiti says yes? {*Check.|Check.} [#c3] Somebody else pays? He's paying ninety percent himself. [#c1] The UN vote? {!Skipped.|Skipped.}
-[#bam] {*Bam.|Bam.} [#needed] In twenty twenty-four, he needed three things. [#one] Now? One: a reason nobody argues with. [#reason] Four {*guys.|guys.}
-[#last] I figured this was a rescue mission. [#last2] It is. [#last3] We just don't know yet who's getting {*rescued.|rescued.}
+[#cold] See, El Salvador had a problem. [#missing] Four of its men went missing in Haiti.
+[#card] El Salvador is a small country in Central America. It used to be run by gangs: [#gangs] armed groups that take over neighborhoods.
+[#prez] Then its president, Nayib Bukele, locked up {*90,000|ninety thousand} people. [#murders] Murders almost {*stopped.|stopped.}
+[#haiti] Haiti, in the Caribbean, has the same gang problem now.
+[#offer] In twenty twenty-four, Bukele offered to fix it, with three conditions.
+[#c1] One: the UN, where countries decide things together, votes yes. [#c2] Two: Haiti says yes. [#c3] Three: someone else pays. [#nobody] Nobody agreed.
+[#unteam] El Salvador had sent helicopter mechanics to help a UN team there.
+[#oneday] This October, four of them went to buy groceries. [#ambush] Driving back, a gang attacked their truck. {!Boom.|Boom.}
+[#gone] The four men {!disappeared.|disappeared.}
+[#bet] Honestly? I figured they'd send a small team.
+[#count] Instead, Bukele sent soldiers. First a {*thousand.|thousand.} [#count2] Then {*two thousand five hundred.|two thousand five hundred.} [#forfour] All to find four men.
+[#rubble] His soldiers destroyed a gang hideout and took the national stadium. [#march] Haitians marched to {*support|support} them.
+[#gary] But groups that protect regular people noticed something. [#most] Most of these soldiers are not part of the UN team. [#rules] So nobody outside knows their rules.
+[#truck] Police found the four men's truck, burned and {!empty.|empty.} [#still] They're still {!missing.|missing.}
+[#leave] El Salvador said, "When we find our four men, we go home." [#until] Until... [#stay] Haiti asked them to {*stay.|stay.}
+[#check] Remember the three conditions? [#c2b] Haiti said yes. {*Check.|Check.} [#c3b] Someone else pays? No. Bukele pays almost everything. [#c1b] A UN vote? He didn't wait for one.
+[#bam] {*Bam.|Bam.} [#needed] In twenty twenty-four, he needed three things. [#one] This time he needed one: a reason nobody could refuse. [#four] His four {*men.|men.}
+[#surprise] So it's a real rescue. [#door] My guess? It's also how Bukele got into Haiti.
+[#last] I thought this was a rescue mission for four men. [#last2] It might be one for a whole {*country.|country.}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

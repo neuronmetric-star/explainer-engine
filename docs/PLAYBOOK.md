@@ -146,6 +146,27 @@ something to follow the next line, the script is broken.
 - **Worked example:** `videos/netflix-picks/script-v2.txt` (the Netflix script rewritten with every rule here;
   compare with `script.txt`, the version we produced before this rule existed).
 
+### 1.6b Everyone can follow (plain-language rule) — every script, short and long
+Brian's rule: **write for any level of comprehension.** A kid, a non-native English speaker or someone half-watching
+must be able to follow every line on the first listen. §1.6a says *what* to explain; this says *how plainly to say it*.
+- **Full, simple sentences: who did what.** Subject + verb + object. ✗ "Their rules? Unclear." ✓ "So nobody outside
+  knows their rules." ✗ "The UN vote? Skipped." ✓ "A UN vote? He didn't wait for one." Short is good; *fragments that make
+  the viewer fill in the logic* are not.
+- **Everyday words.** If a 10-year-old wouldn't say it, swap it: "conditions" is fine once explained; "deployment",
+  "contingent", "mandate", "jurisdiction", "suppression" are not. Prefer "team" over "force", "hideout" over "headquarters".
+- **No slang, idioms or shorthand that need decoding:** "nobody bit", "say less", "drip", "cap", "finna". Euphemisms
+  only when they're instantly obvious; otherwise say the plain thing ("locked up", not "sent to timeout").
+- **Say the "so" and the "because" out loud.** Don't leave cause and effect for the viewer to infer.
+- **Name the subject when it could be unclear.** "Bukele" instead of "he" after a line about someone else.
+- **One idea per sentence, ≤ 14 words.** Two facts → two sentences.
+- **Jokes and the last line must be understandable literally.** A clever line that needs a second read gets rewritten.
+- **Same words for the same thing** (§1.6a): "the four men" every time, "the UN team" every time.
+- **Check it:** `node tools/readability.js <slug>`: target **reading grade ≤ 5**, no sentence over 14 words, every
+  flagged long word explained or swapped, no flagged shorthand. The grade is only a floor: fragments score "easy" but
+  aren't, so also read it aloud as someone who knows nothing.
+- Simpler wording costs words. Stay in the word budget by **cutting beats, not by going back to fragments.**
+- Worked example: `videos/salvador-haiti/script.txt` (before: git history of the same file).
+
 ### 1.7 Turning ANY topic into a story (the recipe)
 1. **What's the surprising true answer?** That's the payoff.
 2. **Who would get it wrong?** Invent a confident fool, or find a real person who did (Doug).
@@ -191,6 +212,7 @@ something to follow the next line, the script is broken.
 - **Sound effects in the voice** ("vroom vroom", "kaboom").
 - **End on an understated quote** from the subject, or "the rest is history."
 - Keep the slang natural to the narrator voice we cast. Personality, not imitation.
+- **§1.6b wins over style:** euphemisms, slang and clipped dialogue only when anyone gets them instantly. If in doubt, say it plainly.
 
 ### 1.11 Short form (≈ 1:30): the same format, compressed
 Everything from §1.9–1.10 applies. Just fewer beats:
@@ -427,6 +449,7 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] The narrator bets early and changes their mind
 - [ ] Zero-knowledge pass (§1.6a): the basics set up first; every term, name and number explained in plain words;
       each term keeps the same name after it's defined (no synonyms, no sneaky new terms)
+- [ ] Plain-language pass (§1.6b): full simple sentences, everyday words, no slang/fragments; `node tools/readability.js <slug>` grade ≤ 5, no sentence > 14 words
 - [ ] The mechanism told as an if-then example; the surprise said out loud; every number has a yardstick and a cause
 - [ ] No side bets between characters; the last line mirrors a line from the middle
 - [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
