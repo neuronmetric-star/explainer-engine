@@ -1,96 +1,29 @@
-# LONG FORM (~8:30). Why did El Salvador send thousands of troops to Haiti?
-# Format: Coon question → Ray skeleton (PLAYBOOK §1.9) → Xevi narrator personality (§1.10).
-# Payoff: officially it's a rescue of four missing airmen, and it is. But the rescue also did what Bukele's 2024
-#   "we can fix it" offer never could: overnight it met (Haiti's yes), dropped (someone else pays) or skipped
-#   (a UN vote) all three of his conditions, and let him try his gang crackdown inside Haiti.
-# Plant: the three conditions (2024) + the four guys' burned truck. Observer: human rights groups (Gary).
-# Until #1: "That's the end, right? Wrong." Until #2: El Salvador says it'll leave when the four reappear... until Haiti asks it to stay.
-# Callback: the quiz on the three conditions. Last line mirrors the narrator's bet ("a rescue mission").
-# Cast are silent STAND-INS, not likenesses: Victor = "the president" (Bukele). Polo guy ×4 = the four technicians.
-#   Gary = the human rights watchers. Real people are never shown as themselves (see sources.md).
-# Running gag: "Four guys." Euphemism: prison = "timeout" / "timeout house".
+# SHORT FORM (~1:30). Why did El Salvador send thousands of troops to Haiti?
+# Format: Coon question → Ray skeleton compressed (PLAYBOOK §1.11) → Xevi narrator personality.
+# Payoff: officially it's a rescue of four missing airmen, and it is. But the rescue also met, dropped or skipped all
+#   three conditions of Bukele's 2024 "we can fix it" offer, so his gang crackdown got into Haiti.
+# Plant: the three conditions + the four guys' truck. Observer: human rights groups (Gary). Until: "we leave"... until Haiti asks them to stay.
+# Callback: the three conditions as a checklist. Last line mirrors the bet ("rescue mission").
+# Cast are silent STAND-INS, not likenesses: Victor = the president (Bukele); polo guy ×4 = the four guys; Gary = human rights groups.
+# Running gag: "Four guys." Euphemism: prison = "timeout". Long version parked in script-long.txt.
 [#q] Why the {*f*ck|fuck} did El Salvador send {*2,500|two thousand five hundred} soldiers to {*Haiti?|Haiti?}
 [#cold] See, El Salvador had a problem. It was missing {*four|four} guys.
-[#card] Now, El Salvador is a tiny country in Central America. About the size of New Jersey. About six million people.
-[#prez] Its president is Nayib Bukele. He's forty-five, he's run the country since twenty nineteen, [#x] and he announces everything on X, the app formerly known as Twitter.
-[#famous] And Bukele is famous for one thing: making *gangs disappear.
-[#gangs] Gangs, here, means armed groups that run whole neighborhoods and charge everybody in them protection money.
-[#2015] See, in twenty fifteen, El Salvador was the most violent country in this half of the world. {!103|One hundred and three} murders for every hundred thousand people.
-[#stadium] Picture a sold-out stadium. A hundred thousand fans. [#stadium2] By the end of the year, a hundred and three of them are dead.
-[#2022] So in March twenty twenty-two, after a weekend of gang killings, Bukele hits the big red button.
-[#exception] It's called a state of exception: an emergency rule that lets police arrest people without most of the usual rules.
-[#90k] Since then, more than {*90,000|ninety thousand} people have been sent to timeout. [#cecot] Including a brand-new mega-prison built for {*40,000|forty thousand}. The world's biggest timeout house.
-[#now] And murders? Last year, the government says, one point three per hundred thousand. [#stadium3] Same stadium. About one fan.
-[#honest] Now, honesty check. I looked into it. Human rights groups say innocent people got swept up too, and some died behind bars.
-[#margin] Even the government admitted a margin of error of about one percent. [#900] One percent of ninety thousand is {!900|nine hundred} people. [#bus] That's about fifteen school buses of people in timeout by mistake.
-[#landslide] But at home? People loved it. He won re-election in twenty twenty-four by a landslide. [#abroad] And he started looking at other countries.
-[#haiti] Like Haiti. Haiti is a country in the Caribbean, [#miles] about twelve hundred miles from El Salvador. Roughly New York to Miami.
-[#2021] In twenty twenty-one, Haiti's president was killed in his own home. [#vacuum] Nobody was elected to replace him, and the gangs moved in.
-[#90] Today they control up to {!90%|ninety percent} of the capital, Port-au-Prince. [#displaced] {!1.5 million|One and a half million} Haitians have been chased out of their homes. [#philly] That's everyone in Philadelphia, packing one bag.
-[#offer] So in March twenty twenty-four, Bukele looks at Haiti and posts, basically: "We can fix it."
-[#conditions] But his offer came with three conditions. [#c1] One: a vote from the UN Security Council. That's the fifteen-country United Nations committee that can okay sending armed forces somewhere.
-[#c2] Two: Haiti has to say yes. [#c3] Three: somebody else pays. [#quiz] Remember those three. There's gonna be a quiz.
-[#nobody] Nobody took him up on it.
-[#world] So the world tried its own fix. [#kenya] First, in twenty twenty-four, a police mission led by Kenya, a country in East Africa. Underfunded. Understaffed.
-[#gsf] Then, in September twenty twenty-five, the Security Council voted for something with a very subtle name: the {*Gang|Gang} {*Suppression|Suppression} {*Force.|Force.}
-[#size] The Gang Suppression Force was allowed {*5,550|five thousand five hundred fifty} people. [#actual] A year later, it had {!1,563|fifteen hundred sixty-three}.
-[#groupchat] I imagine the group chat looks like this. Five thousand invited. Fifteen hundred showed up. [#pizza] Like ordering four pizzas and getting one.
-[#salv] El Salvador's piece of the Gang Suppression Force? {*124|A hundred twenty-four} people. [#tech] Mostly pilots and aviation technicians, the people who keep the helicopters flying.
-[#oneday] So one day, Sunday, October eighteenth, twenty twenty-six, [#four] four of those technicians do the most normal thing in the world. [#shop] They go grocery shopping.
-[#remember] From here on, they're the four guys.
-[#drive] They drive back to base in an armored truck, through Croix-des-Bouquets, a town just outside the capital.
-[#ambush] Then, gunmen. [#boom] Explosives hit the truck. {!Boom.|Boom.} [#fire] It catches fire. [#out] The four guys climb out. [#gone] And then they're gone.
-[#stories] Haiti's government says: missing. [#gangclaim] One gang leader says: dead. [#elsclaim] El Salvador says: kidnapped. [#noclaim] And no gang says, "That was us."
-[#bet] Honestly? I figured this was a rescue mission. Four guys. Go get them, come home.
-[#creole] A few days later, Bukele posts on X. In Haitian Creole, the language most Haitians speak at home.
-[#quote] "We already finished with the gangs in El Salvador. [#quote2] And we can finish with you too."
-[#deal] Then he offers a deal: give back the four guys and everything goes back to how it was. [#silence] The gangs said... nothing.
-[#d22] October twenty-second: about a hundred special forces land in Haiti.
-[#d27] October twenty-seventh: the news agency Reuters says about a {*thousand|thousand} soldiers.
-[#d28] October twenty-eighth: El Salvador's government says more than {*2,000|two thousand}.
-[#correct] Actually, wait. Latest count is two thousand five hundred. [#lost] I keep losing count. So does everyone else.
-[#forfour] Two thousand five hundred soldiers. [#forfour2] For four guys. [#ratio] That's six hundred and twenty-five soldiers per missing guy.
-[#bigger] That's more soldiers than the entire Gang Suppression Force.
-[#armor] Armored trucks. Helicopters. [#plane] And at least one American plane to fly them in.
-[#call] Oh, and before going big, Bukele called the president of the United States, Donald Trump.
-[#ask] Bukele said, "You good with this?" [#trump] Trump said, "Do what you have to do." [#sayless] Bukele said, "Say less."
-[#invasion] Then, to Haitians, Bukele posts: "This is not an operation against the Haitian people, nor an invasion."
-[#bill] And the bill? He says El Salvador is paying {*90%|ninety percent} of it. [#budget] "With our own small budget." [#hold] Hold on to that one.
-[#wicked] And here's where it starts to get wicked.
-[#nov8] Early November. Back in Croix-des-Bouquets, the same town where the four guys disappeared, [#mawozo] sits the headquarters of {400 Mawozo|Four Hundred Mawozo}, one of Haiti's biggest gangs. [#missionaries] The same gang that kidnapped seventeen missionaries in twenty twenty-one.
-[#strike] Haitian police go in, backed by Salvadoran troops, exploding drones and four armed helicopters. [#whup] Whup whup whup whup.
-[#rubble] The headquarters? *Rubble. [#twenty] Media reports say about {!20|twenty} people were killed. [#leader] The gang's leader? Not home.
-[#nov12] November twelfth: Haiti's national soccer stadium. Gangs had held it since twenty twenty-four.
-[#retake] Haitian forces take it back and hand it to the Salvadorans, [#base] who turn it into a base. [#cots] Imagine your hometown stadium with army cots on the center line.
-[#nov18] Then, November eighteenth, Bukele posts that his troops flattened the house of another gang leader, who goes by Jeff. [#jeff] Jeff. One of the scariest men in Haiti is named *Jeff.
-[#thanks] Haiti's prime minister, the man running Haiti's government, says *thank *you. [#march] And Haitians march in the streets. In *support.
-[#bet2] At this point I'm thinking, okay. He might actually pull this off.
-[#problem] Now here's the problem.
-[#gary] Human rights groups, like Amnesty International, people whose whole job is checking what soldiers do to regular people, [#notice] notice a detail.
-[#most] Most of those two thousand five hundred soldiers are not part of the Gang Suppression Force. [#side] They're there on a side deal between El Salvador and Haiti.
-[#rules] So who decides when they can shoot? Who checks? [#opaque] So far, nobody outside really knows.
-[#home] And remember the honesty check? Nine hundred people in timeout by mistake, back home? [#same] Same president. Same playbook.
-[#clue] And a second detail. One you've already seen.
-[#truck] November third: police find the four guys' truck. Burned to a shell. [#empty] {!Empty.|Empty.}
-[#posts] Every strike gets a video on X. [#still] The four guys? Still {!missing.|missing.}
-[#end1] Headquarters, rubble. Stadium, back. That's the end, right? [#right] Right? [#wrong] {!Wrong.|Wrong.}
-[#nov16] November sixteenth. El Salvador's security minister says it out loud: [#reappear] "If they reappear tomorrow, we will leave."
-[#offswitch] So the whole operation has an off switch. And the off switch is four guys.
-[#until] Until... [#stay] Haiti's own security minister says: actually, could you stay longer?
-[#protest] And Haitians who've lived under the gangs for years hold up signs asking the same thing.
-[#quizzes] Okay. Quiz time. [#recall] Remember Bukele's three conditions from twenty twenty-four?
-[#q1] Haiti says yes? {*Check.|Check.}
-[#q2] Somebody else pays? He's paying ninety percent himself. [#q2b] Condition {!deleted.|deleted.}
-[#q3] A UN Security Council vote? Most of his soldiers aren't even in the Gang Suppression Force. [#q3b] {!Skipped.|Skipped.}
-[#bam] {*Bam.|Bam.} [#needed] In twenty twenty-four, Bukele needed three things to go into Haiti. [#onething] In twenty twenty-six, he needed one. A reason nobody could argue with. [#reason] Four {*guys.|guys.}
-[#surprise] So the rescue isn't fake. It's real. [#door] It's also the {*door.|door.}
-[#ifthen] If a president sends soldiers to fix another country, everybody asks: Who said you could? Who's paying? What are the rules?
-[#ifthen2] If he sends soldiers to bring his own people home, nobody asks. [#ifthen3] Who argues with getting your people back?
-[#lawn] It's like the neighbor who's offered to mow your lawn for two years. You keep saying no. [#frisbee] Then his frisbee lands in your yard. He hops the fence to get it.
-[#mow] And while he's there... he mows the lawn. [#clap] And half the street starts clapping.
-[#spec] Now, I'm reading between the lines. Officially, it's a rescue, and El Salvador says it leaves when the four guys come home.
-[#tally] So here's the tally so far. [#t1] {*2,500|Two thousand five hundred} soldiers. [#t2] One gang headquarters, one stadium, one house of a guy named Jeff.
-[#t3] About twenty people killed in one strike alone. [#t4] And four guys found: {!zero.|zero.}
-[#both] Amnesty International is asking for safeguards. A lot of Haitians are asking for more. [#bothtrue] Both of those are real.
-[#last] I said this was a rescue mission. [#last2] It is. [#last3] We just don't know yet who's getting {*rescued.|rescued.}
+[#card] El Salvador's a tiny Central American country. Its president, Nayib Bukele, is famous for one thing: [#timeout] putting ninety thousand gang suspects in timeout until murders almost stopped.
+[#haiti] Haiti, in the Caribbean, has the opposite problem. [#gangs] Gangs, armed groups that run whole neighborhoods, control up to {!90%|ninety percent} of its capital.
+[#offer] In twenty twenty-four, Bukele offered to fix it. [#three] Three conditions: the UN, the club of almost every country, votes yes. Haiti says yes. Somebody else pays. [#nobody] Nobody bit.
+[#unforce] The UN sent its own force instead. [#mechanics] El Salvador chipped in some helicopter mechanics.
+[#oneday] This October, four of them go grocery shopping.
+[#ambush] Gunmen hit their armored truck. {!Boom.|Boom.} [#gone] The four guys? Gone.
+[#bet] Honestly? I figured: rescue mission. Four guys. Go get them, come home.
+[#creole] Bukele posts in Haitian Creole: [#quote] "We finished with the gangs in El Salvador. We can finish with you too."
+[#count] A {*thousand|thousand} soldiers. [#count3] {*Two thousand.|Two thousand.} [#count4] {*Two thousand five hundred.|Two thousand five hundred.} [#forfour] For four guys.
+[#bigger] More than the entire UN force.
+[#trump] Donald Trump, the US president, says: "Do what you have to do."
+[#rubble] A gang headquarters? {*Rubble.|Rubble.} [#stadium] Haiti's national stadium? His base now. [#march] Haitians march. In {*support.|support.}
+[#gary] But human rights groups notice a detail. [#most] Most of those soldiers aren't part of the UN force. [#rules] Their rules? {!Unclear.|Unclear.}
+[#truck] Police find the four guys' truck. Burned. [#empty] {!Empty.|Empty.} [#still] Still {!missing.|missing.}
+[#leave] El Salvador says, "When they turn up, we leave." [#until] Until... [#stay] Haiti asks them to stay.
+[#check] Remember the three conditions? [#c2] Haiti says yes? {*Check.|Check.} [#c3] Somebody else pays? He's paying ninety percent himself. [#c1] The UN vote? {!Skipped.|Skipped.}
+[#bam] {*Bam.|Bam.} [#needed] In twenty twenty-four, he needed three things. [#one] Now? One: a reason nobody argues with. [#reason] Four {*guys.|guys.}
+[#last] I figured this was a rescue mission. [#last2] It is. [#last3] We just don't know yet who's getting {*rescued.|rescued.}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

@@ -1,6 +1,6 @@
 # Sources: Why did El Salvador send thousands of troops to Haiti?
 
-Research date: **2026-11-18**. This is a live news story; numbers moved daily. Re-check the status of the four
+Research date: **2026-11-18**. Video is SHORT form (`script.txt`); long version parked in `script-long.txt` (extra claims below cover both). This is a live news story; numbers moved daily. Re-check the status of the four
 airmen and the troop count right before publishing.
 
 ## What's labeled
