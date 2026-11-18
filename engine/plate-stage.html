@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Plate stage</title>
+<!-- Current-format stage: engine/plate-stage.html?v=<slug> (tools/render.js picks it when videos/<slug>/art/ exists) -->
+<style>
+@font-face{font-family:IN;font-weight:900;src:url('../node_modules/@fontsource/inter/files/inter-latin-900-normal.woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family:IN,sans-serif}
+#c{position:fixed;inset:0;width:1080px;height:1920px}
+#ui{position:fixed;inset:0;pointer-events:none}
+#cap{position:absolute;left:0;right:0;top:1270px;text-align:center;font-weight:900;font-size:92px;color:#fff;
+  -webkit-text-stroke:16px #000;paint-order:stroke fill;text-shadow:0 8px 0 rgba(0,0,0,.55)}
+#cap.gold{color:#ffd23a} #cap.red{color:#ff4a3d}
+#flash{position:absolute;inset:0;background:#fff3d6;opacity:0}
+#follow{position:absolute;left:50%;top:560px;transform:translateX(-50%);border:6px solid #000;border-radius:70px;padding:24px 64px;
+  font-weight:900;font-size:64px;color:#000;background:#ffd23a;box-shadow:0 10px 0 rgba(0,0,0,.45);white-space:nowrap;opacity:0}
+#follow.on{background:#fff}
+#cursor{position:absolute;width:80px;height:80px;opacity:0}
+</style></head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui"><div id="flash"></div><div id="follow">+ FOLLOW</div>
+<svg id="cursor" viewBox="0 0 24 24"><path d="M3 2l17 9-7 2-3 7z" fill="#fff" stroke="#000" stroke-width="1.4"/></svg><div id="cap"></div></div>
+<script src="../node_modules/three/build/three.min.js"></script>
+<script src="../node_modules/three/examples/js/environments/RoomEnvironment.js"></script>
+<script src="script.js"></script>
+<script src="characters.js"></script>
+<script>
+(function(){
+  const v=new URLSearchParams(location.search).get('v');
+  if(!v){ document.body.innerHTML='<h1 style="color:#fff">add ?v=video-slug</h1>'; return; }
+  const load=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error('missing '+src));document.body.appendChild(s);});
+  load('../videos/'+v+'/data.js').then(()=>load('plate-kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>PK.start())
+    .catch(e=>{ window.loadError=String(e&&e.stack||e); console.error(e); });
+})();
+</script>
+</body></html>

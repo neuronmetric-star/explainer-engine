@@ -20,13 +20,15 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
 
 (async () => {
   const launch = { args: flag('--gpu') > -1 ? ['--ignore-gpu-blocklist', '--enable-gpu-rasterization'] : ['--use-gl=swiftshader', '--enable-webgl', '--ignore-gpu-blocklist'] };
-  const sysChrome = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'].find(p => fs.existsSync(p));
+  launch.args.push('--allow-file-access-from-files');   // plates/props load from disk
+  const sysChrome = ['/usr/bin/google-chrome', '/usr/bin/chromium', '/usr/bin/chromium-browser', '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome', '/opt/pw-browsers/chromium'].find(p => fs.existsSync(p));
   if (process.env.CHROME_PATH) launch.executablePath = process.env.CHROME_PATH;
   else if (sysChrome) launch.executablePath = sysChrome;   // use installed Chrome if there is one
   const browser = await chromium.launch(launch);
   const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
   const errors = []; page.on('pageerror', e => errors.push(String(e))); page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
-  await page.goto('file://' + path.join(ROOT, 'engine', 'stage.html') + '?v=' + encodeURIComponent(slug));
+  const stage = fs.existsSync(path.join(dir, 'art')) ? 'plate-stage.html' : 'stage.html';   // new format = has art/
+  await page.goto('file://' + path.join(ROOT, 'engine', stage) + '?v=' + encodeURIComponent(slug));
   await page.waitForFunction('window.ready===true || window.loadError', null, { timeout: 60000 });
   const le = await page.evaluate('window.loadError'); if (le) throw new Error(le + '\n' + errors.join('\n'));
   await page.evaluate('document.fonts.ready.then(()=>1)');
@@ -35,7 +37,7 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
 
   if (preview) {
     const times = pList || Array.from({ length: 12 }, (_, i) => +(0.8 + i * (L - 1.6) / 11).toFixed(2));
-    const tmp = path.join(dir, '.preview'); fs.mkdirSync(tmp, { recursive: true });
+    const tmp = path.join(dir, '.preview'); fs.rmSync(tmp, { recursive: true, force: true }); fs.mkdirSync(tmp, { recursive: true });
     let prev = 0;
     for (let i = 0; i < times.length; i++) {
       await page.evaluate(`window.step(${Math.max(1, Math.round((times[i] - prev) * FPS))},${1 / FPS})`); prev = times[i];

@@ -15,8 +15,8 @@
 [#watch] But Gary wasn't watching Doug. He was watching the tailpipe. [#small] The puffs were getting smaller.
 [#until] Until, one block later, they stopped. [#stall] So did the car. Right in the {!intersection.|intersection.}
 [#aside] Now you're thinking, how did his car make water in the first place? I'mma tell you.
-[#boom] Your car doesn't drink gas. It blows it up. A spark sets off a mist of gas and air, {!boom,|boom,} about {*80|eighty} times a second. Every boom shoves a piston that turns the wheels.
-[#leftovers] And when gas explodes, what's left over is carbon dioxide, and *water. Burn a gallon of gas, and roughly a {*gallon|gallon} of water comes out the back.
+[#boom] Your car doesn't drink gas. It blows it up. [#spark] A spark sets off a mist of gas and air, [#bang] {!boom,|boom,} [#rate] about {*80|eighty} times a second. [#piston] Every boom shoves a piston that turns the wheels.
+[#leftovers] And when gas explodes, what's left over is carbon dioxide, and *water. [#gallon] Burn a gallon of gas, and roughly a {*gallon|gallon} of water comes out the back.
 [#callback] That drip? Leftovers.
 [#ash] Water isn't fuel. It's what fuel turns into when it's done. It's already burned. Running a car on water is like lighting a fire with {!ashes.|ashes.}
 [#split] Split it back into fuel? Sure, if you want to spend more energy than you'll ever get back.
