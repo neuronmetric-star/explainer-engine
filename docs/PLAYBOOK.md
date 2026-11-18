@@ -92,7 +92,7 @@ Write down what the viewer will discover. Then pick the question word that the e
   the 1–2 people we follow (Doug, Gary).
 - **Hold back the explanation until about 60–75% of the runtime.** The question opens at second 0
   and the answer arrives around second 55–65 of 90.
-- **End on the payoff image and a dry final line.** No "follow for more". Hard stop.
+- **End on the payoff image and a dry final line, then the follow CTA (§1.12).**
 
 ### 1.5 Format and length
 | Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
@@ -131,7 +131,7 @@ Time the read aloud. Leave about 0.5 s after each reveal line.
 | 4:30–5:30 | **Near-miss / false ending #1** | "And that's the end of that, right? Right? Wrong." |
 | 5:30–7:00 | **Escalation 2, until #2** | "…they're never gonna get caught… until…" (hold a beat of silence) |
 | 7:00–8:00 | **Callback payoff** | "Remember how I said…? Well…" + "Bam," then evidence on screen |
-| 8:00–8:30 | **Aftermath + verdict** | the cost in numbers, then one dry line ("So good for him."). No CTA |
+| 8:00–8:30 | **Aftermath + verdict** | the cost in numbers, then one dry line ("So good for him."), then the follow CTA (§1.12) |
 
 **Ray's rules:**
 - Numbers on every beat.
@@ -167,7 +167,7 @@ Everything from §1.9–1.10 applies. Just fewer beats:
 | 0:35–0:50 | **Apparent success + one number**, and the narrator's bet ("Honestly? I'd have bet on Doug.") |
 | 0:50–1:00 | **The observer notices the clue** (planted earlier, visible before it's explained) |
 | 1:00–1:15 | **One "until" flip + the mechanism/reveal** (callback to the plant) |
-| 1:15–1:30 | **"Bam," the consequence + a deadpan last line.** Hard stop |
+| 1:15–1:30 | **"Bam," the consequence + a deadpan last line**, then the follow CTA (§1.12) |
 
 Xevi's personality stays, scaled down:
 - 1–2 performed dialogue exchanges, not 10.
@@ -177,6 +177,17 @@ Xevi's personality stays, scaled down:
 
 Shots: ≈ 30–35 cuts, 7–12 backgrounds, 6–10 props (one ChatGPT batch file).
 A long-form story can also be **cut down into a short** that ends on its first "until" or its reveal.
+
+### 1.12 The follow CTA (every video, short and long)
+After the last story line, a short beat (about 0.4 s), then the narrator says it in the same voice:
+> **"If you enjoyed this, follow. The algorithm is crazy, you might never see me again. So follow if you want more facts."**
+
+- Small wording variations are fine ("If you enjoyed this one…"). Keep the idea: **the algorithm is
+  crazy, you might never see me again, follow for more facts.** About 22 words, ≈ 6–7 s. It's on top of the
+  story's word count.
+- **Picture:** hold the final story image, then the **+ FOLLOW** button pops in, a cursor taps it, and it
+  becomes **✓ FOLLOWING**. A cast member reacts: Doug `point`s at the button, Gary `cross` + `smirk`.
+- Captions keep running one word at a time. "follow" is gold.
 
 ### 1.8 Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before
@@ -370,7 +381,7 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] The narrator bets early and changes their mind
 - [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
 - [ ] 290–310 words (short); every claim sourced; fiction labeled
-- [ ] Dry last line, hard stop
+- [ ] Dry last line, then the follow CTA
 
 **Images**
 - [ ] All from one ChatGPT chat with the style bible; portrait; no people
