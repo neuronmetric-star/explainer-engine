@@ -8,10 +8,11 @@
 # Running gag: "Four guys." Euphemism: prison = "timeout". Long version parked in script-long.txt.
 [#q] Why the {*f*ck|fuck} did El Salvador send {*2,500|two thousand five hundred} soldiers to {*Haiti?|Haiti?}
 [#cold] See, El Salvador had a problem. It was missing {*four|four} guys.
-[#card] El Salvador's a tiny Central American country. Its president, Nayib Bukele, is famous for one thing: [#timeout] putting ninety thousand gang suspects in timeout until murders almost stopped.
-[#haiti] Haiti, in the Caribbean, has the opposite problem. [#gangs] Gangs, armed groups that run whole neighborhoods, control up to {!90%|ninety percent} of its capital.
+[#card] El Salvador's a tiny Central American country that used to be run by gangs, [#gangs] armed groups that rule whole neighborhoods.
+[#timeout] Then its president, Nayib Bukele, put {*90,000|ninety thousand} gang suspects in timeout. [#murders] Murders almost {*stopped.|stopped.}
+[#haiti] Haiti, in the Caribbean, has the same problem now: [#capital] gangs run up to {!90%|ninety percent} of its capital.
 [#offer] In twenty twenty-four, Bukele offered to fix it. [#three] Three conditions: the UN, the club of almost every country, votes yes. Haiti says yes. Somebody else pays. [#nobody] Nobody bit.
-[#unforce] The UN sent its own force instead. [#mechanics] El Salvador chipped in some helicopter mechanics.
+[#unforce] The UN sent its own force instead. [#mechanics] El Salvador sent helicopter mechanics.
 [#oneday] This October, four of them go grocery shopping.
 [#ambush] Gunmen hit their armored truck. {!Boom.|Boom.} [#gone] The four guys? Gone.
 [#bet] Honestly? I figured: rescue mission. Four guys. Go get them, come home.
