@@ -46,8 +46,8 @@
   const propCam = new THREE.OrthographicCamera(0, W, 0, -H, -10, 10);
   const propBack = new THREE.Scene(), propFront = new THREE.Scene();
   const keyVS = 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }';
-  const keyFS = `varying vec2 vUv; uniform sampler2D map; uniform float opacity;
-    void main(){ vec4 c = texture2D(map, vUv); float g = c.g - max(c.r, c.b);
+  const keyFS = `varying vec2 vUv; uniform sampler2D map; uniform float opacity; uniform float keyed;
+    void main(){ vec4 c = texture2D(map, vUv); float g = (c.g - max(c.r, c.b)) * keyed;
       float a = c.a * (1.0 - smoothstep(0.16, 0.42, g)) * opacity;
       c.g = mix(c.g, max(c.r, c.b), smoothstep(0.10, 0.42, g));
       if (a < 0.004) discard; gl_FragColor = vec4(c.rgb, a); }`;
@@ -95,13 +95,13 @@
 
   // ---------------- props (green-screen sprites) ----------------
   const PROPS = {}, POOL = [];
-  function sprite() { const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: { map: { value: null }, opacity: { value: 1 } }, vertexShader: keyVS, fragmentShader: keyFS, transparent: true, depthTest: false, depthWrite: false })); m.visible = false; POOL.push(m); return m; }
+  function sprite() { const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: { map: { value: null }, opacity: { value: 1 }, keyed: { value: 1 } }, vertexShader: keyVS, fragmentShader: keyFS, transparent: true, depthTest: false, depthWrite: false })); m.visible = false; POOL.push(m); return m; }
   let poolI = 0;
   // K.prop('P01', {x, y, w, rot, a, layer:'front'|'back', anchor:[ax,ay] (0..1 of the image), flip}): draw one sprite this frame
   K.prop = function (k, o) { const P = PROPS[k]; if (!P) throw new Error('unknown prop ' + k);
     const m = POOL[poolI] || sprite(); poolI++;
     const w = o.w, h = w * P.ih / P.iw, ax = o.anchor ? o.anchor[0] : .5, ay = o.anchor ? o.anchor[1] : .5;
-    m.material.uniforms.map.value = P.tex; m.material.uniforms.opacity.value = o.a === undefined ? 1 : o.a;
+    m.material.uniforms.map.value = P.tex; m.material.uniforms.keyed.value = P.cut ? 0 : 1; m.material.uniforms.opacity.value = o.a === undefined ? 1 : o.a;
     m.scale.set(o.flip ? -w : w, h, 1); m.rotation.z = -(o.rot || 0);
     // anchor: rotate around the anchor point
     const dx = (.5 - ax) * w, dy = (ay - .5) * h, c = Math.cos(-(o.rot || 0)), s = Math.sin(-(o.rot || 0));
@@ -161,7 +161,7 @@
   K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
     await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); }));
-    await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height }; }));
+    await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height, cut: /\.cut\.png$/.test(f) }; }));
     { const tex = puffTex(); PROPS.puff = { tex, iw: 128, ih: 128 }; }
     makeCast(SC.cast || {});
     SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]] })).sort((a, b) => a.t - b.t);
