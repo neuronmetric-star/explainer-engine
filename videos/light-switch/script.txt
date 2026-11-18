@@ -3,9 +3,9 @@
 # hair-thin wire gets so hot it glows. One gap anywhere (like a snapped filament) and nothing lights.
 # Clue: the snapped filament is visible in the first shot of the dead bulb. Doug and Gary are fictional.
 [#q] Why the {*f*ck|fuck} does the light turn on when you flip the {*switch?|switch?}
-[#card] See, Doug had a problem. His lamp stopped working, and Doug is sure it's the {!switch.|switch.}
+[#card] See, Doug had a problem. His light stopped working, and Doug is sure it's the {!switch.|switch.}
 [#flip] So he flips it. Click. Nothing. [#clicks] Click, click, click. Nothing. [#fifty] Fifty clicks. Doug goes, "It's broken."
-[#gary] Gary from next door picks up the bulb and shakes it. [#rattle] It rattles. Gary says nothing.
+[#gary] Gary from next door unscrews the bulb and shakes it. [#rattle] It rattles. Gary says nothing.
 [#bet] Honestly? I'd have blamed the switch too.
 [#aside] Now you're thinking, why does a rattle matter? I'mma tell you how a light actually works. [#three] Three steps.
 [#step1] Step one: the {*switch.|switch.} Behind that little flap on your wall are two pieces of metal. [#off] Off, they're apart, with a tiny gap of air. [#on] On, they touch.
