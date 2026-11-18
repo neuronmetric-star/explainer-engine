@@ -10,7 +10,7 @@ It's on screen at `card` and `gary`, before the narrator explains it at `reveal`
 ## Images
 | # | File | What |
 |---|---|---|
-| 01 | `01_living_room_dark.png` | Doug's living room at dusk, lamp OFF: bare bulb hanging from the ceiling on a cord, wall switch left |
+| 01 | `01_living_room_dark.png` | Doug's living room at dusk, light OFF: bare bulb hanging from the ceiling on a cord, wall switch left |
 | 02 | `02_living_room_lit.png` | The exact same room, ceiling bulb ON, warm glow |
 | 03 | `03_switch_closeup.png` | Close-up of the wall switch on the wall |
 | 04 | `04_switch_inside_off.png` | Cutaway inside the switch: two metal contacts APART, small air gap |
