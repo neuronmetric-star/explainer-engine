@@ -4,7 +4,7 @@ argument-hint: <topic, e.g. "why airlines overbook flights">
 ---
 Make a video about: **$ARGUMENTS**
 
-Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/why-cars-need-gas/`.
+Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs-water/`.
 
 1. Write the **payoff** (one sentence the viewer will discover) and pick the question word that it answers.
    Pick a short slug and create `videos/<slug>/`.

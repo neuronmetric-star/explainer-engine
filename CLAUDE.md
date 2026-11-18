@@ -5,7 +5,7 @@ science, money, history, "how things really work." Owner: Brian (NeuronMetric).
 He works mostly from his phone — keep messages short, show previews, ask before spending credits.
 
 **The full method is `docs/PLAYBOOK.md`. Read it before starting any video and follow it.**
-Worked example: `videos/why-cars-need-gas/`.
+Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` is an older draft).
 
 ## The format (every video)
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
@@ -70,4 +70,4 @@ before every picture change · lines starting `#` are comments. Numbers as words
   (Chromium needs `--allow-file-access-from-files`).
 - **Legacy** gold-noir engine (`engine/kit.js`, `stage.html`, `tools/render.js`, `videos/buy-borrow-die`)
   still renders the old wireframe look. Wiring plates + cast into `scene.js`/`render.js` is the next
-  build step (do it with `why-cars-need-gas`). Everything in `update` must be a pure function of `t`.
+  build step (do it with `gas-vs-water`). Everything in `update` must be a pure function of `t`.

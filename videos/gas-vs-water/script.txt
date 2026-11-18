@@ -19,9 +19,6 @@
 [#leftovers] And when gas explodes, what's left over is carbon dioxide, and *water. Burn a gallon of gas, and roughly a {*gallon|gallon} of water comes out the back.
 [#callback] That drip? Leftovers.
 [#ash] Water isn't fuel. It's what fuel turns into when it's done. It's already burned. Running a car on water is like lighting a fire with {!ashes.|ashes.}
-[#split] Could you split water back into fuel? Sure. It just costs more energy than you'll ever get back.
-[#lines] The car only started on gas left in the lines.
-[#fraud] In the nineties, a guy actually sold a "water car." A judge called it {!gross|gross} and egregious fraud.
-[#tow] Bam. Doug paid for a tow, and a mechanic to drain the {!fish tank|fish tank} out of his car.
-[#end] Gary still won't lend him the hose.
+[#split] Split it back into fuel? Sure, if you want to spend more energy than you'll ever get back.
+[#tow] {!Bam.|Bam.} Tow truck. Fish tank drained. [#end] And Gary kept his hose.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
