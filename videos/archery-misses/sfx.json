@@ -1,0 +1,19 @@
+[
+ {"type": "rumble", "from": "q", "to": "problem", "gain": 0.7},
+ {"type": "rumble", "from": "barriers", "to": "waits", "gain": 0.7},
+ {"type": "rumble", "from": "gap1", "to": "almost", "gain": 0.7},
+ {"type": "twang", "at": "gary+1.6"}, {"type": "whoosh", "at": "gary+1.6", "dur": 0.4},
+ {"type": "rumble", "from": "clank", "to": "bet", "gain": 0.6},
+ {"type": "whoosh", "at": "clank-0.25", "dur": 0.3}, {"type": "clank", "at": "clank+0.05"},
+ {"type": "rumble", "from": "early", "to": "wait2", "gain": 0.6},
+ {"type": "whoosh", "at": "early+0.4", "dur": 0.3, "gain": 0.8}, {"type": "clank", "at": "early+0.7", "gain": 0.8},
+ {"type": "twang", "at": "wait2+2.0"}, {"type": "whoosh", "at": "wait2+2.0", "dur": 0.4},
+ {"type": "rumble", "from": "through1", "to": "knows", "gain": 0.6},
+ {"type": "whoosh", "at": "through1+0.15", "dur": 0.7}, {"type": "whoosh", "at": "through1+0.8", "dur": 1.6, "gain": 0.6},
+ {"type": "clank", "at": "hit2+0.17"},
+ {"type": "twang", "at": "aim+2.4"}, {"type": "whoosh", "at": "aim+2.4", "dur": 0.4},
+ {"type": "rumble", "from": "slips", "to": "bullseye", "gain": 0.6},
+ {"type": "whoosh", "at": "slips+0.1", "dur": 3.4, "gain": 0.8},
+ {"type": "pop", "at": "slips+0.9", "gain": 0.5}, {"type": "pop", "at": "slips+1.7", "gain": 0.5}, {"type": "pop", "at": "slips+2.5", "gain": 0.5},
+ {"type": "thunk", "at": "bullseye-0.05"}, {"type": "ding", "at": "bullseye+0.05", "gain": 0.8}
+]

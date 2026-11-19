@@ -60,14 +60,20 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
     enc.stdin.end(); await new Promise(r => enc.on('close', r));
     const out = path.join(dir, 'final.mp4'), voice = path.join(dir, 'voice.mp3');
     const music = path.join(dir, 'music.mp3'); // optional quiet music bed: always under the voice and ducked while he speaks (mix rule)
+    // MIX RULE: the voice always wins. Voice -16 LUFS; sound effects (sfx.wav, made by tools/sfx.py) and music sit under it
+    // and are sidechain-ducked while he speaks. SFX_LEVEL / music level as in tools/assemble.js.
+    const sfx = path.join(dir, 'sfx.wav'), beds = [];
+    if (fs.existsSync(sfx)) beds.push({ file: sfx, vol: 0.5, loop: false });
+    if (fs.existsSync(music)) beds.push({ file: music, vol: 0.08, loop: true });
     let mux;
-    if (fs.existsSync(voice) && fs.existsSync(music))
-      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-stream_loop', '-1', '-i', music,
-        '-filter_complex', '[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad,asplit=2[v][k];[2:a]volume=0.08[m0];[m0][k]sidechaincompress=threshold=0.015:ratio=12:attack=15:release=350[m];[v][m]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[a]',
-        '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
-    else if (fs.existsSync(voice))
-      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-af', 'apad', '-t', L.toFixed(3)];
-    else mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
+    if (fs.existsSync(voice)) {
+      const ins = ['-i', silent, '-i', voice]; beds.forEach(b => { if (b.loop) ins.push('-stream_loop', '-1'); ins.push('-i', b.file); });
+      const duck = 'sidechaincompress=threshold=0.015:ratio=12:attack=15:release=350';
+      let f = `[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad,asplit=${beds.length + 1}[v]` + beds.map((_, i) => `[k${i}]`).join('') + ';';
+      beds.forEach((b, i) => { f += `[${i + 2}:a]aresample=44100,volume=${b.vol},apad[b${i}];[b${i}][k${i}]${duck}[d${i}];`; });
+      f += `[v]${beds.map((_, i) => `[d${i}]`).join('')}amix=inputs=${beds.length + 1}:duration=first:normalize=0,alimiter=limit=0.95[a]`;
+      mux = ['-y', '-loglevel', 'error', ...ins, '-filter_complex', f, '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
+    } else mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
     mux.push('-movflags', '+faststart', out);
     spawnSync(ff, mux, { stdio: 'inherit' }); fs.rmSync(silent, { force: true });
     console.log('done ->', path.relative(ROOT, out), `(${L.toFixed(1)}s, ${((Date.now() - t0) / 60000).toFixed(1)} min)`);
