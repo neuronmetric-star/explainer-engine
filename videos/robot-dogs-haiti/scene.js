@@ -59,7 +59,7 @@
       { at: 'next', plate: '04', zoom: [1.0, 1.35], focus: [[.5, .5], [.5, .48]] },
       { at: 'end', plate: '07', zoom: [1.2, 1.3], focus: [[.55, .6], [.6, .6]] },
       { at: 'roomba', plate: '08', zoom: [1.05, 1.2], focus: [[.55, .6], [.5, .62]] },
-      { at: 'ask', plate: '04', zoom: [1.0, 1.08], focus: [[.5, .6], [.5, .58]] },
+      { at: 'ask', plate: '04', zoom: [1.12, 1.2], focus: [[.5, .5], [.5, .5]] },
       { at: 'cta', plate: '04', zoom: [1.2, 1.2], focus: [[.5, .38], [.5, .38]] },
     ],
     shakes: [],
@@ -80,7 +80,7 @@
           const big = t > at('theory') + 1.6; face(D, big ? 'smirk' : 'happy', t);
           D.pose({ t, gesture: big ? 'hips' : 'tada', gw: K.ease(Lc / .3) }); break; }
         case 'gary': { dougRoom(); garyDoor(-.15); face(G, Lc > .8 ? 'smirk' : 'flat', t, 1); G.pose({ t, gesture: 'cross', gw: 1, tilt: K.ease((Lc - 1) / .3) * .12 }); D.pose({ t }); break; }
-        case 'salvador': { const u = K.clamp01(Lc / 3.2); K.prop('P04', { x: K.lerp(-300, 1300, u), y: 330 - 60 * u, w: 620, rot: -.04 }); break; }
+        case 'salvador': { const u = K.clamp01(Lc / 2.6); K.prop('P04', { x: K.lerp(-300, 1300, u), y: 330 - 60 * u, w: 620, rot: -.04 }); break; }
         case 'fight': break;
         case 'video': { K.place('pres', 0, 0, -5.2, 0); const tap = K.clamp01((Lc - .9) / .25) * (1 - K.clamp01((Lc - 1.5) / .25));
           face(P, Lc > 1.6 ? 'smirk' : 'smile', t); P.pose({ t, armR: { raise: .55 }, look: Lc > 1.6 ? 0 : .25, nod: Lc > 1.6 ? 0 : .22 - tap * .05 }); break; }
@@ -108,9 +108,12 @@
         case 'end': { K.place('doug', .3, 0, -6.2, .5); face(D, Lc < .3 ? 'blink' : 'worried', t); D.pose({ t, lean: -.08 * K.ease(Lc / .4), look: .4 }); break; }
         case 'roomba': { const u = K.clamp01(Lc / 2.4), p = K.img(K.lerp(740, 480, u), K.lerp(930, 1000, u));
           K.prop('P03', { x: p.x, y: p.y, w: 330 * K.imgScale() * K.lerp(.75, 1, u) }); break; }
-        case 'ask': case 'cta': { K.place('robot', -1.3, 0, -8.2, .35); R.pose({ t, walkAmt: 0, tilt: id === 'ask' ? Math.sin(Lc * 2) * .12 : 0, look: id === 'cta' ? .35 : 0 });
-          K.place('gary', 1.35, 0, -9.0, -.3); face(G, id === 'cta' ? 'smirk' : 'flat', t, 1);
-          G.pose({ t, gesture: id === 'cta' ? 'point' : 'shrug', gw: K.ease((Lc - .3) / .3) }); break; }
+        case 'ask': { K.place('robot', -.85, 0, -5.4, .55); R.pose({ t, walkAmt: 0, look: .35, tilt: Math.sin(Lc * 2) * .1 });
+          K.place('doug', .75, 0, -6.2, -.35); face(D, Lc < .25 ? 'blink' : 'surprised', t);
+          D.pose({ t, gesture: 'shrug', gw: K.ease((Lc - .5) / .3), lean: -.06, look: -.35 }); break; }
+        case 'cta': { K.place('robot', -1.3, 0, -8.2, .35); R.pose({ t, walkAmt: 0, look: .35 });
+          K.place('gary', 1.35, 0, -9.0, -.3); face(G, 'smirk', t, 1);
+          G.pose({ t, gesture: 'point', gw: K.ease((Lc - .3) / .3) }); break; }
       }
     },
   };
