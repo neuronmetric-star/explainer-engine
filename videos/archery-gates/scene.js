@@ -10,7 +10,7 @@
   const pxPerM = ch => { const p = ch.root.position, a = K.worldToScreen(p.x, 0, p.z), b = K.worldToScreen(p.x, 1, p.z); return Math.abs(a.y - b.y); };
 
   // ---- lane (plate 02) arrow flights, painting px: [time, x, y, width of the fletching seen from behind] ----
-  let FLIGHTS;
+  let FLIGHTS, QV;
   function flight(f, t) { const k = f.keys; if (t < k[0][0] || t > k[k.length - 1][0] + .08) return null;
     for (let i = 0; i < k.length - 1; i++) if (t <= k[i + 1][0]) { const u = (t - k[i][0]) / (k[i + 1][0] - k[i][0]), a = k[i], b = k[i + 1];
       return { x: a[1] + (b[1] - a[1]) * u, y: a[2] + (b[2] - a[2]) * u, w: a[3] * Math.pow(b[3] / a[3], u) }; }
@@ -119,6 +119,11 @@
         { keys: [[T('through') + .05, 520, 1700, 320], [T('through') + .5, 470, 975, 58], [T('through') + .9, 468, 918, 32], [T('through') + 1.25, 468, 898, 21], [T('blue') - .02, 468, 893, 12]] },
         { keys: [[T('aim') + .6, 470, 1700, 320], [T('aim') + .9, 360, 1100, 120]] },  // (unused flourish guard)
       ].slice(0, 2);
+      // opening volley (hook): arrows from both archers thunk into the gate posts and the target
+      const H = [[136, 620, 58, 'post'], [804, 760, 58, 'post'], [278, 820, 32, 'post'], [468, 858, 12, 'target'], [660, 700, 32, 'post'], [136, 980, 58, 'post'],
+                 [356, 880, 22, 'post'], [804, 520, 58, 'post'], [582, 830, 22, 'post'], [478, 866, 12, 'target'], [278, 690, 32, 'post'], [660, 950, 32, 'post']];
+      QV = H.map(([x, y, w, kind], i) => { const t1 = .35 + i * .23; return { t0: t1 - .4, t1, x0: 300 + (i * 173) % 400, x, y, w, kind }; });
+      window.__QV = QV.map(v => +v.t1.toFixed(2));
       SCORE = { gary: [T('bull1'), 43.6, 44.6, 45.5, T('buzzer') + .4, T('buzzer') + .4], doug: [T('bull2'), 45.2, T('buzzer') + .4] };
     },
 
@@ -167,7 +172,11 @@
       } else if (P === '02') {
         const sc = K.imgScale();
         for (const f of FLIGHTS) { const p = flight(f, t); if (!p) continue; const q = K.img(p.x, p.y); K.prop('P03', { x: q.x, y: q.y, w: p.w * sc * 1.1, rot: t * 9 }); }
-        if (id === 'q' || id === 'gates') leaves(t, 0);
+        if (id === 'q') for (const v of QV) {
+          if (t < v.t0) continue; const u = E((t - v.t0) / (v.t1 - v.t0));
+          const x = v.x0 + (v.x - v.x0) * u, y = 1750 + (v.y - 1750) * u, w = 300 * Math.pow(v.w / 300, u), q = K.img(x, y);
+          K.prop('P03', { x: q.x, y: q.y, w: w * sc * (1.1 + 1.3 * u), rot: u < 1 ? t * 9 : v.x });
+          const b = (t - v.t1) / .3; if (b > 0 && b < 1) K.prop('P06', { x: q.x, y: q.y, w: v.w * sc * 9 * (.6 + .6 * b), a: 1 - b * b }); }
       } else if (P === '05') {
         leaves(t, 1);
       }
