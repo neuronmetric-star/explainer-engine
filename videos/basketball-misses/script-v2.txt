@@ -1,0 +1,21 @@
+# SHORT. Basketball, no obstacles: Doug waits for the perfect shot, Gary just shoots. 3D engine. (v1 = script-v1.txt)
+# Payoff: every miss tells you which way to fix the next shot (short -> harder, long -> softer); waiting tells you nothing.
+# Question word: WHY. Doug, Gary and the contest are fictional. Numbers invented, they add up (30 shots, 18 missed, 12 made).
+# Plant: Gary's first ball lands short (clank). Mirror: "each miss tells him which way to fix it" -> "The misses told me."
+[#q] Why the {*heck|heck} does the guy who misses the most shots {*win?|win?}
+[#meet] Meet Doug and Gary. [#rules] One hoop. {*One|One} minute. A full rack of balls each. Most baskets wins.
+[#doug] Doug picks up a ball and... [#holds] holds it. He's waiting for the {*perfect|perfect} shot.
+[#stare] Eyes on the rim, like a cat staring at a laser pointer.
+[#gary] Gary just shoots. [#clank] {!Clank.|Clank.} Way {!short.|short.}
+[#bet] Honestly? I'm betting on Doug. One perfect shot beats ten ugly ones, right?
+[#harder] Gary's first ball landed short, so he pushes harder. [#bang] {!Bang.|Bang.} Off the backboard. Too {!long.|long.}
+[#between] Now he knows: somewhere in between. [#shower] Like a shower knob: too cold, too hot, then just right.
+[#swish] Third ball? {*Swish.|Swish.} Nothing but net.
+[#thinking] You're probably thinking: isn't missing the bad part? [#keeps] Gary keeps missing. Left. Right. Short.
+[#closer] But every miss lands a little {*closer,|closer,} because each miss tells him which way to fix it.
+[#still] Doug? Still holding. [#nothing] A whole minute of waiting told him {!nothing.|nothing.}
+[#buzzer] {!Buzzer.|Buzzer.}
+[#score] Gary shot {*30|thirty} times. He missed {!18.|eighteen.} [#made] He still made {*12.|twelve.}
+[#once] Doug shot once, at the buzzer. [#clank2] {!Clank.|Clank.} [#final] {*12|Twelve} to {!zero.|zero.}
+[#ask] Doug goes, "How'd you know where to aim?" [#answer] Gary goes, "The {*misses|misses} told me."
+[#cta] Be honest. What's your shot, [#holding] and how long have you been holding the {!ball?|ball?}
