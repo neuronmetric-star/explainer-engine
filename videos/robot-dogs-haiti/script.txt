@@ -1,26 +1,25 @@
-# SHORT FORM (~1:05). Why there are robot dogs with rifles in Haiti.
-# Format: Coon question → hook/middle/end (PLAYBOOK §1.11) → Xevi narrator personality. Shape: disputed account (§1.2).
-# Payoff: the robot dog's job isn't shooting, it's going FIRST. The first one through a door gets hurt the most,
-#         so a robot takes that spot instead of a person.
-# Plant: the robot is always in front (feet, hallway, stairs). Observer: Gary ("Watch it again"). Callback: "Watch the feet."
-# Mirror: Doug's "Robot army" → his Roomba "robot army" sent into the dark basement first (also pays off the little-brother analogy).
-# Doug and Gary are fictional viewers. The operation, footage and quote are real (sources.md). What the robots actually did is unverified.
-[#q] Why the {*heck|heck} are there robot dogs with rifles in {*Haiti?|Haiti?}
-[#problem] See, Doug had a problem. He'd seen the video.
-[#haiti] Haiti is a Caribbean country where gangs run {!70%|seventy percent} of the capital.
-[#salvador] So El Salvador, famous for jailing gangs, sent {*2,000|two thousand} soldiers.
-[#stadium] Last week, their president posted video from Haiti's soccer stadium: [#dog] four-legged robots, {!rifles|rifles} on top.
-[#theory] Doug goes, "Robot army. Gangs are done." [#gary] His neighbor Gary goes, "Watch it again."
-[#bet] Honestly? I'd have backed Doug. It's a dog with a gun.
-[#notice] But Gary watched the feet. [#hall] Down a hallway. [#stairs] Up stairs. [#front] Always in front.
-[#never] It never fires. Not {!once.|once.}
-[#aside] What's it for, then? I'mma tell you.
-[#door] Searching a building, someone opens each door first, not knowing what's inside.
-[#quote] A robot dog maker says that person gets {!hurt|hurt} most.
-[#brother] Like sending your little brother into the basement.
-[#eyes] So the robot goes first, cameras for eyes, steered from behind.
-[#ifthen] Empty hallway? Soldiers follow. Someone waiting? They meet the robot, not a {*person.|person.}
-[#surprise] The rifle's the scary part. Going first is the {*job.|job.}
-[#callback] "Watch it again"? Watch the {*feet.|feet.}
-[#end] That night, Doug's basement went dark. [#roomba] He sent in his {*robot|robot} {*army.|army.} A Roomba.
+# SHORT FORM. Why there are robot dogs with rifles in Haiti. v2 = Brian's rewrite (2026-11-19), cues + markup added by Claude.
+# Payoff: a robot dog can go into a risky hallway first and send back a camera view; the rifle is the scary part, but
+#         nobody has shown it firing, and its real job in this operation is unknown.
+# Plant: the feet (Gary "Watch it again"). Callback: "watch the feet." Mirror: Doug's "Robot army" → the Roomba.
+# Doug and Gary are fictional viewers. Previous version: script-v1.txt.
+[#q] Why the {*heck|heck} are there robot dogs carrying rifles in {*Haiti?|Haiti?}
+[#theory] Doug saw the video and said, "Robot army. The gangs are done."
+[#gary] Gary said, "Watch it again."
+[#haiti] Haiti's capital, Port-au-Prince, has been hit hard by gang {!violence.|violence.}
+[#salvador] El Salvador sent more than {*2,000|two thousand} troops to Haiti, [#stadium] and Haitian and Salvadoran forces recently retook a soccer stadium from gangs.
+[#video] Then video from the operation showed four-legged robots walking through the stadium [#rifle] with {!rifles|rifles} mounted on top.
+[#see] Doug goes, "See? Robot army."
+[#know] But here's what we actually know: [#moving] the video shows the robots moving through the building. [#never] It doesn't show them {!firing,|firing,} [#unclear] and it's still unclear exactly how they helped in the operation.
+[#what] So what can a robot dog do?
+[#eyes] It has cameras and sensors to help it see the space around it. [#operator] A human operator can watch the robot's camera view and guide it with a controller.
+[#legs] The robot's legs let it move over rough ground and climb some stairs, [#avoid] while its sensors help it avoid obstacles.
+[#hallway] That can let soldiers check a risky hallway or room from farther {*away.|away.}
+[#brother] Like sending your little brother into the basement, except this one has cameras.
+[#mount] And the rifle? It's mounted on top, but the video doesn't show it being fired.
+[#decide] The machine isn't shown making its own decisions about who to shoot. [#cant] We can't tell from this footage how the weapon is aimed or controlled.
+[#callback] So Gary was right: watch the {*feet.|feet.}
+[#first] The robot can go into a tight, dangerous space first and send back a view. [#job] But in this video, we don't know whether that was its actual {!job.|job.}
+[#end] That night, Doug's basement went dark. [#roomba] He sent in his {*robot|robot} {*army:|army:} a Roomba.
+[#ask] Which would you send first into a suspicious hallway: a robot with cameras, or a {*person?|person?}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
