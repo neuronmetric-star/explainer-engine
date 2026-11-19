@@ -75,6 +75,8 @@ before every picture change · lines starting `#` are comments. Numbers as words
   `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
   `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw})`;
   gestures `point|wave|shrug|cross|think|facepalm|hips|tada`. Pure functions of time.
+  **Robot dog** `CHAR.robodog({envMap, rifle})` → `pose({t, walk, walkAmt, look, tilt, nod, pitch, crouch})` (trot gait, IK legs;
+  scene cast entry `{outfit:'robodog'}`). Scene cast entries can be objects (`{outfit:'president', phone:true}`); plate `light` can be a preset name or a custom object.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a
   painting (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
   `setViewOffset`; shadow catcher + blob shadows; convert material colors sRGB→linear.

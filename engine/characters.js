@@ -231,4 +231,58 @@
     ch.pose({});
     return ch;
   };
+
+  // ---------- ROBOT DOG: four-legged robot with a camera head and a mounted rifle (never fires) ----------
+  //  CHAR.robodog({envMap, rifle:true}) -> { root (feet at y=0, faces +z), head, lens, pose({t, walk, walkAmt, look, tilt, crouch}) }
+  //  walk = gait phase in cycles (trot: diagonal legs move together). Pure function of the pose values.
+  C.robodog = function (opts = {}) {
+    const env = opts.envMap, root = new THREE.Group(), rd = { root };
+    const bodyM = Object.assign(glossy(0x8d939c, env, .38), { clearcoat: .3 }), darkM = new THREE.MeshStandardMaterial({ color: 0x2a2d33, roughness: .55, metalness: .3 });
+    const jointM = new THREE.MeshStandardMaterial({ color: 0x1c1e22, roughness: .5, metalness: .4 }), yellowM = new THREE.MeshStandardMaterial({ color: 0xf2b230, roughness: .5 });
+    const BL = 1.0, BW = .4, BH = .27, HIP = .6, UL = .32, LL = .34;
+    const body = rd.body = grp(root, 0, HIP, 0);
+    mesh(new THREE.BoxGeometry(BW, BH, BL), bodyM, body);
+    mesh(new THREE.BoxGeometry(BW * .82, .05, BL * .7), darkM, body, 0, BH / 2 + .02, 0);           // top rail
+    for (const s of [-1, 1]) mesh(new THREE.BoxGeometry(.01, .06, BL * .5), yellowM, body, s * (BW / 2 + .005), 0, 0); // side stripes
+    // head: camera block at the front
+    const head = rd.head = grp(body, 0, .03, BL / 2 + .02);
+    mesh(new THREE.BoxGeometry(BW * .86, BH * .9, .2), darkM, head, 0, 0, .08);
+    const lensM = new THREE.MeshStandardMaterial({ color: 0x9fd8ff, emissive: 0x58b8ff, emissiveIntensity: 1.6, roughness: .2 });
+    for (const s of [-1, 1]) { mesh(new THREE.CylinderGeometry(.045, .045, .03, 20).rotateX(Math.PI / 2), jointM, head, s * .075, .01, .185);
+      rd.lens = mesh(new THREE.CylinderGeometry(.03, .03, .035, 20).rotateX(Math.PI / 2), lensM, head, s * .075, .01, .19); }
+    mesh(new THREE.BoxGeometry(.05, .02, .02), lensM, head, 0, -.06, .185);                                   // sensor strip
+    // rifle on a mount (dark, simple shapes; never animated firing)
+    if (opts.rifle !== false) { const gun = rd.rifle = grp(body, 0, BH / 2 + .05, .02);
+      mesh(new THREE.BoxGeometry(.06, .1, .06), jointM, gun, 0, 0, 0);                                       // mount post
+      mesh(new THREE.BoxGeometry(.07, .08, .42), darkM, gun, 0, .09, .02);                                    // receiver + stock
+      mesh(new THREE.CylinderGeometry(.018, .018, .5, 12).rotateX(Math.PI / 2), jointM, gun, 0, .1, .47);    // barrel
+      mesh(new THREE.BoxGeometry(.04, .1, .06), jointM, gun, 0, .02, .12);                                    // magazine
+      mesh(new THREE.BoxGeometry(.04, .04, .12), jointM, gun, 0, .155, .06); }                                // sight
+    // legs: hip -> thigh -> knee (bends backward) -> shin -> foot
+    rd.legs = [];
+    for (const [fx, fz] of [[1, 1], [-1, 1], [1, -1], [-1, -1]]) {
+      const hip = grp(body, fx * (BW / 2 + .05), -.02, fz * (BL / 2 - .1));
+      mesh(new THREE.SphereGeometry(.07, 16, 12), jointM, hip);
+      mesh(new THREE.BoxGeometry(.1, UL, .13), bodyM, hip, 0, -UL / 2, 0);
+      const knee = grp(hip, 0, -UL, 0); mesh(new THREE.SphereGeometry(.055, 14, 10), jointM, knee);
+      mesh(new THREE.CylinderGeometry(.045, .035, LL, 12), darkM, knee, 0, -LL / 2, 0);
+      const foot = mesh(new THREE.SphereGeometry(.05, 14, 10), jointM, knee, 0, -LL, 0); foot.scale.y = .8;
+      rd.legs.push({ hip, knee, fz, ph: (fx === fz) ? 0 : .5 });                                             // trot: diagonal pairs
+    }
+    // two-bone IK: place each foot at (0, -y, z) relative to the hip, knee bending backward
+    function ik(L, fy, fzOff) { const d = Math.min(UL + LL - .001, Math.hypot(fy, fzOff));
+      const a = Math.acos((UL * UL + d * d - LL * LL) / (2 * UL * d)), base = Math.atan2(fzOff, fy);
+      L.hip.rotation.x = -(base - a); L.knee.rotation.x = -Math.acos((UL * UL + LL * LL - d * d) / (2 * UL * LL)) + Math.PI; L.knee.rotation.x *= -1; }
+    rd.pose = function (p = {}) {
+      const a = p.walkAmt || 0, t = p.t || 0, crouch = p.crouch || 0, stand = HIP - .02 - crouch * .18;
+      body.position.y = stand + a * .015 * Math.abs(Math.sin((p.walk || 0) * Math.PI * 4)) + Math.sin(t * 2.3) * .004;
+      body.rotation.x = (p.pitch || 0); body.rotation.z = Math.sin((p.walk || 0) * Math.PI * 2) * .02 * a;
+      for (const L of rd.legs) { const ph = ((p.walk || 0) + L.ph) % 1, swing = ph < .5;
+        const u = swing ? ph / .5 : (ph - .5) / .5, stride = .3 * a;
+        const z = swing ? -stride / 2 + stride * (u * u * (3 - 2 * u)) : stride / 2 - stride * u, lift = swing ? Math.sin(u * Math.PI) * .12 * a : 0;
+        ik(L, body.position.y - .02 - lift, z); }
+      head.rotation.y = p.look || 0; head.rotation.z = p.tilt || 0; head.rotation.x = p.nod || 0;
+    };
+    rd.pose({}); return rd;
+  };
 })();

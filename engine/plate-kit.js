@@ -65,7 +65,7 @@
     night: { key: [0x9aaeff, 1.1, [-12, 9, -6]], hemi: [0x6878d8, 0x403058, .9], front: [0x8a90ff, .8], shadow: [0x0a0a30, .50] },
     interior: { key: [0xffc888, 2.2, [-12, 5, 2]], hemi: [0xd0c8ff, 0xc09070, .8], front: [0xffe6d6, 1.0], shadow: [0x3a2a4a, .38] },
   };
-  function setLight(n) { const L = LIGHTS[n] || LIGHTS.day;
+  function setLight(n) { const L = typeof n === 'object' ? n : (LIGHTS[n] || LIGHTS.day);
     key.color.copy(lin(L.key[0])); key.intensity = L.key[1]; key.position.set(...L.key[2]);
     hemi.color.copy(lin(L.hemi[0])); hemi.groundColor.copy(lin(L.hemi[1])); hemi.intensity = L.hemi[2];
     front.color.copy(lin(L.front[0])); front.intensity = L.front[1];
@@ -121,8 +121,10 @@
   const blobTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d'); const gr = g.createRadialGradient(64, 64, 4, 64, 64, 62);
     gr.addColorStop(0, 'rgba(0,0,0,.55)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c); })();
   K.cast = {};
-  function makeCast(def) { for (const [n, outfit] of Object.entries(def)) {
-    const ch = CHAR.make({ outfit, envMap: env }); scene.add(ch.root);
+  // cast entry: 'hoodie' | {outfit:'president', phone:true} | 'robodog'
+  function makeCast(def) { for (const [n, spec] of Object.entries(def)) {
+    const o = typeof spec === 'string' ? { outfit: spec } : spec;
+    const ch = o.outfit === 'robodog' ? CHAR.robodog(Object.assign({ envMap: env }, o)) : CHAR.make(Object.assign({ envMap: env }, o)); scene.add(ch.root);
     const b = new THREE.Mesh(new THREE.PlaneGeometry(1.1, .8).rotateX(-Math.PI / 2), new THREE.MeshBasicMaterial({ map: blobTex, transparent: true, depthWrite: false })); b.position.y = .01; ch.root.add(b); ch.blob = b;
     ch.root.traverse(o => { if (o.material) [].concat(o.material).forEach(m => { if (m.__lin) return; m.__lin = 1; if (m.color) m.color.convertSRGBToLinear(); }); });
     K.cast[n] = ch; } }
