@@ -1,6 +1,6 @@
 // =====================================================================
 //  CHARACTERS — glossy sphere-head cast, built in code (no model files)
-//  CHAR.make({outfit:'oxford'|'polo'|'suit', glasses, envMap}) -> character
+//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president', glasses, phone, envMap}) -> character
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw})
@@ -65,6 +65,8 @@
     oxford: { shirt: 0x8fb3e6, pants: 0xc8ac7c, shoes: 0x6b3a1e, belt: 0x5a3418, sleeves: 'long', glasses: true, build: 'slim' },
     polo:   { shirt: 0x5b6b2e, pants: 0xcdb98e, shoes: 0x6e6e72, sleeves: 'short', watch: 0x222222, build: 'slim', sneakers: true },
     hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
+    // president: black bomber jacket over a white tee, backwards black cap, blue-white-blue presidential sash
+    president: { shirt: 0x1c1c22, pants: 0x2b303b, shoes: 0x111114, sleeves: 'long', build: 'slim', bomber: true, tee: 0xf4f4f4, cap: 0x18181d, sash: [0x1f4fb5, 0xf4f4f4], watch: 0x222222 },
     suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
 
@@ -124,6 +126,12 @@
       const tie = mesh(plate([[-.03, 0], [.03, 0], [.045, -.06], [.02, -.3], [0, -.33], [-.02, -.3], [-.045, -.06]], .012), cloth(o.tie, .55), spine, 0, B.th - .06, chestZ * .78 + .07); tie.rotation.x = -.2;
       for (const s of [-1, 1]) { const lap = mesh(plate([[0, 0], [s * .15, -.02], [s * .02, -.32]], .05), cloth(0x161c40), spine, s * .05, B.th - .05, chestZ * .8); lap.rotation.x = -.2; }
       for (const y of [.18, .08]) mesh(new THREE.CylinderGeometry(.016, .016, .01, 12).rotateX(Math.PI / 2), blackM, spine, 0, y, chestZ * 1.0);
+    } else if (o.bomber) {
+      const tee = mesh(plate([[-.075, 0], [.075, 0], [.055, -.34], [-.055, -.34]], .012), cloth(o.tee, .9), spine, 0, B.th - .05, chestZ * .9); tee.rotation.x = -.2;
+      const rib = cloth(new THREE.Color(o.shirt).multiplyScalar(.8), .97);
+      const col = mesh(new THREE.TorusGeometry(.115, .03, 10, 24), rib, spine, 0, B.th - .01, -.01); col.rotation.x = Math.PI / 2; col.scale.set(1.2, 1, 1);
+      const hem = mesh(new THREE.CylinderGeometry(B.w * .9, B.w * .9, .06, 32), rib, spine, 0, .03, 0); hem.scale.z = B.d / B.w;
+      for (const s of [-1, 1]) mesh(new THREE.BoxGeometry(.012, .34, .012), metal(0xb8b8b8, env), spine, s * .08, B.th - .23, chestZ * .93);
     } else {
       for (const s of [-1, 1]) { const f = mesh(plate([[0, 0], [s * .11, .005], [s * .06, -.09]], .012), shirtM, spine, s * .015, B.th - .03, chestZ * .55); f.rotation.x = -.5; f.rotation.y = s * .25; }
       const btnM = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: .4 });
@@ -170,6 +178,21 @@
       mesh(new THREE.BoxGeometry(R * .14, t, t), gm, head, 0, R * .1, R * .99);
     }
 
+    if (o.sash) { // diagonal blue-white-blue band, shoulder to hip
+      const sg = grp(spine, 0, .33, 0); sg.rotation.z = -.55; sg.scale.z = B.d / B.w;
+      [[o.sash[0], .042], [o.sash[1], 0], [o.sash[0], -.042]].forEach(([c, y]) => { const m = cloth(c, .7); m.side = THREE.DoubleSide;
+        mesh(new THREE.CylinderGeometry(B.w * 1.17, B.w * 1.17, .043, 48, 1, true), m, sg, 0, y, 0); });
+    }
+    if (o.cap) { // baseball cap worn backwards: crown on top, brim over the back of the head
+      const R = B.R, cm = cloth(o.cap, .8); cm.side = THREE.DoubleSide;
+      mesh(new THREE.SphereGeometry(R * 1.035, 40, 16, 0, TAU, 0, Math.PI * .31), cm, head);
+      const brim = mesh(new THREE.CylinderGeometry(R * .62, R * .62, .025, 28, 1, false, Math.PI / 2, Math.PI), cm, head, 0, R * .54, -R * .7); brim.rotation.x = .28;
+      mesh(new THREE.SphereGeometry(R * .07, 10, 8), cm, head, 0, R * 1.03, 0);
+    }
+    if (o.phone) { // phone held in the right hand, screen toward the face
+      const ph = mesh(new THREE.BoxGeometry(.075, .15, .012), blackM, ch.arm[1].wr, 0, -B.hand * 1.1, B.hand * .75); ph.rotation.x = -.5;
+      mesh(new THREE.PlaneGeometry(.065, .135), new THREE.MeshStandardMaterial({ color: 0x9fd0ff, emissive: 0x5aa0ff, emissiveIntensity: .8 }), ph, 0, 0, -.007).rotation.y = Math.PI;
+    }
     ch.face = name => { headMat.map = faceTex(name); };
     // Gestures: silent characters act with their hands. pose({gesture:'cross', gw:0..1}) blends one in.
     // Arm "R" = ch.arm[1], arm "L" = ch.arm[-1] (screen right/left when facing camera).

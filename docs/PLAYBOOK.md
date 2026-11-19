@@ -264,6 +264,7 @@ clothes. Built in code (`engine/characters.js`). No model files, renders exactly
 | **Gary** | `oxford`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
 | **Victor** | `suit`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
 | **Polo guy** | `polo`: olive polo, khakis, gray sneakers, watch | the worker: tow driver, cashier, guard, mechanic |
+| **The President** | `president`: black bomber over a white tee, backwards black cap, blue-white-blue sash; `phone: true` puts a phone in his hand | a head of state (first used for El Salvador's president, `robot-dogs-haiti`). Real people: silent, and only shown doing what they actually did |
 
 Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
 topic needs one (chef, pilot, doctor…).
