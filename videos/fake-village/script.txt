@@ -6,7 +6,7 @@
 # Observer: Gary. Bet: narrator sides with Doug. Mirror: "Lights are on. Somebody's home." -> "The lights are on. Nobody's home."
 # Running gag: Doug's rent. Doug, Gary, the trip and the rent are fictional; every fact about the village is real (sources.md).
 # Cut for length (v1, 308 words): the flagpole war (98 m vs 160 m, 600 lb flag), the term "DMZ", Doug's flagpole comeback.
-[#q] Who the {*f*ck|fuck} lives in North Korea's nicest {*village?|village?}
+[#q] Who the {*heck|heck} lives in North Korea's nicest {*village?|village?}
 [#problem] See, Doug had a problem. His rent went up. {!Again.|Again.}
 [#ground] So he's in South Korea, staring at North Korea, where almost nobody gets in.
 [#strip] Between these enemies is a strip nobody's allowed to cross. [#villages] Each side kept one village in it.
