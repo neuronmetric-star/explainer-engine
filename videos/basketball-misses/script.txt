@@ -3,7 +3,7 @@
 # Question word: WHY. Doug, Gary and the contest are fictional. Numbers invented, they add up (30 shots, 18 missed, 12 made).
 # Plant: Gary's first ball drops short. Mirror: "every miss gives him something to change" -> "The misses told me."
 [#q] Why the {*heck|heck} does the guy who misses the most shots {*win?|win?}
-[#meet] Meet Doug and Gary. [#rules] One hoop. {*One|One} minute. A full rack of basketballs each. Whoever makes the most baskets wins.
+[#meet] Meet Doug and Gary. [#rules] One hoop. {*One|One} minute. [#rack] A full rack of basketballs each. [#whoever] Whoever makes the most baskets wins.
 [#doug] Doug picks up a ball and... [#holds] holds it.
 [#perfect] He's waiting for the {*perfect|perfect} shot. [#stare] Eyes on the rim like a cat staring at a laser pointer.
 [#gary] Gary just shoots.
@@ -11,16 +11,16 @@
 [#bet] Honestly? I'm betting on Doug. One perfect shot beats ten ugly ones, right?
 [#power] Gary's first shot fell short, so he puts more power into the next one.
 [#bang] {!Bang.|Bang.} Off the backboard. [#far] This one went too {!far.|far.}
-[#less] Now he tries a little less power. [#shower] Like a shower knob. Too cold, too hot, then somewhere in between.
-[#third] Third ball? [#swish] {*Swish.|Swish.} Straight through the net.
+[#less] Now he tries a little less power. [#shower] Like a shower knob. [#cold] Too cold, too hot, then somewhere in between.
+[#third] Third ball? [#swish] {*Swish.|Swish.} [#straight] Straight through the net.
 [#thinking] You're probably thinking, isn't missing the bad part?
 [#still] Gary still misses. [#left] Left. Right. Short. [#change] But every miss gives him something to {*change.|change.}
 [#aimright] Miss left? Aim a little more to the right. [#morepower] Fall short? Give it a little more power.
 [#dougstill] Doug? Still holding. [#nothing] A whole minute of waiting told him {!nothing.|nothing.}
 [#buzzer] Just as the {!buzzer|buzzer} sounds, Doug finally shoots.
 [#clank] {!Clank.|Clank.}
-[#score] Gary took {*30|thirty} shots. He missed {!18.|eighteen.} [#made] He still made {*12.|twelve.}
-[#doug1] Doug took one shot. He made {!zero.|zero.}
+[#score] Gary took {*30|thirty} shots. [#missed] He missed {!18.|eighteen.} [#made] He still made {*12.|twelve.}
+[#doug1] Doug took one shot. [#dzero] He made {!zero.|zero.}
 [#final] {*12|Twelve} to {!zero.|zero.}
 [#ask] Doug goes, "How'd you know where to aim?"
 [#answer] Gary goes, "The {*misses|misses} told me."

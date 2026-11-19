@@ -6,6 +6,8 @@ sfx.json: [{"at": "clank+0.05", "type": "clank", "gain": 1.0}, {"from": "q", "to
   "at"/"from"/"to" are cue names with optional +/- seconds (same as scene.js), or plain seconds.
 Types: twang (bow string), whoosh (arrow flight, "dur"), clank (arrow into a wooden board), thunk (arrow into a target),
        ding (bright reward chime), pop, rumble (sliding wood, a span), ambience (birds + breeze, a span; default whole video).
+       Basketball: bounce (ball on the court), rim (ball clanks off a metal rim), board (ball bangs the backboard),
+       swish (ball through the net), buzzer (end-of-clock horn).
 The track is normalized to -3 dBFS peak; tools/render.js mixes it UNDER the voice and ducks it while he speaks (mix rule).
 """
 import json, re, subprocess, sys, wave, os
@@ -76,6 +78,38 @@ def ambience(dur, gain=1):
         y[i0:i0 + m] += np.sin(2 * np.pi * f * tt) * np.sin(np.pi * tt / .12) ** 2 * .05
     return y * gain
 
+def bounce(gain=1):
+    n = int(.35 * SR); t = np.arange(n) / SR
+    thump = np.sin(2 * np.pi * (140 - 70 * t / .35) * t) * env(n, .001, .06)
+    slap = lp(rng.standard_normal(n), 4) * env(n, .0005, .012) * .7
+    ring = np.sin(2 * np.pi * 420 * t) * env(n, .001, .05) * .25           # hollow ball ping
+    return (thump * 1.2 + slap + ring) * .8 * gain
+
+def rim(gain=1):
+    n = int(1.1 * SR); t = np.arange(n) / SR
+    hit = lp(rng.standard_normal(n), 2) * env(n, .0003, .01)
+    ring = sum(np.sin(2 * np.pi * f * t) * a * np.exp(-t / d) for f, a, d in ((523, .5, .35), (1187, .35, .25), (1873, .25, .18), (2671, .15, .12)))
+    thud = np.sin(2 * np.pi * 120 * t) * env(n, .001, .05)
+    return (hit * .6 + ring * .8 + thud * .6) * .8 * gain
+
+def board(gain=1):
+    n = int(.6 * SR); t = np.arange(n) / SR
+    bang = lp(rng.standard_normal(n), 3) * env(n, .0004, .03)
+    body = sum(np.sin(2 * np.pi * f * t) * a for f, a in ((95, .9), (180, .5), (310, .3))) * env(n, .001, .1)
+    rattle = np.sin(2 * np.pi * 740 * t) * (1 + np.sin(2 * np.pi * 31 * t)) * env(n, .002, .15) * .12
+    return (bang * .9 + body + rattle) * .8 * gain
+
+def swish(gain=1):
+    n = int(.45 * SR); t = np.arange(n) / SR
+    x = rng.standard_normal(n); hi = x - lp(x, 6)                            # bright noise = net rustle
+    return hi * np.sin(np.pi * np.clip(t / .45, 0, 1)) ** 1.5 * (1 + .4 * np.sin(2 * np.pi * 22 * t)) * .7 * gain
+
+def buzzer(gain=1):
+    n = int(1.3 * SR); t = np.arange(n) / SR
+    s = np.sign(np.sin(2 * np.pi * 220 * t)) * .5 + np.sign(np.sin(2 * np.pi * 277 * t)) * .3
+    s = lp(s, 8) * np.minimum(1, t / .02) * np.minimum(1, (1.3 - t) / .05)
+    return s * .55 * gain
+
 def main():
     slug = sys.argv[1]; tail = float(sys.argv[2]) if len(sys.argv) > 2 else 2.6
     root = os.path.join(os.path.dirname(__file__), '..'); vdir = os.path.join(root, 'videos', slug)
@@ -93,7 +127,7 @@ def main():
         if ty in ('rumble', 'ambience'):
             a, b = T(e.get('from', 0)), T(e.get('to', total)); add((rumble if ty == 'rumble' else ambience)(b - a, g), a)
         elif ty == 'whoosh': add(whoosh(e.get('dur', .5), g), T(e['at']))
-        else: add({'twang': twang, 'clank': clank, 'thunk': thunk, 'ding': ding, 'pop': pop}[ty](g), T(e['at']))
+        else: add({'twang': twang, 'clank': clank, 'thunk': thunk, 'ding': ding, 'pop': pop, 'bounce': bounce, 'rim': rim, 'board': board, 'swish': swish, 'buzzer': buzzer}[ty](g), T(e['at']))
     out = out[:int(total * SR)]; out = out / max(1e-6, np.abs(out).max()) * 10 ** (-3 / 20)
     with wave.open(os.path.join(vdir, 'sfx.wav'), 'wb') as w:
         w.setnchannels(1); w.setsampwidth(2); w.setframerate(SR); w.writeframes((out * 32767).astype('<i2').tobytes())

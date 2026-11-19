@@ -1,51 +1,45 @@
-# Shot list: "Why the heck does the guy who misses the most make the most shots?" (basketball, 3D engine)
+# Shot list: "Why the heck does the guy who misses the most shots win?" (Brian's script v3, 3D engine)
 
-**Script:** `script.txt` (176 story words + CTA). **No obstacles:** just Doug vs Gary, same hoop, one minute.
-**Cast (3D, silent):** **Doug** = `hoodie` (holds the ball, waits) · **Gary** = `oxford` (shoots and shoots).
-**Art:** 7 images (4 backgrounds + 3 props) from `art-prompts.md` → `videos/basketball-misses/art/`.
-**Engine animation:** ball (P01) arcs from Gary's hands to the hoop: clank off the rim, short, long off the backboard, swish
-(net wiggle); burst (P03) on "Clank" and "Buzzer"; engine-drawn shot counter in the corner (Gary 0→30 / Doug 0) and a
-60 → 0 clock; ball rack (P02) by Gary empties as he shoots, Doug's single ball stays in his hands.
-**Sound (sfx.json):** bounce, rim clank, backboard bang, swish, buzzer, light crowd/street ambience (new `tools/sfx.py` types).
-**The plant:** Gary's first shot clanks off the rim (`clank`). **Mirror:** "Every miss tells him something" → "I missed eighteen times."
+**Voice:** Brian's `voice_raw.mp3` (1:44) → pauses trimmed to 0.18 s + 1.25× → `voice.mp3` (1:07.6). Words aligned on the raw take and
+mapped through the cut (`data.js`).
+**Cast (3D, silent):** **Doug** = `hoodie` (holds the ball the whole minute) · **Gary** = `oxford` (shoots).
+**Art (Brian, ChatGPT):** 01 court day · 02 behind the shooter · 03 hoop close-up · 04 court dusk · P01 ball · P02 rack · P03 burst.
+Made here: `X01–X04_net.png` (front rim + net cut out of each painting, so a made ball drops BEHIND the net),
+`P02e_rack_empty.png` (rack with the balls removed; the engine draws the balls, so Gary's rack empties as he shoots).
+**Engine:** every shot is a release time + outcome (`in / short / long / left / right / clank`); the ball flies from the shooter's
+hands to the rim and bounces with a little deterministic physics, on whichever painting is on screen. Scoreboard (Gary's baskets,
+Doug 0, 60-second clock) from "One minute" to the buzzer; shower-knob dial (cold → hot → in between); stat cards at the end.
+**Sound:** `sfx.json` → `python3 tools/sfx.py basketball-misses` (bounce, rim, board, swish, buzzer, pops; street ambience), mixed
+under the voice and ducked (mix rule).
 
-## Images
-| # | File | What |
-|---|---|---|
-| 01 | `01_court_side_day.png` | Outdoor court, side view, hoop at right, open floor for 2 people |
-| 02 | `02_behind_shooter.png` | From behind the free-throw line looking at the hoop |
-| 03 | `03_hoop_closeup.png` | Rim + net + backboard close-up |
-| 04 | `04_court_dusk.png` | Same as 01 at dusk (after the buzzer) |
-| P01 | `P01_basketball.png` | One basketball |
-| P02 | `P02_ball_rack.png` | Ball rack with ~12 balls |
-| P03 | `P03_impact_burst.png` | Comic impact burst |
-
-## Shot plan (picture · camera · acting)
 | Cue | Picture | Camera | Acting |
 |---|---|---|---|
-| q | 01 wide: Doug + Gary at the line, ball rack | slow push-in | Doug `smirk` holding ball, Gary `smile` |
-| problem | 01 on Doug | cut | Doug `worried` |
-| contest | 01 two-shot, clock "60" appears | push | Doug `point` at Gary; Gary `nod` |
-| holds | 02 behind Doug | push toward hoop | Doug raises the ball, `flat` |
-| form | 03 → 02 quick cuts on "Feet / Elbow / Breath" | hard cuts | Doug `think`, deep-breath lean |
-| almost | 01 on Doug | cut | Doug `worried`, still holding |
-| gary | 01 two-shot | cut | Gary steps up, shoots (`armR raise`), `smile` |
-| clank | 03 ball hits rim + burst + shake | hard cut | none |
-| bet | 01 on Doug | push | Doug `smirk`, `shrug` |
-| tell | 01 on Gary | hold | Gary `think` |
-| short | 03 ball drops short of the rim | cut | none |
-| harder | 01 on Gary | push | Gary `flat`, shoots harder |
-| long | 03 ball bangs off backboard | hard cut + shake | none |
-| between | 01 on Gary | push | Gary `nod`, `smirk` |
-| swish | 03 ball drops clean through, net wiggles | hard cut, small zoom | none |
-| every | 02 rapid shots (counter climbs) | quick pushes | Gary shooting loop |
-| nothing | 01 on Doug | cut | Doug `blink`, holding the ball |
-| jordan | 02 slow push on the hoop, counter "9,000+" on screen | slow push | none |
-| buzzer | 04 dusk + burst, clock "0" | hard cut + shake | both freeze |
-| score | 04, counter Gary 30 / 12 made | push | Gary `tada` |
-| doug1 | 04 on Doug | cut | Doug shoots once |
-| missed | 03 ball off the rim | hard cut | none |
-| ask | 04 two-shot | cut | Doug `surprised`, turns to Gary |
-| answer | 04 on Gary | push | Gary `smirk`, `shrug` |
-| cta | 04 wide | slow push | Doug `flat` looking at his ball; Gary `wave` |
-| holding | 04 on Doug | push-in | Doug still holding the ball, `blink` |
+| q | 01 wide: Doug + Gary, two racks | slow push | Doug `smirk`, Gary `smile` |
+| meet | 01 two-shot | push | Gary `wave` |
+| rules | 01 on the hoop, scoreboard pops in (0:60) | push | |
+| rack | 01 on the racks | push | |
+| whoever | 02 empty court toward the hoop | push-in | |
+| doug | 01 on Doug | push | picks a ball off his rack |
+| holds | 02 Doug from behind, ball set | push | frozen |
+| perfect · stare | 01 Doug close → face | push | `flat` → `surprised`, no blink (cat + laser pointer) |
+| gary | 01 Gary | pull back following the ball | grabs, shoots at once |
+| short | 02 behind Gary: ball drops short | hold | |
+| bet | 01 Doug close | push | `smirk` |
+| power | 01 Gary | pull back | leans back, harder shot |
+| bang | 03 ball bangs the backboard + burst + shake | hard cut | |
+| far | 02 ball bounces back | pull back | |
+| less · shower · cold | 01 Gary + shower-knob dial (cold → hot → middle) | push | `think`, `smirk` |
+| third | 02 behind Gary, ball in the air | push | |
+| swish · straight | 03 ball drops through the net (behind the strings) | push | |
+| thinking | 01 wide, Gary shooting fast, Doug holding | slow push | |
+| still · left | 02 misses left, right, short (rim clanks) | push on the hoop | |
+| change | 01 Gary close | push | `nod`, `smirk` |
+| aimright · morepower | 02 miss left → in; short → in | push | |
+| dougstill · nothing | 01 Doug close → face, clock goes red | push | `flat` → `worried` |
+| buzzer | 01 wide: 0:00 + burst + buzzer, Doug finally shoots | push | Doug `surprised` |
+| clank | 03 Doug's ball clanks off the rim + burst + shake | hard cut | |
+| score · missed · made | 04 dusk on Gary: 30 SHOTS / 18 MISSED / 12 MADE | push | `happy`, `tada` |
+| doug1 · dzero | 04 Doug: 1 SHOT / 0 MADE | push | `worried` |
+| final | 04 two-shot: 12 – 0 | push | Gary `tada` |
+| ask · answer | 04 Doug turns to Gary; Gary close | push | Doug `surprised`; Gary `smirk`, `shrug` |
+| cta · or | 04 wide → Gary close | slow push | Doug still holding his ball; Gary `wave` |
