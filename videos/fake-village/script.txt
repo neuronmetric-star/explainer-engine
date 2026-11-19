@@ -1,0 +1,23 @@
+# SHORT (~1:05). North Korea's "Propaganda Village" (Kijong-dong), inside the border strip (DMZ).
+# Payoff: nobody lives in North Korea's nicest village. It's an empty set built to make the South jealous:
+#   concrete shells with no glass and no rooms, lights on a timer, workers sweeping empty streets.
+# Question word: WHO (identity). Answer: nobody.
+# Plant: the dark windows + every light coming on at once (on screen before Gary says "look at the windows").
+# Observer: Gary. Bet: narrator sides with Doug. Mirror: "Lights are on. Somebody's home." -> "The lights are on. Nobody's home."
+# Running gag: Doug's rent. Doug, Gary, the trip and the rent are fictional; every fact about the village is real (sources.md).
+# Cut for length (v1, 308 words): the flagpole war (98 m vs 160 m, 600 lb flag), the term "DMZ", Doug's flagpole comeback.
+[#q] Who the {*f*ck|fuck} lives in North Korea's nicest {*village?|village?}
+[#problem] See, Doug had a problem. His rent went up. {!Again.|Again.}
+[#ground] So he's in South Korea, staring at North Korea, where almost nobody gets in.
+[#strip] Between these enemies is a strip nobody's allowed to cross. [#villages] Each side kept one village in it.
+[#binocs] Doug drops a coin in the binoculars. [#kijong] North Korea's village is gorgeous. Blue roofs, tall apartments, [#lights] and at night, every light comes on.
+[#doug] Doug goes, "Lights are on. Somebody's home. Nicer than my {*apartment.|apartment.}"
+[#gary] His buddy Gary goes, "Doug. Look at the windows."
+[#bet] Honestly? I'd have packed my bags with Doug.
+[#aside] Why build it there? I'mma tell you.
+[#built] North Korea built it to make the South jealous. [#speakers] Loudspeakers yelled at them up to {*20 hours|twenty hours} a day: come on over, life is great.
+[#windows] So, the windows. [#zoom] Zoom in closer. [#noglass] {!No|No} glass. [#shells] No rooms. Empty concrete {!boxes.|boxes.} [#timer] And the lights? On a {!timer,|timer,} like a Christmas display.
+[#sweep] The only people? A few workers sweeping empty streets.
+[#claim] North Korea says two hundred families live there. [#nobody] Nobody's ever seen them.
+[#end] Doug went home and paid his rent. [#mirror] The lights are on. Nobody's {!home.|home.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

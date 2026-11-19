@@ -1,0 +1,29 @@
+# Sources: Who lives in North Korea's nicest village? (Kijong-dong, the "Propaganda Village")
+
+**Doug, Gary, the trip, the coin binoculars moment and the rent are fictional.** Every fact about the village is real.
+Coin-operated binoculars facing North Korea do exist at South Korean border lookouts (e.g. Dora Observatory), but Doug's
+visit is a reconstruction.
+
+Note: Wikipedia pages could not be fetched directly from this session (network policy); facts were confirmed through
+search results quoting Wikipedia and its mirrors plus the independent outlets below.
+
+| Claim in the script | Source |
+|---|---|
+| "North Korea, where almost nobody gets in": seen as the most closed country in the world; tourists only on guided tours with local minders; borders shut to tourists from Jan 2020, a brief reopening in Feb–Mar 2025, then closed again | Christian Science Monitor, "Just how isolated is North Korea? 6 facts": https://m.csmonitor.com/World/Asia-Pacific/2011/1228/Just-how-isolated-is-North-Korea-6-facts-to-consider/North-Korea-gets-1-500-Western-tourists-a-year · Time Out (2025 reopening): https://www.timeout.com/asia/news/north-korea-reopens-to-tourists-after-5-years-heres-how-to-visit-and-what-to-expect-022025 · One Mile at a Time (re-closure): https://onemileatatime.com/north-korea-suspends-tourist-visas/ |
+| "Between these enemies is a strip nobody's allowed to cross": the Korean Demilitarized Zone (DMZ), set up by the 1953 armistice that paused the Korean War (no peace treaty was signed): about 250 km (160 mi) long and 4 km (2.5 mi) wide; each side pulled back 2 km from the line | Wikipedia, "Korean Demilitarized Zone": https://en.wikipedia.org/wiki/Korean_Demilitarized_Zone · NASA Earth Observatory: https://science.nasa.gov/earth/earth-observatory/korean-demilitarized-zone-3660 · New World Encyclopedia: https://www.newworldencyclopedia.org/entry/Korean_Demilitarized_Zone |
+| "Each side kept one village in it": Daeseong-dong ("Freedom Village", South) and Kijong-dong ("Peace Village", North) are the only settlements the armistice committee allowed to stay inside the DMZ | Wikipedia, "Korean Demilitarized Zone" (above) · Wikipedia, "Daeseong-dong": https://en.wikipedia.org/wiki/Daeseong-dong · Korea Times, "Two villages in DMZ": https://www.koreatimes.co.kr/opinion/20130711/two-villages-in-dmz |
+| "Blue roofs, tall apartments… every light comes on": brightly painted multi-story buildings, wired for electric lighting (a luxury in rural North Korea) | Slate / Atlas Obscura, "A Fake Village and a Colossal Flagpole": https://www.slate.com/blogs/atlas_obscura/2013/10/14/a_fake_village_and_a_colossal_flagpole_north_korea_s_bizarre_propaganda.html · Wikipedia, "Kijong-dong": https://en.wikipedia.org/wiki/Kijong-dong |
+| "North Korea built it to make the South jealous": built in the 1950s; outside observers describe it as a propaganda village meant to show off prosperity and lure South Koreans to cross over (defect) | Wikipedia, "Kijong-dong" (above) · Slate (above) · War History Online: https://www.warhistoryonline.com/featured/the-north-korean-mystery-town-in-the-demilitarized-zone.html |
+| "Loudspeakers yelled at them up to twenty hours a day: come on over, life is great": loudspeakers on the buildings broadcast propaganda praising the North and urging Southerners to defect, up to 20 hours a day, until both sides agreed to stop in 2004 | Wikipedia, "Kijong-dong" (above) · Slate (above) |
+| "No glass. No rooms. Empty concrete boxes.": scrutiny with modern telescopic lenses led observers to conclude the buildings are concrete shells without window glass or interior rooms (some reports: some windows simply painted on) | Wikipedia, "Kijong-dong" (above) · Boing Boing, "North Korea's fake village with painted-on windows" (2026): https://boingboing.net/2026/07/21/kijong-dong.html · All That's Interesting: https://allthatsinteresting.com/peace-village-north-korea |
+| "And the lights? On a timer": lights switch on and off at set times, on an automatic timer, to suggest people are home | Slate (above) · Wikipedia, "Kijong-dong" (above) |
+| "The only people? A few workers sweeping empty streets.": the only people seen are caretakers sweeping streets, apparently to make the place look lived in | The World (PRI), "This village in Korea's DMZ might be the world's most idyllic": https://theworld.org/stories/2016/07/30/village-koreas-dmz-might-be-world-s-most-idyllic · Wikipedia, "Kijong-dong" (above) |
+| "North Korea says two hundred families live there. Nobody's ever seen them.": North Korea says about 200 families live there on a collective farm; outside observers dispute this, and South Korea's view is that only soldiers or caretakers use it. **Honesty caveat:** outsiders can't go in to check, so "nobody's ever seen them" means no outside observer has ever confirmed residents | Wikipedia, "Kijong-dong" (above) · WorldAtlas, "Does North Korea have a fake city?": https://www.worldatlas.com/articles/is-there-a-fake-city-in-north-korea.html |
+
+## Cut from the script (kept for the long version or a follow-up)
+- **Flagpole war:** in the 1980s South Korea put a 98.4 m flagpole in Daeseong-dong; North Korea answered with a 160 m
+  (525 ft) pole in Kijong-dong flying a ~270 kg (595 lb) flag. It was the world's tallest for years. Sources: Amusing Planet,
+  https://www.amusingplanet.com/2018/08/the-strange-case-of-kijong-dong-and.html · Wikipedia, "Daeseong-dong" (above).
+- **Daeseong-dong perks:** residents pay no national income tax, men are exempt from military service, an 11 p.m. headcount,
+  military escorts to the rice fields. Korea Times (2026): https://www.koreatimes.co.kr/www/biz/2026/09/367_315570.html ·
+  Stars and Stripes: https://80.stripes.com/archives/s-koreans-living-dmz-village-enjoy-great-benefits-and-high-risk
