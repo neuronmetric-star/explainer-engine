@@ -69,7 +69,7 @@
     hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
     suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
     zuck:   { shirt: 0x8b8e94, pants: 0x2c3c5c, shoes: 0x111214, sleeves: 'long', build: 'slim', hoodie: true, zip: true, slides: true, hair: 'curly', hairColor: 0x4a2f1c },
-    gates:  { shirt: 0x34466e, collar: 0xd6e4f4, pants: 0xb89c6c, shoes: 0x5a3519, sleeves: 'long', build: 'slim', sweater: true, glasses: 'big', hair: 'mop', hairColor: 0xa47c4c },
+    gates:  { shirt: 0x34466e, collar: 0xd6e4f4, pants: 0xb89c6c, shoes: 0x5a3519, sleeves: 'long', build: 'slim', sweater: true, glasses: 'big', hair: 'mop', hairColor: 0x94693d },
   };
 
   C.make = function (opts = {}) {
@@ -179,15 +179,16 @@
     ch.headMat = headMat;
     if (o.hair) { // stylized hair cap that stays above the brows; curly = bumps, mop = bangs + side volume
       const R = B.R, hm = new THREE.MeshPhysicalMaterial({ color: o.hairColor, roughness: .6, clearcoat: .3, clearcoatRoughness: .5, envMap: env, envMapIntensity: .3 });
-      const cap = mesh(new THREE.SphereGeometry(R * 1.035, 48, 24, 0, TAU, 0, Math.PI * (o.hair === 'mop' ? .4 : .34)), hm, head); cap.rotation.x = -.42;
+      const tilt = -.42, cap = mesh(new THREE.SphereGeometry(R * 1.035, 48, 24, 0, TAU, 0, Math.PI * (o.hair === 'mop' ? .45 : .43)), hm, head); cap.rotation.x = tilt;
       if (o.hair === 'curly') {
         let k = 0; const rnd = () => { k++; const x = Math.sin(k * 12.9898) * 43758.5453; return x - Math.floor(x); };
-        for (let i = 0; i < 70; i++) { const th = (.05 + .32 * Math.sqrt(rnd())) * Math.PI, ph = rnd() * TAU;
-          const dir = new THREE.Vector3(Math.sin(th) * Math.cos(ph), Math.cos(th), Math.sin(th) * Math.sin(ph)).applyAxisAngle(new THREE.Vector3(1, 0, 0), -.42);
-          const b = mesh(new THREE.SphereGeometry(R * (.1 + .05 * rnd()), 10, 8), hm, head); b.position.copy(dir.multiplyScalar(R * 1.03)); }
+        for (let i = 0; i < 130; i++) { const th = (.03 + .4 * Math.sqrt(rnd())) * Math.PI, ph = rnd() * TAU;
+          const dir = new THREE.Vector3(Math.sin(th) * Math.cos(ph), Math.cos(th), Math.sin(th) * Math.sin(ph)).applyAxisAngle(new THREE.Vector3(1, 0, 0), tilt);
+          const b = mesh(new THREE.SphereGeometry(R * (.085 + .045 * rnd()), 10, 8), hm, head); b.position.copy(dir.multiplyScalar(R * 1.03)); }
       } else {
-        const bang = mesh(new THREE.SphereGeometry(R * .62, 32, 16, 0, TAU, 0, Math.PI / 2), hm, head, -R * .1, R * .58, R * .5); bang.scale.set(1.25, .42, .62); bang.rotation.set(.75, 0, .18);
-        for (const s of [-1, 1]) { const side = mesh(new THREE.SphereGeometry(R * .42, 20, 14), hm, head, s * R * .8, R * .28, -R * .12); side.scale.set(.42, .9, .95); }
+        // bangs swept to one side: a flattened lens hugging the forehead, ending above the brows
+        const bang = mesh(new THREE.SphereGeometry(R, 32, 16), hm, head, -R * .12, R * .64, R * .66); bang.scale.set(.62, .2, .34); bang.rotation.set(.85, .1, .22);
+        for (const s of [-1, 1]) { const side = mesh(new THREE.SphereGeometry(R * .42, 20, 14), hm, head, s * R * .84, R * .22, -R * .1); side.scale.set(.4, .85, .95); }
       }
     }
     if (o.glasses) {

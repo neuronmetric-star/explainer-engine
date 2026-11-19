@@ -263,8 +263,12 @@ clothes. Built in code (`engine/characters.js`). No model files, renders exactly
 | **Gary** | `oxford`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
 | **Victor** | `suit`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
 | **Polo guy** | `polo`: olive polo, khakis, gray sneakers, watch | the worker: tow driver, cashier, guard, mechanic |
+| **Zuckerberg** | `zuck`: gray zip hoodie, jeans, black slide sandals, short curly brown hair (2004 look) | real person: only when the story is about him; acts silently, facts only |
+| **Gates** | `gates`: big square brown glasses, sandy mop with side bangs, navy V-neck sweater over light collar, khakis (1975 look) | real person: same rule |
 
-Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
+Use **only the characters the story needs** (usually 2–3). **Real people** get a look-alike outfit (signature clothes,
+hair, glasses), never a drawn face of their own; like everyone, they never speak, and the narrator only says sourced facts about them.
+Preview the cast with `node engine/lab/render-lab.js <out> --page cast-lab.html`. New outfits are added in `OUTFITS` when a
 topic needs one (chef, pilot, doctor…).
 
 ### 2.1 Acting rules (they never talk)

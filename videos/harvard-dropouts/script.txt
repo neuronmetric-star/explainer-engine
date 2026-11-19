@@ -7,7 +7,9 @@
 # Plant: Gary's line "Check the order." + the deal paper / user counter on screen BEFORE "Then he dropped out."
 # Running gag: SandwichBook. Mirror: "Drop out, get rich." → "make it work, then drop out."
 # Term lock: "drop out" (never "quit"), "customers", "SandwichBook", "founder".
-# Doug, Gary, the investor and SandwichBook are fictional. Gates/Zuckerberg facts and the numbers are real (sources.md).
+# Cast: Doug (hoodie), Gary (oxford), bank teller (polo), plus silent look-alikes Gates (`gates`, 1975) and
+#   Zuckerberg (`zuck`, 2004) acting out their beats. They never speak; the narrator only says sourced facts.
+# Doug, Gary, the bank and SandwichBook are fictional. Gates/Zuckerberg facts and the numbers are real (sources.md).
 [#q] Why the {*heck|heck} did Bill Gates and Mark Zuckerberg drop out of {*Harvard,|Harvard,} America's most famous college?
 [#gates0] Gates dropped out, left before finishing, and started {*Microsoft,|Microsoft,} the Windows company. [#zuck0] Zuckerberg started {*Facebook.|Facebook.}
 [#problem] See, Doug had a problem. [#math] Doug's math: two dropouts, two billionaires. {*Drop out,|Drop out,} get rich.
