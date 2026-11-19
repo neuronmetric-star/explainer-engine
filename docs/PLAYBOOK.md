@@ -42,16 +42,17 @@ Write down what the viewer will discover. Then pick the question word that the e
 
 | The payoff is a… | Open with | Example |
 |---|---|---|
-| reason or motive | **Why the f\*ck** | Why the f\*ck do pilots dump fuel before landing? |
-| identity | **Who the f\*ck** | Who the f\*ck opened the door? (answer: the guard) |
-| decisive moment | **When the f\*ck** | When the f\*ck did the Titanic actually become unsinkable? |
-| object or event | **What the f\*ck** | What the f\*ck is the white stuff in a bird's poop? |
-| process or sequence | **How the f\*ck** | How the f\*ck does a puddle of gasoline move a two-ton car? |
+| reason or motive | **Why the heck** | Why the heck do pilots dump fuel before landing? |
+| identity | **Who the heck** | Who the heck opened the door? (answer: the guard) |
+| decisive moment | **When the heck** | When the heck did the Titanic actually become unsinkable? |
+| object or event | **What the heck** | What the heck is the white stuff in a bird's poop? |
+| process or sequence | **How the heck** | How the heck does a puddle of gasoline move a two-ton car? |
 
 - **Show the subject during the question** (the puddle, the door, the plane).
 - **Start the action in sentence two:** "Doug decided to find out by never buying it again."
-- *Clean version:* "How the heck / How on earth." Captions display "f\*ck" either way. Note that
-  YouTube may limit ads on strong profanity in the opening seconds. Choose per platform.
+- **Always "the heck", never "the f\*ck"** (Brian's rule, Nov 2026): spoken and captioned as "heck", so the opening
+  seconds stay ad-safe on TikTok, Reels and YouTube. Coon's punchy rhythm stays; only the word changes.
+  Older scripts (gas-vs-water etc.) still say "f\*ck"; don't copy that.
 
 ### 1.2 Build the middle around a choice and its result
 1. Give someone a **goal** and a **reason to expect their plan to work** (Doug: "gas is a liquid,
@@ -169,7 +170,7 @@ something to follow the next line, the script is broken.
 ### 1.9 Long-form skeleton (from Ray, @realraywilliam)
 | Time (of ~8:30) | Beat | Line pattern |
 |---|---|---|
-| 0:00–0:10 | **Coon question + cold open** | "What the f\*ck happened to…?" + the outcome in one line ("…is about to lose everything over a pack of nuts") |
+| 0:00–0:10 | **Coon question + cold open** | "What the heck happened to…?" + the outcome in one line ("…is about to lose everything over a pack of nuts") |
 | 0:10–0:30 | **Character card** | "Now, his name is Doug, and Doug is 34, living in…" + one defining trait |
 | 0:30–1:00 | **Desire or flaw** | what they want and why that's a problem |
 | 1:00 | **Inciting decision** | "So one day in [year]…" |
@@ -471,14 +472,14 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 
 | Topic | Question | Shape | Who gets it wrong / who notices |
 |---|---|---|---|
-| Why a car needs gas ✅ example | How the f\*ck does a puddle of gas move a two-ton car? | mechanism | Doug fills up with water / Gary watches the tailpipe |
-| Why planes dump fuel | Why the f\*ck would a pilot pour fuel into the sky? | mechanism | Passenger panics at the "leak" / pilot knows the landing-weight limit |
-| How credit card points are paid for | Who the f\*ck pays for your free flight? | repeated scheme | Doug brags about free trips / a cashier notices the price |
-| Why casinos have no clocks | What the f\*ck happened to the time? | mechanism | Doug "just one more hand" / the waitress who's seen it a thousand times |
-| How a microwave heats food | How the f\*ck does a box with no fire cook a burrito? | mechanism | Doug thinks it heats from the outside / track one water molecule |
-| Why airlines overbook | Why the f\*ck would they sell 110 seats for 100? | repeated scheme | the gate agent sees the same no-shows every week |
-| The Titanic's "unsinkable" claim | When the f\*ck did "unsinkable" become a problem? | known disaster | rewind to the confident early voyage |
-| How vaccines train the immune system | How the f\*ck does a fake intruder protect you? | mechanism | track one "wanted poster" through the body |
+| Why a car needs gas ✅ example | How the heck does a puddle of gas move a two-ton car? | mechanism | Doug fills up with water / Gary watches the tailpipe |
+| Why planes dump fuel | Why the heck would a pilot pour fuel into the sky? | mechanism | Passenger panics at the "leak" / pilot knows the landing-weight limit |
+| How credit card points are paid for | Who the heck pays for your free flight? | repeated scheme | Doug brags about free trips / a cashier notices the price |
+| Why casinos have no clocks | What the heck happened to the time? | mechanism | Doug "just one more hand" / the waitress who's seen it a thousand times |
+| How a microwave heats food | How the heck does a box with no fire cook a burrito? | mechanism | Doug thinks it heats from the outside / track one water molecule |
+| Why airlines overbook | Why the heck would they sell 110 seats for 100? | repeated scheme | the gate agent sees the same no-shows every week |
+| The Titanic's "unsinkable" claim | When the heck did "unsinkable" become a problem? | known disaster | rewind to the confident early voyage |
+| How vaccines train the immune system | How the heck does a fake intruder protect you? | mechanism | track one "wanted poster" through the body |
 
 ---
 

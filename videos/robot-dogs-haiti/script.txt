@@ -5,7 +5,7 @@
 # Plant: the robot is always in front (feet, hallway, stairs). Observer: Gary ("Watch it again"). Callback: "Watch the feet."
 # Mirror: Doug's "Robot army" → his Roomba "robot army" sent into the dark basement first (also pays off the little-brother analogy).
 # Doug and Gary are fictional viewers. The operation, footage and quote are real (sources.md). What the robots actually did is unverified.
-[#q] Why the {*f*ck|fuck} are there robot dogs with rifles in {*Haiti?|Haiti?}
+[#q] Why the {*heck|heck} are there robot dogs with rifles in {*Haiti?|Haiti?}
 [#problem] See, Doug had a problem. He'd seen the video.
 [#haiti] Haiti is a Caribbean country where gangs run {!70%|seventy percent} of the capital.
 [#salvador] So El Salvador, famous for jailing gangs, sent {*2,000|two thousand} soldiers.
