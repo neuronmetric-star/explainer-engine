@@ -1,27 +1,23 @@
-# SHORT (~1:05). Bill Gates & Mark Zuckerberg (Harvard dropouts) vs. most startup founders.
-# Format: Coon question → hook/middle/end (PLAYBOOK §1.11) → Xevi narrator personality.
-# Payoff: Gates and Zuckerberg didn't drop out to get rich; they dropped out because their thing ALREADY worked
-#   (a buyer for Gates's software; ~100,000 students on Facebook). The typical founder of a fast-growing
-#   company is about 45, usually with a degree.
-# Question word: WHY (the payoff is a reason).
-# Plant: Gary's line "Check the order." + the deal paper / user counter on screen BEFORE "Then he dropped out."
-# Running gag: SandwichBook. Mirror: "Drop out, get rich." → "make it work, then drop out."
-# Term lock: "drop out" (never "quit"), "customers", "SandwichBook", "founder".
-# Cast: Doug (hoodie), Gary (oxford), bank teller (polo), plus silent look-alikes Gates (`gates`, 1975) and
-#   Zuckerberg (`zuck`, 2004) acting out their beats. They never speak; the narrator only says sourced facts.
-# Doug, Gary, the bank and SandwichBook are fictional. Gates/Zuckerberg facts and the numbers are real (sources.md).
-[#q] Why the {*heck|heck} did Bill Gates and Mark Zuckerberg drop out of {*Harvard,|Harvard,} America's most famous college?
-[#gates0] Gates dropped out, left before finishing, and started {*Microsoft,|Microsoft,} the Windows company. [#zuck0] Zuckerberg started {*Facebook.|Facebook.}
-[#problem] See, Doug had a problem. [#math] Doug's math: two dropouts, two billionaires. {*Drop out,|Drop out,} get rich.
-[#app] So Doug drops out. His app? {*SandwichBook.|SandwichBook.} It rates sandwiches.
-[#bet] Honestly? I'd have bet on Doug.
-[#gary] Until uncle Gary, a forty-five-year-old bread guy, says, "Doug. Check the {*order.|order.}"
-[#gates] Gates wrote software for a new home computer. [#deal] Its maker agreed to buy it. [#left1] {*Then|Then} he dropped out.
-[#zuck] Zuckerberg had a hundred thousand students on Facebook. [#users] A full football stadium. [#left2] {*Then|Then} he dropped out.
-[#reveal] Not to get rich. Because it {*already|already} worked.
-[#study] The average founder of America's fastest-growing new companies? [#top] {*Forty-five.|Forty-five.} [#why] Because by then, you know what people pay for. [#degree] Nine in ten tech founders finished {*college.|college.} [#basically] Basically, Gary.
-[#pitch] Gary wants a loan for a bread company. [#bank] Doug wants one too. "How many customers?" [#gans] Gary: "Three hundred sandwich shops." [#dans] Doug: "Does my {!mom|mom} count?"
-[#money] Guess who got the loan.
-[#end] Doug's back in class. SandwichBook has one review. His mom.
-[#mirror] It's not drop out, get rich. It's make it {*work,|work,} then drop out.
+# SHORT (~1:05). v2: ONLY Bill Gates and Mark Zuckerberg (Brian: "just talk about them"). No invented characters.
+# Format: "Why the heck" question → hook/middle/end (PLAYBOOK §1.11) → Xevi narrator personality.
+# Payoff: they didn't drop out to find something; they dropped out because they'd ALREADY found it
+#   (Gates: a customer for his software; Zuckerberg: ~100,000 students on Facebook). Most startup founders do it
+#   the other way: the average founder of America's fastest-growing new companies is 45, and 9 in 10 tech founders finished college.
+# Plant: "Then he drops out." (both times, after the proof). Narrator bet: "they just got lucky" → changes mind.
+# Mirror: "They'd never even touched one." / "Customer first. Stadium first." → "School can wait. Thirty-two years, apparently."
+# Cast on screen: Gates (`gates`, 1975 look) and Zuckerberg (`zuck`, 2004 look) only, acting silently.
+# "Most founders" are shown with props/graphics, not characters. Every fact is in sources.md.
+[#q] Why the {*heck|heck} did Bill Gates and Mark Zuckerberg drop out of {*Harvard?|Harvard?}
+[#ground] Harvard, America's most famous college. Dropping out means leaving before you finish. [#bet] Honestly? I figured they got {!lucky.|lucky.}
+[#altair] In 1975, nineteen-year-old Gates sees a magazine cover: the Altair, a build-it-yourself computer. [#switches] No screen. Just switches and blinking lights. A toaster with ambition.
+[#basic] Gates and a friend write software for it. [#never] They'd never even touched one.
+[#deal] It works anyway. [#customer] The Altair company pays for it. A real {*customer.|customer.}
+[#left1] {*Then|Then} Gates drops out and starts {*Microsoft,|Microsoft,} the Windows company.
+[#zuck] Twenty-nine years later, Zuckerberg, also nineteen, builds Facebook in his Harvard dorm room. [#half] In a month, half the college signs up. [#users] By summer, a {*hundred|hundred} thousand students. A football stadium.
+[#left2] {*Then|Then} he drops out.
+[#order] Customer first. Stadium first. Dropping out came {*last.|last.}
+[#reveal] They didn't drop out to find something. They'd {*already|already} found it. [#lucky] So much for lucky.
+[#most] Most startup founders? [#age] The average founder of America's fastest-growing new companies is {*forty-five.|forty-five.} Twice as old as these two. [#why] Because by then, you know what people will pay for. [#degree] And nine in ten tech founders finished {*college.|college.}
+[#end] Harvard gave them both degrees anyway. [#gates2] Gates got his {*thirty-two|thirty-two} years later.
+[#mirror] Build it first. School can wait. Thirty-two years, apparently.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
