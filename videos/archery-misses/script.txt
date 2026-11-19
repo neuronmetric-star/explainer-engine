@@ -1,0 +1,19 @@
+# SHORT. Brian's script (2026-11-19), marked up with cues. 3D engine (Doug + Gary on Brian's paintings).
+# Payoff: the guy who keeps missing gets there first, because every miss tells him something (too early, then where to aim);
+#   waiting for the perfect shot teaches you nothing. Question word: WHY.
+# Story is a fable (fictional); the lesson matches research on learning from errors (sources.md).
+# Plant: Gary's first arrow clanks into barrier 1. Payoff line: "Which one?" (he took many shots).
+# CTA: Brian's comment prompt instead of the follow line.
+[#q] Why the {*heck|heck} does the guy who keeps missing hit the target {*first?|first?}
+[#problem] See, Doug had a problem. [#barriers] He wanted to hit a {*bullseye,|bullseye,} but there were {!three|three} barriers sliding back and forth between him and the target.
+[#waits] So Doug pulls back his bow and waits. [#gap1] The first gap opens. [#gap2] Then the second one closes. [#almost] Doug goes, "Hold on. I almost got it."
+[#gary] His buddy Gary shoots anyway.
+[#clank] {!Clank.|Clank.} Right into the first barrier.
+[#bet] Honestly? I'd have sided with Doug. Why waste an arrow when you can wait for a clear shot?
+[#tell] I'mma tell you.
+[#early] Gary's first shot showed him he was too {!early.|early.} [#wait2] So he waits a little longer and shoots again. [#through1] This time, the arrow gets through the first gap [#hit2] and hits the next barrier.
+[#knows] Now Gary knows when to shoot to clear the first one. [#aim] He keeps that timing and changes where he {*aims.|aims.}
+[#slips] Then one arrow slips through all {*three|three} gaps. [#bullseye] {*Bullseye.|Bullseye.}
+[#doug] Doug looks over and goes, "How'd you figure out the shot?"
+[#which] Gary goes, "Which {*one?"|one?"}
+[#cta] What's one thing you'd try this week [#miss] if you were allowed to miss the first shot?
