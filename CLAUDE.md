@@ -10,7 +10,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 ## The format (every video)
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
-  Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
+  **No OpenArt / AI video** (Brian, 2026-11-19): Brian supplies the images and the voice; Claude animates
+  everything in the engine. Never generate with OpenArt unless Brian asks for it in that video.
 - **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
   Victor (suit), polo guy, plus real-person look-alikes `zuck` (2004 Zuckerberg) and `gates` (1975 Gates).
   They act with gaze, posture, gestures, faces and timing.
@@ -32,9 +33,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 4. **Shot list** → `videos/<slug>/shotlist.md` (PLAYBOOK §5): background + prop prompts and a shot
    plan with camera and acting per cue. **Images: always Brian in ChatGPT.** For big sets, write the batch file
    `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") → `videos/<slug>/art/`.
-   **OpenArt = video inserts only** (PLAYBOOK §4.1): when a shot looks better as AI video or the engine can't do it
-   (water, fire, crowds, crashes). Image-to-video from Brian's painting, no cast in clips, one test clip first,
-   report credits spent. Brian pre-approved this.
+   **No OpenArt** (PLAYBOOK §4.1): every shot is animated in the engine from Brian's paintings and props
+   (push-ins, pans, pops, counters, cast acting). Don't spend credits unless Brian asks.
 5. **Voice**: if `ELEVENLABS_API_KEY` is set, `node tools/tts.js <slug>`; otherwise Brian records it in
    ElevenLabs/OpenArt from the spoken text, saves `videos/<slug>/voice.mp3`, then `node tools/align.js <slug>`.
    Print spoken text with

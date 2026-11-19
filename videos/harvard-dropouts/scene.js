@@ -44,9 +44,7 @@
       '04': { img: ART['04'], hz: .64, vx: .5, fov0: 55, camH: 1.7, light: 'interior' },
       '05': { img: ART['05'], hz: .45, vx: .5, fov0: 55, camH: 1.7, light: 'day' },
       '06': { img: '06_dorm_2004_night.png', hz: .45, vx: .5, fov0: 55, camH: 1.7, light: 'night' },
-      // OpenArt clip (PixVerse V6, from 07): frames 40–120 of clips/stadium_fill.mp4, every 2nd → clips/stadium/f01–f41.jpg
-      '07': { img: '07_stadium_empty.png', hz: .54, vx: .5, fov0: 55, camH: 1.6, light: 'day',
-        seq: { files: Array.from({ length: 41 }, (_, i) => '../clips/stadium/f' + String(i + 1).padStart(2, '0') + '.jpg'), fps: 22 } },
+      '07': { img: '07_stadium_empty.png', hz: .54, vx: .5, fov0: 55, camH: 1.6, light: 'day' },
       '08': { img: '08_records_archive.png', hz: .64, vx: .5, fov0: 55, camH: 1.7, light: 'interior' },
       '09': { img: '09_chalkboard.png', hz: .45, vx: .5, fov0: 55, camH: 2.6, light: 'interior' },
       '10': { img: '10_commencement_stage.png', hz: .53, vx: .5, fov0: 55, camH: .65, light: 'day' },
@@ -73,7 +71,7 @@
       { at: 'zuck', plate: '06', zoom: [1.0, 1.12], focus: [[.45, .55], [.4, .55]] },
       { at: 'half', plate: '06', zoom: [1.2, 1.2], focus: [[.4, .5], [.4, .5]] },
       { at: 'users', plate: '06', zoom: [1.2, 1.2], focus: [[.4, .5], [.4, .5]] },
-      { at: 'stadium', plate: '07', zoom: [1.0, 1.15], focus: [[.5, .45], [.5, .42]] },
+      { at: 'stadium', plate: '07', zoom: [1.0, 1.25], focus: [[.5, .45], [.5, .4]] },
       { at: 'left2', plate: '02', zoom: [1.05, 1.15], focus: [[.5, .55], [.5, .6]] },
       { at: 'order', plate: '09', zoom: [1.0, 1.0], focus: [[.5, .5], [.5, .5]] },
       { at: 'reveal', plate: '01', zoom: [1.15, 1.3], focus: [[.5, .6], [.5, .62]] },
@@ -130,7 +128,7 @@
           else { const u = K.easeOut(L / 1.8); label('cnt', fmt(100000 * u) + (u > .98 ? '+' : ''), { x: sx, y: sy, size: 150, color: u > .98 ? '#ffd23a' : '#fff' });
             label('lab', 'STUDENTS', { x: sx, y: sy + 130, size: 56, color: '#cfe0ff' }); }
           break; }
-        case 'stadium': break; // the OpenArt clip plays as the plate (seq)
+        case 'stadium': label('stad', '100,000', { x: 540, y: 560, size: 230, color: '#ffd23a', s: popIn(K, t, at('stadium') + .1) }); break; // painting push-in + big number (no OpenArt)
         case 'left2': { const ch = walk(K, 'zuck', t, at('left2'), at('left2') + 2.6, [512, 900], [520, 1330]); face(ch, L > 2.2 ? 'smirk' : 'smile', t); break; }
         case 'order': { // chalkboard frames (painting px): 250/550/850, y 580, 225 wide
           const k = K.imgScale(), f = (ix, key, from) => { const p = K.img(ix, 580), s = popIn(K, t, from); K.prop(key, { x: p.x, y: p.y, w: 205 * k * s }); };

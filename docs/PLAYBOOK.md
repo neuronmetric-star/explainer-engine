@@ -25,7 +25,7 @@ What it's built from:
 | 3 | Script (section 1) | Claude → **Brian approves** | `script.txt` + narration in one copyable block |
 | 4 | Shot list + image prompts (section 4) | Claude | `shotlist.md` |
 | 5 | Paint the worlds and props in **ChatGPT, always** (Brian), from the batch prompt file `videos/<slug>/art-prompts.md` | Brian | long form ≈ 30–45 backgrounds + 20–30 props → `videos/<slug>/art/` |
-| 5b | *(Optional)* AI video inserts in **OpenArt** for shots the engine can't do well (§4.1) | Claude (pre-approved; report credits) | 5–10 s clips → `videos/<slug>/clips/` |
+| 5b | ~~AI video inserts~~: **not used**, everything is animated in the engine (§4.1) | — | 5–10 s clips → `videos/<slug>/clips/` |
 | 6 | Voiceover (ElevenLabs/OpenArt, or `tools/tts.js` with a key) | Brian / Claude | `voice.mp3` → `node tools/align.js <slug>` |
 | 7 | Build the scene: plates, cast, acting, camera (sections 2–3) | Claude | `scene.js` |
 | 8 | Preview stills, fix, repeat | Claude | `preview.jpg`, sent to Brian |
@@ -391,22 +391,13 @@ cards, headlines, and "imagined" gag props). **Per short video:** ≈ 7–12 bac
 `videos/<slug>/art-prompts.md` (template in `docs/prompt-pack.md` → "Batch file"). Brian pastes it into one
 ChatGPT chat and generates the images in order, in batches.
 
-### 4.1 OpenArt video inserts (only when they look better or we need them)
-Brian has pre-approved OpenArt **video** credits. Use them sparingly, for shots the engine can't sell:
-- water, fire, smoke and explosions at scale
-- crowds and stampedes
-- vehicles crashing or flipping
-- transformations and anything that needs real physics or complex motion
+### 4.1 No OpenArt (Brian, 2026-11-19)
+**Don't use OpenArt or any AI video generator.** Brian supplies the images (ChatGPT) and the voice; Claude animates
+everything in the engine: plate push-ins and pans, prop pops and slides, counters and labels, cast acting.
+Shots the engine can't do literally (crowds, water, crashes) are shown with a painting + camera move + a prop or a
+big number instead. Only generate with OpenArt if Brian explicitly asks for it in that video.
 
-Rules:
-- **Start from Brian's ChatGPT painting** (image-to-video), so the style matches. Prompt only camera and
-  motion ("slow push-in, the wave rises and curls, rain"). **Keep our cast out of AI clips.** Characters
-  stay in the engine so they stay consistent and silent.
-- **5–10 s per clip**, used as a cut-in. The engine still adds captions, voice and cuts on top.
-- **One test clip first**, then the rest. Pick the cheapest model that looks right (e.g. PixVerse V6
-  ≈ 50, Wan 3.0 ≈ 100, Veo 3.1 ≈ 120 credits per clip). Check `openart_model_cost` before each run.
-- **Budget:** about 3–8 inserts per long video (≈ 300–1,000 credits). Tell Brian the credits spent after each batch.
-- Mark them in the shot plan as `OPENART:` with the source image and motion prompt. Templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
+Prompt templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
 TABLETOP · DIAGRAM/CUTAWAY · PROP · PROP WITH EXACT TEXT · FOREGROUND LAYER · CHANGE THE MOOD
 (night, storm, abandoned).
 
