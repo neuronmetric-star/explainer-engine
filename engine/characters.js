@@ -97,7 +97,7 @@
       mesh(new THREE.CylinderGeometry(B.lr * .95, B.lr * 1.02, L2 + .02, 20), pantsM, knee, 0, -L2 / 2, 0);
       const ankle = grp(knee, 0, -L2 + .02, 0);
       const toe = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .06); toe.scale.set(B.lr * 1.15, .11, .21);
-      const sole = mesh(new THREE.BoxGeometry(B.lr * 2.2, .03, .44), soleM, ankle, 0, -shoeH + .02, .06); sole.geometry.translate(0, 0, 0);
+      const sole = mesh(new THREE.CylinderGeometry(1, 1, .035, 32), soleM, ankle, 0, -shoeH + .02, .06); sole.scale.set(B.lr * 1.18, 1, .225); // rounded sole, no box corners
       ch.leg[s] = { hip, knee, ankle };
     }
 

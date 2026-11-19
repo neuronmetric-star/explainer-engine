@@ -24,13 +24,13 @@
 
   window.SCENE = {
     plates: {
-      '01': { img: '01_living_room_night.png', hz: .33, vx: .5, fov0: 55, camH: 1.4, light: L.room },
+      '01': { img: '01_living_room_night.png', hz: .374, vx: .5, fov0: 55, camH: 1.42, light: L.room },
       '02': { img: '02_portauprince_wide_day.png', hz: .32, vx: .5, fov0: 55, camH: 1.9, light: 'day' },
       '03': { img: '03_stadium_outside_day.png', hz: .5, vx: .42, fov0: 55, camH: 1.6, light: 'day' },
       '04': { img: '04_stadium_hallway_dim.png', hz: .495, vx: .5, fov0: 55, camH: .75, light: L.hall },
       '05': { img: '05_stadium_stairs_dim.png', hz: .40, vx: .5, fov0: 55, camH: 1.1, light: L.hall },
       '06': { img: '06_president_office_day.png', hz: .40, vx: .5, fov0: 55, camH: 1.6, light: L.office },
-      '07': { img: '07_basement_door_night.png', hz: .40, vx: .5, fov0: 55, camH: 1.6, light: L.door },
+      '07': { img: '07_basement_door_night.png', hz: .405, vx: .5, fov0: 55, camH: 1.62, light: L.door },
       '08': { img: '08_basement_dark_night.png', hz: .45, vx: .5, fov0: 55, camH: 1.2, light: 'night' },
     },
     props: { P03: 'P03_roomba.png', P04: 'P04_cargo_plane.png', P05: 'P05_helmet_camera.png',
@@ -57,7 +57,7 @@
       { at: 'callback', plate: '04', zoom: [1.5, 1.55], focus: [[.5, .68], [.5, .68]] },
       { at: 'first', plate: '04', zoom: [1.0, 1.05], focus: [[.5, .55], [.5, .52]] },
       { at: 'next', plate: '04', zoom: [1.0, 1.35], focus: [[.5, .5], [.5, .48]] },
-      { at: 'end', plate: '07', zoom: [1.2, 1.3], focus: [[.55, .6], [.6, .6]] },
+      { at: 'end', plate: '07', zoom: [1.0, 1.08], focus: [[.55, .5], [.58, .5]] },
       { at: 'roomba', plate: '08', zoom: [1.05, 1.2], focus: [[.55, .6], [.5, .62]] },
       { at: 'ask', plate: '04', zoom: [1.12, 1.2], focus: [[.5, .5], [.5, .5]] },
       { at: 'cta', plate: '04', zoom: [1.2, 1.2], focus: [[.5, .38], [.5, .38]] },
@@ -71,8 +71,8 @@
       const id = K.shot.id, Lc = K.shot.local, at = c => K.T(c);
       const D = K.cast.doug, G = K.cast.gary, P = K.cast.pres, B = K.cast.bro, R = K.cast.robot;
       // living room spots: Doug on the rug, Gary in the hallway doorway
-      const dougRoom = (ry = 0) => K.place('doug', -.2, 0, -4.4, ry);
-      const garyDoor = (ry = -.25) => K.place('gary', 3.55, 0, -14.5, ry);
+      const dougRoom = (ry = 0) => K.placeAt('doug', 480, 1040, ry);   // on the rug, in front of the coffee table
+      const garyDoor = (ry = -.25) => K.placeAt('gary', 895, 748, ry); // on the hallway runner
       switch (id) {
         case 'q': { robotWalk(K, t, at('q') - 1, 0, -15, 1, 1, 1.1); R.pose({ t, walk: (t - at('q') + 1) * 1.1, walkAmt: 1 });
           K.prop('X01', { x: 540, y: 960, w: 1080 }); break; }
@@ -95,7 +95,7 @@
         case 'send': { // walks away from camera toward the stairs, then climbs
           const s = Math.max(0, t - at('send')), z = -4.5 - s * STRIDE * 1.1, zs = -9.5; // stairs start
           K.place('robot', 0, z < zs ? (zs - z) * .55 : 0, z, PI); R.pose({ t, walk: s * 1.1, walkAmt: 1, pitch: z < zs ? -.35 : 0 }); break; }
-        case 'brother': { const d = K.place('doug', -1.15, 0, -6.6, .35), b = K.place('bro', .25, 0, -6.4, PI * .82, .72);
+        case 'brother': { const d = K.placeAt('doug', 250, 1190, .35), b = K.placeAt('bro', 610, 1110, PI * .82, .72);
           face(D, 'smirk', t); D.pose({ t, gesture: 'point', gw: K.ease((Lc - .3) / .3), look: -.2 });
           face(b, 'worried', t, 2); b.pose({ t, look: 1.1 * K.ease((Lc - .6) / .3) });
           const h = K.screenOf(b.head), tp = at('brother') + 1.2;
@@ -105,7 +105,7 @@
         case 'callback': robotWalk(K, t, at('callback'), .15, -7.5, 1, 1, .8); break;
         case 'first': robotWalk(K, t, at('first'), 0, -3.5, -1, 1, 1.3); break;
         case 'next': break;
-        case 'end': { K.place('doug', .3, 0, -6.2, .5); face(D, Lc < .3 ? 'blink' : 'worried', t); D.pose({ t, lean: -.08 * K.ease(Lc / .4), look: .4 }); break; }
+        case 'end': { K.placeAt('doug', 560, 1200, .5); face(D, Lc < .3 ? 'blink' : 'worried', t); D.pose({ t, lean: -.08 * K.ease(Lc / .4), look: .4 }); break; }
         case 'roomba': { const u = K.clamp01(Lc / 2.4), p = K.img(K.lerp(740, 480, u), K.lerp(930, 1000, u));
           K.prop('P03', { x: p.x, y: p.y, w: 330 * K.imgScale() * K.lerp(.75, 1, u) }); break; }
         case 'ask': { K.place('robot', -.85, 0, -5.4, .55); R.pose({ t, walkAmt: 0, look: .35, tilt: Math.sin(Lc * 2) * .1 });

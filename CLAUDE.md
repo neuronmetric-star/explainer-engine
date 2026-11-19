@@ -41,7 +41,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 6. **Scene**: plates + cast + acting + camera per the shot plan (PLAYBOOK §2–3).
 7. **Preview** stills → Read them yourself → fix (feet planted, light matches painting, faces readable,
    caption band clear, clue visible before it's explained) → send Brian the preview.
-8. **Render** 30 fps with voice (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
+8. **Sound effects**: write `videos/<slug>/sfx-cues.js`, run `node tools/sfx.js <slug>` → `sfx.wav` (whooshes on cuts, footsteps, gadgets).
+   **Render** 30 fps with voice + `sfx.wav` (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
 9. **Cover + caption**: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` → `cover.jpg`. **The cover always shows
    the character** (a real frame with the cast and a clear, expressive face; no captions), headline in the top quarter.
    Write `post.md` (TikTok/Reels caption + hashtags, YouTube Shorts title) and send both to Brian.
@@ -78,7 +79,7 @@ before every picture change · lines starting `#` are comments. Numbers as words
   **Robot dog** `CHAR.robodog({envMap, rifle})` → `pose({t, walk, walkAmt, look, tilt, nod, pitch, crouch})` (trot gait, IK legs;
   scene cast entry `{outfit:'robodog'}`). Scene cast entries can be objects (`{outfit:'president', phone:true}`); plate `light` can be a preset name or a custom object.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a
-  painting (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
+  painting; plant feet with `K.placeAt(name, ix, iy)` on a painted floor pixel (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
   `setViewOffset`; shadow catcher + blob shadows; convert material colors sRGB→linear.
 - **Test renders** `node engine/lab/render-lab.js <outDir> --page plate-lab.html [--clip]`
   (Chromium needs `--allow-file-access-from-files`).

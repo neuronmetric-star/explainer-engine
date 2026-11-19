@@ -29,6 +29,7 @@ What it's built from:
 | 6 | Voiceover (ElevenLabs/OpenArt, or `tools/tts.js` with a key) | Brian / Claude | `voice.mp3` → `node tools/align.js <slug>` |
 | 7 | Build the scene: plates, cast, acting, camera (sections 2–3) | Claude | `scene.js` |
 | 8 | Preview stills, fix, repeat | Claude | `preview.jpg`, sent to Brian |
+| 8b | Sound effects: `videos/<slug>/sfx-cues.js` → `node tools/sfx.js <slug>` → `sfx.wav` (synthesized: whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk) | Claude | mixed under the voice by `render.js` |
 | 9 | Render 30 fps, voice mixed | Claude | `final.mp4`, committed, path sent (software render ≈ 7 min per minute of video (the 1:38 gas-vs-water took 11 min), so ≈ 1 h for 8 min; faster with `--gpu` on a desktop) |
 
 Images (5) and voice (6) can happen at the same time, right after the script is approved.
@@ -497,6 +498,9 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - **Caption timing for a voice made outside the API** (ElevenLabs web/OpenArt): `node tools/align.js <slug>` matches
   pauses to punctuation with dynamic programming (good to roughly 0.1–0.2 s). For exact word timing, either set
   `ELEVENLABS_API_KEY` (tts.js) or allow installing Whisper (`faster-whisper`, model from huggingface.co).
+- **Feet on the floor:** place cast with `K.placeAt(name, ix, iy, ry, scale)`, a pixel on the painted floor, never a guessed z.
+  Measure each plate's `hz` from its vanishing lines and `camH` from a door (≈ 2.75 units) so the cast's size matches the room.
+  Shoes have rounded soles (no box).
 - **Green-screen props:** key with `colorkey=0x00FF00:0.22:0.06` (ffmpeg) or the same distance-to-pure-green
   in a shader. **No despill:** it turns teal/green props blue. Tested clean on `gas-vs-water/P01_car_side.png`.
 - **Green subjects (cash, bills, leaves):** the key eats them. Run `python3 tools/cutout.py videos/<slug>/art/<file>.png` → `<file>.cut.png` (only green touching the border is removed) and point `SC.props` at the `.cut.png`; the kit skips keying for `*.cut.png`.

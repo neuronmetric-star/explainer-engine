@@ -89,6 +89,12 @@
   // painting pixel (image coords) -> screen pixel, and image px -> screen px scale
   K.img = (ix, iy) => ({ x: ix / cur.iw * cur.FW - cur.ox, y: iy / cur.ih * cur.FH - cur.oy });
   K.imgScale = () => cur.FH / cur.ih;
+  // painting pixel on the painted floor -> world [x, z] on the floor plane y=0 (raycast through the matched camera).
+  // Use it to plant feet exactly where the painting has floor.
+  const rc = new THREE.Raycaster(), floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), hit = new THREE.Vector3();
+  K.floorAt = (ix, iy) => { const p = K.img(ix, iy); rc.setFromCamera({ x: p.x / W * 2 - 1, y: -(p.y / H * 2 - 1) }, camera);
+    if (!rc.ray.intersectPlane(floorPlane, hit)) throw new Error('floorAt: point is above the horizon ' + ix + ',' + iy); return [hit.x, hit.z]; };
+  K.placeAt = (n, ix, iy, ry = 0, scale = 1) => { const [x, z] = K.floorAt(ix, iy); return K.place(n, x, 0, z, ry, scale); };
   const pv = new THREE.Vector3();
   K.screenOf = obj => { obj.getWorldPosition(pv); pv.project(camera); return { x: (pv.x * .5 + .5) * W, y: (-pv.y * .5 + .5) * H }; };
   K.worldToScreen = (x, y, z) => { pv.set(x, y, z).project(camera); return { x: (pv.x * .5 + .5) * W, y: (-pv.y * .5 + .5) * H }; };
