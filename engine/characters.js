@@ -4,7 +4,8 @@
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw})
-//    gestures: point | wave | shrug | cross | think | facepalm | hips | tada   (gw = blend 0..1)
+//    gestures: point | wave | shrug | cross | think | facepalm | hips | tada | thumbsup | present | fired  (gw = blend 0..1)
+//    outfits: oxford | polo | hoodie | suit | president (swept hair, long red tie, flag pin)
 //  Everything is a pure function of the pose values, so renders stay frame-exact.
 // =====================================================================
 (function () {
@@ -66,6 +67,8 @@
     polo:   { shirt: 0x5b6b2e, pants: 0xcdb98e, shoes: 0x6e6e72, sleeves: 'short', watch: 0x222222, build: 'slim', sneakers: true },
     hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
     suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
+    // president: navy suit, white shirt, long red tie, swept golden hair (who-is-trump). Silent, neutral portrayal.
+    president: { shirt: 0x1b2148, pants: 0x1b2148, shoes: 0x0e0e10, sleeves: 'long', tie: 0xd0142c, longTie: true, build: 'stocky', jacket: true, hair: 0xf4c24c, flagPin: true },
   };
 
   C.make = function (opts = {}) {
@@ -121,7 +124,11 @@
         mesh(new THREE.CylinderGeometry(.011, .011, .03, 6), tip, spine, s * .045, B.th - .23, B.d * .92 + .02); }
     } else if (o.jacket) {
       const v = mesh(plate([[-.13, 0], [.13, 0], [0, -.26]], .06), cloth(0xf4f4f4, .7), spine, 0, B.th - .04, chestZ * .78); v.rotation.x = -.2;
-      const tie = mesh(plate([[-.03, 0], [.03, 0], [.045, -.06], [.02, -.3], [0, -.33], [-.02, -.3], [-.045, -.06]], .012), cloth(o.tie, .55), spine, 0, B.th - .06, chestZ * .78 + .07); tie.rotation.x = -.2;
+      const tieL = o.longTie ? .5 : .3, tieW = o.longTie ? .055 : .045;
+      const tie = mesh(plate([[-.03, 0], [.03, 0], [tieW, -.06], [.024, -tieL], [0, -tieL - .04], [-.024, -tieL], [-tieW, -.06]], .012), cloth(o.tie, .55), spine, 0, B.th - .06, chestZ * .78 + .07); tie.rotation.x = o.longTie ? -.12 : -.2;
+      if (o.flagPin) { const pin = mesh(new THREE.BoxGeometry(.045, .03, .01), new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: .4 }), spine, -.16, B.th - .14, chestZ * .86);
+        mesh(new THREE.BoxGeometry(.02, .016, .012), new THREE.MeshStandardMaterial({ color: 0x1d3b8f, roughness: .4 }), pin, -.012, .007, .001);
+        for (const y of [-.008, .004]) mesh(new THREE.BoxGeometry(.045, .005, .012), new THREE.MeshStandardMaterial({ color: 0xc0182e, roughness: .4 }), pin, 0, y, .0015); }
       for (const s of [-1, 1]) { const lap = mesh(plate([[0, 0], [s * .15, -.02], [s * .02, -.32]], .05), cloth(0x161c40), spine, s * .05, B.th - .05, chestZ * .8); lap.rotation.x = -.2; }
       for (const y of [.18, .08]) mesh(new THREE.CylinderGeometry(.016, .016, .01, 12).rotateX(Math.PI / 2), blackM, spine, 0, y, chestZ * 1.0);
     } else {
@@ -170,6 +177,16 @@
       mesh(new THREE.BoxGeometry(R * .14, t, t), gm, head, 0, R * .1, R * .99);
     }
 
+    if (o.hair) { // swept hair: a cap over the crown + the back, and a big front swoop that sweeps to screen-right
+      const R = B.R, hm = new THREE.MeshStandardMaterial({ color: o.hair, roughness: .42, metalness: 0, bumpMap: WEAVE.a || (WEAVE.a = weave(6)), bumpScale: .004 });
+      const cap = mesh(new THREE.SphereGeometry(R * 1.05, 48, 24, 0, TAU, 0, .78), hm, head); cap.rotation.x = -.12;
+      const back = mesh(new THREE.SphereGeometry(R * 1.045, 48, 24, Math.PI * .1, Math.PI * .8, .3, 1.45), hm, head); back.rotation.y = Math.PI;
+      for (const s of [-1, 1]) { const side = mesh(new THREE.SphereGeometry(1, 20, 14), hm, head, s * R * .84, R * .3, -R * .05); side.scale.set(R * .14, R * .22, R * .4); }
+      const swoop = mesh(new THREE.SphereGeometry(1, 32, 20), hm, head, R * .12, R * .8, R * .5); swoop.scale.set(R * .82, R * .26, R * .5); swoop.rotation.set(-.55, .15, -.16);
+      const crest = mesh(new THREE.SphereGeometry(1, 32, 20), hm, head, -R * .22, R * .9, R * .28); crest.scale.set(R * .6, R * .22, R * .55); crest.rotation.set(-.35, 0, .12);
+      ch.hairMat = hm;
+    }
+
     ch.face = name => { headMat.map = faceTex(name); };
     // Gestures: silent characters act with their hands. pose({gesture:'cross', gw:0..1}) blends one in.
     // Arm "R" = ch.arm[1], arm "L" = ch.arm[-1] (screen right/left when facing camera).
@@ -182,6 +199,9 @@
       facepalm: { 1: [-.95, .3, -.32, -2.5, -.35], nod: .32 },
       hips:     { 1: [.15, 0, .75, -1.35, -1.25], [-1]: [.15, 0, -.75, -1.35, 1.25] },
       tada:     { 1: [-.7, 0, 1.0, -.25, 0], [-1]: [-.7, 0, -1.0, -.25, 0] },
+      thumbsup: { 1: [-.75, 0, .4, -1.55, -.2] },                                   // forearm up, fist out to the side
+      present:  { 1: [-.95, 0, .12, -.95, 0], [-1]: [-.95, 0, -.12, -.95, 0] },    // both hands forward at chest: making a point
+      fired:    { 1: [-1.55, -.15, .05, -.04, 0], nod: -.04 },                       // straight-arm point at the camera
     };
     ch.gestures = Object.keys(G);
     ch.pose = function (p = {}) {

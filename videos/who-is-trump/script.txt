@@ -1,19 +1,17 @@
-# SHORT FORM (~1:05). Who the heck is Donald Trump?  (v2: Trump's own story, no Doug/Gary; v1 kept in script-v1-doug.txt)
-# Format: Coon question (clean "heck") → answer up front (Brian's ask) → Ray skeleton compressed (PLAYBOOK §1.11) → Xevi narrator.
-# Payoff: he turned his last name into the product; the casinos went broke, the name never did, and it carried him to the White House twice.
-# Plant: "The name still sold." Mirror: "The casinos went broke. The name never did."
-# Neutral: facts only, no opinions on him; the narrator's sarcasm targets situations, not the man. All facts in sources.md.
+# SHORT FORM (~1:05). Who the heck is Donald Trump?  v3 = Brian's approved edit (v1 Doug/Gary: script-v1-doug.txt)
+# Payoff: he turned his last name into the product; the casino businesses went broke, the name never did.
+# Plant: "The name still sold." Mirror: "The casino businesses went broke. The name never did."
+# Neutral: facts only; all facts in sources.md. Ending = Brian's comment question.
 [#q] Who the {*heck|heck} is {*Donald|Donald} {*Trump?|Trump?}
-[#prez] Well, if you don't know yet, he's the {*president|president} of the United States. [#boss] The boss of America's government.
-[#born] He was born in New York City in {*1946|nineteen forty-six}. [#dad] His dad built apartments for regular families. [#sky] Donald wanted the skyscrapers.
-[#1971] So he took over the family business and named it the Trump Organization.
-[#1983] In {*1983|nineteen eighty-three}, he opened Trump Tower. {*58|Fifty-eight} floors of gold and glass. [#jewel] A jewelry box you can live in.
-[#everywhere] His name went on hotels. Golf courses. *Casinos.
-[#broke] Until the casinos borrowed more than they could pay back, and went {!bankrupt.|bankrupt.} [#bet] Honestly? I'd have called that the end.
-[#weird] Weird part? The name still *sold. [#license] Other builders paid him just to put it on *their towers.
-[#show] Then came a TV show, The Apprentice, where every week someone heard, {!"You're fired."|"You're fired."}
-[#2016] In {*2016|twenty sixteen}, he ran for president. Never elected to anything before. [#won] He *won.
-[#2020] In {*2020|twenty twenty}, he {!lost|lost} to Joe Biden.
-[#2024] In {*2024|twenty twenty-four}, he came back and *won. [#cleveland] The last president to pull that off? The eighteen hundreds.
-[#end] So that's Donald Trump. The casinos went {!broke.|broke.} [#mirror] The name never did.
-[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
+[#prez] Well, if you don't know yet, he's the {*president|president} of the United States, [#boss] the leader of the country's government.
+[#born] He was born in New York City in {*1946.|nineteen forty-six.} [#dad] His dad built apartments for regular families. [#sky] Donald wanted skyscrapers, [#1971] so he took over the family business and renamed it the Trump Organization.
+[#1983] In {*1983,|nineteen eighty-three,} Trump Tower opened. {*58|Fifty-eight} floors of gold and glass. [#jewel] A jewelry box you can live in.
+[#everywhere] His name went on hotels, golf courses, and *casinos. [#broke] But several of his casino businesses couldn't repay their debts, so they filed for {!bankruptcy.|bankruptcy.}
+[#bet] Honestly? I'd have called that the end.
+[#weird] The weird part? The name still *sold. [#license] Other builders paid to put it on *their towers.
+[#show] Then came The Apprentice, where contestants competed in business challenges, [#fired] and someone often heard, {!"You're fired."|"You're fired."}
+[#2016] In {*2016,|twenty sixteen,} he ran for president. He'd never been elected to public office before. [#won] He *won.
+[#2020] In {*2020,|twenty twenty,} he {!lost|lost} to Joe Biden. [#2024] In {*2024,|twenty twenty-four,} he came back and *won.
+[#cleveland] Only one president had done that before: Grover Cleveland, back in the eighteen hundreds.
+[#end] So that's Donald Trump. The casino businesses went {!broke.|broke.} [#mirror] The name never did.
+[#ask] Which made the Trump name bigger: the *tower or the *TV show? Tell me below.
