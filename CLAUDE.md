@@ -45,7 +45,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 8. **Render** 30 fps with voice (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
    **Mix rule (Brian): the voice always wins.** Voice levelled to −16 LUFS; sound effects and music sit well under it
    (effects ≈ −15 dB, music ≈ −22 dB) and **duck further while he speaks**, so they only come up in pauses. Built into
-   `tools/assemble.js` (AI clips, `--sfx 0.18` default) and `tools/render.js` (music). Before sending, check: effects in a
+   `tools/assemble.js` (AI clips, `--sfx 0.18` default) and `tools/render.js` (music + `sfx.wav`).
+   **3D-engine videos get sound effects too:** list them in `videos/<slug>/sfx.json` (twang, whoosh, clank, thunk, ding, pop,
+   rumble, ambience at cue times) → `python3 tools/sfx.py <slug>` → `sfx.wav`, which `tools/render.js` mixes under the voice. Before sending, check: effects in a
    pause ≈ 15 dB below the voice, and the full mix no louder than the voice alone.
    **AI-clip videos** (OpenArt Wan 3.0, when Brian asks for the whole video in OpenArt): generate every clip with
    `audio: true` + a "Sound: only sound effects…, no music, no voices" line, ≤ 2 references per clip (Wan drops the rest),
