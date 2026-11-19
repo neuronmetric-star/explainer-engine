@@ -13,7 +13,7 @@
 [#swish] Third ball? {*Swish.|Swish.} Nothing but net.
 [#thinking] You're probably thinking: isn't missing the bad part? [#keeps] Gary keeps missing. Left. Right. Short.
 [#closer] But every miss lands a little {*closer,|closer,} because each miss tells him which way to fix it.
-[#still] Doug? Still holding. [#nothing] Thirty seconds of waiting told him {!nothing.|nothing.}
+[#still] Doug? Still holding. [#nothing] A whole minute of waiting told him {!nothing.|nothing.}
 [#buzzer] {!Buzzer.|Buzzer.}
 [#score] Gary shot {*30|thirty} times. He missed {!18.|eighteen.} [#made] He still made {*12.|twelve.}
 [#once] Doug shot once, at the buzzer. [#clank2] {!Clank.|Clank.} [#final] {*12|Twelve} to {!zero.|zero.}
