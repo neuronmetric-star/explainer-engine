@@ -1,23 +1,25 @@
-# SHORT (~1:05). v2: ONLY Bill Gates and Mark Zuckerberg (Brian: "just talk about them"). No invented characters.
-# Format: "Why the heck" question → hook/middle/end (PLAYBOOK §1.11) → Xevi narrator personality.
-# Payoff: they didn't drop out to find something; they dropped out because they'd ALREADY found it
-#   (Gates: a customer for his software; Zuckerberg: ~100,000 students on Facebook). Most startup founders do it
-#   the other way: the average founder of America's fastest-growing new companies is 45, and 9 in 10 tech founders finished college.
-# Plant: "Then he drops out." (both times, after the proof). Narrator bet: "they just got lucky" → changes mind.
-# Mirror: "They'd never even touched one." / "Customer first. Stadium first." → "School can wait. Thirty-two years, apparently."
-# Cast on screen: Gates (`gates`, 1975 look) and Zuckerberg (`zuck`, 2004 look) only, acting silently.
-# "Most founders" are shown with props/graphics, not characters. Every fact is in sources.md.
-[#q] Why the {*heck|heck} did Bill Gates and Mark Zuckerberg drop out of {*Harvard?|Harvard?}
-[#ground] Harvard, America's most famous college. Dropping out means leaving before you finish. [#bet] Honestly? I figured they got {!lucky.|lucky.}
-[#altair] In 1975, nineteen-year-old Gates sees a magazine cover: the Altair, a build-it-yourself computer. [#switches] No screen. Just switches and blinking lights. A toaster with ambition.
-[#basic] Gates and a friend write software for it. [#never] They'd never even touched one.
-[#deal] It works anyway. [#customer] The Altair company pays for it. A real {*customer.|customer.}
-[#left1] {*Then|Then} Gates drops out and starts {*Microsoft,|Microsoft,} the Windows company.
-[#zuck] Twenty-nine years later, Zuckerberg, also nineteen, builds Facebook in his Harvard dorm room. [#half] In a month, half the college signs up. [#users] By summer, a {*hundred|hundred} thousand students. A football stadium.
-[#left2] {*Then|Then} he drops out.
-[#order] Customer first. Stadium first. Dropping out came {*last.|last.}
+# SHORT, Brian's full version (v3, "Full. Don't trim."), voice at 1.2x ≈ 1:34 incl. follow line.
+# Two fact fixes vs. what Brian pasted: "More than a year later" → "That summer" (he left summer 2004, months after launch);
+#   "Zuckerberg got his twelve" → "thirteen" (2004 → 2017).
+# Payoff: they didn't drop out to find something; they'd already found it (Gates: a paying customer; Zuckerberg:
+#   100,000+ users). Most fast-growing-company founders are ~45, and ~9 in 10 US-born tech founders have degrees.
+# Question word: WHY. Bet: "they just got lucky" → "So much for lucky." Mirror: "Customer first…" → "Build it first."
+# Cast on screen: ONLY Gates (`gates`, 1975 look) and Zuckerberg (`zuck`, 2004 look), silent. Paul Allen is voice-only.
+# Every fact is in sources.md. Jokes ("a toaster with ambition") are the narrator's.
+[#q] Why the {*heck|heck} did Bill Gates and Mark Zuckerberg leave {*Harvard|Harvard} before graduating?
+[#gates0] Bill Gates left Harvard before graduating and went on to build {*Microsoft,|Microsoft,} the company behind Windows. [#zuck0] Mark Zuckerberg also left Harvard before graduating to grow {*Facebook,|Facebook,} the social network he started in his dorm.
+[#two] Two dropouts. Two famous companies. [#bet] Honestly? I figured they just got {!lucky.|lucky.}
+[#altair] In {1975,|nineteen seventy-five,} nineteen-year-old Gates sees a magazine cover: the {*Altair,|Altair,} a build-it-yourself computer. [#switches] No screen. Just switches and blinking lights. [#toaster] A toaster with ambition.
+[#allen] Gates and his friend Paul Allen write software for it. [#never] They've never even touched an Altair. [#mainframe] They write the code on a big Harvard computer that pretends to be one.
+[#works] It works. [#deal] The Altair's maker agrees to pay for the software. A real {*customer.|customer.}
+[#left1] Then Gates leaves Harvard and builds Microsoft with Allen, the company behind Windows.
+[#zuck] Twenty-nine years later, Zuckerberg, also nineteen, builds Facebook in his Harvard dorm room. [#half] In a month, more than half the college signs up. [#users] By summer, Facebook has over a {*hundred|hundred} thousand student users. [#stadium] A football stadium.
+[#left2] That summer, Zuckerberg leaves Harvard to focus on Facebook.
+[#order] Customer first. [#order2] Stadium first. [#order3] Dropping out came {*last.|last.}
 [#reveal] They didn't drop out to find something. They'd {*already|already} found it. [#lucky] So much for lucky.
-[#most] Most startup founders? [#age] The average founder of America's fastest-growing new companies is {*forty-five.|forty-five.} Twice as old as these two. [#why] Because by then, you know what people will pay for. [#degree] And nine in ten tech founders finished {*college.|college.}
-[#end] Harvard gave them both degrees anyway. [#gates2] Gates got his {*thirty-two|thirty-two} years later.
+[#study] One study found that founders of the fastest-growing U.S. companies averaged {*forty-five|forty-five} years old. [#twice] Twice as old as these two. [#why] Because by then, you know what people will pay for.
+[#degree] And a separate study found that about nine in ten U.S.-born tech founders had bachelor's {*degrees.|degrees.}
+[#honor] Harvard gave them both honorary degrees later. [#gates2] Gates got his {*thirty-two|thirty-two} years later. [#zuck2] Zuckerberg got his {*thirteen.|thirteen.}
 [#mirror] Build it first. School can wait. Thirty-two years, apparently.
+[#ask] Would you leave like Mark and Bill, or stay and finish college first?
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
