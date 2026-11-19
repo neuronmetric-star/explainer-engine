@@ -1,0 +1,22 @@
+# SHORT FORM (~1:05). Who the heck is Donald Trump?
+# Format: Coon question (clean "heck") → Ray skeleton compressed (PLAYBOOK §1.11) → Xevi narrator personality.
+# Payoff: Donald Trump is a New York builder's son who turned his own last name into the product
+#   (towers, a TV show), then put it on the ballot, and became president twice, with a loss in between.
+# Plant: the gold letters TRUMP on the tower (Doug: "Nobody puts their own name on a building").
+# Clue: the TV in the lobby. Observer: Gary. Mirror: "Nobody puts their own name on a building?" → the ballot.
+# Doug and Gary are fictional; every fact about Trump is real and sourced (sources.md). Neutral: no opinions on him.
+[#q] Who the {*heck|heck} is {*Donald|Donald} {*Trump?|Trump?}
+[#problem] See, Doug had a problem. He thought Trump was a company. Like Nike.
+[#tower] Then he saw it in gold letters on a tower. [#gary] Gary goes, "That's a guy." [#doug] Doug goes, "Nobody puts their own name on a building."
+[#bet] I'd have bet on Doug.
+[#tv] But Gary pointed at the lobby TV. A man going, {!"You're fired."|"You're fired."} [#label] Under him: {*Donald Trump.|Donald Trump.}
+[#aside] Who is he? I'mma tell you.
+[#born] He was born in New York City, {*80 years ago|eighty years ago}. [#dad] His dad built apartments. [#1971] Donald took over the business.
+[#1983] That gold tower? He built it. {*58|Fifty-eight} floors. A jewelry box you can live in.
+[#license] Other builders paid him to put the name on *their towers. [#product] The name was the product.
+[#show] That TV clip? His show, The Apprentice, where someone got fired every week.
+[#2016] In {*2016|twenty sixteen}, he ran for president, the boss of America's government. First government job ever. [#won] He *won.
+[#2020] In {*2020|twenty twenty}, he {!lost.|lost.} [#2024] In {*2024|twenty twenty-four}, he *won again. [#cleveland] Losing, then coming back? That's eighteen-hundreds rare.
+[#end] So Doug was half right. Trump is a company. It's also the guy.
+[#mirror] Nobody puts their own name on a building? He put it on the {*ballot.|ballot.} [#three] Three times.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
