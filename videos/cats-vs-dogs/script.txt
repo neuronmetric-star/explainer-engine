@@ -1,0 +1,22 @@
+# SHORT (~1:05). Cats vs dogs: the pros and cons.
+# Payoff: dog people and cat people are fighting about the same thing. A dog NEEDS you (the greeting, the walks,
+#   can't be left alone long, costs more); a cat DOESN'T (handles a workday alone, cheaper, knows its name and ignores you).
+#   The best part of each pet is also the hard part.
+# Question word: WHY (reason). Cast: Doug + Biscuit (dog), Gary + Kevin (cat). All four are fictional; the facts are real (sources.md).
+# Plant: Kevin doesn't look up when Gary says his name. Paid off by the 2019 name study (Japan).
+# Mirror: "Biscuit loses his mind" -> "Doug was gone four hours. Biscuit lost his mind anyway." (ties to the 4-hour number)
+# v1 cut: greeting study (dogs greet harder after longer absences), Vegas weekend (vets: don't leave a cat alone that long).
+[#q] Why the {*heck|heck} can't dog people and cat people {*agree?|agree?}
+[#problem] See, Doug and Gary each swear their pet is better.
+[#biscuit] Doug got a dog, Biscuit. [#home] Doug walks in, Biscuit loses his mind. Tail like a windshield wiper.
+[#kevin] Gary got a cat, Kevin. [#name] Gary walks in: "Kevin!" [#nolook] Kevin does not look up.
+[#doug] Doug goes, "Your cat doesn't know his name." [#gary] Gary goes, "He's independent."
+[#bet] Honestly? I'd have picked Biscuit.
+[#walks] But Biscuit needs walks. Dog owners walk an extra {*22 min|twenty-two} minutes a day.
+[#alone] He can't be left alone much past {!4 hours|four} hours. [#money] And he costs about {!$20|twenty} bucks a month more than a cat: more food, more vet.
+[#litter] Kevin? Food, water, a litter box, a box of sand he poops in. [#day] He handles a {*workday|workday} alone.
+[#late] So Gary works late. [#lunch] Doug sprints home at lunch to walk Biscuit.
+[#japan] Kevin ignoring his name? [#scientists] Scientists tested that. Cats {*recognize|recognize} their names. [#care] Kevin heard Gary. He just didn't {!care.|care.}
+[#reveal] That's the whole fight. A dog needs you. [#best] Best part. Hard part. [#cat] A cat doesn't need you. [#same] Same deal.
+[#end] Gary got home. Kevin didn't look up. [#mirror] Doug was gone four hours. Biscuit lost his mind {*anyway.|anyway.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

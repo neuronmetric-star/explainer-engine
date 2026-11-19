@@ -263,6 +263,11 @@ clothes. Built in code (`engine/characters.js`). No model files, renders exactly
 | **Gary** | `oxford`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
 | **Victor** | `suit`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
 | **Polo guy** | `polo`: olive polo, khakis, gray sneakers, watch | the worker: tow driver, cashier, guard, mechanic |
+| **Dog** | `dog`: golden plush body, cream muzzle, floppy brown ears, red collar + gold tag | the eager one: greets, begs, needs walks |
+| **Cat** | `cat`: blue-gray tabby, white muzzle/chest/socks, whiskers, teal collar + gold bell | the unbothered one: ignores, judges, naps |
+
+Pets use the same calls (`face`, `pose`) plus `sit`, `lie`, `wag`, `ears`, gestures `paw|beg|bow|arch`, face `sleepy`.
+Sheets: `docs/cast/dog-sheet.jpg`, `docs/cast/cat-sheet.jpg` (render with `node engine/lab/render-sheet.js dog|cat <out>`).
 
 Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
 topic needs one (chef, pilot, doctor…).

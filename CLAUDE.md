@@ -12,7 +12,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
   Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
 - **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
-  Victor (suit), polo guy. They act with gaze, posture, gestures, faces and timing.
+  Victor (suit), polo guy, plus pets: dog (golden, red collar) and cat (blue-gray tabby, teal collar).
+  Character sheets: `docs/cast/dog-sheet.jpg`, `docs/cast/cat-sheet.jpg`. They act with gaze, posture, gestures, faces and timing.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
@@ -75,6 +76,8 @@ before every picture change · lines starting `#` are comments. Numbers as words
   `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
   `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw})`;
   gestures `point|wave|shrug|cross|think|facepalm|hips|tada`. Pure functions of time.
+  **Pets** `CHAR.make({outfit:'dog'|'cat'})`: same `root/head/face/pose`; faces add `sleepy`; pose adds `sit`, `lie` (0..1),
+  `wag` (tail energy), `ears` (-1 back..1 perked); pet gestures `paw|beg|bow|arch`. Sheet: `node engine/lab/render-sheet.js dog|cat <out.jpg>`.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a
   painting (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
   `setViewOffset`; shadow catcher + blob shadows; convert material colors sRGB→linear.
