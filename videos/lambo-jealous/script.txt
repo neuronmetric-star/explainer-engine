@@ -1,0 +1,20 @@
+# SHORT FORM (~1:05). Why a guy in a Lamborghini is jealous: everybody looks one step up.
+# Format: Coon question ("Why the heck", Brian's clean opening) → hook/middle/end (PLAYBOOK §1.11) → Xevi narrator.
+# Payoff: your brain measures the gap to whoever's one step above you, and gets used to whatever you have,
+#         so the thing you stopped noticing (walking) is somebody else's dream.
+# Plant: Doug walking past (his sneakers). Observer: the man in the wheelchair. Mirror: "Man, I wish I had…" → "I wish I could walk again."
+# Victor, Doug, the drivers and the man in the wheelchair are fictional. The psychology and prices are real (sources.md).
+[#q] Why the heck is a guy in a *Lamborghini jealous?
+[#problem] See, Victor had a problem. [#lambo] His Lamborghini, [#seven] worth {*seven|seven} regular cars, [#red] sits at a {!red|red} light.
+[#heli] A helicopter flies over him. [#sky] No red lights up there.
+[#gwagon] But what he doesn't know is the guy next to him, in a G-Wagon, a Mercedes shaped like a shoebox, [#gw2] thinks, "Man, I wish I had that Lamborghini."
+[#regular] But what he doesn't know is the guy in the regular car thinks, "Man, I wish I had that G-Wagon."
+[#walk] But what he doesn't know is Doug, walking by, thinks, [#doug2] "Man, I'd take any of those cars."
+[#bet] Honestly? I figured Doug was last.
+[#mech] Your brain doesn't measure what you have. It measures whoever's one step above you. [#if3] Lamborghini? You stare at the {*sky.|sky.}
+[#used] And whatever you get, you get used to.
+[#green] The light turns {*green.|green.} The cars pull away.
+[#chair] But what Doug doesn't know is a man in a wheelchair is watching him walk, thinking, [#wish] "I wish I could *walk again."
+[#end] Sometimes we're so busy looking at what other people have, we forget what we already have.
+[#ask] What's one thing you have today that you used to *wish for?
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
