@@ -1,0 +1,24 @@
+# SHORT. Brian's script. Archery with three wooden gates (doorway frames, no sliding panels). 3D engine, new art.
+# Payoff: the archer who keeps shooting learns from each miss (hit the left post -> aim right; low in the blue -> aim higher)
+#   and ends with more bullseyes than the one who waits for perfect conditions. Question word: WHY.
+# Doug, Gary and the contest are fictional. Numbers invented and consistent: Doug 10 arrows / 3 bullseyes; Gary 30 / 6.
+# Plant: Gary's first arrow thunks into the LEFT post of gate 1. Mirror: Doug "lowers his bow" (twice) -> "still got twenty arrows".
+[#q] Why the {*heck|heck} does the guy who misses more arrows {*win?|win?}
+[#meet] Meet Doug and Gary. [#target] One target. [#gates] Three wooden gates. [#arrows] {*Thirty|Thirty} arrows each.
+[#rules] Whoever hits the yellow center the most before time runs out wins.
+[#raise] Doug raises his bow. [#aim] His aim looks good. [#wind] Then the {!wind|wind} picks up.
+[#lower] He lowers it. "I'll wait."
+[#gary] Gary shoots.
+[#thunk] {!Thunk.|Thunk.} First gate.
+[#bet] Honestly? I'd have sided with Doug. Gary just shot a doorway.
+[#sees] But Gary sees his arrow hit the {!left|left} post. [#right] So he aims a little farther right.
+[#clears] Next shot clears the first gate [#clips] and clips the {!second.|second.}
+[#again] He tries again. [#through] Through all three gates. [#blue] Blue ring.
+[#higher] A little higher this time.
+[#bull1] {*Bullseye.|Bullseye.}
+[#meanwhile] Meanwhile, Doug finally gets everything he wants. [#steady] Steady hands. No wind. A clear shot.
+[#bull2] {*Bullseye.|Bullseye.}
+[#leaves] Then the leaves start moving again. [#lower2] Doug lowers his bow.
+[#buzzer] By the {!buzzer,|buzzer,} Doug's fired {!ten|ten} arrows and hit {*three|three} bullseyes. [#garyscore] Gary's fired all {*thirty|thirty} and hit {*six.|six.}
+[#looks] Doug looks down. [#twenty] He's still got {!twenty|twenty} arrows.
+[#cta] Be honest. When you want something badly, are you Doug waiting for everything to line up, [#or] or Gary willing to miss while you figure it out?
