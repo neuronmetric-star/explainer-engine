@@ -262,6 +262,7 @@ clothes. Built in code (`engine/characters.js`). No model files, renders exactly
 | **Doug** | `hoodie`: mustard hoodie, jeans, white sneakers | the confident everyman who gets it wrong |
 | **Gary** | `oxford`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
 | **Victor** | `suit`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
+| **The President** | `president`: navy suit, white shirt, long red tie, flag pin, swept gold hair (stocky) | real-president stand-in (who-is-trump); neutral, never mocked |
 | **Polo guy** | `polo`: olive polo, khakis, gray sneakers, watch | the worker: tow driver, cashier, guard, mechanic |
 
 Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
