@@ -1,22 +1,32 @@
-# SHORT (~1:05). Cats vs dogs: the pros and cons.
-# Payoff: dog people and cat people are fighting about the same thing. A dog NEEDS you (the greeting, the walks,
-#   can't be left alone long, costs more); a cat DOESN'T (handles a workday alone, cheaper, knows its name and ignores you).
-#   The best part of each pet is also the hard part.
-# Question word: WHY (reason). Cast: Doug + Biscuit (dog), Gary + Kevin (cat). All four are fictional; the facts are real (sources.md).
-# Plant: Kevin doesn't look up when Gary says his name. Paid off by the 2019 name study (Japan).
-# Mirror: "Biscuit loses his mind" -> "Doug was gone four hours. Biscuit lost his mind anyway." (ties to the 4-hour number)
-# v1 cut: greeting study (dogs greet harder after longer absences), Vegas weekend (vets: don't leave a cat alone that long).
+# SHORT. Dogs vs cats. Brian's script (approved 2026-11-19), marked up with cues. v1 (Claude's) = script-v1-claude.txt.
+# Story: Doug (dog Biscuit) and Gary (cat Kevin) swap pets for a Saturday. Everyone and everything here is fictional.
+# Plant: Kevin ignoring his name. Payoff: Kevin curls up on Doug's lap; back home Kevin ignores Gary's call but leaves room on the couch.
+# Mirror: "Gary... 'Kevin!' Kevin doesn't look up." (callback to the start of the friendship joke); Biscuit's greeting.
+# CTA: Brian's comment prompt (Team Biscuit / Team Kevin) instead of the follow line.
 [#q] Why the {*heck|heck} can't dog people and cat people {*agree?|agree?}
-[#problem] See, Doug and Gary each swear their pet is better.
-[#biscuit] Doug got a dog, Biscuit. [#home] Doug walks in, Biscuit loses his mind. Tail like a windshield wiper.
-[#kevin] Gary got a cat, Kevin. [#name] Gary walks in: "Kevin!" [#nolook] Kevin does not look up.
-[#doug] Doug goes, "Your cat doesn't know his name." [#gary] Gary goes, "He's independent."
-[#bet] Honestly? I'd have picked Biscuit.
-[#walks] But Biscuit needs walks. Dog owners walk an extra {*22 min|twenty-two} minutes a day.
-[#alone] He can't be left alone much past {!4 hours|four} hours. [#money] And he costs about {!$20|twenty} bucks a month more than a cat: more food, more vet.
-[#litter] Kevin? Food, water, a litter box, a box of sand he poops in. [#day] He handles a {*workday|workday} alone.
-[#late] So Gary works late. [#lunch] Doug sprints home at lunch to walk Biscuit.
-[#japan] Kevin ignoring his name? [#scientists] Scientists tested that. Cats {*recognize|recognize} their names. [#care] Kevin heard Gary. He just didn't {!care.|care.}
-[#reveal] That's the whole fight. A dog needs you. [#best] Best part. Hard part. [#cat] A cat doesn't need you. [#same] Same deal.
-[#end] Gary got home. Kevin didn't look up. [#mirror] Doug was gone four hours. Biscuit lost his mind {*anyway.|anyway.}
-[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
+[#argue] See, Doug and Gary got into an argument over whose pet was {*easier|easier} to live with.
+[#doug] Doug said, "My dog Biscuit is easy. He just wants to hang out."
+[#gary] Gary said, "My cat Kevin is easier. He doesn't even care if I come home."
+[#switch] So they {*switched|switched} pets for a Saturday.
+[#six] At six in the morning, Gary hears scratching at the front door. [#pee] Biscuit needs to pee. [#rain] It's {!pouring|pouring} outside. [#leash] Gary puts on a jacket and grabs the leash.
+[#porch] Biscuit steps onto the porch, [#drop] feels one drop of rain, [#back] and walks back inside.
+[#again] Five minutes later, he's scratching at the door {!again.|again.}
+[#ten] Meanwhile, Doug sleeps till {*ten.|ten.} [#bowl] Kevin's got food, water, and a litter box. [#easy] This is the easiest Saturday Doug's had in years.
+[#couch] So he sits on the couch and goes, "Kevin! Come hang out."
+[#looks] Kevin looks right at him.
+[#walks] Then he walks {!away.|away.}
+[#lunch] By lunch, Gary's taken Biscuit out {!three|three} times. [#soaked] He's soaked, his socks are wet, [#sandwich] and all he wants is to eat his sandwich in peace.
+[#drops] Then he {!drops|drops} it.
+[#look1] Biscuit looks at the sandwich. [#look2] Looks at Gary. [#eats] Eats the {!sandwich.|sandwich.}
+[#laugh] And Gary laughs so hard he forgets he's mad.
+[#night] That night, Doug's on the couch watching TV. [#givenup] He's given up calling Kevin.
+[#hop] Then, out of nowhere, Kevin hops up [#lap] and curls into a little ball on Doug's {*lap.|lap.}
+[#phone] Doug's phone is two feet away. He wants a picture so bad.
+[#forty] He sits there for {*forty|forty} minutes without moving.
+[#swapback] When they switch back, Gary goes, "I missed being able to sleep in."
+[#missed] Doug goes, "I missed somebody being happy to see me."
+[#greet] Then Doug gets home, and Biscuit greets him like he's been gone for a {*year.|year.}
+[#garyhome] Gary gets home and goes, "Kevin!"
+[#nolook] Kevin doesn't look up.
+[#room] But when Gary sits on the couch, he leaves a little {*room|room} next to him.
+[#cta] Be honest. If you had to pet-sit next Saturday, who are you taking? [#teams] Team *Biscuit or Team *Kevin? Drop your pick in the comments.
