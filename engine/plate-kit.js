@@ -108,6 +108,17 @@
     m.position.set(o.x + dx * c - dy * s, -(o.y) + dx * s + dy * c, 0);
     (o.layer === 'back' ? propBack : propFront).add(m); m.visible = true; return m; };
   K.propInfo = k => PROPS[k];
+  // register a generated sprite (a canvas drawn in scene.build): no green keying
+  K.addProp = (k, canvas) => { const tex = new THREE.CanvasTexture(canvas); tex.encoding = THREE.sRGBEncoding; PROPS[k] = { tex, iw: canvas.width, ih: canvas.height, cut: true }; };
+  // painting pixel -> world point on the ground (y=0) for a plate, at its own matched camera (independent of zoom/pan)
+  K.ground = (plate, ix, iy) => { const P = PLATES[plate], iw = P.tex.image.width, ih = P.tex.image.height, asp = iw / ih, tH = Math.tan(THREE.MathUtils.degToRad(P.fov0 / 2));
+    const d = new THREE.Vector3((2 * ix / iw - 1) * tH * asp, (1 - 2 * iy / ih) * tH, -1);
+    d.applyEuler(new THREE.Euler(-Math.atan((.5 - P.hz) * 2 * tH), -Math.atan((P.vx - .5) * 2 * tH * asp), 0, 'YXZ'));
+    const k = P.camH / -d.y; return { x: d.x * k, y: 0, z: d.z * k }; };
+  // world height of painting row iy straight above a ground point (for seats, tables)
+  K.heightAt = (plate, g, iy) => { const P = PLATES[plate], ih = P.tex.image.height, iw = P.tex.image.width, asp = iw / ih, tH = Math.tan(THREE.MathUtils.degToRad(P.fov0 / 2));
+    const d = new THREE.Vector3(0, (1 - 2 * iy / ih) * tH, -1).applyEuler(new THREE.Euler(-Math.atan((.5 - P.hz) * 2 * tH), 0, 0, 'YXZ'));
+    const dist = Math.hypot(g.x, g.z); return P.camH + d.y / Math.hypot(d.x, d.z) * dist; };
   // soft puff texture for exhaust (generated)
   function puffTex() { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
     const gr = g.createRadialGradient(64, 64, 6, 64, 64, 62); gr.addColorStop(0, 'rgba(235,232,240,.95)'); gr.addColorStop(.6, 'rgba(215,210,228,.6)'); gr.addColorStop(1, 'rgba(200,196,220,0)');
