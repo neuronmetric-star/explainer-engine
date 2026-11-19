@@ -64,6 +64,8 @@
     day: { key: [0xffc888, 2.7, [-12, 7, -6]], hemi: [0xc8b8ff, 0xe8a070, .7], front: [0xffe6d6, 1.1], shadow: [0x4a2a6a, .40] },
     night: { key: [0x9aaeff, 1.1, [-12, 9, -6]], hemi: [0x6878d8, 0x403058, .9], front: [0x8a90ff, .8], shadow: [0x0a0a30, .50] },
     interior: { key: [0xffc888, 2.2, [-12, 5, 2]], hemi: [0xd0c8ff, 0xc09070, .8], front: [0xffe6d6, 1.0], shadow: [0x3a2a4a, .38] },
+    // gloomy dawn / rainy day: cool mood in the painting, but near-neutral light so cast colors stay true (Biscuit stays gold)
+    dawn: { key: [0xe6ecff, 1.8, [-10, 7, 4]], hemi: [0xdfe6ff, 0xb0a090, .95], front: [0xfff2e6, 1.15], shadow: [0x1a1a40, .42] },
   };
   function setLight(n) { const L = LIGHTS[n] || LIGHTS.day;
     key.color.copy(lin(L.key[0])); key.intensity = L.key[1]; key.position.set(...L.key[2]);

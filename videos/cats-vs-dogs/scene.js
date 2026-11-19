@@ -30,8 +30,8 @@
   window.SCENE = {
     plates: {
       '01': { img: '01_two_houses_day.png', hz: .43, vx: .5, fov0: 55, camH: 1.95, light: 'day' },
-      '02': { img: '02_gary_hallway_dawn.png', hz: .30, vx: .55, fov0: 55, camH: 1.95, light: 'night' },
-      '03': { img: '03_gary_porch_rain.png', hz: .35, vx: .45, fov0: 55, camH: 1.95, light: 'night' },
+      '02': { img: '02_gary_hallway_dawn.png', hz: .30, vx: .55, fov0: 55, camH: 1.95, light: 'dawn' },
+      '03': { img: '03_gary_porch_rain.png', hz: .35, vx: .45, fov0: 55, camH: 1.95, light: 'dawn' },
       '04': { img: '04_doug_living_room_day.png', hz: .30, vx: .5, fov0: 55, camH: 1.95, light: 'interior' },
       '05': { img: '05_doug_living_room_night.png', hz: .30, vx: .5, fov0: 55, camH: 1.95, light: 'night' },
       '06': { img: '06_doug_bedroom_morning.png', hz: .27, vx: .5, fov0: 55, camH: 1.95, light: 'interior' },
