@@ -1,6 +1,8 @@
 // =====================================================================
 //  CHARACTERS — glossy sphere-head cast, built in code (no model files)
-//  CHAR.make({outfit:'oxford'|'polo'|'suit', glasses, envMap}) -> character
+//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'zuck'|'gates', glasses, envMap}) -> character
+//    zuck  = 2004 Zuckerberg look (gray zip hoodie, jeans, slide sandals, short curly hair)
+//    gates = 1975 Gates look (big square glasses, sandy mop + bangs, sweater over collared shirt, khakis)
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw})
@@ -66,6 +68,8 @@
     polo:   { shirt: 0x5b6b2e, pants: 0xcdb98e, shoes: 0x6e6e72, sleeves: 'short', watch: 0x222222, build: 'slim', sneakers: true },
     hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
     suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
+    zuck:   { shirt: 0x8b8e94, pants: 0x2c3c5c, shoes: 0x111214, sleeves: 'long', build: 'slim', hoodie: true, zip: true, slides: true, hair: 'curly', hairColor: 0x4a2f1c },
+    gates:  { shirt: 0x34466e, collar: 0xd6e4f4, pants: 0xb89c6c, shoes: 0x5a3519, sleeves: 'long', build: 'slim', sweater: true, glasses: 'big', hair: 'mop', hairColor: 0xa47c4c },
   };
 
   C.make = function (opts = {}) {
@@ -75,7 +79,7 @@
       : o.hoodie ? { w: .3, d: .22, th: .62, leg: .9, lr: .108, ar: .082, R: .34, hand: .1 }
       : { w: .26, d: .18, th: .62, leg: .9, lr: .1, ar: .068, R: .34, hand: .1 };
     const shirtM = o.hoodie ? Object.assign(cloth(o.shirt, .97), { bumpScale: .009 }) : cloth(o.shirt), pantsM = cloth(o.pants), whiteM = glossy(0xf2f2f4, env, .24), blackM = new THREE.MeshStandardMaterial({ color: 0x151515, roughness: .45 });
-    const shoeM = o.sneakers ? cloth(o.shoes, .8) : Object.assign(glossy(o.shoes, env, .5), { envMapIntensity: .3, clearcoat: .5 }), soleM = new THREE.MeshStandardMaterial({ color: o.sneakers ? 0xf0f0f0 : 0x1a120c, roughness: .7 });
+    const shoeM = o.sneakers ? cloth(o.shoes, .8) : Object.assign(glossy(o.shoes, env, .5), { envMapIntensity: .3, clearcoat: .5 }), soleM = new THREE.MeshStandardMaterial({ color: o.sneakers ? 0xf0f0f0 : o.slides ? 0x151515 : 0x1a120c, roughness: .7 });
     const root = new THREE.Group(), ch = { root, opts: o, B };
     const shoeH = .1, L1 = B.leg * .5, L2 = B.leg * .5, hipY = shoeH + L1 + L2;
     const hips = ch.hips = grp(root, 0, hipY, 0);
@@ -94,8 +98,12 @@
       const knee = grp(hip, 0, -L1, 0); mesh(new THREE.SphereGeometry(B.lr * .96, 16, 12), pantsM, knee);
       mesh(new THREE.CylinderGeometry(B.lr * .95, B.lr * 1.02, L2 + .02, 20), pantsM, knee, 0, -L2 / 2, 0);
       const ankle = grp(knee, 0, -L2 + .02, 0);
-      const toe = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .06); toe.scale.set(B.lr * 1.15, .11, .21);
+      const toe = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), o.slides ? whiteM : shoeM, ankle, 0, -shoeH + .02, .06); toe.scale.set(B.lr * 1.15, .11, .21);
       const sole = mesh(new THREE.BoxGeometry(B.lr * 2.2, .03, .44), soleM, ankle, 0, -shoeH + .02, .06); sole.geometry.translate(0, 0, 0);
+      if (o.slides) { // slide sandal: one wide black strap over the foot, three white stripes
+        const strap = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .1); strap.scale.set(B.lr * 1.24, .125, .12);
+        const stripeM = new THREE.MeshStandardMaterial({ color: 0xf4f4f4, roughness: .6 });
+        for (const k of [-1, 0, 1]) mesh(new THREE.BoxGeometry(.012, .02, .2), stripeM, ankle, k * .04, -shoeH + .02 + .105, .1); }
       ch.leg[s] = { hip, knee, ankle };
     }
 
@@ -115,10 +123,21 @@
       const hem = mesh(new THREE.CylinderGeometry(B.w * .93, B.w * .92, .07, 32), rib, spine, 0, .02, 0); hem.scale.z = B.d / B.w;
       const hood = mesh(new THREE.TorusGeometry(.13, .07, 12, 24), shirtM, spine, 0, B.th + .01, -.02); hood.rotation.x = Math.PI / 2; hood.scale.set(1.15, 1, 1);
       const back = mesh(new THREE.SphereGeometry(1, 20, 14), shirtM, spine, 0, B.th - .03, -B.d * .75); back.scale.set(.2, .15, .12);
-      const pocket = mesh(plate([[-.15, 0], [.15, 0], [.12, .15], [-.12, .15]], .02), rib, spine, 0, .07, B.d * 1.0); pocket.rotation.x = .05;
+      if (o.zip) { // zip-up: two pocket halves, a metal zipper and a gray tee peeking at the neck
+        for (const sx of [-1, 1]) { const pk = mesh(plate([[0, 0], [sx * .15, 0], [sx * .12, .15], [0, .15]], .02), rib, spine, sx * .012, .07, B.d * 1.0); pk.rotation.x = .05; }
+        const zipM = metal(0xb9bcc2, env);
+        for (let i = 0; i < 8; i++) { const y = .05 + i * .065; mesh(new THREE.BoxGeometry(.016, .05, .012), zipM, spine, 0, y, B.d * (y > .45 ? .97 : 1.02) + .008); }
+        mesh(new THREE.BoxGeometry(.03, .05, .02), zipM, spine, 0, B.th - .14, B.d * .95 + .02);
+        const tee = mesh(new THREE.CylinderGeometry(.09, .1, .06, 20), cloth(0x6d7077), spine, 0, B.th - .04, .02); tee.scale.z = .9;
+      } else { const pocket = mesh(plate([[-.15, 0], [.15, 0], [.12, .15], [-.12, .15]], .02), rib, spine, 0, .07, B.d * 1.0); pocket.rotation.x = .05; }
       const cord = new THREE.MeshStandardMaterial({ color: 0xf2efe6, roughness: .6 }), tip = metal(0xcfcfcf, env);
-      for (const s of [-1, 1]) { mesh(new THREE.CylinderGeometry(.008, .008, .17, 6), cord, spine, s * .045, B.th - .13, B.d * .92 + .02);
-        mesh(new THREE.CylinderGeometry(.011, .011, .03, 6), tip, spine, s * .045, B.th - .23, B.d * .92 + .02); }
+      for (const s of [-1, 1]) { mesh(new THREE.CylinderGeometry(.008, .008, .17, 6), cord, spine, s * (o.zip ? .065 : .045), B.th - .13, B.d * .92 + .02);
+        mesh(new THREE.CylinderGeometry(.011, .011, .03, 6), tip, spine, s * (o.zip ? .065 : .045), B.th - .23, B.d * .92 + .02); }
+    } else if (o.sweater) { // V-neck sweater over a light collared shirt
+      const colM = cloth(o.collar, .75);
+      const v = mesh(plate([[-.11, 0], [.11, 0], [0, -.22]], .03), colM, spine, 0, B.th - .04, chestZ * .74); v.rotation.x = -.22;
+      for (const s of [-1, 1]) { const f = mesh(plate([[0, 0], [s * .12, .005], [s * .065, -.1]], .014), colM, spine, s * .015, B.th - .02, chestZ * .6); f.rotation.x = -.5; f.rotation.y = s * .25; }
+      const hem = mesh(new THREE.CylinderGeometry(B.w * .93, B.w * .92, .06, 32), cloth(new THREE.Color(o.shirt).multiplyScalar(.85), .95), spine, 0, .02, 0); hem.scale.z = B.d / B.w;
     } else if (o.jacket) {
       const v = mesh(plate([[-.13, 0], [.13, 0], [0, -.26]], .06), cloth(0xf4f4f4, .7), spine, 0, B.th - .04, chestZ * .78); v.rotation.x = -.2;
       const tie = mesh(plate([[-.03, 0], [.03, 0], [.045, -.06], [.02, -.3], [0, -.33], [-.02, -.3], [-.045, -.06]], .012), cloth(o.tie, .55), spine, 0, B.th - .06, chestZ * .78 + .07); tie.rotation.x = -.2;
@@ -158,16 +177,30 @@
     const headMat = glossy(0xffffff, env, .16); headMat.map = faceTex('smile');
     const ball = mesh(new THREE.SphereGeometry(B.R, 64, 48), headMat, head); ball.castShadow = true;
     ch.headMat = headMat;
+    if (o.hair) { // stylized hair cap that stays above the brows; curly = bumps, mop = bangs + side volume
+      const R = B.R, hm = new THREE.MeshPhysicalMaterial({ color: o.hairColor, roughness: .6, clearcoat: .3, clearcoatRoughness: .5, envMap: env, envMapIntensity: .3 });
+      const cap = mesh(new THREE.SphereGeometry(R * 1.035, 48, 24, 0, TAU, 0, Math.PI * (o.hair === 'mop' ? .4 : .34)), hm, head); cap.rotation.x = -.42;
+      if (o.hair === 'curly') {
+        let k = 0; const rnd = () => { k++; const x = Math.sin(k * 12.9898) * 43758.5453; return x - Math.floor(x); };
+        for (let i = 0; i < 70; i++) { const th = (.05 + .32 * Math.sqrt(rnd())) * Math.PI, ph = rnd() * TAU;
+          const dir = new THREE.Vector3(Math.sin(th) * Math.cos(ph), Math.cos(th), Math.sin(th) * Math.sin(ph)).applyAxisAngle(new THREE.Vector3(1, 0, 0), -.42);
+          const b = mesh(new THREE.SphereGeometry(R * (.1 + .05 * rnd()), 10, 8), hm, head); b.position.copy(dir.multiplyScalar(R * 1.03)); }
+      } else {
+        const bang = mesh(new THREE.SphereGeometry(R * .62, 32, 16, 0, TAU, 0, Math.PI / 2), hm, head, -R * .1, R * .58, R * .5); bang.scale.set(1.25, .42, .62); bang.rotation.set(.75, 0, .18);
+        for (const s of [-1, 1]) { const side = mesh(new THREE.SphereGeometry(R * .42, 20, 14), hm, head, s * R * .8, R * .28, -R * .12); side.scale.set(.42, .9, .95); }
+      }
+    }
     if (o.glasses) {
-      const gm = metal(0xa9adb3, env), R = B.R, t = .012;
+      const big = o.glasses === 'big', gm = big ? Object.assign(glossy(0x3b2a1c, env, .35), { envMapIntensity: .4 }) : metal(0xa9adb3, env), R = B.R, t = big ? .02 : .012;
       for (const s of [-1, 1]) {
-        const lens = grp(head, s * R * .34, R * .03, R * .93); lens.rotation.y = s * .36;
-        const w = R * .5, h = R * .3;
+        const lens = grp(head, s * R * (big ? .36 : .34), R * (big ? .0 : .03), R * .93); lens.rotation.y = s * .36;
+        const w = R * (big ? .6 : .5), h = R * (big ? .5 : .3);
         mesh(new THREE.BoxGeometry(w, t, t), gm, lens, 0, h / 2, 0); mesh(new THREE.BoxGeometry(w, t, t), gm, lens, 0, -h / 2, 0);
         mesh(new THREE.BoxGeometry(t, h, t), gm, lens, -w / 2, 0, 0); mesh(new THREE.BoxGeometry(t, h, t), gm, lens, w / 2, 0, 0);
+        if (big) { const glass = mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshPhysicalMaterial({ color: 0xc8b48a, transparent: true, opacity: .12, roughness: .05, envMap: env }), lens, 0, 0, -.002); glass.castShadow = false; }
         const arm = mesh(new THREE.BoxGeometry(t, t, R * .9), gm, head, s * R * .9, R * .1, R * .1); arm.rotation.y = -s * .25;
       }
-      mesh(new THREE.BoxGeometry(R * .14, t, t), gm, head, 0, R * .1, R * .99);
+      mesh(new THREE.BoxGeometry(R * .14, t, t), gm, head, 0, R * (big ? .12 : .1), R * .99);
     }
 
     ch.face = name => { headMat.map = faceTex(name); };
