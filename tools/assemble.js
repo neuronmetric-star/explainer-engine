@@ -34,7 +34,8 @@ clips.forEach((c, i) => {
   const vf = [`setpts=PTS/${sp}`, `scale=${W}:${H}:force_original_aspect_ratio=increase`, `crop=${W}:${H}`, `fps=${FPS}`, `tpad=stop_mode=clone:stop_duration=${dur + 1}`].join(',');
   // keep the clip's own audio (sound effects) if it has any, else silence, so every part has the same audio format
   const hasAudio = /Audio:/.test(spawnSync(ff, ['-hide_banner', '-i', src], { encoding: 'utf8' }).stderr || '');
-  const af = `[${hasAudio ? 0 : 1}:a]aresample=44100,aformat=channel_layouts=stereo,apad,atrim=0:${dur}[a]`;
+  // level every clip's effects to the same loudness so one loud clip can't bury the narration
+  const af = `[${hasAudio ? 0 : 1}:a]aresample=44100,aformat=channel_layouts=stereo,${hasAudio ? 'loudnorm=I=-24:TP=-3:LRA=11,aresample=44100,' : ''}apad,atrim=0:${dur}[a]`;
   const r = spawnSync(ff, ['-y', '-loglevel', 'error', '-ss', String(c.ss || 0), '-i', src, '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
     '-filter_complex', `[0:v]${vf}[v];${af}`, '-map', '[v]', '-map', '[a]', '-t', String(dur),
     '-c:v', 'libx264', '-preset', preview ? 'ultrafast' : 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', out], { stdio: 'inherit' });
@@ -63,8 +64,8 @@ const args = ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', pa
 if (hasMusic) args.push('-stream_loop', '-1', '-i', music);
 // clip sound effects ([0:a]) sit under the voice; with --no-voice they are the whole soundtrack
 const afilter = noVoice ? `[0:a]apad[a]`
-  : hasMusic ? `[1:a]apad[v];[2:a]volume=0.12[m];[0:a]volume=0.35[s];[v][m][s]amix=inputs=3:duration=first:normalize=0[a]`
-  : `[1:a]apad[v];[0:a]volume=0.35[s];[v][s]amix=inputs=2:duration=first:normalize=0[a]`;
+  : hasMusic ? `[1:a]apad[v];[2:a]volume=0.12[m];[0:a]volume=0.45[s];[v][m][s]amix=inputs=3:duration=first:normalize=0[a]`
+  : `[1:a]apad[v];[0:a]volume=0.45[s];[v][s]amix=inputs=2:duration=first:normalize=0[a]`;
 args.push('-filter_complex', `[0:v]subtitles=${path.join(tmp, 'caps.ass')}:fontsdir=${fontTmp}[vo];${afilter}`, '-map', '[vo]', '-map', '[a]',
   '-t', String(total), '-c:v', 'libx264', '-preset', preview ? 'veryfast' : 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', out);
 const r = spawnSync(ff, args, { stdio: 'inherit' }); if (r.status) process.exit(r.status);
