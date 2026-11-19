@@ -59,11 +59,11 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
     }
     enc.stdin.end(); await new Promise(r => enc.on('close', r));
     const out = path.join(dir, 'final.mp4'), voice = path.join(dir, 'voice.mp3');
-    const music = path.join(dir, 'music.mp3'); // optional quiet music bed
+    const music = path.join(dir, 'music.mp3'); // optional quiet music bed: always under the voice and ducked while he speaks (mix rule)
     let mux;
     if (fs.existsSync(voice) && fs.existsSync(music))
       mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-stream_loop', '-1', '-i', music,
-        '-filter_complex', '[1:a]apad[v];[2:a]volume=0.12[m];[v][m]amix=inputs=2:duration=first:normalize=0[a]',
+        '-filter_complex', '[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad,asplit=2[v][k];[2:a]volume=0.08[m0];[m0][k]sidechaincompress=threshold=0.015:ratio=12:attack=15:release=350[m];[v][m]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[a]',
         '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
     else if (fs.existsSync(voice))
       mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-af', 'apad', '-t', L.toFixed(3)];

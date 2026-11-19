@@ -1,5 +1,5 @@
 // Assemble a video from AI clips (e.g. OpenArt) instead of the 3D engine.
-// Usage: node tools/assemble.js <slug> [--preview] [--no-voice]
+// Usage: node tools/assemble.js <slug> [--preview] [--no-voice] [--sfx 0.18]
 //   --no-voice: leave the narration out (Brian adds voice/music in CapCut); the clips' own sound effects are kept.
 // Reads videos/<slug>/clips.json: [{ "from": "<cue>", "file": "clips/c01.mp4", "ss": 0, "speed": 1 }, ...] in order.
 //   Each clip fills the time from its cue to the next clip's cue (the last one to the end of the voice + tail),
@@ -63,9 +63,16 @@ const out = path.join(dir, (preview ? 'preview' : 'final') + (noVoice ? '-novoic
 const args = ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', path.join(tmp, 'list.txt'), '-i', path.join(dir, 'voice.mp3')];
 if (hasMusic) args.push('-stream_loop', '-1', '-i', music);
 // clip sound effects ([0:a]) sit under the voice; with --no-voice they are the whole soundtrack
+// MIX RULE (Brian, 2026-11-19: "sound effects overpowering the voice"): the narration always wins.
+//  - voice levelled to -16 LUFS (loud, clear);  sound effects already levelled per clip to -24 LUFS, then
+//  - SFX_LEVEL (default 0.18 ≈ -15 dB) under the voice, and DUCKED (sidechain) a further ~10 dB while he speaks,
+//    so effects only come up in the pauses;  music (if any) at 0.08, also ducked.
+// Override per video: --sfx 0.25 (louder effects) / --sfx 0.1 (quieter).
+const sfxArg = process.argv.indexOf('--sfx'), SFX = sfxArg > -1 ? +process.argv[sfxArg + 1] : 0.18;
+const duck = 'sidechaincompress=threshold=0.015:ratio=12:attack=15:release=350:makeup=1';
 const afilter = noVoice ? `[0:a]apad[a]`
-  : hasMusic ? `[1:a]apad[v];[2:a]volume=0.12[m];[0:a]volume=0.45[s];[v][m][s]amix=inputs=3:duration=first:normalize=0[a]`
-  : `[1:a]apad[v];[0:a]volume=0.45[s];[v][s]amix=inputs=2:duration=first:normalize=0[a]`;
+  : hasMusic ? `[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad,asplit=3[v][k1][k2];[0:a]volume=${SFX}[s0];[s0][k1]${duck}[s];[2:a]volume=0.08[m0];[m0][k2]${duck}[m];[v][s][m]amix=inputs=3:duration=first:normalize=0,alimiter=limit=0.95[a]`
+  : `[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,aresample=44100,apad,asplit=2[v][k1];[0:a]volume=${SFX}[s0];[s0][k1]${duck}[s];[v][s]amix=inputs=2:duration=first:normalize=0,alimiter=limit=0.95[a]`;
 args.push('-filter_complex', `[0:v]subtitles=${path.join(tmp, 'caps.ass')}:fontsdir=${fontTmp}[vo];${afilter}`, '-map', '[vo]', '-map', '[a]',
   '-t', String(total), '-c:v', 'libx264', '-preset', preview ? 'veryfast' : 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', out);
 const r = spawnSync(ff, args, { stdio: 'inherit' }); if (r.status) process.exit(r.status);

@@ -456,6 +456,11 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] Open floor where characters stand; light direction consistent per location
 - [ ] Props on clean green; exact text only where requested
 
+**Sound mix (every video, Brian's rule)**
+- [ ] The voice always wins: voice at −16 LUFS; sound effects ≈ −15 dB and music ≈ −22 dB under it, both **ducked while he speaks**
+- [ ] In a pause, effects sit ≈ 15 dB below the voice; the full mix is no louder than the voice alone (`tools/assemble.js` / `tools/render.js` do this; `--sfx` to adjust)
+- [ ] AI clips (OpenArt) are generated with sound effects only (`audio: true`, "no music, no voices"); ≤ 2 references per clip
+
 **Preview (before the full render)**
 - [ ] Feet on the ground, shadows matching the painting's direction
 - [ ] Faces readable (front fill), the caption band clear, nothing in the top 140 / bottom 380 px
