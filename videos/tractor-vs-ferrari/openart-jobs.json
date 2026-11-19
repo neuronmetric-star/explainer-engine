@@ -19,5 +19,15 @@
  "c18_miura_races": "uy3mp9BGm85s4xQzSIgO",
  "c19_enzo_alone": "wZwxbXDci1RzTK2LV6vo",
  "c20_ferruccio_lean": "WDTSzEC4LwNC2kFMAXBn",
- "c21_both_cars": "q932sZ3O9RZbcgLDj0xk"
+ "c21_both_cars": "q932sZ3O9RZbcgLDj0xk",
+ "sfx": {
+  "c01_trattoria_tada": "XgRurITrG7Ym1nWGLrJ1",
+  "c02_tractor_yard": "7G08ylTOqUFHoPBJMAyw",
+  "c03_ferrari_drives": "KCD1SH3mKi8B5XyQzhcc",
+  "c04_clutch_spin": "bgKXQkaIPanVrVEwCIeS",
+  "c05_ferrari_slips": "Nt4INWcW6LQHRSqJD9GG",
+  "c06_workshop_mechanic": "hqKJg53CwLdOeqQ3kCFP",
+  "c07_price_tags": "ZnnbcDgpsSmGEzodcDgv",
+  "c08_ferruccio_crossed": "LYGfvhHT4H8he6BFvah3"
+ }
 }
