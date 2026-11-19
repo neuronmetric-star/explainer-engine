@@ -48,8 +48,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 
 ## Story rules (short version of PLAYBOOK §1)
 - Choose the question word from the payoff: Why (reason) / Who (identity) / When (moment) /
-  What (object/event) / How (process). Coon style opens "How the f*ck…" — captions show "f*ck";
-  offer a clean version ("How the heck") if Brian wants ad-safe openings.
+  What (object/event) / How (process). Coon style opens "How the heck…": **always "heck", never "f*ck"**
+  (voice and captions). No profanity anywhere.
 - Subject on screen during the question. Action starts in sentence two.
 - Middle = a choice with a reason to expect success → apparent success → someone notices a detail we
   already saw → consequence back to someone we know. For mechanisms, track one object.

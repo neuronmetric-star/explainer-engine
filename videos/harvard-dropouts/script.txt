@@ -8,7 +8,7 @@
 # Running gag: SandwichBook. Mirror: "Drop out, get rich." → "make it work, then drop out."
 # Term lock: "drop out" (never "quit"), "customers", "SandwichBook", "founder".
 # Doug, Gary, the investor and SandwichBook are fictional. Gates/Zuckerberg facts and the numbers are real (sources.md).
-[#q] Why the {*f*ck|fuck} did Bill Gates and Mark Zuckerberg drop out of {*Harvard,|Harvard,} America's most famous college?
+[#q] Why the {*heck|heck} did Bill Gates and Mark Zuckerberg drop out of {*Harvard,|Harvard,} America's most famous college?
 [#gates0] Gates dropped out, left before finishing, and started {*Microsoft,|Microsoft,} the Windows company. [#zuck0] Zuckerberg started {*Facebook.|Facebook.}
 [#problem] See, Doug had a problem. [#math] Doug's math: two dropouts, two billionaires. {*Drop out,|Drop out,} get rich.
 [#app] So Doug drops out. His app? {*SandwichBook.|SandwichBook.} It rates sandwiches.

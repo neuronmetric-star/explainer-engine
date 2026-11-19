@@ -7,7 +7,7 @@ Pulled 2026-11-18 from TikTok captions (Scrape Creators).
 - Latest uploads run 8–10 min (Ray) and 3–9 min (Xevi). Both are long-form storytellers.
 - Four of these are the exact references in the Coon Knows guide.
 
-**The plan:** Coon Knows "What the f\*ck…" opening → **Ray's skeleton** → **Xevi's voice**.
+**The plan:** Coon Knows "What the heck…" opening (we always say "heck", never "f\*ck") → **Ray's skeleton** → **Xevi's voice**.
 
 ---
 
@@ -88,7 +88,7 @@ voice we cast and stay natural. Never a caricature.
 ## 3. The merged recipe for our long-form videos
 
 **Opening (0:00–0:15):**
-- The Coon Knows question: "What the f\*ck happened to… / How the f\*ck did…"
+- The Coon Knows question: "What the heck happened to… / How the heck did…" (always "heck")
 - Then Ray's cold-open line, delivered Xevi-style: "See, Doug had a problem."
 
 **Body: Ray's skeleton.**
