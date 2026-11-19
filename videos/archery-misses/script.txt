@@ -16,4 +16,4 @@
 [#slips] Then one arrow slips through all {*three|three} gaps. [#bullseye] {*Bullseye.|Bullseye.}
 [#doug] Doug looks over and goes, "How'd you figure out the shot?"
 [#which] Gary goes, "Which {*one?"|one?"}
-[#cta] What's one thing you'd try this week [#miss] if you were allowed to miss the first shot?
+[#cta] Be honest. What's your {*bullseye,|bullseye,} [#holding] and how long have you been holding the {!arrow?|arrow?}
