@@ -5,12 +5,6 @@
   const PI = Math.PI;
   const face = (ch, name, t, off = 0) => ch.face(((t + off) % 4.1) < .12 && name !== 'happy' ? 'blink' : name);
   const popIn = (K, t, from, dur = .35) => K.pop(K.clamp01((t - from) / dur));
-  // TODO: 03 / 04 / 05 are stand-ins until Brian sends 03_dorm_1975_night, 04_mainframe_room, 05_workshop_desert.
-  const ART = {
-    '03': '06_dorm_2004_night.png',   // → 03_dorm_1975_night.png
-    '04': '08_records_archive.png',   // → 04_mainframe_room.png
-    '05': '09_chalkboard.png',        // → 05_workshop_desert.png
-  };
 
   // ---- ground picking: painting pixel → world point on the floor (y = 0) ----
   const ray = new THREE.Raycaster(), ndc = new THREE.Vector2(), hit = new THREE.Vector3(), floor = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0);
@@ -40,9 +34,9 @@
     plates: {
       '01': { img: '01_harvard_yard_day.png', hz: .49, vx: .52, fov0: 55, camH: 1.6, light: 'day' },
       '02': { img: '02_college_gate.png', hz: .56, vx: .5, fov0: 55, camH: 1.6, light: 'day' },
-      '03': { img: ART['03'], hz: .45, vx: .5, fov0: 55, camH: 1.7, light: 'night' },
-      '04': { img: ART['04'], hz: .64, vx: .5, fov0: 55, camH: 1.7, light: 'interior' },
-      '05': { img: ART['05'], hz: .45, vx: .5, fov0: 55, camH: 1.7, light: 'day' },
+      '03': { img: '03_dorm_1975_night.png', hz: .5, vx: .5, fov0: 55, camH: 1.7, light: 'interior' },
+      '04': { img: '04_mainframe_room.png', hz: .56, vx: .55, fov0: 55, camH: 1.7, light: 'interior' },
+      '05': { img: '05_workshop_desert.png', hz: .45, vx: .5, fov0: 55, camH: 1.7, light: 'day' },
       '06': { img: '06_dorm_2004_night.png', hz: .45, vx: .5, fov0: 55, camH: 1.7, light: 'night' },
       '07': { img: '07_stadium_empty.png', hz: .54, vx: .5, fov0: 55, camH: 1.6, light: 'day' },
       '08': { img: '08_records_archive.png', hz: .64, vx: .5, fov0: 55, camH: 1.7, light: 'interior' },
@@ -64,9 +58,9 @@
       { at: 'toaster', plate: '03', zoom: [1.3, 1.3], focus: [[.5, .5], [.5, .5]] },
       { at: 'allen', plate: '04', zoom: [1.0, 1.08], focus: [[.45, .55], [.55, .55]] },
       { at: 'never', plate: '04', zoom: [1.1, 1.12], focus: [[.5, .55], [.5, .55]] },
-      { at: 'mainframe', plate: '04', zoom: [1.1, 1.3], focus: [[.5, .5], [.5, .45]] },
-      { at: 'works', plate: '05', zoom: [1.0, 1.2], focus: [[.5, .5], [.5, .45]] },
-      { at: 'deal', plate: '05', zoom: [1.2, 1.25], focus: [[.5, .45], [.5, .45]] },
+      { at: 'mainframe', plate: '04', zoom: [1.05, 1.22], focus: [[.5, .5], [.5, .45]] },
+      { at: 'works', plate: '05', zoom: [1.1, 1.45], focus: [[.5, .45], [.5, .44]] },
+      { at: 'deal', plate: '05', zoom: [1.45, 1.5], focus: [[.5, .44], [.5, .44]] },
       { at: 'left1', plate: '02', zoom: [1.05, 1.15], focus: [[.5, .55], [.5, .6]] },
       { at: 'zuck', plate: '06', zoom: [1.0, 1.12], focus: [[.45, .55], [.4, .55]] },
       { at: 'half', plate: '06', zoom: [1.2, 1.2], focus: [[.4, .5], [.4, .5]] },
@@ -88,7 +82,7 @@
       { at: 'cta', plate: '01', zoom: [1.0, 1.04], focus: [[.5, .5], [.5, .52]] },
     ],
     shakes: [['deal+0.5', .25, .4], ['order', .2, .3], ['order2', .2, .3], ['order3', .2, .3], ['twice', .25, .35]],
-    flashes: [['left1-0.7', .25, .35]],
+    flashes: [['works+0.15', .2, .3], ['left1-0.7', .25, .35]],
     follow: { from: 'cta+0.3' },
     tail: 2.6,
 
@@ -106,17 +100,16 @@
           G.pose({ t, gesture: 'tada', gw: gw(.2) }); Z.pose({ t, gesture: 'hips', gw: gw(.6) }); break; }
         case 'bet': { feet(K, 'gates', 370, 1300, .15); feet(K, 'zuck', 660, 1300, -.15); face(G, 'flat', t); face(Z, 'flat', t, 2);
           G.pose({ t, gesture: 'shrug', gw: gw(.4) }); Z.pose({ t, gesture: 'shrug', gw: gw(.7) }); break; }
-        case 'altair': { feet(K, 'gates', 700, 1250, -.35); face(G, L > .9 ? 'surprised' : 'smile', t); G.pose({ t, look: -.2, nod: .25, lean: L > .9 ? .08 : 0 });
-          K.prop('P02', { x: 300, y: 980, w: 460 * popIn(K, t, at('altair') + .3), rot: -.08 + Math.sin(t * 1.5) * .02 }); break; }
+        case 'altair': { feet(K, 'gates', 640, 1330, -.35); face(G, L > .9 ? 'surprised' : 'smile', t); G.pose({ t, look: -.2, nod: .25, lean: L > .9 ? .08 : 0 });
+          K.prop('P02', { x: 250, y: 1000, w: 420 * popIn(K, t, at('altair') + .3), rot: -.08 + Math.sin(t * 1.5) * .02 }); break; }
         case 'switches': K.prop('P01', { x: 540, y: 820, w: 1000 * (1 + .04 * L), a: 1 }); break;
         case 'toaster': { K.prop('P01', { x: 540, y: 560, w: 900 }); K.prop('P03', { x: 560, y: 1000, w: 760 * popIn(K, t, at('toaster')), rot: Math.sin(t * 4) * .04 }); break; }
-        case 'allen': { feet(K, 'gates', 512, 1280, 0); face(G, 'smile', t); G.pose({ t, gesture: 'think', gw: gw(.3) }); break; }
-        case 'never': { feet(K, 'gates', 512, 1280, 0); face(G, 'flat', t); G.pose({ t, gesture: 'shrug', gw: gw(.3) });
+        case 'allen': { feet(K, 'gates', 560, 1300, 0); face(G, 'smile', t); G.pose({ t, gesture: 'think', gw: gw(.3) }); break; }
+        case 'never': { feet(K, 'gates', 560, 1300, 0); face(G, 'flat', t); G.pose({ t, gesture: 'shrug', gw: gw(.3) });
           const s = popIn(K, t, at('never') + .1); K.prop('P01', { x: 540, y: 520, w: 560 * s, a: .45 }); label('x', '✕', { x: 540, y: 520, size: 320, color: '#ff4a3d', s }); break; }
-        case 'mainframe': { feet(K, 'gates', 600, 1280, -.3); face(G, 'smirk', t); G.pose({ t, gesture: 'point', gw: gw(.4), look: -.3 }); break; }
-        case 'works': { const p = K.img(512, 620); K.prop('P01', { x: p.x, y: p.y, w: 640 * K.imgScale() }); K.prop('P05', { x: 300, y: 1050, w: 520 * popIn(K, t, at('works') + .2), rot: -.1 }); break; }
-        case 'deal': { const p = K.img(512, 620); K.prop('P01', { x: p.x, y: p.y, w: 640 * K.imgScale() });
-          K.prop('P04', { x: 560 + 500 * (1 - K.easeOut(L / .45)), y: 820, w: 620, rot: .06 }); break; }
+        case 'mainframe': { feet(K, 'gates', 600, 1300, .3); face(G, 'smirk', t); G.pose({ t, gesture: 'point', gw: gw(.4), look: -.3 }); break; }
+        case 'works': break; // the Altair is painted on the bench in 05: push-in + flash
+        case 'deal': K.prop('P04', { x: 560 + 500 * (1 - K.easeOut(L / .45)), y: 1000, w: 620, rot: .06 }); break;
         case 'left1': { const ch = walk(K, 'gates', t, at('left1'), at('left1') + 2.6, [512, 900], [500, 1330]); face(ch, L > 2.2 ? 'happy' : 'smile', t);
           if (L > 2.6) ch.pose({ t, armR: { raise: K.ease((L - 2.6) / .3) } }); break; }
         case 'zuck': { feet(K, 'zuck', 560, 1260, -.6); face(Z, 'smile', t); Z.pose({ t, look: -.45, nod: .1 }); break; }
