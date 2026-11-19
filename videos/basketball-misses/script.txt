@@ -8,7 +8,7 @@
 [#stare] Eyes on the rim, like a cat staring at a laser pointer.
 [#gary] Gary just shoots. [#clank] {!Clank.|Clank.} Way {!short.|short.}
 [#bet] Honestly? I'm betting on Doug. One perfect shot beats ten ugly ones, right?
-[#harder] His last one landed short, so he pushes harder. [#bang] {!Bang.|Bang.} Off the backboard. Too {!long.|long.}
+[#harder] Gary's first ball landed short, so he pushes harder. [#bang] {!Bang.|Bang.} Off the backboard. Too {!long.|long.}
 [#between] Now he knows: somewhere in between. [#shower] Like a shower knob: too cold, too hot, then just right.
 [#swish] Third ball? {*Swish.|Swish.} Nothing but net.
 [#thinking] You're probably thinking: isn't missing the bad part? [#keeps] Gary keeps missing. Left. Right. Short.
@@ -16,6 +16,6 @@
 [#still] Doug? Still holding. [#nothing] Thirty seconds of waiting told him {!nothing.|nothing.}
 [#buzzer] {!Buzzer.|Buzzer.}
 [#score] Gary shot {*30|thirty} times. He missed {!18.|eighteen.} [#made] He still made {*12.|twelve.}
-[#once] Doug shot once, right at the buzzer. [#clank2] {!Clank.|Clank.} [#final] {*12|Twelve} to {!zero.|zero.}
+[#once] Doug shot once, at the buzzer. [#clank2] {!Clank.|Clank.} [#final] {*12|Twelve} to {!zero.|zero.}
 [#ask] Doug goes, "How'd you know where to aim?" [#answer] Gary goes, "The {*misses|misses} told me."
 [#cta] Be honest. What's your shot, [#holding] and how long have you been holding the {!ball?|ball?}
