@@ -1,0 +1,20 @@
+# SHORT (~1:05). Ferrari vs Lamborghini: how a tractor maker ended up building supercars.
+# Payoff: Lamborghini cars exist because a tractor maker found his Ferrari's broken clutch was the same part as in his
+#   tractors, complained to Enzo Ferrari, and (by his own account) got told to stick to tractors. So he built his own.
+# Question word: WHY (reason). Disputed account: the Enzo reply is attributed to Ferruccio's 1991 interview, the price
+#   gap to test driver Valentino Balboni's retelling (PLAYBOOK §1.2 "attribute the claim right away").
+# Cast (reconstruction): polo guy = Ferruccio Lamborghini, Victor (suit) = Enzo Ferrari. Silent, mouths still.
+# Clue: the clutch (shown in the workshop before the price is said). Mirror: "you'll never handle a Ferrari" -> end line.
+[#q] Why the {*heck|heck} do Lamborghini supercars even {*exist?|exist?}
+[#problem] See, Ferruccio Lamborghini had a problem. [#tractors] He got rich in Italy building {*tractors,|tractors,} big farm machines.
+[#ferrari] So he bought a {*Ferrari,|Ferrari,} from the Italian company famous for race cars.
+[#clutch] But the clutch kept {!failing.|failing.} [#define] That's the part that lets you change gears.
+[#shop] So he does what a tractor guy does: takes it apart in his workshop.
+[#same] It's the {*same|same} clutch he puts in his tractors. [#price] Ferrari just charged way more. His test driver later said: a {!hundred|hundred} times more.
+[#bet] Honestly? I'd have sided with Ferrari. Race cars.
+[#enzo] So he complains to the boss, Enzo Ferrari. [#reply] According to Ferruccio, Enzo goes: [#insult] "You may be able to drive a tractor, but you'll never handle a Ferrari {!properly."|properly."}
+[#aside] What does a tractor guy do with that? I'mma tell you.
+[#fix] First, he puts one of his own tractor clutches in the Ferrari. Fixed. [#1963] In {*1963|nineteen sixty-three}, he starts his own car company.
+[#logo] Ferrari's logo is a prancing horse. [#bull] Ferruccio picks a {*bull.|bull.} His star sign was Taurus. The bull.
+[#end] Enzo said he'd never handle a Ferrari. [#mirror] So he built the car Ferrari would have to {*handle.|handle.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
