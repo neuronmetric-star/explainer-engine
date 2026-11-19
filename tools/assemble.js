@@ -35,7 +35,7 @@ clips.forEach((c, i) => {
   // keep the clip's own audio (sound effects) if it has any, else silence, so every part has the same audio format
   const hasAudio = /Audio:/.test(spawnSync(ff, ['-hide_banner', '-i', src], { encoding: 'utf8' }).stderr || '');
   // level every clip's effects to the same loudness so one loud clip can't bury the narration
-  const af = `[${hasAudio ? 0 : 1}:a]aresample=44100,aformat=channel_layouts=stereo,${hasAudio ? 'loudnorm=I=-24:TP=-3:LRA=11,aresample=44100,' : ''}apad,atrim=0:${dur}[a]`;
+  const af = `[${hasAudio ? 0 : 1}:a]aresample=44100,aformat=channel_layouts=stereo,${hasAudio && sp !== 1 ? `atempo=${sp},` : ''}${hasAudio ? 'loudnorm=I=-24:TP=-3:LRA=11,aresample=44100,' : ''}apad,atrim=0:${dur}[a]`;
   const r = spawnSync(ff, ['-y', '-loglevel', 'error', '-ss', String(c.ss || 0), '-i', src, '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=stereo',
     '-filter_complex', `[0:v]${vf}[v];${af}`, '-map', '[v]', '-map', '[a]', '-t', String(dur),
     '-c:v', 'libx264', '-preset', preview ? 'ultrafast' : 'medium', '-crf', '18', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '192k', out], { stdio: 'inherit' });

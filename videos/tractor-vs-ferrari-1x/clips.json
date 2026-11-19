@@ -1,0 +1,128 @@
+[
+ {
+  "from": "q",
+  "file": "clips/c01_trattoria_tada_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "before",
+  "file": "clips/c02_tractor_yard_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "ferraris",
+  "file": "clips/c03_ferrari_drives_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "define",
+  "file": "clips/c04_clutch_spin_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "louder",
+  "file": "clips/c05_ferrari_slips_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "shop",
+  "file": "clips/c06_workshop_mechanic_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "same",
+  "file": "clips/c07_price_tags_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "bet",
+  "file": "clips/c08_ferruccio_crossed_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "enzo",
+  "file": "clips/c09_office_enters_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "insult",
+  "file": "clips/c10_enzo_points_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "aside",
+  "file": "clips/c11_ferruccio_smirk_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "fix",
+  "file": "clips/c12_hood_close_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "company",
+  "file": "clips/c13_new_factory_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "horse",
+  "file": "clips/c14_badges_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "miura",
+  "file": "clips/c15_miura_pushin_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "engine",
+  "file": "clips/c16_engine_cutaway_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "dinner",
+  "file": "clips/c17_miura_door_sfx.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "hear",
+  "file": "clips/c18_miura_races.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "end",
+  "file": "clips/c19_enzo_alone.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "mirror",
+  "file": "clips/c20_ferruccio_lean.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ },
+ {
+  "from": "cta",
+  "file": "clips/c21_both_cars.mp4",
+  "ss": 0,
+  "speed": 0.8333
+ }
+]
