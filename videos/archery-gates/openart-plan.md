@@ -1,5 +1,7 @@
 # OpenArt version: archery-gates (Brian, 2026-11-19): whole video in Wan 3.0 image-to-video, 480p, 9:16
 
+> **Not used (Brian, 2026-11-19): "Just make video using Claude" → built in the 3D engine from his paintings instead (scene.js).**
+
 **Why frame-to-frame (image2video) and not text-to-video:** the gates, target colors and Doug/Gary must stay identical in
 every shot, and arrows must land exactly where the narration says (left post, blue ring, bullseye). Text-to-video invents a new
 range and new characters every clip. Image2video starts each clip on Brian's ChatGPT frame; where an arrow must END somewhere,
