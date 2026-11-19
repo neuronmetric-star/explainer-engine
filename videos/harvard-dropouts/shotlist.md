@@ -3,7 +3,7 @@
 **Script:** Brian's full version (v3) with two fact fixes (`script.txt`).
 **Cast:** only **Gates** (`gates`, 1975 look) and **Zuckerberg** (`zuck`, 2004 look). Silent, mouths still. Paul Allen is voice-only (never on screen).
 **Art:** 19 images from `art-prompts.md` (10 backgrounds + 9 props), all new. One ChatGPT chat, 4 batches.
-**OpenArt:** none (Brian: no OpenArt). Every shot is animated in the engine.
+**OpenArt:** one clip (stadium filling up, PixVerse V6, 70 credits, made before the no-OpenArt rule; Brian OK'd using it).
 **The clue:** the order of events. The paying customer (P04) and the 100,000 counter (P06) are on screen *before* each walk-out
 through the gate (02). The chalkboard (09) replays the order on "Customer first. Stadium first."
 **Recurring object lock:** THE ALTAIR (P01) must look the same in 03 (magazine), 05 (workbench) and P01/P02.
@@ -56,7 +56,7 @@ the **+ FOLLOW** button.
 | zuck | 06 dorm 2004 night | hard cut, slow push-in | Zuck by the desk, `smile`, looks at the laptop |
 | half | P06 laptop close-up, a bar on its screen fills to "50%+" | push-in | none |
 | users | P06, counter rolls up to **100,000+** (gold) | push-in | none |
-| stadium | 07 stadium painting, big gold **100,000** pops in | push-in | none |
+| stadium | OpenArt clip from 07: the stadium fills with cartoon fans (frames in `clips/stadium/`) | slow push-in | none |
 | left2 | 02 gate (same camera) | tracking walk-in | Zuck walks out, mirrors Gates's walk exactly, `smirk` |
 | order | 09 chalkboard: P04 pops into frame 1 | hard cut | none |
 | order2 | 09: a stadium thumbnail (crop of 07) pops into frame 2 | pop | none |
