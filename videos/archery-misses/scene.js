@@ -86,8 +86,9 @@
       { at: 'slips', plate: '02', zoom: [1.0, 1.45], focus: [[.5, .5], [.5, .47]] },
       { at: 'bullseye', plate: '03', zoom: [1.0, 1.12], focus: [[.5, .46], [.5, .45]] },
       { at: 'doug', plate: '01', zoom: [1.2, 1.25], focus: [[.48, .62], [.48, .62]] },
-      { at: 'which', plate: '04', zoom: [1.0, 1.06], focus: [[.5, .5], [.5, .5]] },
-      { at: 'which+1.4', plate: '01', zoom: [1.45, 1.5], focus: [[.66, .62], [.66, .62]] },
+      { at: 'which', plate: '01', zoom: [1.45, 1.45], focus: [[.66, .62], [.66, .62]] },
+      { at: 'which+0.9', plate: '04', zoom: [1.0, 1.06], focus: [[.5, .5], [.5, .5]] },
+      { at: 'which+1.9', plate: '01', zoom: [1.45, 1.5], focus: [[.66, .62], [.66, .62]] },
       { at: 'cta', plate: '01', zoom: [1.0, 1.08], focus: [[.45, .62], [.45, .62]] },
       { at: 'holding', plate: '01', zoom: [1.5, 1.65], focus: [[.33, .6], [.33, .58]] },
     ],
@@ -143,14 +144,14 @@
       // plate 01: Doug (left) and Gary (right) on the shooting line, facing down the lane
       put('doug', '01', 300, 1330, .95); put('gary', '01', 660, 1420, .95);
       const dougDrawn = ['waits', 'almost', 'gary', 'bet', 'holding', 'cta'].includes(id) || (t > at('waits') && t < at('doug'));
-      const df = { problem: 'worried', waits: 'flat', almost: 'worried', gary: 'flat', bet: 'smirk', tell: 'flat', wait2: 'flat', knows: 'worried', aim: 'worried', doug: 'surprised', 'which+1.4': 'flat', cta: 'flat', holding: 'flat' }[id] || 'smile';
+      const df = { problem: 'worried', waits: 'flat', almost: 'worried', gary: 'flat', bet: 'smirk', tell: 'flat', wait2: 'flat', knows: 'worried', aim: 'worried', doug: 'surprised', 'which+1.9': 'flat', cta: 'flat', holding: 'flat' }[id] || 'smile';
       blinkFace(D, df, t); D.pose({ t, look: id === 'doug' ? -.7 : id === 'bet' ? -.5 : 0, gesture: dougDrawn ? 'point' : (id === 'bet' ? 'shrug' : null), gw: 1, tilt: id === 'almost' ? .1 : 0 });
       bow(D, dougDrawn, t);
-      const gf = { problem: 'smile', gary: 'smile', tell: 'think', wait2: 'flat', knows: 'smirk', aim: 'smirk', doug: 'smile', 'which+1.4': 'smirk', cta: 'happy', holding: 'smile' }[id] || 'smile';
+      const gf = { problem: 'smile', gary: 'smile', tell: 'think', wait2: 'flat', knows: 'smirk', aim: 'smirk', doug: 'smile', 'which+1.9': 'smirk', cta: 'happy', holding: 'smile' }[id] || 'smile';
       const shots = { gary: at('gary') + 1.6, wait2: at('wait2') + 2.0, aim: at('aim') + 2.4 };
       const gDrawn = ['gary', 'wait2', 'aim'].includes(id);
-      const gGest = id === 'tell' ? 'think' : id === 'which+1.4' ? 'shrug' : id === 'cta' ? 'wave' : gDrawn ? 'point' : null;
-      blinkFace(Gy, gf, t, 1.3); Gy.pose({ t, look: id === 'which+1.4' || id === 'doug' ? -.6 : 0, nod: id === 'knows' ? .15 * Math.sin(t * 6) : 0, gesture: gGest, gw: gGest === 'shrug' || gGest === 'wave' ? S(L / .3) : 1 });
+      const gGest = id === 'tell' ? 'think' : id === 'which+1.9' ? 'shrug' : id === 'cta' ? 'wave' : gDrawn ? 'point' : null;
+      blinkFace(Gy, gf, t, 1.3); Gy.pose({ t, look: id === 'which+1.9' || id === 'which' || id === 'doug' ? -.6 : 0, nod: id === 'knows' ? .15 * Math.sin(t * 6) : 0, gesture: gGest, gw: gGest === 'shrug' || gGest === 'wave' ? S(L / .3) : 1 });
       bow(Gy, gDrawn, t, shots[id]);
       if (id === 'holding') { /* Doug still holding: slight tremble */ D.root.position.x += Math.sin(t * 40) * .004; }
     },
