@@ -100,10 +100,10 @@
       const ankle = grp(knee, 0, -L2 + .02, 0);
       const toe = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), o.slides ? whiteM : shoeM, ankle, 0, -shoeH + .02, .06); toe.scale.set(B.lr * 1.15, .11, .21);
       const sole = mesh(new THREE.BoxGeometry(B.lr * 2.2, .03, .44), soleM, ankle, 0, -shoeH + .02, .06); sole.geometry.translate(0, 0, 0);
-      if (o.slides) { // slide sandal: one wide black strap over the foot, three white stripes
-        const strap = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .1); strap.scale.set(B.lr * 1.24, .125, .12);
-        const stripeM = new THREE.MeshStandardMaterial({ color: 0xf4f4f4, roughness: .6 });
-        for (const k of [-1, 0, 1]) mesh(new THREE.BoxGeometry(.012, .02, .2), stripeM, ankle, k * .04, -shoeH + .02 + .105, .1); }
+      if (o.slides) { // slide sandal: rounded black sole + one wide black strap over the white foot
+        sole.visible = false;
+        const rs = mesh(new THREE.CylinderGeometry(1, 1, .035, 28), soleM, ankle, 0, -shoeH + .02, .06); rs.scale.set(B.lr * 1.2, 1, .24);
+        const strap = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .03, .09); strap.scale.set(B.lr * 1.22, .12, .1); }
       ch.leg[s] = { hip, knee, ankle };
     }
 

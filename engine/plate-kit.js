@@ -54,6 +54,7 @@
   // 3D layer
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(55, W / H, .1, 500);
   camera.rotation.order = 'YXZ';
+  K.camera = camera;   // scenes use it to pick floor points from painting pixels
   const catcher = new THREE.Mesh(new THREE.PlaneGeometry(300, 300).rotateX(-Math.PI / 2), new THREE.ShadowMaterial({ opacity: .42 }));
   catcher.receiveShadow = true; scene.add(catcher);
   const key = new THREE.DirectionalLight(0xffffff, 2.6); key.castShadow = true; key.shadow.mapSize.set(2048, 2048); key.shadow.bias = -.0004; key.shadow.normalBias = .02;
@@ -73,6 +74,7 @@
 
   // ---------------- plates: camera matched to the painting ----------------
   // plate preset: { img, hz (horizon, fraction from top), vx (vanishing x), fov0, camH, light }
+  //   optional seq: { files: [...], fps } = an image sequence (e.g. frames of an OpenArt clip) played from the shot's start
   let SC, PLATES = {}, cur = null;
   function usePlate(name, zoom, fx, fy, sx, sy) {
     const P = PLATES[name]; if (!P) throw new Error('unknown plate ' + name); setLight(P.light);
@@ -142,6 +144,7 @@
     const sh = SHOTS[i], end = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH, u = K.ease((t - sh.t) / Math.max(.01, end - sh.t));
     const z = K.lerp(sh.zoom[0], sh.zoom[1], u), fx = K.lerp(sh.focus[0][0], sh.focus[1][0], u), fy = K.lerp(sh.focus[0][1], sh.focus[1][1], u);
     const sk = amp(SC._shakes, t) * 18;
+    { const P = PLATES[sh.plate]; if (P.seqTex) P.tex = P.seqTex[Math.min(P.seqTex.length - 1, Math.max(0, Math.floor((t - sh.t) * P.seq.fps)))]; }
     usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk, Math.cos(t * 47) * sk);
     K.shot = { i, id: sh.id, u, t0: sh.t, t1: end, local: t - sh.t };
     SC.update && SC.update(t, K);
@@ -160,7 +163,8 @@
 
   K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
-    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); }));
+    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true);
+      if (p.seq) PLATES[n].seqTex = await Promise.all(p.seq.files.map(f => loadTex(f, true))); }));
     await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height, cut: /\.cut\.png$/.test(f) }; }));
     { const tex = puffTex(); PROPS.puff = { tex, iw: 128, ih: 128 }; }
     makeCast(SC.cast || {});
