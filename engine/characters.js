@@ -97,8 +97,13 @@
       const knee = grp(hip, 0, -L1, 0); mesh(new THREE.SphereGeometry(B.lr * .96, 16, 12), pantsM, knee);
       mesh(new THREE.CylinderGeometry(B.lr * .95, B.lr * 1.02, L2 + .02, 20), pantsM, knee, 0, -L2 / 2, 0);
       const ankle = grp(knee, 0, -L2 + .02, 0);
-      const toe = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .06); toe.scale.set(B.lr * 1.15, .11, .21);
-      const sole = mesh(new THREE.BoxGeometry(B.lr * 2.2, .03, .44), soleM, ankle, 0, -shoeH + .02, .06); sole.geometry.translate(0, 0, 0);
+      const toe = mesh(new THREE.SphereGeometry(1, 32, 16, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .1); toe.scale.set(B.lr * 1.08, .105, .26);
+      // rounded sole that follows the shoe outline (was a box: square corners stuck out past the toe cap)
+      const sh = new THREE.Shape(); { const a = B.lr * 1.14, f = .29, bk = .25; sh.moveTo(a, 0);
+        sh.bezierCurveTo(a, -f * .62, a * .55, -f, 0, -f); sh.bezierCurveTo(-a * .55, -f, -a, -f * .62, -a, 0);
+        sh.bezierCurveTo(-a * .9, bk * .62, -a * .5, bk, 0, bk); sh.bezierCurveTo(a * .5, bk, a * .9, bk * .62, a, 0); }
+      const soleGeo = new THREE.ExtrudeGeometry(sh, { depth: .018, bevelEnabled: true, bevelThickness: .008, bevelSize: .01, bevelSegments: 3, curveSegments: 40 }).rotateX(-Math.PI / 2);
+      mesh(soleGeo, soleM, ankle, 0, -shoeH + .012, .08);
       ch.leg[s] = { hip, knee, ankle };
     }
 

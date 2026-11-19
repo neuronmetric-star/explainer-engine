@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Character lab</title>
+<!-- Proof-of-look page: our sphere-head cast in a lit cartoon world. Render with: node engine/lab/render-lab.js -->
+<style>
+@font-face{font-family:IN;font-weight:900;src:url('../../node_modules/@fontsource/inter/files/inter-latin-900-normal.woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family:IN,sans-serif}
+#c{position:fixed;inset:0;width:1080px;height:1920px}
+#vig{position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,transparent 60%,rgba(0,0,0,.35) 100%)}
+/* outlined caption: readable over anything, incl. white heads */
+#cap{position:fixed;left:0;right:0;top:1270px;text-align:center;font-weight:900;font-size:92px;color:#fff;
+  -webkit-text-stroke:16px #000;paint-order:stroke fill;text-shadow:0 8px 0 rgba(0,0,0,.55)}
+</style></head><body>
+<canvas id="c"></canvas><div id="vig"></div><div id="cap"></div>
+<script src="../../node_modules/three/build/three.min.js"></script>
+<script src="../../node_modules/three/examples/js/environments/RoomEnvironment.js"></script>
+<script src="../characters.js"></script>
+<script>
+const W = 1080, H = 1920;
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.05;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(40, W / H, .1, 600);
+const env = new THREE.PMREMGenerator(renderer).fromScene(new THREE.RoomEnvironment(), .04).texture;
+
+// ---------------- "golden hour" look ----------------
+const SUN_DIR = new THREE.Vector3(-.55, .16, -1).normalize();
+const HORIZON = new THREE.Color(0xffb27a);
+scene.fog = new THREE.Fog(HORIZON, 35, 170);
+{ // sky dome: deep blue -> violet -> warm horizon, with a sun glow
+  const m = new THREE.ShaderMaterial({ side: THREE.BackSide, depthWrite: false, fog: false,
+    uniforms: { sun: { value: SUN_DIR } },
+    vertexShader: 'varying vec3 vd; void main(){ vd = normalize(position); gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }',
+    fragmentShader: `varying vec3 vd; uniform vec3 sun;
+      void main(){ float h = clamp(vd.y,0.,1.);
+        vec3 top = vec3(.16,.22,.55), mid = vec3(.62,.45,.78), hor = vec3(1.,.66,.45);
+        vec3 c = mix(hor, mid, smoothstep(0.,.22,h)); c = mix(c, top, smoothstep(.22,.75,h));
+        float d = max(dot(vd, sun), 0.);
+        c += vec3(1.,.75,.45)*pow(d,8.)*.55 + vec3(1.,.9,.7)*pow(d,600.)*3.;
+        gl_FragColor = vec4(c,1.); }` });
+  scene.add(new THREE.Mesh(new THREE.SphereGeometry(400, 32, 16), m));
+}
+const sun = new THREE.DirectionalLight(0xffb46e, 3.2);
+sun.position.set(SUN_DIR.x * 40, 14, SUN_DIR.z * 40);
+sun.castShadow = true; sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0004; sun.shadow.normalBias = .02;
+Object.assign(sun.shadow.camera, { left: -12, right: 12, top: 12, bottom: -12, near: 1, far: 90 });
+scene.add(sun, sun.target);
+const fill = new THREE.DirectionalLight(0x9db6ff, .9); fill.position.set(14, 9, 22); scene.add(fill);   // cool front fill
+scene.add(new THREE.HemisphereLight(0xb9c6ff, 0x8a5a32, .45));
+
+// ---------------- world (low-poly, flat-shaded) ----------------
+const flat = (color, extra) => new THREE.MeshStandardMaterial(Object.assign({ color, roughness: .9, flatShading: true }, extra || {}));
+const add = (geo, mat, x, y, z, ry = 0) => { const m = new THREE.Mesh(geo, mat); m.position.set(x, y, z); m.rotation.y = ry; m.castShadow = m.receiveShadow = true; scene.add(m); return m; };
+{ const g = new THREE.PlaneGeometry(400, 400, 60, 60); g.rotateX(-Math.PI / 2);
+  const p = g.attributes.position; for (let i = 0; i < p.count; i++) { const x = p.getX(i), z = p.getZ(i); if (Math.hypot(x, z) > 18) p.setY(i, Math.sin(x * .07) * Math.cos(z * .05) * 1.4); }
+  g.computeVertexNormals(); add(g, flat(0x8fa64a), 0, 0, 0); }
+add(new THREE.PlaneGeometry(2.6, 80).rotateX(-Math.PI / 2), flat(0xd9b27a), 0, .01, -30);   // dirt path
+function house(x, z, ry, wall, roofC, s = 1) {
+  const g = new THREE.Group(); g.position.set(x, 0, z); g.rotation.y = ry; g.scale.setScalar(s); scene.add(g);
+  const put = (geo, mat, px, py, pz) => { const m = new THREE.Mesh(geo, mat); m.position.set(px, py, pz); m.castShadow = m.receiveShadow = true; g.add(m); return m; };
+  put(new THREE.BoxGeometry(5, 3.4, 4.4), flat(wall), 0, 1.7, 0);
+  const sh = new THREE.Shape(); sh.moveTo(-2.9, 0); sh.lineTo(2.9, 0); sh.lineTo(0, 2.3); sh.closePath();
+  put(new THREE.ExtrudeGeometry(sh, { depth: 4.9, bevelEnabled: false }), flat(roofC), 0, 3.4, -2.45);
+  put(new THREE.BoxGeometry(.5, 1.4, .5), flat(0x7a4a3a), 1.4, 4.6, .6);
+  put(new THREE.BoxGeometry(1, 2, .1), flat(0x6b3f2a), 0, 1, 2.22);
+  const win = new THREE.MeshStandardMaterial({ color: 0xffd58a, emissive: 0xffb347, emissiveIntensity: 1.6 });
+  for (const wx of [-1.6, 1.6]) { put(new THREE.BoxGeometry(.9, .9, .1), win, wx, 2, 2.22); put(new THREE.BoxGeometry(1.1, .12, .16), flat(0xffffff), wx, 1.5, 2.25); }
+}
+house(-5.5, -9, .35, 0xa7d3c4, 0xb2493a); house(6.5, -14, -.4, 0xf1d9a8, 0x5a6fa8, 1.1); house(-14, -26, .2, 0xe8b7b0, 0x7a4a6a, 1.2); house(14, -34, -.3, 0xc9d8f0, 0xb2493a, 1.3);
+function tree(x, z, s = 1, c = 0x4f8a3a) {
+  add(new THREE.CylinderGeometry(.18 * s, .26 * s, 2 * s, 7), flat(0x6b4a2e), x, s, z);
+  add(new THREE.IcosahedronGeometry(1.3 * s, 0), flat(c), x, 2.6 * s, z); add(new THREE.IcosahedronGeometry(1 * s, 0), flat(c), x + .5 * s, 3.4 * s, z + .2 * s);
+}
+[[-9, -5, 1.1], [9, -6, 1.3, 0x3f7a35], [-3, -18, .9], [3.5, -22, 1.2, 0x5f9a3e], [-20, -12, 1.6, 0x3f7a35], [18, -18, 1.5], [-8, -40, 2], [10, -50, 2.2, 0x3f7a35]].forEach(a => tree(...a));
+for (let i = 0; i < 12; i++) { const z = -2 - i * 1.6; for (const s of [-1, 1]) { add(new THREE.BoxGeometry(.12, .9, .12), flat(0xf3efe6), s * 2.2, .45, z); add(new THREE.BoxGeometry(.06, .08, 1.6), flat(0xf3efe6), s * 2.2, .7, z - .8); } }
+for (const [x, z, s, c] of [[-60, -150, 40, 0x7b8fb0], [40, -170, 55, 0x8a8fb8], [120, -140, 35, 0x6f86a8]]) { const h = add(new THREE.SphereGeometry(1, 16, 10), flat(c), x, -s * .55, z); h.scale.set(s * 1.6, s, s); h.castShadow = false; }
+
+// ---------------- cast: president test ----------------
+const P = CHAR.make({ outfit: 'president', envMap: env }); scene.add(P.root);
+const P2 = CHAR.make({ outfit: 'president', envMap: env }); scene.add(P2.root);
+const place = (c, x, z, ry) => { c.root.position.set(x, 0, z); c.root.rotation.y = ry; };
+const HD = CHAR.make({ outfit: 'hoodie', envMap: env }); scene.add(HD.root);
+const SHOTS = [
+  { cap: 'feet', set() { place(P, -.5, 0, 0, .3); place(HD, .6, 0, -.3, -.3); place(P2, -40, 0, 0); P.pose({ t: 1 }); HD.pose({ t: 2 });
+      camera.fov = 34; camera.position.set(.6, 1.3, 5.6); camera.lookAt(0, .7, 0); } },
+  { cap: 'side', set() { place(P, 0, 0, 0, 1.4); place(HD, -40, 0, 0); place(P2, -40, 0, 0); P.pose({ t: 1, walk: .3, walkAmt: 1 });
+      camera.fov = 30; camera.position.set(.3, .7, 3.4); camera.lookAt(0, .3, 0); } },
+];
+// hex colors are sRGB: convert to linear once so the sRGB output shows them as authored (fixes the washed-out look)
+scene.traverse(o => { if (!o.material) return; [].concat(o.material).forEach(m => { if (m.__lin || m.isShaderMaterial) return; m.__lin = 1;
+  if (m.color) m.color.convertSRGBToLinear(); if (m.emissive) m.emissive.convertSRGBToLinear(); }); });
+[sun, fill].forEach(l => l.color.convertSRGBToLinear()); scene.fog.color.convertSRGBToLinear();
+window.renderShot = i => { SHOTS[i].set(); camera.updateProjectionMatrix(); document.getElementById('cap').textContent = SHOTS[i].cap; renderer.render(scene, camera); return true; };
+window.SHOT_COUNT = SHOTS.length;
+
+window.ready = true;
+</script></body></html>
