@@ -1,18 +1,21 @@
-# SHORT. Basketball version of Brian's "keeps missing" fable (archery v1 = videos/archery-misses). 3D engine.
-# Payoff: the guy who takes the most shots makes the most, because every miss tells him how to adjust (short, long, left);
-#   waiting for the perfect shot teaches you nothing. Question word: WHY.
-# Doug, Gary and the contest are fictional. Jordan line: 1997 Nike "Failure" ad (sources.md).
-# Plant: Gary's first miss (clank off the rim). Mirror: "Every miss tells him something" -> "I missed eighteen times."
-[#q] Why the {*heck|heck} does the guy who misses the most make the most {*shots?|shots?}
-[#problem] See, Doug had a problem. [#contest] He challenged his buddy Gary to a shooting contest: {*one|one} minute, most baskets wins.
-[#holds] Doug holds the ball and waits for the perfect shot. [#form] Feet set. Elbow in. Deep breath. [#almost] Doug goes, "Hold on. I almost got it."
-[#gary] Gary just shoots. [#clank] {!Clank.|Clank.} Off the rim.
-[#bet] Honestly? I'd have sided with Doug. Why waste a shot when you can wait for a perfect one?
-[#tell] I'mma tell you.
-[#short] Gary's first miss came up {!short.|short.} [#harder] So he shoots a little harder. [#long] Too {!long.|long.} Off the backboard.
-[#between] Now he knows: somewhere in between. [#swish] Next one? {*Swish.|Swish.} Nothing but net.
-[#every] Every miss tells him something. Too short. Too long. Too far left. [#nothing] Doug's waiting tells him {!nothing.|nothing.}
-[#jordan] In a Nike ad, Michael Jordan, maybe the best player ever, says he missed more than {*9,000|nine thousand} shots.
-[#buzzer] {!Buzzer.|Buzzer.} [#score] Gary took {*30|thirty} shots and made {*12.|twelve.} [#doug1] Doug took one. [#missed] He missed.
-[#ask] Doug goes, "How'd you get so good?" [#answer] Gary goes, "I missed {*18|eighteen} times."
+# SHORT. Basketball, no obstacles: Doug waits for the perfect shot, Gary just shoots. 3D engine. (v1 = script-v1.txt)
+# Payoff: every miss tells you which way to fix the next shot (short -> harder, long -> softer); waiting tells you nothing.
+# Question word: WHY. Doug, Gary and the contest are fictional. Numbers invented, they add up (30 shots, 18 missed, 12 made).
+# Plant: Gary's first ball lands short (clank). Mirror: "each miss tells him which way to fix it" -> "The misses told me."
+[#q] Why the {*heck|heck} does the guy who misses the most shots {*win?|win?}
+[#meet] Meet Doug and Gary. [#rules] One hoop. {*One|One} minute. A full rack of balls each. Most baskets wins.
+[#doug] Doug picks up a ball and... [#holds] holds it. He's waiting for the {*perfect|perfect} shot.
+[#stare] Eyes on the rim, like a cat staring at a laser pointer.
+[#gary] Gary just shoots. [#clank] {!Clank.|Clank.} Way {!short.|short.}
+[#bet] Honestly? I'm betting on Doug. One perfect shot beats ten ugly ones, right?
+[#harder] His last one landed short, so he pushes harder. [#bang] {!Bang.|Bang.} Off the backboard. Too {!long.|long.}
+[#between] Now he knows: somewhere in between. [#shower] Like a shower knob: too cold, too hot, then just right.
+[#swish] Third ball? {*Swish.|Swish.} Nothing but net.
+[#thinking] You're probably thinking: isn't missing the bad part? [#keeps] Gary keeps missing. Left. Right. Short.
+[#closer] But every miss lands a little {*closer,|closer,} because each miss tells him which way to fix it.
+[#still] Doug? Still holding. [#nothing] Thirty seconds of waiting told him {!nothing.|nothing.}
+[#buzzer] {!Buzzer.|Buzzer.}
+[#score] Gary shot {*30|thirty} times. He missed {!18.|eighteen.} [#made] He still made {*12.|twelve.}
+[#once] Doug shot once, right at the buzzer. [#clank2] {!Clank.|Clank.} [#final] {*12|Twelve} to {!zero.|zero.}
+[#ask] Doug goes, "How'd you know where to aim?" [#answer] Gary goes, "The {*misses|misses} told me."
 [#cta] Be honest. What's your shot, [#holding] and how long have you been holding the {!ball?|ball?}
