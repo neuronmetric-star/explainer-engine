@@ -1,6 +1,6 @@
 // =====================================================================
 //  CHARACTERS — glossy sphere-head cast, built in code (no model files)
-//  CHAR.make({outfit:'oxford'|'polo'|'suit', glasses, envMap}) -> character
+//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang', glasses, phone, mask, beanie, envMap}) -> character
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw})
@@ -65,6 +65,10 @@
     oxford: { shirt: 0x8fb3e6, pants: 0xc8ac7c, shoes: 0x6b3a1e, belt: 0x5a3418, sleeves: 'long', glasses: true, build: 'slim' },
     polo:   { shirt: 0x5b6b2e, pants: 0xcdb98e, shoes: 0x6e6e72, sleeves: 'short', watch: 0x222222, build: 'slim', sneakers: true },
     hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
+    // president: black bomber jacket over a white tee, backwards black cap, blue-white-blue presidential sash
+    president: { shirt: 0x1c1c22, pants: 0x2b303b, shoes: 0x111114, sleeves: 'long', build: 'slim', bomber: true, tee: 0xf4f4f4, cap: 0x18181d, sash: [0x1f4fb5, 0xf4f4f4], watch: 0x222222 },
+    // gang: dark hoodie, black jeans, beanie, bandana over the lower face (no weapons). Vary with {shirt, mask}.
+    gang: { shirt: 0x2e2f36, pants: 0x1c1d22, shoes: 0x2a2a2e, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true, mask: 0xb3202a, beanie: 0x18181c },
     suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
 
@@ -95,7 +99,7 @@
       mesh(new THREE.CylinderGeometry(B.lr * .95, B.lr * 1.02, L2 + .02, 20), pantsM, knee, 0, -L2 / 2, 0);
       const ankle = grp(knee, 0, -L2 + .02, 0);
       const toe = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .06); toe.scale.set(B.lr * 1.15, .11, .21);
-      const sole = mesh(new THREE.BoxGeometry(B.lr * 2.2, .03, .44), soleM, ankle, 0, -shoeH + .02, .06); sole.geometry.translate(0, 0, 0);
+      const sole = mesh(new THREE.CylinderGeometry(1, 1, .035, 32), soleM, ankle, 0, -shoeH + .02, .06); sole.scale.set(B.lr * 1.18, 1, .225); // rounded sole, no box corners
       ch.leg[s] = { hip, knee, ankle };
     }
 
@@ -106,9 +110,8 @@
       : [[0, 0], [B.w * .9, 0], [B.w * .95, .12], [B.w * 1.0, .34], [B.w * 1.06, .48], [B.w * .98, .56], [B.w * .55, B.th * .985], [0, B.th]];
     const torso = mesh(lathe(torsoPts), shirtM, spine); torso.scale.z = B.d / B.w;
     const chestZ = B.d * 1.02;
-    // neck
+    // no neck (Brian, Nov 2026): the head sits right on the shoulders; `neck` is just the invisible pivot for look/nod/tilt
     const neck = ch.neck = grp(spine, 0, B.th - .02, 0);
-    mesh(new THREE.CylinderGeometry(.035, .04, .16, 12), blackM, neck, 0, .06, 0);
     // collar
     if (o.hoodie) {
       const rib = cloth(new THREE.Color(o.shirt).multiplyScalar(.86), .97);
@@ -124,6 +127,12 @@
       const tie = mesh(plate([[-.03, 0], [.03, 0], [.045, -.06], [.02, -.3], [0, -.33], [-.02, -.3], [-.045, -.06]], .012), cloth(o.tie, .55), spine, 0, B.th - .06, chestZ * .78 + .07); tie.rotation.x = -.2;
       for (const s of [-1, 1]) { const lap = mesh(plate([[0, 0], [s * .15, -.02], [s * .02, -.32]], .05), cloth(0x161c40), spine, s * .05, B.th - .05, chestZ * .8); lap.rotation.x = -.2; }
       for (const y of [.18, .08]) mesh(new THREE.CylinderGeometry(.016, .016, .01, 12).rotateX(Math.PI / 2), blackM, spine, 0, y, chestZ * 1.0);
+    } else if (o.bomber) {
+      const tee = mesh(plate([[-.075, 0], [.075, 0], [.055, -.34], [-.055, -.34]], .012), cloth(o.tee, .9), spine, 0, B.th - .05, chestZ * .9); tee.rotation.x = -.2;
+      const rib = cloth(new THREE.Color(o.shirt).multiplyScalar(.8), .97);
+      const col = mesh(new THREE.TorusGeometry(.115, .03, 10, 24), rib, spine, 0, B.th - .01, -.01); col.rotation.x = Math.PI / 2; col.scale.set(1.2, 1, 1);
+      const hem = mesh(new THREE.CylinderGeometry(B.w * .9, B.w * .9, .06, 32), rib, spine, 0, .03, 0); hem.scale.z = B.d / B.w;
+      for (const s of [-1, 1]) mesh(new THREE.BoxGeometry(.012, .34, .012), metal(0xb8b8b8, env), spine, s * .08, B.th - .23, chestZ * .93);
     } else {
       for (const s of [-1, 1]) { const f = mesh(plate([[0, 0], [s * .11, .005], [s * .06, -.09]], .012), shirtM, spine, s * .015, B.th - .03, chestZ * .55); f.rotation.x = -.5; f.rotation.y = s * .25; }
       const btnM = new THREE.MeshStandardMaterial({ color: 0xf0f0f0, roughness: .4 });
@@ -154,7 +163,7 @@
     }
 
     // head
-    const head = ch.head = grp(neck, 0, .12 + B.R * .92, 0);
+    const head = ch.head = grp(neck, 0, B.R * .92 - .02, 0);
     const headMat = glossy(0xffffff, env, .16); headMat.map = faceTex('smile');
     const ball = mesh(new THREE.SphereGeometry(B.R, 64, 48), headMat, head); ball.castShadow = true;
     ch.headMat = headMat;
@@ -170,6 +179,29 @@
       mesh(new THREE.BoxGeometry(R * .14, t, t), gm, head, 0, R * .1, R * .99);
     }
 
+    if (o.sash) { // diagonal blue-white-blue band, shoulder to hip
+      const sg = grp(spine, 0, .33, 0); sg.rotation.z = -.55; sg.scale.z = B.d / B.w;
+      [[o.sash[0], .042], [o.sash[1], 0], [o.sash[0], -.042]].forEach(([c, y]) => { const m = cloth(c, .7); m.side = THREE.DoubleSide;
+        mesh(new THREE.CylinderGeometry(B.w * 1.17, B.w * 1.17, .043, 48, 1, true), m, sg, 0, y, 0); });
+    }
+    if (o.cap) { // baseball cap worn backwards: crown on top, brim over the back of the head
+      const R = B.R, cm = cloth(o.cap, .8); cm.side = THREE.DoubleSide;
+      mesh(new THREE.SphereGeometry(R * 1.035, 40, 16, 0, TAU, 0, Math.PI * .31), cm, head);
+      const brim = mesh(new THREE.CylinderGeometry(R * .62, R * .62, .025, 28, 1, false, Math.PI / 2, Math.PI), cm, head, 0, R * .54, -R * .7); brim.rotation.x = .28;
+      mesh(new THREE.SphereGeometry(R * .07, 10, 8), cm, head, 0, R * 1.03, 0);
+    }
+    if (o.mask) { // bandana over nose and mouth, eyes stay visible
+      const mm = cloth(o.mask, .85); mm.side = THREE.DoubleSide; const R = B.R;
+      mesh(new THREE.SphereGeometry(R * 1.025, 40, 16, Math.PI / 2 - 1.45, 2.9, Math.PI * .555, Math.PI * .26), mm, head);
+      const tip = mesh(new THREE.ConeGeometry(R * .32, R * .38, 3), mm, head, 0, -R * .86, R * .55); tip.rotation.set(Math.PI + .5, 0, 0); tip.scale.z = .35;
+    }
+    if (o.beanie) { const bm = cloth(o.beanie, .97); bm.side = THREE.DoubleSide; const R = B.R;
+      mesh(new THREE.SphereGeometry(R * 1.04, 40, 16, 0, TAU, 0, Math.PI * .3), bm, head);
+      const cuff = mesh(new THREE.CylinderGeometry(R * .82, R * .86, R * .14, 40, 1, true), bm, head, 0, R * .62, 0); }
+    if (o.phone) { // phone held in the right hand, screen toward the face
+      const ph = mesh(new THREE.BoxGeometry(.075, .15, .012), blackM, ch.arm[1].wr, 0, -B.hand * 1.1, B.hand * .75); ph.rotation.x = -.5;
+      mesh(new THREE.PlaneGeometry(.065, .135), new THREE.MeshStandardMaterial({ color: 0x9fd0ff, emissive: 0x5aa0ff, emissiveIntensity: .8 }), ph, 0, 0, -.007).rotation.y = Math.PI;
+    }
     ch.face = name => { headMat.map = faceTex(name); };
     // Gestures: silent characters act with their hands. pose({gesture:'cross', gw:0..1}) blends one in.
     // Arm "R" = ch.arm[1], arm "L" = ch.arm[-1] (screen right/left when facing camera).
@@ -207,5 +239,59 @@
     };
     ch.pose({});
     return ch;
+  };
+
+  // ---------- ROBOT DOG: four-legged robot with a camera head and a mounted rifle (never fires) ----------
+  //  CHAR.robodog({envMap, rifle:true}) -> { root (feet at y=0, faces +z), head, lens, pose({t, walk, walkAmt, look, tilt, crouch}) }
+  //  walk = gait phase in cycles (trot: diagonal legs move together). Pure function of the pose values.
+  C.robodog = function (opts = {}) {
+    const env = opts.envMap, root = new THREE.Group(), rd = { root };
+    const bodyM = Object.assign(glossy(0x8d939c, env, .38), { clearcoat: .3 }), darkM = new THREE.MeshStandardMaterial({ color: 0x2a2d33, roughness: .55, metalness: .3 });
+    const jointM = new THREE.MeshStandardMaterial({ color: 0x1c1e22, roughness: .5, metalness: .4 }), yellowM = new THREE.MeshStandardMaterial({ color: 0xf2b230, roughness: .5 });
+    const BL = 1.0, BW = .4, BH = .27, HIP = .6, UL = .32, LL = .34;
+    const body = rd.body = grp(root, 0, HIP, 0);
+    mesh(new THREE.BoxGeometry(BW, BH, BL), bodyM, body);
+    mesh(new THREE.BoxGeometry(BW * .82, .05, BL * .7), darkM, body, 0, BH / 2 + .02, 0);           // top rail
+    for (const s of [-1, 1]) mesh(new THREE.BoxGeometry(.01, .06, BL * .5), yellowM, body, s * (BW / 2 + .005), 0, 0); // side stripes
+    // head: camera block at the front
+    const head = rd.head = grp(body, 0, .03, BL / 2 + .02);
+    mesh(new THREE.BoxGeometry(BW * .86, BH * .9, .2), darkM, head, 0, 0, .08);
+    const lensM = new THREE.MeshStandardMaterial({ color: 0x9fd8ff, emissive: 0x58b8ff, emissiveIntensity: 1.6, roughness: .2 });
+    for (const s of [-1, 1]) { mesh(new THREE.CylinderGeometry(.045, .045, .03, 20).rotateX(Math.PI / 2), jointM, head, s * .075, .01, .185);
+      rd.lens = mesh(new THREE.CylinderGeometry(.03, .03, .035, 20).rotateX(Math.PI / 2), lensM, head, s * .075, .01, .19); }
+    mesh(new THREE.BoxGeometry(.05, .02, .02), lensM, head, 0, -.06, .185);                                   // sensor strip
+    // rifle on a mount (dark, simple shapes; never animated firing)
+    if (opts.rifle !== false) { const gun = rd.rifle = grp(body, 0, BH / 2 + .05, .02);
+      mesh(new THREE.BoxGeometry(.06, .1, .06), jointM, gun, 0, 0, 0);                                       // mount post
+      mesh(new THREE.BoxGeometry(.07, .08, .42), darkM, gun, 0, .09, .02);                                    // receiver + stock
+      mesh(new THREE.CylinderGeometry(.018, .018, .5, 12).rotateX(Math.PI / 2), jointM, gun, 0, .1, .47);    // barrel
+      mesh(new THREE.BoxGeometry(.04, .1, .06), jointM, gun, 0, .02, .12);                                    // magazine
+      mesh(new THREE.BoxGeometry(.04, .04, .12), jointM, gun, 0, .155, .06); }                                // sight
+    // legs: hip -> thigh -> knee (bends backward) -> shin -> foot
+    rd.legs = [];
+    for (const [fx, fz] of [[1, 1], [-1, 1], [1, -1], [-1, -1]]) {
+      const hip = grp(body, fx * (BW / 2 + .05), -.02, fz * (BL / 2 - .1));
+      mesh(new THREE.SphereGeometry(.07, 16, 12), jointM, hip);
+      mesh(new THREE.BoxGeometry(.1, UL, .13), bodyM, hip, 0, -UL / 2, 0);
+      const knee = grp(hip, 0, -UL, 0); mesh(new THREE.SphereGeometry(.055, 14, 10), jointM, knee);
+      mesh(new THREE.CylinderGeometry(.045, .035, LL, 12), darkM, knee, 0, -LL / 2, 0);
+      const foot = mesh(new THREE.SphereGeometry(.05, 14, 10), jointM, knee, 0, -LL, 0); foot.scale.y = .8;
+      rd.legs.push({ hip, knee, fz, ph: (fx === fz) ? 0 : .5 });                                             // trot: diagonal pairs
+    }
+    // two-bone IK: place each foot at (0, -y, z) relative to the hip, knee bending backward
+    function ik(L, fy, fzOff) { const d = Math.min(UL + LL - .001, Math.hypot(fy, fzOff));
+      const a = Math.acos((UL * UL + d * d - LL * LL) / (2 * UL * d)), base = Math.atan2(fzOff, fy);
+      L.hip.rotation.x = -(base - a); L.knee.rotation.x = -Math.acos((UL * UL + LL * LL - d * d) / (2 * UL * LL)) + Math.PI; L.knee.rotation.x *= -1; }
+    rd.pose = function (p = {}) {
+      const a = p.walkAmt || 0, t = p.t || 0, crouch = p.crouch || 0, stand = HIP - .02 - crouch * .18;
+      body.position.y = stand + a * .015 * Math.abs(Math.sin((p.walk || 0) * Math.PI * 4)) + Math.sin(t * 2.3) * .004;
+      body.rotation.x = (p.pitch || 0); body.rotation.z = Math.sin((p.walk || 0) * Math.PI * 2) * .02 * a;
+      for (const L of rd.legs) { const ph = ((p.walk || 0) + L.ph) % 1, swing = ph < .5;
+        const u = swing ? ph / .5 : (ph - .5) / .5, stride = .3 * a;
+        const z = swing ? -stride / 2 + stride * (u * u * (3 - 2 * u)) : stride / 2 - stride * u, lift = swing ? Math.sin(u * Math.PI) * .12 * a : 0;
+        ik(L, body.position.y - .02 - lift, z); }
+      head.rotation.y = p.look || 0; head.rotation.z = p.tilt || 0; head.rotation.x = p.nod || 0;
+    };
+    rd.pose({}); return rd;
   };
 })();

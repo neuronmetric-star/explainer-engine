@@ -12,7 +12,7 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
   Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
 - **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
-  Victor (suit), polo guy. They act with gaze, posture, gestures, faces and timing.
+  Victor (suit), polo guy, the President (`president`: cap, bomber, sash), gang member (`gang`: hoodie, beanie, bandana; never armed). They act with gaze, posture, gestures, faces and timing.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
@@ -41,12 +41,16 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 6. **Scene**: plates + cast + acting + camera per the shot plan (PLAYBOOK §2–3).
 7. **Preview** stills → Read them yourself → fix (feet planted, light matches painting, faces readable,
    caption band clear, clue visible before it's explained) → send Brian the preview.
-8. **Render** 30 fps with voice (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
+8. **Sound effects**: write `videos/<slug>/sfx-cues.js`, run `node tools/sfx.js <slug>` → `sfx.wav` (whooshes on cuts, footsteps, gadgets).
+   **Render** 30 fps with voice + `sfx.wav` (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
+9. **Cover + caption**: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` → `cover.jpg`. **The cover always shows
+   the character** (a real frame with the cast and a clear, expressive face; no captions), headline in the top quarter.
+   Write `post.md` (TikTok/Reels caption + hashtags, YouTube Shorts title) and send both to Brian.
 
 ## Story rules (short version of PLAYBOOK §1)
 - Choose the question word from the payoff: Why (reason) / Who (identity) / When (moment) /
-  What (object/event) / How (process). Coon style opens "How the f*ck…" — captions show "f*ck";
-  offer a clean version ("How the heck") if Brian wants ad-safe openings.
+  What (object/event) / How (process). Coon style opens "How the heck…": always "heck",
+  never "f*ck" (spoken and captioned; ad-safe).
 - Subject on screen during the question. Action starts in sentence two.
 - Middle = a choice with a reason to expect success → apparent success → someone notices a detail we
   already saw → consequence back to someone we know. For mechanisms, track one object.
@@ -55,8 +59,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
   Once a term is named ("thumbnail"), use that exact word every time after: no synonyms.
   Mechanism as an if-then example; say the surprise out loud; every number gets a yardstick and a cause.
 - No side bets between characters (the disagreement is the stakes). Last line mirrors a line from the middle.
-- "How does X work" topics: the mechanism is the video, in plain numbered steps; the story is a broken version
-  of the thing, and the clue is the failed step. No side trivia.
+- "How does X work" topics: the mechanism is the video, explained simply INSIDE the story as it happens
+  (cause → effect). **Never "Step one / Step two" or "three steps".** The story is a broken or surprising version
+  of the thing; the clue is the part that behaves unexpectedly. No side trivia.
 - Narrator bets early, changes their mind with us, voices the listener's question when it arises.
 - Specific numbers, a joke/simile ~every 10 s, everyday analogy for the science, explanation held to
   ~60–75%, dry last line, then the **follow CTA** (PLAYBOOK §1.12, rotate A–E, default C: "Still here? Then that means you enjoyed the video. So follow and like for more.") No filler. Every sentence picturable.
@@ -67,12 +72,14 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 before every picture change · lines starting `#` are comments. Numbers as words in the spoken part.
 
 ## Engine reference
-- **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo', envMap})` →
+- **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo'|'president'|'gang', phone, mask, beanie, envMap})` →
   `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
   `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw})`;
   gestures `point|wave|shrug|cross|think|facepalm|hips|tada`. Pure functions of time.
+  **Robot dog** `CHAR.robodog({envMap, rifle})` → `pose({t, walk, walkAmt, look, tilt, nod, pitch, crouch})` (trot gait, IK legs;
+  scene cast entry `{outfit:'robodog'}`). Scene cast entries can be objects (`{outfit:'president', phone:true}`); plate `light` can be a preset name or a custom object.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a
-  painting (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
+  painting; plant feet with `K.placeAt(name, ix, iy)` on a painted floor pixel (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
   `setViewOffset`; shadow catcher + blob shadows; convert material colors sRGB→linear.
 - **Test renders** `node engine/lab/render-lab.js <outDir> --page plate-lab.html [--clip]`
   (Chromium needs `--allow-file-access-from-files`).

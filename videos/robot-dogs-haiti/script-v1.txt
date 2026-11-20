@@ -1,0 +1,26 @@
+# SHORT FORM (~1:05). Why there are robot dogs with rifles in Haiti.
+# Format: Coon question → hook/middle/end (PLAYBOOK §1.11) → Xevi narrator personality. Shape: disputed account (§1.2).
+# Payoff: the robot dog's job isn't shooting, it's going FIRST. The first one through a door gets hurt the most,
+#         so a robot takes that spot instead of a person.
+# Plant: the robot is always in front (feet, hallway, stairs). Observer: Gary ("Watch it again"). Callback: "Watch the feet."
+# Mirror: Doug's "Robot army" → his Roomba "robot army" sent into the dark basement first (also pays off the little-brother analogy).
+# Doug and Gary are fictional viewers. The operation, footage and quote are real (sources.md). What the robots actually did is unverified.
+[#q] Why the {*heck|heck} are there robot dogs with rifles in {*Haiti?|Haiti?}
+[#problem] See, Doug had a problem. He'd seen the video.
+[#haiti] Haiti is a Caribbean country where gangs run {!70%|seventy percent} of the capital.
+[#salvador] So El Salvador, famous for jailing gangs, sent {*2,000|two thousand} soldiers.
+[#stadium] Last week, their president posted video from Haiti's soccer stadium: [#dog] four-legged robots, {!rifles|rifles} on top.
+[#theory] Doug goes, "Robot army. Gangs are done." [#gary] His neighbor Gary goes, "Watch it again."
+[#bet] Honestly? I'd have backed Doug. It's a dog with a gun.
+[#notice] But Gary watched the feet. [#hall] Down a hallway. [#stairs] Up stairs. [#front] Always in front.
+[#never] It never fires. Not {!once.|once.}
+[#aside] What's it for, then? I'mma tell you.
+[#door] Searching a building, someone opens each door first, not knowing what's inside.
+[#quote] A robot dog maker says that person gets {!hurt|hurt} most.
+[#brother] Like sending your little brother into the basement.
+[#eyes] So the robot goes first, cameras for eyes, steered from behind.
+[#ifthen] Empty hallway? Soldiers follow. Someone waiting? They meet the robot, not a {*person.|person.}
+[#surprise] The rifle's the scary part. Going first is the {*job.|job.}
+[#callback] "Watch it again"? Watch the {*feet.|feet.}
+[#end] That night, Doug's basement went dark. [#roomba] He sent in his {*robot|robot} {*army.|army.} A Roomba.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

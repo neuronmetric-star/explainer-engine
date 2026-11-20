@@ -60,14 +60,15 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
     enc.stdin.end(); await new Promise(r => enc.on('close', r));
     const out = path.join(dir, 'final.mp4'), voice = path.join(dir, 'voice.mp3');
     const music = path.join(dir, 'music.mp3'); // optional quiet music bed
+    const sfx = path.join(dir, 'sfx.wav');     // optional sound effects (node tools/sfx.js <slug>)
+    const ins = ['-y', '-loglevel', 'error', '-i', silent], parts = []; let k = 1;
+    if (fs.existsSync(voice)) { ins.push('-i', voice); parts.push(`[${k++}:a]apad[a${parts.length}]`); }
+    if (fs.existsSync(sfx)) { ins.push('-i', sfx); parts.push(`[${k++}:a]volume=0.5,apad[a${parts.length}]`); }
+    if (fs.existsSync(music)) { ins.push('-stream_loop', '-1', '-i', music); parts.push(`[${k++}:a]volume=0.12[a${parts.length}]`); }
     let mux;
-    if (fs.existsSync(voice) && fs.existsSync(music))
-      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-stream_loop', '-1', '-i', music,
-        '-filter_complex', '[1:a]apad[v];[2:a]volume=0.12[m];[v][m]amix=inputs=2:duration=first:normalize=0[a]',
-        '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-ar', '48000', '-t', L.toFixed(3)];
-    else if (fs.existsSync(voice))
-      mux = ['-y', '-loglevel', 'error', '-i', silent, '-i', voice, '-map', '0:v', '-map', '1:a', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-ar', '48000', '-af', 'apad', '-t', L.toFixed(3)];
-    else mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
+    if (!parts.length) mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
+    else mux = [...ins, '-filter_complex', parts.join(';') + ';' + parts.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${parts.length}:duration=longest:normalize=0[a]`,
+      '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-ar', '48000', '-t', L.toFixed(3)];
     mux.push('-movflags', '+faststart', out);
     spawnSync(ff, mux, { stdio: 'inherit' }); fs.rmSync(silent, { force: true });
     console.log('done ->', path.relative(ROOT, out), `(${L.toFixed(1)}s, ${((Date.now() - t0) / 60000).toFixed(1)} min)`);
