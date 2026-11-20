@@ -5,6 +5,10 @@
   const face = (ch, name, t, off = 0) => ch.face(((t + off) % 4.1) < .12 && name !== 'happy' ? 'blink' : name);
   const popIn = (K, t, from, dur = .35) => K.pop(K.clamp01((t - from) / dur));
   const STRIDE = .6; // robot travel per gait cycle at walkAmt 1
+  const WORDS = window.VIDEO_DATA.words, norm = w => w.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const wordAt = (K, w, cue) => { const t0 = K.T(cue); const x = WORDS.find(o => o.start >= t0 - .01 && norm(o.w) === w); return x ? x.start : t0; };
+  // gang at the stadium gate: [cast name, painting x, painting y (floor), facing, gesture]
+  const GANG = [['g1', 360, 1012, .35, 'cross'], ['g2', 470, 985, 0, 'hips'], ['g3', 585, 1018, -.35, 'cross']];
 
   // light presets matched to each painting
   const L = {
@@ -26,7 +30,7 @@
     plates: {
       '01': { img: '01_living_room_night.png', hz: .374, vx: .5, fov0: 55, camH: 1.42, light: L.room },
       '02': { img: '02_portauprince_wide_day.png', hz: .32, vx: .5, fov0: 55, camH: 1.9, light: 'day' },
-      '03': { img: '03_stadium_outside_day.png', hz: .5, vx: .42, fov0: 55, camH: 1.6, light: 'day' },
+      '03': { img: '03_stadium_outside_day.png', hz: .47, vx: .42, fov0: 55, camH: 2.1, light: 'day' },
       '04': { img: '04_stadium_hallway_dim.png', hz: .495, vx: .5, fov0: 55, camH: .75, light: L.hall },
       '05': { img: '05_stadium_stairs_dim.png', hz: .40, vx: .5, fov0: 55, camH: 1.1, light: L.hall },
       '06': { img: '06_president_office_day.png', hz: .40, vx: .5, fov0: 55, camH: 1.6, light: L.office },
@@ -35,13 +39,14 @@
     },
     props: { P03: 'P03_roomba.png', P04: 'P04_cargo_plane.png', P05: 'P05_helmet_camera.png',
       X01: 'X01_phone_in_room.png', X02: 'X02_controller_outside.png' },
-    cast: { doug: 'hoodie', gary: 'oxford', pres: { outfit: 'president', phone: true }, bro: 'polo', robot: { outfit: 'robodog' } },
+    cast: { doug: 'hoodie', gary: 'oxford', pres: { outfit: 'president', phone: true }, bro: 'polo', robot: { outfit: 'robodog' },
+      g1: 'gang', g2: { outfit: 'gang', shirt: 0x4a2226, mask: 0x1c1c22 }, g3: { outfit: 'gang', shirt: 0x23303e } },
     shots: [
       { at: 'q', plate: '04', zoom: [1.0, 1.0], focus: [[.5, .5], [.5, .5]] },          // inside the phone (X01 on top)
       { at: 'theory', plate: '01', zoom: [1.0, 1.1], focus: [[.5, .5], [.48, .45]] },
       { at: 'gary', plate: '01', zoom: [1.9, 2.0], focus: [[.86, .42], [.86, .42]] },
       { at: 'salvador', plate: '02', zoom: [1.0, 1.08], focus: [[.45, .5], [.55, .5]] },
-      { at: 'fight', plate: '03', zoom: [1.0, 1.15], focus: [[.45, .55], [.4, .52]] },
+      { at: 'fight', plate: '03', zoom: [1.3, 1.5], focus: [[.46, .6], [.46, .61]] },
       { at: 'video', plate: '06', zoom: [1.15, 1.3], focus: [[.5, .55], [.5, .52]] },
       { at: 'robots', plate: '04', zoom: [1.25, 1.1], focus: [[.5, .62], [.5, .6]] },
       { at: 'stadium', plate: '03', zoom: [1.25, 1.4], focus: [[.4, .52], [.38, .5]] },
@@ -81,11 +86,16 @@
           D.pose({ t, gesture: big ? 'hips' : 'tada', gw: K.ease(Lc / .3) }); break; }
         case 'gary': { dougRoom(); garyDoor(-.15); face(G, Lc > .8 ? 'smirk' : 'flat', t, 1); G.pose({ t, gesture: 'cross', gw: 1, tilt: K.ease((Lc - 1) / .3) * .12 }); D.pose({ t }); break; }
         case 'salvador': { const u = K.clamp01(Lc / 2.6); K.prop('P04', { x: K.lerp(-300, 1300, u), y: 330 - 60 * u, w: 620, rot: -.04 }); break; }
-        case 'fight': break;
+        case 'fight': { // the gang guarding the stadium gate; on "gangs" they turn toward us (no weapons, no violence)
+          const turn = K.ease((t - wordAt(K, 'gangs', 'fight')) / .3);
+          GANG.forEach(([n, ix, iy, ry, ges], i) => { const g = K.placeAt(n, ix, iy, ry * (1 - turn));
+            face(g, turn > .5 ? 'worried' : 'flat', t, i); g.pose({ t: t + i, gesture: ges, gw: 1, look: Math.sin(t * 1.3 + i * 2) * .25 * (1 - turn) }); }); break; }
         case 'video': { K.place('pres', 0, 0, -5.2, 0); const tap = K.clamp01((Lc - .9) / .25) * (1 - K.clamp01((Lc - 1.5) / .25));
           face(P, Lc > 1.6 ? 'smirk' : 'smile', t); P.pose({ t, armR: { raise: .55 }, look: Lc > 1.6 ? 0 : .25, nod: Lc > 1.6 ? 0 : .22 - tap * .05 }); break; }
         case 'robots': robotWalk(K, t, at('robots'), .15, -8.5, 1); break;
-        case 'stadium': break;
+        case 'stadium': { // retaken: the gang walks off through the gate, away from us
+          GANG.forEach(([n, ix, iy], i) => { const [x, z] = K.floorAt(ix, iy), d = Math.max(0, Lc - i * .15) * 1.6;
+            const g = K.place(n, x, 0, z - d, PI); face(g, 'worried', t, i); g.pose({ t, walk: d / 1.35, walkAmt: 1 }); }); break; }
         case 'see': { dougRoom(-.2); garyDoor(); face(D, 'smirk', t); D.pose({ t, gesture: 'point', gw: K.ease(Lc / .3) }); face(G, 'flat', t, 1); G.pose({ t, gesture: 'cross', gw: 1 }); break; }
         case 'never': { K.place('robot', .1, 0, -4.2, 0); R.pose({ t, walkAmt: 0, look: Math.sin(Lc * .8) * .05 }); break; }
         case 'what': { dougRoom(); face(D, Lc < .5 ? 'blink' : 'flat', t); D.pose({ t, gesture: 'think', gw: K.ease((Lc - .4) / .4) }); break; }

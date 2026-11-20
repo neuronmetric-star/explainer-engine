@@ -1,6 +1,6 @@
 // =====================================================================
 //  CHARACTERS — glossy sphere-head cast, built in code (no model files)
-//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president', glasses, phone, envMap}) -> character
+//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang', glasses, phone, mask, beanie, envMap}) -> character
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw})
@@ -67,6 +67,8 @@
     hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
     // president: black bomber jacket over a white tee, backwards black cap, blue-white-blue presidential sash
     president: { shirt: 0x1c1c22, pants: 0x2b303b, shoes: 0x111114, sleeves: 'long', build: 'slim', bomber: true, tee: 0xf4f4f4, cap: 0x18181d, sash: [0x1f4fb5, 0xf4f4f4], watch: 0x222222 },
+    // gang: dark hoodie, black jeans, beanie, bandana over the lower face (no weapons). Vary with {shirt, mask}.
+    gang: { shirt: 0x2e2f36, pants: 0x1c1d22, shoes: 0x2a2a2e, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true, mask: 0xb3202a, beanie: 0x18181c },
     suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
 
@@ -189,6 +191,14 @@
       const brim = mesh(new THREE.CylinderGeometry(R * .62, R * .62, .025, 28, 1, false, Math.PI / 2, Math.PI), cm, head, 0, R * .54, -R * .7); brim.rotation.x = .28;
       mesh(new THREE.SphereGeometry(R * .07, 10, 8), cm, head, 0, R * 1.03, 0);
     }
+    if (o.mask) { // bandana over nose and mouth, eyes stay visible
+      const mm = cloth(o.mask, .85); mm.side = THREE.DoubleSide; const R = B.R;
+      mesh(new THREE.SphereGeometry(R * 1.025, 40, 16, Math.PI / 2 - 1.45, 2.9, Math.PI * .555, Math.PI * .26), mm, head);
+      const tip = mesh(new THREE.ConeGeometry(R * .32, R * .38, 3), mm, head, 0, -R * .86, R * .55); tip.rotation.set(Math.PI + .5, 0, 0); tip.scale.z = .35;
+    }
+    if (o.beanie) { const bm = cloth(o.beanie, .97); bm.side = THREE.DoubleSide; const R = B.R;
+      mesh(new THREE.SphereGeometry(R * 1.04, 40, 16, 0, TAU, 0, Math.PI * .3), bm, head);
+      const cuff = mesh(new THREE.CylinderGeometry(R * .82, R * .86, R * .14, 40, 1, true), bm, head, 0, R * .62, 0); }
     if (o.phone) { // phone held in the right hand, screen toward the face
       const ph = mesh(new THREE.BoxGeometry(.075, .15, .012), blackM, ch.arm[1].wr, 0, -B.hand * 1.1, B.hand * .75); ph.rotation.x = -.5;
       mesh(new THREE.PlaneGeometry(.065, .135), new THREE.MeshStandardMaterial({ color: 0x9fd0ff, emissive: 0x5aa0ff, emissiveIntensity: .8 }), ph, 0, 0, -.007).rotation.y = Math.PI;

@@ -14,7 +14,7 @@
 
 **The clue:** **the feet.** Every robot shot frames the robot's legs at the head of the line, ahead of everyone. "Watch the feet" (cue `callback`) cuts back to the same hallway framing.
 
-**Tone:** keep it non-graphic. No gang members, no bodies or remains, and no Haitian people as jokes. All the jokes land on Doug.
+**Tone:** keep it non-graphic. Gang members appear only as three masked cartoon figures at the stadium gate (outfit `gang`: dark hoodie, beanie, bandana; Brian's request, 2026-11-20). No weapons, no violence, no bodies or remains, and no Haitian people as jokes. All the jokes land on Doug.
 
 ## Images
 | # | File | What |
@@ -40,10 +40,10 @@
 | theory | 01 wide, Doug on the couch | hard cut, low, push-in | Doug `happy`, `tada` on "Robot army", `smirk` + `hips` on "The gangs are done" |
 | gary | 01, Gary in the doorway | hard cut, medium | Gary `flat`, `cross`; small head tilt on "again" |
 | salvador | 02 Port-au-Prince wide + P04 plane crossing the sky left→right | cut wide, slow pan right with the plane | none |
-| fight | 03 stadium outside, trucks | hard cut, low, push-in toward the gate | none |
+| fight | 03 stadium outside, trucks, **3 gang members (g1–g3) guarding the gate** | hard cut, push-in on them | `cross` / `hips`, heads scanning; on "gangs" they turn to camera, `worried` |
 | video | 06 office | cut medium, push-in | The President `smile`, holding the phone, thumb tap (small `armR` raise), looks up `smirk` |
 | robots | 04 hallway + robot dog (3D) walking toward camera | hard cut, low at robot height, slow pull-back | robot gait; **feet in frame** |
-| stadium | 03 stadium outside (zoom 1.25 on the gate) | cut, short push-in | none |
+| stadium | 03 stadium outside (zoom 1.25 on the gate) | cut, short push-in | the gang walks off through the gate, backs to camera (retaken) |
 | see | 01, Doug medium | hard cut | Doug `point` at the phone, `smirk`; Gary in the background `flat` |
 | never | 04 hallway, robot stopped, rifle on top | cut; tight on the rifle, **hold 1.0 s** | robot still; **no flash** |
 | what | 01, Doug | hard cut close | Doug `blink` → `think` |
