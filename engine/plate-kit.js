@@ -178,13 +178,16 @@
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
     if (SC.follow) SC._followAt = K.T(SC.follow.from);
     SC.build && SC.build(K);
-    // video plates: plate preset {video: 'clips/01', frames: 240, vfps: 30} = a folder of f0001.jpg… frames (a seamless loop made
+    // video plates: plate preset {video: 'clips/01', frames: 240, vfps: 30, fit} = a folder of f0001.jpg… frames (a seamless loop made
     // from the painting by OpenArt, start frame = end frame). The frame shown is a pure function of t: ((t * vfps) mod frames).
     const VCACHE = new Map();
     async function prepVideo(t) {
       let i = 0; for (let k = 0; k < SHOTS.length; k++) if (t >= SHOTS[k].t) i = k;
       const P = PLATES[SHOTS[i].plate]; if (!P.video) return;
-      const idx = Math.floor(t * (P.vfps || 30) + 1e-6) % P.frames, key = P.video + '/' + idx;
+      // fit: play the whole clip once across this shot (e.g. a year of seasons in 2 s); otherwise loop on absolute time
+      const t1 = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH;
+      const idx = P.fit ? Math.min(P.frames - 1, Math.floor((t - SHOTS[i].t) / Math.max(.01, t1 - SHOTS[i].t) * P.frames))
+        : Math.floor(t * (P.vfps || 30) + 1e-6) % P.frames, key = P.video + '/' + idx;
       if (!VCACHE.has(key)) { VCACHE.set(key, await loadTex(P.video + '/f' + String(idx + 1).padStart(4, '0') + '.jpg', true));
         while (VCACHE.size > 6) { const [k0, tx] = VCACHE.entries().next().value; tx.dispose(); VCACHE.delete(k0); } }
       P.vtex = VCACHE.get(key);

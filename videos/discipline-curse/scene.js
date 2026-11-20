@@ -33,7 +33,8 @@
 
   window.SCENE = {
     plates: {
-      '01': { img: '01_street_sunrise.png', hz: .50, vx: .48, fov0: 55, camH: 1.7, light: L.street },
+      '01': { img: '01_street_sunrise.png', hz: .50, vx: .48, fov0: 55, camH: 1.7, light: L.street, video: 'clips/01', frames: 192, vfps: 24 },
+      '01y': { img: '01_street_sunrise.png', hz: .50, vx: .48, fov0: 55, camH: 1.7, light: L.street }, // seasons clip added when it arrives
       '02': { img: '02_gary_bedroom_dawn.png', hz: .44, vx: .45, fov0: 55, camH: 1.6, light: L.bedroom },
       '03': { img: '03_gary_kitchen_morning.png', hz: .40, vx: .5, fov0: 55, camH: 1.7, light: L.kitchen },
       '04': { img: '04_office_day.png', hz: .42, vx: .5, fov0: 55, camH: 1.6, light: L.office },
@@ -68,7 +69,7 @@
       { at: 'mirror', plate: '07', zoom: [1.0, 1.12], focus: [[.5, .55], [.5, .58]] },
       { at: 'picture', plate: '07', zoom: [1.15, 1.25], focus: [[.5, .6], [.5, .6]] },
       { at: 'starting', plate: '06', zoom: [1.2, 1.3], focus: [[.5, .55], [.5, .55]] },
-      { at: 'yearlater', plate: '01', zoom: [1.0, 1.0], focus: [[.5, .55], [.5, .55]] },
+      { at: 'yearlater', plate: '01y', zoom: [1.0, 1.0], focus: [[.5, .55], [.5, .55]] },
       { at: 'gary2', plate: '01', zoom: [1.1, 1.2], focus: [[.4, .6], [.55, .6]] },
       { at: 'promo', plate: '04', zoom: [1.3, 1.4], focus: [[.5, .5], [.5, .5]] },
       { at: 'ring', plate: '02', zoom: [1.25, 1.35], focus: [[.5, .6], [.5, .6]] },
