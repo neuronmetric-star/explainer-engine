@@ -76,7 +76,7 @@
   let SC, PLATES = {}, cur = null;
   function usePlate(name, zoom, fx, fy, sx, sy) {
     const P = PLATES[name]; if (!P) throw new Error('unknown plate ' + name); setLight(P.light);
-    const tex = P.tex, FH = H * zoom, FW = FH * tex.image.width / tex.image.height;
+    const tex = P.vtex || P.tex, FH = H * zoom, FW = FH * P.iw / P.ih;
     const ox = Math.max(0, Math.min(FW - W, fx * FW - W / 2)) + sx, oy = Math.max(0, Math.min(FH - H, fy * FH - H / 2)) + sy;
     camera.fov = P.fov0; camera.aspect = FW / FH; camera.setViewOffset(FW, FH, ox, oy, W, H); camera.updateProjectionMatrix();
     const tH = Math.tan(THREE.MathUtils.degToRad(P.fov0 / 2));
@@ -84,7 +84,7 @@
     camera.rotation.x = -Math.atan((.5 - P.hz) * 2 * tH); camera.rotation.y = -Math.atan((P.vx - .5) * 2 * tH * FW / FH);
     camera.updateMatrixWorld();
     bgMat.map = tex; tex.repeat.set(W / FW, H / FH); tex.offset.set(ox / FW, 1 - (oy + H) / FH); bgMat.needsUpdate = true;
-    cur = { name, FW, FH, ox, oy, iw: tex.image.width, ih: tex.image.height };
+    cur = { name, FW, FH, ox, oy, iw: P.iw, ih: P.ih };
   }
   // painting pixel (image coords) -> screen pixel, and image px -> screen px scale
   K.img = (ix, iy) => ({ x: ix / cur.iw * cur.FW - cur.ox, y: iy / cur.ih * cur.FH - cur.oy });
@@ -168,7 +168,7 @@
 
   K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
-    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); }));
+    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); PLATES[n].iw = PLATES[n].tex.image.width; PLATES[n].ih = PLATES[n].tex.image.height; }));
     await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height, cut: /\.cut\.png$/.test(f) }; }));
     { const tex = puffTex(); PROPS.puff = { tex, iw: 128, ih: 128 }; }
     makeCast(SC.cast || {});
@@ -178,7 +178,18 @@
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
     if (SC.follow) SC._followAt = K.T(SC.follow.from);
     SC.build && SC.build(K);
-    window.step = (n, dt) => { for (let k = 0; k < n; k++) frame(dt, k === n - 1); };
+    // video plates: plate preset {video: 'clips/01', frames: 240, vfps: 30} = a folder of f0001.jpg… frames (a seamless loop made
+    // from the painting by OpenArt, start frame = end frame). The frame shown is a pure function of t: ((t * vfps) mod frames).
+    const VCACHE = new Map();
+    async function prepVideo(t) {
+      let i = 0; for (let k = 0; k < SHOTS.length; k++) if (t >= SHOTS[k].t) i = k;
+      const P = PLATES[SHOTS[i].plate]; if (!P.video) return;
+      const idx = Math.floor(t * (P.vfps || 30) + 1e-6) % P.frames, key = P.video + '/' + idx;
+      if (!VCACHE.has(key)) { VCACHE.set(key, await loadTex(P.video + '/f' + String(idx + 1).padStart(4, '0') + '.jpg', true));
+        while (VCACHE.size > 6) { const [k0, tx] = VCACHE.entries().next().value; tx.dispose(); VCACHE.delete(k0); } }
+      P.vtex = VCACHE.get(key);
+    }
+    window.step = async (n, dt) => { for (let k = 0; k < n; k++) { if (k === n - 1) await prepVideo(time + dt); frame(dt, k === n - 1); } };
     window.ready = true;
   };
 })();

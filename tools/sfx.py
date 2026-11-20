@@ -2,7 +2,7 @@
 """Synthesize and mix sound effects (no downloads, no credits).
 Usage: sfx.py events.json out.wav length_seconds
 events.json: [{"t": 1.23, "sfx": "whoosh", "gain": 0.5}, ...]
-Library: whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk."""
+Library: whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk, alarm, shoe, tear, sparkle."""
 import json, sys, wave
 import numpy as np
 
@@ -94,7 +94,33 @@ def clunk(d=0.35):  # light switch / lights going out
     return (np.sin(2 * np.pi * 70 * t) * 0.9 + click(d)[:n] * 2) * np.exp(-t * 14) * 0.6
 
 
-LIB = dict(whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk)
+def alarm(d=0.9):  # twin-bell alarm clock ringing (fast hammer between two bells)
+    n = int(SR * d); t = np.arange(n) / SR
+    bell = np.sin(2 * np.pi * 2350 * t) * 0.5 + np.sin(2 * np.pi * 3110 * t) * 0.35 + np.sin(2 * np.pi * 4700 * t) * 0.12
+    ham = (np.sin(2 * np.pi * 24 * t) > 0).astype(float)
+    return bell * (0.55 + 0.45 * ham) * env(n, SR * .01, SR * .12) * 0.5
+
+
+def shoe(d=0.06):  # soft sneaker step on pavement
+    n = int(SR * d); t = np.arange(n) / SR
+    return (lowpass(noise(n), 8) * 1.4 + np.sin(2 * np.pi * 110 * t) * 0.5) * np.exp(-t * 70) * 0.5
+
+
+def tear(d=0.32):  # paper calendar page tearing off
+    n = int(SR * d); t = np.arange(n) / SR
+    grit = noise(n) * (0.5 + 0.5 * (rng.random(n) > 0.82)) - lowpass(noise(n), 4) * 0.5
+    return grit * env(n, SR * .02, SR * .1) * 0.35
+
+
+def sparkle(d=0.7):  # ring box sparkle: rising glass pings
+    n = int(SR * d); t = np.arange(n) / SR; x = np.zeros(n)
+    for k, f in enumerate([2093, 2637, 3136, 4186]):
+        i = int(k * 0.07 * SR); tt = t[:n - i]
+        x[i:] += np.sin(2 * np.pi * f * tt) * np.exp(-tt * 9) * 0.3
+    return x
+
+
+LIB = dict(whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk, alarm=alarm, shoe=shoe, tear=tear, sparkle=sparkle)
 
 if __name__ == '__main__':
     ev_file, out, length = sys.argv[1], sys.argv[2], float(sys.argv[3])
