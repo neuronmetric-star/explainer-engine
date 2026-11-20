@@ -202,6 +202,13 @@
       const ph = mesh(new THREE.BoxGeometry(.075, .15, .012), blackM, ch.arm[1].wr, 0, -B.hand * 1.1, B.hand * .75); ph.rotation.x = -.5;
       mesh(new THREE.PlaneGeometry(.065, .135), new THREE.MeshStandardMaterial({ color: 0x9fd0ff, emissive: 0x5aa0ff, emissiveIntensity: .8 }), ph, 0, 0, -.007).rotation.y = Math.PI;
     }
+    if (o.pizza) { // closed pizza box carried flat in the right hand (discipline-curse locked prop: red lid, white stripe, cardboard sides)
+      const pz = ch.pizza = grp(ch.arm[-1].wr, 0, -B.hand * 1.55, .17); pz.rotation.set(1.0, -.15, 0);
+      mesh(new THREE.BoxGeometry(.46, .07, .46), cloth(0xc89a62, .95), pz, 0, -.035, 0);
+      mesh(new THREE.BoxGeometry(.47, .018, .47), cloth(0xd8392c, .8), pz, 0, .009, 0);
+      mesh(new THREE.BoxGeometry(.47, .02, .1), cloth(0xf3ece0, .85), pz, 0, .011, .02);
+      mesh(new THREE.CircleGeometry(.035, 14).rotateX(-Math.PI / 2), cloth(0x8e2418, .9), pz, .14, .021, -.14);
+    }
     ch.face = name => { headMat.map = faceTex(name); };
     // Gestures: silent characters act with their hands. pose({gesture:'cross', gw:0..1}) blends one in.
     // Arm "R" = ch.arm[1], arm "L" = ch.arm[-1] (screen right/left when facing camera).
