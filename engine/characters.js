@@ -110,9 +110,8 @@
       : [[0, 0], [B.w * .9, 0], [B.w * .95, .12], [B.w * 1.0, .34], [B.w * 1.06, .48], [B.w * .98, .56], [B.w * .55, B.th * .985], [0, B.th]];
     const torso = mesh(lathe(torsoPts), shirtM, spine); torso.scale.z = B.d / B.w;
     const chestZ = B.d * 1.02;
-    // neck
+    // no neck (Brian, Nov 2026): the head sits right on the shoulders; `neck` is just the invisible pivot for look/nod/tilt
     const neck = ch.neck = grp(spine, 0, B.th - .02, 0);
-    mesh(new THREE.CylinderGeometry(.035, .04, .16, 12), blackM, neck, 0, .06, 0);
     // collar
     if (o.hoodie) {
       const rib = cloth(new THREE.Color(o.shirt).multiplyScalar(.86), .97);
@@ -164,7 +163,7 @@
     }
 
     // head
-    const head = ch.head = grp(neck, 0, .12 + B.R * .92, 0);
+    const head = ch.head = grp(neck, 0, B.R * .92 - .02, 0);
     const headMat = glossy(0xffffff, env, .16); headMat.map = faceTex('smile');
     const ball = mesh(new THREE.SphereGeometry(B.R, 64, 48), headMat, head); ball.castShadow = true;
     ch.headMat = headMat;

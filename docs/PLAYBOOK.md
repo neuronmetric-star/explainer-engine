@@ -256,7 +256,7 @@ every picture change · `#` comment lines. Write numbers as words in the spoken 
 
 ## 2. The cast: silent 3D characters
 
-**Look:** glossy white sphere head with a drawn face, a black stick neck, white cartoon gloves, real
+**Look:** glossy white sphere head with a drawn face sitting right on the shoulders (no neck), white cartoon gloves, real
 clothes. Built in code (`engine/characters.js`). No model files, renders exactly the same every time.
 
 | Character | Outfit (`CHAR.make({outfit})`) | Typical role |
