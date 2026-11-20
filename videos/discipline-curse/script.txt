@@ -1,24 +1,22 @@
-# SHORT FORM (~1:10). LESSON CHAIN mode (PLAYBOOK §1.13), adapted: the chain moves through TIME
-# (one morning → last Monday → last New Year's → one year later) instead of down a money ladder.
+# SHORT FORM (~1:05). LESSON CHAIN mode (PLAYBOOK §1.13), adapted: the chain moves through TIME
+# (one morning → last Monday → last New Year's → one year later). Brian's edit of the v1 draft (Nov 20 2026), approved.
 # Payoff: discipline makes every day look the same, so your years don't; no discipline makes every day
 # different, so every year looks the same.
-# Refrain: "But what he/Doug doesn't know is that…". Wish line: "Man, I wish I had that ___."
 # Running gag: "I'll start Monday." Gary (oxford, disciplined) and Doug (hoodie) are fictional. No factual claims.
 [#q] Why the heck do disciplined people have the most *boring days on earth?
-[#problem] See, Gary had a problem. He had *discipline, [#define] doing the thing even when he didn't feel like it, [#same] so every day looked the same.
-[#routine] Alarm at six. Run. Oatmeal. Work. Bed. [#saver] A human {!screensaver.|screensaver.}
-[#doug] One morning, Gary runs past his neighbor Doug, coming home from a party with a pizza box.
+[#problem] See, Gary had a problem. [#did] He did what he said he'd do, even when he didn't feel like it. [#define] That's *discipline. [#same] And every day looked the same.
+[#alarm] Alarm at six. [#run] Run. [#oat] Oatmeal. [#work] Work. [#bed] Bed.
+[#doug] One morning, Gary runs past his neighbor Doug. [#pizza] Doug's coming home from a party with a pizza box.
 [#wish1] Gary thinks, "Man, I wish I had that much *fun."
-[#aside] Doug's days? Monday, DJ. [#tuesday] Tuesday, asleep till three.
-[#link1] But what he doesn't know is that Doug is thinking, "Man, I wish I had that body. [#monday] I'll start *Monday."
-[#link2] But what he doesn't know is that Doug said that last {!Monday.|Monday.}
-[#link3] But what he doesn't know is that Doug said it last {!New Year's|New Year's} too.
+[#aside] Doug's days? Monday, he's the DJ. [#tuesday] Tuesday, he's asleep till three.
+[#link1] But what Gary doesn't know is that Doug's looking at him thinking, "Man, I wish I had that body. [#monday] I'll start *Monday."
+[#last] Doug said that last {!Monday.|Monday.} [#newyear] Said it last {!New Year's,|New Year's,} too.
 [#fake] Honestly? I still thought Doug was winning.
-[#mirror] See, Doug always pictured a whole new life by now. He's still picturing it. [#starting] Starting Monday.
+[#mirror] See, Doug figured he'd have a whole new life by now. [#picture] He can still picture it. [#starting] And he's still starting {!Monday.|Monday.}
 [#yearlater] One year later. Same street.
-[#gary2] Gary runs past. Lighter. Faster. Promoted. [#ring] *Engaged.
-[#flip] But what Doug doesn't know is that Gary's boring days built all that.
-[#doug2] And Doug? Same pizza box. [#same2] Same, "I'll start {!Monday.|Monday.}"
+[#gary2] Gary runs past. Lighter. Faster. [#promo] He got *promoted. [#ring] He's *engaged.
+[#sees] Doug sees what changed. [#missed] He missed all those mornings Gary got up at *six when he wanted to stay in bed.
+[#doug2] And Doug? Same pizza box. [#same2] Same "I'll start {!Monday.|Monday.}"
 [#moral] The curse of discipline is that every *day looks the same. [#moral2] The curse of no discipline is that every {!year|year} looks the same.
-[#ask] Which curse are you living right now?
+[#ask] Be honest. What's the one thing you keep saying you'll start Monday?
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
