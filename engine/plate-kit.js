@@ -181,13 +181,16 @@
     // video plates: plate preset {video: 'clips/01', frames: 240, vfps: 30, fit} = a folder of f0001.jpg… frames (a seamless loop made
     // from the painting by OpenArt, start frame = end frame). The frame shown is a pure function of t: ((t * vfps) mod frames).
     const VCACHE = new Map();
+    // vseq: [[a,b],[c,d]…] = only these frame ranges (the clean part of a clip), played forward then backward
+    function pingpong(P, k) { if (!P._list) { P._list = []; for (const [a, b] of P.vseq) for (let f = a; f <= b; f++) P._list.push(f); }
+      const L = P._list.length, per = 2 * L - 2, m = k % per; return P._list[m < L ? m : per - m]; }
     async function prepVideo(t) {
       let i = 0; for (let k = 0; k < SHOTS.length; k++) if (t >= SHOTS[k].t) i = k;
       const P = PLATES[SHOTS[i].plate]; if (!P.video) return;
       // fit: play the whole clip once across this shot (e.g. a year of seasons in 2 s); otherwise loop on absolute time
       const t1 = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH;
       const idx = P.fit ? Math.min(P.frames - 1, Math.floor((t - SHOTS[i].t) / Math.max(.01, t1 - SHOTS[i].t) * P.frames))
-        : Math.floor(t * (P.vfps || 30) + 1e-6) % P.frames, key = P.video + '/' + idx;
+        : P.vseq ? pingpong(P, Math.floor(t * (P.vfps || 30) + 1e-6)) : Math.floor(t * (P.vfps || 30) + 1e-6) % P.frames, key = P.video + '/' + idx;
       if (!VCACHE.has(key)) { VCACHE.set(key, await loadTex(P.video + '/f' + String(idx + 1).padStart(4, '0') + '.jpg', true));
         while (VCACHE.size > 6) { const [k0, tx] = VCACHE.entries().next().value; tx.dispose(); VCACHE.delete(k0); } }
       P.vtex = VCACHE.get(key);

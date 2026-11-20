@@ -34,13 +34,13 @@
   window.SCENE = {
     plates: {
       '01': { img: '01_street_sunrise.png', hz: .50, vx: .48, fov0: 55, camH: 1.7, light: L.street, video: 'clips/01', frames: 192, vfps: 24 },
-      '01y': { img: '01_street_sunrise.png', hz: .50, vx: .48, fov0: 55, camH: 1.7, light: L.street }, // seasons clip added when it arrives
-      '02': { img: '02_gary_bedroom_dawn.png', hz: .44, vx: .45, fov0: 55, camH: 1.6, light: L.bedroom },
-      '03': { img: '03_gary_kitchen_morning.png', hz: .40, vx: .5, fov0: 55, camH: 1.7, light: L.kitchen },
-      '04': { img: '04_office_day.png', hz: .42, vx: .5, fov0: 55, camH: 1.6, light: L.office },
-      '05': { img: '05_doug_party_night.png', hz: .40, vx: .5, fov0: 55, camH: 1.7, light: L.party },
-      '06': { img: '06_doug_room_afternoon.png', hz: .40, vx: .5, fov0: 55, camH: 1.7, light: L.after },
-      '07': { img: '07_dream_life.png', hz: .37, vx: .5, fov0: 55, camH: 1.6, light: L.dream },
+      '01y': { img: '01_street_sunrise.png', hz: .50, vx: .48, fov0: 55, camH: 1.7, light: L.street, video: 'clips/yr', frames: 192, fit: true }, // a year of seasons played across the shot
+      '02': { img: '02_gary_bedroom_dawn.png', hz: .44, vx: .45, fov0: 55, camH: 1.6, light: L.bedroom, video: 'clips/02', frames: 192, vfps: 24 },
+      '03': { img: '03_gary_kitchen_morning.png', hz: .40, vx: .5, fov0: 55, camH: 1.7, light: L.kitchen, video: 'clips/03', frames: 192, vfps: 24 },
+      '04': { img: '04_office_day.png', hz: .42, vx: .5, fov0: 55, camH: 1.6, light: L.office, video: 'clips/04', frames: 192, vfps: 24, vseq: [[136, 191]] }, // clouds drift indoors mid-clip: use the clean end
+      '05': { img: '05_doug_party_night.png', hz: .40, vx: .5, fov0: 55, camH: 1.7, light: L.party, video: 'clips/05', frames: 192, vfps: 24 },
+      '06': { img: '06_doug_room_afternoon.png', hz: .40, vx: .5, fov0: 55, camH: 1.7, light: L.after, video: 'clips/06', frames: 192, vfps: 24, vseq: [[150, 191]] }, // the chair pops mid-clip
+      '07': { img: '07_dream_life.png', hz: .37, vx: .5, fov0: 55, camH: 1.6, light: L.dream, video: 'clips/07', frames: 192, vfps: 24, vseq: [[176, 191], [0, 22]] }, // the pool floods the deck mid-clip
     },
     props: { P01: 'P01_alarm_6am.png', P02: 'P02_oatmeal.png', P03: 'P03_pizza_box.png', P04: 'P04_calendar_monday.png',
       P05: 'P05_calendar_newyear.png', P06: 'P06_ring_box.png', P07: 'P07_nameplate.png' },
