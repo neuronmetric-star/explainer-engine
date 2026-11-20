@@ -22,7 +22,7 @@ across them.
 | **No text** unless the prompt says so | AI text is often wrong; I add text where needed |
 | **Props on solid pure green #00FF00** | I cut the green out automatically |
 | **Match the prop's angle to the background** (a side-view car needs a road running LEFT-TO-RIGHT across the frame, "side-scrolling" view) | A side-view car on a road that runs away from the camera looks like it's driving into the houses (electric-car video) |
-| **Lock recurring objects** (a car, a phone, a bulb that appears in several images) | ChatGPT redesigns them every time. Describe the object in exact detail in START (color, shape, lights, wheels…), make it in the FIRST image, then every later prompt says "the exact car from 01_….png, do not redesign it". If it still drifts, save that first image and **attach it** to the next prompt as the reference |
+| **Lock recurring objects** (a car, a phone, shoes, a door: anything in 2+ images) | ChatGPT redesigns them every time. **BATCH 1 is always the object references** (Brian, Nov 2026): every recurring object drawn alone on green as `R01_<thing>.png`, `R02_…`, described in exact detail (color, shape, materials, details). Every later prompt names it: "THE SHOES, exactly as in R01_shoes.png, do not redesign them". If one still drifts, Brian **attaches** that R-file to the prompt. The R-files double as cut-out props |
 
 **File names:** `<video>_<place>_<angle>_<time>.png`, for example `bbd_bank_wide_day.png`.
 Send them here in the chat, and I'll save them to `videos/<video>/art/`.
@@ -125,20 +125,33 @@ You are the background artist for a vertical animated explainer series. [style b
 HOW TO WORK: I'll send prompts in numbered batches. Make every image in the batch one after another,
 in order, portrait 2:3. Above each image write only its file name (e.g. "07_bank_lobby_wide_day.png").
 Props go on solid pure green #00FF00. No people in any image. When a batch is done, say "BATCH DONE".
+BATCH 1 is the object references (R-files). They are the master design: whenever a later prompt names
+an R-file, copy that object exactly (shape, colors, details, proportions), only changing angle, size and light.
 
-BATCH 1 (backgrounds 01–06)
-01_street_wide_day.png: [prompt]
+BATCH 1 (object references R01–R0x, each alone on solid pure green #00FF00)
+R01_shoes.png: THE SHOES: [exact description]. Front three-quarter view, centered, soft light from the left.
+R02_front_door.png: GARY'S FRONT DOOR: [exact description]. Straight-on view, centered.
+...
+BATCH 2 (backgrounds 01–06)
+01_street_wide_day.png: [prompt] ... GARY'S FRONT DOOR exactly as in R02_front_door.png ...
 02_street_wide_night.png: Same as 01, now at night. [mood prompt]
 ...
-BATCH 2 (backgrounds 07–12)
+BATCH 3 (backgrounds 07–12)
 ...
-BATCH 5 (props P01–P06)
+BATCH 5 (props P01–P06, one-off objects only)
 P01_prop_receipt.png: [prompt]
 ...
 ```
 
 Rules for writing it:
-- Batches of **4–6 images**; backgrounds first, then props.
+- **BATCH 1 = every object reference** (`R01_…`): anything that appears in 2+ images (a car, shoes, a phone,
+  a door, a sign, a recurring prop). One object per image, alone on green, exact description. If there are
+  more than 6, split them over BATCH 1a/1b, still before any background.
+- **Every later prompt that shows a recurring object names its R-file** ("exactly as in R01_shoes.png, do not
+  redesign it") and keeps the same capitalized name (THE SHOES) every time. Recurring *places* (a room, the street)
+  are locked the same way: the first background of that place is the reference, later ones say "same as 03_…".
+- Don't make a separate prop of an R-object: the R-file is the cut-out.
+- Batches of **4–6 images**; references first, then backgrounds, then one-off props.
 - Use the numbered file names, so Brian saves them straight into `videos/<slug>/art/`.
 - "Same as 0X, now…" for mood or angle variants of the same place, in the same batch.
 - Every prompt stands alone: place, angle, light direction, open floor, "no people".

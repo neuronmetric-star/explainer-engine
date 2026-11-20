@@ -18,6 +18,8 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs
 4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop
    prompts, and the shot plan table (picture · camera · face/pose/gesture per cue). Tell me how many images.
    Also write `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") for Brian to paste into ChatGPT.
+   BATCH 1 is always the object references (`R01_<thing>.png`: every object that appears in 2+ images, alone on green);
+   every later prompt names its R-file ("exactly as in R01_shoes.png") so objects stay identical across batches.
    Mark any OpenArt video inserts (PLAYBOOK §4.1) in the shot plan; generate them only after the art arrives,
    one test clip first, and report credits.
 5. Voice: if ELEVENLABS_API_KEY is set run `node tools/tts.js <slug>`; otherwise give me the spoken text,

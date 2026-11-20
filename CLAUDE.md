@@ -33,7 +33,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
    block (timing, direction, sources outside it) and **wait for approval**.
 4. **Shot list** → `videos/<slug>/shotlist.md` (PLAYBOOK §5): background + prop prompts and a shot
    plan with camera and acting per cue. **Images: always Brian in ChatGPT.** For big sets, write the batch file
-   `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") → `videos/<slug>/art/`.
+   `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") → `videos/<slug>/art/`. **BATCH 1 = object references**
+   (`R01_<thing>.png`, every object that appears in 2+ images, alone on green); later prompts name the R-file for consistency.
    **OpenArt = video inserts only** (PLAYBOOK §4.1): when a shot looks better as AI video or the engine can't do it
    (water, fire, crowds, crashes). Image-to-video from Brian's painting, no cast in clips, one test clip first,
    report credits spent. Brian pre-approved this.
