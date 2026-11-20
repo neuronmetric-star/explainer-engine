@@ -1,0 +1,25 @@
+# SHORT FORM (~1:05). Motivation vs discipline. Mode: EXPLAINER (how discipline actually works: habits).
+# Payoff: disciplined people don't have more willpower; they repeat the same thing at the same time in the
+#   same place until their brain does it on its own, so they never wait for the feeling.
+# Question word: Why (the payoff is a reason). Track one object: Gary's running shoes by the door (the clue).
+# Running gag: "the feeling". Mirror: "run every morning he feels like it" (plan) -> end line.
+# Narrator bet: on Doug ([#bet]) -> changes mind ([#garyrain] "Okay, wrong bet.").
+# Doug and Gary are fictional; the habit research is real (sources.md).
+[#q] Why the heck does motivation quit on you, but discipline {*doesn't?|doesn't?}
+[#problem] See, Doug had a problem. January first, Doug was {*motivated.|motivated.}
+[#define] Motivation is a feeling: the "let's go!" from a guy yelling at a sunrise.
+[#plan] Doug's plan: run every morning he feels like it.
+[#gary] His neighbor Gary runs at six a.m. daily, and hates it. [#shoes] His shoes sleep by the door.
+[#discipline] That's {*discipline:|discipline:} doing it without the feeling.
+[#bet] Honestly? I'd have bet on Doug. Gary looked like a man walking to the dentist.
+[#week] Week one, {*seven|seven} runs straight.
+[#rain] Day twelve, rain. Doug checks for the feeling. {!Gone.|Gone.} Back to bed.
+[#garyrain] But Gary? Soaked. Running. Okay, wrong bet.
+[#aside] How? I'mma tell you.
+[#same] Same time, same place: your brain links them. [#link] Six a.m. plus shoes means run.
+[#habit] Repeat that enough, and it's a {*habit:|habit:} it runs on its own, like brushing your teeth.
+[#66] In one London study, a habit took about {*66|sixty-six} days to form. Two months of mornings.
+[#study] Disciplined people aren't tougher. Their habits do the work.
+[#callback] So, the shoes by the door. Gary never needed the feeling.
+[#end] And Doug? Still runs every morning he feels like it. So far, {!zero.|zero.}
+[#cta] Still here? Then that means you enjoyed the video. So {*follow|follow} and {*like|like} for more.

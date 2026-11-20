@@ -1,25 +1,27 @@
 # SHORT FORM (~1:05). Motivation vs discipline. Mode: EXPLAINER (how discipline actually works: habits).
-# Payoff: disciplined people don't have more willpower; they repeat the same thing at the same time in the
-#   same place until their brain does it on its own, so they never wait for the feeling.
-# Question word: Why (the payoff is a reason). Track one object: Gary's running shoes by the door (the clue).
-# Running gag: "the feeling". Mirror: "run every morning he feels like it" (plan) -> end line.
-# Narrator bet: on Doug ([#bet]) -> changes mind ([#garyrain] "Okay, wrong bet.").
+# APPROVED by Brian (his rewrite, Nov 2026). v1 draft kept in script-v1.txt.
+# Payoff: disciplined people don't wait for the feeling; repeating the same thing at the same time turns the cue
+#   (the shoes by the door) into a habit that gets them moving on its own.
+# Question word: Why. Track one object: Gary's running shoes by the door (the clue).
+# Running gag: "the feeling" / "let's go". Narrator bet on Doug -> "Okay, wrong bet."
+# Mirror: "run every morning he feels like it" (plan) -> end line. Ends on a comment question, then the follow CTA (§1.12 C).
 # Doug and Gary are fictional; the habit research is real (sources.md).
 [#q] Why the heck does motivation quit on you, but discipline {*doesn't?|doesn't?}
-[#problem] See, Doug had a problem. January first, Doug was {*motivated.|motivated.}
-[#define] Motivation is a feeling: the "let's go!" from a guy yelling at a sunrise.
-[#plan] Doug's plan: run every morning he feels like it.
-[#gary] His neighbor Gary runs at six a.m. daily, and hates it. [#shoes] His shoes sleep by the door.
-[#discipline] That's {*discipline:|discipline:} doing it without the feeling.
-[#bet] Honestly? I'd have bet on Doug. Gary looked like a man walking to the dentist.
-[#week] Week one, {*seven|seven} runs straight.
-[#rain] Day twelve, rain. Doug checks for the feeling. {!Gone.|Gone.} Back to bed.
-[#garyrain] But Gary? Soaked. Running. Okay, wrong bet.
-[#aside] How? I'mma tell you.
-[#same] Same time, same place: your brain links them. [#link] Six a.m. plus shoes means run.
-[#habit] Repeat that enough, and it's a {*habit:|habit:} it runs on its own, like brushing your teeth.
-[#66] In one London study, a habit took about {*66|sixty-six} days to form. Two months of mornings.
-[#study] Disciplined people aren't tougher. Their habits do the work.
-[#callback] So, the shoes by the door. Gary never needed the feeling.
-[#end] And Doug? Still runs every morning he feels like it. So far, {!zero.|zero.}
+[#problem] See, Doug had a problem. [#wake] January first, he wakes up ready to run.
+[#sunrise] You know that {*"LET'S|"LET'S} {*GO!"|GO!"} feeling you get from watching a guy yell at a sunrise? [#motiv] That's {*motivation.|motivation.}
+[#plan] And Doug's plan is to run every morning he feels like it.
+[#gary] His neighbor Gary? [#shoes] His shoes sleep by the door.
+[#six] Every morning at six, he puts them on and runs. [#hates] Hates it. Goes anyway. [#disc] That's {*discipline.|discipline.}
+[#bet] Honestly? I'd have bet on Doug. [#dentist] Gary looks like a man walking to the dentist.
+[#week] Week one, Doug runs {*seven|seven} mornings straight.
+[#rain] Day twelve? {!Rain.|Rain.} [#check] Doug checks for that "let's go" feeling. {!Gone.|Gone.} [#bed] Back to bed.
+[#soaked] Gary? Soaked. Still running.
+[#wrong] Okay, wrong bet. [#aside] How's Gary doing this? I'mma tell you.
+[#loop] Every morning at six, Gary sees his shoes, puts them on, and heads out.
+[#enough] After enough mornings like that, just seeing the shoes gets him moving. [#habit] That's a {*habit.|habit.}
+[#teeth] Think about brushing your teeth. [#pep] When's the last time you needed a pep talk to pick up your toothbrush?
+[#study] In one London study, it typically took about {*66 days|sixty-six days} for a new routine to feel automatic. [#longer] Some people took longer.
+[#callback] So those shoes by the door? Gary put them there last night. [#laces] By the time he hears the rain, he's already tying his laces.
+[#end] And Doug? Still runs every morning he feels like it. [#zero] Since the rain? {!Zero.|Zero.}
+[#question] So which one are you tomorrow morning? [#choice] Doug checking for the feeling, or Gary reaching for his shoes?
 [#cta] Still here? Then that means you enjoyed the video. So {*follow|follow} and {*like|like} for more.
