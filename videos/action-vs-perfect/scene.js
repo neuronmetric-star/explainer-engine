@@ -36,32 +36,32 @@
       { at: 'split', plate: '01', zoom: [1.06, 1.1], focus: [[.5, .62], [.5, .62]] },
       { at: 'dougside', plate: '02', zoom: [1.0, 1.08], focus: [[.5, .5], [.55, .5]] },
       { at: 'dogfood', plate: '02', zoom: [1.08, 1.12], focus: [[.55, .5], [.55, .5]] },
-      { at: 'garyside', plate: '03', zoom: [1.0, 1.06], focus: [[.55, .55], [.6, .55]] },
+      { at: 'garyside', plate: '03', zoom: [1.0, 1.06], focus: [[.66, .55], [.68, .55]] },
       { at: 'perfect', plate: '03', zoom: [1.7, 1.85], focus: [[.2, .48], [.2, .48]] },
-      { at: 'sketch', plate: '03', zoom: [1.1, 1.1], focus: [[.5, .5], [.5, .5]] },
-      { at: 'erase', plate: '03', zoom: [1.2, 1.2], focus: [[.5, .5], [.5, .5]] },
+      { at: 'sketch', plate: '03', zoom: [1.45, 1.6], focus: [[.6, .5], [.62, .49]] },
+      { at: 'erase', plate: '03', zoom: [2.0, 2.1], focus: [[.4, .48], [.4, .48]] },
       { at: 'grab', plate: '02c', zoom: [1.0, 1.1], focus: [[.5, .5], [.52, .48]] },
       { at: 'potato', plate: '02', zoom: [1.6, 1.7], focus: [[.5, .42], [.5, .42]] },
       { at: 'bet', plate: '01', zoom: [1.0, 1.05], focus: [[.5, .58], [.5, .58]] },
-      { at: 'plan', plate: '03', zoom: [1.15, 1.2], focus: [[.45, .55], [.45, .55]] },
+      { at: 'plan', plate: '03', zoom: [1.15, 1.2], focus: [[.66, .55], [.68, .55]] },
       { at: 'hasPotato', plate: '02', zoom: [1.3, 1.35], focus: [[.55, .45], [.55, .45]] },
       { at: 'shelf', plate: '04', zoom: [1.15, 1.2], focus: [[.3, .5], [.7, .5]] },
       { at: 'early', plate: '04', zoom: [1.9, 2.0], focus: [[.4, .15], [.36, .15]] },
       { at: 'lean', plate: '04', zoom: [2.6, 2.7], focus: [[.3, .15], [.3, .15]] },
       { at: 'end', plate: '05', zoom: [1.0, 1.06], focus: [[.5, .6], [.5, .6]] },
-      { at: 'reveal', plate: '05', zoom: [1.45, 1.5], focus: [[.5, .68], [.5, .68]] },
+      { at: 'reveal', plate: '05', zoom: [1.2, 1.25], focus: [[.62, .6], [.64, .6]] },
       { at: 'garypot', plate: '03', zoom: [1.9, 2.0], focus: [[.18, .48], [.18, .48]] },
-      { at: 'lump', plate: '03', zoom: [1.5, 1.05], focus: [[.3, .5], [.6, .55]] },
+      { at: 'lump', plate: '03', zoom: [1.5, 1.1], focus: [[.3, .5], [.68, .55]] },
       { at: 'aside', plate: '06', zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .45]] },
       { at: 'see', plate: '06f', zoom: [1.0, 1.0], focus: [[.5, .5], [.5, .5]] },
       { at: 'thicker', plate: '06s', zoom: [1.0, 1.04], focus: [[.5, .5], [.5, .48]] },
       { at: 'stood', plate: '06s', zoom: [1.12, 1.2], focus: [[.5, .42], [.5, .4]], clipFrom: 2.5 },
-      { at: 'drawing', plate: '03', zoom: [1.05, 1.1], focus: [[.58, .55], [.6, .55]] },
+      { at: 'drawing', plate: '03', zoom: [1.05, 1.1], focus: [[.66, .55], [.68, .55]] },
       { at: 'paper', plate: '03', zoom: [1.7, 1.85], focus: [[.52, .5], [.52, .5]] },
       { at: 'callback', plate: '02', zoom: [1.6, 1.65], focus: [[.5, .42], [.5, .42]] },
-      { at: 'learned', plate: '03', zoom: [1.1, 1.15], focus: [[.58, .55], [.6, .55]] },
+      { at: 'learned', plate: '03', zoom: [1.1, 1.15], focus: [[.66, .55], [.68, .55]] },
       { at: 'question', plate: '01', zoom: [1.0, 1.06], focus: [[.5, .58], [.5, .58]] },
-      { at: 'garyfix', plate: '03', zoom: [1.2, 1.3], focus: [[.6, .55], [.62, .55]] },
+      { at: 'garyfix', plate: '03', zoom: [1.2, 1.3], focus: [[.66, .55], [.68, .55]] },
       { at: 'dougclay', plate: '02c', zoom: [1.05, 1.1], focus: [[.52, .5], [.52, .5]], clipFrom: 1.0 },
       { at: 'cta', plate: 'heli', zoom: [1.0, 1.0], focus: [[.5, .5], [.5, .5]] },
     ],
@@ -78,10 +78,8 @@
       const garyTable = (ry = -.3, s = .6) => K.placeAt('gary', 660, 1170, ry, s);
       // medium plates
       const dougAt02 = (ry = -.4) => K.placeAt('doug', 770, 830, ry, .8);
-      const garyAt03 = (ry = -.45) => K.placeAt('gary', 790, 1400, ry, .6);
+      const garyAt03 = (ry = -.45) => K.placeAt('gary', 900, 1400, ry, .6);
       const potatoOnWheel = (s = 1) => { const p = K.img(372, 655); K.prop('R02', { x: p.x, y: p.y, w: 300 * K.imgScale() * s, anchor: [.5, .72] }); };
-      // Gary's sketchbook, drawn exactly over the painted one (03: x 290-750, y 600-910), optionally enlarged
-      const sketchOver = (m = 1, rot = 0) => { const p = K.img(520, 760); K.prop('R03', { x: p.x, y: p.y, w: 470 / .93 * K.imgScale() * m, rot }); };
       switch (id) {
         case 'q': { const d = dougWheel(); face(d, 'happy', t); d.pose({ t, armR: { raise: e(Lc / .4) }, armL: { raise: e(Lc / .4) } });
           const g = garyTable(); face(g, 'flat', t, 1); g.pose({ t, gesture: 'think', gw: e(Lc / .4) }); break; }
@@ -98,19 +96,16 @@
           K.prop('P02', { x: 260, y: 1350, w: 360 }); K.prop('P01', { x: 560, y: 1450, w: 280 * pop('dogfood+0.1') }); break; }
         case 'garyside': { const g = garyAt03(-.2); face(g, 'smirk', t, 1); g.pose({ t, gesture: 'hips', gw: e(Lc / .3) }); break; }
         case 'perfect': break;   // the lump of clay
-        case 'sketch': case 'erase': { const g = garyAt03(-.6); face(g, id === 'erase' ? (Lc < .8 ? 'worried' : 'smile') : 'flat', t, 1);
-          g.pose({ t, lean: .2, look: -.4, nod: .25 });
-          const wig = id === 'erase' ? Math.sin(Lc * 30) * .03 * (1 - K.clamp01((Lc - .8) / .2)) : 0;
-          sketchOver(id === 'sketch' ? 1 + .25 * pop('sketch') : 1.25, wig); break; }
+        case 'sketch': case 'erase': break;   // insert: the painted sketchbook only   // the painted sketchbook only (no overlay: it doubled the book)
         case 'grab': case 'dougclay': { const d = dougAt02(-.6); face(d, 'happy', t); d.pose({ t, look: -.3, lean: .15, armR: { raise: .25, fwd: -.8 }, armL: { raise: .25, fwd: -.8 } }); break; }
         case 'potato': { potatoOnWheel(pop('potato', .35)); break; }
         case 'bet': { const d = dougWheel(); face(d, 'happy', t); d.pose({ t }); const g = garyTable(-.2); face(g, 'smirk', t, 1); g.pose({ t, gesture: 'cross', gw: e(Lc / .3) }); break; }
-        case 'plan': { const g = garyAt03(-.5); face(g, 'smile', t, 1); g.pose({ t, gesture: 'point', gw: e(Lc / .3), look: -.3 }); sketchOver(1.1); break; }
+        case 'plan': { const g = garyAt03(-.5); face(g, 'smile', t, 1); g.pose({ t, gesture: 'point', gw: e(Lc / .3), look: -.3 }); break; }
         case 'hasPotato': { const d = dougAt02(-.3); face(d, 'happy', t); d.pose({ t, gesture: 'tada', gw: e(Lc / .3) }); potatoOnWheel(); break; }
         case 'shelf': { const d = K.placeAt('doug', 520, 840, 0, .8); face(d, 'smile', t); d.pose({ t, gesture: 'hips', gw: e(Lc / .3) }); break; }
         case 'early': case 'lean': break;   // the plant: early pots
         case 'end': { const v = K.placeAt('victor', 60 + 90 * K.clamp01(Lc / 2), 1330, PI / 2, .8); face(v, 'flat', t); v.pose({ t, walk: Lc * 1.2, walkAmt: 1 - e((Lc - 1.6) / .4), look: -.6 }); break; }
-        case 'reveal': { const d = K.placeAt('doug', 905, 1300, -.3, .8); face(d, 'happy', t); d.pose({ t, gesture: 'tada', gw: e(Lc / .25) }); break; }
+        case 'reveal': { const d = K.placeAt('doug', 890, 1230, -.3, .6); face(d, 'happy', t); d.pose({ t, gesture: 'tada', gw: e(Lc / .25) }); break; }
         case 'garypot': break;
         case 'lump': { const g = garyAt03(-.3); face(g, 'worried', t, 1); g.pose({ t, gesture: 'shrug', gw: e((Lc - .5) / .3) }); break; }
         case 'aside': case 'see': case 'thicker': case 'stood': break;   // the pot on the wheel (clips)
@@ -120,7 +115,7 @@
         case 'learned': { const g = garyAt03(-.5); face(g, 'worried', t, 1); g.pose({ t, gesture: 'think', gw: e(Lc / .3), look: -.3 });
           K.prop('P03', { x: 430, y: 640, w: 300 * pop('learned+0.4'), rot: Math.sin(t * 9) * .15 }); break; }
         case 'question': { const d = dougWheel(.2); face(d, 'smile', t); d.pose({ t, gesture: 'point', gw: e((Lc - .8) / .3) }); const g = garyTable(-.2); face(g, 'flat', t, 1); g.pose({ t, gesture: 'think', gw: e(Lc / .3) }); break; }
-        case 'garyfix': { const g = garyAt03(-.6); face(g, 'worried', t, 1); g.pose({ t, lean: .25, look: -.4, nod: .3 }); sketchOver(1.1); break; }
+        case 'garyfix': { const g = garyAt03(-.6); face(g, 'worried', t, 1); g.pose({ t, lean: .25, look: -.4, nod: .3 }); break; }
         case 'cta': break;     // helicopter flies away (OpenArt clip) + follow button
       }
     },
