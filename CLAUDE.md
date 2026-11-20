@@ -23,7 +23,10 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 
 ## The pipeline (always in this order)
 0. **Length first:** if Brian didn't say "long" or "short", ASK him (long ≈ 8–9.5 min or short ≈ 1:05) before any research, script or other work. There is no default.
-1. **Payoff → topic.** Write the one-sentence answer the viewer will discover.
+1. **Payoff → topic → mode.** Write the one-sentence answer the viewer will discover, then pick the script mode the
+   topic deserves (PLAYBOOK §1.13): **Explainer** (how a thing works), **True story** (a real event/person), or
+   **Lesson chain** (human behavior: chain of people + refrain "But what he doesn't know is that…" + flip + moral +
+   comment question). Tell Brian the mode in one line. Lesson chains need no research unless they state facts.
 2. **Research** with web search; every claim sourced in `videos/<slug>/sources.md` (title + URL + fact).
    Label invented characters and reconstructions.
 3. **Script** → `videos/<slug>/script.txt` (PLAYBOOK §1). Show Brian the narration in one copyable
