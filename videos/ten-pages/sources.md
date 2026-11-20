@@ -1,4 +1,20 @@
-# Sources: How ten pages a day beat a whole book in one night
+# Sources: How to finish twelve books in a year (ten pages a night)
+
+**Current script (`script.txt`) is Brian's direct-to-viewer rewrite.** Its claims are simple math plus general reading tips
+(the five-minute promise, leaving the phone on the charger, wanting to see what happens next). Those tips are advice, not study
+claims. Any cast acting it out on screen is fictional.
+
+| Claim in the current script | Source |
+|---|---|
+| "Ten pages a night is seventy a week": 10 × 7 = 70 (**our calculation**) | arithmetic |
+| "In thirty days, that's a three-hundred-page book": 10 × 30 = 300; a typical book is ~300 pages at ~250–300 words per page (**our calculation**) | Reedsy, "How many words in a book": https://reedsy.com/blog/how-many-words-in-a-book/ · Kindlepreneur, "Words per page": https://kindlepreneur.com/words-per-page/ |
+| "Three thousand six hundred fifty pages. About twelve books": 10 × 365 = 3,650 ÷ ~300 ≈ 12 (**our calculation**; book lengths vary) | same |
+| Ten pages ≈ ten minutes (background, for the "five minutes can turn into ten pages" line): adults read ~238–260 words/min, so ~1 min per page | Brysbaert (2019), *Journal of Memory and Language*: https://www.gwern.net/doc/psychology/linguistics/2019-brysbaert.pdf |
+| Small, same-time-each-night routine (background for "smaller promise", "before bed"): habits form by repeating a behavior on the same daily cue; average ≈ 66 days; missing one day didn't hurt | Lally et al. (2010), *European Journal of Social Psychology*: https://core.ac.uk/download/70653523.pdf |
+
+---
+
+## Sources for v1 (`script-v1-doug-gary.txt`, Doug vs. Gary story, not in use)
 
 **Doug, Gary, the twelve-book goal, the bookmark and the day counts are fictional** (a reconstruction to show the idea).
 The habit research, reading speed and page math are real.

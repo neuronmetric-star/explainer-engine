@@ -1,24 +1,11 @@
-# SHORT FORM (~1:05). How ten pages a day beat a guy who read a whole book in one night.
-# Mode: Explainer (how a reading habit actually adds up). PLAYBOOK §1.11 + §1.9 compressed + §1.10 narrator.
-# Payoff: a giant goal is a fight every night, so you quit; ten minutes is no fight, so it becomes a habit you
-#         never skip, and 10 pages x 365 days = 3,650 pages ≈ 12 books: Doug's exact goal, just in a year.
-# Plant: Doug's bookmark (Gary watches it stop moving). Callback: "So, the bookmark."
-# Mirror: "twelve books in January" → "off by eleven months".
-# Doug and Gary are fictional; the habit study, reading-speed and page numbers are real (sources.md).
-[#q] How the {*heck|heck} does ten pages a day beat a whole book in one night?
-[#problem] See, Doug had a problem. [#goal] His New Year's goal: {*12|twelve} books in January.
-[#math] That's two hours a day. [#job] A second job that pays in {!papercuts.|papercuts.}
-[#gary] His neighbor Gary picked ten pages a day. [#chair] Ten minutes, same chair, before bed.
-[#doug] Doug goes, "Gary, that's a {*pamphlet.|pamphlet.}" [#yep] Gary goes, "Yep."
-[#night1] Night one, Doug reads a whole book. [#trophy] He holds it up like a trophy.
-[#bet] Honestly? I'd have bet on Doug.
-[#watch] But Gary was watching Doug's bookmark. [#stuck] By day five, it {!stopped.|stopped.}
-[#behind] By day ten, he's nearly three books behind, [#blew] thinks, "I already blew it," [#quit] and {!quits.|quits.}
-[#aside] How does ten pages win? I'mma tell you.
-[#habit] Do a small thing at the same time and place, and it becomes a *habit: [#teeth] autopilot, like brushing your teeth.
-[#study] In one study, that took about {*66|sixty-six} days. [#lasted] Doug lasted {!ten.|ten.}
-[#fight] Two hours is a fight every night. [#nofight] Ten minutes is no fight. Gary never skipped.
-[#callback] So, the bookmark. [#moved] Gary's moved every single night.
-[#books] Ten pages a day for a year? About {*12|twelve} books.
-[#same] Doug's exact goal. [#end] He was off by eleven {!months.|months.}
+# SHORT FORM (~1:05). Brian's rewrite (Nov 2026): direct-to-viewer advice. v1 (Doug vs Gary story) is script-v1-doug-gary.txt.
+# Payoff: ten pages a night adds up to about twelve books a year; you get there with a five-minute promise.
+# Cast acts it out silently: Doug at night, phone on the charger, a book, the bookmark.
+# The math is real (sources.md); the five-minute advice is general reading tips, not a study claim.
+[#q] How the {*heck|heck} can you finish {*12|twelve} books in a year if you barely have time to read? [#tonight] {*Ten|Ten} pages tonight.
+[#week] Ten pages a night is {*70|seventy} a week. [#month] In thirty days, that's a {*300-page|three-hundred-page} book. [#year] Keep going for a year? [#total] {*3,650|Three thousand six hundred fifty} pages. [#books] About {*12|twelve} books.
+[#how] So how do you actually get yourself to read those ten pages? [#promise] Make yourself a smaller promise. [#five] "I'll read for {*five|five} minutes."
+[#phone] Tonight, when you plug in your phone before bed, [#leave] leave it there. [#pick] Pick up a book about something you've always wanted to understand. [#give] Give it five minutes.
+[#halfway] If you're halfway through a good story when time's up, [#next] you'll probably want to see what happens next. [#turn] That's how five minutes can turn into {*ten|ten} pages.
+[#three] And if you only read three pages tonight? [#bookmark] Put your *bookmark in. [#four] Tomorrow you get to start on page {*four.|four.} [#pressure] No pressure to push for twenty or thirty.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
