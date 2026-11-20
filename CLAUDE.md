@@ -46,6 +46,7 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 7. **Preview** stills → Read them yourself → fix (feet planted, light matches painting, faces readable,
    caption band clear, clue visible before it's explained) → send Brian the preview.
 8. **Sound effects**: write `videos/<slug>/sfx-cues.js`, run `node tools/sfx.js <slug>` → `sfx.wav` (whooshes on cuts, footsteps, gadgets).
+   **End on the branding outro**: the follow CTA plays over the helicopter-flying-away clip (`docs/brand/heli_outro.mp4`, PLAYBOOK §1.12).
    **Render** 30 fps with voice + `sfx.wav` (and quiet `music.mp3` if present) → `final.mp4`. Commit (not huge mp4s), tell Brian the path.
 9. **Cover + caption**: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` → `cover.jpg`. **The cover always shows
    the character** (a real frame with the cast and a clear, expressive face; no captions), headline in the top quarter.

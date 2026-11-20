@@ -2,7 +2,7 @@
 """Synthesize and mix sound effects (no downloads, no credits).
 Usage: sfx.py events.json out.wav length_seconds
 events.json: [{"t": 1.23, "sfx": "whoosh", "gain": 0.5}, {"t": 5, "file": "clip.wav", "from": 0, "dur": 2.5, "gain": .6}, ...]
-Library: ring, whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk."""
+Library: heli, ring, whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk."""
 import json, sys, wave
 import numpy as np
 
@@ -110,7 +110,17 @@ def load_wav(path):  # mono float, resampled naively to SR if needed
     return x
 
 
-LIB = dict(ring=ring, whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk)
+def heli(d=5.0):  # helicopter flying away: rotor thump that fades and dulls with distance
+    n = int(SR * d); t = np.arange(n) / SR
+    rate = 11.0
+    thump = np.exp(-((t * rate) % 1) * 7)
+    body = lowpass(noise(n), 18) * 1.4 + np.sin(2 * np.pi * 55 * t) * .5
+    whine = np.sin(2 * np.pi * (520 - 40 * t / d) * t) * .05
+    dist = np.exp(-t * 0.55)
+    return (body * thump + whine) * dist * env(n, SR * .3, SR * .8) * 0.6
+
+
+LIB = dict(heli=heli, ring=ring, whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk)
 
 if __name__ == '__main__':
     ev_file, out, length = sys.argv[1], sys.argv[2], float(sys.argv[3])

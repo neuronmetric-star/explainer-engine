@@ -27,7 +27,8 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs
 6. When the art is in `videos/<slug>/art/`: build the scene (plates matched per painting, cast, acting,
    camera moves and hard cuts per the shot plan).
 7. Render preview stills, Read them, fix problems, repeat until clean. Send me the preview.
-8. Render the final 30 fps video with voice. Commit and push. Tell me the file path.
+8. End on the branding outro (CTA over the helicopter-flying-away clip, `docs/brand/heli_outro.mp4`, PLAYBOOK §1.12).
+   Render the final 30 fps video with voice. Commit and push. Tell me the file path.
 9. Cover + caption: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` on a frame where the character is on
    screen with an expressive face (covers ALWAYS show the character). Write `videos/<slug>/post.md` (TikTok/Reels caption
    + hashtags, YouTube Shorts title). Send me the cover and the caption.

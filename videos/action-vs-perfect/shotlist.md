@@ -9,7 +9,7 @@ static-camera clips used as moving plates (the cast composited on top, as in mot
 1. `OPENART-1` (test) from `06_wheel_pot_closeup.png`: the wet pot spins, then **one side slowly folds over** (cue `fold`).
 2. `OPENART-2` from `06_wheel_pot_closeup.png`: the pot spins steadily and **stands up straight** (cues `thicker`, `stood`).
 3. `OPENART-3` from `02_wheel_medium.png`: the wheel spins, the clay lump wobbles and flings slip (cues `grab`, `dougclay`).
-Total ≈ 300 credits.
+Total ≈ 300 credits. **Done:** 3 × 100 = 300 credits (fold, stand, spin). **Outro:** Brian's existing OpenArt helicopter-flying-away clip (Wan 3.0, `Yjrnbo81NFcMpH044Oll`), no new credits, plays under the follow CTA as our branding ending.
 **The clue:** Doug's early pots **all lean left** on his shelf (`04`, cue `lean`), and his first pot is a "potato" (R02, cue `potato`).
 Paid off at `fold` / `thicker` / `stood` (a pot wall that's too thin folds over) and `callback`.
 

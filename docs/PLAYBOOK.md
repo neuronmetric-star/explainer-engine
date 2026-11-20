@@ -244,7 +244,12 @@ story's word count.
 
 For long form, "a minute" → "these eight minutes."
 
-**Picture:** hold the final story image, then the **+ FOLLOW** button pops in, a cursor taps it, and it
+**Branding outro (Brian, Nov 2026, from action-vs-perfect on):** the CTA plays over our **helicopter flying away into the sunset**
+clip (`docs/brand/heli_outro.mp4`, Wan 3.0, 5 s, OpenArt `Yjrnbo81NFcMpH044Oll`; no new credits). Extract it into the video
+(`ffmpeg -i docs/brand/heli_outro.mp4 -vf scale=540:960 -q:v 3 videos/<slug>/art/clips/heli/f%03d.jpg` + first frame as
+`art/X01_heli_first.png`), add plate `heli: { img: 'X01_heli_first.png', clip: { dir: 'clips/heli', n: 150, fps: 30, loop: 'hold' } }`,
+make it the `cta` shot, put the follow button in the sky (`follow: { y: 260 }`) and add `{ at: 'cta', sfx: 'heli' }`. The clip has no cast.
+Otherwise: **Picture:** hold the final story image, then the **+ FOLLOW** button pops in, a cursor taps it, and it
 becomes **✓ FOLLOWING**. A cast member reacts: the smart one `point`s at the button or `cross` + `smirk`s;
 in D, the smart one taps it and the fool `facepalm`s. "follow" and "like" are gold in the captions.
 
