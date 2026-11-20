@@ -57,7 +57,7 @@
       { at: 'fed', plate: '05', zoom: [1.0, 1.12], focus: [[.5, .5], [.5, .45]] },
       { at: 'garyend', plate: '02', zoom: [1.1, 1.15], focus: [[.55, .55], [.55, .55]] },
       { at: 'empties', plate: '02c', zoom: [1.3, 1.3], focus: [[.5, .45], [.5, .45]], clipFrom: 4.9 },
-      { at: 'end', plate: '04', zoom: [2.0, 2.1], focus: [[.5, .42], [.5, .42]] },
+      { at: 'end', plate: '04', zoom: [1.35, 1.45], focus: [[.5, .5], [.5, .48]] },
       { at: 'times', plate: '03', zoom: [1.25, 1.3], focus: [[.45, .58], [.45, .58]] },
       { at: 'question', plate: '01', zoom: [1.3, 1.35], focus: [[.5, .55], [.5, .55]] },
       { at: 'orjar', plate: '02', zoom: [1.2, 1.25], focus: [[.6, .55], [.6, .55]] },
@@ -72,7 +72,7 @@
       const id = K.shot.id, Lc = K.shot.local, at = c => K.T(c), e = K.ease, pop = (from, d = .3) => K.pop(K.clamp01((t - K.T(from)) / d));
       const D = K.cast.doug, G = K.cast.gary, C = K.cast.cashier;
       const dougRoom = (ry = 0, ix = 470, iy = 1120) => K.placeAt('doug', ix, iy, ry, .72);
-      const garyKitchen = (ry = -.3) => K.placeAt('gary', 790, 1370, ry, .7);
+      const garyKitchen = (ry = -.3) => K.placeAt('gary', 700, 1320, ry, .62);
       const head = ch => K.screenOf(ch.head);
       const beside = (ch, k, w, dx = 250, dy = 60, a = 1, rot = 0) => { const h = head(ch); K.prop(k, { x: h.x + dx, y: h.y + dy, w, a, rot }); };
       switch (id) {
@@ -111,7 +111,7 @@
         case 'late': { const d = dougRoom(.1, 470, 1130); face(d, 'surprised', t); d.pose({ t, lean: -.1 }); K.prop('P05', { x: 540, y: 760, w: 560 * pop('late') }); break; }
         case 'garyend': { const g = garyKitchen(); face(g, 'smile', t, 1); g.pose({ t, gesture: 'point', gw: e(Lc / .3), look: -.4 }); break; }
         case 'empties': break;
-        case 'end': { const g = K.placeAt('gary', 430, 760, .3, .7), c = K.placeAt('cashier', 650, 700, -.4, .7);
+        case 'end': { const g = K.placeAt('gary', 420, 900, .4, .75), c = K.placeAt('cashier', 620, 880, -.5, .75);
           face(g, 'smile', t, 1); g.pose({ t, armR: { raise: .35 } }); face(c, 'smile', t, 2); c.pose({ t, nod: Math.sin(t * 4) * .05 });
           const h = head(g); K.prop('R01', { x: h.x + 90, y: h.y + 230, w: 150 * pop('end+0.4') }); break; }
         case 'times': { const d = dougRoom(.1, 470, 1130); face(d, 'flat', t); d.pose({ t, gesture: 'shrug', gw: e(Lc / .3) }); break; }
