@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Cast sheet</title>
+<!-- Cast reference sheet for painting/AI-video start frames. node engine/lab/render-lab.js <out> --page cast-sheet.html -->
+<style>*{margin:0;padding:0}html,body{width:1080px;height:1920px;overflow:hidden;background:#e9e4da}#c{position:fixed;inset:0;width:1080px;height:1920px}#cap{display:none}</style></head><body>
+<canvas id="c"></canvas><div id="cap"></div>
+<script src="../../node_modules/three/build/three.min.js"></script>
+<script src="../../node_modules/three/examples/js/environments/RoomEnvironment.js"></script>
+<script src="../characters.js"></script>
+<script>
+const W = 1080, H = 1920;
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.1;
+renderer.setClearColor(0xe9e4da);
+const scene = new THREE.Scene();
+const env = new THREE.PMREMGenerator(renderer).fromScene(new THREE.RoomEnvironment(), .04).texture;
+const key = new THREE.DirectionalLight(0xfff1e0, 2.4); key.position.set(-4, 8, 10); scene.add(key);
+const fill = new THREE.DirectionalLight(0xc8d6ff, 1.0); fill.position.set(6, 4, 8); scene.add(fill);
+scene.add(new THREE.HemisphereLight(0xffffff, 0x9a8a78, .7));
+const OUT = ['hoodie', 'oxford', 'suit', 'polo'];
+const cast = OUT.map(o => CHAR.make({ outfit: o, envMap: env })); cast.forEach(c => scene.add(c.root));
+scene.traverse(o => { if (!o.material) return; [].concat(o.material).forEach(m => { if (m.__lin || m.isShaderMaterial) return; m.__lin = 1; if (m.color) m.color.convertSRGBToLinear(); if (m.emissive) m.emissive.convertSRGBToLinear(); }); });
+const camera = new THREE.PerspectiveCamera(30, W / H, .1, 100);
+const SHOTS = [
+  () => { // all four, full body, 2x2 feel: line-up
+    cast.forEach((c, i) => { c.root.position.set(-2.4 + i * 1.6, 0, 0); c.root.rotation.y = 0; c.face('smile'); c.pose({ t: i }); });
+    camera.fov = 34; camera.aspect = W / H; camera.position.set(0, 1.6, 15.5); camera.lookAt(0, 1.4, 0); },
+  ...OUT.map((o, i) => () => { // each one, three-quarter, full body
+    cast.forEach((c, j) => { c.root.position.set(j === i ? 0 : 99, 0, 0); c.root.rotation.y = .35; c.face(['smile', 'flat', 'smirk', 'worried'][i]); c.pose({ t: i }); });
+    camera.fov = 30; camera.position.set(0, 1.4, 7.2); camera.lookAt(0, 1.25, 0); }),
+];
+window.SHOT_COUNT = SHOTS.length;
+window.renderShot = i => { SHOTS[i](); camera.updateProjectionMatrix(); renderer.render(scene, camera); return true; };
+window.ready = true;
+</script></body></html>
