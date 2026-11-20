@@ -23,7 +23,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 
 ## The pipeline (always in this order)
 0. **Length first:** if Brian didn't say "long" or "short", ASK him (long ≈ 8–9.5 min or short ≈ 1:05) before any research, script or other work. There is no default.
-1. **Payoff → topic → mode.** Write the one-sentence answer the viewer will discover, then pick the script mode the
+1. **Payoff → topic → mode.** Pick topics from the morning trend sheet `docs/trends/<date>.md` (PLAYBOOK §6c) and
+   note the topic's **search phrase** (the exact words people type; it goes in caption line 1, on-screen text in the
+   first 2 s, and the first spoken sentence). Write the one-sentence answer the viewer will discover, then pick the script mode the
    topic deserves (PLAYBOOK §1.13): **Explainer** (how a thing works), **True story** (a real event/person), or
    **Lesson chain** (human behavior: chain of people + refrain "But what he doesn't know is that…" + flip + moral +
    comment question). Tell Brian the mode in one line. Lesson chains need no research unless they state facts.
@@ -49,6 +51,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 9. **Cover + caption**: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` → `cover.jpg`. **The cover always shows
    the character** (a real frame with the cast and a clear, expressive face; no captions), headline in the top quarter.
    Write `post.md` (TikTok/Reels caption + hashtags, YouTube Shorts title) and send both to Brian.
+   Caption line 1 = the search phrase; 3–5 niche hashtags, never only "#fyp", no swearing (PLAYBOOK §6b).
+   Post slot per `docs/posting-schedule.md`: ≥ 3 h apart, a different topic every post, every post ≥ 1:02.
 
 ## Story rules (short version of PLAYBOOK §1)
 - Choose the question word from the payoff: Why (reason) / Who (identity) / When (moment) /

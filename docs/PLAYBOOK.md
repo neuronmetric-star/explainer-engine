@@ -20,7 +20,8 @@ What it's built from:
 
 | # | Step | Who | Output |
 |---|---|---|---|
-| 1 | Pick the topic, find the **payoff** | Claude (Brian approves topic) | one sentence: what the viewer will discover |
+| 0 | Morning trend scrape (§6c): what people search and what's going viral in our lanes | Claude | `docs/trends/<date>.md` (topics + search phrases + stitch picks) |
+| 1 | Pick the topic **from the trend sheet**, find the **payoff** and the **search phrase** | Claude (Brian approves topic) | one sentence: what the viewer will discover + the exact phrase people type |
 | 2 | Research, every claim sourced | Claude | `videos/<slug>/sources.md` |
 | 3 | Script (section 1) | Claude → **Brian approves** | `script.txt` + narration in one copyable block |
 | 4 | Shot list + image prompts (section 4) | Claude | `shotlist.md` |
@@ -53,7 +54,12 @@ Write down what the viewer will discover. Then pick the question word that the e
 - **Start the action in sentence two:** "Doug decided to find out by never buying it again."
 - **Always "the heck", never "the f\*ck"** (Brian's rule, Nov 2026): spoken and captioned as "heck", so the opening
   seconds stay ad-safe on TikTok, Reels and YouTube. Coon's punchy rhythm stays; only the word changes.
-  Older scripts (gas-vs-water etc.) still say "f\*ck"; don't copy that.
+  Older scripts (gas-vs-water etc.) still say "f\*ck"; don't copy that. **Captions too:** the Nov 13–15 posts
+  said "Why the f\*ck…" in the TikTok caption. Never again.
+- **The question uses the words people search** (§6c): take the topic's search phrase from the morning trend
+  sheet (`docs/trends/`) and build the question around it. Search "why is thanksgiving on a thursday" →
+  "Why the heck is Thanksgiving on a Thursday?" Keep the keywords (Thanksgiving, Thursday) word for word;
+  "the heck" can sit between them. TikTok transcribes the voice, so the first spoken sentence is a search signal.
 
 ### 1.2 Build the middle around a choice and its result
 1. Give someone a **goal** and a **reason to expect their plan to work** (Doug: "gas is a liquid,
@@ -214,7 +220,7 @@ Every short must be **very clear for someone who has never heard of the topic** 
 
 | Part | Time (of ~1:05) | What happens |
 |---|---|---|
-| **Hook** | 0:00–0:05 | Coon question with the subject on screen + "See, Doug had a problem." in one line |
+| **Hook** | 0:00–0:05 | Coon question **built on the search phrase** (§6c), subject on screen, the phrase as on-screen text + "See, Doug had a problem." in one line |
 | **Middle** | 0:05–0:50 | One plain line of ground (what the thing is) → the wrong belief or choice → plant the clue on screen → the narrator's bet → the mechanism explained **inside the story**, cause → effect (never "Step one…" or "three steps") |
 | **End** | 0:50–1:05 | The clue pays off ("So, the rattle.") → one consequence → a deadpan last line that mirrors a middle line → the follow CTA (§1.12) |
 
@@ -528,8 +534,46 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
   button) and adds the headline (line 1 white, the rest gold, thick outline, top quarter). **The cover always shows the
   character** (Brian's rule): pick a moment with the cast on screen and a big, readable reaction (`surprised`, `worried`,
   `shrug`), next to the subject (the empty hood, the dead bulb).
-- **Caption:** `post.md` with a TikTok/Reels caption (a curiosity line + the payoff in a few words + one Doug joke,
-  6–7 hashtags) and a YouTube Shorts title (≤ 100 chars, ends with #shorts).
+- **Caption:** `post.md` with a TikTok/Reels caption and a YouTube Shorts title (≤ 100 chars, ends with #shorts).
+  - **Line 1 = the search phrase, written the way people type it** ("Why is Thanksgiving on a Thursday?"), not a vibe
+    ("😧 Thanksgiving Explained"). No emoji before the keywords.
+  - Line 2: the curiosity line + one Doug joke.
+  - **3–5 niche hashtags** that name the topic and the lane (#thanksgiving #history #learnontiktok #explained).
+    Never a caption that is only "#fyp". No swearing (no "f\*ck", no "heck" needed in the caption).
+- **On-screen title:** the search phrase on screen in the first 2 s (the hook caption or a title card), so TikTok
+  reads it from the picture too. That's the third place (§6c).
+- **Length:** the final file is ≥ 1:02, or it earns nothing from Creator Rewards (§1.11).
+
+## 6c. Reach: getting seen by people who don't follow us
+Why this section exists (scrape, Nov 20 2026): @coonknows has 12k TikTok followers from old, deleted content. They
+don't watch the new videos (≈ 240 views each), so TikTok's first test batch stalls. The videos that broke out were
+**timely** (the "17 countries stock up" debunk: 1,564 views, 15 shares) or **true stories about a real person**
+(Victor Romero on Instagram: 18,391 views, 78 comments). The fix is to tell TikTok who each video is for and to
+borrow other creators' audiences.
+
+1. **Morning trend scrape (Claude, every day).** Scrape Creators: TikTok search suggestions for our openers
+   ("why is", "how does", "did", "what happened to", plus seasonal seeds like the next holiday) and this week's
+   most-liked videos for "explained", "history facts", "money explained". Write `docs/trends/<YYYY-MM-DD>.md`:
+   5–8 topic pitches, each with its **exact search phrase**, its mode (§1.13), why it's timely, and a post-by date;
+   plus 3–5 viral videos to stitch with their links. About 10–15 credits a day.
+2. **Searchable words in three places, every video:** (a) caption line 1, (b) on-screen text in the first 2 s,
+   (c) the first spoken sentence. Same keywords in all three, taken from the search suggestion, not invented.
+3. **Stitch one viral video a day** in our lanes (history, money, how-it-works, myths): their first 3–5 s, then
+   our narrator: "Here's what's actually going on." The stitch is shown to people who watched the original. The
+   whole stitch must still run ≥ 1:02. Stitch picks come from the trend sheet. Correct, don't dunk: no mocking the creator.
+4. **Comment early on bigger creators (Brian, ≈ 15 min a day).** Within the first hour of a post by a bigger
+   history/explainer creator, leave one real, specific comment (a fact they skipped, a funny one-liner in the narrator's
+   voice). Top comments send their viewers to our profile. No "check my page", no copy-paste comments.
+5. **Posting rules (we post as much as we can, inside these):**
+   - Posts at least **3 hours apart** so they don't compete with each other.
+   - **A different topic every post.** Never repost the same or a lightly edited video; TikTok can mark it
+     unoriginal and limit its reach. A long-form cut-down (§1.11) counts as new only if it's a different story beat.
+   - **Every post ≥ 1:02.** No sub-minute series, no "part 2": each video stands alone.
+   - Same video goes to TikTok, Instagram Reels and YouTube Shorts (Shorts is free reach we aren't using yet).
+   - Schedule: `docs/posting-schedule.md`.
+6. **Profile:** bio says what the account is ("How stuff really works, explained dry. New story daily. 📚");
+   pin the 3 best (one timely debunk, one true story, one money video). Ignore the old dead followers: once
+   strangers respond to a video, TikTok keeps widening who sees it.
 
 ## 7. Topic bank (any subject works; pick ones with a hidden mechanism or a twist)
 
