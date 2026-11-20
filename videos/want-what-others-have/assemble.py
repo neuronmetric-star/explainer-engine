@@ -311,6 +311,8 @@ def main():
         enc.stdin.write(render_frame(t, clips).tobytes())
         if f % 150 == 0: print(f'{t:5.1f}s / {END:.1f}s', flush=True)
     enc.stdin.close(); enc.wait(); print('->', out)
+    if out.endswith('final.mp4') and os.path.exists(os.path.join(HERE, 'sfx.py')):   # rebuild the SFX + voice mix
+        subprocess.run([sys.executable, os.path.join(HERE, 'sfx.py')], check=True)
 
 if __name__ == '__main__':
     main()
