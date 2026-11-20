@@ -7,7 +7,7 @@ Save as named into `videos/card-vs-cash/art/`. Bills are green-ish: run `python3
 **OpenArt video (Wan 3.0, 480p, with audio, 100 credits each; after the art arrives; clip 1 is the test):** static-camera clips as moving plates:
 1. `OPENART-1` (test) from `05_arena_tipoff.png`: crowd roars, lights flash, the ball goes up at center court (cue `tipoff`).
 2. `OPENART-2` from `04_brain_scan_room.png`: the scanner hums, its ring lights pulse, the monitor's brain picture glows (cues `scan`, `reward`).
-Total ≈ 200 credits. **Outro:** the helicopter clip (`docs/brand/heli_outro.mp4`) under the follow CTA (cue `cta`), no credits.
+Total ≈ 200 credits. **Done:** 2 × 100 = 200 credits (arena, scanner). **Outro:** the helicopter clip (`docs/brand/heli_outro.mp4`) under the follow CTA (cue `cta`), no credits.
 **The clue:** Gary's **wince** while counting three tens (cue `wince`), explained at `how` / `bills`.
 
 ## Images
