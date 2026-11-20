@@ -248,6 +248,65 @@ For long form, "a minute" → "these eight minutes."
 becomes **✓ FOLLOWING**. A cast member reacts: the smart one `point`s at the button or `cross` + `smirk`s;
 in D, the smart one taps it and the fool `facepalm`s. "follow" and "like" are gold in the captions.
 
+### 1.13 Script modes: write the script the topic deserves
+Every video uses one of three modes. **Pick the mode from the topic before writing a word**, tell Brian
+which mode and why in one line, then follow that mode's template every time. Same narrator, cast, captions,
+camera and CTA in all three; only the story engine changes.
+
+| The topic is… | Mode | Engine | Example |
+|---|---|---|---|
+| how a thing works, where the money goes, a process | **Explainer** (§1.1–1.7, §1.11) | a broken or surprising version of the thing; track one object; mechanism inside the story | how an electric car runs, gas vs water |
+| a true event, scheme, person or disaster | **True story** (§1.9 long, §1.11 short) | choice → apparent success → someone notices → consequence | robot dogs in Haiti, Harvard dropouts |
+| human behavior, a feeling, a habit, a life truth ("why do people…") | **Lesson chain** (below) | a chain of people, linked by one repeated line, that ends on a flip | why people want what others have |
+
+If a topic could fit two modes, pick the one whose ending hits harder, and say so to Brian.
+
+#### Lesson chain (Brian's template, Nov 2026)
+Short form only for now (≈ 1:05–1:15). Reference script: "Why the heck do people want what others have?"
+(`docs/scripts/lesson-chain-reference.txt`). Follow these beats in order:
+
+| # | Beat | Line pattern | From the reference |
+|---|---|---|---|
+| 1 | **Hook** | "Why the heck do people ___?" (a behavior everybody does) | "Why the heck do people want what others have?" |
+| 2 | **Problem with irony** | "See, [cast] had a problem." He finally has the thing, and it still isn't enough | worked hard for his dream Lamborghini… stuck at a red light |
+| 3 | **First wish** | something passes by; he looks and thinks the **wish line** | helicopter overhead: "Man, I wish I had that." |
+| 4 | **Dry aside** | one short narrator joke | "No red lights up there." |
+| 5 | **The chain (3 links)** | the **refrain** + the next person, who wants what the last one has: "But what he doesn't know is that [person] is thinking, '[wish line]'" | G-Wagon guy → regular-car guy → Doug on foot |
+| 6 | **Fake ending** | the narrator thinks it's over | "Honestly? I thought it ended with Doug." |
+| 7 | **Mirror line** | how the hero used to picture this exact moment vs. what he pictures now | "used to picture himself behind the wheel… now picturing himself in the helicopter" |
+| 8 | **Breather** | one plain action beat, short sentences | "The light turns green. The cars pull away." |
+| 9 | **The flip (last link)** | the refrain one last time, landing on someone whose wish is something the last person **never even noticed he had** | "But what Doug doesn't know is that a man in a wheelchair… 'I wish I could walk again.'" |
+| 10 | **Moral** | one plain sentence, no jargon | "…we forget to appreciate what we already have." |
+| 11 | **Comment question** | a personal question to the viewer | "What's one thing you have today that you used to wish for?" |
+| 12 | **Follow CTA** | §1.12 | "Still here? …" |
+
+**Rules for lesson chains (keep them consistent):**
+- **The refrain is always "But what [he / name] doesn't know is that…"**, word for word. It's the signature;
+  never swap in "Meanwhile" or a synonym.
+- **One wish line** ("Man, I wish I had that ___"), repeated with only the object changed. The flip link is
+  the one place it changes ("I wish I could walk again"), and that change is the punch.
+- **The chain moves in one direction** (down the money ladder, down the age ladder, etc.), so each link is
+  more ordinary than the last, until the flip jumps to something basic the viewer has right now (walking,
+  health, time, family, a home).
+- **Three links before the fake ending, one after.** Every link is a new character and a new shot.
+- The flip person is shown **with dignity**: calm, watching, never pitiful. The lesson is about what the
+  previous character didn't notice, not about feeling sorry for anyone.
+- **No numbers, no stats, no research needed.** Plain everyday words. Add `sources.md` only if the script
+  states a fact.
+- The narrator still has personality: one dry aside, one "Honestly?", the fake ending. No euphemism
+  dictionary, and no performed back-and-forth: the characters only *think*.
+- **Every line is one picture, and every line break is a cut.** Thinking = the character looks at the
+  next thing up the chain, then a push-in on a clear face (`worried`/`flat` while wishing, `smile` only for
+  the flip person). The camera passes from one link to the next (whip-pan or tracking move along the
+  street), so the chain feels like one continuous place.
+- **Length:** ≈ 190–215 words through the comment question, + CTA. Delivered slower than an explainer
+  (a beat after every refrain), so check the final is 1:02–1:15.
+- The last story line is the moral (not a deadpan joke). The mirror line (#7) still echoes the hook.
+
+**Topic bank for lesson chains:** why people want what others have · why we never feel rich enough · why
+we wait until tomorrow · why we care what strangers think · why we stay up scrolling · why we judge people
+fast · why we miss the "boring" days.
+
 ### 1.8 Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before
 every picture change · `#` comment lines. Write numbers as words in the spoken part.
