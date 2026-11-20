@@ -1,0 +1,19 @@
+# SHORT FORM (~1:05). Why there are robot dogs with rifles in Haiti. v3 = Brian's rewrite (2026-11-19); cues + markup by Claude.
+# Payoff: the robot dog can go first into a risky space and send back what it sees; what happens after that is unclear.
+# Cast: Doug (hoodie), Gary (oxford), El Salvador's president (outfit 'president': cap, bomber, sash; silent, only shown posting the video).
+# Callback: "watch the feet." Mirror: Doug's "Robot army" → the Roomba. Doug and Gary are fictional viewers.
+# Earlier versions: script-v1.txt (Claude), script-v2.txt (Brian long), script-trim.txt.
+[#q] Why the {*heck|heck} are there robot dogs carrying rifles in {*Haiti?|Haiti?}
+[#theory] Doug saw the video and said, "Robot army. The gangs are done."
+[#gary] Gary said, "Watch it again."
+[#salvador] El Salvador sent more than {*2,000|two thousand} troops to Haiti [#fight] to help fight the gangs there.
+[#video] Then El Salvador's president posted video from a joint operation: [#robots] four-legged robots with {!rifles|rifles} [#stadium] moving through a soccer stadium retaken from gangs.
+[#see] Doug goes, "See? Robot army."
+[#never] But the video doesn't show them {!firing.|firing.} [#what] So what are they for?
+[#eyes] The robots have cameras and sensors. [#operator] A human operator can guide one with a controller, see what it sees, [#send] and send it through tight or dangerous spaces before soldiers go {*in.|in.}
+[#brother] Like sending your little brother into the basement, except this one has cameras.
+[#mount] The rifle is mounted on top, [#unknown] but we don't know exactly how it's controlled or how the robots were used in this operation.
+[#callback] So Gary was right: watch the {*feet.|feet.} [#first] The robot can go {*first.|first.} [#next] What happens next? That part's still {!unclear.|unclear.}
+[#end] That night, Doug's basement went dark. [#roomba] He sent in his {*robot|robot} {*army:|army:} a Roomba.
+[#ask] Would you send a robot or a person into a suspicious hallway {*first?|first?}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

@@ -29,6 +29,7 @@ What it's built from:
 | 6 | Voiceover (ElevenLabs/OpenArt, or `tools/tts.js` with a key) | Brian / Claude | `voice.mp3` → `node tools/align.js <slug>` |
 | 7 | Build the scene: plates, cast, acting, camera (sections 2–3) | Claude | `scene.js` |
 | 8 | Preview stills, fix, repeat | Claude | `preview.jpg`, sent to Brian |
+| 8b | Sound effects: `videos/<slug>/sfx-cues.js` → `node tools/sfx.js <slug>` → `sfx.wav` (synthesized: whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk) | Claude | mixed under the voice by `render.js` |
 | 9 | Render 30 fps, voice mixed | Claude | `final.mp4`, committed, path sent (software render ≈ 7 min per minute of video (the 1:38 gas-vs-water took 11 min), so ≈ 1 h for 8 min; faster with `--gpu` on a desktop) |
 
 Images (5) and voice (6) can happen at the same time, right after the script is approved.
@@ -42,16 +43,17 @@ Write down what the viewer will discover. Then pick the question word that the e
 
 | The payoff is a… | Open with | Example |
 |---|---|---|
-| reason or motive | **Why the f\*ck** | Why the f\*ck do pilots dump fuel before landing? |
-| identity | **Who the f\*ck** | Who the f\*ck opened the door? (answer: the guard) |
-| decisive moment | **When the f\*ck** | When the f\*ck did the Titanic actually become unsinkable? |
-| object or event | **What the f\*ck** | What the f\*ck is the white stuff in a bird's poop? |
-| process or sequence | **How the f\*ck** | How the f\*ck does a puddle of gasoline move a two-ton car? |
+| reason or motive | **Why the heck** | Why the heck do pilots dump fuel before landing? |
+| identity | **Who the heck** | Who the heck opened the door? (answer: the guard) |
+| decisive moment | **When the heck** | When the heck did the Titanic actually become unsinkable? |
+| object or event | **What the heck** | What the heck is the white stuff in a bird's poop? |
+| process or sequence | **How the heck** | How the heck does a puddle of gasoline move a two-ton car? |
 
 - **Show the subject during the question** (the puddle, the door, the plane).
 - **Start the action in sentence two:** "Doug decided to find out by never buying it again."
-- *Clean version:* "How the heck / How on earth." Captions display "f\*ck" either way. Note that
-  YouTube may limit ads on strong profanity in the opening seconds. Choose per platform.
+- **Always "the heck", never "the f\*ck"** (Brian's rule, Nov 2026): spoken and captioned as "heck", so the opening
+  seconds stay ad-safe on TikTok, Reels and YouTube. Coon's punchy rhythm stays; only the word changes.
+  Older scripts (gas-vs-water etc.) still say "f\*ck"; don't copy that.
 
 ### 1.2 Build the middle around a choice and its result
 1. Give someone a **goal** and a **reason to expect their plan to work** (Doug: "gas is a liquid,
@@ -169,7 +171,7 @@ something to follow the next line, the script is broken.
 ### 1.9 Long-form skeleton (from Ray, @realraywilliam)
 | Time (of ~8:30) | Beat | Line pattern |
 |---|---|---|
-| 0:00–0:10 | **Coon question + cold open** | "What the f\*ck happened to…?" + the outcome in one line ("…is about to lose everything over a pack of nuts") |
+| 0:00–0:10 | **Coon question + cold open** | "What the heck happened to…?" + the outcome in one line ("…is about to lose everything over a pack of nuts") |
 | 0:10–0:30 | **Character card** | "Now, his name is Doug, and Doug is 34, living in…" + one defining trait |
 | 0:30–1:00 | **Desire or flaw** | what they want and why that's a problem |
 | 1:00 | **Inciting decision** | "So one day in [year]…" |
@@ -254,7 +256,7 @@ every picture change · `#` comment lines. Write numbers as words in the spoken 
 
 ## 2. The cast: silent 3D characters
 
-**Look:** glossy white sphere head with a drawn face, a black stick neck, white cartoon gloves, real
+**Look:** glossy white sphere head with a drawn face sitting right on the shoulders (no neck), white cartoon gloves, real
 clothes. Built in code (`engine/characters.js`). No model files, renders exactly the same every time.
 
 | Character | Outfit (`CHAR.make({outfit})`) | Typical role |
@@ -263,6 +265,9 @@ clothes. Built in code (`engine/characters.js`). No model files, renders exactly
 | **Gary** | `oxford`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
 | **Victor** | `suit`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
 | **Polo guy** | `polo`: olive polo, khakis, gray sneakers, watch | the worker: tow driver, cashier, guard, mechanic |
+| **The President** | `president`: black bomber over a white tee, backwards black cap, blue-white-blue sash; `phone: true` puts a phone in his hand | a head of state (first used for El Salvador's president, `robot-dogs-haiti`). Real people: silent, and only shown doing what they actually did |
+| **Gang member** | `gang`: dark hoodie, black jeans, beanie, bandana over nose and mouth (eyes visible); vary with `{shirt, mask}` | street crew / gang (`robot-dogs-haiti`). Never armed, never violent on screen |
+| **Robot dog** | `CHAR.robodog({rifle})`: gray four-legged robot, camera head with glowing lenses, optional mounted rifle (never fires) | robots, machines that "go first" (`robot-dogs-haiti`). Walks with a trot gait: `pose({walk, walkAmt, look})` |
 
 Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
 topic needs one (chef, pilot, doctor…).
@@ -471,14 +476,14 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 
 | Topic | Question | Shape | Who gets it wrong / who notices |
 |---|---|---|---|
-| Why a car needs gas ✅ example | How the f\*ck does a puddle of gas move a two-ton car? | mechanism | Doug fills up with water / Gary watches the tailpipe |
-| Why planes dump fuel | Why the f\*ck would a pilot pour fuel into the sky? | mechanism | Passenger panics at the "leak" / pilot knows the landing-weight limit |
-| How credit card points are paid for | Who the f\*ck pays for your free flight? | repeated scheme | Doug brags about free trips / a cashier notices the price |
-| Why casinos have no clocks | What the f\*ck happened to the time? | mechanism | Doug "just one more hand" / the waitress who's seen it a thousand times |
-| How a microwave heats food | How the f\*ck does a box with no fire cook a burrito? | mechanism | Doug thinks it heats from the outside / track one water molecule |
-| Why airlines overbook | Why the f\*ck would they sell 110 seats for 100? | repeated scheme | the gate agent sees the same no-shows every week |
-| The Titanic's "unsinkable" claim | When the f\*ck did "unsinkable" become a problem? | known disaster | rewind to the confident early voyage |
-| How vaccines train the immune system | How the f\*ck does a fake intruder protect you? | mechanism | track one "wanted poster" through the body |
+| Why a car needs gas ✅ example | How the heck does a puddle of gas move a two-ton car? | mechanism | Doug fills up with water / Gary watches the tailpipe |
+| Why planes dump fuel | Why the heck would a pilot pour fuel into the sky? | mechanism | Passenger panics at the "leak" / pilot knows the landing-weight limit |
+| How credit card points are paid for | Who the heck pays for your free flight? | repeated scheme | Doug brags about free trips / a cashier notices the price |
+| Why casinos have no clocks | What the heck happened to the time? | mechanism | Doug "just one more hand" / the waitress who's seen it a thousand times |
+| How a microwave heats food | How the heck does a box with no fire cook a burrito? | mechanism | Doug thinks it heats from the outside / track one water molecule |
+| Why airlines overbook | Why the heck would they sell 110 seats for 100? | repeated scheme | the gate agent sees the same no-shows every week |
+| The Titanic's "unsinkable" claim | When the heck did "unsinkable" become a problem? | known disaster | rewind to the confident early voyage |
+| How vaccines train the immune system | How the heck does a fake intruder protect you? | mechanism | track one "wanted poster" through the body |
 
 ---
 
@@ -494,6 +499,9 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - **Caption timing for a voice made outside the API** (ElevenLabs web/OpenArt): `node tools/align.js <slug>` matches
   pauses to punctuation with dynamic programming (good to roughly 0.1–0.2 s). For exact word timing, either set
   `ELEVENLABS_API_KEY` (tts.js) or allow installing Whisper (`faster-whisper`, model from huggingface.co).
+- **Feet on the floor:** place cast with `K.placeAt(name, ix, iy, ry, scale)`, a pixel on the painted floor, never a guessed z.
+  Measure each plate's `hz` from its vanishing lines and `camH` from a door (≈ 2.75 units) so the cast's size matches the room.
+  Shoes have rounded soles (no box).
 - **Green-screen props:** key with `colorkey=0x00FF00:0.22:0.06` (ffmpeg) or the same distance-to-pure-green
   in a shader. **No despill:** it turns teal/green props blue. Tested clean on `gas-vs-water/P01_car_side.png`.
 - **Green subjects (cash, bills, leaves):** the key eats them. Run `python3 tools/cutout.py videos/<slug>/art/<file>.png` → `<file>.cut.png` (only green touching the border is removed) and point `SC.props` at the `.cut.png`; the kit skips keying for `*.cut.png`.
