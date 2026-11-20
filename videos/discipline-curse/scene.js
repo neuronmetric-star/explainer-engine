@@ -122,8 +122,8 @@
         case 'tuesday': { K.placeAt('doug', 660, 960, -.4); douggy(K, false); face(D, 'blink', t);
           D.pose({ t, tilt: .45 * K.ease(Lc / .6), lean: -.1, nod: .25 }); break; }
         case 'link1': { K.placeAt('gary', 300, SW, PI / 2); jogInPlace(K, t); face(G, 'smile', t);
-          douggy(K, true); dougAtSpot(-.75); const look = K.ease((Lc - .2) / .3);
-          D.pose({ t, look: -.45 * look, armL: { fwd: -.35 } }); face(D, Lc > .6 ? 'worried' : 'flat', t); break; }
+          douggy(K, true); dougAtSpot(-.3); const look = K.ease((Lc - .2) / .3);
+          D.pose({ t, look: -.3 * look, armL: { fwd: -.35 } }); face(D, Lc > .6 ? 'worried' : 'flat', t); break; }
         case 'monday': { douggy(K, true); dougAtSpot(-.2); face(D, 'smile', t); D.pose({ t, nod: .1 * Math.sin(Lc * 6) * (Lc < 1 ? 1 : 0), armL: { fwd: -.35 }, armR: { raise: .0 } }); break; }
         case 'last': { douggy(K, true); dougAtSpot(-.2); face(D, 'smile', t); D.pose({ t, armL: { fwd: -.35 } });
           // a MONDAY page tears off (flies away), another drops in
@@ -145,8 +145,8 @@
         case 'ring': { garyBed(); face(G, 'happy', t); G.pose({ t, gesture: 'tada', gw: gin(.4) });
           K.prop('P06', { x: 760, y: 430, w: 330 * popIn(K, t, at('ring')), rot: Math.sin(t * 3) * .03 }); break; }
         case 'sees': { K.placeAt('gary', 330, SW, PI / 2); G.pose({ t, walk: t * 2.4, walkAmt: 1, lean: .15 }); face(G, 'happy', t);
-          douggy(K, true); dougAtSpot(-.75); const look = K.ease((Lc - .1) / .3), s = K.ease((Lc - .4) / .3);
-          face(D, s > .5 ? 'surprised' : 'flat', t); D.pose({ t, look: -.45 * look, lean: -.08 * s, armL: { fwd: -.35 } }); break; }
+          douggy(K, true); dougAtSpot(-.3); const look = K.ease((Lc - .1) / .3), s = K.ease((Lc - .4) / .3);
+          face(D, s > .5 ? 'surprised' : 'flat', t); D.pose({ t, look: -.3 * look, lean: -.08 * s, armL: { fwd: -.35 } }); break; }
         case 'missed': { // a dark morning: Gary at the edge of the bed, not wanting to get up, then he does
           garyBed(.15); const up = K.ease((Lc - 2.6) / .6); face(G, up > .5 ? 'flat' : 'worried', t);
           G.pose({ t, tilt: .22 * (1 - up), nod: .2 * (1 - up), lean: .12 * (1 - up) });
