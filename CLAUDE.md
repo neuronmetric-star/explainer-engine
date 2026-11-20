@@ -78,7 +78,7 @@ before every picture change · lines starting `#` are comments. Numbers as words
 - **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo'|'president'|'gang', phone, mask, beanie, envMap})` →
   `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
   `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw})`;
-  gestures `point|wave|shrug|cross|think|facepalm|hips|tada`. Pure functions of time.
+  gestures `point|wave|shrug|cross|think|facepalm|hips|tada|hold` (hold = both hands in front of the chest, for holding a book; pin a prop to the hands with `K.screenOf(ch.arm[±1].wr)`). Pure functions of time.
   **Robot dog** `CHAR.robodog({envMap, rifle})` → `pose({t, walk, walkAmt, look, tilt, nod, pitch, crouch})` (trot gait, IK legs;
   scene cast entry `{outfit:'robodog'}`). Scene cast entries can be objects (`{outfit:'president', phone:true}`); plate `light` can be a preset name or a custom object.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a

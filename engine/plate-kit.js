@@ -161,7 +161,7 @@
     if (SC.follow) { const ft = t - SC._followAt, on = ft >= 0; fol.style.opacity = on ? 1 : 0;
       if (on) { fol.style.transform = `translateX(-50%) scale(${.6 + .4 * K.pop(K.clamp01(ft / .35))})`; const clicked = ft > 1.5;
         fol.className = clicked ? 'on' : ''; fol.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cur_.style.opacity = ft > .45 ? 1 : 0;
-        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0)) + 'px'; }
+        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0) + ((SC.follow.top || 560) - 560)) + 'px'; }
       else cur_.style.opacity = 0; }
     if (doRender) { renderer.clear(); renderer.render(bgScene, bgCam); renderer.render(propBack, propCam); renderer.clearDepth(); renderer.render(scene, camera); renderer.render(propFront, propCam); }
   }
@@ -176,7 +176,7 @@
     window.VIDEO_LENGTH = DATA.audioLength + (SC.tail || 1.6);
     SC._shakes = (SC.shakes || []).map(([a, d, m]) => [K.T(a), d, m]);
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
-    if (SC.follow) SC._followAt = K.T(SC.follow.from);
+    if (SC.follow) { SC._followAt = K.T(SC.follow.from); if (SC.follow.top) fol.style.top = SC.follow.top + 'px'; }   // follow.top: move the button up/down (px)
     SC.build && SC.build(K);
     window.step = (n, dt) => { for (let k = 0; k < n; k++) frame(dt, k === n - 1); };
     window.ready = true;

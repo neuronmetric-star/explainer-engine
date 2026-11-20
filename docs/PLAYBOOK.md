@@ -362,7 +362,7 @@ topic needs one (chef, pilot, doctor…).
 | `armR / armL: {raise}` | raise an arm, e.g. a fist pump |
 | `gesture` + `gw` | blend in a gesture (0→1 over ~0.3 s) |
 
-**Gestures:** `point` · `wave` (animated) · `shrug` · `cross` (arms crossed: skeptic) · `think`
+**Gestures:** `point` · `wave` (animated) · `shrug` · `cross` (arms crossed: skeptic) · `hold` (both hands at the chest: holding a book) · `think`
 (hand to chin) · `facepalm` · `hips` (hands on hips: impatient, proud) · `tada` (arms out: "behold").
 
 **Recipes:**
