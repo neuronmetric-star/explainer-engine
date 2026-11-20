@@ -1,0 +1,26 @@
+# SHORT FORM (~1:05). Action taker vs perfectionist. Mode: EXPLAINER (how you actually get good: reps -> mistakes -> lessons).
+# Payoff: the action taker wins because every rough try teaches something a perfect plan can't, so the one who
+#   makes the most ends up making the best.
+# Question word: Why. Based on the "quantity vs quality" pottery-class story from Art & Fear (Bayles & Orland),
+#   retold with Doug and Gary (reconstruction; attributed in the script, labeled in sources.md).
+# Track one object: Doug's first pot (the "potato"). Clue: Doug's shelf, pots rounder left -> right, shown before it's explained.
+# Narrator bets on Gary -> wrong. Mirror: "Just make it perfect." -> "Still making it perfect."
+[#q] Why the heck does the guy who rushes beat the guy who plans {*perfectly?|perfectly?}
+[#problem] See, Gary had a problem. He's a {*perfectionist:|perfectionist:} he won't start until it's perfect.
+[#book] This story's from a famous art book.
+[#class] Pottery class. Making cups out of wet clay.
+[#split] The teacher splits the room. [#dougside] Doug's side: {*fifty|fifty} pounds of pots gets an A. [#dogfood] About a big bag of dog food.
+[#garyside] Gary's side: one pot. Just make it perfect.
+[#plan] Gary reads about pots. [#sketch] Sketches pots.
+[#slap] Doug slaps clay on the wheel. [#potato] Pot one looks like a {!potato.|potato.}
+[#bet] Honestly? I'd have bet on Gary. Gary has a plan. Doug has a potato.
+[#shelf] Week three: Doug's shelf is full. [#right] The pots on the right look rounder.
+[#best] The best pots in the room? [#reveal] All from Doug's {*side.|side.}
+[#garypot] Gary's perfect pot? A lump of clay.
+[#aside] How? I'mma tell you.
+[#sag] Every pot went wrong a new way. [#thick] Too thick? Sagged. [#fast] Too fast? Wobbled.
+[#learn] Each mistake taught Doug's hands something. [#fifty] Pot fifty knew what pots one to forty-nine got wrong.
+[#study] Studies of famous inventors agree: most hits, most {!flops.|flops.}
+[#callback] So, the potato? It's why pot fifty was good.
+[#end] And Gary? Still making it {!perfect.|perfect.}
+[#cta] Still here? Then that means you enjoyed the video. So {*follow|follow} and {*like|like} for more.

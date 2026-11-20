@@ -1,26 +1,26 @@
-# SHORT FORM (~1:05). Action taker vs perfectionist. Mode: EXPLAINER (how you actually get good: reps -> mistakes -> lessons).
-# Payoff: the action taker wins because every rough try teaches something a perfect plan can't, so the one who
-#   makes the most ends up making the best.
-# Question word: Why. Based on the "quantity vs quality" pottery-class story from Art & Fear (Bayles & Orland),
-#   retold with Doug and Gary (reconstruction; attributed in the script, labeled in sources.md).
-# Track one object: Doug's first pot (the "potato"). Clue: Doug's shelf, pots rounder left -> right, shown before it's explained.
-# Narrator bets on Gary -> wrong. Mirror: "Just make it perfect." -> "Still making it perfect."
-[#q] Why the heck does the guy who rushes beat the guy who plans {*perfectly?|perfectly?}
-[#problem] See, Gary had a problem. He's a {*perfectionist:|perfectionist:} he won't start until it's perfect.
-[#book] This story's from a famous art book.
-[#class] Pottery class. Making cups out of wet clay.
-[#split] The teacher splits the room. [#dougside] Doug's side: {*fifty|fifty} pounds of pots gets an A. [#dogfood] About a big bag of dog food.
-[#garyside] Gary's side: one pot. Just make it perfect.
-[#plan] Gary reads about pots. [#sketch] Sketches pots.
-[#slap] Doug slaps clay on the wheel. [#potato] Pot one looks like a {!potato.|potato.}
-[#bet] Honestly? I'd have bet on Gary. Gary has a plan. Doug has a potato.
-[#shelf] Week three: Doug's shelf is full. [#right] The pots on the right look rounder.
-[#best] The best pots in the room? [#reveal] All from Doug's {*side.|side.}
-[#garypot] Gary's perfect pot? A lump of clay.
+# SHORT FORM. Action taker vs perfectionist. Mode: EXPLAINER (how you actually get good: try -> see what went wrong -> fix).
+# APPROVED by Brian (his rewrite, Nov 2026). v1 draft kept in script-v1.txt.
+# Payoff: the action taker wins because every real attempt shows you what went wrong; a sketch never can.
+# Question word: Why. Based on the pottery-class story from Art & Fear (Bayles & Orland), retold with Doug and Gary
+#   (attributed in the script, labeled in sources.md). Track one object: Doug's first pot (the "potato").
+# Clue: Doug's early pots all lean left (shown at "shelf" before it's explained); payoff at "folded"/"thicker".
+# Narrator bets on Gary. Ends on a comment question, then the follow CTA (§1.12 C).
+[#q] Why the heck does the guy who just starts beat the guy who plans every {*detail?|detail?}
+[#meet] Meet Doug and Gary. [#doug] Doug's an {*action|action} {*taker.|taker.} [#gary] Gary's a {*perfectionist.|perfectionist.}
+[#class] Put 'em in the same pottery class and watch what happens.
+[#book] This comes from a story in the book Art and Fear. [#split] The teacher splits the class in two.
+[#dougside] Doug's side gets an A for making {*fifty|fifty} pounds of pots. [#dogfood] About the weight of a big bag of dog food.
+[#garyside] Gary's side? One pot. [#perfect] Just make it perfect.
+[#sketch] Gary sketches a pot. [#erase] Erases the handle. Draws a better one.
+[#grab] Doug grabs some clay, gives it a spin, [#potato] and makes something that looks like a {!potato.|potato.}
+[#bet] Honestly? I'd have bet on Gary. [#plan] Gary has a plan. [#hasPotato] Doug has a potato.
+[#shelf] By week three, Doug's shelf is full. [#early] You can spot his early pots from across the room. [#lean] They all lean {!left.|left.}
+[#end] By the end of class, the best pots in the room? [#reveal] All from Doug's {*side.|side.}
+[#garypot] Gary's perfect pot? [#lump] Still a lump of clay sitting next to a really nice sketch.
 [#aside] How? I'mma tell you.
-[#sag] Every pot went wrong a new way. [#thick] Too thick? Sagged. [#fast] Too fast? Wobbled.
-[#learn] Each mistake taught Doug's hands something. [#fifty] Pot fifty knew what pots one to forty-nine got wrong.
-[#study] Studies of famous inventors agree: most hits, most {!flops.|flops.}
-[#callback] So, the potato? It's why pot fifty was good.
-[#end] And Gary? Still making it {!perfect.|perfect.}
+[#see] Every time Doug made a pot, he got to see what went wrong. [#fold] One side folded {!over.|over.}
+[#thicker] On the next pot, he left that side a little thicker. [#stood] It stood {*up.|up.}
+[#drawing] Gary could spend all day drawing that same pot. [#paper] The paper was never gonna fold over and show him where the clay was too thin.
+[#callback] That first potato? [#learned] Doug learned something making it that Gary's still trying to figure out with a pencil.
+[#question] So when you've got an idea, which one are you? [#garyfix] Gary with one more thing to fix, [#dougclay] or Doug with his hands already in the clay?
 [#cta] Still here? Then that means you enjoyed the video. So {*follow|follow} and {*like|like} for more.
