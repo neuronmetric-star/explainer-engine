@@ -91,3 +91,14 @@ With the test clip and a few retakes, budget **≈ 1,950**. The cloud props and 
 | moral | F18 | cut on "Sometimes", punch-in on "appreciate" | Doug looks at his feet, smiles |
 | end | F19 | cut on "What's", slow push | wave and wave back |
 | cta | F19 last frame (still) | slow push; **+ FOLLOW** pops, cursor taps → **✓ FOLLOWING** | — |
+
+## Production log (2026-11-20)
+- Voice: Brian's OpenArt/ElevenLabs read (83.8 s) → pauses trimmed to ~0.3 s + atempo 1.1 → `voice.mp3` 68.3 s → `align.js`.
+- Clips: Wan 3.0 i2v, 480p, standard, audio off, from 9:16 crops of Brian's frames (`art916/`, not committed).
+  Credits: 60 test + 1,360 (19 clips incl. one F17 redo) = **1,420**.
+- Substitutes (no art yet): F06 = F03 frame animated "looks up"; F13 = F04 frame animated "looks up";
+  green light = Victor-side green frame (stretched over F15 until the overhead split arrives); F18 → F11 clip.
+- F01: Wan kept flipping the light green (twice), so the opening uses the painting + a 14% engine push.
+- F17 v1 had a stray realistic person walk through; regenerated with "no other people".
+- Assembly: `python3 videos/want-what-others-have/assemble.py` (preview: `--preview 1.0,7.1`; cover frame: `--frame 16.9`).
+- Still wanted from Brian: F15 split overhead, F18 Doug looks down, P05 Walt walking, P07 Victor flying the helicopter.
