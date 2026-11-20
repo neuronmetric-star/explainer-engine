@@ -43,7 +43,7 @@ STRICT: no people, no characters, no animals unless asked, no faces, no hands. N
 Reply only with the image.
 ```
 
-## Step 2: style test (make these 3 first and send them to me)
+## Step 2: style test (ONE TIME ONLY, already done: `videos/_style-test/art/`. Skip it for new videos; go straight to the video's `art-prompts.md`)
 
 Make these before anything else, so we can lock the look before you produce a whole set:
 
