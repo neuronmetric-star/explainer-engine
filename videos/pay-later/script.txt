@@ -1,24 +1,26 @@
-# SHORT FORM (~1:05). Buy now, pay later (BNPL) vs saving up. Mode: EXPLAINER (how splitting a price changes what you buy).
-# Payoff: splitting a price into four makes your brain hear the small number, so you buy more and stack payments
-#   until they all land at once; about 1 in 4 people who use it have paid late.
-# Question word: Why. Doug (pay later) vs Gary (saves in a jar). Track one object: the $400 price tag -> "$100".
-# Clue: the payment reminders piling up on Doug's phone, all due "the same Friday" (planted at [#clue], paid off at [#friday]).
-# Narrator bets on Doug -> wrong. Mirror: "Four easy payments." -> "Four easy payments. Times four."
+# SHORT FORM. Buy now, pay later vs saving up. Mode: EXPLAINER (how splitting a price changes what you buy).
+# Brian's rewrite (Nov 2026). v1 draft kept in script-v1.txt.
+# Payoff: "a hundred today" makes four hundred feel like a hundred, so you buy more and stack payments until
+#   they land at once; about 1 in 4 pay-later users paid late in the past year.
+# Question word: Why. Doug (pay later) vs Gary (jar). Track one object: the $400 console price -> "a hundred today".
+# Clue: "the other three hundred barely crosses his mind" -> paid off on Friday. Narrator bets on Doug -> wrong.
+# Mirror: "four easy payments" (hook) -> "Four easy payments. Times four." Ends on a comment question, then the follow CTA over the heli outro.
 # Doug and Gary are fictional; the research is real (sources.md). Part 2 of card-vs-cash.
-[#q] Why the heck does "four easy payments" make you buy {*more?|more?}
-[#problem] See, Doug had a problem. He wanted a {*$400|four-hundred-dollar} game console. [#hundred] He had a hundred.
-[#button] Then he saw the button: buy now, pay later. [#define] It splits the price into four payments, one every two weeks.
-[#scary] Four hundred? Scary. [#easy] Four payments of a hundred? {*Easy.|Easy.}
-[#gary] Gary, next door, wants one too. [#jar] Gary drops a hundred bucks in a jar every payday.
-[#bet] Honestly? I'd have bet on Doug. Doug's playing tonight. [#garywait] Gary's playing in two months.
-[#again] So Doug does it again. [#headphones] Headphones: four payments. [#jacket] A jacket: four payments. [#pizza] Pizza: four payments.
-[#clue] But they're all due the same {!Friday.|Friday.}
-[#aside] How does four hundred shrink? I'mma tell you.
-[#brain] Your brain grabs the number it sees. [#hundredonly] Show it "a hundred," and the whole thing feels like a hundred.
-[#research] Researchers tested it: showing the payment instead of the price makes stuff feel {*cheaper.|cheaper.}
-[#store] At one big U.S. store, pay-later shoppers bought more often and spent more each time.
-[#friday] So, Friday. Console, headphones, jacket, pizza. [#allonce] All at once.
-[#late] Doug pays {!late.|late.} [#fed] He's not alone: in a government survey, about {!one|one} {!in|in} {!four|four} users had paid late.
-[#garyend] Gary? Emptied the jar. Paid once. Done.
+[#q] Why the heck do "four easy payments" make you spend {*more?|more?}
+[#doug] See, Doug wanted a {*$400|four-hundred-dollar} game console. [#hundred] He had a hundred.
+[#button] Then he saw the button. [#bnpl] "Buy now, pay later." [#today] A hundred today. [#every] A hundred every two weeks after that until it's paid off.
+[#scary] Four hundred? Scary. [#easy] A hundred today? [#username] Doug's already picking out his username.
+[#gary] Gary next door wants one too. [#jar] Every payday, he drops a hundred bucks in a jar.
+[#bet] Honestly? I'd have bet on Doug. [#playing] Doug's playing tonight. [#gotjar] Gary's got a jar.
+[#again] So Doug does it again. [#headphones] Headphones? Four payments. [#jacket] A jacket? Four payments. [#pizza] Pizza? Four payments.
+[#aside] How'd four hundred start feeling like a hundred? I'mma tell you.
+[#think] Doug sees "a hundred today" and thinks, "Do I have a hundred?" Yep. [#barely] The other three hundred barely crosses his {!mind.|mind.}
+[#research] Researchers found that splitting a price into payments can make it feel easier to {*afford.|afford.}
+[#store] At one big U.S. store, shoppers who started paying this way bought more often and spent more per order, on average.
+[#friday] Then {!Friday|Friday} hits. [#console] A hundred for the console. [#plus] Plus a payment on the headphones, the jacket, [#ate] and a pizza Doug already ate.
+[#cover] He can't cover all four. [#late] One payment's {!late.|late.}
+[#fed] In a Federal Reserve survey, about {!one|one} {!in|in} {!four|four} pay-later users said they'd paid late at least once in the past year.
+[#garyend] Gary? Fourth payday. [#empties] Empties the jar. Buys the console. Done.
 [#end] Four easy payments. [#times] Times {!four.|four.}
+[#question] Be honest. [#checkout] At checkout, are you clicking the button like Doug [#orjar] or filling the jar like Gary?
 [#cta] Still here? Then that means you enjoyed the video. So {*follow|follow} and {*like|like} for more.

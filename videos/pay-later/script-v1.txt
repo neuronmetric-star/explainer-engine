@@ -1,0 +1,24 @@
+# SHORT FORM (~1:05). Buy now, pay later (BNPL) vs saving up. Mode: EXPLAINER (how splitting a price changes what you buy).
+# Payoff: splitting a price into four makes your brain hear the small number, so you buy more and stack payments
+#   until they all land at once; about 1 in 4 people who use it have paid late.
+# Question word: Why. Doug (pay later) vs Gary (saves in a jar). Track one object: the $400 price tag -> "$100".
+# Clue: the payment reminders piling up on Doug's phone, all due "the same Friday" (planted at [#clue], paid off at [#friday]).
+# Narrator bets on Doug -> wrong. Mirror: "Four easy payments." -> "Four easy payments. Times four."
+# Doug and Gary are fictional; the research is real (sources.md). Part 2 of card-vs-cash.
+[#q] Why the heck does "four easy payments" make you buy {*more?|more?}
+[#problem] See, Doug had a problem. He wanted a {*$400|four-hundred-dollar} game console. [#hundred] He had a hundred.
+[#button] Then he saw the button: buy now, pay later. [#define] It splits the price into four payments, one every two weeks.
+[#scary] Four hundred? Scary. [#easy] Four payments of a hundred? {*Easy.|Easy.}
+[#gary] Gary, next door, wants one too. [#jar] Gary drops a hundred bucks in a jar every payday.
+[#bet] Honestly? I'd have bet on Doug. Doug's playing tonight. [#garywait] Gary's playing in two months.
+[#again] So Doug does it again. [#headphones] Headphones: four payments. [#jacket] A jacket: four payments. [#pizza] Pizza: four payments.
+[#clue] But they're all due the same {!Friday.|Friday.}
+[#aside] How does four hundred shrink? I'mma tell you.
+[#brain] Your brain grabs the number it sees. [#hundredonly] Show it "a hundred," and the whole thing feels like a hundred.
+[#research] Researchers tested it: showing the payment instead of the price makes stuff feel {*cheaper.|cheaper.}
+[#store] At one big U.S. store, pay-later shoppers bought more often and spent more each time.
+[#friday] So, Friday. Console, headphones, jacket, pizza. [#allonce] All at once.
+[#late] Doug pays {!late.|late.} [#fed] He's not alone: in a government survey, about {!one|one} {!in|in} {!four|four} users had paid late.
+[#garyend] Gary? Emptied the jar. Paid once. Done.
+[#end] Four easy payments. [#times] Times {!four.|four.}
+[#cta] Still here? Then that means you enjoyed the video. So {*follow|follow} and {*like|like} for more.
