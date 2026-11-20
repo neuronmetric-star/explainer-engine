@@ -1,25 +1,26 @@
-# SHORT FORM (~1:05). Card vs cash. Mode: EXPLAINER (how paying works in your head: pain of paying + the card's reward kick).
-# Payoff: you spend more with a card because handing over cash hurts a little (a built-in brake), a tap doesn't,
-#   and seeing your card even lights up the brain's reward center (a gas pedal).
-# Question word: Why. Story = the real MIT sealed-bid auction (Prelec & Simester 2001) acted out by Doug (card) and Gary (cash);
-#   the auction is real, Doug/Gary/the scene are a reconstruction (sources.md).
-# Track one object: the money (Gary's bills vs Doug's card). Clue: Gary's wince when he counts his cash (plant), paid off at [#callback].
-# Narrator bets ("Doug just wanted it more") -> changes mind with the study. Mirror: "Same money. Right?" -> "Same money. Different brain."
-[#q] Why the heck do you spend more when you pay with a {*card?|card?}
-[#problem] See, Doug had a problem. He swears he's careful.
-[#ground] You can pay two ways: hand over cash, or tap a card. [#same] Same money. Right?
-[#auction] Doug and his neighbor Gary hit an auction for basketball tickets. [#secret] Everyone writes a secret bid on paper. Highest wins.
-[#rules] The catch: Gary pays {*cash.|cash.} [#rules2] Doug pays {*card.|card.}
-[#gary] Gary counts his bills. [#wince] Winces. Writes thirty bucks.
-[#doug] Doug looks at his shiny card. [#sixty] Writes sixty.
-[#bet] Honestly? I figured Doug just wanted it more.
-[#real] This auction really happened, [#mit] at MIT, a top science school.
-[#cashbids] Cash people bid about {*$29|twenty-nine dollars.} [#cardbids] Card people? About {!$61.|sixty-one.} [#double] Double. Same tickets.
-[#aside] Wait, double? I'mma tell you why.
-[#pain] Handing over cash hurts a little. You watch it leave. [#term] Scientists call that the {*pain|pain} {*of|of} {*paying.|paying.}
-[#plastic] A card? Tap. Nothing leaves your hand. [#bill] The bill shows up next month, when the fun's over.
-[#scan] In a 2021 brain scan, just seeing their card lit up people's {!reward|reward} {!center,|center,} the "ooh, treat" part. [#fries] Like smelling fries.
-[#callback] So, Gary's wince? That's the brake.
-[#nobrake] Doug's card has no brake. [#gas] It has a gas pedal.
-[#end] Same money. {*Different|Different} {*brain.|brain.}
+# SHORT FORM. Card vs cash. Mode: EXPLAINER (how paying feels: pain of paying = brake; card = reward gas pedal).
+# APPROVED by Brian (his rewrite, Nov 2026). v1 draft kept in script-v1.txt.
+# Payoff: you'd bid double with a card because cash makes you watch the money leave (pain of paying) and buying on credit
+#   revs up the brain's "reward coming" part.
+# Question word: Why. Story = the real MIT Celtics-ticket auction (Prelec & Simester 2001) acted out by Doug (card) and Gary (cash);
+#   Doug/Gary/the scene are a reconstruction (sources.md). Track one object: Gary's three ten-dollar bills.
+# Clue: Gary's wince counting three tens (planted at [#wince], paid off at [#how]). Narrator bet -> wrong (the study).
+# Mirror: "Gary's looking at three tens. Doug's picturing tip-off." Ends on a comment question, then the follow CTA over the heli outro.
+[#q] Why the heck would you bid {!sixty|sixty} bucks for tickets you'd only pay {*thirty|thirty} for in cash?
+[#careful] Doug swears he's careful with money. [#auction] Then he and his neighbor Gary go to an auction for Celtics tickets.
+[#write] Everybody writes down the most they'd pay. [#highest] Highest bid wins.
+[#catch] The catch? If Gary wins, he has to pay {*cash.|cash.} [#card] Doug gets to use his credit {*card.|card.}
+[#count] Gary counts out three tens. [#wince] Winces. [#thirty] Writes thirty bucks.
+[#look] Doug looks at his card. [#sixty] Writes {!sixty.|sixty.}
+[#bet] Honestly? I figured Doug just wanted to see the Celtics more.
+[#mit] But MIT researchers ran this auction for real. [#cashavg] The average cash bid? About {*twenty-nine|twenty-nine} bucks.
+[#cardavg] Credit card? {!Sixty-one.|Sixty-one.} [#double] More than double. [#same] Same tickets.
+[#how] How? Think about Gary's wince. [#bills] He can see those three bills leaving his wallet.
+[#pain] Researchers call that feeling the {*"pain|"pain} {*of|of} {*paying."|paying."}
+[#tap] Doug can tap his card, put it right back, [#later] and deal with the bill later.
+[#gas] And there's a gas pedal, too. [#scan] In a brain-scan study, when people chose to buy something on credit,
+[#reward] the part of the brain that looks forward to a reward got more {!active.|active.}
+[#fries] Think about smelling fries. [#bite] You haven't had a bite, and you already want one.
+[#tens] Gary's looking at three tens. [#tipoff] Doug's picturing tip-off.
+[#question] So picture yourself at that auction. [#would] Would you still bid sixty if you had to count it out in cash?
 [#cta] Still here? Then that means you enjoyed the video. So {*follow|follow} and {*like|like} for more.
