@@ -101,4 +101,5 @@ With the test clip and a few retakes, budget **≈ 1,950**. The cloud props and 
 - F01: Wan kept flipping the light green (twice), so the opening uses the painting + a 14% engine push.
 - F17 v1 had a stray realistic person walk through; regenerated with "no other people".
 - Assembly: `python3 videos/want-what-others-have/assemble.py` (also runs `sfx.py`: synthesized SFX ducked under the voice, loudnorm -14 LUFS). Preview: `--preview 1.0,7.1`; cover frame: `--frame 16.9`.
+- Ending: F20 = helicopter flies away into the sunset (Brian), 100 credits. Total so far 1,520.
 - Still wanted from Brian: F15 split overhead, F18 Doug looks down, P05 Walt walking, P07 Victor flying the helicopter.

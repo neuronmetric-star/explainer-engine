@@ -260,7 +260,7 @@ def render_frame(t, clips):
         btn = BTN[1 if p >= tap else 0]
         s = back(p / 0.3) if p < tap else 1.0 + 0.08 * math.sin(min(1, (p - tap) / 0.25) * math.pi)
         b2 = btn.resize((max(1, int(btn.width * s)), max(1, int(btn.height * s))), Image.LANCZOS) if abs(s - 1) > 1e-3 else btn
-        bx, by = W / 2, 560
+        bx, by = W / 2, 1020
         frame.alpha_composite(b2, (int(bx - b2.width / 2), int(by - b2.height / 2)))
         if 0.6 < p < tap + 0.7:
             q = ease((p - 0.6) / 1.2); x = 900 + (bx + 60 - 900) * q; y = 1500 + (by + 10 - 1500) * q
