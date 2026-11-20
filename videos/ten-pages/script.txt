@@ -1,11 +1,12 @@
 # SHORT FORM (~1:05). Brian's rewrite (Nov 2026): direct-to-viewer advice. v1 (Doug vs Gary story) is script-v1-doug-gary.txt.
+# + 3 lines added by Claude for length (Brian approved): "Not a hundred…", "Across the room…", "Just ten pages…".
 # Payoff: ten pages a night adds up to about twelve books a year; you get there with a five-minute promise.
 # Cast acts it out silently: Doug at night, phone on the charger, a book, the bookmark.
 # The math is real (sources.md); the five-minute advice is general reading tips, not a study claim.
-[#q] How the {*heck|heck} can you finish {*12|twelve} books in a year if you barely have time to read? [#tonight] {*Ten|Ten} pages tonight.
+[#q] How the {*heck|heck} can you finish {*12|twelve} books in a year if you barely have time to read? [#tonight] {*Ten|Ten} pages tonight. [#notfifty] Not a hundred. Not fifty. {*Ten.|Ten.}
 [#week] Ten pages a night is {*70|seventy} a week. [#month] In thirty days, that's a {*300-page|three-hundred-page} book. [#year] Keep going for a year? [#total] {*3,650|Three thousand six hundred fifty} pages. [#books] About {*12|twelve} books.
 [#how] So how do you actually get yourself to read those ten pages? [#promise] Make yourself a smaller promise. [#five] "I'll read for {*five|five} minutes."
-[#phone] Tonight, when you plug in your phone before bed, [#leave] leave it there. [#pick] Pick up a book about something you've always wanted to understand. [#give] Give it five minutes.
+[#phone] Tonight, when you plug in your phone before bed, [#leave] leave it there. [#across] Across the room. Out of reach. [#pick] Pick up a book about something you've always wanted to understand. [#give] Give it five minutes.
 [#halfway] If you're halfway through a good story when time's up, [#next] you'll probably want to see what happens next. [#turn] That's how five minutes can turn into {*ten|ten} pages.
-[#three] And if you only read three pages tonight? [#bookmark] Put your *bookmark in. [#four] Tomorrow you get to start on page {*four.|four.} [#pressure] No pressure to push for twenty or thirty.
+[#three] And if you only read three pages tonight? [#bookmark] Put your *bookmark in. [#four] Tomorrow you get to start on page {*four.|four.} [#pressure] No pressure to push for twenty or thirty. [#trick] Just ten pages. Every night. That's the whole {*trick.|trick.}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
