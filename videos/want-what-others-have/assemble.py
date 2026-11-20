@@ -67,7 +67,8 @@ SHOTS = [
     ('F16', CUES['wheel'], CUES['walk'], None),
     ('F17', CUES['walk'], CUES['moral'], None),
     ('F18', CUES['moral'], CUES['end'], word_t('appreciate')),
-    ('F19', CUES['end'], END, None),
+    ('F19', CUES['end'], CUES['cta'], None),
+    ('F20', CUES['cta'], END, None),   # ending: the helicopter flies away (Brian)
 ]
 SHOTS = [s if len(s) == 4 else s + (None,) for s in SHOTS]
 # missing clips fall back to a stand-in until Brian's art arrives

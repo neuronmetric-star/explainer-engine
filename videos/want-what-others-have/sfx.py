@@ -156,6 +156,8 @@ for cue in ('problem', 'heli', 'picture', 'now'):
     put(C[cue] - 0.12, whoosh(0.35), -27)
 # calm ending: birds at the bus stop
 put(C['wheel'], birds(A.END - C['wheel']), -34, 0.4)
+# ending: the helicopter flies away to the right, fading into the distance
+l, r = heli(A.END - C['cta'] + 0.5, peak=0.2); put_st(C['cta'] - 0.3, l * np.linspace(1, 0.15, len(l)), r * np.linspace(1, 0.15, len(r)), -18)
 # CTA: button pop, tap click, success chime
 put(C['cta'] + 0.4, pop(), -14); put(C['cta'] + 0.4 + 2.1, click(), -12); put(C['cta'] + 0.4 + 2.15, chime2(), -18)
 
