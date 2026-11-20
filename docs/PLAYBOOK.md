@@ -466,6 +466,10 @@ Rules:
 - **One test clip first**, then the rest. Pick the cheapest model that looks right (e.g. PixVerse V6
   ≈ 50, Wan 3.0 ≈ 100, Veo 3.1 ≈ 120 credits per clip). Check `openart_model_cost` before each run.
 - **Budget:** about 3–8 inserts per long video (≈ 300–1,000 credits). Tell Brian the credits spent after each batch.
+- **Clip plates (Nov 2026, motivation-vs-discipline):** ask for a *locked-off static camera* clip (e.g. Wan 3.0 480p with audio, 100 credits / 5 s),
+  extract frames (`ffmpeg -i clip.mp4 -vf scale=540:960 -q:v 3 art/clips/<name>/f%03d.jpg`) and add `clip: {dir, n, fps}` to the plate
+  preset: the painting still keeps the geometry, the clip frames replace the texture, so the cast can stand on the moving footage
+  (rain, sunrise). Shot option `clipFrom` = seconds into the clip. The clip's own audio goes into `sfx-cues.js` as `{at, file, from, dur, gain}`.
 - Mark them in the shot plan as `OPENART:` with the source image and motion prompt. Templates in the prompt pack: WIDE · MEDIUM · LOW ANGLE · INTERIOR ·
 TABLETOP · DIAGRAM/CUTAWAY · PROP · PROP WITH EXACT TEXT · FOREGROUND LAYER · CHANGE THE MOOD
 (night, storm, abandoned).

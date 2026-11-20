@@ -76,7 +76,7 @@
   let SC, PLATES = {}, cur = null;
   function usePlate(name, zoom, fx, fy, sx, sy) {
     const P = PLATES[name]; if (!P) throw new Error('unknown plate ' + name); setLight(P.light);
-    const tex = P.tex, FH = H * zoom, FW = FH * tex.image.width / tex.image.height;
+    const tex = P.tex, FH = H * zoom, FW = FH * P.iw / P.ih;   // geometry from the still (clip frames may differ in size)
     const ox = Math.max(0, Math.min(FW - W, fx * FW - W / 2)) + sx, oy = Math.max(0, Math.min(FH - H, fy * FH - H / 2)) + sy;
     camera.fov = P.fov0; camera.aspect = FW / FH; camera.setViewOffset(FW, FH, ox, oy, W, H); camera.updateProjectionMatrix();
     const tH = Math.tan(THREE.MathUtils.degToRad(P.fov0 / 2));
@@ -84,7 +84,7 @@
     camera.rotation.x = -Math.atan((.5 - P.hz) * 2 * tH); camera.rotation.y = -Math.atan((P.vx - .5) * 2 * tH * FW / FH);
     camera.updateMatrixWorld();
     bgMat.map = tex; tex.repeat.set(W / FW, H / FH); tex.offset.set(ox / FW, 1 - (oy + H) / FH); bgMat.needsUpdate = true;
-    cur = { name, FW, FH, ox, oy, iw: tex.image.width, ih: tex.image.height };
+    cur = { name, FW, FH, ox, oy, iw: P.iw, ih: P.ih };
   }
   // painting pixel (image coords) -> screen pixel, and image px -> screen px scale
   K.img = (ix, iy) => ({ x: ix / cur.iw * cur.FW - cur.ox, y: iy / cur.ih * cur.FH - cur.oy });
@@ -141,7 +141,7 @@
   const cap = $('cap'), flash = $('flash'), fol = $('follow'), cur_ = $('cursor');
 
   // ---------------- frame ----------------
-  let time = 0, SHOTS = [];
+  let time = 0, SHOTS = [], FDY = 0;
   const amp = (arr, t) => { let a = 0; for (const [s, d, m] of arr) if (t > s && t < s + d) a = Math.max(a, (1 - (t - s) / d) * m); return a; };
   function frame(dt, doRender) {
     time += dt; const t = time;
@@ -150,6 +150,7 @@
     const sh = SHOTS[i], end = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH, u = K.ease((t - sh.t) / Math.max(.01, end - sh.t));
     const z = K.lerp(sh.zoom[0], sh.zoom[1], u), fx = K.lerp(sh.focus[0][0], sh.focus[1][0], u), fy = K.lerp(sh.focus[0][1], sh.focus[1][1], u);
     const sk = amp(SC._shakes, t) * 18;
+    if (PLATES[sh.plate].clip) clipFrame(PLATES[sh.plate], sh, t);
     usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk, Math.cos(t * 47) * sk);
     K.shot = { i, id: sh.id, u, t0: sh.t, t1: end, local: t - sh.t };
     SC.update && SC.update(t, K);
@@ -161,24 +162,40 @@
     if (SC.follow) { const ft = t - SC._followAt, on = ft >= 0; fol.style.opacity = on ? 1 : 0;
       if (on) { fol.style.transform = `translateX(-50%) scale(${.6 + .4 * K.pop(K.clamp01(ft / .35))})`; const clicked = ft > 1.5;
         fol.className = clicked ? 'on' : ''; fol.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cur_.style.opacity = ft > .45 ? 1 : 0;
-        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0)) + 'px'; }
+        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 + FDY - 150 * v + (clicked && ft < 1.7 ? 6 : 0)) + 'px'; }
       else cur_.style.opacity = 0; }
     if (doRender) { renderer.clear(); renderer.render(bgScene, bgCam); renderer.render(propBack, propCam); renderer.clearDepth(); renderer.render(scene, camera); renderer.render(propFront, propCam); }
   }
 
+  // ---------------- video-clip plates (OpenArt image-to-video inserts) ----------------
+  // plate preset: { img: 'still.png', clip: { dir: 'clips/rain', n: 150, fps: 30, loop: 'pingpong'|'hold' } }
+  // The still sets the geometry; frames <dir>/f001.jpg.. replace the texture. Shot option clipFrom: seconds into the clip.
+  const CLIPIMG = new Map();
+  function shotAt(t) { let i = 0; for (let k = 0; k < SHOTS.length; k++) if (t >= SHOTS[k].t) i = k; return SHOTS[i]; }
+  function clipIdx(P, sh, t) { const C = P.clip; let f = Math.floor((t - sh.t + sh.clipFrom) * C.fps);
+    if (C.loop === 'hold') f = Math.min(f, C.n - 1); else { const m = 2 * (C.n - 1); f = f % m; if (f >= C.n) f = m - f; }
+    return Math.max(0, f); }
+  const clipSrc = (P, f) => ART + P.clip.dir + '/f' + String(f + 1).padStart(3, '0') + '.jpg';
+  function clipNeed(t) { const sh = shotAt(t), P = PLATES[sh.plate]; if (!P || !P.clip) return null;
+    const src = clipSrc(P, clipIdx(P, sh, t)); if (CLIPIMG.has(src)) return null;
+    const img = new Image(); img.src = src;
+    return img.decode().then(() => { CLIPIMG.set(src, img); if (CLIPIMG.size > 24) CLIPIMG.delete(CLIPIMG.keys().next().value); }); }
+  function clipFrame(P, sh, t) { const img = CLIPIMG.get(clipSrc(P, clipIdx(P, sh, t))); if (img && P.tex.image !== img) { P.tex.image = img; P.tex.needsUpdate = true; } }
+
   K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
-    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); }));
+    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); PLATES[n].iw = PLATES[n].tex.image.width; PLATES[n].ih = PLATES[n].tex.image.height; }));
     await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height, cut: /\.cut\.png$/.test(f) }; }));
     { const tex = puffTex(); PROPS.puff = { tex, iw: 128, ih: 128 }; }
     makeCast(SC.cast || {});
-    SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]] })).sort((a, b) => a.t - b.t);
+    SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]], clipFrom: s.clipFrom || 0 })).sort((a, b) => a.t - b.t);
     window.VIDEO_LENGTH = DATA.audioLength + (SC.tail || 1.6);
     SC._shakes = (SC.shakes || []).map(([a, d, m]) => [K.T(a), d, m]);
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
-    if (SC.follow) SC._followAt = K.T(SC.follow.from);
+    if (SC.follow) { SC._followAt = K.T(SC.follow.from); if (SC.follow.y) { fol.style.top = SC.follow.y + 'px'; FDY = SC.follow.y - 560; } }   // y: button top (default 560)
     SC.build && SC.build(K);
-    window.step = (n, dt) => { for (let k = 0; k < n; k++) frame(dt, k === n - 1); };
+    // async: a video-clip plate needs its frame decoded before the frame is drawn (render.js awaits evaluate)
+    window.step = async (n, dt) => { for (let k = 0; k < n; k++) { const need = clipNeed(time + dt); if (need) await need; frame(dt, k === n - 1); } };
     window.ready = true;
   };
 })();

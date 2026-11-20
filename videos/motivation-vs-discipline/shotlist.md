@@ -5,7 +5,7 @@ the disciplined one; for running shots same outfit, he's a reluctant runner, tha
 **Victor** = `suit` (cameo: the guy yelling at a sunrise).
 **Art:** 8 backgrounds + 4 props = **12 images**, all in ChatGPT from `art-prompts.md` (3 batches). Save as named into
 `videos/motivation-vs-discipline/art/`.
-**OpenArt video insert:** 1 (marked `OPENART:` below): rain on the empty street. Made only after the art arrives, one test clip, credits reported.
+**OpenArt video (done, Wan 3.0 480p with audio, 3 × 100 = 300 credits):** static-camera clips used as *moving plates* with the cast composited on top: `05` rain street (rain, soaked, wrong), `04` sunrise hill (sunrise, motiv), `06` rainy bedroom (check, bed, end, zero, choice). Frames in `art/clips/<name>/`, audio in `clips/*.wav` (mixed by `sfx-cues.js`).
 **The clue:** **Gary's orange running shoes by his teal front door** (02), shown at "His shoes sleep by the door" long before
 the narrator explains why they matter. They come back at "sees his shoes", "Gary put them there last night" and the final question.
 **Recurring objects (locked in START):** Gary's shoes · Gary's teal front door · Doug's yellow bedroom with the round window.

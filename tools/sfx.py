@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Synthesize and mix sound effects (no downloads, no credits).
 Usage: sfx.py events.json out.wav length_seconds
-events.json: [{"t": 1.23, "sfx": "whoosh", "gain": 0.5}, ...]
-Library: whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk."""
+events.json: [{"t": 1.23, "sfx": "whoosh", "gain": 0.5}, {"t": 5, "file": "clip.wav", "from": 0, "dur": 2.5, "gain": .6}, ...]
+Library: ring, whoosh, step, servo, beep, tap, pop, click, plane, hum, clunk."""
 import json, sys, wave
 import numpy as np
 
@@ -94,7 +94,23 @@ def clunk(d=0.35):  # light switch / lights going out
     return (np.sin(2 * np.pi * 70 * t) * 0.9 + click(d)[:n] * 2) * np.exp(-t * 14) * 0.6
 
 
-LIB = dict(whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk)
+def ring(d=0.7):  # alarm clock bell: fast hammer on two bright tones
+    n = int(SR * d); t = np.arange(n) / SR
+    tone = np.sin(2 * np.pi * 2100 * t) + .6 * np.sin(2 * np.pi * 3150 * t) + .3 * np.sin(2 * np.pi * 4400 * t)
+    ham = (np.sin(2 * np.pi * 22 * t) > 0).astype(float) * np.exp(-((t * 22) % 1) * 6)
+    return tone * ham * env(n, SR * .005, SR * .08) * 0.35
+
+
+def load_wav(path):  # mono float, resampled naively to SR if needed
+    with wave.open(path, 'rb') as w:
+        sr, ch, sw = w.getframerate(), w.getnchannels(), w.getsampwidth()
+        x = np.frombuffer(w.readframes(w.getnframes()), dtype=np.int16).astype(float) / 32768
+    if ch > 1: x = x.reshape(-1, ch).mean(axis=1)
+    if sr != SR: x = np.interp(np.arange(int(len(x) * SR / sr)) * sr / SR, np.arange(len(x)), x)
+    return x
+
+
+LIB = dict(ring=ring, whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk)
 
 if __name__ == '__main__':
     ev_file, out, length = sys.argv[1], sys.argv[2], float(sys.argv[3])
@@ -102,10 +118,16 @@ if __name__ == '__main__':
     mixbuf = np.zeros(int(SR * (length + 3)))
     cache = {}
     for e in events:
-        k = e['sfx']
-        if k not in LIB: raise SystemExit('unknown sfx ' + k)
-        if k not in cache: cache[k] = LIB[k]()
-        s = cache[k] * e.get('gain', 1.0)
+        k = e.get('sfx')
+        if e.get('file'):   # a slice of a recorded track: {file, from, dur, fade}
+            if e['file'] not in cache: cache[e['file']] = load_wav(e['file'])
+            x = cache[e['file']]; a0 = int(e.get('from', 0) * SR); n = int(e.get('dur', len(x) / SR) * SR)
+            s = x[a0:a0 + n].copy(); f = max(1, int(e.get('fade', .03) * SR)); f = min(f, len(s) // 2 or 1)
+            s[:f] *= np.linspace(0, 1, f); s[-f:] *= np.linspace(1, 0, f); s *= e.get('gain', 1.0)
+        else:
+            if k not in LIB: raise SystemExit('unknown sfx ' + str(k))
+            if k not in cache: cache[k] = LIB[k]()
+            s = cache[k] * e.get('gain', 1.0)
         i = int(max(0, e['t']) * SR)
         j = min(len(mixbuf), i + len(s))
         mixbuf[i:j] += s[:j - i]

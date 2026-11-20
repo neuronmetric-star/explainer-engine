@@ -1,6 +1,7 @@
 // Build videos/<slug>/sfx.wav from videos/<slug>/sfx-cues.js (sound effects synced to script cues and words).
 // Usage: node tools/sfx.js <slug>      (render.js mixes sfx.wav under the voice automatically when it exists)
 // sfx-cues.js:  module.exports = ({ T, word }) => [ { at: 'robots+0.2', sfx: 'step', gain: .5 }, { at: word('dark'), sfx: 'clunk' }, ... ]
+//   recorded audio: { at: 'rain', file: 'clips/rain.wav', from: 0, dur: 1.2, gain: .6 } (path relative to the video folder)
 //   T('cue+0.3') -> seconds; word('dark', 'end') -> start time of that spoken word (searching from a cue). Library: tools/sfx.py.
 const { fs, path, vdir, ROOT, ScriptParser, spawnSync } = require('./lib');
 const slug = process.argv[2]; if (!slug) { console.error('usage: node tools/sfx.js <slug>'); process.exit(1); }
@@ -14,7 +15,7 @@ const T = x => { if (typeof x === 'number') return x; const m = /^([\w-]+)([+-][
 const norm = w => w.toLowerCase().replace(/[^a-z0-9]/g, '');
 const word = (w, from) => { const t0 = from ? T(from) : 0, x = W.find(o => o.start >= t0 - .01 && norm(o.w) === norm(w)); if (!x) throw new Error('word not found: ' + w); return x.start; };
 delete require.cache[cueFile];
-const events = require(cueFile)({ T, word, cues: C }).map(e => ({ t: T(e.at), sfx: e.sfx, gain: e.gain === undefined ? 1 : e.gain }));
+const events = require(cueFile)({ T, word, cues: C }).map(e => Object.assign({}, e, { at: undefined, t: T(e.at), gain: e.gain === undefined ? 1 : e.gain, file: e.file && path.resolve(dir, e.file) }));
 const tail = 2.6, len = D.audioLength + tail; // matches the scene tail
 const tmp = path.join(dir, '.sfx-events.json'); fs.writeFileSync(tmp, JSON.stringify(events));
 const r = spawnSync('python3', [path.join(ROOT, 'tools', 'sfx.py'), tmp, path.join(dir, 'sfx.wav'), String(len)], { stdio: 'inherit' });
