@@ -108,7 +108,7 @@
           beside(d, 'P02', 260 * pop('plus+0.2'), -260, 40); beside(d, 'P03', 260 * pop('plus+0.9'), 260, 40); break; }
         case 'ate': break;   // the painted empty pizza box
         case 'cover': { const d = dougRoom(.1, 470, 1130); face(d, 'worried', t); d.pose({ t, gesture: 'facepalm', gw: e((Lc - .3) / .3) }); break; }
-        case 'late': { const d = dougRoom(.1, 470, 1130); face(d, 'surprised', t); d.pose({ t, lean: -.1 }); K.prop('P05', { x: 540, y: 760, w: 560 * pop('late') }); break; }
+        case 'late': { const d = dougRoom(.1, 470, 1130); face(d, 'surprised', t); d.pose({ t, lean: -.1 }); beside(d, 'P05', 330 * pop('late'), 290, 120, 1, .08); break; }
         case 'garyend': { const g = garyKitchen(); face(g, 'smile', t, 1); g.pose({ t, gesture: 'point', gw: e(Lc / .3), look: -.4 }); break; }
         case 'empties': break;
         case 'end': { const g = K.placeAt('gary', 420, 900, .4, .75), c = K.placeAt('cashier', 620, 880, -.5, .75);
