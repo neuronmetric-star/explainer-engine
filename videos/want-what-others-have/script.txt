@@ -1,25 +1,19 @@
-# SHORT FORM (~1:05). Why people want what others have. Based on Brian's draft.
-# Format: question (Brian's clean "Why the heck") → Ray skeleton compressed (PLAYBOOK §1.11) → Xevi narrator.
-# Payoff: your brain has no ruler for "enough". It only compares you to what's next to you,
-#   and once you get the thing it turns normal, so you look one step up (hedonic treadmill).
-# Plant/clue: Victor's phone wallpaper (a photo of the Lamborghini he's sitting in). Callback: the new wallpaper is a helicopter.
-# Running gag: "Man, I wish I had that." Narrator bet: "I thought it ended with Doug." Flip: the man in the wheelchair.
-# Mirror: the last question ("used to wish for") flips the wallpaper clue.
+# SHORT FORM. Why people want what others have. Brian's script, word for word (do not edit the words).
+# Payoff: we compare ourselves to whoever's next to us, and once we get the thing we picture the next one.
+# Running gag: "But what he doesn't know…" chain. Narrator bet: "I thought it ended with Doug." Flip: the man in the wheelchair.
 # Victor, the drivers, Doug and the man in the wheelchair are fictional (Brian's story). The psychology is real (sources.md).
-[#q] Why the {heck|heck} do people want what *others have?
-[#problem] See, Victor had a problem. He finally bought his dream car, a {*Lamborghini.|Lamborghini.}
-[#wallpaper] His phone wallpaper? Still that car.
-[#light] Now he's stuck at a {!red light.|red light.}
-[#heli] A helicopter flies over. "Man, I wish I had *that." [#nolights] No red lights up there.
-[#gwagon] The guy in the G-Wagon, a giant Mercedes: "Man, I wish I had that Lamborghini."
-[#little] The guy in the little car: "Man, I wish I had that G-Wagon."
-[#doug] Doug, walking by: "I'd take any car."
+[#q] Why the heck do people want what *others have?
+[#problem] See, Victor had a problem. He worked really hard to buy his dream car, a {*Lamborghini.|Lamborghini.}
+[#light] And now he’s sitting in it, stuck at a {!red light.|red light.}
+[#heli] Then a helicopter flies right over him. [#looks] Victor looks up and thinks, “Man, I wish I had *that.”
+[#nolights] No red lights up there.
+[#gwagon] But what he doesn’t know is that the guy next to him in a G-Wagon is thinking, “Man, I wish I had that Lamborghini.”
+[#regular] But what he doesn’t know is that the guy in the regular car is thinking, “Man, I wish I had that G-Wagon.”
+[#doug] But what he doesn’t know is that Doug, walking by, is thinking, “Man, I’d take *any of those cars.”
 [#bet] Honestly? I thought it ended with Doug.
-[#why] Why? Your brain has no ruler for *enough. [#compare] It just compares you to what's next to you.
-[#minivan] Next to a helicopter, a Lamborghini looks like a {!minivan.|minivan.}
-[#normal] Once you get it, it turns {*normal.|normal.} [#treadmill] Scientists call it the hedonic treadmill: you run and run, and go nowhere.
-[#callback] Victor's new wallpaper? A {*helicopter.|helicopter.}
-[#wheel] But what Doug doesn't know: a man in a wheelchair is watching him walk by. [#walk] "I wish I could {*walk|walk} again."
-[#moral] We're so busy looking at what others have, we forget what we've got.
-[#end] What's one thing you have today you used to {*wish|wish} for?
+[#picture] See, Victor used to picture himself behind the wheel of that Lamborghini. [#now] Now he’s finally in it, picturing himself in the {*helicopter.|helicopter.}
+[#green] The light turns green. The cars pull away.
+[#wheel] But what Doug doesn’t know is that a man in a wheelchair is watching him walk by, [#walk] thinking, “I wish I could {*walk|walk} again.”
+[#moral] Sometimes we get so caught up looking at what other people have that we forget to {*appreciate|appreciate} what we already have.
+[#end] What’s one thing you have today that you used to {*wish|wish} for?
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
