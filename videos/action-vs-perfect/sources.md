@@ -1,0 +1,12 @@
+# Sources: Why the action taker beats the perfectionist
+
+**Doug, Gary, the potato pot, "week three", the dog-food bag and the sag/wobble details are our retelling.** The pottery-class
+story itself is a published anecdote (see row 1): the script attributes it ("This story's from a famous art book"), not as a documented experiment.
+
+| Claim in the script | Source |
+|---|---|
+| The pottery class: the teacher splits the class; one side graded on quantity (fifty pounds of pots = an A), the other on quality (one perfect pot); the best pots all came from the quantity side, while the quality side "sat theorizing about perfection" and had "a pile of dead clay" | David Bayles & Ted Orland, *Art & Fear* (1993), as quoted by Austin Kleon: https://austinkleon.com/tag/ceramics/ and Kottke: https://kottke.org/tag/Art%20%26%20Fear . **Caveat:** Orland said the original was Jerry Uelsmann's photography class at the University of Florida, recast as ceramics for the book; Orland called it true "allowing for some literary license" (Kottke, "The credibility is in the details": https://kottke.org/20/12/the-credibility-is-in-the-details) |
+| "fifty pounds… About a big bag of dog food": large dry dog-food bags are commonly sold around 40–50 lb (**our yardstick**) | common retail size |
+| "Every pot went wrong a new way… Each mistake taught Doug's hands something" | The book's explanation (the quantity group "learned from their mistakes"), same Art & Fear passage as above |
+| "Studies of famous inventors agree: most hits, most flops": Dean Simonton's equal-odds rule: across eminent creators, the number of hits rises with total output, and the hit *rate* doesn't depend on how much they make, so the most prolific produce both the most successes and the most failures | Jung et al. (2015), *Frontiers in Psychology*, "Quantity yields quality when it comes to creativity" (summarizes Simonton 1997): https://pmc.ncbi.nlm.nih.gov/articles/PMC4479710 · Forthmann et al. (2020), "Strict Equal Odds" (Creativity Research Journal; caveat: the rule is debated): https://scholarworks.sjsu.edu/faculty_rsca/2145 |
+| (background, not in narration) Perfectionism and putting things off: perfectionistic concerns correlate with procrastination (r = .23, 43 studies, ~10,000 people), while perfectionistic strivings correlate negatively | Sirois, Molnar & Hirsch (2017), *European Journal of Personality*: https://eprints.whiterose.ac.uk/112533/ |
