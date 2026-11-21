@@ -139,6 +139,24 @@
   // ---------------- DOM overlays ----------------
   const $ = id => document.getElementById(id);
   const cap = $('cap'), flash = $('flash'), fol = $('follow'), cur_ = $('cursor');
+  // K.text(str, {x, y, size, color:'white'|'gold'|'red'|css, stroke, rot (rad), skewX/skewY (deg), scale, a, w (box width),
+  //   align, font:'sans'|'marker', shadow}) draws one label this frame (screen px, y down, centered on x,y).
+  // Numbers and words live here, never in the paintings. Drawn above the 3D layer and props, under the captions.
+  const TXT = [], TCOL = { white: '#fff', gold: '#ffd23a', red: '#ff4a3d', ink: '#1c2a4a' }; let txtI = 0;
+  K.text = function (str, o = {}) {
+    let el = TXT[txtI]; if (!el) { el = document.createElement('div'); el.style.cssText = 'position:absolute;left:0;top:0;white-space:pre;text-align:center;line-height:1.02;font-weight:900;paint-order:stroke fill;transform-origin:50% 50%';
+      cap.parentNode.insertBefore(el, cap); TXT.push(el); } txtI++;
+    const size = o.size || 80, marker = o.font === 'marker';
+    el.textContent = str; el.style.display = 'block'; el.style.fontSize = size + 'px';
+    el.style.fontFamily = marker ? '"Comic Sans MS","Marker Felt","Segoe Print",IN,sans-serif' : 'IN,sans-serif';
+    el.style.color = TCOL[o.color] || o.color || '#fff';
+    const sw = o.stroke === undefined ? (marker ? 0 : Math.round(size * .17)) : o.stroke;
+    el.style.webkitTextStroke = sw ? `${sw}px #000` : '0';
+    el.style.textShadow = o.shadow === false || marker ? 'none' : `0 ${Math.round(size * .08)}px 0 rgba(0,0,0,.55)`;
+    el.style.width = (o.w || 1080) + 'px'; el.style.marginLeft = -(o.w || 1080) / 2 + 'px'; el.style.marginTop = -size * .55 + 'px';
+    el.style.opacity = o.a === undefined ? 1 : o.a;
+    el.style.transform = `translate(${o.x === undefined ? 540 : o.x}px,${o.y || 0}px) rotate(${o.rot || 0}rad) skew(${o.skewX || 0}deg,${o.skewY || 0}deg) scale(${o.scale === undefined ? 1 : o.scale})`;
+    return el; };
 
   // ---------------- frame ----------------
   let time = 0, SHOTS = [];
@@ -146,6 +164,7 @@
   function frame(dt, doRender) {
     time += dt; const t = time;
     Object.values(K.cast).forEach(c => c.root.visible = false); POOL.forEach(m => { m.visible = false; if (m.parent) m.parent.remove(m); }); poolI = 0;
+    TXT.forEach(el => el.style.display = 'none'); txtI = 0;
     let i = 0; for (let k = 0; k < SHOTS.length; k++) if (t >= SHOTS[k].t) i = k;
     const sh = SHOTS[i], end = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH, u = K.ease((t - sh.t) / Math.max(.01, end - sh.t));
     const z = K.lerp(sh.zoom[0], sh.zoom[1], u), fx = K.lerp(sh.focus[0][0], sh.focus[1][0], u), fy = K.lerp(sh.focus[0][1], sh.focus[1][1], u);
