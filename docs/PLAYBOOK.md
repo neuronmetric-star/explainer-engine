@@ -272,12 +272,14 @@ up at it: he finally has the thing, and there's already a next thing. Viewers le
   ends indoors, end on a window with sky, or cut to an outdoor shot for the last line. Write that into the shot list.
 - **Words:** none needed; it's a picture joke and costs no length. (In a lesson chain the helicopter is already in the
   story, so it simply flies over again at the end.)
-- **Always the same helicopter:** `docs/assets/H01_helicopter.png`, painted once and copied into every video's `art/`.
+- **Always the same helicopter:** white with a navy-blue stripe, the one from the Lamborghini video's OpenArt clip
+  (`docs/assets/H00_helicopter_clip_openart.mp4`). The sprite `docs/assets/H01_helicopter.png` is painted once to match it
+  and copied into every video's `art/`.
   Register it as `H01: 'H01_helicopter.png'` in `SCENE.props` and call **`K.helicopter(t, '<last cue>')`**
   (`engine/plate-kit.js`), which draws the same flight path every time and returns its progress (0..1) for the look-up.
 - **Sound:** `{ at: '<last cue>', sfx: 'helicopter', gain: .6 }` in `sfx-cues.js` (rotor whup-whup, swells and fades).
-- **Prompt (only if the asset is ever lost):**
-  `H01_helicopter.png: A sleek private helicopter in flight, seen exactly from the side, facing RIGHT, nose tipped slightly down as if cruising forward: glossy bright red body with a thin white stripe, big tinted bubble windows (dark, no people visible), skids underneath, a slim tail boom with a small tail rotor. The main rotor on top drawn as a long, thin, slightly blurred horizontal streak. Flat 2D storybook style with soft painterly gradients, warm light from the left. Centered on a solid pure green #00FF00 background, no shadow, no text, no logos.`
+- **Prompt (only if the asset is ever lost; attach `docs/assets/H00_helicopter_reference.png` in ChatGPT):**
+  `H01_helicopter.png: A sleek private helicopter in flight, seen exactly from the side, facing RIGHT, nose tipped slightly down as if cruising forward: exactly the helicopter in the attached reference image: glossy WHITE body with a navy-blue swoosh stripe along the side, big dark tinted windows (no people visible), black landing skids, a slim tail boom ending in a round enclosed tail fan with a navy accent. The main rotor on top drawn as a long, thin, slightly blurred horizontal streak. Flat 2D storybook style with soft painterly gradients, warm light from the left. Centered on a solid pure green #00FF00 background, no shadow, no text, no logos.`
 
 ### 1.13 Script modes: write the script the topic deserves
 Every video uses one of three modes. **Pick the mode from the topic before writing a word**, tell Brian
