@@ -69,9 +69,7 @@
     ],
     shakes: [['grab', .25, .5], ['million', .25, .45], ['total', .25, .4]],
     flashes: [],
-    // THE HELICOPTER CLIP (PLAYBOOK §1.12a): the original OpenArt clip plays full screen under the follow CTA
-    clips: [{ at: 'cta', file: 'H00_helicopter_clip_openart.mp4', from: 'assets' }],
-    follow: { from: 'cta+1.4' },
+    follow: { from: 'cta+0.3' },
     tail: 1.6,
 
     update(t, K) {
