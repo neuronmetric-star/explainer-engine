@@ -1,0 +1,21 @@
+# SHORT (~1:08). What's in a McDonald's cheeseburger, 1955 vs today? Mode: Explainer (myth check), told as a story.
+# Source of the topic: a viral carousel (@valorgi, 15.6K likes, 8.7K shares; screenshot in reference-viral-post.png):
+#   1955 cheeseburger = 7 bowls (beef, bun, ketchup, mustard, onion, pickles, salt) vs 2026 = 42 bowls of sub-ingredients.
+# Search phrase (caption line 1 + on-screen title in the first 2 s): "mcdonalds cheeseburger ingredients"
+# Payoff: same parts, counted differently. The 2026 list splits each part into its recipe; many "scary" words are
+#   vitamins required in enriched flour since the 1940s, or the salt that makes cheese melt (processed cheese, 1916).
+#   Some things really are newer: high fructose corn syrup (in food since the 1970s), preservatives.
+# Doug and Gary are fictional. Facts: sources.md. We describe the photo; we don't show it or any logo.
+# Ending: the helicopter ending (PLAYBOOK §1.12a) on the last story line + the helicopter clip under the follow CTA.
+[#q] What the {*heck|heck} is in a McDonald's cheeseburger?
+[#card] See, Doug had a problem. He saw a viral photo: [#old] a cheeseburger from nineteen fifty-five with {*seven|seven} ingredients, [#new] and one from today with {!forty-two.|forty-two.}
+[#quit] Doug swore off burgers. Honestly? I'd panic too. Forty-two sounds like a chemistry test.
+[#gary] Then Gary looks closer. [#parts] Today's burger has the same parts: beef, bun, cheese, pickles, ketchup, mustard, onion.
+[#split] The new photo splits each part into its own recipe.
+[#bun] Take the bun. Niacin, iron, thiamine, riboflavin. [#vitamins] Those are {*vitamins|vitamins} added to white flour, standard since the nineteen forties.
+[#nolist] So a nineteen fifty-five bun likely had them too. Nobody put them in a bowl.
+[#cheese] Same with the cheese. Sodium citrate is a salt that helps it melt smooth. [#kraft] Melty processed cheese was patented in nineteen sixteen.
+[#newer] Some things really are newer. [#hfcs] High fructose corn syrup, a sweetener made from corn, showed up in food in the {!nineteen seventies.|nineteen seventies.} [#preserve] And preservatives keep pickles and buns fresh longer.
+[#trick] So the photo isn't lying. It's counting differently: [#bowls] seven bowls of food, versus forty-two bowls of what's inside them.
+[#end] Doug ate the burger. [#heli] Nobody put the niacin in a bowl.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
