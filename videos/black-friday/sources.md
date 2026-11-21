@@ -4,6 +4,7 @@
 
 | Claim in the script | Source |
 |---|---|
+| Black Friday is the day after Thanksgiving (the US holiday on the fourth Thursday of November); stores cut prices, shoppers line up early, and it's the unofficial start of the Christmas shopping season | Britannica, "Black Friday (retail)": https://www.britannica.com/topic/Black-Friday-retail · History.com (below) |
 | Red ink for losses, black ink for profits; "in the black" = making a profit | Britannica, "Why Is It Called Black Friday?": https://www.britannica.com/story/why-is-it-called-black-friday |
 | The oldest known written version of the "stores go from red to black" explanation is from 1981 (Philadelphia Inquirer) | Snopes, "Black Friday": https://www.snopes.com/fact-check/black-friday-2 · History.com, "What's the Real History of Black Friday?": https://www.history.com/articles/black-friday-thanksgiving-origins-history |
 | The name is about twenty years older: Philadelphia police used it from the late 1950s / early 1960s | Philadelphia Inquirer, "Did Philly cops coin 'Black Friday'?": https://www.inquirer.com/philly/news/breaking/20111125_Black_Friday_started_in_Philly.html · Britannica (above) · CBS Philadelphia: https://www.cbsnews.com/philadelphia/news/the-little-known-philadelphia-origins-of-black-friday |
