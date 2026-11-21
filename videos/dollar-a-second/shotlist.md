@@ -56,6 +56,7 @@ without numbers. The engine draws the counter, the whiteboard math and the bank 
 | close | 06 split: `DOUG $31.2M` vs `GARY $32.2M` (Gary's in gold) | slow push between them | Doug `worried`, looks at Gary · Gary `smirk` |
 | reveal | 05 phone close-up, counter still ticking | hard cut, slow push | none |
 | end | 02 → 03: Doug `smile` beside his speedboat; camera pans right to reveal the huge yacht, Gary on the dock | pan right, hard cut to 03 wide on "bigger" | Doug turns (`look`) `flat` · Gary `smirk`, small `wave` |
+| end ("Gary's is bigger") | **Helicopter ending** (§1.12a): H01 crosses the sky over the yacht, left → right, ≈ 3.4 s | hold | Gary looks up (`nod` −.38), `smirk` → `flat` · Doug glances up |
 | cta | hold 03 + **+ FOLLOW** → cursor tap → **✓ FOLLOWING** | static | Gary `point` at the button · Doug `shrug` |
 
 **Lighting:** daylight preset on 01, 02, 03, 04, 06 (sun from the left in every prompt); 05 is a close-up with no cast.

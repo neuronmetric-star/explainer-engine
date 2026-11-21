@@ -114,6 +114,14 @@
     m.position.set(o.x + dx * c - dy * s, -(o.y) + dx * s + dy * c, 0);
     (o.layer === 'back' ? propBack : propFront).add(m); m.visible = true; return m; };
   K.propInfo = k => PROPS[k];
+  // THE HELICOPTER ENDING (PLAYBOOK §1.12a, every video): the Lamborghini helicopter crosses the sky, left → right.
+  // K.helicopter(t, from) with from = a cue or seconds; o: {y (screen px, default 300), dur (s, default 3.4), w (default 360)}.
+  // Returns 0..1 progress (or -1 when off screen) so the scene can make the winner look up while it passes.
+  K.helicopter = function (t, from, o = {}) {
+    if (!PROPS.H01) throw new Error('add H01: "H01_helicopter.png" to SCENE.props (copy it from docs/assets/)');
+    const u = (t - K.T(from)) / (o.dur || 3.4); if (u < 0 || u > 1) return -1;
+    const w = o.w || 360, x = K.lerp(-w * .7, W + w * .7, u), y = (o.y || 300) + Math.sin(t * 2.2) * 8 - 40 * Math.sin(u * Math.PI);
+    K.prop('H01', { x, y, w, rot: -.07 + Math.sin(t * 1.7) * .015 }); return u; };
   // soft puff texture for exhaust (generated)
   function puffTex() { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
     const gr = g.createRadialGradient(64, 64, 6, 64, 64, 62); gr.addColorStop(0, 'rgba(235,232,240,.95)'); gr.addColorStop(.6, 'rgba(215,210,228,.6)'); gr.addColorStop(1, 'rgba(200,196,220,0)');

@@ -31,6 +31,8 @@ module.exports = ({ T, word }) => {
   // the reveal: the phone ticks up to a year of seconds
   { const e = word('seconds', 'reveal'); for (let t = e - 1; t > T('reveal'); t -= 1) ev.push({ at: t, sfx: 'click', gain: .35 }); }   // counter ticks land on these
   ev.push({ at: word('seconds', 'reveal'), sfx: 'beep', gain: .6 });
+  // the helicopter ending (PLAYBOOK §1.12a)
+  ev.push({ at: 'end+1.79', sfx: 'helicopter', gain: .6 });
   // follow CTA
   ev.push({ at: 'cta+0.3', sfx: 'pop', gain: .5 }, { at: 'cta+1.8', sfx: 'click', gain: .9 });
   return ev;

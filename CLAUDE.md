@@ -20,6 +20,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
   just over TikTok's 1-minute payout line, never under 1:02, never over 1:15; hook → middle → end (PLAYBOOK §1.11).
   Ray's skeleton + Xevi's narrator personality, compressed (`docs/creators/ray-xevi-study.md`). Long form is retired.
 - **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
+- **The helicopter ending, every video, no matter what** (PLAYBOOK §1.12a): on the last story line the Lamborghini
+  helicopter (`docs/assets/H01_helicopter.png`) flies across the sky via `K.helicopter(t, cue)`, the winner looks up,
+  then the follow CTA. The last background always has open sky in its top third.
 
 ## The pipeline (always in this order)
 0. **Length:** always short form (≈ 1:05–1:12, PLAYBOOK §1.11). Never ask; long form is retired (Brian, Nov 21 2026).

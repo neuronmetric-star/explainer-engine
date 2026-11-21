@@ -38,7 +38,7 @@
       '06': { img: '06_bank_lobby_day.png', hz: .47, vx: .5, fov0: 55, camH: 1.7, light: L.bank },
     },
     props: { P01: 'P01_phone_blank.png', P02: 'P02_cash_pile.cut.png', P03: 'P03_dollar_bill.cut.png', P04: 'P04_chips_bag.png',
-      P05: 'P05_wall_clock.png', P06: 'P06_calendar_page.png' },
+      P05: 'P05_wall_clock.png', P06: 'P06_calendar_page.png', H01: 'H01_helicopter.png' },
     cast: { doug: 'hoodie', gary: { outfit: 'oxford', phone: true }, victor: 'suit' },
     shots: [
       { at: 'q', plate: '01', zoom: [1.0, 1.12], focus: [[.5, .5], [.5, .53]] },
@@ -158,8 +158,10 @@
         case 'end': { K.placeAt('doug', 560, 1045, -.2); face(D, 'smile', t); D.pose({ t, gesture: 'hips', gw: 1 }); break; }
         case 'end+1.79': case 'cta': {
           K.placeAt('doug', 270, 1050, .3); K.placeAt('gary', 820, 1040, -.35);
-          face(D, 'flat', t); D.pose({ t, look: -.5, gesture: id === 'cta' ? 'shrug' : undefined, gw: K.ease(Lc / .4) });
-          face(G, 'smirk', t, 1); G.pose({ t, gesture: id === 'cta' ? 'point' : 'wave', gw: K.ease((Lc - .2) / .35) }); break; }
+          // THE HELICOPTER ENDING (PLAYBOOK §1.12a): it crosses the sky on "Gary's is bigger"; Gary, the winner, looks up
+          const hu = K.helicopter(t, 'end+1.79', { y: 280, w: 420 }), up = hu < 0 ? 0 : Math.sin(Math.PI * K.clamp01((hu - .05) / .85));
+          face(D, 'flat', t); D.pose({ t, look: -.5, nod: -.15 * up, gesture: id === 'cta' ? 'shrug' : undefined, gw: K.ease(Lc / .4) });
+          face(G, up > .4 ? 'flat' : 'smirk', t, 1); G.pose({ t, nod: -.5 * up, gesture: id === 'cta' ? 'point' : 'wave', gw: K.ease((Lc - .2) / .35) * (1 - up * .7) }); break; }
       }
     },
   };

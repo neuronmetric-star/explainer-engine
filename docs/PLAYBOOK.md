@@ -257,6 +257,28 @@ For long form, "a minute" → "these eight minutes."
 becomes **✓ FOLLOWING**. A cast member reacts: the smart one `point`s at the button or `cross` + `smirk`s;
 in D, the smart one taps it and the fool `facepalm`s. "follow" and "like" are gold in the captions.
 
+### 1.12a The helicopter ending (EVERY video, no matter the topic; Brian's rule, Nov 21 2026)
+Our series signature, from the Lamborghini video: Victor finally gets his dream car, a helicopter flies over, and he
+wants that instead. **Every video ends with that same helicopter flying across the sky.** Whoever "won" the story looks
+up at it: he finally has the thing, and there's already a next thing. Viewers learn to wait for it.
+
+- **When:** it enters on the **last story line** (the mirror line), crosses in ≈ 3.4 s, and is finishing its pass as the
+  **+ FOLLOW** button pops (a short overlap is fine: it stays up top). It never replaces the CTA; it hands off to it.
+- **Where:** left → right across the **top third** (screen y ≈ 220–380), above the heads, clear of the follow button
+  (y ≈ 560–660) and the caption band (y ≈ 1270).
+- **Acting:** the winner tips his head up (`nod` ≈ −.35) and his face drops to `flat` (or `worried`) while it passes,
+  then back to the CTA gesture. Anyone else in the shot can glance up too. Nobody waves at it.
+- **The last background always shows open sky in its top third**, so the helicopter has somewhere to fly. If the story
+  ends indoors, end on a window with sky, or cut to an outdoor shot for the last line. Write that into the shot list.
+- **Words:** none needed; it's a picture joke and costs no length. (In a lesson chain the helicopter is already in the
+  story, so it simply flies over again at the end.)
+- **Always the same helicopter:** `docs/assets/H01_helicopter.png`, painted once and copied into every video's `art/`.
+  Register it as `H01: 'H01_helicopter.png'` in `SCENE.props` and call **`K.helicopter(t, '<last cue>')`**
+  (`engine/plate-kit.js`), which draws the same flight path every time and returns its progress (0..1) for the look-up.
+- **Sound:** `{ at: '<last cue>', sfx: 'helicopter', gain: .6 }` in `sfx-cues.js` (rotor whup-whup, swells and fades).
+- **Prompt (only if the asset is ever lost):**
+  `H01_helicopter.png: A sleek private helicopter in flight, seen exactly from the side, facing RIGHT, nose tipped slightly down as if cruising forward: glossy black body with a thin gold stripe, big tinted bubble windows (dark, no people visible), skids underneath, a slim tail boom with a small tail rotor. The main rotor on top drawn as a long, thin, slightly blurred horizontal streak. Flat 2D storybook style with soft painterly gradients, warm light from the left. Centered on a solid pure green #00FF00 background, no shadow, no text, no logos.`
+
 ### 1.13 Script modes: write the script the topic deserves
 Every video uses one of three modes. **Pick the mode from the topic before writing a word**, tell Brian
 which mode and why in one line, then follow that mode's template every time. Same narrator, cast, captions,
@@ -496,7 +518,8 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 1. **Cast** for this video (from section 2).
 2. **Background prompts**, numbered and named, ready to paste.
 3. **Prop prompts** on green.
-4. **Shot plan table**, one row per cue:
+4. **Shot plan table**, one row per cue. The last story row always includes **the helicopter ending** (§1.12a), and
+   the last background's prompt asks for open sky in the top third.
 
 | Cue | Picture (plate + props) | Camera | Characters (face · pose · gesture) |
 |---|---|---|---|
