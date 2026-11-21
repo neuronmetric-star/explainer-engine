@@ -13,7 +13,8 @@ mask = Image.fromarray(((g > 0.30) * 255).astype(np.uint8)).copy()   # strong gr
 H, W = g.shape
 for x, y in [(x, 0) for x in range(W)] + [(x, H - 1) for x in range(W)] + [(0, y) for y in range(H)] + [(W - 1, y) for y in range(H)]:
     if mask.getpixel((x, y)) == 255: ImageDraw.floodfill(mask, (x, y), 128)   # green touching the border
-bg = np.asarray(Image.fromarray((np.asarray(mask) == 128).astype(np.uint8) * 255).filter(ImageFilter.MaxFilter(5))) > 0  # eat the fringe
+pure = g > 0.60   # near-#00FF00 pockets enclosed by the subject (e.g. inside a hand-truck frame); subject greens stay well below
+bg = np.asarray(Image.fromarray(((np.asarray(mask) == 128) | pure).astype(np.uint8) * 255).filter(ImageFilter.MaxFilter(5))) > 0  # eat the fringe
 alpha = Image.fromarray(((~bg) * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1.2))
 edge = (np.asarray(alpha) < 250) & (np.asarray(alpha) > 0)
 rgb = a.copy(); m = np.maximum(rgb[..., 0], rgb[..., 2])
