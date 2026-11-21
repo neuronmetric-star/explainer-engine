@@ -1,0 +1,20 @@
+# SHORT (~1:08). How does TikTok pay you? Mode: Explainer (how the payout works), told as a story.
+# Search phrase (caption line 1 + on-screen title in the first 2 s + first spoken sentence): "how does tiktok pay you"
+# Payoff: TikTok's main payout (Creator Rewards Program) only pays for videos longer than one minute, and only per 1,000
+#   "qualified views" (For You feed, real accounts, counted once) at roughly $0.40–$1.00 per 1,000 (creator-reported).
+#   Doug's million-view video was 58 seconds: $0. Doug, Gary and the numbers in Doug's story are fictional (sources.md).
+# Ending: the helicopter ending (PLAYBOOK §1.12a) on the last story line + the helicopter clip under the follow CTA.
+[#q] How the {*heck|heck} does TikTok pay you?
+[#card] See, Doug had a problem. His video got {*one million|one million} views.
+[#car] He's already picking out a car. Honestly? Me too.
+[#gary] Then Gary opens Doug's earnings. [#zero] {!Zero dollars.|Zero dollars.}
+[#program] TikTok's main payout is called the {*Creator Rewards Program.|Creator Rewards Program.}
+[#join] To get in, you need to be eighteen, have ten thousand followers, and get a hundred thousand views in the last thirty days. [#had] Doug had all that.
+[#clue] But Gary checks one number Doug ignored: [#timer] the length. {!Fifty-eight seconds.|Fifty-eight seconds.}
+[#minute] The program only pays for videos longer than {*one minute.|one minute.} [#short] Doug missed it by two seconds.
+[#qualified] And it doesn't pay for every view, only "qualified views": [#fyp] people who found it on the For You page, the feed TikTok picks for you, [#real] from real accounts, each person counted once.
+[#rate] Creators report about {*forty cents to a dollar|forty cents to a dollar} per thousand qualified views.
+[#million] So a million qualified views is roughly four hundred to a thousand dollars. [#phone] A nice phone. Not a car.
+[#wink] Which is why this video is over a minute. You're welcome.
+[#end] Doug's next video? One minute and two seconds. [#heli] Two seconds longer, and finally worth something.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
