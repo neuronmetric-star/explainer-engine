@@ -159,7 +159,7 @@
         case 'end+1.79': case 'cta': {
           K.placeAt('doug', 270, 1050, .3); K.placeAt('gary', 820, 1040, -.35);
           // THE HELICOPTER ENDING (PLAYBOOK §1.12a): it crosses the sky on "Gary's is bigger"; Gary, the winner, looks up
-          const hu = K.helicopter(t, 'end+1.79', { y: 280, w: 420 }), up = hu < 0 ? 0 : Math.sin(Math.PI * K.clamp01((hu - .05) / .85));
+          const hu = K.helicopter(t, 'end+1.79', { y: 270, w: 540 }), up = hu < 0 ? 0 : Math.sin(Math.PI * K.clamp01((hu - .05) / .85));
           face(D, 'flat', t); D.pose({ t, look: -.5, nod: -.15 * up, gesture: id === 'cta' ? 'shrug' : undefined, gw: K.ease(Lc / .4) });
           face(G, up > .4 ? 'flat' : 'smirk', t, 1); G.pose({ t, nod: -.5 * up, gesture: id === 'cta' ? 'point' : 'wave', gw: K.ease((Lc - .2) / .35) * (1 - up * .7) }); break; }
       }
