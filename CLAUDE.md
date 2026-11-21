@@ -11,7 +11,7 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
   Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
-- **Silent sphere-head cast = Brian's character sheets, always** (`docs/cast/ref/<name>.png`, Brian, Nov 21 2026): the cast is
+- **Silent sphere-head cast = Brian's character sheets, always** (`docs/cast/<name>.png`, Brian, Nov 21 2026): the cast is
   drawn as sprites cut from those sheets (`python3 tools/sheet-cast.py` → `docs/cast/sprites/`), in scenes with
   `SCENE.actors = ['doug','gary']` + `K.actor(name, {ix, iy, pose, face, flip, walk, lookUp, tint})` (`engine/plate-kit.js`).
   Doug (hoodie), Gary (oxford + glasses), Victor (suit), polo guy, the President (cap, bomber, sash), gang member
@@ -94,7 +94,7 @@ before every picture change · lines starting `#` are comments. Numbers as words
 
 ## Engine reference
 - **Cast (sheet sprites)** `K.actor(name, o)` in `engine/plate-kit.js`: feet on a painted floor pixel (`ix, iy`), height from the
-  matched camera (`h`, default 2.3 world units), `pose` (front/3q/side/back or a gesture), `face` (front view only), `flip`
+  matched camera (`h`, default 3.4 world units; characters read big, roughly a third of the frame height in a wide), `pose` (front/3q/side/back or a gesture), `face` (front view only), `flip`
   (sheet side views face left), `walk` (phase: bob + sway; slide along with K.lerp), `lookUp` 0..1, `tint` to match the plate's
   light, plus a soft contact shadow. Busts: `K.prop('<name>:bust_<face>', {...})`. Draw order = call order (farther first).
   Legacy 3D cast: `engine/characters.js` (`CHAR.make`, robot dog `CHAR.robodog`), only for old videos.

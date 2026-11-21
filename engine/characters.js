@@ -1,7 +1,7 @@
 // =====================================================================
 //  CHARACTERS — glossy sphere-head cast, built in code (no model files)
-//  LOOK v2 (Brian, Nov 21 2026): match the reference sheets in docs/cast/ref/ (ivory soft-vinyl heads, bold faces,
-//  puffy gloves, richer colors). Check changes with `node tools/cast-sheet.js` and compare to docs/cast/ref/.
+//  LOOK v2 (Brian, Nov 21 2026): match the reference sheets in docs/cast/ (ivory soft-vinyl heads, bold faces,
+//  puffy gloves, richer colors). LEGACY: new videos draw Brian's sheets (docs/cast/<name>.png) as sprites via K.actor.
 //  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang', glasses, phone, mask, beanie, envMap}) -> character
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat

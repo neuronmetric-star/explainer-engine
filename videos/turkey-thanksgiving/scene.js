@@ -50,23 +50,24 @@
       { at: 'letters', plate: '03', zoom: [1.1, 1.14], focus: [[.5, .55], [.5, .55]] },
       { at: 'lincoln', plate: '04', zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .52]] },
       { at: 'big', plate: '01', zoom: [1.12, 1.0], focus: [[.5, .56], [.5, .56]] },
-      { at: 'eggs', plate: '01', zoom: [1.3, 1.36], focus: [[.5, .5], [.5, .5]] },
+      { at: 'eggs', plate: '01', zoom: [1.1, 1.15], focus: [[.5, .55], [.5, .55]] },
       { at: 'today', plate: '01', zoom: [1.05, 1.08], focus: [[.5, .6], [.5, .6]] },
       { at: 'end', plate: '05', zoom: [1.0, 1.06], focus: [[.5, .55], [.5, .56]] },
-      { at: 'deerplate', plate: '05', zoom: [1.22, 1.28], focus: [[.42, .6], [.42, .6]] },
+      { at: 'deerplate', plate: '05', zoom: [1.06, 1.1], focus: [[.45, .58], [.45, .58]] },
       { at: 'heli', plate: '05', zoom: [1.0, 1.0], focus: [[.5, .55], [.5, .55]] },
       { at: 'cta', plate: '05', zoom: [1.0, 1.0], focus: [[.5, .55], [.5, .55]] },
     ],
     shakes: [['lincoln+2.4', .25, .5], ['bet+0.92', .2, .35]],
     flashes: [],
-    follow: { from: 'cta+0.3' },
+    follow: { from: 'cta+0.3', y: 300 },
     tail: 1.6,
 
     update(t, K) {
       const id = K.shot.id, Lc = K.shot.local, at = c => K.T(c), S = K.imgScale();
       const WARM = 0xfff2e4, DUSK = 0xffe2d6;
       // actor helper: front view with a face, or a gesture pose (the sheet's own expression)
-      const A = (n, ix, iy, o = {}) => K.actor(n, Object.assign({ ix, iy, tint: K.shot && /^(end|deerplate|heli|cta)/.test(id) ? DUSK : WARM }, o));
+      const yard = /^(end|deerplate|heli|cta)/.test(id);   // low backyard camera: a little smaller so heads stay in frame
+      const A = (n, ix, iy, o = {}) => K.actor(n, Object.assign({ ix, iy, tint: yard ? DUSK : WARM, h: yard ? 2.7 : undefined }, o));
       const walkIn = (n, from, to, iy, t0, dur, o = {}) => { const u = K.clamp01((t - t0) / dur);
         if (u < 1) return A(n, K.lerp(from, to, K.ease(u)), iy, Object.assign({ pose: 'side', flip: to > from, walk: (t - t0) * 1.7 }, o.walking || {}));
         return A(n, to, iy, o.after || {}); };
@@ -152,9 +153,9 @@
           if (t > tc) K.text('= CHEAP', { y: 400, size: 96, color: 'gold', scale: popIn(K, t, tc) }); break; }
         case 'today': { turkey01(); const tn = wordAt(K, 'nine', 'today');
           dining2({ face: blink('smile', t) }, { face: blink('smile', t, 1.3) });
-          for (let i = 0; i < 10; i++) { const ti = at('today') + .15 + i * .12, x = 160 + (i % 5) * 190, y = 300 + Math.floor(i / 5) * 160;
-            if (t > ti) K.prop(i < 9 ? 'P01' : 'P10', { x, y, w: 170 * popIn(K, t, ti) }); }
-          if (t > tn) K.text('9 IN 10 AMERICANS', { y: 520, size: 74, color: 'gold', scale: popIn(K, t, tn) }); break; }
+          for (let i = 0; i < 10; i++) { const ti = at('today') + .15 + i * .12, x = 180 + (i % 5) * 180, y = 215 + Math.floor(i / 5) * 115;
+            if (t > ti) K.prop(i < 9 ? 'P01' : 'P10', { x, y, w: 135 * popIn(K, t, ti) }); }
+          if (t > tn) K.text('9 IN 10 AMERICANS', { y: 420, size: 70, color: 'gold', scale: popIn(K, t, tn) }); break; }
         case 'end': { const te = wordAt(K, 'exactly', 'end'); A('doug', 330, 1215, t > te - .1 ? { pose: 'hips' } : { face: blink('smile', t) }); break; }
         case 'deerplate': { const ts = wordAt(K, 'served', 'deerplate');
           if (t > ts) { const p = K.img(BTABLE[0].ix, BTABLE[0].iy); K.prop('P10', { x: p.x, y: p.y, w: 210 * S * popIn(K, t, ts), anchor: [.5, .8], layer: 'back' }); }
@@ -165,10 +166,11 @@
           const tt = wordAt(K, 'turkey', 'heli');
           if (t > tt - .15) { const p = K.img(BTABLE[1].ix, BTABLE[1].iy); K.prop('P01', { x: p.x, y: p.y, w: 230 * S * popIn(K, t, tt - .15), anchor: [.5, .85], layer: 'back' }); }
           // THE HELICOPTER ENDING (PLAYBOOK §1.12a): crosses the sky on the last story line; Gary, the winner, looks up
-          const hu = K.helicopter(t, 'heli', { y: 280, w: 520 }), up = hu < 0 ? 0 : Math.sin(PI * K.clamp01((hu - .1) / .85));
+          const hu = (t - at('heli')) / 3.4, up = hu < 0 || hu > 1 ? 0 : Math.sin(PI * K.clamp01((hu - .1) / .85));
           A('doug', 330, 1215, id === 'cta' && up < .3 ? { pose: 'shrug' } : t > tt ? { face: up > .3 ? 'surprised' : 'worried', lookUp: up * .6 } : { pose: 'tada' });
           const gAfter = id === 'cta' && up < .3 ? { pose: 'point', flip: true } : up > .3 ? { face: 'flat', lookUp: up } : { face: blink('smirk', t, 1) };
-          walkIn('gary', 1150, 780, 1215, at('heli'), 1.0, { after: gAfter }); break; }
+          walkIn('gary', 1150, 780, 1215, at('heli'), 1.0, { after: gAfter });
+          K.helicopter(t, 'heli', { y: 200, w: 480 }); break; }
       }
     },
   };

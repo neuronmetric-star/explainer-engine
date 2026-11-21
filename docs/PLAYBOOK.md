@@ -348,7 +348,7 @@ every picture change · `#` comment lines. Write numbers as words in the spoken 
 
 ## 2. The cast: silent 3D characters
 
-**Look (Brian, Nov 21 2026; every video): Brian's character sheets ARE the cast.** `docs/cast/ref/<name>.png` (front, 3/4,
+**Look (Brian, Nov 21 2026; every video): Brian's character sheets ARE the cast.** `docs/cast/<name>.png` (front, 3/4,
 side, back, 8 gestures, 7 faces) are cut into transparent sprites by `python3 tools/sheet-cast.py` (→ `docs/cast/sprites/` +
 `manifest.js`) and drawn by `K.actor()` on the paintings: soft ivory heads with bold drawn faces, puffy gloves, real clothes.
 No code-built look-alikes. Walking = the side view sliding with a bob; expressions = face swaps on the front view; reactions in
@@ -366,7 +366,7 @@ close-up = the sheet's busts. A new character or outfit = Brian makes a sheet in
 | **Robot dog** (3D, no sheet yet) | `CHAR.robodog({rifle})`: gray four-legged robot, camera head with glowing lenses, optional mounted rifle (never fires) | robots, machines that "go first" (`robot-dogs-haiti`). Walks with a trot gait: `pose({walk, walkAmt, look})` |
 
 Use **only the characters the story needs** (usually 2–3). A new character (chef, pilot, doctor…) = Brian makes a sheet in the
-same layout → `docs/cast/ref/<name>.png`, add its panel boxes to `LAYOUT` in `tools/sheet-cast.py`, run it.
+same layout → `docs/cast/<name>.png`, add its panel boxes to `LAYOUT` in `tools/sheet-cast.py`, run it.
 
 ### 2.1 Acting rules (they never talk)
 - **Mouths stay still.** No lip-sync, ever. The narrator alone speaks.

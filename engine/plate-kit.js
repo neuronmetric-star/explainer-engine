@@ -122,19 +122,19 @@
     const u = (t - K.T(from)) / (o.dur || 3.4); if (u < 0 || u > 1) return -1;
     const w = o.w || 540, x = K.lerp(-w * .7, W + w * .7, u), y = (o.y || 300) + Math.sin(t * 2.2) * 8 - 40 * Math.sin(u * Math.PI);
     K.prop('H01', { x, y, w, rot: -.07 + Math.sin(t * 1.7) * .015 }); return u; };
-  // ---------------- ACTORS: the cast from Brian's character sheets (docs/cast/ref -> tools/sheet-cast.py -> docs/cast/sprites) ----
+  // ---------------- ACTORS: the cast from Brian's character sheets (docs/cast -> tools/sheet-cast.py -> docs/cast/sprites) ----
   // SCENE.actors = ['doug', 'gary'] loads their sprites. K.actor(name, o) draws one this frame and returns {x, y, top, scale}:
   //   where: o.ix, o.iy = painting px on the painted floor (feet), or o.x, o.y = screen px of the feet (then o.hpx = height in px)
   //   o.pose: front | 3q | side | back | point | wave | shrug | cross | think | facepalm | hips | tada   (default front)
   //   o.face: swap the expression on the front view: smile | happy | surprised | smirk | worried | flat | blink
-  //   o.flip (mirror; the sheets' side views face left), o.h world height (default 2.3), o.walk (phase, cycles) bobs + sways,
+  //   o.flip (mirror; the sheets' side views face left), o.h world height (default 3.4: big, the cast is the star; Brian Nov 21 2026), o.walk (phase, cycles) bobs + sways,
   //   o.lookUp 0..1 (front view: face tips up), o.tint (0xRRGGBB multiply to match a dark/warm plate), o.a, o.rot, o.dy
   // Close-ups: K.prop(name + ':bust_<face>', {...}) draws the head-and-shoulders bust from the sheet.
   const SP = {}; let shadowTex = null;
   K.actor = function (n, o = {}) {
     const pose = o.pose || 'front', P = SP[n] && SP[n][pose]; if (!P) throw new Error('no sprite ' + n + '/' + pose + ' (add it to SCENE.actors)');
     let fx, fy, hpx;
-    if (o.ix !== undefined) { const [x, z] = K.floorAt(o.ix, o.iy), f = K.worldToScreen(x, 0, z), h = K.worldToScreen(x, o.h || 2.3, z); fx = f.x; fy = f.y; hpx = f.y - h.y; }
+    if (o.ix !== undefined) { const [x, z] = K.floorAt(o.ix, o.iy), f = K.worldToScreen(x, 0, z), h = K.worldToScreen(x, o.h || 3.4, z); fx = f.x; fy = f.y; hpx = f.y - h.y; }
     else { fx = o.x; fy = o.y; hpx = o.hpx || 700; }
     const hd = P.head, fig = P.h - (hd.cy - hd.r), sc = hpx / fig, w = P.w * sc;
     const ph = o.walk === undefined ? 0 : o.walk, bob = o.walk === undefined ? 0 : Math.abs(Math.sin(ph * Math.PI * 2)) * .025 * hpx;
@@ -214,7 +214,7 @@
     if (SC.follow) { const ft = t - SC._followAt, on = ft >= 0; fol.style.opacity = on ? 1 : 0;
       if (on) { fol.style.transform = `translateX(-50%) scale(${.6 + .4 * K.pop(K.clamp01(ft / .35))})`; const clicked = ft > 1.5;
         fol.className = clicked ? 'on' : ''; fol.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cur_.style.opacity = ft > .45 ? 1 : 0;
-        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0)) + 'px'; }
+        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0) + (SC.follow.y || 560) - 560) + 'px'; }
       else cur_.style.opacity = 0; }
     if (doRender) { renderer.clear(); renderer.render(bgScene, bgCam); renderer.render(propBack, propCam); renderer.clearDepth(); renderer.render(scene, camera); renderer.render(propFront, propCam); }
   }
@@ -238,7 +238,7 @@
     window.VIDEO_LENGTH = DATA.audioLength + (SC.tail || 1.6);
     SC._shakes = (SC.shakes || []).map(([a, d, m]) => [K.T(a), d, m]);
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
-    if (SC.follow) SC._followAt = K.T(SC.follow.from);
+    if (SC.follow) { SC._followAt = K.T(SC.follow.from); if (SC.follow.y) fol.style.top = SC.follow.y + 'px'; }   // follow: {from, y (top px, default 560; move it off big heads)}
     SC.build && SC.build(K);
     window.step = (n, dt) => { for (let k = 0; k < n; k++) frame(dt, k === n - 1); };
     window.ready = true;
