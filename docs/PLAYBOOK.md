@@ -348,8 +348,11 @@ every picture change · `#` comment lines. Write numbers as words in the spoken 
 
 ## 2. The cast: silent 3D characters
 
-**Look:** glossy white sphere head with a drawn face sitting right on the shoulders (no neck), white cartoon gloves, real
-clothes. Built in code (`engine/characters.js`). No model files, renders exactly the same every time.
+**Look (v2, Brian, Nov 21 2026; use it in every video):** ivory soft-vinyl sphere head with a bold drawn face sitting right on the
+shoulders (no neck), puffy ivory cartoon gloves, real clothes in rich colors. Built in code (`engine/characters.js`). No model
+files, renders exactly the same every time. **The target is Brian's sheets in `docs/cast/ref/`.** After any change to the cast,
+run `node tools/cast-sheet.js` (→ `docs/cast/<name>.jpg`: turnaround, 8 gestures, 7 faces, production lighting) and compare to
+the refs. A new outfit gets a sheet too.
 
 | Character | Outfit (`CHAR.make({outfit})`) | Typical role |
 |---|---|---|

@@ -22,12 +22,12 @@ renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadow
 renderer.setClearColor(0xece6dc); renderer.autoClear = false;
 const scene = new THREE.Scene();
 const env = new THREE.PMREMGenerator(renderer).fromScene(new THREE.RoomEnvironment(), .04).texture;
-// neutral studio light: warm key front-left, cool fill, rim from behind
-const key = new THREE.DirectionalLight(0xfff1e0, 1.7); key.position.set(-4, 7, 6); key.castShadow = true;
+// same light rig as production (plate-kit.js 'interior' preset), so the sheet shows what videos show
+const lin = c => new THREE.Color(c).convertSRGBToLinear();
+const key = new THREE.DirectionalLight(lin(0xffc888), 2.2); key.position.set(-6, 6, 6); key.castShadow = true;
 key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -3, right: 3, top: 4, bottom: -1, near: 1, far: 30 }); key.shadow.bias = -.0004;
-const fill = new THREE.DirectionalLight(0xdfe8ff, 1.0); fill.position.set(5, 3, 6);
-const rim = new THREE.DirectionalLight(0xffffff, 1.2); rim.position.set(0, 5, -6);
-scene.add(key, fill, rim, new THREE.HemisphereLight(0xffffff, 0xb8a890, .35));
+const front = new THREE.DirectionalLight(lin(0xffe6d6), 1.0); front.position.set(3, 4, 12);
+scene.add(key, front, new THREE.HemisphereLight(lin(0xd0c8ff), lin(0xc09070), .8));
 const ground = new THREE.Mesh(new THREE.PlaneGeometry(20, 20).rotateX(-Math.PI / 2), new THREE.ShadowMaterial({ opacity: .22 })); ground.receiveShadow = true; scene.add(ground);
 const cam = new THREE.PerspectiveCamera(22, 1, .1, 100);
 const ui = document.getElementById('ui');

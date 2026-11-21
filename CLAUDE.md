@@ -11,7 +11,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
   Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
-- **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
+- **Silent 3D sphere-head cast, look v2** (`engine/characters.js`; Brian's approved sheets in `docs/cast/ref/` are the target for
+  every video: ivory heads, bold faces, puffy gloves, rich outfit colors; check with `node tools/cast-sheet.js` → `docs/cast/`): Doug (hoodie), Gary (oxford + glasses),
   Victor (suit), polo guy, the President (`president`: cap, bomber, sash), gang member (`gang`: hoodie, beanie, bandana; never armed). They act with gaze, posture, gestures, faces and timing.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
