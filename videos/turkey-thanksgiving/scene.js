@@ -1,8 +1,8 @@
-// turkey-thanksgiving: why we eat turkey on Thanksgiving. Plates + props + Doug, Gary (cast look v2). Plan: shotlist.md.
+// turkey-thanksgiving: why we eat turkey on Thanksgiving. Plates + props + Doug, Gary as actors from Brian's character sheets. Plan: shotlist.md.
 // World units: feet at y=0. Props + text in screen px (y down). Every word/number on screen is K.text (paintings carry none).
 (function () {
   const PI = Math.PI;
-  const face = (ch, name, t, off = 0) => ch.face(((t + off) % 4.1) < .12 && name !== 'happy' ? 'blink' : name);
+  const blink = (name, t, off = 0) => ((t + off) % 4.1) < .12 && name !== 'happy' ? 'blink' : name;   // front-view face with a blink every ~4 s
   const popIn = (K, t, from, dur = .35) => K.pop(K.clamp01((t - from) / dur));
   const WORDS = window.VIDEO_DATA.words, norm = w => w.toLowerCase().replace(/[^a-z0-9]/g, '');
   const wordAt = (K, w, cue) => { const t0 = K.T(cue); const x = WORDS.find(o => o.start >= t0 - .01 && norm(o.w) === w); return x ? x.start : t0; };
@@ -27,7 +27,7 @@
     },
     props: { P01: 'P01_roast_turkey.png', P02: 'P02_winslow_letter.png', P03: 'P03_duck.png', P04: 'P04_goose.png', P05: 'P05_wild_turkey.png',
       P06: 'P06_deer.png', P07: 'P07_novel_open.png', P08: 'P08_envelope.png', P09: 'P09_proclamation.png', P10: 'P10_roast_venison.png', H01: 'H01_helicopter.png' },
-    cast: { doug: 'hoodie', gary: 'oxford', garyp: { outfit: 'oxford', phone: true } },
+    actors: ['doug', 'gary'],
     shots: [
       { at: 'q', plate: '01', zoom: [1.55, 1.7], focus: [[.5, .43], [.5, .43]] },
       { at: 'card', plate: '01', zoom: [1.0, 1.08], focus: [[.5, .55], [.5, .57]] },
@@ -64,20 +64,23 @@
 
     update(t, K) {
       const id = K.shot.id, Lc = K.shot.local, at = c => K.T(c), S = K.imgScale();
-      const D = K.cast.doug, G = K.cast.gary, GP = K.cast.garyp;
+      const WARM = 0xfff2e4, DUSK = 0xffe2d6;
+      // actor helper: front view with a face, or a gesture pose (the sheet's own expression)
+      const A = (n, ix, iy, o = {}) => K.actor(n, Object.assign({ ix, iy, tint: K.shot && /^(end|deerplate|heli|cta)/.test(id) ? DUSK : WARM }, o));
+      const walkIn = (n, from, to, iy, t0, dur, o = {}) => { const u = K.clamp01((t - t0) / dur);
+        if (u < 1) return A(n, K.lerp(from, to, K.ease(u)), iy, Object.assign({ pose: 'side', flip: to > from, walk: (t - t0) * 1.7 }, o.walking || {}));
+        return A(n, to, iy, o.after || {}); };
       const turkey01 = (s = 1, a = 1) => { const p = K.img(DTABLE.ix, DTABLE.iy); K.prop('P01', { x: p.x, y: p.y, w: 300 * S * s, anchor: [.5, .85], a, layer: 'back' }); };
       // the letter insert, centered in the safe area (P02 is 1086x1448; its blank band is at ~49% height)
       const letter = (o = {}) => { const w = 640 * (o.s || 1), y = (o.y || 730); K.prop('P02', { x: 540, y, w, rot: o.rot || -.015 }); return { w, y, band: y + (.49 - .5) * w * 1448 / 1086 }; };
-      const dining2 = () => { K.placeAt('doug', 205, 1300, .25); K.placeAt('gary', 745, 1300, -.25); };
+      const dining2 = (d = {}, g = {}) => { A('doug', 205, 1300, d); A('gary', 745, 1300, g); };
       switch (id) {
         case 'q': { turkey01(1);
           const a = K.clamp01((at('card') - t) / .2);
           K.text('WHY DO WE EAT TURKEY', { y: 280, size: 84, a, scale: .8 + .2 * popIn(K, t, at('q')) });
           K.text('ON THANKSGIVING?', { y: 390, size: 84, color: 'gold', a, scale: .8 + .2 * popIn(K, t, at('q') + .9) }); break; }
-        case 'card': { const u = K.clamp01(Lc / 1.6), [x0, z0] = K.floorAt(-120, 1320), [x1, z1] = K.floorAt(300, 1320);
-          K.place('doug', K.lerp(x0, x1, u), 0, K.lerp(z0, z1, u), u < 1 ? PI / 2 : .15);
-          const te = wordAt(K, 'exactly', 'card'); face(D, t > te ? 'smirk' : 'smile', t);
-          D.pose({ t, walk: Lc * 1.5, walkAmt: 1 - K.ease((u - .85) / .15), gesture: t > te - .2 ? 'hips' : undefined, gw: K.ease((t - te + .2) / .35) }); break; }
+        case 'card': { const te = wordAt(K, 'exactly', 'card');
+          walkIn('doug', -120, 300, 1320, at('card'), 1.6, { after: t > te - .1 ? { pose: 'hips' } : { face: blink('smile', t) } }); break; }
         case 'ground': {
           K.text('1621', { y: 270, size: 120, color: 'gold', scale: popIn(K, t, at('ground')) });
           K.text('≈ 405 YEARS AGO', { y: 380, size: 54, scale: popIn(K, t, at('ground') + .35) }); break; }
@@ -88,18 +91,14 @@
         case 'feast+3.8': { K.text('3 DAYS', { y: 300, size: 110, color: 'gold', scale: popIn(K, t, wordAt(K, 'threeday', 'feast')) });
           if (t > wordAt(K, 'harvest', 'feast')) K.text('HARVEST FEAST', { y: 410, size: 62, scale: popIn(K, t, wordAt(K, 'harvest', 'feast')) }); break; }
         case 'bet': case 'bet+1.57': {
-          K.placeAt('doug', 230, 1290, .3);
           const tt = wordAt(K, 'turkey', 'bet'), drop = K.clamp01((t - (tt - .25)) / .3);
           if (t > tt - .25) { const p = K.img(DTABLE.ix, DTABLE.iy); K.prop('P01', { x: p.x, y: p.y - (1 - drop) * (1 - drop) * 500, w: 300 * S, anchor: [.5, .85], layer: 'back' }); }
-          if (id === 'bet') { face(D, t > tt ? 'happy' : 'smile', t); D.pose({ t, gesture: 'tada', gw: K.ease((t - tt) / .3), look: .2 }); }
-          else { face(D, 'smirk', t); D.pose({ t, nod: .12 * Math.sin(K.clamp01((t - wordAt(K, 'bet', 'bet+1.57')) / .5) * PI), gesture: 'hips', gw: 1 }); }
+          if (id === 'bet') A('doug', 230, 1290, t > tt ? { pose: 'tada' } : { face: blink('smile', t) });
+          else A('doug', 230, 1290, t < wordAt(K, 'bet', 'bet+1.57') ? { face: 'smirk' } : { pose: 'hips' });
           break; }
         case 'letter': { turkey01();
-          K.placeAt('doug', 230, 1290, .3);
-          const u = K.clamp01(Lc / 1.6), [x0, z0] = K.floorAt(1100, 1310), [x1, z1] = K.floorAt(740, 1300);
-          K.place('garyp', K.lerp(x0, x1, u), 0, K.lerp(z0, z1, u), u < 1 ? -PI / 2 : -.3);
-          face(GP, 'flat', t, 1); GP.pose({ t, walk: Lc * 1.5, walkAmt: 1 - K.ease((u - .85) / .15), armR: { raise: .45 }, nod: .15 });
-          face(D, t > at('letter') + 1.0 ? 'surprised' : 'smile', t); D.pose({ t, look: -.55 * K.ease((Lc - .3) / .4) }); break; }
+          A('doug', 230, 1290, { face: t > at('letter') + 1.0 ? 'surprised' : blink('smile', t) });
+          walkIn('gary', 1100, 740, 1300, at('letter'), 1.6, { after: { pose: 'point', flip: true } }); break; }
         case 'winslow': { const sl = K.easeOut(K.clamp01(Lc / .4)); K.prop('P02', { x: 540, y: 730 + (1 - sl) * 1200, w: 640, rot: -.015 });
           K.text('EDWARD WINSLOW, 1621', { y: 190, size: 60, color: 'gold', scale: popIn(K, t, wordAt(K, 'edward', 'winslow')) });
           K.text('THE ONLY EYEWITNESS LETTER', { y: 262, size: 40, scale: popIn(K, t, at('winslow') + .15) }); break; }
@@ -107,7 +106,7 @@
           K.text('"...our governor sent', { y: L2.band - 45 * s, size: 48 * s, color: INK, font: 'marker' });
           K.text('four men on fowling..."', { y: L2.band + 25 * s, size: 48 * s, color: INK, font: 'marker' });
           const tf = wordAt(K, 'fowling', 'fowling'); if (t > tf) K.text('FOWLING', { y: L2.band + 130 * s, size: 96, color: 'gold', scale: popIn(K, t, tf) }); break; }
-        case 'birds': { const g = K.img(0, 0), base = 1060;
+        case 'birds': { const base = 1060;
           [['P03', 'ducks', 230, 230], ['P04', 'geese', 540, 270], ['P05', 'turkey', 850, 300]].forEach(([k, w, x, wd]) => { const tw = wordAt(K, w, 'birds');
             if (t > tw - .05) K.prop(k, { x, y: base, w: wd * popIn(K, t, tw - .05) * 1.15, anchor: [.5, .92] }); });
           K.text('HUNTING BIRDS', { y: 280, size: 80, scale: popIn(K, t, wordAt(K, 'hunting', 'birds')) });
@@ -119,10 +118,8 @@
           const sc = K.clamp01(Lc / .9); K.text('━━━━━━━━━━', { y: K.lerp(L2.y - 430, L2.y + 400, sc), size: 60, color: 'gold', a: sc < 1 ? .85 : 0, stroke: 0, shadow: false });
           const tn = wordAt(K, 'not', 'notice'); if (t > tn) { K.text('TURKEY', { y: L2.band, size: 110, color: 'red', scale: popIn(K, t, tn) }); K.text('━━━━━━━', { y: L2.band - 2, size: 64, color: 'red', stroke: 5, scale: K.clamp01((t - tn - .15) / .2) }); }
           break; }
-        case 'doubt': { turkey01(); dining2();
-          face(D, 'worried', t); D.pose({ t, look: -.45, nod: .25 }); face(G, 'smirk', t, 1); G.pose({ t, gesture: 'cross', gw: K.ease(Lc / .4), look: .3 }); break; }
-        case 'hale': { turkey01(); dining2();
-          face(D, 'flat', t); D.pose({ t, look: -.45, nod: .2, gesture: 'think', gw: K.ease(Lc / .4) }); face(G, 'flat', t, 1); G.pose({ t, look: .45, nod: .2 }); break; }
+        case 'doubt': { turkey01(); dining2({ face: 'worried' }, { pose: 'cross' }); break; }
+        case 'hale': { turkey01(); dining2({ pose: 'think' }, { face: blink('flat', t, 1) }); break; }
         case 'editor': { const ts = wordAt(K, 'sarah', 'editor'), te = wordAt(K, 'editor', 'editor');
           K.text('MAGAZINE EDITOR', { y: 1060, size: 54, scale: popIn(K, t, te) });
           if (t > ts) K.text('SARAH JOSEPHA HALE', { y: 970, size: 76, color: 'gold', scale: popIn(K, t, ts), w: 1060 }); break; }
@@ -144,39 +141,34 @@
             K.text('THANKSGIVING', { x: 600, y: K.lerp(-400, 860, d) - 215, size: 54, color: INK, stroke: 0, shadow: false, rot: .04 });
             if (t > ty) K.text('YES.', { x: 600, y: 1090, size: 120, color: 'gold', scale: popIn(K, t, ty) }); }
           break; }
-        case 'big': { dining2(); const tb = wordAt(K, 'big', 'big'), g = 1 + .55 * K.ease((t - tb) / .9);
-          turkey01(g); face(D, 'happy', t); D.pose({ t, gesture: 'tada', gw: K.ease((t - tb) / .35) }); face(G, 'flat', t, 1); G.pose({ t, look: .4 });
+        case 'big': { const tb = wordAt(K, 'big', 'big'), g = 1 + .55 * K.ease((t - tb) / .9);
+          turkey01(g); dining2(t > tb ? { pose: 'tada' } : { face: 'smile' }, { face: blink('flat', t, 1) });
           const tc = wordAt(K, 'crowd', 'big'); if (t > tc) K.text('FEEDS A CROWD', { y: 280, size: 80, color: 'gold', scale: popIn(K, t, tc) }); break; }
-        case 'eggs': { turkey01(1.2); dining2();
+        case 'eggs': { turkey01(1.2);
           const tk = wordAt(K, 'turkeys', 'eggs'), te = wordAt(K, 'eggs', 'eggs'), tc = wordAt(K, 'cheap', 'eggs');
           if (t > tk - .1) { const p = K.img(DTABLE.ix + 250, DTABLE.iy + 20); K.prop('P05', { x: p.x, y: p.y, w: 290 * S * popIn(K, t, tk - .1), anchor: [.5, .9], layer: 'back' }); }
+          dining2({ face: t > tk && t < tk + .5 ? 'blink' : 'surprised' }, t > te ? { pose: 'shrug' } : { face: blink('flat', t, 1) });
           if (t > te) { K.text('EGGS', { y: 270, size: 96, scale: popIn(K, t, te) }); K.text('━━━━━', { y: 268, size: 56, color: 'red', stroke: 5, scale: K.clamp01((t - te - .12) / .2) }); }
-          if (t > tc) K.text('= CHEAP', { y: 400, size: 96, color: 'gold', scale: popIn(K, t, tc) });
-          face(G, 'flat', t, 1); G.pose({ t, gesture: 'shrug', gw: K.ease((t - te) / .35) }); face(D, t > tk && t < tk + .5 ? 'blink' : 'surprised', t); D.pose({ t, look: -.4, lean: -.06 }); break; }
-        case 'today': { turkey01(); dining2(); const tn = wordAt(K, 'nine', 'today');
+          if (t > tc) K.text('= CHEAP', { y: 400, size: 96, color: 'gold', scale: popIn(K, t, tc) }); break; }
+        case 'today': { turkey01(); const tn = wordAt(K, 'nine', 'today');
+          dining2({ face: blink('smile', t) }, { face: blink('smile', t, 1.3) });
           for (let i = 0; i < 10; i++) { const ti = at('today') + .15 + i * .12, x = 160 + (i % 5) * 190, y = 300 + Math.floor(i / 5) * 160;
             if (t > ti) K.prop(i < 9 ? 'P01' : 'P10', { x, y, w: 170 * popIn(K, t, ti) }); }
-          if (t > tn) K.text('9 IN 10 AMERICANS', { y: 520, size: 74, color: 'gold', scale: popIn(K, t, tn) });
-          face(D, 'smile', t); D.pose({ t, nod: .1 * Math.sin(t * 4) }); face(G, 'smile', t, 1); G.pose({ t, look: .2 }); break; }
-        case 'end': { K.placeAt('doug', 330, 1215, .15); const te = wordAt(K, 'exactly', 'end');
-          face(D, t > te ? 'smirk' : 'smile', t); D.pose({ t, gesture: 'hips', gw: K.ease((t - te + .2) / .35) }); break; }
-        case 'deerplate': { K.placeAt('doug', 235, 1225, .2); const ts = wordAt(K, 'served', 'deerplate');
+          if (t > tn) K.text('9 IN 10 AMERICANS', { y: 520, size: 74, color: 'gold', scale: popIn(K, t, tn) }); break; }
+        case 'end': { const te = wordAt(K, 'exactly', 'end'); A('doug', 330, 1215, t > te - .1 ? { pose: 'hips' } : { face: blink('smile', t) }); break; }
+        case 'deerplate': { const ts = wordAt(K, 'served', 'deerplate');
           if (t > ts) { const p = K.img(BTABLE[0].ix, BTABLE[0].iy); K.prop('P10', { x: p.x, y: p.y, w: 210 * S * popIn(K, t, ts), anchor: [.5, .8], layer: 'back' }); }
-          face(D, 'happy', t); D.pose({ t, gesture: 'tada', gw: K.ease((t - ts) / .35) });
+          A('doug', 290, 1225, t > ts ? { pose: 'tada' } : { face: 'smile' });
           if (t > wordAt(K, 'deer', 'deerplate')) K.text('DEER.', { y: 300, size: 110, color: 'gold', scale: popIn(K, t, wordAt(K, 'deer', 'deerplate')) }); break; }
         case 'heli': case 'cta': {
           { const p = K.img(BTABLE[0].ix, BTABLE[0].iy); K.prop('P10', { x: p.x, y: p.y, w: 210 * S, anchor: [.5, .8], layer: 'back' }); }
-          K.placeAt('doug', 330, 1215, .15);
-          const tg = at('heli'), u = K.clamp01((t - tg) / 1.0), [x0, z0] = K.floorAt(1150, 1230), [x1, z1] = K.floorAt(780, 1215);
-          K.place('gary', K.lerp(x0, x1, u), 0, K.lerp(z0, z1, u), u < 1 ? -PI / 2 : -.2);
           const tt = wordAt(K, 'turkey', 'heli');
           if (t > tt - .15) { const p = K.img(BTABLE[1].ix, BTABLE[1].iy); K.prop('P01', { x: p.x, y: p.y, w: 230 * S * popIn(K, t, tt - .15), anchor: [.5, .85], layer: 'back' }); }
           // THE HELICOPTER ENDING (PLAYBOOK §1.12a): crosses the sky on the last story line; Gary, the winner, looks up
           const hu = K.helicopter(t, 'heli', { y: 280, w: 520 }), up = hu < 0 ? 0 : Math.sin(PI * K.clamp01((hu - .1) / .85));
-          face(G, up > .4 ? 'flat' : 'smirk', t, 1);
-          G.pose({ t, walk: (t - tg) * 1.5, walkAmt: 1 - K.ease((u - .8) / .2), nod: -.38 * up, gesture: id === 'cta' ? 'point' : undefined, gw: K.ease((Lc - .3) / .35) * (1 - up * .7) });
-          face(D, id === 'cta' ? 'flat' : t > tt ? 'worried' : 'happy', t);
-          D.pose({ t, look: -.4, nod: -.12 * up, gesture: id === 'cta' ? 'shrug' : 'tada', gw: id === 'cta' ? K.ease((Lc - .2) / .4) : 1 - K.ease((t - tt) / .3) }); break; }
+          A('doug', 330, 1215, id === 'cta' && up < .3 ? { pose: 'shrug' } : t > tt ? { face: up > .3 ? 'surprised' : 'worried', lookUp: up * .6 } : { pose: 'tada' });
+          const gAfter = id === 'cta' && up < .3 ? { pose: 'point', flip: true } : up > .3 ? { face: 'flat', lookUp: up } : { face: blink('smirk', t, 1) };
+          walkIn('gary', 1150, 780, 1215, at('heli'), 1.0, { after: gAfter }); break; }
       }
     },
   };
