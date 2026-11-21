@@ -167,7 +167,7 @@
     return el; };
 
   // ---------------- frame ----------------
-  let time = 0, SHOTS = [];
+  let time = 0, SHOTS = [], CLIPS = [], SEEKS = [];
   const amp = (arr, t) => { let a = 0; for (const [s, d, m] of arr) if (t > s && t < s + d) a = Math.max(a, (1 - (t - s) / d) * m); return a; };
   function frame(dt, doRender) {
     time += dt; const t = time;
@@ -190,6 +190,11 @@
         fol.className = clicked ? 'on' : ''; fol.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cur_.style.opacity = ft > .45 ? 1 : 0;
         const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0)) + 'px'; }
       else cur_.style.opacity = 0; }
+    // full-screen video clips (e.g. THE HELICOPTER CLIP ending, PLAYBOOK §1.12a): above the 3D layer, under captions + follow
+    { let on = null; for (const c of CLIPS) if (t >= c.t) on = c;
+      for (const c of CLIPS) { c.el.style.display = c === on ? 'block' : 'none'; }
+      if (on && doRender) { const target = Math.min(on.el.duration - 1 / 60, Math.max(0, (t - on.t) * (on.rate || 1)));
+        if (Math.abs(on.el.currentTime - target) > .0005) { SEEKS.push(new Promise(res => { const done = () => { on.el.removeEventListener('seeked', done); res(); }; on.el.addEventListener('seeked', done); setTimeout(res, 3000); })); on.el.currentTime = target; } } }
     if (doRender) { renderer.clear(); renderer.render(bgScene, bgCam); renderer.render(propBack, propCam); renderer.clearDepth(); renderer.render(scene, camera); renderer.render(propFront, propCam); }
   }
 
@@ -204,8 +209,16 @@
     SC._shakes = (SC.shakes || []).map(([a, d, m]) => [K.T(a), d, m]);
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
     if (SC.follow) SC._followAt = K.T(SC.follow.from);
+    // clips: [{ at: 'cta', file: 'H00_helicopter_clip_openart.mp4', from: 'assets' (docs/assets) | 'art' (default), rate }]
+    CLIPS = await Promise.all((SC.clips || []).map(c => new Promise((res, rej) => {
+      const el = document.createElement('video'); el.muted = true; el.preload = 'auto'; el.playsInline = true;
+      el.style.cssText = 'position:fixed;inset:0;width:1080px;height:1920px;object-fit:cover;display:none;background:#000';
+      el.src = (c.from === 'assets' ? '../docs/assets/' : ART) + c.file;
+      el.onloadeddata = () => res(Object.assign({}, c, { el, t: K.T(c.at) })); el.onerror = () => rej(new Error('missing clip ' + c.file));
+      $('ui').parentNode.insertBefore(el, $('ui')); })));
+    CLIPS.sort((a, b) => a.t - b.t);
     SC.build && SC.build(K);
-    window.step = (n, dt) => { for (let k = 0; k < n; k++) frame(dt, k === n - 1); };
+    window.step = (n, dt) => { SEEKS = []; for (let k = 0; k < n; k++) frame(dt, k === n - 1); return SEEKS.length ? Promise.all(SEEKS).then(() => new Promise(r => requestAnimationFrame(() => r(1)))) : 1; };
     window.ready = true;
   };
 })();

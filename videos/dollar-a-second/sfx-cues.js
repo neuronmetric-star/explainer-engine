@@ -34,6 +34,8 @@ module.exports = ({ T, word }) => {
   // the helicopter ending (PLAYBOOK §1.12a)
   ev.push({ at: 'end+1.79', sfx: 'helicopter', gain: .6 });
   // follow CTA
-  ev.push({ at: 'cta+0.3', sfx: 'pop', gain: .5 }, { at: 'cta+1.8', sfx: 'click', gain: .9 });
+  // the helicopter clip under the follow CTA (PLAYBOOK §1.12a)
+  ev.push({ at: 'cta', sfx: 'helicopter', gain: .55 });
+  ev.push({ at: 'cta+1.4', sfx: 'pop', gain: .5 }, { at: 'cta+2.9', sfx: 'click', gain: .9 });
   return ev;
 };

@@ -28,6 +28,8 @@ module.exports = ({ T, word }) => {
   ev.push({ at: 'heli', sfx: 'helicopter', gain: .6 });
   ev.push({ at: word('price', 'tip'), sfx: 'pop', gain: .45 }, { at: word('compare', 'tip'), sfx: 'pop', gain: .45 });
   ev.push({ at: 'ask+0.2', sfx: 'clunk', gain: .5 });
-  ev.push({ at: 'cta+0.3', sfx: 'pop', gain: .5 }, { at: 'cta+1.8', sfx: 'click', gain: .9 });
+  // the helicopter clip under the follow CTA (PLAYBOOK §1.12a)
+  ev.push({ at: 'cta', sfx: 'helicopter', gain: .55 });
+  ev.push({ at: 'cta+1.4', sfx: 'pop', gain: .5 }, { at: 'cta+2.9', sfx: 'click', gain: .9 });
   return ev;
 };

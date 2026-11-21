@@ -22,7 +22,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
 - **The helicopter ending, every video, no matter what** (PLAYBOOK §1.12a): on the last story line the Lamborghini
   helicopter (`docs/assets/H01_helicopter.png`) flies across the sky via `K.helicopter(t, cue)`, the winner looks up,
-  then the follow CTA. The last background always has open sky in its top third.
+  then the follow CTA plays over **the helicopter clip** (`docs/assets/H00_helicopter_clip_openart.mp4`, full screen, via
+  `SCENE.clips` at `cta`; follow button at `cta+1.4`). The last background always has open sky in its top third.
 
 ## Daily topics (`/topics`)
 When Brian asks for today's topics / trending topics: read `docs/trends/<today>.md` (US Eastern date; it's written every
