@@ -2,9 +2,9 @@
 
 One format, any topic. **One narrator's voice. A flat illustrated 2D world. Silent 3D sphere-head
 characters. Camera that never sits still. Captions one word at a time.**
-**Two lengths, one format:** **long form 8+ minutes** and **short form ≈ 1:05** (just over TikTok's 1-minute payout line). **No default:** if Brian didn't
-say which, ask him before doing any research or writing. Both use the same
-story method, Ray's skeleton, Xevi's narrator personality, cast, camera and art. Short form is just compressed (§1.11).
+**Every video is short form, ≈ 1:05–1:12** (just over TikTok's 1-minute payout line; §1.11). **Brian's rule (Nov 21 2026):
+long form is retired, so never ask about length.** Same story method, Ray's skeleton and Xevi's narrator personality, compressed.
+The long-form notes below (§1.9, art counts) stay only as background for how the short form was built.
 
 What it's built from:
 - **Story:** the Coon Knows storytelling guide ("write the question from the answer").

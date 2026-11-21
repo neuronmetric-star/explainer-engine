@@ -6,13 +6,11 @@ Make a video about: **$ARGUMENTS**
 
 Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs-water/`.
 
-0. **Length:** if my request doesn't say "long" or "short", STOP and ask me which one (long ≈ 8–9.5 min,
-   short ≈ 1:05) before any research or writing. Don't assume.
+0. **Length:** always short form (≈ 1:05–1:12, PLAYBOOK §1.11). Don't ask; long form is retired.
 1. Write the **payoff** (one sentence the viewer will discover) and pick the question word that it answers.
    Pick a short slug and create `videos/<slug>/`.
 2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
-3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; long form
-   1,300–1,500 words ≈ 8–9.5 min; short: hook → middle → end per §1.11, 175–190 story words + CTA ≈ 1:05 final (never under 1:02); cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
+3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; short form only: hook → middle → end per §1.11, 175–190 story words + CTA ≈ 1:05 final (never under 1:02); cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
    STOP and show me: the narration in one copyable block, then voice direction, the fact list with sources,
    (opening always says "the heck", never "the f*ck"). Wait for "approved" (or edits).
 4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop
