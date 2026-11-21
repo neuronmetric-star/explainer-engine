@@ -2,9 +2,9 @@
 
 One format, any topic. **One narrator's voice. A flat illustrated 2D world. Silent 3D sphere-head
 characters. Camera that never sits still. Captions one word at a time.**
-**Two lengths, one format:** **long form 8+ minutes** and **short form ≈ 1:05** (just over TikTok's 1-minute payout line). **No default:** if Brian didn't
-say which, ask him before doing any research or writing. Both use the same
-story method, Ray's skeleton, Xevi's narrator personality, cast, camera and art. Short form is just compressed (§1.11).
+**Every video is short form, ≈ 1:05–1:12** (just over TikTok's 1-minute payout line; §1.11). **Brian's rule (Nov 21 2026):
+long form is retired, so never ask about length.** Same story method, Ray's skeleton and Xevi's narrator personality, compressed.
+The long-form notes below (§1.9, art counts) stay only as background for how the short form was built.
 
 What it's built from:
 - **Story:** the Coon Knows storytelling guide ("write the question from the answer").
@@ -20,7 +20,8 @@ What it's built from:
 
 | # | Step | Who | Output |
 |---|---|---|---|
-| 1 | Pick the topic, find the **payoff** | Claude (Brian approves topic) | one sentence: what the viewer will discover |
+| 0 | Morning trend scrape (§6c): what people search and what's going viral in our lanes | Claude | `docs/trends/<date>.md` (topics + search phrases + stitch picks) |
+| 1 | Pick the topic **from the trend sheet**, find the **payoff** and the **search phrase** | Claude (Brian approves topic) | one sentence: what the viewer will discover + the exact phrase people type |
 | 2 | Research, every claim sourced | Claude | `videos/<slug>/sources.md` |
 | 3 | Script (section 1) | Claude → **Brian approves** | `script.txt` + narration in one copyable block |
 | 4 | Shot list + image prompts (section 4) | Claude | `shotlist.md` |
@@ -53,7 +54,12 @@ Write down what the viewer will discover. Then pick the question word that the e
 - **Start the action in sentence two:** "Doug decided to find out by never buying it again."
 - **Always "the heck", never "the f\*ck"** (Brian's rule, Nov 2026): spoken and captioned as "heck", so the opening
   seconds stay ad-safe on TikTok, Reels and YouTube. Coon's punchy rhythm stays; only the word changes.
-  Older scripts (gas-vs-water etc.) still say "f\*ck"; don't copy that.
+  Older scripts (gas-vs-water etc.) still say "f\*ck"; don't copy that. **Captions too:** the Nov 13–15 posts
+  said "Why the f\*ck…" in the TikTok caption. Never again.
+- **The question uses the words people search** (§6c): take the topic's search phrase from the morning trend
+  sheet (`docs/trends/`) and build the question around it. Search "why is thanksgiving on a thursday" →
+  "Why the heck is Thanksgiving on a Thursday?" Keep the keywords (Thanksgiving, Thursday) word for word;
+  "the heck" can sit between them. TikTok transcribes the voice, so the first spoken sentence is a search signal.
 
 ### 1.2 Build the middle around a choice and its result
 1. Give someone a **goal** and a **reason to expect their plan to work** (Doug: "gas is a liquid,
@@ -214,7 +220,7 @@ Every short must be **very clear for someone who has never heard of the topic** 
 
 | Part | Time (of ~1:05) | What happens |
 |---|---|---|
-| **Hook** | 0:00–0:05 | Coon question with the subject on screen + "See, Doug had a problem." in one line |
+| **Hook** | 0:00–0:05 | Coon question **built on the search phrase** (§6c), subject on screen, the phrase as on-screen text + "See, Doug had a problem." in one line |
 | **Middle** | 0:05–0:50 | One plain line of ground (what the thing is) → the wrong belief or choice → plant the clue on screen → the narrator's bet → the mechanism explained **inside the story**, cause → effect (never "Step one…" or "three steps") |
 | **End** | 0:50–1:05 | The clue pays off ("So, the rattle.") → one consequence → a deadpan last line that mirrors a middle line → the follow CTA (§1.12) |
 
@@ -222,6 +228,9 @@ Personality, scaled down: one performed line per character, one aside ("I'mma te
 a joke or simile about every 10 s.
 **Cut first:** second examples, extra numbers, side trivia, extra characters. **Never cut:** the ground line,
 the definitions, the steps, the clue, the mirror line.
+**Tightening (Brian's raw voice → `voice.mp3`, keep the original as `voice_raw.mp3`):**
+`ffmpeg -i voice_raw.mp3 -af "silenceremove=start_periods=1:start_threshold=-40dB:stop_periods=-1:stop_duration=0.25:stop_threshold=-40dB:stop_silence=0.16,atempo=1.2" -q:a 2 voice.mp3`
+(pauses over 0.25 s cut to 0.16 s, then 1.2× speed; dollar-a-second: 1:32 raw → 1:11).
 **Length check:** after `align.js`, the final (voice + tail) must be ≥ 1:02. If it's shorter, tighten the voice
 with `atempo=1.1` instead of 1.2, or trim fewer pauses; if it's over 1:15, cut words before recording.
 Shots: ≈ 20–25 cuts, 5–8 backgrounds, 4–6 props (≈ 10–12 images, one ChatGPT batch file).
@@ -247,6 +256,30 @@ For long form, "a minute" → "these eight minutes."
 **Picture:** hold the final story image, then the **+ FOLLOW** button pops in, a cursor taps it, and it
 becomes **✓ FOLLOWING**. A cast member reacts: the smart one `point`s at the button or `cross` + `smirk`s;
 in D, the smart one taps it and the fool `facepalm`s. "follow" and "like" are gold in the captions.
+
+### 1.12a The helicopter ending (EVERY video, no matter the topic; Brian's rule, Nov 21 2026)
+Our series signature, from the Lamborghini video: Victor finally gets his dream car, a helicopter flies over, and he
+wants that instead. **Every video ends with that same helicopter flying across the sky.** Whoever "won" the story looks
+up at it: he finally has the thing, and there's already a next thing. Viewers learn to wait for it.
+
+- **When:** it enters on the **last story line** (the mirror line), crosses in ≈ 3.4 s, and is finishing its pass as the
+  **+ FOLLOW** button pops (a short overlap is fine: it stays up top). It never replaces the CTA; it hands off to it.
+- **Where:** left → right across the **top third** (screen y ≈ 220–380), above the heads, clear of the follow button
+  (y ≈ 560–660) and the caption band (y ≈ 1270).
+- **Acting:** the winner tips his head up (`nod` ≈ −.35) and his face drops to `flat` (or `worried`) while it passes,
+  then back to the CTA gesture. Anyone else in the shot can glance up too. Nobody waves at it.
+- **The last background always shows open sky in its top third**, so the helicopter has somewhere to fly. If the story
+  ends indoors, end on a window with sky, or cut to an outdoor shot for the last line. Write that into the shot list.
+- **Words:** none needed; it's a picture joke and costs no length. (In a lesson chain the helicopter is already in the
+  story, so it simply flies over again at the end.)
+- **Always the same helicopter:** white with a navy-blue stripe, the one from the Lamborghini video's OpenArt clip
+  (`docs/assets/H00_helicopter_clip_openart.mp4`). The sprite `docs/assets/H01_helicopter.png` is painted once to match it
+  and copied into every video's `art/`.
+  Register it as `H01: 'H01_helicopter.png'` in `SCENE.props` and call **`K.helicopter(t, '<last cue>')`**
+  (`engine/plate-kit.js`), which draws the same flight path every time and returns its progress (0..1) for the look-up.
+- **Sound:** `{ at: '<last cue>', sfx: 'helicopter', gain: .6 }` in `sfx-cues.js` (rotor whup-whup, swells and fades).
+- **Prompt (only if the asset is ever lost; attach `docs/assets/H00_helicopter_reference.png` in ChatGPT):**
+  `H01_helicopter.png: A sleek private helicopter in flight, seen exactly from the side, facing RIGHT, nose tipped slightly down as if cruising forward: exactly the helicopter in the attached reference image: glossy WHITE body with a navy-blue swoosh stripe along the side, big dark tinted windows (no people visible), black landing skids, a slim tail boom ending in a round enclosed tail fan with a navy accent. The main rotor on top drawn as a long, thin, slightly blurred horizontal streak. Flat 2D storybook style with soft painterly gradients, warm light from the left. Centered on a solid pure green #00FF00 background, no shadow, no text, no logos.`
 
 ### 1.13 Script modes: write the script the topic deserves
 Every video uses one of three modes. **Pick the mode from the topic before writing a word**, tell Brian
@@ -487,7 +520,8 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 1. **Cast** for this video (from section 2).
 2. **Background prompts**, numbered and named, ready to paste.
 3. **Prop prompts** on green.
-4. **Shot plan table**, one row per cue:
+4. **Shot plan table**, one row per cue. The last story row always includes **the helicopter ending** (§1.12a), and
+   the last background's prompt asks for open sky in the top third.
 
 | Cue | Picture (plate + props) | Camera | Characters (face · pose · gesture) |
 |---|---|---|---|
@@ -528,8 +562,48 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
   button) and adds the headline (line 1 white, the rest gold, thick outline, top quarter). **The cover always shows the
   character** (Brian's rule): pick a moment with the cast on screen and a big, readable reaction (`surprised`, `worried`,
   `shrug`), next to the subject (the empty hood, the dead bulb).
-- **Caption:** `post.md` with a TikTok/Reels caption (a curiosity line + the payoff in a few words + one Doug joke,
-  6–7 hashtags) and a YouTube Shorts title (≤ 100 chars, ends with #shorts).
+- **Caption:** `post.md` with a TikTok/Reels caption and a YouTube Shorts title (≤ 100 chars, ends with #shorts).
+  - **Line 1 = the search phrase, written the way people type it** ("Why is Thanksgiving on a Thursday?"), not a vibe
+    ("😧 Thanksgiving Explained"). No emoji before the keywords.
+  - Line 2: the curiosity line + one Doug joke.
+  - **3–5 niche hashtags** that name the topic and the lane (#thanksgiving #history #learnontiktok #explained).
+    Never a caption that is only "#fyp". No swearing (no "f\*ck", no "heck" needed in the caption).
+- **On-screen title:** the search phrase on screen in the first 2 s (the hook caption or a title card), so TikTok
+  reads it from the picture too. That's the third place (§6c).
+- **Length:** the final file is ≥ 1:02, or it earns nothing from Creator Rewards (§1.11).
+
+## 6c. Reach: getting seen by people who don't follow us
+Why this section exists (scrape, Nov 20 2026): @coonknows has 12k TikTok followers from old, deleted content. They
+don't watch the new videos (≈ 240 views each), so TikTok's first test batch stalls. The videos that broke out were
+**timely** (the "17 countries stock up" debunk: 1,564 views, 15 shares) or **true stories about a real person**
+(Victor Romero on Instagram: 18,391 views, 78 comments). The fix is to tell TikTok who each video is for and to
+borrow other creators' audiences.
+
+1. **Morning trend scrape (Claude, every day).** Scrape Creators: TikTok search suggestions for our openers
+   ("why is", "how does", "did", "what happened to", plus seasonal seeds like the next holiday) and this week's
+   most-liked videos for "explained", "history facts", "money explained". Write `docs/trends/<YYYY-MM-DD>.md`:
+   5–8 topic pitches, each with its **exact search phrase**, its mode (§1.13), why it's timely, and a post-by date;
+   plus 3–5 viral videos to stitch with their links. About 10–15 credits a day.
+   **Where it lives:** `docs/trends/` on `main`, so any session (and `/topics`) can read it. "Give me today's topics"
+   = `/topics`: read today's sheet; scrape first only if it's missing.
+2. **Searchable words in three places, every video:** (a) caption line 1, (b) on-screen text in the first 2 s,
+   (c) the first spoken sentence. Same keywords in all three, taken from the search suggestion, not invented.
+3. **Stitch one viral video a day** in our lanes (history, money, how-it-works, myths): their first 3–5 s, then
+   our narrator: "Here's what's actually going on." The stitch is shown to people who watched the original. The
+   whole stitch must still run ≥ 1:02. Stitch picks come from the trend sheet. Correct, don't dunk: no mocking the creator.
+4. **Comment early on bigger creators (Brian, ≈ 15 min a day).** Within the first hour of a post by a bigger
+   history/explainer creator, leave one real, specific comment (a fact they skipped, a funny one-liner in the narrator's
+   voice). Top comments send their viewers to our profile. No "check my page", no copy-paste comments.
+5. **Posting rules (we post as much as we can, inside these):**
+   - Posts at least **3 hours apart** so they don't compete with each other.
+   - **A different topic every post.** Never repost the same or a lightly edited video; TikTok can mark it
+     unoriginal and limit its reach. A long-form cut-down (§1.11) counts as new only if it's a different story beat.
+   - **Every post ≥ 1:02.** No sub-minute series, no "part 2": each video stands alone.
+   - Same video goes to TikTok, Instagram Reels and YouTube Shorts (Shorts is free reach we aren't using yet).
+   - Schedule: `docs/posting-schedule.md`.
+6. **Profile:** bio says what the account is ("How stuff really works, explained dry. New story daily. 📚");
+   pin the 3 best (one timely debunk, one true story, one money video). Ignore the old dead followers: once
+   strangers respond to a video, TikTok keeps widening who sees it.
 
 ## 7. Topic bank (any subject works; pick ones with a hidden mechanism or a twist)
 

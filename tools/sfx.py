@@ -94,7 +94,17 @@ def clunk(d=0.35):  # light switch / lights going out
     return (np.sin(2 * np.pi * 70 * t) * 0.9 + click(d)[:n] * 2) * np.exp(-t * 14) * 0.6
 
 
-LIB = dict(whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk)
+def helicopter(d=3.6):  # the signature ending: rotor "whup-whup" + turbine whine, passing overhead
+    n = int(SR * d); t = np.arange(n) / SR
+    slap = np.clip(np.sin(2 * np.pi * 5.5 * t), 0, 1) ** 6            # blade slap ~5.5 per second
+    thump = lowpass(noise(n), 40) * 3.0 * (0.35 + 0.65 * slap)
+    whine = np.sin(2 * np.pi * (620 + 40 * np.sin(2 * np.pi * .3 * t)) * t) * 0.05
+    pan = np.sin(np.pi * np.clip(t / d, 0, 1)) ** 1.3                  # swells as it passes, then fades
+    return (thump * 0.5 + whine) * pan * 0.7
+
+
+LIB = dict(whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk,
+           helicopter=helicopter)
 
 if __name__ == '__main__':
     ev_file, out, length = sys.argv[1], sys.argv[2], float(sys.argv[3])

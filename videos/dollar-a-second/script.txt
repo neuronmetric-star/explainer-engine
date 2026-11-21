@@ -1,0 +1,22 @@
+# SHORT (~1:05). LOCKED (Brian approved Nov 21 2026). $30 million now, or $1 every second for a year? Mode: Explainer (money math), told as a story.
+# Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence):
+#   "thirty million now or one dollar every second"
+# Payoff: a year has 31,536,000 seconds, so the dollar a second pays $31.5M, $1.5M more than the $30M.
+#   Even if Doug banks his $30M at ~4%, Gary banks each dollar as it lands and still ends ~$1M ahead.
+# Doug, Gary and Victor's offer are fictional. Numbers are real math (sources.md). Stitch-ready: works after
+#   @eaglewiggle2d's clip ("here's what's actually going on" = the interest twist they skipped) and on its own.
+[#q] {*Thirty million|Thirty million} dollars now, or {*one dollar|one dollar} every second for a year?
+[#card] See, Doug had a problem. [#victor] A billionaire offered him and Gary that choice.
+[#grab] Doug grabbed the millions. [#gary] Gary took the dollar.
+[#bet] Honestly? I'm with Doug. A dollar is a bag of chips.
+[#phone] Gary's dollars drip onto his phone, one every second, day and night.
+[#day1] After day one: {*$86,400.|eighty-six thousand four hundred dollars.} [#seconds] That's how many seconds fit in one day.
+[#boat] Doug's still way ahead. He bought a {*boat.|boat.}
+[#day12] Day twelve, Doug peeks at Gary's phone. [#million] {*One million.|One million.}
+[#math] So Doug does the math. [#chain] Sixty seconds, times sixty minutes, times twenty-four hours, times three sixty-five days.
+[#total] {*$31.5 million.|Thirty-one and a half million.} [#ahead] Gary wins by {*$1.5 million.|one and a half million.} Okay, I'm switching to Gary.
+[#wait] "But wait," you're saying, "Doug can bank his money." [#interest] Banks pay about four percent a year for keeping it there. That's called {*interest.|interest.}
+[#dougbank] Doug's thirty million earns {*$1.2 million.|one point two million.} [#gary2] But Gary banks every dollar too, the second it lands. [#close] He still wins by almost a {*million.|million.}
+[#reveal] So, the phone. Doug saw one dollar. Gary saw a year of seconds.
+[#end] Doug's boat is very nice. Gary's is {*bigger.|bigger.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

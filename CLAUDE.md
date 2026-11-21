@@ -16,14 +16,24 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
-- **Two lengths, one format**: long form 8:00–9:30 (1,300–1,500 words) and short form ≈ 1:05
-  (175–190 story words + CTA; just over TikTok's 1-minute payout line, never under 1:02; hook → middle → end). Both use Ray's skeleton + Xevi's narrator personality (PLAYBOOK §1.9–1.11,
-  `docs/creators/ray-xevi-study.md`); short form is the same format compressed (§1.11).
+- **Every video is short form** (Brian, Nov 21 2026; don't ask about length): ≈ 1:05–1:12 final, 175–190 story words + CTA,
+  just over TikTok's 1-minute payout line, never under 1:02, never over 1:15; hook → middle → end (PLAYBOOK §1.11).
+  Ray's skeleton + Xevi's narrator personality, compressed (`docs/creators/ray-xevi-study.md`). Long form is retired.
 - **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
+- **The helicopter ending, every video, no matter what** (PLAYBOOK §1.12a): on the last story line the Lamborghini
+  helicopter (`docs/assets/H01_helicopter.png`) flies across the sky via `K.helicopter(t, cue)`, the winner looks up,
+  then the follow CTA. The last background always has open sky in its top third.
+
+## Daily topics (`/topics`)
+When Brian asks for today's topics / trending topics: read `docs/trends/<today>.md` (US Eastern date; it's written every
+morning at 6:43 ET by the scheduled trend scrape, PLAYBOOK §6c). If it isn't there, run the scrape first, save the sheet,
+commit and push. Answer from the sheet, never from memory. Trend sheets and finished work go to `main` so every session sees them.
 
 ## The pipeline (always in this order)
-0. **Length first:** if Brian didn't say "long" or "short", ASK him (long ≈ 8–9.5 min or short ≈ 1:05) before any research, script or other work. There is no default.
-1. **Payoff → topic → mode.** Write the one-sentence answer the viewer will discover, then pick the script mode the
+0. **Length:** always short form (≈ 1:05–1:12, PLAYBOOK §1.11). Never ask; long form is retired (Brian, Nov 21 2026).
+1. **Payoff → topic → mode.** Pick topics from the morning trend sheet `docs/trends/<date>.md` (PLAYBOOK §6c) and
+   note the topic's **search phrase** (the exact words people type; it goes in caption line 1, on-screen text in the
+   first 2 s, and the first spoken sentence). Write the one-sentence answer the viewer will discover, then pick the script mode the
    topic deserves (PLAYBOOK §1.13): **Explainer** (how a thing works), **True story** (a real event/person), or
    **Lesson chain** (human behavior: chain of people + refrain "But what he doesn't know is that…" + flip + moral +
    comment question). Tell Brian the mode in one line. Lesson chains need no research unless they state facts.
@@ -49,6 +59,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 9. **Cover + caption**: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` → `cover.jpg`. **The cover always shows
    the character** (a real frame with the cast and a clear, expressive face; no captions), headline in the top quarter.
    Write `post.md` (TikTok/Reels caption + hashtags, YouTube Shorts title) and send both to Brian.
+   Caption line 1 = the search phrase; 3–5 niche hashtags, never only "#fyp", no swearing (PLAYBOOK §6b).
+   Post slot per `docs/posting-schedule.md`: ≥ 3 h apart, a different topic every post, every post ≥ 1:02.
 
 ## Story rules (short version of PLAYBOOK §1)
 - Choose the question word from the payoff: Why (reason) / Who (identity) / When (moment) /
