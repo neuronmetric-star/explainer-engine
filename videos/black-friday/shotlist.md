@@ -1,63 +1,62 @@
-# Shot list: "Why the heck is Black Friday called Black Friday?" (short, ≈ 1:13–1:18)
+# Shot list: "Are Black Friday deals worth it?" (short)
 
-**Script:** Brian's approved version (`script.txt`). **Mode:** True story (myth debunk).
-**Search phrase:** "why is it called black friday": spoken first, on-screen title for the first 2 s
-(`WHY IS IT CALLED` / `BLACK FRIDAY?`, white + gold, engine text), caption line 1.
-**Cast:** **Doug** = `hoodie` (the profit theory; in 1961 he's the traffic cop, with the P01 cop cap on his head) ·
-**Gary** = `oxford` + glasses (checks the dates) · **Victor** = `suit` (the store owner who renames it) ·
-**3 extras** = `polo` and recolored `oxford`/`polo` as shoppers (carry P07 shopping bags).
-**The clue:** the two dates. `1981` on the newspaper is shown before "twenty years earlier" lands, then the 1961 street.
-**All words and numbers are engine text** (banners, price tags, newspaper dates, the sign). Paintings carry no text.
-**Reused art:** `R01_calendar_page.png`, `R02_wall_clock.png` (copied from dollar-a-second), `H01_helicopter.png` (docs/assets).
-**Helicopter ending (§1.12a):** last background `05` has open sky in its top third; H01 crosses it on `heli`; Doug looks up.
-**Art:** 13 new images (6 backgrounds + 7 props) from `art-prompts.md` → `art/`. **OpenArt inserts:** none.
+**Script:** Brian's final approved script (`script.txt`) + CTA C. **Mode:** Explainer (how a "deal" works on your brain), as a story.
+**Search phrase:** "are black friday deals worth it": on-screen title for the first 2 s (`ARE BLACK FRIDAY` /
+`DEALS WORTH IT?`, white + gold, engine text) and caption line 1.
+**Cast:** **Doug** = `hoodie` (the buyer) · **Gary** = `oxford` + glasses (asks the one question, checks the prices) ·
+**2 extras** = `polo` + recolored `polo` (shoppers grabbing TVs on "everyone else").
+**The clue:** the crossed-out **$800**. It's on the tag at `was`, Gary questions it at `really`, and the anchor drops on it at `anchor`.
+**All prices, timers and words are engine text** (tags, countdown, chart labels, "SALE"). Paintings carry no text.
+**Reused art:** `R01_calendar_page.png` (dollar-a-second calendar), `R03_phone_blank.png` (dollar-a-second phone), `H01_helicopter.png`.
+**Helicopter ending (§1.12a):** last background `03` has open sky in its top third; H01 crosses on `heli`; Doug, carrying his TV box, looks up.
+**Art:** 9 new images (4 backgrounds + 5 props) from `art-prompts.md` → `art/`. **OpenArt inserts:** none.
 
 ## Images
 | # | File | What |
 |---|---|---|
-| 01 | `01_storefront_dawn.png` | Big old department store, dawn, a huge BLANK banner over the doors, velvet-rope queue posts, open sidewalk |
-| 02 | `02_store_interior_christmas.png` | Inside the store: Christmas decorations, a tree, counters, a BLANK hanging banner, open floor |
-| 03 | `03_ledger_desk_closeup.png` | Old wooden desk from above: an open ledger book with blank columns, a red pen and a black pen |
-| 04 | `04_newspaper_archive.png` | Library archive room: shelves of bound newspapers, a reading table, open floor |
-| 05 | `05_philly_1961_street_jam.png` | 1961 downtown street, wide: rounded old cars bumper to bumper, old department stores, open sidewalk, **open sky in the top third** (helicopter ending) |
-| 06 | `06_philly_1961_intersection.png` | Same era, a jammed intersection: traffic light, a small round traffic-cop platform in the middle, open pavement |
-| P01 | `P01_cop_cap.png` | 1960s police cap, navy with a black brim and a blank gold badge |
-| P02 | `P02_price_tag.png` | Big red paper price tag with a string, BLANK |
-| P03 | `P03_ledger_open.png` | Open old ledger book, front view, blank ruled columns |
-| P04 | `P04_newspaper.png` | Folded old newspaper, front page with blank headline area and gray text blocks (no letters) |
-| P05 | `P05_football.png` | A brown football with white laces |
-| P06 | `P06_blank_sign.png` | Hand-held wooden picket sign, blank white board |
-| P07 | `P07_shopping_bag.png` | Paper shopping bag with rope handles, red, no logo |
+| 01 | `01_electronics_aisle.png` | Electronics store aisle, a wall of TVs with dark blank screens, one big TV on a stand in front, open floor |
+| 02 | `02_home_desk_night.png` | Doug's desk at night: open laptop with a blank glowing screen, lamp, open floor beside it |
+| 03 | `03_store_parking_dusk.png` | Outside the store at dusk: glowing entrance, parking lot, **open sky in the top third** (helicopter ending) |
+| 04 | `04_electronics_aisle_empty.png` | Same as 01, the shelves nearly empty, a few boxes knocked over |
+| P01 | `P01_price_tag.png` | Big yellow hanging price tag with string, BLANK |
+| P02 | `P02_anchor.png` | Heavy cartoon ship anchor, dark iron, with a short chain |
+| P03 | `P03_tv_box.png` | Big cardboard TV box with a simple TV drawing, no text |
+| P04 | `P04_price_chart.png` | Simple line chart on a white card: flat line, small bumps, ends lower on the right; axes, no numbers |
+| P05 | `P05_sale_sign.png` | Big red hanging store sign, BLANK |
 
 ## Shot plan (picture · camera · acting)
 | Cue | Picture | Camera | Acting |
 |---|---|---|---|
-| q | 01 storefront dawn. **Title** `WHY IS IT CALLED` / `BLACK FRIDAY?`; the banner reads `BLACK FRIDAY` (engine text) | slow push-in to the banner | Doug in front of the doors, `flat`, looks up at the banner |
-| what | R01 calendar (reused) big on screen: `THU` turkey day, then `FRI` circled (engine text) | pop-in, slight drift | none |
-| deals | 02 interior, P02 price tag swings in: `$499` slashed → `$199` (engine) | punch-in on "slash" | Victor behind the counter `smirk` |
-| line | 01 dawn: Doug, Gary and 3 extras in the rope line, shopping bags | slow pan along the line | extras `flat`, Doug `happy` (first in line) |
-| season | 02 interior, the tree, banner `HOLIDAY SEASON` | push-in | Victor `tada` |
-| card | 02, Doug medium | cut | Doug `smirk`, `think` |
-| ledger | 03 ledger close-up: red `−$500` writes in, then black `+$900` (engine, ink colors) | top-down, slow push | none |
-| theory | 02, Doug | cut | Doug `happy`, `point` up |
-| bet | 02, wider | slow push | Doug `hips`; Gary enters frame right, `flat` |
-| gary | 04 archive, P04 newspaper on the table | tracking walk-in | Gary walks to the table, `think` |
-| y1981 | P04 newspaper big: date `1981` stamps in red | hard cut on "1981" | none |
-| older | 04: timeline overlay `1961 ——— 1981` (engine), `1961` gold | hold, drift | Gary `point` at the 1961 end, `surprised` |
-| philly | 05 street jam, wide | hard cut, slow push | Doug on the sidewalk with P01 cop cap, `flat` |
-| crowd | 05, extras with P07 bags walk across | track left → right | extras walking; Doug `worried` |
-| game | 05 + P05 football arcs across the sky; text `SATURDAY: ARMY vs NAVY` | whip pan up | Doug follows it with his eyes |
-| jam | 06 intersection, gridlock | hard cut, small shake | none |
-| crowds | 06, extras around the cop platform | push-in | extras `flat`, bumping past |
-| shift | 06, Doug on the platform; R02 wall clock (reused) spins; text `12 HOURS` (red) | push-in on Doug | Doug `worried`, `wave` (directing traffic) |
-| name | 05 wide; big text `BLACK FRIDAY` (black with white outline) | slow push | Doug `facepalm` |
-| stores | 02 interior | hard cut | Victor `worried`, `cross` |
-| big | 02, Victor holds P06 sign: `BIG FRIDAY` (engine) | push-in | Victor `smile`, sign arm up |
-| nobody | 02, empty store, Victor alone with the sign | static, wide | Victor `flat`; a beat of silence |
-| spin | 02, banner switches to `IN THE BLACK` (gold) | punch-in | Victor `smirk`, `tada` |
-| end | 05 street jam | slow push | Doug in cop cap, `flat` |
-| heli | 05: **helicopter ending**: H01 crosses the sky above the traffic | hold | Doug looks up (`nod` −.5), `flat`, while it passes |
-| ask | 05, text `PROFIT or TRAFFIC COP?` (gold / white) | hold | Doug looks back down, `shrug` |
-| cta | 05 + **+ FOLLOW** → tap → **✓ FOLLOWING** | static | Gary walks in, `point` at the button · Doug `shrug` |
+| q | 01 aisle, the big TV with P01 tag; **title** `ARE BLACK FRIDAY` / `DEALS WORTH IT?` | slow push-in to the TV | Doug facing the TV, `flat` |
+| tv | 01, closer on TV + tag | push | Doug `surprised` |
+| was | tag close: `WAS $800` (red, crossed out) | hard cut on "Was" | none |
+| now | tag: `NOW $500` (gold) pops under it | punch-in | none |
+| saving | 01, Doug medium | cut | Doug `happy`, `tada` |
+| gary | 01, Gary walks in right | tracking walk-in | Gary `flat` |
+| really | 01, Gary `point` at the tag; `$800?` pulses | push-in on Gary | Gary `think`, Doug `worried` glance |
+| trick | 01 wide | slow push | Doug `blink`, `tilt` |
+| anchor | P02 anchor drops from the top and lands on `$800` with a thud | hard cut, small shake | none |
+| feels | tag: `$500` grows, glowing gold | push | none |
+| usual | 01: thought text `usual price: ???` | hold | Doug `shrug` |
+| site | 02 desk night, laptop | hard cut | Doug at the desk, `flat` |
+| tonight | laptop screen: `DEAL ENDS TONIGHT` (red) + countdown `03:59:59` ticking (engine) | punch-in on the screen | none |
+| rushed | 02, Doug | push | Doug `worried`, `lean` in |
+| back | 02 + `$500 → $800?` arrow up (red) | hold | Doug `worried` |
+| everyone | 04 empty aisle, 2 extras run off with TV boxes (P03) | whip pan | extras `happy` walking fast |
+| countdown | R03 phone (reused) with the countdown ticking | push | none |
+| notplanning | 02, Doug | static | Doug `think`, `facepalm` |
+| catch | 01 aisle: green `✓ SOME DEALS ARE REAL` | cut | Gary `smile`, `nod` |
+| prove | tag: `WAS $800` shakes; `= proof?` | punch-in | none |
+| rule | 01 + text `the "WAS" price should be real` | slow push | Gary `point` |
+| tag | R01 calendar (reused): `LAST WEEK: ?` | pop-in | none |
+| other | 01 + three floating P01 tags: `STORE A ?` `STORE B ?` | hold | Doug `shrug` |
+| check | 02 laptop + P04 price chart pops up; labels `last month`, `today` | push-in | Gary at the desk, `think` |
+| compare | three P01 tags: `$549` `$529` `$500` (gold) | pop, pop, pop | none |
+| good | 02: `$500 = GOOD PRICE ✓` (gold) | punch-in | Gary `smile`, Doug `happy` |
+| end | 03 parking lot dusk: Doug walks out with P03 TV box | tracking walk | Doug `happy` |
+| heli | 03: **helicopter ending**: H01 crosses the sky | hold | Doug stops, looks up (`nod` −.5), `flat` |
+| tip | 03 + checklist text `✓ price history` `✓ same model, other stores` | hold | Doug looks back down, `smile` |
+| ask | 03, P05 SALE sign: `SALE?` (red) | push | Gary walks in, `cross` |
+| cta | 03 + **+ FOLLOW** → tap → **✓ FOLLOWING** | static | Gary `point` at the button · Doug `shrug` |
 
-**Cover idea:** `shift`: Doug in the cop cap, `worried`, jammed cars behind. Headline `WHY IS IT CALLED|BLACK|FRIDAY?`.
+**Cover idea:** `really`: Gary pointing at the tag `WAS $800 / NOW $500`, Doug `worried`. Headline `ARE BLACK FRIDAY|DEALS|WORTH IT?`.

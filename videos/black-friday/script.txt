@@ -1,24 +1,25 @@
-# SHORT (~1:10). LOCKED: Brian's approved script (Nov 21 2026), marked up with cues. Mode: True story (myth debunk).
-# Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence):
-#   "why is it called black friday"
-# Payoff: Philadelphia traffic cops named it around 1961 for the jammed, brutal day after Thanksgiving; the
-#   "in the black" profit story only shows up in 1981. Doug as a 1961 cop is a reconstruction (sources.md).
-# Ending: the helicopter ending (PLAYBOOK §1.12a) flies over the jammed street on the last story line; Doug looks up.
-# Brian's comment question stays; the follow CTA (§1.12 C) is added after it.
-[#q] Why the {*heck|heck} is {*Black Friday|Black Friday} called Black Friday?
-[#what] It's the day after Thanksgiving: [#deals] stores slash prices, [#line] shoppers line up before sunrise, [#season] and the Christmas shopping season kicks off.
-[#card] Doug thinks he knows where the name came from. [#ledger] Stores used to write losses in {!red|red} ink and profits in {*black|black} ink.
-[#theory] So Black Friday must be the day stores finally start making money.
-[#bet] Honestly? That sounds right. I'd bet on it too.
-[#gary] Then Gary checks the dates. [#y1981] The "in the black" explanation shows up in {!1981.|nineteen eighty-one.}
-[#older] But Philadelphia police were already using "Black Friday" {*twenty years|twenty years} earlier.
-[#philly] So picture Doug as a Philadelphia traffic cop in {*1961.|nineteen sixty-one.}
-[#crowd] The day after Thanksgiving, shoppers pack downtown. [#game] Then football fans pour in for Saturday's Army–Navy game.
-[#jam] Streets jam up. [#crowds] Crowds everywhere. [#shift] And the cops? They're working {!twelve-hour|twelve-hour} shifts.
-[#name] They called it Black Friday because it was a brutal day to be on the job.
-[#stores] Stores hated that name. [#big] They tried calling it "Big Friday."
-[#nobody] Nobody bought it.
-[#spin] So later, stores gave the name a happier explanation: the day they go {*"in the black."|"in the black."}
-[#end] Doug wanted a story about profits. [#heli] The older story starts with Philadelphia cops, packed streets, and a very long shift.
-[#ask] Which story would you have believed: the profit story or the traffic-cop story?
+# SHORT. LOCKED: Brian's final approved script (Nov 21 2026), marked up with cues + our ending line (CTA C).
+# Topic: are Black Friday deals actually deals? Mode: Explainer (how a "deal" works on your brain), told as a story.
+# Search phrase (caption line 1 + on-screen title in the first 2 s): "are black friday deals worth it"
+#   (spoken opening keeps Brian's wording; its keywords are "Black Friday deal").
+# Payoff: a big "Was" price anchors you and a countdown rushes you; the tag alone can't prove a deal: check the
+#   price history and the exact model elsewhere. Doug, Gary and the TV prices are fictional (sources.md).
+# Ending: the helicopter ending (PLAYBOOK §1.12a) crosses the sky as Doug walks out with his TV; Doug looks up.
+# The earlier "why is it called Black Friday" version is kept as script-v3-name.txt.
+[#q] Why the {*heck|heck} does a {*Black Friday deal|Black Friday deal} feel impossible to pass up, and is it actually a deal?
+[#tv] Doug sees a TV marked: [#was] "Was {!$800.|eight hundred dollars.} [#now] Now {*$500."|five hundred."}
+[#saving] "Look how much I'm saving!" he says.
+[#gary] But Gary asks one question: [#really] "Was it really selling for {!$800?"|eight hundred?"}
+[#trick] That's the trick your brain can fall for. [#anchor] The old price becomes an {*anchor.|anchor.}
+[#feels] Once Doug sees eight hundred, five hundred feels like a bargain, [#usual] even before he checks what the TV usually costs.
+[#site] Then the website flashes: [#tonight] {!"Deal ends tonight!"|"Deal ends tonight!"}
+[#rushed] Now Doug feels rushed. [#back] What if the price goes back up? [#everyone] What if everyone else gets one first?
+[#countdown] That countdown can make waiting feel risky, [#notplanning] even when Doug wasn't planning to buy a TV at all.
+[#catch] And here's the catch: some Black Friday discounts are {*real.|real.} [#prove] But a big "Was" price doesn't prove the deal is the best one.
+[#rule] Stores can advertise genuine price cuts, and the comparison price should be real. [#tag] But the number on the tag doesn't tell Doug what the same item cost last week, [#other] or what another store charges today.
+[#check] So Gary checks the {*price history|price history} [#compare] and compares the exact same model at other stores.
+[#good] Turns out, five hundred is a {*good price.|good price.}
+[#end] Doug gets his TV, [#heli] and keeps the money he would've wasted on a fake bargain.
+[#tip] Before you buy, check the price history and compare the exact product.
+[#ask] Is it a deal because it's cheaper, or because the sign says {!"SALE"?|"SALE"?}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
