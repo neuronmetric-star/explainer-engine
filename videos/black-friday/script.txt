@@ -1,0 +1,22 @@
+# SHORT (~1:05). Why is it called Black Friday? Mode: True story (myth debunk).
+# Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence):
+#   "why is it called black friday"
+# Payoff: Philadelphia traffic cops named it in the early 1960s for the jammed, miserable day after Thanksgiving
+#   (shoppers + Army-Navy game crowds, no days off, 12-hour shifts). Stores tried "Big Friday", failed, and the
+#   "in the black" profit story only shows up in print in 1981, about 20 years later.
+# Doug, Gary and "Doug as a 1961 cop" are a reconstruction; the history is real (sources.md).
+# Ending: the helicopter ending (PLAYBOOK §1.12a) flies over the traffic jam on the last story line; Doug looks up.
+[#q] Why the {*heck|heck} is it called {*Black Friday?|Black Friday?}
+[#card] See, Doug had a problem. He's sure he knows the answer.
+[#ledger] Stores used to write money lost in red ink, and money made in black ink. [#black] So "in the black" means making a profit.
+[#bet] Doug's theory: the day after Thanksgiving, stores finally go from red to black. Honestly? I'd bet on that too.
+[#gary] Then Gary checks the dates. [#y1981] The oldest written version of that story is from {!1981.|nineteen eighty-one.}
+[#older] The name is about twenty years older. So much for my bet.
+[#philly] Picture Doug as a traffic cop in Philadelphia, around nineteen sixty-one.
+[#crowd] The day after Thanksgiving, shoppers flood downtown. [#game] Saturday is the big Army–Navy football game, so tourists pour in too.
+[#jam] Traffic locks up. The whole city becomes one parking lot. [#shift] No cop gets the day off. {!Twelve-hour|Twelve-hour} shifts.
+[#name] So the cops call it {!Black Friday:|Black Friday:} a terrible day.
+[#stores] Store owners hated that. [#big] They tried "Big Friday." Nobody bought it.
+[#spin] So, years later, they sold us the happy version: {*in the black.|in the black.}
+[#end] Doug wanted a story about profit. [#heli] The real one is a cop stuck in traffic for twelve hours.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
