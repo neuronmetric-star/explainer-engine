@@ -1,23 +1,24 @@
-# SHORT (~1:05). Why is it called Black Friday? Mode: True story (myth debunk).
+# SHORT (~1:10). LOCKED: Brian's approved script (Nov 21 2026), marked up with cues. Mode: True story (myth debunk).
 # Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence):
 #   "why is it called black friday"
-# Payoff: Philadelphia traffic cops named it in the early 1960s for the jammed, miserable day after Thanksgiving
-#   (shoppers + Army-Navy game crowds, no days off, 12-hour shifts). Stores tried "Big Friday", failed, and the
-#   "in the black" profit story only shows up in print in 1981, about 20 years later.
-# Doug, Gary and "Doug as a 1961 cop" are a reconstruction; the history is real (sources.md).
-# Ending: the helicopter ending (PLAYBOOK §1.12a) flies over the traffic jam on the last story line; Doug looks up.
-[#q] Why the {*heck|heck} is it called {*Black Friday?|Black Friday?}
-[#what] Black Friday is the day after Thanksgiving, the American holiday at the end of November.
-[#deals] Stores slash prices, people line up before sunrise for cheap TVs, [#season] and the Christmas shopping season begins.
-[#card] See, Doug had a problem: he thinks the name is about money.
-[#ledger] Stores used to write losses in red ink and profits in black ink, [#black] so making money is being "in the black."
-[#bet] His theory: it's the day stores finally profit. Honestly? I'd bet on that too.
-[#gary] Then Gary checks: [#y1981] that profit story first appears in {!1981.|nineteen eighty-one.}
-[#older] The name is twenty years older. So much for my bet.
-[#philly] Picture Doug as a Philadelphia traffic cop in nineteen sixty-one.
-[#crowd] That Friday, shoppers flood downtown, [#game] and fans pour in for Saturday's Army–Navy football game.
-[#jam] The city becomes one parking lot. [#shift] No cop gets the day off: {!twelve-hour|twelve-hour} shifts.
-[#name] So the cops call it {!Black Friday.|Black Friday.} Black, as in a terrible day.
-[#stores] Stores hated that. [#big] They tried "Big Friday." Nobody bought it. [#spin] So later, they sold the happy version: {*in the black.|in the black.}
-[#end] Doug wanted a story about profit. [#heli] The real one is a cop stuck in traffic for twelve hours.
+# Payoff: Philadelphia traffic cops named it around 1961 for the jammed, brutal day after Thanksgiving; the
+#   "in the black" profit story only shows up in 1981. Doug as a 1961 cop is a reconstruction (sources.md).
+# Ending: the helicopter ending (PLAYBOOK §1.12a) flies over the jammed street on the last story line; Doug looks up.
+# Brian's comment question stays; the follow CTA (§1.12 C) is added after it.
+[#q] Why the {*heck|heck} is {*Black Friday|Black Friday} called Black Friday?
+[#what] It's the day after Thanksgiving: [#deals] stores slash prices, [#line] shoppers line up before sunrise, [#season] and the Christmas shopping season kicks off.
+[#card] Doug thinks he knows where the name came from. [#ledger] Stores used to write losses in {!red|red} ink and profits in {*black|black} ink.
+[#theory] So Black Friday must be the day stores finally start making money.
+[#bet] Honestly? That sounds right. I'd bet on it too.
+[#gary] Then Gary checks the dates. [#y1981] The "in the black" explanation shows up in {!1981.|nineteen eighty-one.}
+[#older] But Philadelphia police were already using "Black Friday" {*twenty years|twenty years} earlier.
+[#philly] So picture Doug as a Philadelphia traffic cop in {*1961.|nineteen sixty-one.}
+[#crowd] The day after Thanksgiving, shoppers pack downtown. [#game] Then football fans pour in for Saturday's Army–Navy game.
+[#jam] Streets jam up. [#crowds] Crowds everywhere. [#shift] And the cops? They're working {!twelve-hour|twelve-hour} shifts.
+[#name] They called it Black Friday because it was a brutal day to be on the job.
+[#stores] Stores hated that name. [#big] They tried calling it "Big Friday."
+[#nobody] Nobody bought it.
+[#spin] So later, stores gave the name a happier explanation: the day they go {*"in the black."|"in the black."}
+[#end] Doug wanted a story about profits. [#heli] The older story starts with Philadelphia cops, packed streets, and a very long shift.
+[#ask] Which story would you have believed: the profit story or the traffic-cop story?
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
