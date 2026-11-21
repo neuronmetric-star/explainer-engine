@@ -68,7 +68,7 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
     let mux;
     if (!parts.length) mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
     else mux = [...ins, '-filter_complex', parts.join(';') + ';' + parts.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${parts.length}:duration=longest:normalize=0[a]`,
-      '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
+      '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-ac', '2', '-ar', '48000', '-t', L.toFixed(3)];
     mux.push('-movflags', '+faststart', out);
     spawnSync(ff, mux, { stdio: 'inherit' }); fs.rmSync(silent, { force: true });
     console.log('done ->', path.relative(ROOT, out), `(${L.toFixed(1)}s, ${((Date.now() - t0) / 60000).toFixed(1)} min)`);

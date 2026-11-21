@@ -1,0 +1,23 @@
+# Why the f*ck do we shower in the morning if we showered at night? — v3: in bed, sweating, meet the bacteria
+# Markup: *gold  !red  {shown|spoken}  [#cue]   — sources in sources.md (v1/v2 kept as script-v1.txt / script-v2.txt)
+
+[#hook] Why the {F*CK|fuck} do we have to shower in the morning, if we showered at night? [#bridge] Give me a minute. I'll show you what happens while you sleep.
+
+[#t11] {11 PM.|Eleven P M.} You're fresh out the shower. Squeaky *clean. [#think] You think.
+
+[#t12] {Midnight.|Midnight.} Your body cools down to sleep [#heat] by dumping heat through your skin. [#sweat] You !sweat.
+[#glands] You have two kinds of sweat glands. [#eccrine] *Eccrine glands, all over your body, make sweat that's about {99%|ninety-nine percent} water. [#apocrine] *Apocrine glands, in your armpits and groin, make thicker sweat, [#fats] full of fats and proteins.
+
+[#t2] {2 AM.|Two A M.} You *shed [#cells] tens of thousands of dead skin cells a minute. [#mites] Your pillow becomes a dust mite buffet.
+
+[#t4] {4 AM.|Four A M.} Meet your roommates. [#bugs] About {*100 billion|a hundred billion} bacteria live on your skin.
+[#epi] Staph epidermidis, the *good guy. It guards your skin barrier.
+[#acnes] Cutibacterium acnes, hiding in the oily pores on your face.
+[#hominis] And Staph hominis, the !stinker. [#eats] It eats that fatty armpit sweat [#gas] and turns it into a !sulfur !gas.
+[#bo] Your sweat doesn't stink. The bacteria eating it does.
+
+[#t7] {7 AM.|Seven A M.} You wake up [#cup] about a *cup of water lighter, [#covered] covered in sweat, dead skin, and well-fed bacteria.
+
+[#wash] So your night shower washes off your *day. [#washnight] Your morning shower washes off your *night.
+
+[#cta] Knowing this, will you start taking morning showers? [#share] Send this to your *stinky partner.

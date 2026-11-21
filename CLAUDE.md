@@ -101,3 +101,12 @@ before every picture change · lines starting `#` are comments. Numbers as words
 - **Legacy** gold-noir engine (`engine/kit.js`, `stage.html`, `tools/render.js`, `videos/buy-borrow-die`)
   still renders the old wireframe look. Wiring plates + cast into `scene.js`/`render.js` is the next
   build step (do it with `gas-vs-water`). Everything in `update` must be a pure function of `t`.
+
+## Legacy kit.js engine extras (from the Nov 11 videos: house, submarine, Nvidia, shower)
+Videos without an `art/` folder render through `engine/stage.html` + `engine/kit.js`. That engine also has:
+- Looks: no `look.js` = **bright** (sunny, solid shapes, soft shadows); `window.LOOK = 'gold-noir' | 'blueprint'`
+  in `videos/<slug>/look.js` (`engine/styles/*`). Old videos pin theirs.
+- Solid models, cutaways + numbered callouts (`videos/_cutaway-demo/`); real CC0 Quaternius 3D models in
+  `assets/models/` via `models:{}` + `K.model / K.anim / K.crown / K.stick` (`videos/_army-demo/`).
+- Time-of-day lighting inside a video (`K.lights`, `K.keyOffset`, `K.skyTexture`, `K.bloom`; see `videos/why-shower-morning/`).
+- @coonknows moving watermark + end-card handle (`K.BRAND`); `tools/draft-timing.js` for placeholder timing.
