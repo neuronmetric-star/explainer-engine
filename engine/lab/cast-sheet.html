@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Cast sheet</title>
+<!-- Character model sheets for the 3D cast. Render with: node tools/cast-sheet.js [outDir] -->
+<style>
+@font-face{font-family:IN;font-weight:900;src:url('../../node_modules/@fontsource/inter/files/inter-latin-900-normal.woff2')}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:2400px;height:2160px;overflow:hidden;background:#ece6dc;font-family:IN,sans-serif}
+#c{position:fixed;inset:0;width:2400px;height:2160px}
+#ui{position:fixed;inset:0;pointer-events:none}
+.l{position:absolute;font-weight:900;color:#2a2622;text-align:center}
+</style></head><body>
+<canvas id="c"></canvas><div id="ui"></div>
+<script src="../../node_modules/three/build/three.min.js"></script>
+<script src="../../node_modules/three/examples/js/environments/RoomEnvironment.js"></script>
+<script src="../characters.js"></script>
+<script>
+const W = 2400, H = 2160;
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true, preserveDrawingBuffer: true });
+renderer.setPixelRatio(1); renderer.setSize(W, H, false);
+renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 1.0;
+renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.setClearColor(0xece6dc); renderer.autoClear = false;
+const scene = new THREE.Scene();
+const env = new THREE.PMREMGenerator(renderer).fromScene(new THREE.RoomEnvironment(), .04).texture;
+// neutral studio light: warm key front-left, cool fill, rim from behind
+const key = new THREE.DirectionalLight(0xfff1e0, 1.7); key.position.set(-4, 7, 6); key.castShadow = true;
+key.shadow.mapSize.set(2048, 2048); Object.assign(key.shadow.camera, { left: -3, right: 3, top: 4, bottom: -1, near: 1, far: 30 }); key.shadow.bias = -.0004;
+const fill = new THREE.DirectionalLight(0xdfe8ff, 1.0); fill.position.set(5, 3, 6);
+const rim = new THREE.DirectionalLight(0xffffff, 1.2); rim.position.set(0, 5, -6);
+scene.add(key, fill, rim, new THREE.HemisphereLight(0xffffff, 0xb8a890, .35));
+const ground = new THREE.Mesh(new THREE.PlaneGeometry(20, 20).rotateX(-Math.PI / 2), new THREE.ShadowMaterial({ opacity: .22 })); ground.receiveShadow = true; scene.add(ground);
+const cam = new THREE.PerspectiveCamera(22, 1, .1, 100);
+const ui = document.getElementById('ui');
+const label = (txt, x, y, w, size, color) => { const d = document.createElement('div'); d.className = 'l'; d.textContent = txt;
+  Object.assign(d.style, { left: x + 'px', top: y + 'px', width: w + 'px', fontSize: size + 'px', color: color || '#2a2622' }); ui.appendChild(d); };
+const panel = (x, y, w, h) => { const d = document.createElement('div'); Object.assign(d.style, { position: 'absolute', left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px',
+  border: '3px solid #cfc5b5', borderRadius: '18px' }); ui.appendChild(d); };
+
+const CAST = {
+  doug:      { name: 'DOUG', outfit: 'hoodie', role: 'the confident everyman who gets it wrong', spec: 'mustard hoodie · navy jeans · white sneakers' },
+  gary:      { name: 'GARY', outfit: 'oxford', role: 'the observer who notices (glasses)', spec: 'light-blue oxford · khakis · brown shoes · brown belt · silver glasses' },
+  victor:    { name: 'VICTOR', outfit: 'suit', role: 'the rich guy / boss (stocky)', spec: 'navy suit · red tie · gold watch · black shoes' },
+  polo:      { name: 'POLO GUY', outfit: 'polo', role: 'the worker: cashier, mechanic, guard', spec: 'olive polo · khakis · gray sneakers · black watch' },
+  president: { name: 'THE PRESIDENT', outfit: 'president', role: 'head of state', spec: 'black bomber · white tee · backwards black cap · blue-white-blue sash' },
+  gang:      { name: 'GANG MEMBER', outfit: 'gang', role: 'street crew (never armed)', spec: 'dark hoodie · black jeans · black beanie · red bandana over nose and mouth' },
+};
+let ch = null;
+function cell(x, y, w, h, target, dist, rotY, setup) {
+  ch.root.rotation.y = rotY; ch.face('smile'); ch.pose({}); if (setup) setup();
+  ch.root.updateMatrixWorld(true);
+  cam.aspect = w / h; cam.updateProjectionMatrix();
+  cam.position.set(0, target.y + .05, dist); cam.lookAt(0, target.y, 0);
+  const vy = H - y - h; renderer.setViewport(x, vy, w, h); renderer.setScissor(x, vy, w, h); renderer.render(scene, cam);
+}
+window.renderSheet = function (id) {
+  const C = CAST[id]; ui.innerHTML = '';
+  if (ch) scene.remove(ch.root);
+  ch = CHAR.make({ outfit: C.outfit, envMap: env }); ch.root.traverse(o => { if (o.material) [].concat(o.material).forEach(m => { if (!m.__lin && m.color) { m.__lin = 1; m.color.convertSRGBToLinear(); } }); });
+  scene.add(ch.root);
+  renderer.setScissorTest(false); renderer.setViewport(0, 0, W, H); renderer.clear(); renderer.setScissorTest(true);
+  label(C.name, 60, 34, 1200, 84); ui.lastChild.style.textAlign = 'left';
+  label(C.role + '   ·   CHAR.make({outfit:\'' + C.outfit + '\'})', 60, 132, 2280, 34, '#6b6055'); ui.lastChild.style.textAlign = 'left';
+  label(C.spec, 60, 178, 2280, 34, '#6b6055'); ui.lastChild.style.textAlign = 'left';
+  // row 1: turnaround
+  const views = [['FRONT', 0], ['3/4', -.75], ['SIDE', -Math.PI / 2], ['BACK', Math.PI]];
+  views.forEach(([n, r], i) => { const x = 60 + i * 575, y = 240; panel(x, y, 555, 900); cell(x, y, 555, 820, { y: 1.15 }, 8.2, r); label(n, x, y + 830, 555, 40); });
+  // row 2: gestures
+  const gs = [['point', 'smirk'], ['wave', 'happy'], ['shrug', 'flat'], ['cross', 'flat'], ['think', 'smile'], ['facepalm', 'worried'], ['hips', 'smile'], ['tada', 'happy']];
+  gs.forEach(([g, f], i) => { const x = 60 + i * 285, y = 1170; panel(x, y, 270, 560);
+    cell(x, y, 270, 500, { y: 1.15 }, 9.6, -.35, () => { ch.face(f); ch.pose({ gesture: g, gw: 1, t: .3 }); }); label(g.toUpperCase(), x, y + 505, 270, 30); });
+  // row 3: faces
+  const fs = ['smile', 'happy', 'surprised', 'smirk', 'worried', 'flat', 'blink'];
+  const hp = new THREE.Vector3();
+  fs.forEach((f, i) => { const x = 60 + i * 326, y = 1760; panel(x, y, 310, 360);
+    ch.root.rotation.y = 0; ch.pose({}); ch.face(f); ch.root.updateMatrixWorld(true); cam.aspect = 310 / 300; cam.updateProjectionMatrix();
+    ch.head.getWorldPosition(hp); cam.position.set(0, hp.y + .05, hp.z + 2.6); cam.lookAt(0, hp.y - .02, hp.z);
+    const vy = H - y - 300; renderer.setViewport(x, vy, 310, 300); renderer.setScissor(x, vy, 310, 300);
+    renderer.setClearColor(0xece6dc); renderer.clear(); renderer.render(scene, cam);
+    label(f.toUpperCase(), x, y + 305, 310, 30); });
+  return true;
+};
+window.SHEETS = Object.keys(CAST);
+window.ready = true;
+</script></body></html>
