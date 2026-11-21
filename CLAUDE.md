@@ -24,6 +24,11 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
   helicopter (`docs/assets/H01_helicopter.png`) flies across the sky via `K.helicopter(t, cue)`, the winner looks up,
   then the follow CTA. The last background always has open sky in its top third.
 
+## Daily topics (`/topics`)
+When Brian asks for today's topics / trending topics: read `docs/trends/<today>.md` (US Eastern date; it's written every
+morning at 6:43 ET by the scheduled trend scrape, PLAYBOOK §6c). If it isn't there, run the scrape first, save the sheet,
+commit and push. Answer from the sheet, never from memory. Trend sheets and finished work go to `main` so every session sees them.
+
 ## The pipeline (always in this order)
 0. **Length:** always short form (≈ 1:05–1:12, PLAYBOOK §1.11). Never ask; long form is retired (Brian, Nov 21 2026).
 1. **Payoff → topic → mode.** Pick topics from the morning trend sheet `docs/trends/<date>.md` (PLAYBOOK §6c) and

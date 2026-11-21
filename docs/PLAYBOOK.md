@@ -584,6 +584,8 @@ borrow other creators' audiences.
    most-liked videos for "explained", "history facts", "money explained". Write `docs/trends/<YYYY-MM-DD>.md`:
    5–8 topic pitches, each with its **exact search phrase**, its mode (§1.13), why it's timely, and a post-by date;
    plus 3–5 viral videos to stitch with their links. About 10–15 credits a day.
+   **Where it lives:** `docs/trends/` on `main`, so any session (and `/topics`) can read it. "Give me today's topics"
+   = `/topics`: read today's sheet; scrape first only if it's missing.
 2. **Searchable words in three places, every video:** (a) caption line 1, (b) on-screen text in the first 2 s,
    (c) the first spoken sentence. Same keywords in all three, taken from the search suggestion, not invented.
 3. **Stitch one viral video a day** in our lanes (history, money, how-it-works, myths): their first 3–5 s, then
