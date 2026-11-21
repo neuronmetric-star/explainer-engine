@@ -10,9 +10,9 @@
 [#card] See, Doug had a problem. He's hosting Thanksgiving, and he wants it {*exactly|exactly} like the first one.
 [#ground] Over four hundred years ago, [#feast] English settlers called the Pilgrims and the Wampanoag, the Native people already living there, shared a three-day harvest feast.
 [#bet] So Doug bought a turkey. Honestly? I'd bet on turkey too.
-[#letter] Then Gary finds the only eyewitness letter, from a settler, Edward Winslow.
-[#fowling] It says the men went "fowling." That means hunting birds: ducks, geese, maybe turkey. [#deer] And the Wampanoag brought {*five deer.|five deer.}
-[#notice] The word "turkey"? {!Not there.|Not there.} So much for my bet.
+[#letter] Then Gary finds the only eyewitness letter, [#winslow] from a settler, Edward Winslow.
+[#fowling] It says the men went "fowling." [#birds] That means hunting birds: ducks, geese, maybe turkey. [#deer] And the Wampanoag brought {*five deer.|five deer.}
+[#notice] The word "turkey"? {!Not there.|Not there.} [#doubt] So much for my bet.
 [#hale] So who put it on the table? [#editor] A magazine editor named {*Sarah Josepha Hale.|Sarah Josepha Hale.}
 [#novel] Two centuries later, she wrote a novel where a roast turkey sat at the head of the Thanksgiving table.
 [#letters] Then she asked five presidents for a national holiday. [#lincoln] In eighteen sixty-three, Abraham Lincoln said {*yes.|yes.}
