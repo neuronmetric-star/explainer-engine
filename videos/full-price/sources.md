@@ -26,4 +26,5 @@
 | "First number" mechanism = anchoring (reference prices make the sale price feel like a win) | Background, not a JCPenney claim. Related: 2015 $50M settlement over "original" prices (JCPenney denied wrongdoing; NOT in the script): https://www.cbsnews.com/news/j-c-penney-to-make-50m-available-to-settle-lawsuit |
 
 ## Labeled as illustrative
-- The $40 → $20 shirt is an example, not a real JCPenney tag. Doug and the phone-store salesmen are our cast.
+- Doug, Gary (the sales guy), the TV and its $599 → $299 tag (same price in October) are illustrative, not a real store or product.
+- Gary's lines quote the trend (SNL "Bubu Mobile"); the narrator performs them in his own voice, no accent.

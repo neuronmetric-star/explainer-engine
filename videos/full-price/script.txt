@@ -1,24 +1,23 @@
-# SHORT (~1:08). DRAFT, waiting for Brian. Mode: True story (a real company + a real decision), riding the
-# "He wanna pay full price" trend (SNL "Bubu Mobile" sketch, Nov 7 2026; Druski + Marcello Hernandez).
-# Search phrases: "black friday deals" (TikTok's #1 suggestion) + "he wanna pay full price" (the trend).
-#   Both on screen in the first 2 s; "Black Friday deals" in the first spoken sentence; both in caption line 1.
+# SHORT (~1:05-1:10). DRAFT v2, waiting for Brian. Mode: True story (JCPenney 2012) told through a Doug/Gary skit,
+# riding the "He wanna pay full price" trend (SNL "Bubu Mobile", Nov 7 2026). Brian (Nov 22): open on "Why the heck",
+# then the Doug/Gary "papi... scenario of the best case... he wanna pay full price" joke, then a quick story to fill a minute.
+# Search phrases: "black friday deals" (first spoken sentence, on-screen first 2 s, caption line 1) + "he wanna pay full price".
 # Payoff: stores need Black Friday deals because shoppers don't want low prices, they want the crossed-out price.
-#   In 2012 JCPenney dropped sales and coupons for one honest price; sales fell a quarter ($4.3B) and the CEO was fired.
-# COLD OPEN (0:00-0:12, no narrator): the trending sound, clip time 2.74-14.88 s:
-#   "I think I'll just pay full price, if that's okay." / "Ah, you wanna pay full price? That's okay, Papi.
-#   That is the scenario of the best case." / "He wanna pay full price!" (one chant, hard cut on the beat).
-#   Picture: Doug at a phone-store counter on Black Friday, two polo salesmen freeze, then dance (balloons).
-#   On-screen text the whole time: "BLACK FRIDAY DEALS / HE WANNA PAY FULL PRICE".
-#   Narration starts on the cut. Story words are ~150 (not 175-190) because the sound fills the first 12 s.
-# Doug and the shirt are illustrative; JCPenney facts are real (sources.md). We never imitate the sketch's accents.
-[#q] Funny. But why the heck do stores need {*Black Friday deals|Black Friday deals} at all?
-[#card] See, in {2012,|twenty twelve,} one store tried living without them. [#jcp] JCPenney, the giant mall store, [#ron] hired the guy who built the {*Apple Stores.|Apple Stores.}
-[#stat] He checked the receipts. Only {*0.2%|zero point two percent} of sales were full price. [#yard] Two shirts in every {*thousand.|thousand.}
-[#plan] So he said: no more sales. [#coupons] No more coupons. [#fair] One fair price, every day.
-[#tag] A twenty-dollar shirt now just says {*$20.|twenty.} Not forty, crossed out to twenty.
-[#bet] Honestly? I'd shop there. No coupons, no fist fights over a toaster.
-[#empty] Then the shoppers stopped coming. [#drop] In one year, sales fell by a {!quarter.|quarter.} [#billion] {!$4 billion|Four billion dollars,} gone.
-[#brain] Turns out your brain judges a price by the first number it sees. [#forty] Forty, crossed out, makes twenty feel like a {*win.|win.} [#twenty] Twenty alone just feels like twenty.
-[#fired] Seventeen months in, the board {!fired|fired} him. [#back] The sales came back.
-[#end] He wanna pay full price. He just doesn't wanna {*know it.|know it.}
+#   In 2012 JCPenney dropped sales for one honest price; sales fell a quarter (~$4.3B) and the CEO was fired.
+# Narrator performs Gary's lines in his own voice (rhythm + energy, NO imitation of the sketch's accent).
+# Doug, Gary, the TV and its prices are illustrative; JCPenney facts are real (sources.md).
+# Optional: the real 1.6 s chant from the sound can be dropped in under [#dance] (Brian decides).
+[#q] Why the heck do stores even need {*Black Friday deals?|Black Friday deals?}
+[#card] See, Doug had a problem. [#tv] He's buying a TV marked {!$599,|five ninety-nine,} crossed out to {*$299.|two ninety-nine.}
+[#plan] Gary, the sales guy, slides over a payment plan.
+[#doug] Doug says, "I think I'll just pay full price, if that's okay."
+[#gary] Gary freezes. "Ah, you wanna pay full price? [#papi] That's okay, {*papi.|papi.} [#best] That is the scenario of the {*best case.|best case.}"
+[#dance] And Gary starts dancing. [#chant] "He wanna pay {*full price!|full price!} He wanna pay {*full price!|full price!}"
+[#bet] Weird. Doug just got half off. Right?
+[#sticker] Then Doug peels the sale sticker. [#peel] Underneath: {!$299.|two ninety-nine.} [#october] Same price it was in October.
+[#why] So why fake a deal? [#jcp] Because in {2012,|twenty twelve,} JCPenney, the giant mall store, tried the truth. [#honest] No sales. No coupons. One honest price, every day.
+[#bet2] Honestly? I'd shop there.
+[#drop] Shoppers vanished. Sales fell by a {!quarter.|quarter.} [#billion] {!$4 billion,|Four billion dollars,} gone. [#fired] The boss got {!fired.|fired.} [#back] The sales came back.
+[#brain] Your brain judges a price by the first number it sees. [#599] Five ninety-nine, crossed out, makes two ninety-nine feel like a {*win.|win.} [#299] Two ninety-nine alone just feels like a TV.
+[#end] Gary's still dancing. [#mirror] He wanna pay full price. He just doesn't wanna {*know it.|know it.}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
