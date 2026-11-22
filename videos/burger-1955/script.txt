@@ -1,21 +1,22 @@
-# SHORT (~1:08). What's in a McDonald's cheeseburger, 1955 vs today? Mode: Explainer (myth check), told as a story.
-# Source of the topic: a viral carousel (@valorgi, 15.6K likes, 8.7K shares; screenshot in reference-viral-post.png):
-#   1955 cheeseburger = 7 bowls (beef, bun, ketchup, mustard, onion, pickles, salt) vs 2026 = 42 bowls of sub-ingredients.
-# Search phrase (caption line 1 + on-screen title in the first 2 s): "mcdonalds cheeseburger ingredients"
-# Payoff: same parts, counted differently. The 2026 list splits each part into its recipe; many "scary" words are
-#   vitamins required in enriched flour since the 1940s, or the salt that makes cheese melt (processed cheese, 1916).
-#   Some things really are newer: high fructose corn syrup (in food since the 1970s), preservatives.
-# Doug and Gary are fictional. Facts: sources.md. We describe the photo; we don't show it or any logo.
+# SHORT. LOCKED: Brian's script (Nov 22 2026), marked up with cues + our ending line (CTA C).
+# Topic: what's in a McDonald's cheeseburger (from the viral 1955 vs 2026 ingredients photo). Mode: Explainer.
+# Search phrase (caption line 1 + on-screen title in the first 2 s + first spoken sentence): "mcdonalds cheeseburger ingredients"
+# Payoff: every part decoded in plain words; the longest names aren't the surprise, the sodium is (710 mg ≈ 31% DV).
+# NUMBERS TO VERIFY against McDonald's US nutrition page before recording (third-party sites disagree: sodium 680–720 mg,
+#   carbs 31–33 g, sugar 6–7 g, fiber 1–2 g). Doug and Gary are fictional. No diet advice: we report the label.
 # Ending: the helicopter ending (PLAYBOOK §1.12a) on the last story line + the helicopter clip under the follow CTA.
-[#q] What the {*heck|heck} is in a McDonald's cheeseburger?
-[#card] See, Doug had a problem. He saw a viral photo: [#old] a cheeseburger from nineteen fifty-five with {*seven|seven} ingredients, [#new] and one from today with {!forty-two.|forty-two.}
-[#quit] Doug swore off burgers. Honestly? I'd panic too. Forty-two sounds like a chemistry test.
-[#gary] Then Gary looks closer. [#parts] Today's burger has the same parts: beef, bun, cheese, pickles, ketchup, mustard, onion.
-[#split] The new photo splits each part into its own recipe.
-[#bun] Take the bun. Niacin, iron, thiamine, riboflavin. [#vitamins] Those are {*vitamins|vitamins} added to white flour, standard since the nineteen forties.
-[#nolist] So a nineteen fifty-five bun likely had them too. Nobody put them in a bowl.
-[#cheese] Same with the cheese. Sodium citrate is a salt that helps it melt smooth. [#kraft] Melty processed cheese was patented in nineteen sixteen.
-[#newer] Some things really are newer. [#hfcs] High fructose corn syrup, a sweetener made from corn, showed up in food in the {!nineteen seventies.|nineteen seventies.} [#preserve] And preservatives keep pickles and buns fresh longer.
-[#trick] So the photo isn't lying. It's counting differently: [#bowls] seven bowls of food, versus forty-two bowls of what's inside them.
-[#end] Doug ate the burger. [#heli] Nobody put the niacin in a bowl.
+# The earlier "1955 vs today" draft is kept as script-v1.txt.
+[#q] What the {*heck|heck} is in a McDonald's cheeseburger, [#cal] and what do {*300 calories|three hundred calories} actually come with?
+[#card] Doug saw the ingredient list and thought, [#chem] "I'm eating a chemistry set." [#gary] Gary said, "Hold on. Let's break it down."
+[#beef] The beef patty? McDonald's says it's {*100% beef,|one hundred percent beef,} seasoned with salt and pepper.
+[#bun] The bun is made with enriched wheat flour, water, sugar, yeast, and soybean oil. [#vit] The flour has added niacin, iron, thiamine, riboflavin, and folic acid: {*vitamins and minerals.|vitamins and minerals.}
+[#dough] The label also lists small amounts of things that help make and shape the dough.
+[#cheese] The cheese has milk and cream, plus sodium citrate. [#melt] That's a salt that helps the cheese melt smoothly.
+[#ketchup] The ketchup has tomatoes, vinegar, and two kinds of corn sweetener: [#hfcs] high-fructose corn syrup and corn syrup.
+[#mustard] The mustard is mostly vinegar, water, and mustard seed. [#pickles] Then come the pickles and onions. [#sorbate] The pickles include potassium sorbate, a preservative that helps keep them fresh.
+[#numbers] Now the numbers: one cheeseburger has {*300 calories,|three hundred calories,} [#macros] fifteen grams of protein, thirty-one grams of carbs, and thirteen grams of fat, [#sat] including six grams of saturated fat.
+[#sodium] It also has {!710 milligrams|seven hundred ten milligrams} of sodium. [#dv] That's about {!31%|thirty-one percent} of the Daily Value.
+[#sugar] And it has six grams of total sugar and two grams of fiber.
+[#end] Doug thought the longest ingredient names were the biggest surprise. [#heli] Gary pointed to the sodium: "That's the number to notice."
+[#ask] Would you have guessed one cheeseburger had seven hundred ten milligrams of sodium?
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
