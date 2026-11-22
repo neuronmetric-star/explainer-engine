@@ -14,7 +14,7 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
   Every background prompt follows the v2 recipe (PLAYBOOK §4): three layers + atmosphere, 10–15 specific objects, story details,
   practical lights, a palette from the video's color script, texture, varied angles; clear floor zone, calm caption band, no numbers.
   Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
-- **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
+- **Silent 3D sphere-head cast v2** (`engine/characters.js`; look target = Brian's sheets in `docs/characters/`): Doug (hoodie), Gary (oxford + glasses),
   Victor (suit), polo guy, the President (`president`: cap, bomber, sash), gang member (`gang`: hoodie, beanie, bandana; never armed). They act with gaze, posture, gestures, faces and timing.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
@@ -93,8 +93,9 @@ before every picture change · lines starting `#` are comments. Numbers as words
 ## Engine reference
 - **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo'|'president'|'gang', phone, mask, beanie, envMap})` →
   `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
-  `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw})`;
-  gestures `point|wave|shrug|cross|think|facepalm|hips|tada`. Pure functions of time.
+  `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw, handR, handL})`;
+  gestures `point|wave|shrug|cross|think|facepalm|hips|tada`; hands `fist|relaxed|open|point`. Pure functions of time.
+  Model sheets: `node engine/lab/render-lab.js <out> --page cast-sheet.html`; compare with `docs/characters/*_ref.png`.
   **Robot dog** `CHAR.robodog({envMap, rifle})` → `pose({t, walk, walkAmt, look, tilt, nod, pitch, crouch})` (trot gait, IK legs;
   scene cast entry `{outfit:'robodog'}`). Scene cast entries can be objects (`{outfit:'president', phone:true}`); plate `light` can be a preset name or a custom object.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a

@@ -348,8 +348,12 @@ every picture change · `#` comment lines. Write numbers as words in the spoken 
 
 ## 2. The cast: silent 3D characters
 
-**Look:** glossy white sphere head with a drawn face sitting right on the shoulders (no neck), white cartoon gloves, real
-clothes. Built in code (`engine/characters.js`). No model files, renders exactly the same every time.
+**Look (cast v2, Nov 22 2026):** matte warm-white porcelain sphere head with a big drawn face (oval eyes with a catchlight,
+arched brows) sitting right on the collar (no neck), chunky white glove hands with fingers (fist / open / point), real
+clothes with collars, cuffs, pockets, seams and laced shoes. Built in code (`engine/characters.js`). No model files,
+renders exactly the same every time. **Look target:** Brian's reference sheets in `docs/characters/` (`*_ref.png`);
+our renders of the same sheets sit next to them (`*_engine.jpg`, made with `engine/lab/cast-sheet.html`). Any change
+to the cast gets checked against those sheets.
 
 | Character | Outfit (`CHAR.make({outfit})`) | Typical role |
 |---|---|---|
@@ -394,6 +398,7 @@ topic needs one (chef, pilot, doctor…).
 | `lean` | lean forward (interest) or back (shock) |
 | `armR / armL: {raise}` | raise an arm, e.g. a fist pump |
 | `gesture` + `gw` | blend in a gesture (0→1 over ~0.3 s) |
+| `handR` / `handL` | glove shape: `fist`, `relaxed` (default), `open`, `point`. Gestures set it; pass one to override (e.g. `handR:'point'` without the arm gesture) |
 
 **Gestures:** `point` · `wave` (animated) · `shrug` · `cross` (arms crossed: skeptic) · `think`
 (hand to chin) · `facepalm` · `hips` (hands on hips: impatient, proud) · `tada` (arms out: "behold").
