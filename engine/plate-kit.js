@@ -72,7 +72,7 @@
     catcher.material.color.copy(lin(L.shadow[0])); catcher.material.opacity = L.shadow[1]; }
 
   // ---------------- plates: camera matched to the painting ----------------
-  // plate preset: { img, hz (horizon, fraction from top), vx (vanishing x), fov0, camH, light }
+  // plate preset: { img, hz (horizon, fraction from top), vx (vanishing x), fov0, camH, light, tint (multiply color, e.g. 0x4a5a9a = night) }
   let SC, PLATES = {}, cur = null;
   function usePlate(name, zoom, fx, fy, sx, sy) {
     const P = PLATES[name]; if (!P) throw new Error('unknown plate ' + name); setLight(P.light);
@@ -83,7 +83,7 @@
     camera.position.set(0, P.camH, 0);
     camera.rotation.x = -Math.atan((.5 - P.hz) * 2 * tH); camera.rotation.y = -Math.atan((P.vx - .5) * 2 * tH * FW / FH);
     camera.updateMatrixWorld();
-    bgMat.map = tex; tex.repeat.set(W / FW, H / FH); tex.offset.set(ox / FW, 1 - (oy + H) / FH); bgMat.needsUpdate = true;
+    bgMat.color.set(P.tint === undefined ? 0xffffff : P.tint); bgMat.map = tex; tex.repeat.set(W / FW, H / FH); tex.offset.set(ox / FW, 1 - (oy + H) / FH); bgMat.needsUpdate = true;
     cur = { name, FW, FH, ox, oy, iw: tex.image.width, ih: tex.image.height };
   }
   // painting pixel (image coords) -> screen pixel, and image px -> screen px scale
