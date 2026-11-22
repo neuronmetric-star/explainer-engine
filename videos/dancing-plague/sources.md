@@ -1,6 +1,12 @@
 # Sources: dancing-plague (trend ride: "huss huss huss" × the dancing plague of 1518)
 
-## The meme (scraped Nov 22 2026, Scrape Creators, ≈ 5 credits)
+## The meme (scraped + researched Nov 22 2026, Scrape Creators ≈ 6 credits)
+- Original: Roblox video by @larpniverse (mid-Nov 2026), "In this town everybody goes out partying except me", a kid dribbling a
+  basketball saying "huss, huss, huss" (= the heavy-breathing sound of grinding/sprinting): Know Your Meme
+  https://knowyourmeme.com/memes/huss-huss-huss-in-this-town-everybody-goes-out-partying-except-me · Yahoo explainer
+  https://sg.news.yahoo.com/does-huss-mean-viral-slang-230000637.html · GenZ Decoded https://genzdecoded.com/blog/huss-huss-huss/
+- Full-story copy (transcript): everyone parties, he practices, scores 50: "While you were out partying."
+  https://www.tiktok.com/@jinjee15/video/7710227713948306708
 - Top copy: @synelite1 "In this town everybody huss" (11.6M plays, 1.6M likes, Nov 20): https://www.tiktok.com/@synelite1/video/7710239627721887008
   Transcript: "In this town, everybody huss, huss, huss. Except me… the baker husses… the teacher husses… even the dogs."
 - Other copies: @geldsimuliert (1.7M), @overtime (1.2M), dance versions (@thesydneysmiles). Suggestions: "huss huss huss dance", "huss huss huss phonk".
