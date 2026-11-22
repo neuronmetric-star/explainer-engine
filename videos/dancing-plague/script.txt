@@ -1,0 +1,25 @@
+# SHORT (~1:08). DRAFT, waiting for Brian. Mode: TREND RIDE (PLAYBOOK §1.13): meme "In this town, everybody HUSS HUSS HUSS…
+# except me" (Roblox "in this town" stories + the huss phonk bounce; top copy 11.6M plays, Nov 20 2026) × the dancing plague of 1518.
+# Bridge: a whole town copying one dance is a joke today; in Strasbourg in 1518 it really happened, and it wasn't funny.
+# Search phrase: "dancing plague 1518" (TikTok's #1 suggestion). On screen in the first 2 s: DANCING PLAGUE 1518 + "HUSS HUSS HUSS".
+# Payoff: the city's cure was MORE dancing (stage + pipes and drums), and it got worse; best theory = fear spreading through a
+#   starving, sick town (mass psychogenic illness, historian John Waller).
+# Doug, Gary, Victor, the polo guy in "this town" are our cast (fiction). Strasbourg facts are real (sources.md).
+# Deaths are disputed: say "some later accounts", never a number as fact.
+# Optional: the real "huss huss huss" sound (≤ 6 s) under [#town]..[#doug] instead of the narrator chanting it (Brian decides).
+[#q] Why the heck did a whole town catch the {*dancing plague of 1518?|dancing plague of fifteen eighteen?}
+[#town] See, in this town, everybody {*huss, huss, huss.|huss, huss, huss.} [#gary] Gary started it. [#victor] Then Victor. [#polo] Then everyone.
+[#doug] Except Doug. Doug does not huss.
+[#bet] Honestly? It's a dance. Dances end.
+[#real] Except in {1518,|fifteen eighteen,} a real town tried this. [#city] Strasbourg, in today's France.
+[#troffea] A woman named Frau Troffea steps outside and starts dancing. [#nostop] No music. No smile. She can't {!stop.|stop.} For days.
+[#spread] Then neighbors join. Then strangers. [#400] Within a month, about {!400 people|four hundred people} are dancing. A packed school gym, and nobody's having fun.
+[#doctors] The doctors' diagnosis? Hot blood. [#cure] The cure? {*Dance it out.|Dance it out.}
+[#stage] They build a stage and bring in a band. [#dj] Basically, a DJ for a plague. [#more] More people {!joined.|joined.}
+[#deaths] Later stories say some dancers dropped dead. Historians still argue.
+[#flip] Finally, the city bans music, [#shrine] ships the dancers to a saint's shrine in red shoes, [#fade] and by September, it fades.
+[#why] Why? [#waller] Historian John Waller thinks the town was starving, sick, [#saint] and sure an angry saint could curse you to dance.
+[#yawn] Fear spreads like a {*yawn:|yawn:} one person starts, your body copies.
+[#end] So in this town, everybody danced. [#mirror] Except the guy who stayed {*home.|home.}
+[#ask] Would you have danced, or stayed home?
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
