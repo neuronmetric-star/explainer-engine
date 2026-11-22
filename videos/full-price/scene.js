@@ -109,8 +109,10 @@
         case 'gary': { store(); face(G, 'surprised', t, 1); G.pose({ t, lean: -.12 * K.ease(Lc / .3), look: .35, armL: { raise: .35 }, armR: { raise: .35 } }); face(D, 'smirk', t); D.pose({ t }); break; }
         case 'papi': { store(); face(G, 'smile', t, 1); G.pose({ t, gesture: 'point', gw: K.ease(Lc / .3), look: .35, nod: .08 * Math.sin(Lc * 6) }); face(D, 'smile', t); D.pose({ t, look: .2 }); break; }
         case 'best': { store(); face(G, 'happy', t); G.pose({ t, gesture: 'tada', gw: K.ease(Lc / .35), look: .2 }); face(D, 'smile', t); D.pose({ t, look: .25 }); break; }
-        case 'dance': case 'chant': { store(); face(G, 'happy', t); dance(G, t, 0); face(D, Lc < .6 && id === 'dance' ? 'surprised' : 'happy', t);
-          dance(D, t, .24, id === 'dance' ? K.ease((Lc - .5) / .6) : 1);
+        case 'dance': case 'chant': { store(); face(G, 'happy', t); dance(G, t, 0); // only Gary dances (Brian, Nov 22): Doug watches, confused: leans back, shrugs, head tilts, looks at the camera like "what?"
+          { const u = t - at('dance'); face(D, u < 1.2 ? 'surprised' : (u % 3.2) < 1.6 ? 'flat' : 'worried', t);
+            D.pose({ t, lean: -.08, look: u < 2.5 ? .4 : .4 - .55 * K.ease((u - 2.5) / .4) + .55 * K.ease((u - 4.2) / .4), tilt: .18 * Math.sin(u * .9),
+              gesture: 'shrug', gw: K.ease((u - .8) / .4) * (.75 + .25 * Math.sin(u * 1.7)), handR: 'open', handL: 'open' }); }
           K.text('HE WANNA PAY FULL PRICE', { y: 300, size: 74, color: 'gold', scale: 1 + .06 * Math.abs(Math.sin(t * BEAT * PI)), a: id === 'chant' ? 1 : popIn(K, t, at('dance')) }); break; }
         case 'bet': { store(); face(G, 'happy', t); dance(G, t, 0, .7); face(D, 'smile', t); D.pose({ t, nod: .12 * Math.sin(K.clamp01(Lc / .6) * PI), look: -.1, gesture: 'hips', gw: K.ease((Lc - .8) / .4) });
           K.text('50% OFF?', { y: 300, size: 90, color: 'gold', scale: popIn(K, t, at('bet') + .5) }); break; }
