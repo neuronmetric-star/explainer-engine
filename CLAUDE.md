@@ -40,6 +40,11 @@ commit and push. Answer from the sheet, never from memory. Trend sheets and fini
    topic deserves (PLAYBOOK §1.13): **Explainer** (how a thing works), **True story** (a real event/person), or
    **Lesson chain** (human behavior: chain of people + refrain "But what he doesn't know is that…" + flip + moral +
    comment question). Tell Brian the mode in one line. Lesson chains need no research unless they state facts.
+   **Daily default = Trend ride** (Brian, Nov 22 2026; PLAYBOOK §1.13, example `videos/full-price/`): take the sheet's top
+   meme × topic pair. Curiosity hook ("Why the heck…" + search phrase, catchphrase on screen) → Doug and Gary set the
+   scene → they act out the trend (real sound ≤ 16 s spliced in, or the narrator performs it; they dance on the catchphrase)
+   → the turn → the real sourced story in plain words → surprising takeaway → mirror line with the catchphrase + helicopter
+   → a one-word-answer **viewer question** → follow CTA.
 2. **Research** with web search; every claim sourced in `videos/<slug>/sources.md` (title + URL + fact).
    Label invented characters and reconstructions.
 3. **Script** → `videos/<slug>/script.txt` (PLAYBOOK §1). Show Brian the narration in one copyable

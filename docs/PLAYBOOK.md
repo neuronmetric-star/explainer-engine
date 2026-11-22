@@ -292,7 +292,11 @@ camera and CTA in all three; only the story engine changes.
 | a true event, scheme, person or disaster | **True story** (§1.9 long, §1.11 short) | choice → apparent success → someone notices → consequence | robot dogs in Haiti, Harvard dropouts |
 | human behavior, a feeling, a habit, a life truth ("why do people…") | **Lesson chain** (below) | a chain of people, linked by one repeated line, that ends on a flip | why people want what others have |
 
+| a viral meme, sound or joke everyone's repeating this week, paired with a real topic | **Trend ride** (below; **the daily default**) | Doug and Gary act out the trend, then the real story explains why it's funny or true | "he wanna pay full price" → why stores need Black Friday deals (`videos/full-price/`) |
+
 If a topic could fit two modes, pick the one whose ending hits harder, and say so to Brian.
+**Daily default (Brian, Nov 22 2026):** every day's main video is a **Trend ride** when the morning sheet has a usable
+meme × topic pair (§6c); otherwise use the mode the topic deserves.
 
 #### Lesson chain (Brian's template, Nov 2026)
 Short form only for now (≈ 1:05–1:15). Reference script: "Why the heck do people want what others have?"
@@ -339,6 +343,43 @@ Short form only for now (≈ 1:05–1:15). Reference script: "Why the heck do pe
 **Topic bank for lesson chains:** why people want what others have · why we never feel rich enough · why
 we wait until tomorrow · why we care what strangers think · why we stay up scrolling · why we judge people
 fast · why we miss the "boring" days.
+
+#### Trend ride (Brian's format, Nov 22 2026; worked example `videos/full-price/`)
+Character-led, conversational edutainment: a short-form script that **borrows a viral trend's joke and sound** and
+uses it as the doorway into a real, sourced explanation. Ride the trend; teach the topic.
+
+**The pairing (picked in the morning scrape, §6c).** A trend is worth riding when (a) it's blowing up *this week*
+(rising plays on many creators' copies, a sound with thousands of uses), (b) its catchphrase can be said in our
+story without explaining the meme, and (c) it **bridges** to a topic in our lanes (money, history, how things work,
+myths, true stories) through the *same idea*, not just the same words. Write the bridge as one sentence:
+"He wanna pay full price" (a guy excited to pay full price) → "why stores need Black Friday deals" (nobody wants
+full price; they want to *feel* they didn't pay it). No bridge, no ride.
+
+**Beats (≈ 1:05–1:13; ≈ 150–175 story words if a real sound clip plays, 175–190 if the narrator performs it):**
+| # | Beat | What happens | full-price example |
+|---|---|---|---|
+| 1 | **Curiosity hook** (0–3 s) | "Why the heck…" question built on the topic's search phrase; the trend's catchphrase as on-screen text from frame 1 | "Why the heck do stores even need Black Friday deals?" + `HE WANNA PAY FULL PRICE` |
+| 2 | **Doug and Gary set the scene** | One line of ground: who, where, what's at stake. Gary is the sales guy / the one in the know, Doug the everyman | Doug's buying a TV marked $599 → $299; Gary slides over a payment plan |
+| 3 | **The trend, acted out** (≤ 16 s) | Doug and Gary perform the meme: the **real trending sound** spliced in (rules below) or the narrator performs the lines. Mouths stay still; they gesture on their lines and **dance/celebrate on the catchphrase** | SNL clip: "I'll just pay full price" → "scenario of the best case" → both dance on "He wanna pay full price!" |
+| 4 | **The turn** | The narrator (back) says the surprise out loud and plants the clue on screen | "Weird. Doug just got half off. Right?" → he peels the sticker: $299 underneath |
+| 5 | **The real story / facts, plain words** | The sourced explanation, told as a true story or mechanism: names, a date, one or two numbers with yardsticks | JCPenney 2012 drops all sales → sales fall a quarter, $4 billion → boss fired → sales come back |
+| 6 | **The surprising takeaway** | One sentence that reframes the meme: why the joke is secretly true | "Your brain judges a price by the first number it sees." |
+| 7 | **Mirror line + helicopter** | The catchphrase comes back, twisted by what we learned; the helicopter crosses (§1.12a) | "He wanna pay full price. He just doesn't wanna know it." |
+| 8 | **Viewer question** | One short question on screen and spoken, easy to answer in a word, to pull comments | "Would you shop at a store with no sales?" |
+| 9 | **Follow CTA** (§1.12) | Rotate A–E | C |
+
+**Rules for the trend part**
+- **The sound:** get the most-used copy of the trending clip (Scrape Creators `v2_tiktok_video` with `download_media:true`,
+  ≈ 11 credits; the file host is in the environment's allow-list), cut **≤ 16 s** around the catchphrase, match its
+  loudness to the narration (≈ −5 dB), splice it into `voice.mp3` (narration before + clip + narration after), and put
+  its words in `script.txt` as spoken lines under a comment (`# --- TRENDING SOUND …`) so captions show them. Build the
+  word timings for the clip from its transcript (`v1_tiktok_video_transcript`). Note the mute risk in `post.md`
+  (fallback: add the sound from TikTok's library). Credit the original in `sources.md`.
+- **Never imitate accents or mock a group**, even if the original sketch does; the narrator performs lines in his own voice.
+- **Doug and Gary carry it:** they *are* the meme's two people (re-cast by role, not by look). The rest of the cast can
+  appear in the story part (Victor as the boss, the polo guy as a coworker).
+- **The joke never replaces the facts:** the story part is researched and sourced like any video (§1.6a zero-knowledge rules).
+- **Timing:** a trend dies in ~7–10 days. Script the same day the sheet flags it; post within 48 h.
 
 ### 1.8 Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before
@@ -644,6 +685,14 @@ borrow other creators' audiences.
    most-liked videos for "explained", "history facts", "money explained". Write `docs/trends/<YYYY-MM-DD>.md`:
    5–8 topic pitches, each with its **exact search phrase**, its mode (§1.13), why it's timely, and a post-by date;
    plus 3–5 viral videos to stitch with their links. About 10–15 credits a day.
+   **Trend rides (meme × topic), the top of every sheet (Brian, Nov 22 2026):** also find what's going viral *outside*
+   our lanes this week: the TikTok trending feed and top searches (`v1_tiktok_get_trending_feed`, `v1_tiktok_search_top`,
+   `v1_tiktok_search_keyword` sorted most-liked this week for rising catchphrases), plus the sound each meme uses. For the
+   2–3 biggest, pull one transcript (1 credit each) to get the exact lines, then pair each with a topic in our lanes
+   through a one-sentence **bridge** (§1.13 Trend ride). Sheet section: meme + catchphrase · plays/uses · sound link ·
+   the joke in one line · bridge → topic + search phrase · payoff · post-by (≈ 7 days from the meme's start).
+   Skip memes that mock a group, involve real tragedies or minors, or need the viewer to already know the meme.
+   Budget with this pass: ≈ 20–25 credits a day.
    **Where it lives:** `docs/trends/` on `main`, so any session (and `/topics`) can read it. "Give me today's topics"
    = `/topics`: read today's sheet; scrape first only if it's missing.
 2. **Searchable words in three places, every video:** (a) caption line 1, (b) on-screen text in the first 2 s,

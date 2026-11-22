@@ -7,6 +7,8 @@ Make a video about: **$ARGUMENTS**
 Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs-water/`.
 
 0. **Length:** always short form (≈ 1:05–1:12, PLAYBOOK §1.11). Don't ask; long form is retired.
+0. Default mode is **Trend ride** (PLAYBOOK §1.13) when today's sheet has a meme × topic pair: Doug and Gary act out the
+   meme (real sound ≤ 16 s or narrator-performed), then the sourced story, takeaway, mirror line, viewer question, CTA.
 1. Write the **payoff** (one sentence the viewer will discover) and pick the question word that it answers.
    Pick a short slug and create `videos/<slug>/`.
 2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
