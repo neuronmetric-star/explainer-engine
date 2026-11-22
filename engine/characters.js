@@ -59,10 +59,11 @@
     const smile = () => arc(cx, cy - 14, 140, Math.PI * .33, Math.PI * .67, 12);
     switch (name) {
       case 'happy': brows(10); for (const s of [-1, 1]) arc(cx + s * ex, cy + ey + 22, 32, -Math.PI * .88, -Math.PI * .12, 12);
-        g.beginPath(); g.moveTo(cx - 96, cy + 70); g.lineTo(cx + 96, cy + 70); g.quadraticCurveTo(cx + 92, cy + 190, cx, cy + 192); g.quadraticCurveTo(cx - 92, cy + 190, cx - 96, cy + 70); g.closePath();
-        g.fillStyle = MOUTH; g.fill(); g.save(); g.clip(); g.fillStyle = TONGUE; g.beginPath(); g.ellipse(cx, cy + 196, 64, 46, 0, 0, TAU); g.fill(); g.restore();
-        g.lineWidth = 11; g.strokeStyle = INK; g.stroke(); break;
-      case 'surprised': brows(20); eyes(26, 38); g.fillStyle = MOUTH; g.beginPath(); g.ellipse(cx, cy + 124, 22, 30, 0, 0, TAU); g.fill(); g.lineWidth = 10; g.stroke(); break;
+        { const mouth = () => { g.beginPath(); g.moveTo(cx - 96, cy + 70); g.lineTo(cx + 96, cy + 70); g.quadraticCurveTo(cx + 92, cy + 190, cx, cy + 192); g.quadraticCurveTo(cx - 92, cy + 190, cx - 96, cy + 70); g.closePath(); };
+          mouth(); g.fillStyle = MOUTH; g.fill(); g.save(); mouth(); g.clip(); g.fillStyle = TONGUE; g.beginPath(); g.ellipse(cx, cy + 196, 64, 46, 0, 0, TAU); g.fill(); g.restore();
+          mouth(); g.lineWidth = 11; g.strokeStyle = INK; g.stroke(); }   // stroke the MOUTH outline (was stroking the tongue ellipse -> black ring under the mouth)
+        break;
+      case 'surprised': brows(20); eyes(26, 38); g.lineWidth = 11; g.beginPath(); g.ellipse(cx, cy + 124, 20, 27, 0, 0, TAU); g.stroke(); break;   // hollow 'o' like the ref sheets
       case 'smirk': for (const s of [-1, 1]) line(cx + s * (ex + 58), cy - 100, cx + s * (ex - 40), cy - 66, 12); eyes(23, 27);
         g.lineWidth = 12; g.beginPath(); g.moveTo(cx - 86, cy + 98); g.quadraticCurveTo(cx + 10, cy + 140, cx + 96, cy + 80); g.stroke(); break;
       case 'worried': for (const s of [-1, 1]) line(cx + s * (ex + 54), cy - 66, cx + s * (ex - 46), cy - 100, 11); eyes(23, 31);
