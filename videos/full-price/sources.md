@@ -14,6 +14,10 @@
 - TikTok search suggestions (Nov 22): "black friday deals" is the #1 completion of "are black friday deals";
   "he wanna pay full prics" is the #1 completion of "he wanna pay full price".
 
+## The sound in the video
+- Audio spliced into voice.mp3 from the 4.8M-play re-upload above (downloaded via Scrape Creators, 11 credits),
+  clip 0.40–16.53 s, −5.5 dB. Original: SNL "Bubu Mobile", NBC, Nov 7 2026.
+
 ## JCPenney facts in the script
 | Claim | Source |
 |---|---|

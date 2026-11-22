@@ -6,13 +6,16 @@
 #   In 2012 JCPenney dropped sales for one honest price; sales fell a quarter (~$4.3B) and the CEO was fired.
 # Narrator performs Gary's lines in his own voice (rhythm + energy, NO imitation of the sketch's accent).
 # Doug, Gary, the TV and its prices are illustrative; JCPenney facts are real (sources.md).
-# Optional: the real 1.6 s chant from the sound can be dropped in under [#dance] (Brian decides).
+# Voice: Brian's OpenArt read, pauses tightened + 1.2x (voice_raw.mp3 -> voice_narr.mp3), SNL clip spliced in -> voice.mp3.
 [#q] Why the heck do stores even need {*Black Friday deals?|Black Friday deals?}
 [#card] See, Doug had a problem. [#tv] He's buying a TV marked {!$599,|five ninety-nine,} crossed out to {*$299.|two ninety-nine.}
 [#plan] Gary, the sales guy, slides over a payment plan.
-[#doug] Doug says, "I think I'll just pay full price, if that's okay."
-[#gary] Gary freezes. "Ah, you wanna pay full price? [#papi] That's okay, {*papi.|papi.} [#best] That is the scenario of the {*best case.|best case.}"
-[#dance] And Gary starts dancing. [#chant] "He wanna pay {*full price!|full price!} He wanna pay {*full price!|full price!}"
+# --- TRENDING SOUND (SNL "Bubu Mobile", clip 0.40-16.53 s, spliced into voice.mp3 at 10.70 s; Brian asked for it Nov 22).
+#     The narrator stops; Gary (sales guy) and Doug act the lines out, mouths still, gestures on their lines.
+[#snl] We set you up with a little payment plan, okay?
+[#doug] Yeah, I think I'll just pay {*full price,|full price,} if that's okay.
+[#gary] Ah, you wanna pay full price? [#papi] That's okay, {*papi.|papi.} [#best] That is the scenario of the {*best case.|best case.}
+[#dance] He wanna pay {*full price!|full price!} [#chant] He wanna pay {*full price!|full price!}
 [#bet] Weird. Doug just got half off. Right?
 [#sticker] Then Doug peels the sale sticker. [#peel] Underneath, the old tag: {!$299.|two ninety-nine.} [#october] Same price it was in October.
 [#why] So why fake a deal? [#jcp] Because in {2012,|twenty twelve,} JCPenney, the giant mall store, tried the truth. [#honest] No sales. No coupons. One honest price, every day.
