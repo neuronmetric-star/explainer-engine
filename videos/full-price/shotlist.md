@@ -17,19 +17,24 @@ blank payment card, blank signs. The engine writes `$599` (red, struck through),
 `$4 BILLION` and `JCPenney` (plain caption-style type, not a logo).
 **Gary's dance** (new pose loop, pure function of t): bounce `nod` ±.12 at 2 beats/s, `tilt` ±.15, `lean` ±.1 alternating,
 `armR`/`armL` raise alternating .3↔.9 (hands waving), small side step. The polo guy runs the same loop half a beat late.
-**Art:** 6 backgrounds + 8 props from `art-prompts.md` → `art/`, plus `H01_helicopter.png` copied from `docs/assets/`.
+**Art (standard v2, PLAYBOOK §4):** 6 backgrounds + 8 props from `art-prompts.md` → `art/` (4 batches; batch 1 is reviewed first),
+plus `H01_helicopter.png` copied from `docs/assets/`.
+**Color script:** 01–02 electric dawn (blue + teal, warm register glow, red-gold accent) → 03 happy 2012 mall (honey gold,
+sale-red) → 04 the store dies (gray-green fluorescent, one red cart) → 05 brain diagram (warm gold) → 06 morning after
+(crisp blue sky, warm sun, teal balloons).
+**Angles:** 01 low hero from the aisle · 02 close detail · 03/04 eye-level deep aisle · 05 straight-on diagram · 06 low wide from the lot.
 **OpenArt:** none needed.
 **Real chant clip:** not used. The narrator performs it. If Brian wants it later, it goes under `chant` (≈ 1.6 s).
 
 ## Images
 | # | File | What |
 |---|---|---|
-| 01 | `01_tv_store_counter_dawn.png` | Electronics store at dawn on Black Friday: checkout counter, a wall of dark TVs, blue/teal balloons, open floor in front |
+| 01 | `01_tv_store_counter_dawn.png` | Low hero angle: electronics store at 5:58 AM Black Friday, checkout + TV wall, rope line, balloons, donut by the register, open floor |
 | 02 | `02_counter_closeup.png` | Close-up of the checkout counter top: card reader, empty space for the TV box, TV wall blurred behind |
 | 03 | `03_dept_store_busy.png` | Big mall department store: racks of jeans, shelves of pillows, BLANK red sale banners hanging everywhere |
-| 04 | `04_dept_store_empty.png` | Same as 03, banners replaced by plain gray signs, dimmer, emptier, one abandoned shopping cart |
+| 04 | `04_dept_store_empty.png` | Same as 03, dying: gray signs, cold flickering fluorescent, dusty unsold stacks, one red cart |
 | 05 | `05_price_tag_board.png` | Diagram plate: a giant BLANK white price tag on a string, centered on a warm plain backdrop |
-| 06 | `06_store_front_parking_morning.png` | Outside the electronics store: glass front, balloons at the door, sidewalk + parking lot, big open morning sky in the top third |
+| 06 | `06_store_front_parking_morning.png` | Low wide from the lot, the morning after the rush (lost sneaker, trampled flyer, cart), balloons at the door, big open sky in the top third |
 | P01 | `P01_tv_box.png` | Big flat-screen TV box with a picture of a TV on it, a BLANK yellow sticker area, no text |
 | P02 | `P02_payment_card.png` | Small glossy card / brochure, blank |
 | P03 | `P03_sale_sticker.png` | Bright yellow starburst sticker, blank, one corner slightly lifted |

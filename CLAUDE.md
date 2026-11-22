@@ -10,6 +10,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 ## The format (every video)
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
+  **Art standard v2** (Brian, Nov 22 2026: "more descriptive, it felt basic and plain"): rich, cinematic, lived-in paintings.
+  Every background prompt follows the v2 recipe (PLAYBOOK §4): three layers + atmosphere, 10–15 specific objects, story details,
+  practical lights, a palette from the video's color script, texture, varied angles; clear floor zone, calm caption band, no numbers.
   Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
 - **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
   Victor (suit), polo guy, the President (`president`: cap, bomber, sash), gang member (`gang`: hoodie, beanie, bandana; never armed). They act with gaze, posture, gestures, faces and timing.
@@ -43,7 +46,8 @@ commit and push. Answer from the sheet, never from memory. Trend sheets and fini
    block (timing, direction, sources outside it) and **wait for approval**.
 4. **Shot list** → `videos/<slug>/shotlist.md` (PLAYBOOK §5): background + prop prompts and a shot
    plan with camera and acting per cue. **Images: always Brian in ChatGPT.** For big sets, write the batch file
-   `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") → `videos/<slug>/art/`.
+   `videos/<slug>/art-prompts.md` (prompt-pack "Batch file", v2 templates) → `videos/<slug>/art/`. Brian sends batch 1 first;
+   Read every image on arrival against the PLAYBOOK §4 quality gate and send one-line fix-ups for plain ones.
    **OpenArt = video inserts only** (PLAYBOOK §4.1): when a shot looks better as AI video or the engine can't do it
    (water, fire, crowds, crashes). Image-to-video from Brian's painting, no cast in clips, one test clip first,
    report credits spent. Brian pre-approved this.

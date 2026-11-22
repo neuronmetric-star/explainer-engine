@@ -10,7 +10,7 @@ What it's built from:
 - **Story:** the Coon Knows storytelling guide ("write the question from the answer").
 - **Pacing and line craft:** our study of @RicksClips3000's 20 most recent Shorts (`docs/ricksclips/study.md`).
 - **Long-form structure and narrator personality:** Ray (@realraywilliam) and Xevi (@xeviuniverse) (`docs/creators/ray-xevi-study.md`).
-- **Look:** your ChatGPT paintings (`docs/prompt-pack.md`) plus the 3D cast in `engine/characters.js`.
+- **Look:** your ChatGPT paintings, art standard v2 since Nov 22 2026 (§4, `docs/prompt-pack.md`) plus the 3D cast in `engine/characters.js`.
 - **Camera and compositing:** the plate lab (`engine/lab/plate-lab.html`).
 - **Worked example:** `videos/why-cars-need-gas/`.
 
@@ -25,7 +25,7 @@ What it's built from:
 | 2 | Research, every claim sourced | Claude | `videos/<slug>/sources.md` |
 | 3 | Script (section 1) | Claude → **Brian approves** | `script.txt` + narration in one copyable block |
 | 4 | Shot list + image prompts (section 4) | Claude | `shotlist.md` |
-| 5 | Paint the worlds and props in **ChatGPT, always** (Brian), from the batch prompt file `videos/<slug>/art-prompts.md` | Brian | long form ≈ 30–45 backgrounds + 20–30 props → `videos/<slug>/art/` |
+| 5 | Paint the worlds and props in **ChatGPT, always** (Brian), from the batch prompt file `videos/<slug>/art-prompts.md` (**art standard v2**, §4: rich, descriptive prompts) | Brian | short ≈ 6–8 backgrounds + 6–10 props → `videos/<slug>/art/` |
 | 5b | *(Optional)* AI video inserts in **OpenArt** for shots the engine can't do well (§4.1) | Claude (pre-approved; report credits) | 5–10 s clips → `videos/<slug>/clips/` |
 | 6 | Voiceover (ElevenLabs/OpenArt, or `tools/tts.js` with a key) | Brian / Claude | `voice.mp3` → `node tools/align.js <slug>` |
 | 7 | Build the scene: plates, cast, acting, camera (sections 2–3) | Claude | `scene.js` |
@@ -453,36 +453,82 @@ faces and props out of the top 140 px and the bottom 380 px (app UI).
 
 ## 4. The world: 2D paintings from ChatGPT
 
-**Recurring objects must look identical in every image** (Brian's note, electric-car video: "the car changes every time"). Lock them: exact visual description in the START block, first image defines it, later prompts reference that file by name ("the exact car from 01_…, do not redesign it"), and if needed Brian attaches the first image as a reference. See prompt-pack "Lock recurring objects".
+**Art standard v2 (Brian, Nov 22 2026): "our art needs to be more descriptive; it feels basic and plain."** From the
+`full-price` video on, every image is a **rich, lived-in, cinematic painting**, not a clean empty room. The old prompts
+asked for "a living room with a couch and a whiteboard" and got exactly that: one wall, one hero object, a big bare
+floor (see `videos/dollar-a-second/art/04_apartment_whiteboard.png`). The v2 prompts describe every layer, object,
+light and detail, so ChatGPT has something to paint. **Short prompts make plain pictures.**
 
-Full prompt pack: `docs/prompt-pack.md`. The essentials:
+**What "rich" means (every background):**
+1. **Three depth layers plus air.** A foreground element cropped by the frame edge (a shelf corner, a plant, a counter
+   edge, hanging banners), the stage and hero in the middle, deep background (windows, skyline, aisles going back),
+   then atmosphere: haze, dust in light shafts, steam, breath fog, glow.
+2. **Dense, specific set dressing: 10–15 named objects**, each with a color and material ("chrome shelves stacked
+   with boxed blenders in red and teal", never "shelves").
+3. **Story details: 2–4 small clues or jokes** that tell the story without words (a tangled extension cord, a
+   spilled coffee by the register, a stack of receipts, a lost sneaker in the aisle). One of them can be the clue.
+4. **Cinematic light:** a key light (direction + color temperature + time of day), **1–3 practical lights** in the
+   scene (neon, lamps, TV glow, fridge light, string lights) with their colors, colored shadows, a rim or bounce,
+   light shafts. Glossy floors reflect them.
+5. **A named palette per scene (3–5 colors + one accent tied to the story)**, planned as a **color script** across
+   the video: e.g. warm gold while the plan works, colder and grayer when it fails, a warm return for the ending.
+6. **Materials and texture** on every surface: wood grain, scuffed tile with reflections, brushed metal, fabric
+   weave, cardboard, painterly brush texture and paper grain.
+7. **Varied camera angles.** Not every background is an eye-level wide: mix in a low hero angle, a high angle, an
+   over-the-counter angle and a close detail. Each location gets its own lens feel.
 
-**The rules** for every image:
-- Portrait 2:3 (1024×1536).
-- **No people.**
-- A clear, flat floor in the lower-middle where characters can stand.
-- State the light direction.
-- Horizon about 45% from the top for wide shots.
-- No text unless the exact words are given.
-- Props on solid **#00FF00** green.
+**What stays the same (the engine needs it):** portrait 2:3 · no people, faces, hands or animals · an **open, flat
+floor zone** where the cast stands (say where and how wide; keep it clear of clutter, but it can carry reflections,
+light pools, scuffs and texture) · light direction stated · horizon about 45% for wides · **no numbers or prices
+ever** (the engine draws them) · props on solid #00FF00 · recurring objects locked (below).
+**Keep two bands calm:** detail goes around the edges and in the back, not across the **caption band** (≈ 60–72%
+of the height, center) and not in the top 7% / bottom 20% (app UI). Calm means simple shapes and low contrast
+there, not empty.
+**Text, upgraded:** a background may carry **up to 3 short exact words** for realism (store-section signs like
+"ELECTRONICS", "CHECKOUT"), always spelled out in quotes in the prompt. Never numbers, prices or brand names.
+Anything else written stays blank or uses simple pictogram icons (a TV icon, a shopping-cart icon).
 
-**Style bible.** Paste this first in a fresh ChatGPT chat for each video, then make every image in that chat:
+**The v2 prompt recipe** (every background ≈ 120–180 words, in this order; full template in `docs/prompt-pack.md`):
+`SHOT` (angle, height, lens feel, horizon %) → `PLACE + MOOD` (where, era, the story beat in one line) → `HERO`
+(the one thing the eye lands on and where in frame) → `FOREGROUND` → `MIDGROUND` → `BACKGROUND` → `DRESSING`
+(10–15 specific objects) → `STORY DETAILS` (2–4) → `LIGHT` (key + practicals + atmosphere) → `PALETTE` → `TEXTURE`
+→ `STAGING` (the open floor zone, calm caption band) → `TEXT` (exact words or none) → `STRICT` (no people…).
+**Props v2** (≈ 50–80 words): the object, its **material and wear**, one personality detail (a dent, a coffee ring,
+a peeling corner), the angle it's used at in the scene, light from the left with a highlight and a soft shadow **on
+the object only**, a thin darker outline so it cuts out cleanly, solid #00FF00 around it.
+
+**Recurring objects must look identical in every image** (Brian's note, electric-car video: "the car changes every
+time"). Lock them: exact visual description in the START block, first image defines it, later prompts reference
+that file by name ("the exact car from 01_…, do not redesign it"), and if needed Brian attaches the first image as a
+reference. See prompt-pack "Lock recurring objects".
+
+Full prompt pack: `docs/prompt-pack.md`. **Style bible v2** (paste first in a fresh ChatGPT chat for each video,
+then make every image in that chat; it's also the START block of every batch file):
 ```
-You are the background artist for a vertical animated explainer series. For every image I ask for, follow this style bible exactly:
+You are the lead background painter for a premium vertical animated series. Every image is a finished, cinematic background painting for a high-end 2D animated film, made for a 9:16 phone screen. Follow this style bible exactly:
 
-STYLE: flat 2D storybook illustration for a modern animated show. Clean, simple shapes with soft painterly gradients, subtle paper grain, bold readable silhouettes, slightly exaggerated cartoon proportions (chunky buildings, rounded trees, oversized props). No outlines on the background, or very thin darker outlines only.
-COLOR & LIGHT: rich, saturated but harmonious colors. Always a clear light direction: warm light on lit sides, cool blue or purple in shadows. Gentle atmospheric haze that makes distant things lighter and bluer. Dark scenes are deep blue, never pure black.
-COMPOSITION: portrait 2:3. Leave the lower-middle of the frame as an open, flat floor or ground where characters can stand. Keep the top 10% simple (sky, ceiling). Strong depth: something in the foreground, the main subject in the middle, a background far away.
-STRICT: no people, no characters, no animals unless asked, no faces, no hands. No text, letters or logos unless I specify exact words.
-Reply only with the image.
+STYLE: rich 2D storybook painting with feature-film polish. Appealing, slightly exaggerated cartoon shapes (chunky furniture, oversized props, soft rounded silhouettes), but painted with real depth and detail: layered painterly brushwork, soft gradients, subtle paper grain, crisp edges on the hero object, softer edges in the distance. Every place looks lived-in and specific, never empty or generic: dense, organized set dressing, small storytelling details, believable clutter at the edges.
+DEPTH: always three layers plus air: a foreground element cropped by the frame edge, the stage and hero in the middle, a deep background, then atmosphere (haze, dust in light shafts, glow). Distant things get lighter, bluer and softer.
+LIGHT: cinematic and motivated. A clear key light from the direction I give, plus practical light sources inside the scene (lamps, neon, screens, windows) with colored glow, warm-cool contrast, colored shadows (blue or purple, never gray or black), rim light on edges, reflections on glossy floors. Night is deep blue, never pure black.
+COLOR: a harmonious palette with one strong accent color, as I specify per image.
+TEXTURE: every surface has a material: wood grain, scuffed tile, brushed metal, fabric weave, cardboard, glass reflections.
+COMPOSITION: portrait 2:3. Leave the open floor zone I describe clear and flat for characters to stand (texture and reflections are fine, objects are not). Keep the band at 60-72% of the height, in the center, calm and low-contrast (captions go there). Keep the top 7% and bottom 20% simple.
+STRICT: no people, no characters, no animals, no faces, no hands, no feet, no silhouettes of people. No numbers or prices anywhere. No text, letters or logos unless I give the exact words in quotes; all other signs, screens, labels and stickers stay blank or show simple pictogram icons.
+
+HOW TO WORK: I'll send prompts in numbered batches. Make every image in the batch one after another, in order, portrait 2:3. Above each image write only its file name. Props go on a solid pure green #00FF00 background with no shadow on the background. When a batch is done, say "BATCH DONE".
 ```
 
-**Per long-form video (8+ min):** about 12–18 locations × 2–3 angles (≈ 30–45 backgrounds),
-plus 1–3 diagram plates, plus 20–30 props (including evidence props: receipts, texts, mugshot-style
-cards, headlines, and "imagined" gag props). **Per short video:** ≈ 7–12 backgrounds plus 6–10 props.
-**Images are always made by Brian in ChatGPT.** For big sets, Claude writes one batch file per video,
-`videos/<slug>/art-prompts.md` (template in `docs/prompt-pack.md` → "Batch file"). Brian pastes it into one
-ChatGPT chat and generates the images in order, in batches.
+**Quality gate (Claude, every image, on arrival):** Read each image and check: three layers? 10+ specific objects?
+practical lights and atmosphere? story details visible? floor zone clear and flat? caption band calm? recurring
+objects match? no garbled text, no numbers, no people? If an image is plain or wrong, send Brian a **one-line
+fix-up** for the same chat, e.g. `Same image, richer: add [x, y, z], warmer practical lights, more texture on the
+floor and walls. Keep the layout, the camera angle and the open floor exactly the same.`
+**First batch is the test:** Brian sends batch 1 first; Claude reviews it before the rest are made.
+
+**Per short video:** ≈ 6–8 backgrounds plus 6–10 props (≈ 12–16 images), in batches of 3 (backgrounds; long
+prompts) and 4–8 (props). **Images are always made by Brian in ChatGPT.** Claude writes one batch file per
+video, `videos/<slug>/art-prompts.md` (template in `docs/prompt-pack.md` → "Batch file"). Brian pastes it into one
+ChatGPT chat and generates the images in order, batch by batch. (Long form, retired: about 30–45 backgrounds.)
 
 ### 4.1 OpenArt video inserts (only when they look better or we need them)
 Brian has pre-approved OpenArt **video** credits. Use them sparingly, for shots the engine can't sell:
@@ -518,9 +564,10 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 
 `videos/<slug>/shotlist.md` contains:
 1. **Cast** for this video (from section 2).
-2. **Background prompts**, numbered and named, ready to paste.
-3. **Prop prompts** on green.
-4. **Shot plan table**, one row per cue. The last story row always includes **the helicopter ending** (§1.12a), and
+2. **Color script** (one line per location: palette + accent + mood, warm → cold → warm as the story turns; §4 v2).
+3. **Background prompts**, numbered and named, written to the v2 recipe (§4) in `art-prompts.md`; the shot list keeps a one-line summary per image.
+4. **Prop prompts** on green (v2: material, wear, one personality detail).
+5. **Shot plan table**, one row per cue. The last story row always includes **the helicopter ending** (§1.12a), and
    the last background's prompt asks for open sky in the top third.
 
 | Cue | Picture (plate + props) | Camera | Characters (face · pose · gesture) |
@@ -545,9 +592,11 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] Dry last line, then the follow CTA
 
 **Images**
-- [ ] All from one ChatGPT chat with the style bible; portrait; no people
-- [ ] Open floor where characters stand; light direction consistent per location
-- [ ] Props on clean green; exact text only where requested
+- [ ] All from one ChatGPT chat with the **v2** style bible (§4); portrait; no people; no numbers
+- [ ] **Rich, not plain (v2):** three depth layers + atmosphere, 10–15 specific objects, 2–4 story details,
+      practical lights, a named palette that follows the color script, texture on every surface, varied angles
+- [ ] Open floor zone clear where characters stand; caption band calm; light direction consistent per location
+- [ ] Props: material, wear, one personality detail, thin outline, clean green; exact text only where requested
 
 **Preview (before the full render)**
 - [ ] Feet on the ground, shadows matching the painting's direction
