@@ -1,7 +1,7 @@
 // =====================================================================
 //  CHARACTERS v2 — sphere-head cast, built in code (no model files)
 //  Look reference: docs/characters/*_ref.png (Brian, Nov 22 2026): matte porcelain heads, big expressive drawn faces
-//  with eye highlights, chunky white glove hands with fingers, real clothes (collars, cuffs, pockets, seams, rolled
+//  with eye highlights, big round white mitt hands (a finger only to point), real clothes (collars, cuffs, pockets, seams, rolled
 //  jeans, laced sneakers, dress shoes). Model sheets: node engine/lab/render-lab.js <out> --page cast-sheet.html
 //
 //  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang', glasses, phone, mask, beanie, shirt, pants, envMap})
@@ -9,7 +9,7 @@
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw, handR, handL})
 //    gestures: point | wave | shrug | cross | think | facepalm | hips | tada   (gw = blend 0..1)
-//    hands: 'fist' | 'relaxed' | 'open' | 'point' (set by the gesture; override with handR/handL)
+//    hands (round mitts): 'fist' | 'relaxed' | 'open' | 'point' (set by the gesture; override with handR/handL)
 //  Everything is a pure function of the pose values, so renders stay frame-exact.
 //  Kept for scenes: ch.head, ch.neck, ch.spine, ch.hips, ch.B.R, ch.leg[±1].{hip,knee,ankle}, ch.arm[±1].{sh,el,wr}.
 // =====================================================================
@@ -210,24 +210,23 @@
         mesh(new THREE.CylinderGeometry(B.ar * (o.hoodie || o.bomber ? .86 : 1.0), B.ar * (o.hoodie || o.bomber ? .84 : 1.0), o.hoodie || o.bomber ? .07 : .05, 20), cuffM, el, 0, -FA + .03, 0);
         if (o.collar === 'oxford') mesh(new THREE.CylinderGeometry(.01, .01, .008, 10).rotateZ(Math.PI / 2), whiteM, el, s * B.ar * 1.0, -FA + .03, 0); }
       const wr = grp(el, 0, -FA, 0);
-      // glove: palm faces the body (-s·x); fingers hang along -y, index at the front (+z); curl bends tips toward the palm
+      // glove (Brian, Nov 22 2026: "first image is how we need our hands"): one big, smooth, round white mitt + a thumb bump,
+      // like the v1 cast, bigger. A single index finger slides out only for 'point'.
       const hand = grp(wr, 0, -.005, 0), k = B.hand / .118; hand.scale.setScalar(k);
-      const palm = mesh(new THREE.SphereGeometry(1, 24, 18), skinM, hand, 0, -.07, 0); palm.scale.set(.06, .08, .074);
-      mesh(new THREE.CylinderGeometry(.052, .056, .03, 20), skinM, hand, 0, -.005, 0).scale.z = 1.2;   // glove cuff
-      const fingers = [];
-      [.045, .016, -.014, -.042].forEach((z, i) => { const f1 = grp(hand, -s * .006, -.122, z * .98); f1.rotation.x = z * .9;
-        const r = i === 3 ? .024 : .028; mesh(capsule(r, .056), skinM, f1); const f2 = grp(f1, 0, -.044, 0); mesh(capsule(r * .96, .046), skinM, f2); fingers.push([f1, f2]); });
-      const th = grp(hand, -s * .028, -.06, .055); mesh(capsule(.027, .065), skinM, th);
-      ch.hand[s] = { fingers, th, s };
+      const mitt = mesh(new THREE.SphereGeometry(1, 32, 24), skinM, hand, 0, -.092, 0); mitt.scale.set(.088, .1, .08);
+      mesh(new THREE.CylinderGeometry(.055, .06, .03, 24), skinM, hand, 0, -.008, 0).scale.z = 1.15;      // glove cuff
+      const th = grp(hand, -s * .03, -.07, .06), thumb = mesh(new THREE.SphereGeometry(.04, 20, 16), skinM, th); thumb.scale.set(1, 1.35, 1);
+      const idx = grp(hand, -s * .004, -.15, .045); mesh(capsule(.03, .085), skinM, idx); idx.visible = false;
+      ch.hand[s] = { mitt, th, idx, s };
       if (o.watch && s === -1) { mesh(new THREE.TorusGeometry(B.ar * .8, .02, 8, 24).rotateX(Math.PI / 2), o.gold ? metal(o.watch, env) : blackM, wr, 0, .035, 0);
         mesh(new THREE.CylinderGeometry(.03, .03, .014, 16).rotateZ(Math.PI / 2), o.gold ? metal(o.watch, env) : blackM, wr, s * B.ar * .82, .035, 0); }
       ch.arm[s] = { sh, el, wr };
     }
-    // hand shapes: curl per finger [index, middle, ring, pinky] + thumb tuck
-    const HANDS = { fist: [1.25, 1.3, 1.3, 1.3, 1], relaxed: [.55, .65, .72, .8, .4], open: [.08, .05, .08, .14, -.2], point: [0, 1.3, 1.35, 1.35, 1] };
-    function setHand(s, a, b, w) { const H = ch.hand[s], A = HANDS[a] || HANDS.relaxed, Bh = HANDS[b] || A;
-      H.fingers.forEach(([f1, f2], i) => { const c = A[i] + (Bh[i] - A[i]) * w; f1.rotation.z = -s * c * .95; f2.rotation.z = -s * c * 1.05; });
-      const tc = A[4] + (Bh[4] - A[4]) * w; H.th.rotation.set(-.5 - tc * .3, 0, -s * (.35 + tc * .55)); }
+    // hand shapes on the mitt: fist (rounder, thumb tucked) | relaxed | open (thumb out) | point (index finger out)
+    const HANDS = { fist: [.9, 1, 0], relaxed: [1, .4, 0], open: [1.06, -.4, 0], point: [.92, 1, 1] };   // [mitt length, thumb tuck, finger]
+    function setHand(s, a, b, w) { const H = ch.hand[s], A = HANDS[a] || HANDS.relaxed, Bh = HANDS[b] || A, m = i => A[i] + (Bh[i] - A[i]) * w;
+      H.mitt.scale.y = .1 * m(0); H.th.rotation.set(-.35 - m(1) * .2, 0, -s * (.25 + m(1) * .35));
+      const f = m(2); H.idx.visible = f > .02; H.idx.scale.set(1, Math.max(.02, f), 1); }
 
     // ---------- head ----------
     const head = ch.head = grp(neck, 0, B.R * .9 - .01, 0);

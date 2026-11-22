@@ -349,7 +349,8 @@ every picture change · `#` comment lines. Write numbers as words in the spoken 
 ## 2. The cast: silent 3D characters
 
 **Look (cast v2, Nov 22 2026):** matte warm-white porcelain sphere head with a big drawn face (oval eyes with a catchlight,
-arched brows) sitting right on the collar (no neck), chunky white glove hands with fingers (fist / open / point), real
+arched brows) sitting right on the collar (no neck), big round white mitt hands (Brian, Nov 22 2026: smooth mitten + thumb bump like the v1 cast, never separate
+fingers; a single finger appears only to point), real
 clothes with collars, cuffs, pockets, seams and laced shoes. Built in code (`engine/characters.js`). No model files,
 renders exactly the same every time. **Look target:** Brian's reference sheets in `docs/characters/` (`*_ref.png`);
 our renders of the same sheets sit next to them (`*_engine.jpg`, made with `engine/lab/cast-sheet.html`). Any change
@@ -398,7 +399,7 @@ topic needs one (chef, pilot, doctor…).
 | `lean` | lean forward (interest) or back (shock) |
 | `armR / armL: {raise}` | raise an arm, e.g. a fist pump |
 | `gesture` + `gw` | blend in a gesture (0→1 over ~0.3 s) |
-| `handR` / `handL` | glove shape: `fist`, `relaxed` (default), `open`, `point`. Gestures set it; pass one to override (e.g. `handR:'point'` without the arm gesture) |
+| `handR` / `handL` | mitt shape: `fist`, `relaxed` (default), `open` (thumb out), `point` (one finger out). Gestures set it; pass one to override |
 
 **Gestures:** `point` · `wave` (animated) · `shrug` · `cross` (arms crossed: skeptic) · `think`
 (hand to chin) · `facepalm` · `hips` (hands on hips: impatient, proud) · `tada` (arms out: "behold").
@@ -431,6 +432,11 @@ arriving). The first frame is already moving. **No fade-ins.**
 | **Over-the-shoulder two-shot** | a foreground head or shoulder at the frame edge, the other character facing camera | confrontations, the observer |
 | **Insert / prop** | a prop fills the frame (gauge, receipt, $40 pump) | numbers, evidence |
 | **Diagram plate** | a cutaway or diagram plate with props animating on it | the mechanism (tracking one object) |
+
+**Characters read big (Brian, Nov 22 2026: "we need to make our characters bigger").** In a wide shot the cast fills at
+least ~40% of the frame height; in a medium or two-shot ~55–70%; close-ups crop at the chest, never the head. Get size by
+planting them closer to the camera (lower on the painted floor) and lowering the plate's `camH`, then pull the shot's
+zoom back so heads stay clear of on-screen text (y ≈ 220–420) and the follow button (y ≈ 560–660).
 
 ### 3.2 Moves on painted plates
 - **Zoom (push-in or pull-back) and pan only.** These keep the 3D characters' feet planted on the

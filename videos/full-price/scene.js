@@ -40,32 +40,32 @@
 
   window.SCENE = {
     plates: {
-      '01': { img: '01_tv_store_counter_dawn.png', hz: .4, vx: .5, fov0: 55, camH: 1.85, light: L.store },
+      '01': { img: '01_tv_store_counter_dawn.png', hz: .4, vx: .5, fov0: 55, camH: 1.6, light: L.store },
       '02': { img: '02_counter_closeup.png', hz: .5, vx: .5, fov0: 55, camH: 1.5, light: L.store },
-      '03': { img: '03_dept_store_busy.png', hz: .35, vx: .66, fov0: 55, camH: 2.6, light: L.mall },
-      '04': { img: '04_dept_store_empty.png', hz: .35, vx: .66, fov0: 55, camH: 2.6, light: L.dead },
+      '03': { img: '03_dept_store_busy.png', hz: .35, vx: .66, fov0: 55, camH: 2.1, light: L.mall },
+      '04': { img: '04_dept_store_empty.png', hz: .35, vx: .66, fov0: 55, camH: 2.1, light: L.dead },
       '05': { img: '05_price_tag_board.png', hz: .5, vx: .5, fov0: 55, camH: 1.5, light: 'interior' },
-      '06': { img: '06_store_front_parking_morning.png', hz: .52, vx: .5, fov0: 55, camH: 1.45, light: L.lot },
+      '06': { img: '06_store_front_parking_morning.png', hz: .52, vx: .5, fov0: 55, camH: 1.2, light: L.lot },
     },
     props: { P01: 'P01_tv_box.png', P02: 'P02_payment_card.png', P03: 'P03_sale_sticker.png', P04: 'P04_old_price_tag.png',
       P06: 'P06_coupon.png', P08: 'P08_office_box.png', H01: 'H01_helicopter.png' },
     cast: { doug: 'hoodie', gary: 'oxford', victor: 'suit' },
     shots: [
       { at: 'q', plate: '01', zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .52]] },
-      { at: 'card', plate: '01', zoom: [1.45, 1.55], focus: [[.6, .6], [.6, .6]] },
+      { at: 'card', plate: '01', zoom: [1.2, 1.28], focus: [[.6, .62], [.6, .62]] },
       { at: 'tv', plate: '02', zoom: [1.0, 1.18], focus: [[.5, .45], [.66, .36]] },
-      { at: 'plan', plate: '01', zoom: [1.3, 1.38], focus: [[.45, .58], [.45, .58]] },
-      { at: 'snl', plate: '01', zoom: [1.55, 1.65], focus: [[.33, .55], [.33, .55]] },
-      { at: 'doug', plate: '01', zoom: [1.6, 1.7], focus: [[.62, .6], [.62, .6]] },
-      { at: 'gary', plate: '01', zoom: [1.9, 1.9], focus: [[.33, .5], [.33, .5]] },     // hard cut on "Ah"
-      { at: 'papi', plate: '01', zoom: [1.7, 1.8], focus: [[.4, .52], [.38, .52]] },
-      { at: 'best', plate: '01', zoom: [1.45, 1.5], focus: [[.42, .55], [.42, .55]] },
-      { at: 'dance', plate: '01', zoom: [1.3, 1.36], focus: [[.47, .56], [.47, .56]] },
-      { at: 'chant', plate: '01', zoom: [1.5, 1.62], focus: [[.47, .56], [.47, .57]] },
-      { at: 'bet', plate: '01', zoom: [1.55, 1.6], focus: [[.6, .6], [.6, .6]] },
+      { at: 'plan', plate: '01', zoom: [1.08, 1.14], focus: [[.48, .6], [.48, .6]] },
+      { at: 'snl', plate: '01', zoom: [1.2, 1.28], focus: [[.38, .6], [.38, .6]] },
+      { at: 'doug', plate: '01', zoom: [1.25, 1.32], focus: [[.6, .62], [.6, .62]] },
+      { at: 'gary', plate: '01', zoom: [1.45, 1.45], focus: [[.35, .56], [.35, .56]] },     // hard cut on "Ah"
+      { at: 'papi', plate: '01', zoom: [1.3, 1.38], focus: [[.42, .58], [.4, .58]] },
+      { at: 'best', plate: '01', zoom: [1.15, 1.2], focus: [[.45, .6], [.45, .6]] },
+      { at: 'dance', plate: '01', zoom: [1.0, 1.05], focus: [[.5, .55], [.5, .55]] },
+      { at: 'chant', plate: '01', zoom: [1.12, 1.22], focus: [[.5, .6], [.5, .6]] },
+      { at: 'bet', plate: '01', zoom: [1.2, 1.25], focus: [[.6, .62], [.6, .62]] },
       { at: 'sticker', plate: '02', zoom: [1.35, 1.55], focus: [[.75, .33], [.77, .31]] },
       { at: 'peel', plate: '02', zoom: [1.6, 1.6], focus: [[.77, .31], [.77, .31]] },
-      { at: 'october', plate: '01', zoom: [1.65, 1.75], focus: [[.62, .58], [.62, .57]] },
+      { at: 'october', plate: '01', zoom: [1.25, 1.32], focus: [[.6, .62], [.6, .61]] },
       { at: 'why', plate: '05', zoom: [1.0, 1.08], focus: [[.5, .5], [.5, .5]] },
       { at: 'jcp', plate: '03', zoom: [1.0, 1.1], focus: [[.55, .55], [.58, .55]] },
       { at: 'honest', plate: '03', zoom: [1.2, 1.28], focus: [[.5, .55], [.5, .55]] },
@@ -90,7 +90,7 @@
       const id = K.shot.id, Lc = K.shot.local, at = c => K.T(c);
       const D = K.cast.doug, G = K.cast.gary, V = K.cast.victor;
       // store spots: Gary at the left end of the counter, Doug on the floor facing him
-      const store = () => { K.placeAt('gary', 370, 840, .45); K.placeAt('doug', 620, 960, -.55); };
+      const store = () => { K.placeAt('gary', 360, 960, .45); K.placeAt('doug', 650, 1100, -.55); };
       const card = (a = 1) => { const p = K.img(470, 612); K.prop('P02', { x: p.x, y: p.y, w: 190 * K.imgScale() * a, rot: -.04 });
         if (a > .9) K.text('4 EASY PAYMENTS', { x: p.x, y: p.y - 34 * K.imgScale(), size: 14 * K.imgScale(), color: '#0f4f52', stroke: 0, shadow: false, rot: -.04, w: 600 }); };
       switch (id) {
@@ -166,7 +166,7 @@
           K.text('...just a TV', { y: 260, size: 84, scale: popIn(K, t, wordAt(K, 'tv', '299')) }); break; }
         case 'end': case 'mirror': case 'cta': {
           // outside: Gary still dancing by the balloons, Doug walks out with the TV box and stops
-          K.placeAt('gary', 700, 960, -.2); face(G, 'happy', t); dance(G, t, 0, id === 'cta' ? .6 : 1);
+          K.placeAt('gary', 720, 1010, -.2); face(G, 'happy', t); dance(G, t, 0, id === 'cta' ? .6 : 1);
           const u = id === 'end' ? K.clamp01(Lc / 1.3) : 1, [x0, z0] = K.floorAt(470, 900), [x1, z1] = K.floorAt(330, 1020);
           const d = K.place('doug', K.lerp(x0, x1, u), 0, K.lerp(z0, z1, u), u < 1 ? -.3 : .35);
           // THE HELICOPTER ENDING (PLAYBOOK §1.12a): crosses the sky on the mirror line; Doug, who "won" his deal, looks up

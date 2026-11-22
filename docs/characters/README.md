@@ -20,8 +20,9 @@ gang member; shot 6 = the lineup), then copy them here as `<name>_engine.jpg`.
 - **Faces:** big and readable: oval eyes about 42% of the head width apart, each with a small white catchlight;
   thin arched brows well above the eyes; a smile about a quarter of the head wide. Seven faces: smile, happy (closed
   eyes, open mouth with tongue), surprised, smirk, worried, flat, blink.
-- **Hands:** chunky white cartoon gloves with four fingers and a thumb: loose fists at rest, open on wave/shrug/tada/
-  facepalm, index finger out on point (`pose({handR:'fist'|'relaxed'|'open'|'point'})` overrides).
+- **Hands (Brian, Nov 22 2026):** one big, smooth, round white mitt with a thumb bump, like the v1 cast, never separate
+  fingers (the fingered gloves looked messy). A single index finger slides out only on `point`
+  (`pose({handR:'fist'|'relaxed'|'open'|'point'})` overrides).
 - **Clothes with real details:** shirt collars, plackets, buttons, chest pocket, cuffs; hoodie hood, kangaroo pocket,
   drawstrings, ribbed hem and cuffs; jeans with seams, back pockets and rolled cuffs; suit with lapels, pocket flaps,
   three buttons, white cuffs, tie knot; bomber with zipper and ribbing; beanie with a folded cuff; bandana with a
