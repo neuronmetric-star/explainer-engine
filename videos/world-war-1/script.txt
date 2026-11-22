@@ -1,0 +1,25 @@
+# SHORT (~1:05). Why is it called World War 1? Mode: True story.
+# Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence):
+#   "why is it called world war 1"
+# Payoff: nobody called it World War One while it happened. It was "the Great War", hopefully "the war that will end war"
+#   (H.G. Wells, 1914). In Sept 1918 war reporter Charles Repington named it "the First World War" in his diary ON PURPOSE,
+#   as a warning that wars keep coming. In June 1939 Time magazine, seeing a second war coming, gave it the number:
+#   World War I. Three months later, World War II began.
+# Doug (the 1914 soldier) is fictional. Repington (played by Gary, silent) is real: reconstruction. Facts: sources.md.
+# Ending: the helicopter ending (PLAYBOOK §1.12a) flies over on the last story line; Gary/Repington (the winner) looks up.
+[#q] Why the {*heck|heck} is it called {*World War 1?|World War One?}
+[#card] See, Doug had a problem. [#sign] It's nineteen fourteen, and he just joined a war.
+[#ground] Austria's future emperor got shot, [#sides] and Europe's biggest countries picked sides.
+[#christmas] Everyone said it'd be {*over by Christmas.|over by Christmas.} [#bet] Honestly? I'd have believed it.
+[#trench] Christmas came. Doug was in a {!trench,|trench,} a muddy ditch for hiding from bullets.
+[#years] It dragged on {!four years,|four years,} [#world] and countries all over the world joined.
+[#great] So people called it {*the Great War.|the Great War.} Great as in huge. Not as in fun.
+[#wells] A famous writer, H.G. Wells, gave it a hopeful name: [#endwar] {*the war that will end war.|the war that will end war.}
+[#rep] Meanwhile, a British war reporter, Charles Repington, wasn't buying it.
+[#diary] In nineteen eighteen, he wrote a new name in his diary: [#first] {*the First World War.|the First World War.}
+[#wait] Wait, first? [#why] He picked "first" on purpose, as a warning: wars keep coming. [#rude] Rude. Also {*correct.|correct.}
+[#ends] Two months later, the war ended. [#home] Doug went home.
+[#1939] Twenty years later, Time magazine saw a second war coming [#number] and numbered the Great War: {*World War One.|World War One.}
+[#ww2] Three months later, {!World War Two|World War Two} began.
+[#end] The war that will end war. [#heli] Turns out it was just {!the first.|the first.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
