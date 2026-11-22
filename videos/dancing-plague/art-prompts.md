@@ -1,11 +1,11 @@
-# ChatGPT batch file: dancing-plague (14 images) · art standard v2
+# ChatGPT batch file: dancing-plague (13 images) · art standard v2
 
 **How to use:** open a **new ChatGPT chat**, paste **START**, then **BATCH 1 only** and send me those 3 images. I check them, then
 you do BATCH 2, 3 and 4. The helicopter is already done.
 
-**Color script:** 01 modern party town at night (neon pink/purple) → 02 Doug's driveway (cold blue, dusk sky) → 03 1518 street in
+**Color script:** 01 morning kitchen (warm cream, butter yellow) → 02 elevator (flat greenish steel) → 03 1518 street in
 hot July sun (gold/ochre) → 04 the stage in the square (festive red/gold) → 05 same square at dusk, wrecked (bruised purple) →
-06 road to the shrine at dawn (pale rose/blue) → 07 parchment map (sepia).
+06 road to the shrine at dawn (pale rose/blue) → 07 parchment map (sepia) → 08 balcony at dusk (orange/pink sky) for the ending.
 
 ```
 START
@@ -21,41 +21,39 @@ STRICT: no people, no characters, no animals, no faces, no hands, no feet, no si
 
 RECURRING OBJECTS (identical every time they appear, never redesign them):
 - THE RED SHOES: a pair of soft, pointed medieval red leather shoes with a thin strap, scuffed toes, slightly worn heels.
-- DOUG'S HOOP: a worn basketball hoop on a white garage, chipped orange rim, frayed white net, faded backboard.
 
 HOW TO WORK: I'll send prompts in numbered batches. Make every image in the batch one after another, in order, portrait 2:3. Above each image write only its file name. Props go on a solid pure green #00FF00 background with no shadow on the background. When a batch is done, say "BATCH DONE".
 ```
 
 ```
 BATCH 1 (backgrounds 01–03)
-01_party_town_night.png: SHOT: high wide angle looking down over a small modern American suburban street, wide 24mm lens feel, camera on a rooftop, horizon about 35% from the top.
-PLACE + MOOD: a small town at 11 PM where every house is partying except one: loud, glowing, a little ridiculous.
-HERO: one big two-story house in the middle blasting colored party lights from every window, a disco-ball glow on the lawn.
-FOREGROUND: the dark edge of a rooftop and a TV antenna cropped at the bottom left; a power line crossing the top right.
-MIDGROUND: the party house and its lawn with string lights, a giant speaker on the porch, balloons tied to the mailbox, a kiddie pool with a floating pizza box, cars parked crooked on the curb; the neighbors' houses also lit up with smaller parties.
-BACKGROUND: the rest of the town, rows of rooftops with glowing windows, a water tower, a dark hill with a few lights, starry deep-blue sky.
-DRESSING: string lights in pink and teal, red solo cups on the lawn, a pizza delivery scooter, a bouncy castle in one backyard, a trampoline, a garden gnome wearing a party hat, a "for sale" style yard sign (blank), streetlights, a fire hydrant.
-STORY DETAILS: ONE house on the bottom right is completely dark except for a single porch light, with a basketball hoop over its garage (DOUG'S HOOP) and an orange basketball on the driveway; a goldfish bowl on a party table wearing a tiny party hat.
-LIGHT: deep-blue night; practical lights: neon pink and purple from the party windows, warm orange streetlights, cool white porch light on the dark house; colored light spill on the lawns; slight haze.
-PALETTE: deep blue, neon pink, purple, teal, with warm orange accents.
-TEXTURE: shingle rooftops, wet asphalt reflecting neon, grass, glossy cars.
-STAGING: keep the lawn in front of the party house (lower-middle) clear and flat for two dancing characters, about a third of the frame wide. Keep the band at 60-72% height calm.
+01_kitchen_breakfast.png: SHOT: eye-level wide, normal 35mm lens feel, camera at chest height, horizon about 45% from the top.
+PLACE + MOOD: Doug and Gary's small shared apartment kitchen at 7:30 AM: cozy, messy, the first "huss" of the day.
+HERO: a little breakfast table in the middle with two mismatched chairs pushed back, two cereal bowls and a carton of milk.
+FOREGROUND: the edge of a kitchen counter cropped on the left with a toaster, a fruit bowl and a stack of dirty mugs.
+MIDGROUND: the table, a fridge covered in magnets and takeout menus (blank), a window over the sink with plants, a hanging pan rack.
+BACKGROUND: a doorway into a living room with a couch and a gaming console, a hallway with shoes piled by the door.
+DRESSING: a coffee maker steaming, a calendar on the wall (blank), a wall clock with no numbers, a dish rack, a banana peel on the counter, a cereal box (no logo), a hoodie draped on a chair, sneakers by the door, a potted basil plant.
+STORY DETAILS: a sticky note on the fridge that just has three little exclamation marks drawn on it, earplugs on the table next to one bowl, a dumbbell on the floor by the other chair.
+LIGHT: soft warm morning sun from the window on the LEFT, steam from the coffee catching the light, cool blue shadows.
+PALETTE: warm cream, butter yellow, mint green, with a mustard accent.
+TEXTURE: wood table, tile backsplash, fabric, stainless fridge.
+STAGING: a clear, flat floor in front of the table across the lower-middle, about half the frame wide, for two characters standing. Keep the band at 60-72% height calm.
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
-02_driveway_hoop_dusk.png: SHOT: low angle from the driveway, normal 35mm lens feel, camera at knee height, horizon about 50% from the top.
-PLACE + MOOD: Doug's quiet driveway at dusk, the one kid in town who stays home and practices: calm, focused, a little lonely and proud.
-HERO: DOUG'S HOOP on the white garage on the right, its net catching the last light.
-FOREGROUND: a crack in the concrete driveway with a weed growing out of it, a water bottle and a worn towel on the ground at the left edge.
-MIDGROUND: a wide, clean concrete driveway with faded chalk lines for a free-throw spot, the garage door, a porch light on, a bike leaning on the wall.
-BACKGROUND: down the street, the glow of a party house (pink and purple light) and string lights far away, rooftops, bare trees.
-DRESSING: a recycling bin, a mailbox, a garden hose coiled on a hook, two spare basketballs in a mesh bag, cones for dribbling drills, a folding chair, a lit lamp in a garage window.
-STORY DETAILS: a handwritten practice chart taped to the garage (just lines, no writing), scuffed ball marks on the garage door, a pair of worn sneakers by the door.
-LIGHT: warm porch light from the right on the hoop; cool blue dusk everywhere else; the party glow pink in the distance.
-SKY: a BIG, open dusk sky (deep blue fading to orange at the horizon) fills the whole top third, with nothing tall in it (an aircraft flies through it later).
-PALETTE: cool blue, dusk orange, white, with a pink glow accent far away.
-TEXTURE: rough concrete, painted garage, chain-net, brick.
-STAGING: a clear, flat stretch of driveway across the lower-middle, about half the frame wide, for one character dribbling. Keep the band at 60-72% height calm.
+02_elevator_inside.png: SHOT: straight-on from the back corner of an apartment elevator, normal 35mm lens feel, camera at chest height, looking at the closed doors, horizon about 45% from the top.
+PLACE + MOOD: a small, slow apartment-building elevator: the most awkward silence in the world.
+HERO: the closed brushed-steel doors in the center back with a small floor-number panel above them (blank, glowing dots).
+FOREGROUND: a handrail cropped along the bottom edge and a corner of mirrored wall on the right reflecting a soft light.
+MIDGROUND: the elevator floor, a button panel on the right wall with round glowing buttons (no numbers), a small inspection certificate frame (blank), a security camera dome in a corner.
+BACKGROUND: faux-wood side panels, a ceiling light panel.
+DRESSING: scuffed rubber floor mat, a dented kick plate, a sticker of an arrow on the panel, a tiny speaker grille, a fire-alarm box.
+STORY DETAILS: a forgotten coffee cup in the corner, a crumpled gym towel on the handrail.
+LIGHT: flat, slightly greenish fluorescent light from above, a warm glow from the button panel, a soft reflection in the steel doors.
+PALETTE: steel gray, faux-wood brown, pale green light, with warm amber button accents.
+TEXTURE: brushed steel, rubber floor, wood-grain laminate.
+STAGING: a clear, flat floor in the lower-middle, about half the frame wide, for two characters standing side by side. Keep the band at 60-72% height calm.
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
@@ -76,7 +74,7 @@ STRICT: no people, no faces, no hands, no animals.
 ```
 
 ```
-BATCH 2 (backgrounds 04–07)
+BATCH 2 (backgrounds 04–08)
 04_square_stage_1518.png: SHOT: wide angle across a medieval market square, wide 24mm lens feel, camera at chest height, horizon about 42% from the top.
 PLACE + MOOD: the city's "cure": a freshly built wooden dance stage in the busy horse-market square, festive and wrong.
 HERO: a raw wooden stage on the right, newly hammered, with drums, long pipes and horns resting on it (no musicians).
@@ -110,13 +108,27 @@ STAGING: a clear, flat stretch of road across the lower-middle, about half the f
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
+08_balcony_dusk.png: SHOT: low wide angle on a small apartment balcony, wide 24mm lens feel, camera at knee height, horizon about 55% from the top.
+PLACE + MOOD: the same apartment's balcony at dusk, quiet after a long day; the city skyline glowing.
+HERO: a wide, open, glowing dusk sky over a city skyline.
+FOREGROUND: a potted plant and a folded camping chair cropped on the left edge.
+MIDGROUND: the balcony floor tiles, a metal railing with string lights, a small grill, a bike leaning on the wall, the sliding glass door with a warm lamp glowing inside (a couch visible).
+BACKGROUND: city rooftops, water towers, a few lit windows, a distant bridge.
+DRESSING: a doormat, a watering can, a laundry rack with a hoodie on it, a mini fridge, a pair of slippers.
+STORY DETAILS: earplugs left on the railing, a pillow wedged against the glass door from inside.
+SKY: a BIG, open dusk sky (deep blue fading to orange and pink) fills the whole top third, with nothing tall in it (an aircraft flies through it later).
+LIGHT: low warm sunset from the LEFT, warm lamp glow from the door, cool blue shadows, string lights twinkling.
+PALETTE: dusk orange, pink, deep blue, warm lamp gold.
+TEXTURE: concrete tiles, metal railing, glass.
+STAGING: a clear, flat stretch of balcony floor across the lower-middle, about half the frame wide, for one or two characters. Keep the band at 60-72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no faces, no hands, no animals.
+
 07_parchment_map.png: SHOT: straight-on, centered diagram plate. An old hand-drawn parchment map seen from directly above, filling the frame: a walled medieval city with a river curving around it, a cathedral drawn in the center, tiny houses and streets, a market square, city gates, fields outside the walls. Aged, stained, slightly curled edges, a candle-burn mark in one corner, a compass rose drawn with no letters. Leave the streets clean so red dots can be added later. Warm light from the left, soft vignette. PALETTE: sepia, cream, faded brown ink. No text, no letters, no numbers, no people.
 ```
 
 ```
-BATCH 3 (props P01–P04, all on solid pure green #00FF00)
-P01_basketball.png: A worn orange basketball, seen straight on, black seams, slightly scuffed and dusty from outdoor courts, one small patch rubbed smooth. Light from the left with a bright highlight and a soft shadow on the ball itself, a thin darker outline. Centered on a solid pure green #00FF00 background, no text, no logo.
-
+BATCH 3 (props P02–P04, all on solid pure green #00FF00)
 P02_red_shoes.png: THE RED SHOES: a pair of soft, pointed medieval red leather shoes with a thin strap, scuffed toes and worn heels, standing side by side at a slight 3/4 angle, one heel lifted as if mid-step. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background.
 
 P03_drum.png: A medieval wooden drum with a rope-laced side and a stretched hide top, two wooden drumsticks resting on it, worn paint in red and gold stripes. 3/4 angle, light from the left, thin darker outline. Centered on a solid pure green #00FF00 background.
@@ -125,10 +137,8 @@ P04_doctor_scroll.png: An unrolled old parchment scroll, slightly curled at the 
 ```
 
 ```
-BATCH 4 (props P05–P07, all on solid pure green #00FF00)
+BATCH 4 (props P05, P07, all on solid pure green #00FF00)
 P05_shoe_single.png: One single worn medieval leather shoe lying on its side, sole worn through at the toe, a broken strap. Light from the left, thin darker outline. Centered on a solid pure green #00FF00 background.
-
-P06_party_speaker.png: A huge modern party speaker on wheels, black with glowing neon pink and teal rings around the woofers, a cable trailing. 3/4 angle, light from the left, thin darker outline. Centered on a solid pure green #00FF00 background, no logo, no text.
 
 P07_wooden_cross.png: A small, simple hand-carved wooden cross on a leather cord, worn smooth. Front view, light from the left, thin darker outline. Centered on a solid pure green #00FF00 background.
 ```

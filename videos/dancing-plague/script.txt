@@ -1,28 +1,26 @@
-# SHORT (~1:10). DRAFT v2, waiting for Brian. Mode: TREND RIDE (PLAYBOOK §1.13).
-# The meme (researched Nov 22 2026): Roblox clip by @larpniverse (mid-Nov 2026): a kid in a beanie: "In this town, everybody goes
-#   out partying… except me. Huss, huss, huss." while he dribbles a basketball alone. "Huss" = the hard-breathing sound of grinding
-#   (practicing, sprinting). Story beat in the copies: everyone parties, he practices, then scores 50: "While you were out partying."
-#   Top copy 11.6M plays in 2 days; "in this town everybody…" became a story template.
-# Bridge: a town where everybody goes out partying except one guy → a REAL town that couldn't stop dancing: Strasbourg, 1518.
-#   Doug = the one who stays home and grinds (dribbling, "huss, huss, huss"); Gary, Victor and the polo guy go out dancing.
-# Search phrase: "dancing plague 1518" (TikTok's #1 suggestion). On screen in the first 2 s: DANCING PLAGUE 1518.
-# Payoff: the city's cure was MORE dancing (stage + band), and it got worse; best theory = fear spreading through a starving, sick
+# SHORT (~1:10). DRAFT v3, waiting for Brian. Mode: TREND RIDE (PLAYBOOK §1.13).
+# The meme (researched Nov 22 2026): Roblox clip by @larpniverse: "In this town, everybody goes out partying… except me. Huss, huss,
+#   huss." ("huss" = the hard-breathing grind sound). Top copy 11.6M plays in 2 days; everyone is repeating it.
+# Brian's angle (v3): Gary won't stop saying "huss, huss, huss" and it drives Doug crazy ("let it go!"), until Doug catches it too.
+#   The narrator performs every "huss" (no clip). No swearing: "let it go", not the f-word.
+# Bridge: a catchphrase that jumps from person to person and won't stop → a REAL thing that jumped from person to person and
+#   wouldn't stop: the dancing plague of 1518 in Strasbourg.
+# Search phrase: "dancing plague 1518" (TikTok's #1 suggestion). On screen in the first 2 s: DANCING PLAGUE 1518 + HUSS HUSS HUSS.
+# Payoff: the city's cure was MORE dancing (stage + band) and it got worse; best theory = fear spreading through a starving, sick
 #   town (historian John Waller). Deaths are disputed: "later stories", never a number as fact.
-# Sound: the real 4 s original ("In this town, everybody goes out partying except me. Huss, huss, huss") replaces [#town]..[#huss]
-#   if Brian wants it; otherwise the narrator says it.
 [#q] Why the heck did a whole town catch the {*dancing plague of 1518?|dancing plague of fifteen eighteen?}
-[#town] See, in this town, everybody goes out partying. [#gary] Gary. [#victor] Victor.
-[#doug] Except Doug. [#huss] Doug stays home and practices. {*Huss, huss, huss.|Huss, huss, huss.}
-[#bet] Honestly? Let them party. Parties end.
-[#real] Except in {1518,|fifteen eighteen,} a real town couldn't stop. [#city] Strasbourg, in today's France.
+[#gary] See, Gary found a new word. {*Huss, huss, huss.|Huss, huss, huss.} [#breakfast] At breakfast. Huss, huss, huss. [#elevator] In the elevator. Huss, huss, huss.
+[#doug] Doug's begging. Let it {!go,|go,} Gary.
+[#bet] Honestly? Relax. It's a word. Words wear off.
+[#real] Except in {1518,|fifteen eighteen,} a real town caught something that didn't. [#city] Strasbourg, in today's France.
 [#troffea] A woman named Frau Troffea steps outside and starts dancing. [#nostop] No music. She can't {!stop.|stop.} For days.
 [#spread] Then neighbors join. Then strangers. [#400] Within a month, about {!400 people|four hundred people} are dancing. A packed school gym. Nobody's having fun.
 [#doctors] The doctors' diagnosis? Hot blood. [#cure] The cure? {*Dance it out.|Dance it out.}
 [#stage] They build a stage and bring in a band. [#dj] Basically, a DJ for a plague. [#more] More people {!joined.|joined.}
 [#deaths] Later stories claim deaths. Historians still argue.
 [#flip] Finally, the city bans music, [#shrine] ships the dancers to a saint's shrine in red shoes, [#fade] and by September, it fades.
-[#why] [#waller] Historian John Waller thinks the town was starving, sick, [#saint] and sure an angry saint could curse you to dance.
+[#waller] Historian John Waller thinks the town was starving, sick, [#saint] and sure an angry saint could curse you to dance.
 [#yawn] Fear spreads like a {*yawn:|yawn:} one person starts, your body copies.
-[#end] So in this town, everybody went out dancing. [#mirror] Except the guy who stayed home. {*Huss, huss, huss.|Huss, huss, huss.}
-[#ask] Would you have danced, or stayed home?
+[#end] Back to Doug. [#quiet] Gary finally stopped. [#mirror] And Doug? {*Huss, huss, huss.|Huss, huss, huss.}
+[#ask] Who's the Gary in your friend group?
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
