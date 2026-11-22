@@ -1,0 +1,23 @@
+# SHORT (~1:05). How does a fridge work? Mode: Explainer (Thanksgiving-week setting).
+# Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence): "how does a fridge work"
+#   (TikTok's #1 suggestion for "how does a fridge", Nov 22 2026).
+# Payoff: a fridge doesn't make cold. It grabs heat from your food and dumps it out the back, into the kitchen.
+#   So an open fridge door makes the kitchen hotter, not colder.
+# Broken version: Doug opens the fridge to cool a Thanksgiving kitchen. Clue: Gary's hand on the warm side of the fridge.
+# Callback: "That warm spot Gary felt?" Mirror: "Open it, and the kitchen gets cold" → Doug opens the back door.
+# Doug and Gary are fictional; the physics is real (sources.md).
+[#q] How the heck does a *fridge work? [#weird] Your fridge doesn't make cold.
+[#doug] See, Doug had a problem. Thanksgiving morning, oven on since six, [#sauna] kitchen like a sauna.
+[#logic] So Doug goes, "Fridge is cold. Open it, kitchen gets cold." [#chair] Door open. Chair against it.
+[#works] Cold air spills across his socks. [#bet] Honestly? I'd have done the same.
+[#gary] But Gary touched the side of the fridge. [#warm] {!Warm.|Warm.} Like a laptop.
+[#hour] An hour later, the kitchen was {!hotter.|hotter.}
+[#liquid] Here's why. Fridge pipes carry a liquid called refrigerant. [#boils] It boils at about {*11°F.|eleven degrees.} Water needs {212°F.|two hundred twelve.}
+[#sweat] Boiling soaks up heat, like sweat drying on your skin. [#grab] So the refrigerant boils inside the fridge, grabbing your milk's heat.
+[#squeeze] Then a pump squeezes it hot, like a bike pump.
+[#coils] And pipes in the fridge's sides dump that heat {!into your kitchen.|into your kitchen.}
+[#callback] That warm spot? The milk's heat.
+[#open] So an open door just moves the kitchen's heat back into the kitchen, plus the pump's own heat, running nonstop.
+[#tonight] Tonight, touch the side of your fridge. [#yours] Warm? That's your food's heat.
+[#end] So Doug shut the fridge, and opened the back door. [#nov] It's November. *Free cold.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

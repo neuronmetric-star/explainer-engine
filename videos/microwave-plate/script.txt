@@ -1,0 +1,22 @@
+# SHORT (~1:05). How does a microwave work? Mode: Explainer.
+# Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence): "how does a microwave work"
+#   (TikTok's #1 suggestion for "how does a microwave", Nov 22 2026).
+# Payoff: a microwave doesn't heat food, it shakes the water in it 2.45 billion times a second. The waves bounce and
+#   leave hot and cold spots ~2.4 in apart, so the spinning plate is what makes the whole burrito cook.
+# Broken version: Doug pulls out the rattling plate. Clue: the cheese melts in a row of puddles. Callback: "That rattle?"
+# Audit rules (docs/creators/account-audit-2026-11-22.md): you + object + surprise in line 1, "But… so…" links,
+#   a "try it tonight" line before the mirror. Doug and Gary are fictional; the physics is real (sources.md).
+[#q] How the heck does a *microwave work? [#nofire] There's no fire in there.
+[#doug] See, Doug had a problem. His microwave plate kept rattling.
+[#logic] So Doug goes, "A plate doesn't cook food." [#yank] Out it goes.
+[#burrito] Frozen burrito, three minutes. [#bite] First bite? {!Lava.|Lava.} [#bite2] Second bite? {!Frozen.|Frozen.}
+[#gary] But Gary noticed the cheese. [#spots] Melted in puddles, in a row.
+[#bet] Honestly? I'd have blamed the burrito.
+[#waves] The microwave fires invisible waves, like a tiny radio station.
+[#water] Your food is full of tiny water bits called molecules.
+[#flip] The waves flip them back and forth {*2.45 billion|two point four five billion} times a second. [#rub] They rub against each other, and that makes heat, like rubbing your hands together.
+[#bounce] But the waves bounce off the metal walls. [#hot] Where they stack, {!hot spot.|hot spot.} [#cold] Where they cancel, {*cold spot.|cold spot.} [#apart] About two and a half inches apart. A thumb's length.
+[#plate] So the plate spins your food through the hot spots, so every part takes a turn. [#callback] That rattle? The plate doing its job.
+[#tonight] Take the plate out tonight, chocolate bar on a dish, twenty seconds. [#choc] Melted spots, a thumb apart.
+[#end] Turns out the plate doesn't cook food. It just makes sure *all of it gets cooked.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
