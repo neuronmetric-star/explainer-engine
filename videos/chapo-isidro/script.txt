@@ -1,4 +1,4 @@
-# SHORT (~1:05-1:10). DRAFT v1, waiting for Brian. Mode: True story (background of the man arrested Nov 20 2026).
+# SHORT (~1:05-1:10). APPROVED by Brian Nov 22 2026. Mode: True story (background of the man arrested Nov 20 2026).
 # Not a trend ride: today's trend pair (huss / dancing plague) doesn't bridge to this; Brian asked for this topic directly.
 # Search phrases: "el chapo isidro" + "sinaloa cartel leader" (first spoken sentence, on-screen first 2 s, caption line 1).
 # Payoff: "El Chapo Isidro" is NOT El Chapo. He's a farm-town kid who sided with El Chapo's enemies, built his own cartel,
@@ -17,11 +17,11 @@
 [#own] Then he built his own cartel, [#usa] moving drugs into America.
 [#bet] Honestly? I figured nobody could {*find|find} him.
 [#caught] Wrong. They caught him in {2011.|twenty eleven.} [#free] He walked {!out.|out.} [#2014] Twice in {2014.|twenty fourteen.} [#free2] Walked out. [#2015] {2015.|Twenty fifteen.} [#free3] Walked {!out.|out.}
-[#door] Gary: "That's not a jail. That's a {!revolving door.|revolving door.}"
+[#door] Gary: "That's not a jail. That's a [#spin] {!revolving door.|revolving door.}"
 [#reward] So the FBI put him on its {*Ten Most Wanted|Ten Most Wanted} list.
 [#friday] This Friday, soldiers came for arrest number {*five.|five.}
 [#fight] His gunmen fought back all night. [#dead] Eleven people {!died.|died.}
-[#plane] This time, they flew him to {*Mexico City.|Mexico City.}
+[#plane] This time, they flew him to [#takeoff] {*Mexico City.|Mexico City.}
 [#mirror] Four times, he walked out. [#air] The fifth time, he {*flew.|flew.}
 [#ask] Where should he go on trial? {*Mexico|Mexico} or {*America?|America?}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
