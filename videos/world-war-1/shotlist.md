@@ -12,7 +12,11 @@ why, and pays off on the last line ("just the first").
 Wells book cover (P01, exact text). Paintings have no text: blank posters, blank magazine pages, unlabeled map.
 **Art:** **12 new images** (7 backgrounds + 5 props) from `art-prompts.md` → `art/`. Already in `art/`: `H01_helicopter.png`
 (the helicopter ending) and `P06_calendar_page.png` (reused from dollar-a-second).
-**OpenArt inserts:** none needed (no water, fire, crowds or crashes; war action stays off screen on purpose).
+**OpenArt (Brian, Nov 22): every plate animated with Wan 3.0 image-to-video, 480p, with its own sound** (`clips/<plate>.mp4`,
+static camera, ambient motion only, no cast). `node tools/clips.js world-war-1` turns them into frames + sound; the engine
+plays them under the cast and render.js lays each clip's sound under its shots. 01, 03, 04, 06, 07 = 10 s, 05 = 5 s.
+**02 map failed** (Alibaba's content filter rejects world maps; refunded) → the map stays a still painting.
+Credits: 1,100 (98,170 → 97,070).
 
 ## Images
 | # | File | What |
