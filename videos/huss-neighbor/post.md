@@ -1,7 +1,7 @@
 # Post kit: huss-neighbor
 
 **Slot:** a 12:00 or 21:00 ET slot, ≥ 3 h from "full price". Post while the meme is hot (by ~Nov 26).
-**Length:** ~1:05.7 (over the 1:02 payout line).
+**Length:** ~1:12 (over the 1:02 payout line).
 
 ## TikTok / Reels caption
 huss huss huss 😭 my neighbor won't stop
