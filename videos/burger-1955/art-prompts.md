@@ -27,5 +27,5 @@ P02_label_card.png: A tall white card styled like a nutrition facts panel, front
 
 P03_salt_shaker.png: A classic glass salt shaker with a shiny silver cap, full of white salt, a few grains spilling at its base, front view. Centered on a solid pure green #00FF00 background, no text.
 
-P04_chemistry_set.png: A cartoon chemistry set on a small stand: two round-bottom flasks and three test tubes with bubbling green, purple and orange liquids, a little puff of steam. Front view. Centered on a solid pure green #00FF00 background, no text.
+P04_chemistry_set.png: A cartoon chemistry set on a small stand: two round-bottom flasks and three test tubes with bubbling blue, purple and orange liquids (no green), a little puff of steam. Front view. Centered on a solid pure green #00FF00 background, no text.
 ```
