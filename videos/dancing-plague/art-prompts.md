@@ -1,11 +1,11 @@
-# ChatGPT batch file: dancing-plague (13 images) · art standard v2
+# ChatGPT batch file: dancing-plague (15 images) · art standard v2
 
 **How to use:** open a **new ChatGPT chat**, paste **START**, then **BATCH 1 only** and send me those 3 images. I check them, then
 you do BATCH 2, 3 and 4. The helicopter is already done.
 
-**Color script:** 01 morning kitchen (warm cream, butter yellow) → 02 elevator (flat greenish steel) → 03 1518 street in
+**Color script:** 01 Gary's bedroom at night (deep blue + purple spill from next door) → 02 steamy bathroom (aqua/white) → 03 1518 street in
 hot July sun (gold/ochre) → 04 the stage in the square (festive red/gold) → 05 same square at dusk, wrecked (bruised purple) →
-06 road to the shrine at dawn (pale rose/blue) → 07 parchment map (sepia) → 08 balcony at dusk (orange/pink sky) for the ending.
+06 road to the shrine at dawn (pale rose/blue) → 07 parchment map (sepia) → 08 the two houses + Doug's driveway at dusk (orange/pink sky) for the confrontation and the ending.
 
 ```
 START
@@ -20,6 +20,7 @@ COMPOSITION: portrait 2:3. Leave the open floor zone I describe clear and flat f
 STRICT: no people, no characters, no animals, no faces, no hands, no feet, no silhouettes of people. No numbers or prices anywhere. No text, letters or logos unless I give the exact words in quotes; all other signs, screens, labels and stickers stay blank or show simple pictogram icons.
 
 RECURRING OBJECTS (identical every time they appear, never redesign them):
+- DOUG'S HOOP: a worn basketball hoop over a white garage, chipped orange rim, frayed white net, faded backboard.
 - THE RED SHOES: a pair of soft, pointed medieval red leather shoes with a thin strap, scuffed toes, slightly worn heels.
 
 HOW TO WORK: I'll send prompts in numbered batches. Make every image in the batch one after another, in order, portrait 2:3. Above each image write only its file name. Props go on a solid pure green #00FF00 background with no shadow on the background. When a batch is done, say "BATCH DONE".
@@ -27,33 +28,33 @@ HOW TO WORK: I'll send prompts in numbered batches. Make every image in the batc
 
 ```
 BATCH 1 (backgrounds 01–03)
-01_kitchen_breakfast.png: SHOT: eye-level wide, normal 35mm lens feel, camera at chest height, horizon about 45% from the top.
-PLACE + MOOD: Doug and Gary's small shared apartment kitchen at 7:30 AM: cozy, messy, the first "huss" of the day.
-HERO: a little breakfast table in the middle with two mismatched chairs pushed back, two cereal bowls and a carton of milk.
-FOREGROUND: the edge of a kitchen counter cropped on the left with a toaster, a fruit bowl and a stack of dirty mugs.
-MIDGROUND: the table, a fridge covered in magnets and takeout menus (blank), a window over the sink with plants, a hanging pan rack.
-BACKGROUND: a doorway into a living room with a couch and a gaming console, a hallway with shoes piled by the door.
-DRESSING: a coffee maker steaming, a calendar on the wall (blank), a wall clock with no numbers, a dish rack, a banana peel on the counter, a cereal box (no logo), a hoodie draped on a chair, sneakers by the door, a potted basil plant.
-STORY DETAILS: a sticky note on the fridge that just has three little exclamation marks drawn on it, earplugs on the table next to one bowl, a dumbbell on the floor by the other chair.
-LIGHT: soft warm morning sun from the window on the LEFT, steam from the coffee catching the light, cool blue shadows.
-PALETTE: warm cream, butter yellow, mint green, with a mustard accent.
-TEXTURE: wood table, tile backsplash, fabric, stainless fridge.
-STAGING: a clear, flat floor in front of the table across the lower-middle, about half the frame wide, for two characters standing. Keep the band at 60-72% height calm.
+01_gary_bedroom_night.png: SHOT: eye-level wide, normal 35mm lens feel, camera at chest height, horizon about 45% from the top.
+PLACE + MOOD: Gary's bedroom at 1 AM: he just wants to sleep, but the wall he shares with his neighbor is thumping.
+HERO: the bedroom wall on the right that's shared with the house next door: picture frames hanging crooked, a little dust shaking off a shelf.
+FOREGROUND: the corner of a nightstand cropped on the left with a glowing alarm clock (blank face, no numbers), a glass of water with ripples, a pair of glasses folded.
+MIDGROUND: a neatly made bed with blue sheets and a pillow pulled half over where a head would be, slippers on the rug, a reading lamp.
+BACKGROUND: a window with blinds and a streetlight glow, the neighbor's house lit up through the blinds with purple-pink light.
+DRESSING: a bookshelf with tidy books, a desk with a laptop closed, a houseplant, a framed certificate (blank), a robe on a hook, a fan on the dresser, a calendar (blank).
+STORY DETAILS: earplugs on the nightstand (a full box, one opened), a noise-machine box unopened, the picture frames on the shared wall tilted.
+LIGHT: deep-blue night; practicals: warm reading lamp, the alarm clock glow, purple-pink light spilling from the neighbor's window through the blinds in stripes.
+PALETTE: deep blue, soft lamp gold, with a party-purple accent from next door.
+TEXTURE: cotton sheets, wood furniture, carpet, painted drywall.
+STAGING: a clear, flat floor beside the bed across the lower-middle, about half the frame wide, for one character standing. Keep the band at 60-72% height calm.
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
-02_elevator_inside.png: SHOT: straight-on from the back corner of an apartment elevator, normal 35mm lens feel, camera at chest height, looking at the closed doors, horizon about 45% from the top.
-PLACE + MOOD: a small, slow apartment-building elevator: the most awkward silence in the world.
-HERO: the closed brushed-steel doors in the center back with a small floor-number panel above them (blank, glowing dots).
-FOREGROUND: a handrail cropped along the bottom edge and a corner of mirrored wall on the right reflecting a soft light.
-MIDGROUND: the elevator floor, a button panel on the right wall with round glowing buttons (no numbers), a small inspection certificate frame (blank), a security camera dome in a corner.
-BACKGROUND: faux-wood side panels, a ceiling light panel.
-DRESSING: scuffed rubber floor mat, a dented kick plate, a sticker of an arrow on the panel, a tiny speaker grille, a fire-alarm box.
-STORY DETAILS: a forgotten coffee cup in the corner, a crumpled gym towel on the handrail.
-LIGHT: flat, slightly greenish fluorescent light from above, a warm glow from the button panel, a soft reflection in the steel doors.
-PALETTE: steel gray, faux-wood brown, pale green light, with warm amber button accents.
-TEXTURE: brushed steel, rubber floor, wood-grain laminate.
-STAGING: a clear, flat floor in the lower-middle, about half the frame wide, for two characters standing side by side. Keep the band at 60-72% height calm.
+02_bathroom_steam.png: SHOT: eye-level, normal 35mm lens feel, camera at chest height, horizon about 45% from the top.
+PLACE + MOOD: a small home bathroom full of shower steam: the one place you should get some peace.
+HERO: a shower with a half-open striped shower curtain in the center back, water running, steam rolling out.
+FOREGROUND: the edge of a sink cropped on the left with a toothbrush cup, a fogged mirror and a smartphone propped against the faucet, its screen glowing.
+MIDGROUND: tiled floor, a bath mat, a towel rack with a fluffy towel, a laundry basket.
+BACKGROUND: the shower wall tiles, a small frosted window, a shelf of shampoo bottles (no labels).
+DRESSING: a rubber duck on the tub edge, a plant on the windowsill, a toilet with the lid down, a hamper, a hair dryer, a little rug.
+STORY DETAILS: the phone's screen reflected in the fogged mirror, water droplets on the screen, the shared wall behind the shower has a vent grille.
+LIGHT: warm ceiling light through the steam, soft glow from the phone screen, cool blue light from the frosted window, everything softened by mist.
+PALETTE: aqua, white, warm yellow, with the bright phone-screen accent.
+TEXTURE: glossy tiles, terry towel, fogged glass, chrome.
+STAGING: a clear, flat tiled floor in front of the shower across the lower-middle, about half the frame wide, for one character. Keep the band at 60-72% height calm.
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
@@ -108,19 +109,19 @@ STAGING: a clear, flat stretch of road across the lower-middle, about half the f
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
-08_balcony_dusk.png: SHOT: low wide angle on a small apartment balcony, wide 24mm lens feel, camera at knee height, horizon about 55% from the top.
-PLACE + MOOD: the same apartment's balcony at dusk, quiet after a long day; the city skyline glowing.
-HERO: a wide, open, glowing dusk sky over a city skyline.
-FOREGROUND: a potted plant and a folded camping chair cropped on the left edge.
-MIDGROUND: the balcony floor tiles, a metal railing with string lights, a small grill, a bike leaning on the wall, the sliding glass door with a warm lamp glowing inside (a couch visible).
-BACKGROUND: city rooftops, water towers, a few lit windows, a distant bridge.
-DRESSING: a doormat, a watering can, a laundry rack with a hoodie on it, a mini fridge, a pair of slippers.
-STORY DETAILS: earplugs left on the railing, a pillow wedged against the glass door from inside.
+08_driveway_neighbors_dusk.png: SHOT: low wide angle from the street, wide 24mm lens feel, camera at knee height, horizon about 52% from the top.
+PLACE + MOOD: two houses side by side at dusk: Gary's tidy, quiet house on the left and Doug's house on the right with a basketball hoop over the garage and music energy.
+HERO: DOUG'S HOOP over the garage on the right, with a wide concrete driveway in front of it.
+FOREGROUND: a mailbox and a trimmed hedge cropped on the left edge (Gary's side), a garden gnome.
+MIDGROUND: Gary's neat lawn and porch on the left with a "keep off the grass" style sign (blank) and a porch swing; Doug's driveway on the right with chalk free-throw marks, a water bottle and a towel on the ground.
+BACKGROUND: the two house fronts sharing a narrow gap between them, a few neighborhood houses, bare trees, power lines low on the horizon.
+DRESSING: a recycling bin, a bike on Doug's lawn, a garden hose, porch lights, a doormat on Gary's porch, sneakers on Doug's steps, a spare basketball under the hoop.
+STORY DETAILS: Gary's upstairs window has the blinds pulled tight; Doug's garage window glows purple-pink; a phone charger cable dangles from Doug's porch outlet.
 SKY: a BIG, open dusk sky (deep blue fading to orange and pink) fills the whole top third, with nothing tall in it (an aircraft flies through it later).
-LIGHT: low warm sunset from the LEFT, warm lamp glow from the door, cool blue shadows, string lights twinkling.
-PALETTE: dusk orange, pink, deep blue, warm lamp gold.
-TEXTURE: concrete tiles, metal railing, glass.
-STAGING: a clear, flat stretch of balcony floor across the lower-middle, about half the frame wide, for one or two characters. Keep the band at 60-72% height calm.
+LIGHT: low warm sunset from the LEFT, warm porch lights, purple-pink glow from Doug's garage, long shadows.
+PALETTE: dusk orange, pink, deep blue, with a basketball-orange accent.
+TEXTURE: concrete, grass, painted siding, chain-net.
+STAGING: a clear, flat stretch of driveway and sidewalk across the lower-middle, about two-thirds of the frame wide, for two characters (one dribbling). Keep the band at 60-72% height calm.
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
@@ -128,7 +129,9 @@ STRICT: no people, no faces, no hands, no animals.
 ```
 
 ```
-BATCH 3 (props P02–P04, all on solid pure green #00FF00)
+BATCH 3 (props P01–P04, all on solid pure green #00FF00)
+P01_phone_loud.png: A modern smartphone seen straight from the front, screen glowing bright and BLANK, a cracked corner on the case, with bold cartoon sound-wave arcs bursting out of both sides like it's blasting at full volume. Light from the left, thin darker outline. Centered on a solid pure green #00FF00 background, no text, no logos.
+
 P02_red_shoes.png: THE RED SHOES: a pair of soft, pointed medieval red leather shoes with a thin strap, scuffed toes and worn heels, standing side by side at a slight 3/4 angle, one heel lifted as if mid-step. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background.
 
 P03_drum.png: A medieval wooden drum with a rope-laced side and a stretched hide top, two wooden drumsticks resting on it, worn paint in red and gold stripes. 3/4 angle, light from the left, thin darker outline. Centered on a solid pure green #00FF00 background.
@@ -137,8 +140,10 @@ P04_doctor_scroll.png: An unrolled old parchment scroll, slightly curled at the 
 ```
 
 ```
-BATCH 4 (props P05, P07, all on solid pure green #00FF00)
+BATCH 4 (props P05–P07, all on solid pure green #00FF00)
 P05_shoe_single.png: One single worn medieval leather shoe lying on its side, sole worn through at the toe, a broken strap. Light from the left, thin darker outline. Centered on a solid pure green #00FF00 background.
+
+P06_basketball.png: A worn orange basketball, seen straight on, black seams, scuffed and dusty from the driveway. Light from the left with a bright highlight, thin darker outline. Centered on a solid pure green #00FF00 background, no text, no logo.
 
 P07_wooden_cross.png: A small, simple hand-carved wooden cross on a leather cord, worn smooth. Front view, light from the left, thin darker outline. Centered on a solid pure green #00FF00 background.
 ```
