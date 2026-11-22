@@ -94,7 +94,7 @@
           D.pose({ t, gesture: id === 'christmas' ? 'hips' : 'cross', gw: K.ease(Lc / .35), nod: .1 * Math.sin(K.clamp01(Lc / .6) * PI) });
           if (id === 'christmas') K.text('OVER BY CHRISTMAS?', { y: 260, size: 76, color: 'gold', scale: popIn(K, t, wordAt(K, 'christmas', 'christmas')) }); break; }
         case 'trench': { const d = K.placeAt('doug', 440, 1250, .15), f = K.screenOf(d.root);
-          K.prop('P04', { x: f.x + 190, y: f.y + 10, w: 260 * popIn(K, t, at('trench') + .3), anchor: [.5, .95] }); snow(60);
+          K.prop('P04', { x: f.x + 230, y: f.y + 5, w: 440 * popIn(K, t, at('trench') + .3), anchor: [.5, .95] }); snow(60);
           const lk = K.clamp01((Lc - .4) / .4); face(D, Lc < 1.4 ? 'flat' : 'worried', t); D.pose({ t, look: -.45 * lk, nod: .2 * lk }); break; }
         case 'years': { trenchDoug(); face(D, 'worried', t); D.pose({ t, gesture: 'facepalm', gw: K.ease((t - wordAt(K, 'four', 'years')) / .35) });
           const n = Math.min(4, 1 + Math.floor(Lc / .42)), flip = (Lc % .42) / .42;
