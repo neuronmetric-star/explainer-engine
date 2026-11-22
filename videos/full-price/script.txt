@@ -1,0 +1,24 @@
+# SHORT (~1:08). DRAFT, waiting for Brian. Mode: True story (a real company + a real decision), riding the
+# "He wanna pay full price" trend (SNL "Bubu Mobile" sketch, Nov 7 2026; Druski + Marcello Hernandez).
+# Search phrases: "black friday deals" (TikTok's #1 suggestion) + "he wanna pay full price" (the trend).
+#   Both on screen in the first 2 s; "Black Friday deals" in the first spoken sentence; both in caption line 1.
+# Payoff: stores need Black Friday deals because shoppers don't want low prices, they want the crossed-out price.
+#   In 2012 JCPenney dropped sales and coupons for one honest price; sales fell a quarter ($4.3B) and the CEO was fired.
+# COLD OPEN (0:00-0:12, no narrator): the trending sound, clip time 2.74-14.88 s:
+#   "I think I'll just pay full price, if that's okay." / "Ah, you wanna pay full price? That's okay, Papi.
+#   That is the scenario of the best case." / "He wanna pay full price!" (one chant, hard cut on the beat).
+#   Picture: Doug at a phone-store counter on Black Friday, two polo salesmen freeze, then dance (balloons).
+#   On-screen text the whole time: "BLACK FRIDAY DEALS / HE WANNA PAY FULL PRICE".
+#   Narration starts on the cut. Story words are ~150 (not 175-190) because the sound fills the first 12 s.
+# Doug and the shirt are illustrative; JCPenney facts are real (sources.md). We never imitate the sketch's accents.
+[#q] Funny. But why the heck do stores need {*Black Friday deals|Black Friday deals} at all?
+[#card] See, in {2012,|twenty twelve,} one store tried living without them. [#jcp] JCPenney, the giant mall store, [#ron] hired the guy who built the {*Apple Stores.|Apple Stores.}
+[#stat] He checked the receipts. Only {*0.2%|zero point two percent} of sales were full price. [#yard] Two shirts in every {*thousand.|thousand.}
+[#plan] So he said: no more sales. [#coupons] No more coupons. [#fair] One fair price, every day.
+[#tag] A twenty-dollar shirt now just says {*$20.|twenty.} Not forty, crossed out to twenty.
+[#bet] Honestly? I'd shop there. No coupons, no fist fights over a toaster.
+[#empty] Then the shoppers stopped coming. [#drop] In one year, sales fell by a {!quarter.|quarter.} [#billion] {!$4 billion|Four billion dollars,} gone.
+[#brain] Turns out your brain judges a price by the first number it sees. [#forty] Forty, crossed out, makes twenty feel like a {*win.|win.} [#twenty] Twenty alone just feels like twenty.
+[#fired] Seventeen months in, the board {!fired|fired} him. [#back] The sales came back.
+[#end] He wanna pay full price. He just doesn't wanna {*know it.|know it.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
