@@ -1,6 +1,6 @@
 # Posting kit: turkey-thanksgiving
 
-**Cover:** `cover.jpg` (1080×1920): worried Doug and smirking, arms-crossed Gary at the Thanksgiving table, the roast turkey between them (frame 33 s). Headline in the top quarter.
+**Cover:** `cover.jpg` (1080×1920): happy Doug presenting the giant roast turkey, deadpan Gary beside it (frame 49.9 s). Headline in the top quarter.
 
 **Caption (TikTok / Reels):**
 Why do we eat turkey on Thanksgiving?

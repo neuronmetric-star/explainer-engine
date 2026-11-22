@@ -19,7 +19,7 @@
 
   window.SCENE = {
     plates: {
-      '01': { img: '01_dining_room_day.png', hz: .28, vx: .5, fov0: 55, camH: 3.4, light: L.dining },
+      '01': { img: '01_dining_room_day.png', hz: .28, vx: .5, fov0: 55, camH: 2.3, light: L.dining },
       '02': { img: '02_plymouth_harvest_1621.png', hz: .38, vx: .5, fov0: 55, camH: 1.6, light: 'day' },
       '03': { img: '03_editor_office_1800s.png', hz: .55, vx: .5, fov0: 55, camH: 1.6, light: 'interior' },
       '04': { img: '04_lincoln_desk_1863.png', hz: .5, vx: .5, fov0: 55, camH: 1.6, light: 'interior' },
@@ -44,13 +44,13 @@
       { at: 'deer', plate: '02', zoom: [1.12, 1.18], focus: [[.5, .52], [.5, .52]] },
       { at: 'notice', plate: '01', zoom: [1.8, 1.8], focus: [[.5, .35], [.5, .35]] },
       { at: 'doubt', plate: '01', zoom: [1.15, 1.2], focus: [[.5, .58], [.5, .58]] },
-      { at: 'hale', plate: '01', zoom: [1.3, 1.6], focus: [[.5, .5], [.5, .46]] },
+      { at: 'hale', plate: '01', zoom: [1.1, 1.22], focus: [[.5, .55], [.5, .53]] },
       { at: 'editor', plate: '03', zoom: [1.0, 1.12], focus: [[.5, .3], [.5, .26]] },
       { at: 'novel', plate: '03', zoom: [1.15, 1.2], focus: [[.5, .6], [.5, .6]] },
       { at: 'letters', plate: '03', zoom: [1.1, 1.14], focus: [[.5, .55], [.5, .55]] },
       { at: 'lincoln', plate: '04', zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .52]] },
       { at: 'big', plate: '01', zoom: [1.12, 1.0], focus: [[.5, .56], [.5, .56]] },
-      { at: 'eggs', plate: '01', zoom: [1.3, 1.36], focus: [[.5, .5], [.5, .5]] },
+      { at: 'eggs', plate: '01', zoom: [1.1, 1.15], focus: [[.5, .55], [.5, .55]] },
       { at: 'today', plate: '01', zoom: [1.05, 1.08], focus: [[.5, .6], [.5, .6]] },
       { at: 'end', plate: '05', zoom: [1.0, 1.06], focus: [[.5, .55], [.5, .56]] },
       { at: 'deerplate', plate: '05', zoom: [1.22, 1.28], focus: [[.42, .6], [.42, .6]] },
@@ -68,7 +68,7 @@
       const turkey01 = (s = 1, a = 1) => { const p = K.img(DTABLE.ix, DTABLE.iy); K.prop('P01', { x: p.x, y: p.y, w: 300 * S * s, anchor: [.5, .85], a, layer: 'back' }); };
       // the letter insert, centered in the safe area (P02 is 1086x1448; its blank band is at ~49% height)
       const letter = (o = {}) => { const w = 640 * (o.s || 1), y = (o.y || 730); K.prop('P02', { x: 540, y, w, rot: o.rot || -.015 }); return { w, y, band: y + (.49 - .5) * w * 1448 / 1086 }; };
-      const dining2 = () => { K.placeAt('doug', 205, 1300, .25); K.placeAt('gary', 745, 1300, -.25); };
+      const dining2 = () => { K.placeAt('doug', 235, 1300, .25); K.placeAt('gary', 715, 1300, -.25); };
       switch (id) {
         case 'q': { turkey01(1);
           const a = K.clamp01((at('card') - t) / .2);
@@ -154,9 +154,9 @@
           if (t > tc) K.text('= CHEAP', { y: 400, size: 96, color: 'gold', scale: popIn(K, t, tc) });
           face(G, 'flat', t, 1); G.pose({ t, gesture: 'shrug', gw: K.ease((t - te) / .35) }); face(D, t > tk && t < tk + .5 ? 'blink' : 'surprised', t); D.pose({ t, look: -.4, lean: -.06 }); break; }
         case 'today': { turkey01(); dining2(); const tn = wordAt(K, 'nine', 'today');
-          for (let i = 0; i < 10; i++) { const ti = at('today') + .15 + i * .12, x = 160 + (i % 5) * 190, y = 300 + Math.floor(i / 5) * 160;
-            if (t > ti) K.prop(i < 9 ? 'P01' : 'P10', { x, y, w: 170 * popIn(K, t, ti) }); }
-          if (t > tn) K.text('9 IN 10 AMERICANS', { y: 520, size: 74, color: 'gold', scale: popIn(K, t, tn) });
+          for (let i = 0; i < 10; i++) { const ti = at('today') + .15 + i * .12, x = 180 + (i % 5) * 180, y = 215 + Math.floor(i / 5) * 115;
+            if (t > ti) K.prop(i < 9 ? 'P01' : 'P10', { x, y, w: 135 * popIn(K, t, ti) }); }
+          if (t > tn) K.text('9 IN 10 AMERICANS', { y: 420, size: 70, color: 'gold', scale: popIn(K, t, tn) });
           face(D, 'smile', t); D.pose({ t, nod: .1 * Math.sin(t * 4) }); face(G, 'smile', t, 1); G.pose({ t, look: .2 }); break; }
         case 'end': { K.placeAt('doug', 330, 1215, .15); const te = wordAt(K, 'exactly', 'end');
           face(D, t > te ? 'smirk' : 'smile', t); D.pose({ t, gesture: 'hips', gw: K.ease((t - te + .2) / .35) }); break; }
