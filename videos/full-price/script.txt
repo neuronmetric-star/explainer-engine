@@ -14,7 +14,7 @@
 [#gary] Gary freezes. "Ah, you wanna pay full price? [#papi] That's okay, {*papi.|papi.} [#best] That is the scenario of the {*best case.|best case.}"
 [#dance] And Gary starts dancing. [#chant] "He wanna pay {*full price!|full price!} He wanna pay {*full price!|full price!}"
 [#bet] Weird. Doug just got half off. Right?
-[#sticker] Then Doug peels the sale sticker. [#peel] Underneath: {!$299.|two ninety-nine.} [#october] Same price it was in October.
+[#sticker] Then Doug peels the sale sticker. [#peel] Underneath, the old tag: {!$299.|two ninety-nine.} [#october] Same price it was in October.
 [#why] So why fake a deal? [#jcp] Because in {2012,|twenty twelve,} JCPenney, the giant mall store, tried the truth. [#honest] No sales. No coupons. One honest price, every day.
 [#bet2] Honestly? I'd shop there.
 [#drop] Shoppers vanished. Sales fell by a {!quarter.|quarter.} [#billion] {!$4 billion,|Four billion dollars,} gone. [#fired] The boss got {!fired.|fired.} [#back] The sales came back.
