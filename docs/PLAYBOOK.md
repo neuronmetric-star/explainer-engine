@@ -348,25 +348,21 @@ every picture change · `#` comment lines. Write numbers as words in the spoken 
 
 ## 2. The cast: silent 3D characters
 
-**Look (Brian, Nov 21 2026; every video): Brian's character sheets ARE the cast.** `docs/cast/<name>.png` (front, 3/4,
-side, back, 8 gestures, 7 faces) are cut into transparent sprites by `python3 tools/sheet-cast.py` (→ `docs/cast/sprites/` +
-`manifest.js`) and drawn by `K.actor()` on the paintings: soft ivory heads with bold drawn faces, puffy gloves, real clothes.
-No code-built look-alikes. Walking = the side view sliding with a bob; expressions = face swaps on the front view; reactions in
-close-up = the sheet's busts. A new character or outfit = Brian makes a sheet in the same layout. (The old 3D cast in
-`engine/characters.js` stays only for old videos.)
+**Look:** glossy white sphere head with a drawn face sitting right on the shoulders (no neck), white cartoon gloves, real
+clothes. Built in code (`engine/characters.js`). No model files, renders exactly the same every time.
 
-| Character | Sheet / actor name | Typical role |
+| Character | Outfit (`CHAR.make({outfit})`) | Typical role |
 |---|---|---|
-| **Doug** | `doug`: mustard hoodie, jeans, white sneakers | the confident everyman who gets it wrong |
-| **Gary** | `gary`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
-| **Victor** | `victor`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
+| **Doug** | `hoodie`: mustard hoodie, jeans, white sneakers | the confident everyman who gets it wrong |
+| **Gary** | `oxford`: blue oxford, glasses, khakis, brown shoes | the observer, neighbor, expert, the one who notices |
+| **Victor** | `suit`: navy suit, red tie, gold watch (stocky) | the rich guy, boss, schemer, official |
 | **Polo guy** | `polo`: olive polo, khakis, gray sneakers, watch | the worker: tow driver, cashier, guard, mechanic |
-| **The President** | `president`: black bomber over a white tee, backwards black cap, blue-white-blue sash | a head of state (first used for El Salvador's president, `robot-dogs-haiti`). Real people: silent, and only shown doing what they actually did |
-| **Gang member** | `gang`: dark hoodie, black jeans, beanie, bandana over nose and mouth (eyes visible) | street crew / gang (`robot-dogs-haiti`). Never armed, never violent on screen |
-| **Robot dog** (3D, no sheet yet) | `CHAR.robodog({rifle})`: gray four-legged robot, camera head with glowing lenses, optional mounted rifle (never fires) | robots, machines that "go first" (`robot-dogs-haiti`). Walks with a trot gait: `pose({walk, walkAmt, look})` |
+| **The President** | `president`: black bomber over a white tee, backwards black cap, blue-white-blue sash; `phone: true` puts a phone in his hand | a head of state (first used for El Salvador's president, `robot-dogs-haiti`). Real people: silent, and only shown doing what they actually did |
+| **Gang member** | `gang`: dark hoodie, black jeans, beanie, bandana over nose and mouth (eyes visible); vary with `{shirt, mask}` | street crew / gang (`robot-dogs-haiti`). Never armed, never violent on screen |
+| **Robot dog** | `CHAR.robodog({rifle})`: gray four-legged robot, camera head with glowing lenses, optional mounted rifle (never fires) | robots, machines that "go first" (`robot-dogs-haiti`). Walks with a trot gait: `pose({walk, walkAmt, look})` |
 
-Use **only the characters the story needs** (usually 2–3). A new character (chef, pilot, doctor…) = Brian makes a sheet in the
-same layout → `docs/cast/<name>.png`, add its panel boxes to `LAYOUT` in `tools/sheet-cast.py`, run it.
+Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
+topic needs one (chef, pilot, doctor…).
 
 ### 2.1 Acting rules (they never talk)
 - **Mouths stay still.** No lip-sync, ever. The narrator alone speaks.
@@ -379,7 +375,7 @@ same layout → `docs/cast/<name>.png`, add its panel boxes to `LAYOUT` in `tool
 - **The one who realizes last** gets the close-up.
 
 ### 2.2 The acting toolkit (what the engine can do today)
-**Faces** (`K.actor(name, {face})` on the front view, swapped on the exact word; gesture poses carry the sheet's own face):
+**Faces** (`ch.face(name)`, swapped on the exact word):
 | Face | Use for |
 |---|---|
 | `smile` | default, confidence, small wins |
@@ -390,7 +386,7 @@ same layout → `docs/cast/<name>.png`, add its panel boxes to `LAYOUT` in `tool
 | `flat` | deadpan, unimpressed |
 | `blink` | blink frame, plus comic timing after a dumb idea |
 
-**Body** (sheet actors: `pose` = a turnaround view or a gesture, `walk`, `lookUp`, `flip`; the legacy 3D `ch.pose({...})` below):
+**Body** (`ch.pose({...})`, every value a pure function of time):
 | Control | What it does |
 |---|---|
 | `walk`, `walkAmt` | walk cycle phase (cycles) + strength 0..1. Ease `walkAmt` to stop naturally |

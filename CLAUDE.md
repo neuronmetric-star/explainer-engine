@@ -11,14 +11,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
   Optional OpenArt image-to-video inserts for physics-heavy shots (PLAYBOOK §4.1).
-- **Silent sphere-head cast = Brian's character sheets, always** (`docs/cast/<name>.png`, Brian, Nov 21 2026): the cast is
-  drawn as sprites cut from those sheets (`python3 tools/sheet-cast.py` → `docs/cast/sprites/`), in scenes with
-  `SCENE.actors = ['doug','gary']` + `K.actor(name, {ix, iy, pose, face, flip, walk, lookUp, tint})` (`engine/plate-kit.js`).
-  Doug (hoodie), Gary (oxford + glasses), Victor (suit), polo guy, the President (cap, bomber, sash), gang member
-  (hoodie, beanie, bandana; never armed). Poses: front, 3q, side, back + point, wave, shrug, cross, think, facepalm, hips, tada;
-  faces: smile, happy, surprised, smirk, worried, flat, blink; busts for close-ups. A new character = a new sheet from Brian
-  in the same layout, added to `LAYOUT` in `tools/sheet-cast.py`. They act with gaze, posture, gestures, faces and timing.
-  (The old code-built 3D cast in `engine/characters.js` is legacy; don't use it for new videos.)
+- **Silent 3D sphere-head cast** (`engine/characters.js`): Doug (hoodie), Gary (oxford + glasses),
+  Victor (suit), polo guy, the President (`president`: cap, bomber, sash), gang member (`gang`: hoodie, beanie, bandana; never armed). They act with gaze, posture, gestures, faces and timing.
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
@@ -93,11 +87,12 @@ commit and push. Answer from the sheet, never from memory. Trend sheets and fini
 before every picture change · lines starting `#` are comments. Numbers as words in the spoken part.
 
 ## Engine reference
-- **Cast (sheet sprites)** `K.actor(name, o)` in `engine/plate-kit.js`: feet on a painted floor pixel (`ix, iy`), height from the
-  matched camera (`h`, default 3.4 world units; characters read big, roughly a third of the frame height in a wide), `pose` (front/3q/side/back or a gesture), `face` (front view only), `flip`
-  (sheet side views face left), `walk` (phase: bob + sway; slide along with K.lerp), `lookUp` 0..1, `tint` to match the plate's
-  light, plus a soft contact shadow. Busts: `K.prop('<name>:bust_<face>', {...})`. Draw order = call order (farther first).
-  Legacy 3D cast: `engine/characters.js` (`CHAR.make`, robot dog `CHAR.robodog`), only for old videos.
+- **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo'|'president'|'gang', phone, mask, beanie, envMap})` →
+  `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
+  `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw})`;
+  gestures `point|wave|shrug|cross|think|facepalm|hips|tada`. Pure functions of time.
+  **Robot dog** `CHAR.robodog({envMap, rifle})` → `pose({t, walk, walkAmt, look, tilt, nod, pitch, crouch})` (trot gait, IK legs;
+  scene cast entry `{outfit:'robodog'}`). Scene cast entries can be objects (`{outfit:'president', phone:true}`); plate `light` can be a preset name or a custom object.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a
   painting; plant feet with `K.placeAt(name, ix, iy)` on a painted floor pixel (presets: `hz` horizon fraction, `vx` vanishing x, `fov0`, `camH`, light preset) via
   `setViewOffset`; shadow catcher + blob shadows; convert material colors sRGB→linear.

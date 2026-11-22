@@ -1,7 +1,5 @@
 // =====================================================================
 //  CHARACTERS — glossy sphere-head cast, built in code (no model files)
-//  LOOK v2 (Brian, Nov 21 2026): match the reference sheets in docs/cast/ (ivory soft-vinyl heads, bold faces,
-//  puffy gloves, richer colors). LEGACY: new videos draw Brian's sheets (docs/cast/<name>.png) as sprites via K.actor.
 //  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang', glasses, phone, mask, beanie, envMap}) -> character
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
@@ -33,10 +31,10 @@
   function faceTex(name) {
     if (FACE_CACHE[name]) return FACE_CACHE[name];
     const W = 2048, H = 1024, c = document.createElement('canvas'); c.width = W; c.height = H;
-    const g = c.getContext('2d'); g.fillStyle = '#f6efe7'; g.fillRect(0, 0, W, H);
+    const g = c.getContext('2d'); g.fillStyle = '#f2f2f4'; g.fillRect(0, 0, W, H);
     const cx = W * .25, cy = H * .5, ex = 118, ey = -10;
-    g.strokeStyle = g.fillStyle = '#141414'; g.lineCap = 'round'; g.lineJoin = 'round'; g.lineWidth = 26;
-    const dot = (x, y, r = 19) => { r *= 1.4; g.beginPath(); g.ellipse(x, y, r * .82, r, 0, 0, TAU); g.fill(); };
+    g.strokeStyle = g.fillStyle = '#141414'; g.lineCap = 'round'; g.lineJoin = 'round'; g.lineWidth = 12;
+    const dot = (x, y, r = 19) => { g.beginPath(); g.ellipse(x, y, r * .82, r, 0, 0, TAU); g.fill(); };
     const arc = (x, y, r, a0, a1) => { g.beginPath(); g.arc(x, y, r, a0, a1); g.stroke(); };
     const line = (x0, y0, x1, y1) => { g.beginPath(); g.moveTo(x0, y0); g.lineTo(x1, y1); g.stroke(); };
     const brows = (lift = 0) => { for (const s of [-1, 1]) arc(cx + s * ex, cy - 60 - lift, 58, -Math.PI * .8, -Math.PI * .2); };
@@ -64,23 +62,23 @@
   const plate = (pts, depth) => { const s = new THREE.Shape(); s.moveTo(pts[0][0], pts[0][1]); pts.slice(1).forEach(p => s.lineTo(p[0], p[1])); s.closePath(); return new THREE.ExtrudeGeometry(s, { depth, bevelEnabled: true, bevelThickness: depth * .3, bevelSize: depth * .3, bevelSegments: 2 }); };
 
   const OUTFITS = {
-    oxford: { shirt: 0x8796cc, pants: 0xb8925c, shoes: 0x7a3f1c, belt: 0x6a3a1a, sleeves: 'long', glasses: true, build: 'slim' },
-    polo:   { shirt: 0x4f5a20, pants: 0xbc955e, shoes: 0x7a7c82, sleeves: 'short', watch: 0x222222, build: 'slim', sneakers: true },
-    hoodie: { shirt: 0xc27a17, pants: 0x22365f, shoes: 0xf4f1ea, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true, cuffs: true },
+    oxford: { shirt: 0x8fb3e6, pants: 0xc8ac7c, shoes: 0x6b3a1e, belt: 0x5a3418, sleeves: 'long', glasses: true, build: 'slim' },
+    polo:   { shirt: 0x5b6b2e, pants: 0xcdb98e, shoes: 0x6e6e72, sleeves: 'short', watch: 0x222222, build: 'slim', sneakers: true },
+    hoodie: { shirt: 0xe3a52a, pants: 0x34558f, shoes: 0xf4f4f4, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true },
     // president: black bomber jacket over a white tee, backwards black cap, blue-white-blue presidential sash
     president: { shirt: 0x1c1c22, pants: 0x2b303b, shoes: 0x111114, sleeves: 'long', build: 'slim', bomber: true, tee: 0xf4f4f4, cap: 0x18181d, sash: [0x1f4fb5, 0xf4f4f4], watch: 0x222222 },
     // gang: dark hoodie, black jeans, beanie, bandana over the lower face (no weapons). Vary with {shirt, mask}.
-    gang: { shirt: 0x3a3532, pants: 0x262423, shoes: 0x2a2a2e, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true, mask: 0xa81c24, beanie: 0x2a2624, cuffs: true },
-    suit:   { shirt: 0x232a55, pants: 0x232a55, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
+    gang: { shirt: 0x2e2f36, pants: 0x1c1d22, shoes: 0x2a2a2e, sleeves: 'long', build: 'slim', sneakers: true, hoodie: true, mask: 0xb3202a, beanie: 0x18181c },
+    suit:   { shirt: 0x1d2550, pants: 0x1d2550, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc0182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
 
   C.make = function (opts = {}) {
     const o = Object.assign({}, OUTFITS[opts.outfit || 'oxford'], opts), env = opts.envMap;
     const B = o.build === 'stocky'
       ? { w: .36, d: .29, th: .66, leg: .78, lr: .135, ar: .088, R: .36, hand: .115 }
-      : o.hoodie ? { w: .3, d: .22, th: .62, leg: .9, lr: .118, ar: .085, R: .34, hand: .1 }
-      : { w: .26, d: .18, th: .62, leg: .9, lr: .11, ar: .072, R: .34, hand: .1 };
-    const shirtM = o.hoodie ? Object.assign(cloth(o.shirt, .97), { bumpScale: .009 }) : cloth(o.shirt), pantsM = cloth(o.pants), whiteM = Object.assign(glossy(0xf6efe7, env, .42), { clearcoat: .35, clearcoatRoughness: .3, envMapIntensity: .55 }), blackM = new THREE.MeshStandardMaterial({ color: 0x151515, roughness: .45 });
+      : o.hoodie ? { w: .3, d: .22, th: .62, leg: .9, lr: .108, ar: .082, R: .34, hand: .1 }
+      : { w: .26, d: .18, th: .62, leg: .9, lr: .1, ar: .068, R: .34, hand: .1 };
+    const shirtM = o.hoodie ? Object.assign(cloth(o.shirt, .97), { bumpScale: .009 }) : cloth(o.shirt), pantsM = cloth(o.pants), whiteM = glossy(0xf2f2f4, env, .24), blackM = new THREE.MeshStandardMaterial({ color: 0x151515, roughness: .45 });
     const shoeM = o.sneakers ? cloth(o.shoes, .8) : Object.assign(glossy(o.shoes, env, .5), { envMapIntensity: .3, clearcoat: .5 }), soleM = new THREE.MeshStandardMaterial({ color: o.sneakers ? 0xf0f0f0 : 0x1a120c, roughness: .7 });
     const root = new THREE.Group(), ch = { root, opts: o, B };
     const shoeH = .1, L1 = B.leg * .5, L2 = B.leg * .5, hipY = shoeH + L1 + L2;
@@ -99,7 +97,6 @@
       mesh(new THREE.CylinderGeometry(B.lr, B.lr * .95, L1 + .06, 20), pantsM, hip, 0, -L1 / 2, 0);
       const knee = grp(hip, 0, -L1, 0); mesh(new THREE.SphereGeometry(B.lr * .96, 16, 12), pantsM, knee);
       mesh(new THREE.CylinderGeometry(B.lr * .95, B.lr * 1.02, L2 + .02, 20), pantsM, knee, 0, -L2 / 2, 0);
-      if (o.cuffs) mesh(new THREE.CylinderGeometry(B.lr * 1.1, B.lr * 1.1, .05, 20), pantsM, knee, 0, -L2 + .045, 0);
       const ankle = grp(knee, 0, -L2 + .02, 0);
       const toe = mesh(new THREE.SphereGeometry(1, 24, 12, 0, TAU, 0, Math.PI / 2), shoeM, ankle, 0, -shoeH + .02, .06); toe.scale.set(B.lr * 1.15, .11, .21);
       const sole = mesh(new THREE.CylinderGeometry(1, 1, .035, 32), soleM, ankle, 0, -shoeH + .02, .06); sole.scale.set(B.lr * 1.18, 1, .225); // rounded sole, no box corners
@@ -157,11 +154,8 @@
       else { mesh(new THREE.SphereGeometry(B.ar * .95, 14, 10), shirtM, el); mesh(new THREE.CylinderGeometry(B.ar * .95, B.ar * .9, FA, 16), shirtM, el, 0, -FA / 2, 0);
         mesh(new THREE.CylinderGeometry(B.ar * (o.hoodie ? .85 : .93), B.ar * (o.hoodie ? .85 : .93), o.hoodie ? .07 : .04, 16), o.jacket ? cloth(0xf4f4f4, .7) : o.hoodie ? cloth(new THREE.Color(o.shirt).multiplyScalar(.86), .97) : shirtM, el, 0, -FA + .02, 0); }
       const wr = grp(el, 0, -FA, 0);
-      // puffy cartoon gloves (v2 sheets): bigger palm, curled finger knuckles, chunky thumb
-      const hs = 1.18, hr = B.hand * hs;
-      const palm = mesh(new THREE.SphereGeometry(hr, 24, 18), whiteM, wr, 0, -hr * .85, 0); palm.scale.set(.95, 1, .82);
-      for (let k = 0; k < 3; k++) { const f = mesh(new THREE.SphereGeometry(hr * .36, 14, 10), whiteM, wr, s * (hr * .32 - k * hr * .32), -hr * 1.42, hr * .38); f.scale.set(1, 1.05, 1.1); }
-      const thumb = mesh(new THREE.SphereGeometry(hr * .4, 14, 10), whiteM, wr, s * -hr * .22, -hr * .55, hr * .64); thumb.scale.set(1, 1.3, 1);
+      const palm = mesh(new THREE.SphereGeometry(B.hand, 20, 16), whiteM, wr, 0, -B.hand * .85, 0); palm.scale.set(.95, 1, .8);
+      const thumb = mesh(new THREE.SphereGeometry(B.hand * .38, 12, 10), whiteM, wr, s * -B.hand * .2, -B.hand * .55, B.hand * .62); thumb.scale.set(1, 1.3, 1);
       mesh(new THREE.TorusGeometry(B.ar * .8, .018, 8, 20).rotateX(Math.PI / 2), whiteM, wr, 0, -.02, 0);
       if (o.watch && s === -1) { mesh(new THREE.TorusGeometry(B.ar * .78, .022, 8, 20).rotateX(Math.PI / 2), o.gold ? metal(o.watch, env) : blackM, wr, 0, .03, 0);
         mesh(new THREE.BoxGeometry(.05, .016, .05), o.gold ? metal(o.watch, env) : blackM, wr, s * B.ar * .78, .03, 0); }
@@ -170,7 +164,7 @@
 
     // head
     const head = ch.head = grp(neck, 0, B.R * .92 - .02, 0);
-    const headMat = Object.assign(glossy(0xffffff, env, .5), { clearcoat: .25, clearcoatRoughness: .4, envMapIntensity: .45 }); headMat.map = faceTex('smile');
+    const headMat = glossy(0xffffff, env, .16); headMat.map = faceTex('smile');
     const ball = mesh(new THREE.SphereGeometry(B.R, 64, 48), headMat, head); ball.castShadow = true;
     ch.headMat = headMat;
     if (o.glasses) {
@@ -180,7 +174,7 @@
         const w = R * .5, h = R * .3;
         mesh(new THREE.BoxGeometry(w, t, t), gm, lens, 0, h / 2, 0); mesh(new THREE.BoxGeometry(w, t, t), gm, lens, 0, -h / 2, 0);
         mesh(new THREE.BoxGeometry(t, h, t), gm, lens, -w / 2, 0, 0); mesh(new THREE.BoxGeometry(t, h, t), gm, lens, w / 2, 0, 0);
-        const arm = mesh(new THREE.BoxGeometry(t, t, R * .42), gm, head, s * R * .86, R * .08, R * .38); arm.rotation.y = -s * .3;
+        const arm = mesh(new THREE.BoxGeometry(t, t, R * .9), gm, head, s * R * .9, R * .1, R * .1); arm.rotation.y = -s * .25;
       }
       mesh(new THREE.BoxGeometry(R * .14, t, t), gm, head, 0, R * .1, R * .99);
     }

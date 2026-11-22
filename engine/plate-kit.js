@@ -46,11 +46,11 @@
   const propCam = new THREE.OrthographicCamera(0, W, 0, -H, -10, 10);
   const propBack = new THREE.Scene(), propFront = new THREE.Scene();
   const keyVS = 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.); }';
-  const keyFS = `varying vec2 vUv; uniform sampler2D map; uniform float opacity; uniform float keyed; uniform vec3 tint;
+  const keyFS = `varying vec2 vUv; uniform sampler2D map; uniform float opacity; uniform float keyed;
     void main(){ vec4 c = texture2D(map, vUv); float g = (c.g - max(c.r, c.b)) * keyed;
       float a = c.a * (1.0 - smoothstep(0.16, 0.42, g)) * opacity;
       c.g = mix(c.g, max(c.r, c.b), smoothstep(0.10, 0.42, g));
-      if (a < 0.004) discard; gl_FragColor = vec4(c.rgb * tint, a); }`;
+      if (a < 0.004) discard; gl_FragColor = vec4(c.rgb, a); }`;
   // 3D layer
   const scene = new THREE.Scene(), camera = new THREE.PerspectiveCamera(55, W / H, .1, 500);
   camera.rotation.order = 'YXZ';
@@ -101,13 +101,13 @@
 
   // ---------------- props (green-screen sprites) ----------------
   const PROPS = {}, POOL = [];
-  function sprite() { const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: { map: { value: null }, opacity: { value: 1 }, keyed: { value: 1 }, tint: { value: new THREE.Color(1, 1, 1) } }, vertexShader: keyVS, fragmentShader: keyFS, transparent: true, depthTest: false, depthWrite: false })); m.visible = false; POOL.push(m); return m; }
+  function sprite() { const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: { map: { value: null }, opacity: { value: 1 }, keyed: { value: 1 } }, vertexShader: keyVS, fragmentShader: keyFS, transparent: true, depthTest: false, depthWrite: false })); m.visible = false; POOL.push(m); return m; }
   let poolI = 0;
   // K.prop('P01', {x, y, w, rot, a, layer:'front'|'back', anchor:[ax,ay] (0..1 of the image), flip}): draw one sprite this frame
   K.prop = function (k, o) { const P = PROPS[k]; if (!P) throw new Error('unknown prop ' + k);
     const m = POOL[poolI] || sprite(); poolI++;
     const w = o.w, h = w * P.ih / P.iw, ax = o.anchor ? o.anchor[0] : .5, ay = o.anchor ? o.anchor[1] : .5;
-    m.material.uniforms.map.value = P.tex; m.material.uniforms.keyed.value = P.cut ? 0 : 1; m.material.uniforms.tint.value.set(o.tint === undefined ? 0xffffff : o.tint); m.material.uniforms.opacity.value = o.a === undefined ? 1 : o.a;
+    m.material.uniforms.map.value = P.tex; m.material.uniforms.keyed.value = P.cut ? 0 : 1; m.material.uniforms.opacity.value = o.a === undefined ? 1 : o.a;
     m.scale.set(o.flip ? -w : w, h, 1); m.rotation.z = -(o.rot || 0);
     // anchor: rotate around the anchor point
     const dx = (.5 - ax) * w, dy = (ay - .5) * h, c = Math.cos(-(o.rot || 0)), s = Math.sin(-(o.rot || 0));
@@ -122,32 +122,6 @@
     const u = (t - K.T(from)) / (o.dur || 3.4); if (u < 0 || u > 1) return -1;
     const w = o.w || 540, x = K.lerp(-w * .7, W + w * .7, u), y = (o.y || 300) + Math.sin(t * 2.2) * 8 - 40 * Math.sin(u * Math.PI);
     K.prop('H01', { x, y, w, rot: -.07 + Math.sin(t * 1.7) * .015 }); return u; };
-  // ---------------- ACTORS: the cast from Brian's character sheets (docs/cast -> tools/sheet-cast.py -> docs/cast/sprites) ----
-  // SCENE.actors = ['doug', 'gary'] loads their sprites. K.actor(name, o) draws one this frame and returns {x, y, top, scale}:
-  //   where: o.ix, o.iy = painting px on the painted floor (feet), or o.x, o.y = screen px of the feet (then o.hpx = height in px)
-  //   o.pose: front | 3q | side | back | point | wave | shrug | cross | think | facepalm | hips | tada   (default front)
-  //   o.face: swap the expression on the front view: smile | happy | surprised | smirk | worried | flat | blink
-  //   o.flip (mirror; the sheets' side views face left), o.h world height (default 3.4: big, the cast is the star; Brian Nov 21 2026), o.walk (phase, cycles) bobs + sways,
-  //   o.lookUp 0..1 (front view: face tips up), o.tint (0xRRGGBB multiply to match a dark/warm plate), o.a, o.rot, o.dy
-  // Close-ups: K.prop(name + ':bust_<face>', {...}) draws the head-and-shoulders bust from the sheet.
-  const SP = {}; let shadowTex = null;
-  K.actor = function (n, o = {}) {
-    const pose = o.pose || 'front', P = SP[n] && SP[n][pose]; if (!P) throw new Error('no sprite ' + n + '/' + pose + ' (add it to SCENE.actors)');
-    let fx, fy, hpx;
-    if (o.ix !== undefined) { const [x, z] = K.floorAt(o.ix, o.iy), f = K.worldToScreen(x, 0, z), h = K.worldToScreen(x, o.h || 3.4, z); fx = f.x; fy = f.y; hpx = f.y - h.y; }
-    else { fx = o.x; fy = o.y; hpx = o.hpx || 700; }
-    const hd = P.head, fig = P.h - (hd.cy - hd.r), sc = hpx / fig, w = P.w * sc;
-    const ph = o.walk === undefined ? 0 : o.walk, bob = o.walk === undefined ? 0 : Math.abs(Math.sin(ph * Math.PI * 2)) * .025 * hpx;
-    const rot = (o.rot || 0) + (o.walk === undefined ? 0 : Math.sin(ph * Math.PI * 2) * .035);
-    const ax = o.flip ? 1 - hd.cx / P.w : hd.cx / P.w, y = fy - bob + (o.dy || 0);
-    const sw = Math.min(w * 1.1, hpx * .55);
-    K.prop('__shadow', { x: fx, y: fy, w: sw * (1 - bob / hpx * 2), a: (o.a === undefined ? 1 : o.a) * .55 });
-    K.prop(n + ':' + pose, { x: fx, y, w, anchor: [ax, 1], flip: o.flip, rot, a: o.a, tint: o.tint });
-    const hy = y - (P.h - hd.cy) * sc;   // head center (the sprite is anchored on the head's x)
-    if (o.face && pose === 'front') { const F = SP[n]['face_' + o.face]; const r = hd.r * sc * 1.05, up = (o.lookUp || 0) * r * .16;
-      K.prop(n + ':face_' + o.face, { x: fx, y: hy - up, w: r * 2 * F.w / Math.max(F.w, F.h) * 1.0, a: o.a, tint: o.tint, flip: o.flip }); }
-    return { x: fx, y, top: y - hpx, head: { x: fx, y: hy, r: hd.r * sc }, scale: sc };
-  };
   // soft puff texture for exhaust (generated)
   function puffTex() { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
     const gr = g.createRadialGradient(64, 64, 6, 64, 64, 62); gr.addColorStop(0, 'rgba(235,232,240,.95)'); gr.addColorStop(.6, 'rgba(215,210,228,.6)'); gr.addColorStop(1, 'rgba(200,196,220,0)');
@@ -214,7 +188,7 @@
     if (SC.follow) { const ft = t - SC._followAt, on = ft >= 0; fol.style.opacity = on ? 1 : 0;
       if (on) { fol.style.transform = `translateX(-50%) scale(${.6 + .4 * K.pop(K.clamp01(ft / .35))})`; const clicked = ft > 1.5;
         fol.className = clicked ? 'on' : ''; fol.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cur_.style.opacity = ft > .45 ? 1 : 0;
-        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0) + (SC.follow.y || 560) - 560) + 'px'; }
+        const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0)) + 'px'; }
       else cur_.style.opacity = 0; }
     if (doRender) { renderer.clear(); renderer.render(bgScene, bgCam); renderer.render(propBack, propCam); renderer.clearDepth(); renderer.render(scene, camera); renderer.render(propFront, propCam); }
   }
@@ -224,21 +198,12 @@
     await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); }));
     await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height, cut: /\.cut\.png$/.test(f) }; }));
     { const tex = puffTex(); PROPS.puff = { tex, iw: 128, ih: 128 }; }
-    if (SC.actors && SC.actors.length) {
-      await new Promise((res, rej) => { const s = document.createElement('script'); s.src = '../docs/cast/sprites/manifest.js'; s.onload = res; s.onerror = () => rej(new Error('missing docs/cast/sprites/manifest.js (run tools/sheet-cast.py)')); document.body.appendChild(s); });
-      const c = document.createElement('canvas'); c.width = 256; c.height = 64; const g = c.getContext('2d'), gr = g.createRadialGradient(128, 32, 4, 128, 32, 126);
-      gr.addColorStop(0, 'rgba(30,15,40,.75)'); gr.addColorStop(.55, 'rgba(30,15,40,.35)'); gr.addColorStop(1, 'rgba(30,15,40,0)'); g.setTransform(1, 0, 0, .25, 0, 24); g.fillStyle = gr; g.fillRect(0, -100, 256, 400);
-      PROPS.__shadow = { tex: new THREE.CanvasTexture(c), iw: 256, ih: 64, cut: true };
-      await Promise.all(SC.actors.map(async n => { const M = window.CAST_SPRITES[n]; if (!M) throw new Error('no sheet sprites for ' + n); SP[n] = M;
-        await Promise.all(Object.entries(M).map(([pose, d]) => new Promise((res, rej) => loader.load('../docs/cast/sprites/' + d.file, t => { t.anisotropy = 8;   // raw like the other props (the sprite shader passes color through)
-          PROPS[n + ':' + pose] = { tex: t, iw: d.w, ih: d.h, cut: true }; res(); }, undefined, () => rej(new Error('missing sprite ' + d.file)))))); }));
-    }
     makeCast(SC.cast || {});
     SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]] })).sort((a, b) => a.t - b.t);
     window.VIDEO_LENGTH = DATA.audioLength + (SC.tail || 1.6);
     SC._shakes = (SC.shakes || []).map(([a, d, m]) => [K.T(a), d, m]);
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
-    if (SC.follow) { SC._followAt = K.T(SC.follow.from); if (SC.follow.y) fol.style.top = SC.follow.y + 'px'; }   // follow: {from, y (top px, default 560; move it off big heads)}
+    if (SC.follow) SC._followAt = K.T(SC.follow.from);
     SC.build && SC.build(K);
     window.step = (n, dt) => { for (let k = 0; k < n; k++) frame(dt, k === n - 1); };
     window.ready = true;
