@@ -99,6 +99,15 @@
   K.screenOf = obj => { obj.getWorldPosition(pv); pv.project(camera); return { x: (pv.x * .5 + .5) * W, y: (-pv.y * .5 + .5) * H }; };
   K.worldToScreen = (x, y, z) => { pv.set(x, y, z).project(camera); return { x: (pv.x * .5 + .5) * W, y: (-pv.y * .5 + .5) * H }; };
 
+  // ---------------- moving paintings (OpenArt image-to-video clips, PLAYBOOK §4.1) ----------------
+  // A plate with clip:'<name>' shows videos/<slug>/clips/<name>/f0001.jpg… (made by tools/clips.js at the painting's exact
+  // size, so feet and K.img coordinates stay valid). Frame = global time, ping-pong, so every cut lands mid-motion.
+  const CLIPS = window.CLIPS || {}, CLIPDIR = '../videos/' + SLUG + '/clips/';
+  K.clipFrame = (P, t) => { const c = CLIPS[P.clip]; if (!c) return -1; const per = Math.max(1, 2 * c.n - 2); let k = Math.floor(t * c.fps) % per; return k >= c.n ? per - k : k; };
+  async function showClip(P, t) { const k = K.clipFrame(P, t); if (k < 0 || P._k === k) return;
+    const img = new Image(); img.src = CLIPDIR + P.clip + '/f' + String(k + 1).padStart(4, '0') + '.jpg';
+    await img.decode(); P.tex.image = img; P.tex.needsUpdate = true; P._k = k; }
+
   // ---------------- props (green-screen sprites) ----------------
   const PROPS = {}, POOL = [];
   function sprite() { const m = new THREE.Mesh(new THREE.PlaneGeometry(1, 1), new THREE.ShaderMaterial({ uniforms: { map: { value: null }, opacity: { value: 1 }, keyed: { value: 1 } }, vertexShader: keyVS, fragmentShader: keyFS, transparent: true, depthTest: false, depthWrite: false })); m.visible = false; POOL.push(m); return m; }
@@ -190,7 +199,10 @@
         fol.className = clicked ? 'on' : ''; fol.textContent = clicked ? '✓ FOLLOWING' : '+ FOLLOW'; cur_.style.opacity = ft > .45 ? 1 : 0;
         const v = K.easeOut(K.clamp01((ft - .45) / .9)); cur_.style.left = (780 - 170 * v) + 'px'; cur_.style.top = (760 - 150 * v + (clicked && ft < 1.7 ? 6 : 0)) + 'px'; }
       else cur_.style.opacity = 0; }
-    if (doRender) { renderer.clear(); renderer.render(bgScene, bgCam); renderer.render(propBack, propCam); renderer.clearDepth(); renderer.render(scene, camera); renderer.render(propFront, propCam); }
+    if (!doRender) return;
+    const P = PLATES[sh.plate];
+    return (P.clip ? showClip(P, t) : Promise.resolve()).then(() => {
+      renderer.clear(); renderer.render(bgScene, bgCam); renderer.render(propBack, propCam); renderer.clearDepth(); renderer.render(scene, camera); renderer.render(propFront, propCam); });
   }
 
   K.start = async function () {
@@ -205,7 +217,9 @@
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
     if (SC.follow) SC._followAt = K.T(SC.follow.from);
     SC.build && SC.build(K);
-    window.step = (n, dt) => { for (let k = 0; k < n; k++) frame(dt, k === n - 1); };
+    // shot list with each shot's clip (render.js lays the clip's own sound under it)
+    window.SHOT_CLIPS = SHOTS.map((s, i) => ({ t0: s.t, t1: SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH, clip: PLATES[s.plate].clip || null }));
+    window.step = async (n, dt) => { for (let k = 0; k < n - 1; k++) frame(dt, false); await frame(dt, true); };
     window.ready = true;
   };
 })();

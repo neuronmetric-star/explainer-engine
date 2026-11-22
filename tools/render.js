@@ -61,16 +61,23 @@ if (!fs.existsSync(path.join(dir, 'data.js'))) { console.error('missing data.js 
     const out = path.join(dir, 'final.mp4'), voice = path.join(dir, 'voice.mp3');
     const music = path.join(dir, 'music.mp3'); // optional quiet music bed
     const sfx = path.join(dir, 'sfx.wav');     // optional sound effects (node tools/sfx.js <slug>)
+    // optional: OpenArt clips' own sound under the shots that show them (tools/clips.js + tools/ambience.py)
+    const amb = path.join(dir, '.ambience.wav'); fs.rmSync(amb, { force: true });
+    { const clips = path.join(dir, 'clips'), segs = (await page.evaluate('window.SHOT_CLIPS || []'))
+        .filter(s => s.clip && fs.existsSync(path.join(clips, s.clip + '.wav'))).map(s => ({ t0: s.t0, t1: s.t1, wav: path.join(clips, s.clip + '.wav') }));
+      if (segs.length) { const j = path.join(dir, '.ambience.json'); fs.writeFileSync(j, JSON.stringify(segs));
+        spawnSync('python3', [path.join(ROOT, 'tools', 'ambience.py'), j, amb, String(L)], { stdio: 'inherit' }); fs.rmSync(j, { force: true }); } }
     const ins = ['-y', '-loglevel', 'error', '-i', silent], parts = []; let k = 1;
     if (fs.existsSync(voice)) { ins.push('-i', voice); parts.push(`[${k++}:a]apad[a${parts.length}]`); }
     if (fs.existsSync(sfx)) { ins.push('-i', sfx); parts.push(`[${k++}:a]volume=0.5,apad[a${parts.length}]`); }
+    if (fs.existsSync(amb)) { ins.push('-i', amb); parts.push(`[${k++}:a]volume=1.0,apad[a${parts.length}]`); }
     if (fs.existsSync(music)) { ins.push('-stream_loop', '-1', '-i', music); parts.push(`[${k++}:a]volume=0.12[a${parts.length}]`); }
     let mux;
     if (!parts.length) mux = ['-y', '-loglevel', 'error', '-i', silent, '-c', 'copy'];
     else mux = [...ins, '-filter_complex', parts.join(';') + ';' + parts.map((_, i) => `[a${i}]`).join('') + `amix=inputs=${parts.length}:duration=longest:normalize=0[a]`,
       '-map', '0:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '192k', '-t', L.toFixed(3)];
     mux.push('-movflags', '+faststart', out);
-    spawnSync(ff, mux, { stdio: 'inherit' }); fs.rmSync(silent, { force: true });
+    spawnSync(ff, mux, { stdio: 'inherit' }); fs.rmSync(silent, { force: true }); fs.rmSync(amb, { force: true });
     console.log('done ->', path.relative(ROOT, out), `(${L.toFixed(1)}s, ${((Date.now() - t0) / 60000).toFixed(1)} min)`);
   }
   if (errors.length) console.warn('page errors:\n' + errors.slice(0, 5).join('\n'));

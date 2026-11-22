@@ -29,7 +29,7 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:#000;font-family
   const v=new URLSearchParams(location.search).get('v');
   if(!v){ document.body.innerHTML='<h1 style="color:#fff">add ?v=video-slug</h1>'; return; }
   const load=src=>new Promise((res,rej)=>{const s=document.createElement('script');s.src=src;s.onload=res;s.onerror=()=>rej(new Error('missing '+src));document.body.appendChild(s);});
-  load('../videos/'+v+'/data.js').then(()=>load('plate-kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>PK.start())
+  load('../videos/'+v+'/data.js').then(()=>load('../videos/'+v+'/clips/clips.js').catch(()=>0)).then(()=>load('plate-kit.js')).then(()=>load('../videos/'+v+'/scene.js')).then(()=>PK.start())
     .catch(e=>{ window.loadError=String(e&&e.stack||e); console.error(e); });
 })();
 </script>
