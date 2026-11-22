@@ -348,6 +348,12 @@ fast · why we miss the "boring" days.
 Character-led, conversational edutainment: a short-form script that **borrows a viral trend's joke and sound** and
 uses it as the doorway into a real, sourced explanation. Ride the trend; teach the topic.
 
+**Understand the meme before you write a word (Brian, Nov 22 2026: "research the trend and understand it before finishing
+the script").** Find the original post and creator (Know Your Meme / a meme explainer + the earliest copy), pull 2 transcripts
+(the original and the most-viewed copy), and write down in the sheet: the exact original line, what the catchphrase *means*
+and how people use it (e.g. "huss" = the hard-breathing sound of grinding, not a dance), who the joke is about, and how the
+copies twist it. Never guess a meaning from the word alone (the first "huss" draft made it a dance and had to be rewritten).
+
 **The pairing (picked in the morning scrape, §6c).** A trend is worth riding when (a) it's blowing up *this week*
 (rising plays on many creators' copies, a sound with thousands of uses), (b) its catchphrase can be said in our
 story without explaining the meme, and (c) it **bridges** to a topic in our lanes (money, history, how things work,
@@ -688,7 +694,7 @@ borrow other creators' audiences.
    **Trend rides (meme × topic), the top of every sheet (Brian, Nov 22 2026):** also find what's going viral *outside*
    our lanes this week: the TikTok trending feed and top searches (`v1_tiktok_get_trending_feed`, `v1_tiktok_search_top`,
    `v1_tiktok_search_keyword` sorted most-liked this week for rising catchphrases), plus the sound each meme uses. For the
-   2–3 biggest, pull one transcript (1 credit each) to get the exact lines, then pair each with a topic in our lanes
+   2–3 biggest, find the original + a meme explainer and pull 2 transcripts each to learn what the catchphrase means, then pair each with a topic in our lanes
    through a one-sentence **bridge** (§1.13 Trend ride). Sheet section: meme + catchphrase · plays/uses · sound link ·
    the joke in one line · bridge → topic + search phrase · payoff · post-by (≈ 7 days from the meme's start).
    Skip memes that mock a group, involve real tragedies or minors, or need the viewer to already know the meme.
