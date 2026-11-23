@@ -1,0 +1,25 @@
+# SHORT (~1:05-1:10). DRAFT v1, waiting for Brian. Mode: TRUE STORY + mechanism (PLAYBOOK §1.13).
+#   Not a Trend ride: the only meme on today's sheet ("huss huss huss") already carried two videos (huss-neighbor, dancing-plague).
+# Search phrase: "what does ozempic do to the body" (TikTok's #1 completion of "what does ozempic", Nov 22 2026).
+#   Spoken: "What the heck does Ozempic do to your body?" (#7 completion, same keywords). On screen in the first 2 s:
+#   WHAT DOES OZEMPIC DO TO YOUR BODY?
+# Payoff: Ozempic doesn't melt fat. It's a week-long copy of GLP-1, the "we're full" text your gut sends your brain after
+#   every meal, which your body deletes in about two minutes. The trick came from a desert lizard's venom.
+# Clue: Doug's half-eaten burger (planted in #burger, paid off in #clue).
+# Running gag: the "We're full." text (a phone text bubble on screen every time).
+# Doug, his burger and his plan are invented (illustrative). John Eng, the Gila monster, GLP-1 and the study numbers are real (sources.md).
+# No advice: explains how the drug works; never says who should take it or stop it.
+[#q] What the heck does {*Ozempic|Ozempic} do to your body?
+[#card] See, Doug had a problem. [#shot] He's one of the {*one in eight|one in eight} American adults on a weekly shot like Ozempic, [#melt] and he thinks it melts {!fat.|fat.}
+[#burger] His lunch burger? Half eaten. [#bet] Honestly? I'd bet the same.
+[#gut] After every meal, your gut texts your brain with a messenger called {*GLP-1:|G L P one:} [#full] {*"We're full."|"We're full."}
+[#delete] But your body deletes {GLP-1|G L P one} in about {!two minutes.|two minutes.}
+[#lizard] In {1992,|nineteen ninety-two,} {Dr. John Eng|Doctor John Eng} studied the Gila monster, [#chunky] a chunky lizard that eats maybe four meals a year. [#venom] Its venom holds a {GLP-1|G L P one} copy that lasts {*hours.|hours.}
+[#week] Drug makers then built one that lasts a {*week.|week.} [#ozempic] That's Ozempic.
+[#stomach] All week, Doug's stomach empties slower, like a clogged sink, [#brain] and his brain hears {*"full."|"full."}
+[#clue] So, the half-eaten burger. [#nomelt] Nothing melted. The shot just turns hunger {*down.|down.}
+[#study] In a big study, people lost about {*15%|fifteen percent} of their weight: [#pounds] {*30 pounds|thirty pounds} on a two-hundred-pound guy. [#queasy] Four in ten felt {!queasy.|queasy.}
+[#stop] When they stopped, the text stopped. [#back] {!Two-thirds|Two-thirds} of the lost weight came back within a year.
+[#mirror] Doug thought it melts fat. It just keeps texting {*"We're full."|"We're full."}
+[#ask] Would you take a drug from a {*lizard?|lizard?}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
