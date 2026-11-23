@@ -48,6 +48,14 @@
     if (labels) labels(cx, cy, r);
   }
 
+  // OpenArt Wan 3.0 480p inserts (image-to-video from our paintings + props; no cast). Frames in art/C<n>/0001.jpg.. (30 fps)
+  const USE = { C1: true, C2: false, C3: false, C4: false };
+  const CLIPS = { C1: { clip: 'C1/', n: 90, fps: 30, light: 'day' }, C2: { clip: 'C2/', n: 90, fps: 30, light: 'interior' },
+    C3: { clip: 'C3/', n: 120, fps: 30, light: 'interior' }, C4: { clip: 'C4/', n: 60, fps: 30, light: 'interior' } };
+  const pl = (c, fallback) => USE[c] ? c : fallback;
+  const isClip = id => /^C\d/.test((window.SCENE.shots.find(x => x.at === id) || {}).plate || '');
+  const CR = 522 / 1024;   // clip frames are 522x784: painting px * CR = clip px
+
   window.SCENE = {
     plates: {
       '01': { img: '01_office_breakroom_noon.png', hz: .37, vx: .5, fov0: 55, camH: 1.55, light: L.office },
@@ -57,38 +65,39 @@
       '05': { img: '05_lab_1992.png', hz: .3, vx: .45, fov0: 55, camH: 2.2, light: L.lab92 },
       '06': { img: '06_drug_lab_modern.png', hz: .3, vx: .5, fov0: 55, camH: 2.6, light: 'interior' },
       '07': { img: '07_food_truck_park_noon.png', hz: .52, vx: .5, fov0: 55, camH: 1.1, light: L.park },
+      ...Object.fromEntries(Object.entries(CLIPS).filter(([k]) => USE[k])),
     },
     props: { P01: 'P01_injector_pen.png', P02: 'P02_burger_half.cut.png', P03: 'P03_stomach.png', P04: 'P04_brain.png', P05: 'P05_gila_monster.png',
       P06: 'P06_bathroom_scale.png', P07: 'P07_clogged_sink.png', P08: 'P08_venom_vial.png', P09: 'P09_melting_butter.cut.png', H01: 'H01_helicopter.png' },
     cast: { doug: 'hoodie', gary: 'oxford', polo: 'polo' },
     shots: [
-      { at: 'q', plate: '02', zoom: [1.0, 1.12], focus: [[.5, .55], [.55, .58]] },
-      { at: 'card', plate: '01', zoom: [1.0, 1.04], focus: [[.5, .5], [.5, .5]] },
+      { at: 'q', plate: pl('C2', '02'), zoom: [1.0, 1.12], focus: [[.5, .55], [.55, .58]] },
+      { at: 'card', plate: '01', zoom: [1.1, 1.14], focus: [[.5, .48], [.5, .48]] },
       { at: 'shot', plate: '01', zoom: [1.06, 1.1], focus: [[.5, .48], [.5, .48]] },
-      { at: 'melt', plate: '01', zoom: [1.25, 1.3], focus: [[.5, .47], [.5, .47]] },
-      { at: 'burger', plate: '02', zoom: [1.15, 1.35], focus: [[.5, .56], [.46, .56]] },
-      { at: 'bet', plate: '01', zoom: [1.22, 1.26], focus: [[.5, .47], [.5, .47]] },
+      { at: 'melt', plate: '01', zoom: [1.36, 1.42], focus: [[.5, .465], [.5, .465]] },
+      { at: 'burger', plate: pl('C2', '02'), zoom: [1.15, 1.35], focus: [[.5, .56], [.46, .56]] },
+      { at: 'bet', plate: '01', zoom: [1.34, 1.38], focus: [[.5, .465], [.5, .465]] },
       { at: 'gut', plate: '03', zoom: [1.0, 1.06], focus: [[.5, .55], [.5, .52]] },
       { at: 'full', plate: '03', zoom: [1.06, 1.14], focus: [[.5, .5], [.5, .4]] },
       { at: 'delete', plate: '03', zoom: [1.14, 1.14], focus: [[.5, .45], [.5, .45]] },
       { at: 'lizard', plate: '05', zoom: [1.06, 1.1], focus: [[.42, .52], [.48, .52]] },
-      { at: 'chunky', plate: '04', zoom: [1.0, 1.12], focus: [[.5, .55], [.5, .55]] },
+      { at: 'chunky', plate: pl('C1', '04'), zoom: [1.0, 1.05], focus: [[.5, .55], [.5, .55]] },
       { at: 'venom', plate: '05', zoom: [1.2, 1.3], focus: [[.55, .5], [.58, .5]] },
-      { at: 'week', plate: '06', zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .48]] },
-      { at: 'ozempic', plate: '06', zoom: [1.3, 1.38], focus: [[.5, .45], [.5, .45]] },
+      { at: 'week', plate: pl('C3', '06'), zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .48]] },
+      { at: 'ozempic', plate: pl('C3', '06'), zoom: [1.3, 1.38], focus: [[.5, .45], [.5, .45]], clipFrom: 2.4 },
       { at: 'stomach', plate: '03', zoom: [1.1, 1.2], focus: [[.5, .62], [.5, .62]] },
-      { at: 'sink', plate: '03', zoom: [1.0, 1.06], focus: [[.5, .5], [.5, .5]] },
+      { at: 'sink', plate: pl('C4', '03'), zoom: [1.0, 1.06], focus: [[.5, .5], [.5, .5]] },
       { at: 'brain', plate: '03', zoom: [1.1, 1.15], focus: [[.5, .45], [.5, .38]] },
-      { at: 'clue', plate: '02', zoom: [1.3, 1.3], focus: [[.48, .56], [.48, .56]] },
-      { at: 'nomelt', plate: '01', zoom: [1.25, 1.3], focus: [[.5, .47], [.5, .47]] },
+      { at: 'clue', plate: pl('C2', '02'), zoom: [1.3, 1.3], focus: [[.48, .56], [.48, .56]], clipFrom: 1.0 },
+      { at: 'nomelt', plate: '01', zoom: [1.36, 1.42], focus: [[.5, .465], [.5, .465]] },
       { at: 'study', plate: '03', zoom: [1.0, 1.06], focus: [[.5, .55], [.5, .55]] },
       { at: 'pounds', plate: '03', zoom: [1.15, 1.2], focus: [[.5, .5], [.5, .5]] },
-      { at: 'queasy', plate: '01', zoom: [1.25, 1.32], focus: [[.5, .47], [.5, .47]] },
+      { at: 'queasy', plate: '01', zoom: [1.36, 1.44], focus: [[.5, .465], [.5, .465]] },
       { at: 'stop', plate: '03', zoom: [1.06, 1.06], focus: [[.5, .5], [.5, .5]] },
       { at: 'back', plate: '03', zoom: [1.15, 1.22], focus: [[.5, .5], [.5, .5]] },
-      { at: 'mirror', plate: '07', zoom: [1.05, 1.1], focus: [[.5, .43], [.5, .43]] },
-      { at: 'ask', plate: '07', zoom: [1.1, 1.12], focus: [[.5, .43], [.5, .43]] },
-      { at: 'cta', plate: '07', zoom: [1.12, 1.12], focus: [[.5, .43], [.5, .43]] },
+      { at: 'mirror', plate: '07', zoom: [1.18, 1.22], focus: [[.5, .46], [.5, .46]] },
+      { at: 'ask', plate: '07', zoom: [1.22, 1.24], focus: [[.5, .46], [.5, .46]] },
+      { at: 'cta', plate: '07', zoom: [1.24, 1.24], focus: [[.5, .46], [.5, .46]] },
     ],
     shakes: [['delete', .2, .3], ['clue', .2, .3], ['back', .2, .3]],
     flashes: [],
@@ -105,8 +114,7 @@
       const burgerOnCounter = (k = 1) => { const p = K.img(470, 612); K.prop('P02', { x: p.x, y: p.y - 40 * s, w: 170 * s * k, layer: 'back' }); };
       switch (id) {
         case 'q': { const pb = K.img(470, 830), pp = K.img(770, 930);
-          K.prop('P02', { x: pb.x, y: pb.y, w: 560 * s });
-          K.prop('P01', { x: pp.x, y: pp.y, w: 520 * s, rot: -.05, a: 1 });
+          if (!isClip(id)) { K.prop('P02', { x: pb.x, y: pb.y, w: 560 * s }); K.prop('P01', { x: pp.x, y: pp.y, w: 520 * s, rot: -.05, a: 1 }); }
           const a = K.clamp01((at('card') - t) / .2);
           txt(K, 'WHAT DOES OZEMPIC', { y: 300, size: 86, a, scale: .8 + .2 * popIn(K, t, at('q')) });
           txt(K, 'DO TO YOUR BODY?', { y: 405, size: 86, color: 'gold', a, scale: .8 + .2 * popIn(K, t, at('q') + .5) }); break; }
@@ -128,7 +136,7 @@
           if (id === 'melt') txt(K, 'MELTS FAT?', { y: 300, size: 90, color: 'gold', scale: popIn(K, t, tf + .2) });
           else { txt(K, '✕', { x: 880, y: 650, size: 260, color: 'red', scale: popIn(K, t, at('nomelt') + .4) }); txt(K, 'TURNS HUNGER DOWN', { y: 290, size: 74, color: 'gold', scale: popIn(K, t, wordAt(K, 'hunger', 'nomelt')) }); }
           break; }
-        case 'burger': case 'clue': { const pb = K.img(470, 830); K.prop('P02', { x: pb.x, y: pb.y, w: 560 * s });
+        case 'burger': case 'clue': { const pb = K.img(470, 830); if (!isClip(id)) K.prop('P02', { x: pb.x, y: pb.y, w: 560 * s });
           if (id === 'clue') txt(K, 'HALF EATEN', { y: 300, size: 96, color: 'gold', scale: popIn(K, t, at('clue') + .3), rot: -.04 }); break; }
         case 'bet': { burgerOnCounter(); room(false); face(D, 'happy', t); D.pose({ t, gesture: 'tada', gw: K.ease(Lc / .4), nod: .1 * Math.sin(K.clamp01(Lc / .6) * PI) }); break; }
         case 'gut': case 'full': case 'delete': {
@@ -157,22 +165,22 @@
             face(G, 'surprised', t, 1); G.pose({ t, lean: -.1 * K.ease(Lc / .3), look: .3, armR: { raise: .35 }, armL: { raise: .35 }, handR: 'open', handL: 'open' });
             txt(K, '⏱ HOURS', { y: 300, size: 100, color: 'gold', scale: popIn(K, t, wordAt(K, 'hours', 'venom')) }); }
           break; }
-        case 'chunky': { const pr = K.img(540, 820); K.prop('P05', { x: pr.x, y: pr.y, w: 600 * s, anchor: [.5, .6] });
+        case 'chunky': { const pr = K.img(540, 820); if (!isClip(id)) K.prop('P05', { x: pr.x, y: pr.y, w: 600 * s, anchor: [.5, .6] });
           txt(K, '≈ 4 MEALS', { y: 290, size: 100, color: 'gold', scale: popIn(K, t, wordAt(K, 'four', 'chunky')) });
           txt(K, 'A YEAR', { y: 400, size: 80, scale: popIn(K, t, wordAt(K, 'four', 'chunky') + .3) }); break; }
         case 'week': case 'ozempic': {
-          const pp = K.img(512, 590); K.prop('P01', { x: pp.x, y: pp.y, w: 430 * s, rot: -.02 });
+          const cl = isClip(id), pp = cl ? K.img(512 * CR, 590 * CR) : K.img(512, 590), ps = cl ? s * CR : s; if (!cl) K.prop('P01', { x: pp.x, y: pp.y, w: 430 * s, rot: -.02 });
           const days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'], tw = id === 'week' ? wordAt(K, 'week', 'week') : 0;
           for (let i = 0; i < 7; i++) { const on = id === 'ozempic' || t > tw + i * .12, x = 540 + (i - 3) * 118;
             txt(K, days[i], { x, y: 300, size: 76, color: on ? '#14284f' : '#fff', stroke: 0, shadow: false, w: 100, border: '6px solid #000' }).style.background = on ? '#ffd23a' : 'rgba(0,0,0,.35)'; }
           txt(K, '1 SHOT = 1 WEEK', { y: 420, size: 66, color: 'gold', scale: popIn(K, t, tw + .9), a: id === 'week' && t < tw + .9 ? 0 : 1 });
-          if (id === 'ozempic') { txt(K, 'OZEMPIC', { x: pp.x, y: pp.y + 150 * s, size: 96, scale: popIn(K, t, at('ozempic') + .1) }); }
+          if (id === 'ozempic') { txt(K, 'OZEMPIC', { x: pp.x, y: pp.y + 150 * ps, size: 96, scale: popIn(K, t, at('ozempic') + .1) }); }
           break; }
         case 'stomach': case 'sink': {
           if (id === 'stomach') { const sq = 1 + .03 * Math.sin(t * 1.2); stomach(K, { w: 400 * s * sq });
             const p = K.img(STOM.ix, STOM.iy + 40); txt(K, '🍔', { x: p.x + 30 * Math.sin(t * .6), y: p.y, size: 110, stroke: 0, shadow: false });
             txt(K, 'EMPTIES SLOWER', { y: 300, size: 80, color: 'gold', scale: popIn(K, t, wordAt(K, 'slower', 'stomach')) }); }
-          else { const p = K.img(512, 760); K.prop('P07', { x: p.x, y: p.y + 4 * Math.sin(t * 3), w: 900 * s }); }
+          else if (!isClip(id)) { const p = K.img(512, 760); K.prop('P07', { x: p.x, y: p.y + 4 * Math.sin(t * 3), w: 900 * s }); }
           break; }
         case 'brain': { brain(K, 1); const tb = at('brain');
           for (let i = 0; i < 6; i++) { const tt = tb + .15 + i * .45; if (t < tt) break; const k = popIn(K, t, tt), p = K.img(BRAIN.ix, BRAIN.iy + 300 + i * 70);
@@ -195,8 +203,8 @@
           if (k > 0) bubble(K, "We're full.", p.x, p.y, { size: 60, a: k, bg: '#888' });
           txt(K, 'SHOT STOPPED', { y: 300, size: 92, color: 'red', scale: popIn(K, t, at('stop') + .2) }); break; }
         case 'mirror': case 'ask': case 'cta': {
-          K.placeAt('polo', 800, 985, -.45); face(P, 'smile', t, 2); P.pose({ t, look: -.2 });
-          const d = K.placeAt('doug', 430, 1060, .25);
+          K.placeAt('polo', 790, 1015, -.45); face(P, 'smile', t, 2); P.pose({ t, look: -.2 });
+          const d = K.placeAt('doug', 420, 1110, .25);
           // THE HELICOPTER ENDING (PLAYBOOK §1.12a): it crosses the sky on the mirror line; Doug looks up
           const hu = id === 'mirror' ? K.helicopter(t, 'mirror', { y: 300, w: 540 }) : id === 'ask' ? K.helicopter(t, 'mirror', { y: 300, w: 540 }) : -1;
           const up = hu < 0 ? 0 : Math.sin(PI * K.clamp01((hu - .05) / .85));
