@@ -73,9 +73,13 @@
 
   // ---------------- plates: camera matched to the painting ----------------
   // plate preset: { img, hz (horizon, fraction from top), vx (vanishing x), fov0, camH, light, tint (multiply color, e.g. 0x4a5a9a = night) }
+  // video plate (OpenArt insert): { clip: '../clips/V1/', n: frame count, fps } plays pre-extracted frames <clip>0001.jpg.. as the plate;
+  //   the shot's clipFrom (s into the clip, default 0) + time in the shot picks the frame (holds the last frame). No cast on clip plates.
   let SC, PLATES = {}, cur = null;
-  function usePlate(name, zoom, fx, fy, sx, sy) {
+  function usePlate(name, zoom, fx, fy, sx, sy, clipT) {
     const P = PLATES[name]; if (!P) throw new Error('unknown plate ' + name); setLight(P.light);
+    if (P.frames) { const k = Math.max(0, Math.min(P.frames.length - 1, Math.floor((clipT || 0) * P.fps)));
+      if (P._k !== k) { P._k = k; P.ctx.drawImage(P.frames[k], 0, 0, P.cv.width, P.cv.height); P.tex.needsUpdate = true; } }
     const tex = P.tex, FH = H * zoom, FW = FH * tex.image.width / tex.image.height;
     const ox = Math.max(0, Math.min(FW - W, fx * FW - W / 2)) + sx, oy = Math.max(0, Math.min(FH - H, fy * FH - H / 2)) + sy;
     camera.fov = P.fov0; camera.aspect = FW / FH; camera.setViewOffset(FW, FH, ox, oy, W, H); camera.updateProjectionMatrix();
@@ -164,7 +168,17 @@
     el.style.width = (o.w || 1080) + 'px'; el.style.marginLeft = -(o.w || 1080) / 2 + 'px'; el.style.marginTop = -size * .55 + 'px';
     el.style.opacity = o.a === undefined ? 1 : o.a;
     el.style.transform = `translate(${o.x === undefined ? 540 : o.x}px,${o.y || 0}px) rotate(${o.rot || 0}rad) skew(${o.skewX || 0}deg,${o.skewY || 0}deg) scale(${o.scale === undefined ? 1 : o.scale})`;
+    el.style.border = o.border || 'none'; el.style.padding = o.border ? '0 .18em' : '0'; el.style.boxSizing = 'border-box'; el.style.borderRadius = o.border ? '.08em' : '0';
     return el; };
+  // K.line(x0, y0, x1, y1, {color, width, a, dash}): a straight stroke this frame (screen px): strings on a board, arrows on a map
+  const LNS = []; let lnI = 0;
+  K.line = function (x0, y0, x1, y1, o = {}) {
+    let el = LNS[lnI]; if (!el) { el = document.createElement('div'); el.style.cssText = 'position:absolute;left:0;top:0;transform-origin:0 50%;border-radius:99px'; cap.parentNode.insertBefore(el, cap); LNS.push(el); } lnI++;
+    const L = Math.hypot(x1 - x0, y1 - y0), w = o.width || 6, c = TCOL[o.color] || o.color || '#d22';
+    el.style.display = 'block'; el.style.width = L + 'px'; el.style.height = w + 'px'; el.style.opacity = o.a === undefined ? 1 : o.a;
+    el.style.background = o.dash ? `repeating-linear-gradient(90deg, ${c} 0 ${o.dash}px, transparent ${o.dash}px ${o.dash * 2}px)` : c;
+    el.style.boxShadow = o.dash ? 'none' : '0 2px 3px rgba(0,0,0,.35)';
+    el.style.transform = `translate(${x0}px,${y0 - w / 2}px) rotate(${Math.atan2(y1 - y0, x1 - x0)}rad)`; return el; };
 
   // ---------------- frame ----------------
   let time = 0, SHOTS = [];
@@ -172,12 +186,12 @@
   function frame(dt, doRender) {
     time += dt; const t = time;
     Object.values(K.cast).forEach(c => c.root.visible = false); POOL.forEach(m => { m.visible = false; if (m.parent) m.parent.remove(m); }); poolI = 0;
-    TXT.forEach(el => el.style.display = 'none'); txtI = 0;
+    TXT.forEach(el => el.style.display = 'none'); txtI = 0; LNS.forEach(el => el.style.display = 'none'); lnI = 0;
     let i = 0; for (let k = 0; k < SHOTS.length; k++) if (t >= SHOTS[k].t) i = k;
     const sh = SHOTS[i], end = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH, u = K.ease((t - sh.t) / Math.max(.01, end - sh.t));
     const z = K.lerp(sh.zoom[0], sh.zoom[1], u), fx = K.lerp(sh.focus[0][0], sh.focus[1][0], u), fy = K.lerp(sh.focus[0][1], sh.focus[1][1], u);
     const sk = amp(SC._shakes, t) * 18;
-    usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk, Math.cos(t * 47) * sk);
+    usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk, Math.cos(t * 47) * sk, (sh.clipFrom || 0) + (t - sh.t));
     K.shot = { i, id: sh.id, u, t0: sh.t, t1: end, local: t - sh.t };
     SC.update && SC.update(t, K);
     // captions
@@ -195,11 +209,16 @@
 
   K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
-    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); }));
+    const loadImg = src => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('missing clip frame ' + src)); im.src = src; });
+    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { const P = PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day', fps: 15 }, p);
+      if (p.clip) { P.frames = await Promise.all(Array.from({ length: p.n }, (_, i) => loadImg(ART + p.clip + String(i + 1).padStart(4, '0') + '.jpg')));
+        P.cv = document.createElement('canvas'); P.cv.width = P.frames[0].width; P.cv.height = P.frames[0].height; P.ctx = P.cv.getContext('2d');
+        P.tex = new THREE.CanvasTexture(P.cv); P.tex.encoding = THREE.sRGBEncoding; P.tex.image = P.cv; P._k = -1; }
+      else P.tex = await loadTex(p.img, true); }));
     await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height, cut: /\.cut\.png$/.test(f) }; }));
     { const tex = puffTex(); PROPS.puff = { tex, iw: 128, ih: 128 }; }
     makeCast(SC.cast || {});
-    SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]] })).sort((a, b) => a.t - b.t);
+    SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]], clipFrom: s.clipFrom || 0 })).sort((a, b) => a.t - b.t);
     window.VIDEO_LENGTH = DATA.audioLength + (SC.tail || 1.6);
     SC._shakes = (SC.shakes || []).map(([a, d, m]) => [K.T(a), d, m]);
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);

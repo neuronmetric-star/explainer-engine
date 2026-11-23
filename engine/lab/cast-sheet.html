@@ -82,7 +82,12 @@ function lineup() {
   lin(sc); const cam = new THREE.PerspectiveCamera(30, 1, .1, 100); cam.fov = 26; cam.position.set(0, 1.5, 19); cam.lookAt(0, 1.2, -.3); view(sc, cam, 0, 200, W, 1500);
   CAST.forEach((c, k) => label(c.name.replace('THE ', '').split(' ')[0], 540 + (k - (CAST.length - 1) / 2) * 150, 1330, 150)); return true;
 }
-window.SHOT_COUNT = CAST.length + 1;
-window.renderShot = i => i < CAST.length ? sheet(i) : lineup();
+// mugshot portrait (for a wanted poster): render-lab --shot <CAST.length+1>; outfit from ?o= (default isidro)
+function portrait() { labels.innerHTML = ''; document.getElementById('t').textContent = ''; document.getElementById('s').textContent = '';
+  const bg = new THREE.Color(0xc9ccd2).convertSRGBToLinear(); renderer.setScissorTest(false); renderer.setViewport(0, 0, W, H); renderer.setClearColor(bg); renderer.clear();
+  const sc = one({ outfit: new URLSearchParams(location.search).get('o') || 'isidro' }, ch => { ch.face('flat'); ch.pose({ t: 1 }); }); sc.background = bg;
+  const cam = new THREE.PerspectiveCamera(16, 1, .1, 100); cam.position.set(0, 1.85, 4.6); cam.lookAt(0, 1.78, 0); view(sc, cam, 0, 0, W, H); return true; }
+window.SHOT_COUNT = CAST.length + 2;
+window.renderShot = i => i < CAST.length ? sheet(i) : i === CAST.length ? lineup() : portrait();
 window.ready = true;
 </script></body></html>

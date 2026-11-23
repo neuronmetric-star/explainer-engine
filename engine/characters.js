@@ -286,12 +286,13 @@
       mesh(new THREE.SphereGeometry(R * .075, 12, 8), cm, head, 0, R * 1.035, 0);
       mesh(new THREE.TorusGeometry(R * .12, .012, 6, 16, Math.PI), plain(shade(o.cap, .6)), head, 0, R * .66, -R * .76).rotation.x = .9;  // strap gap
     }
-    if (o.capFwd) { // baseball cap worn forward: crown with button, curved brim over the brows, strap gap at the back
+    if (o.capFwd) { // baseball cap worn forward: crown hugging the head down to just above the brows, curved brim, button, strap gap at the back
       const R = B.R, cm = cloth(o.capFwd, 'weave', .8); cm.side = THREE.DoubleSide;
-      const crown = mesh(new THREE.SphereGeometry(R * 1.05, 48, 18, 0, TAU, 0, Math.PI * .35), cm, head, 0, -R * .02, 0); crown.scale.set(1, 1.18, 1);
-      const brim = mesh(new THREE.CylinderGeometry(R * .7, R * .7, .03, 36, 1, false, -Math.PI / 2, Math.PI), cm, head, 0, R * .5, R * .76); brim.rotation.x = .24;
-      mesh(new THREE.SphereGeometry(R * .075, 12, 8), cm, head, 0, R * 1.15, 0);
-      mesh(new THREE.TorusGeometry(R * .12, .012, 6, 16, Math.PI), plain(shade(o.capFwd, .6)), head, 0, R * .55, -R * .86).rotation.x = -.9;
+      const crown = mesh(new THREE.SphereGeometry(R * 1.02, 48, 20, 0, TAU, 0, Math.PI * .4), cm, head, 0, -R * .02, 0); crown.scale.set(1, 1.08, 1);
+      const band = mesh(new THREE.CylinderGeometry(R * .975, R * .975, R * .06, 48, 1, true), plain(shade(o.capFwd, .75), .8), head, 0, R * .33, 0);
+      const brim = mesh(new THREE.CylinderGeometry(R * .72, R * .72, .028, 36, 1, false, -Math.PI / 2, Math.PI), cm, head, 0, R * .32, R * .56); brim.rotation.x = .1;
+      mesh(new THREE.SphereGeometry(R * .07, 12, 8), cm, head, 0, R * 1.1, 0);
+      mesh(new THREE.TorusGeometry(R * .12, .012, 6, 16, Math.PI), plain(shade(o.capFwd, .6)), head, 0, R * .42, -R * .93).rotation.x = -.5;
     }
     if (o.mask) { // bandana over nose and mouth (eyes stay visible), triangle point + knot at the back
       const mm = cloth(o.mask, 'weave', .85); mm.side = THREE.DoubleSide; const R = B.R;
