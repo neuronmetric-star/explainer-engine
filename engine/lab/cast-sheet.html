@@ -46,6 +46,8 @@ const CAST = [
   { name: 'POLO GUY', sub: 'the worker · polo · khakis · gray sneakers', o: { outfit: 'polo' } },
   { name: 'THE PRESIDENT', sub: 'head of state · black bomber · white tee · backwards cap · sash', o: { outfit: 'president' } },
   { name: 'GANG MEMBER', sub: 'street crew (never armed) · dark hoodie · beanie · bandana', o: { outfit: 'gang' } },
+  { name: 'CHAPO ISIDRO', sub: 'real person · navy cap · plaid western shirt · dark jeans · silver buckle · boots', o: { outfit: 'isidro' },
+    gest: ['point', 'cuffed', 'shrug', 'cross', 'think', 'facepalm', 'hips', 'tada'] },
 ];
 const GEST = ['point', 'wave', 'shrug', 'cross', 'think', 'facepalm', 'hips', 'tada'];
 const FACES = ['smile', 'happy', 'surprised', 'smirk', 'worried', 'flat', 'blink'];
@@ -64,8 +66,8 @@ function sheet(i) {
     const sc = one(c.o, ch => { ch.root.rotation.y = ry; ch.face('smile'); ch.pose({ t: 1 }); });
     cam.fov = 24; cam.position.set(0, 1.35, 7.4); cam.lookAt(0, 1.18, 0); view(sc, cam, 20 + k * 262, 190, 250, 640); label(n, 20 + k * 262 + 125, 800); });
   // row 2: gestures
-  GEST.forEach((g, k) => { const col = k % 4, row = (k / 4) | 0;
-    const sc = one(c.o, ch => { ch.root.rotation.y = -.2; ch.face(g === 'facepalm' ? 'worried' : g === 'tada' || g === 'wave' ? 'happy' : g === 'cross' ? 'smirk' : 'smile'); ch.pose({ t: 1.3, gesture: g, gw: 1 }); });
+  (c.gest || GEST).forEach((g, k) => { const col = k % 4, row = (k / 4) | 0;
+    const sc = one(c.o, ch => { ch.root.rotation.y = -.2; ch.face(g === 'facepalm' ? 'worried' : g === 'tada' || g === 'wave' ? 'happy' : g === 'cross' ? 'smirk' : 'smile'); ch.pose({ t: 1.3, gesture: g, gw: 1, cuffs: g === 'cuffed' }); });
     cam.fov = 26; cam.position.set(0, 1.3, 7.2); cam.lookAt(0, 1.2, 0); view(sc, cam, 20 + col * 262, 850 + row * 330, 250, 300); label(g.toUpperCase(), 20 + col * 262 + 125, 850 + row * 330 + 296); });
   // row 3: faces
   FACES.forEach((f, k) => {
@@ -76,9 +78,9 @@ function sheet(i) {
 function lineup() {
   labels.innerHTML = ''; document.getElementById('t').textContent = 'THE CAST'; document.getElementById('s').textContent = 'engine/characters.js · CHAR.make({outfit})';
   renderer.setScissorTest(false); renderer.setViewport(0, 0, W, H); renderer.setClearColor(BG); renderer.clear();
-  const sc = studio(), chs = CAST.map((c, k) => { const ch = CHAR.make(Object.assign({ envMap: env }, c.o)); ch.root.position.set((k - 2.5) * .82, 0, (k % 2) * -.5); ch.root.rotation.y = -.15; ch.face(['smile', 'smirk', 'smirk', 'happy', 'smile', 'flat'][k]); ch.pose({ t: k }); sc.add(ch.root); return ch; });
+  const sc = studio(), chs = CAST.map((c, k) => { const ch = CHAR.make(Object.assign({ envMap: env }, c.o)); ch.root.position.set((k - (CAST.length - 1) / 2) * .78, 0, (k % 2) * -.5); ch.root.rotation.y = -.15; ch.face(['smile', 'smirk', 'smirk', 'happy', 'smile', 'flat', 'smirk'][k]); ch.pose({ t: k }); sc.add(ch.root); return ch; });
   lin(sc); const cam = new THREE.PerspectiveCamera(30, 1, .1, 100); cam.fov = 26; cam.position.set(0, 1.5, 19); cam.lookAt(0, 1.2, -.3); view(sc, cam, 0, 200, W, 1500);
-  CAST.forEach((c, k) => label(c.name.replace('THE ', '').split(' ')[0], 540 + (k - 2.5) * 168, 1330, 170)); return true;
+  CAST.forEach((c, k) => label(c.name.replace('THE ', '').split(' ')[0], 540 + (k - (CAST.length - 1) / 2) * 150, 1330, 150)); return true;
 }
 window.SHOT_COUNT = CAST.length + 1;
 window.renderShot = i => i < CAST.length ? sheet(i) : lineup();

@@ -3,8 +3,8 @@
 Brian's reference sheets (Nov 22 2026) are the **look target** for the 3D cast in `engine/characters.js`.
 `*_ref.png` = the reference (inspiration, painted). `*_engine.jpg` = what our engine renders today, same layout.
 Re-render the engine sheets after any change to the cast:
-`node engine/lab/render-lab.js <outDir> --page cast-sheet.html` (shots 0–5 = Doug, Gary, Victor, polo guy, President,
-gang member; shot 6 = the lineup), then copy them here as `<name>_engine.jpg`.
+`node engine/lab/render-lab.js <outDir> --page cast-sheet.html` (shots 0–6 = Doug, Gary, Victor, polo guy, President,
+gang member, Chapo Isidro; shot 7 = the lineup; `--shot N` renders one), then copy them here as `<name>_engine.jpg`.
 
 | Character | Outfit | Reference | Engine |
 |---|---|---|---|
@@ -14,6 +14,7 @@ gang member; shot 6 = the lineup), then copy them here as `<name>_engine.jpg`.
 | Polo guy: the worker | `polo` | (none yet) | `polo_engine.jpg` |
 | The President: head of state | `president` | `president_ref.png` | `president_engine.jpg` |
 | Gang member: street crew, never armed | `gang` | `gang_ref.png` | `gang_engine.jpg` |
+| Chapo Isidro: real person (chapo-isidro), never armed; `cuffed` gesture + `pose({cuffs:true})` | `isidro` | `isidro_ref.png` | `isidro_engine.jpg` |
 
 ## What the references lock in (cast v2)
 - **Heads:** matte warm-white porcelain spheres (soft sheen, not glossy plastic), sitting right on the collar (no neck).

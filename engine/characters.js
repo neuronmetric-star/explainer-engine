@@ -4,11 +4,11 @@
 //  with eye highlights, big round white mitt hands (a finger only to point), real clothes (collars, cuffs, pockets, seams, rolled
 //  jeans, laced sneakers, dress shoes). Model sheets: node engine/lab/render-lab.js <out> --page cast-sheet.html
 //
-//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang', glasses, phone, mask, beanie, shirt, pants, envMap})
+//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang'|'isidro', glasses, phone, mask, beanie, shirt, pants, envMap})
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw, handR, handL})
-//    gestures: point | wave | shrug | cross | think | facepalm | hips | tada   (gw = blend 0..1)
+//    gestures: point | wave | shrug | cross | think | facepalm | hips | tada | cuffed   (gw = blend 0..1; pose({cuffs:true}) shows handcuffs)
 //    hands (round mitts): 'fist' | 'relaxed' | 'open' | 'point' (set by the gesture; override with handR/handL)
 //  Everything is a pure function of the pose values, so renders stay frame-exact.
 //  Kept for scenes: ch.head, ch.neck, ch.spine, ch.hips, ch.B.R, ch.leg[±1].{hip,knee,ankle}, ch.arm[±1].{sh,el,wr}.
@@ -33,6 +33,17 @@
     g.putImageData(id, 0, 0); const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping;
     t.repeat.set(kind === 'knit' ? 10 : 7, kind === 'knit' ? 10 : 7); return (TEX[kind] = t);
   }
+  // buffalo-check color map (two colors; where a dark band crosses a light one it's a mix, crossings are darkest)
+  function plaid(c1, c2) {
+    const key = 'plaid' + c1 + '_' + c2; if (TEX[key]) return TEX[key];
+    const N = 128, c = document.createElement('canvas'); c.width = c.height = N; const g = c.getContext('2d');
+    const A = new THREE.Color(c1), Bc = new THREE.Color(c2), M = A.clone().lerp(Bc, .5), css = k => '#' + k.getHexString();
+    g.fillStyle = css(A); g.fillRect(0, 0, N, N); g.fillStyle = css(M); g.fillRect(N / 2, 0, N / 2, N); g.fillRect(0, N / 2, N, N / 2);
+    g.fillStyle = css(Bc); g.fillRect(N / 2, N / 2, N / 2, N / 2);
+    g.globalAlpha = .12; g.fillStyle = '#000'; for (let i = 0; i < N; i += 4) { g.fillRect(i, 0, 1, N); g.fillRect(0, i, N, 1); }   // weave lines
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(8, 8); t.encoding = THREE.sRGBEncoding;
+    return (TEX[key] = t);
+  }
   const cloth = (color, kind = 'weave', rough = .9, bump = .006) => new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: 0, bumpMap: fabric(kind), bumpScale: bump });
   const glossy = (color, env, rough = .2) => new THREE.MeshPhysicalMaterial({ color, roughness: rough, metalness: 0, clearcoat: 1, clearcoatRoughness: .05, envMap: env, envMapIntensity: .9 });
   const porcelain = (env, rough = .4, coat = .35) => new THREE.MeshPhysicalMaterial({ color: 0xf7f2ec, roughness: rough, metalness: 0, clearcoat: coat, clearcoatRoughness: .35, envMap: env, envMapIntensity: .55 });
@@ -43,8 +54,9 @@
   // ---------- faces: drawn on an equirect canvas; front of the sphere is u=0.25 ----------
   // v2: bigger features, oval eyes with a catchlight, thinner arched brows, warm near-black ink (matches the ref sheets).
   const FACE_CACHE = {};
-  function faceTex(name) {
-    if (FACE_CACHE[name]) return FACE_CACHE[name];
+  function faceTex(name, mustache) {
+    const key = name + (mustache ? '|m' : '');
+    if (FACE_CACHE[key]) return FACE_CACHE[key];
     const W = 2048, H = 1024, c = document.createElement('canvas'); c.width = W; c.height = H;
     const g = c.getContext('2d'); g.fillStyle = '#ffffff'; g.fillRect(0, 0, W, H);
     // eyes ±140 px from the center ≈ 42% of the head width apart (the ref sheets), mouth ≈ a quarter of the head wide
@@ -72,7 +84,11 @@
       case 'flat': for (const s of [-1, 1]) line(cx + s * ex - 38, cy - 80, cx + s * ex + 38, cy - 80, 10); eyes(23, 30); line(cx - 54, cy + 118, cx + 54, cy + 118, 12); break;
       default: /* smile */ brows(); eyes(); smile();
     }
-    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; FACE_CACHE[name] = t; return t;
+    if (mustache) { // short neat mustache, sits just above the mouth (higher when the mouth opens wide)
+      const my = cy + (name === 'happy' ? 44 : name === 'surprised' ? 70 : 78); g.fillStyle = INK; g.beginPath();
+      g.moveTo(cx, my - 26); g.bezierCurveTo(cx + 36, my - 46, cx + 92, my - 34, cx + 104, my + 14); g.bezierCurveTo(cx + 70, my + 14, cx + 34, my + 16, cx, my + 12);
+      g.bezierCurveTo(cx - 34, my + 16, cx - 70, my + 14, cx - 104, my + 14); g.bezierCurveTo(cx - 92, my - 34, cx - 36, my - 46, cx, my - 26); g.fill(); }
+    const t = new THREE.CanvasTexture(c); t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; FACE_CACHE[key] = t; return t;
   }
   C.faceTex = faceTex;
 
@@ -97,16 +113,22 @@
     president: { shirt: 0x222228, pants: 0x2b2e36, shoes: 0x121214, sleeves: 'long', build: 'slim', bomber: true, tee: 0xf4f4f4, cap: 0x1a1a1f, sash: [0x2456c8, 0xf4f4f4], watch: 0x222222, boots: true },
     // gang: dark hoodie, black jeans, beanie, bandana over the lower face (no weapons). Vary with {shirt, mask}.
     gang: { shirt: 0x2f2b2a, pants: 0x1f1f23, shoes: 0x222226, sleeves: 'long', build: 'hoodie', sneakers: true, hoodie: true, jeans: true, stitch: 0x8a7a62, mask: 0xa81c24, beanie: 0x1c1c1f },
+    // isidro (Chapo Isidro, real person; ref docs/characters/isidro_ref.png): navy cap worn forward, mustache, red-black buffalo-plaid
+    // western shirt (pearl snaps, two flap pockets), dark indigo jeans, big oval silver buckle, brown boots. Never armed. pose({cuffs:true}).
+    isidro: { shirt: 0xffffff, plaid: [0xb3262a, 0x1d1718], pants: 0x222c46, shoes: 0x6e3b1c, belt: 0x4e2c15, buckle: 'big', sleeves: 'long', build: 'medium',
+              jeans: true, boots: true, capFwd: 0x1d2440, mustache: true, collar: 'western', western: true },
     suit:   { shirt: 0x1e2a55, pants: 0x1e2a55, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc4182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
 
   C.make = function (opts = {}) {
     const o = Object.assign({}, OUTFITS[opts.outfit || 'oxford'], opts), env = opts.envMap;
     const B = o.build === 'stocky' ? { w: .37, d: .29, th: .57, leg: .7, lr: .14, ar: .1, R: .35, hand: .15 }
+      : o.build === 'medium' ? { w: .305, d: .225, th: .55, leg: .68, lr: .12, ar: .094, R: .34, hand: .145 }
       : o.build === 'hoodie' ? { w: .315, d: .24, th: .55, leg: .74, lr: .118, ar: .098, R: .34, hand: .145 }
       : { w: .285, d: .2, th: .55, leg: .74, lr: .112, ar: .088, R: .34, hand: .14 };
     const shirtKind = o.hoodie || o.bomber ? 'knit' : o.jacket || o.collar === 'oxford' ? 'fine' : 'weave';
-    const shirtM = cloth(o.shirt, shirtKind, o.hoodie ? .97 : .88, o.hoodie ? .008 : .005), ribM = cloth(shade(o.shirt, .82), 'knit', .97, .012);
+    const shirtM = cloth(o.shirt, shirtKind, o.hoodie ? .97 : .88, o.hoodie ? .008 : .005); if (o.plaid) { shirtM.map = plaid(o.plaid[0], o.plaid[1]); shirtM.color.set(0xffffff); }
+    const ribM = cloth(shade(o.shirt, .82), 'knit', .97, .012);
     const pantsM = o.jeans ? cloth(o.pants, 'denim', .9, .009) : cloth(o.pants, o.jacket ? 'fine' : 'weave', .88);
     const skinM = porcelain(env, .5, .12), blackM = plain(0x151515, .45), whiteM = plain(0xf2f0ea, .7);
     const root = new THREE.Group(), ch = { root, opts: o, B };
@@ -117,7 +139,9 @@
     const pelvis = mesh(lathe([[B.w * .8, -.16], [B.w * .92, -.1], [B.w * .95, 0], [B.w * .93, .05], [0, .06]]), pantsM, hips, 0, -.02, 0); pelvis.scale.z = B.d / B.w;
     if (o.belt && !o.jacket && !o.hoodie && !o.bomber) {
       const belt = mesh(new THREE.CylinderGeometry(B.w * .97, B.w * .97, .05, 40, 1, true), cloth(o.belt, 'fine', .45), hips, 0, .035, 0); belt.scale.z = B.d / B.w * 1.03;
-      const bk = mesh(slab(.07, .05, .012, .008), metal(0xc9c9c9, env), hips, 0, .035, B.d * 1.0); }
+      if (o.buckle === 'big') { const bk = mesh(new THREE.CylinderGeometry(.052, .052, .016, 32).rotateX(Math.PI / 2), metal(0xd4d4d8, env, .18), hips, 0, .035, B.d * 1.02); bk.scale.set(1.25, .9, 1);
+        const rim = mesh(new THREE.TorusGeometry(.05, .006, 8, 32), metal(0xb0b0b6, env, .3), hips, 0, .035, B.d * 1.02 + .009); rim.scale.set(1.25, .9, 1); }
+      else mesh(slab(.07, .05, .012, .008), metal(0xc9c9c9, env), hips, 0, .035, B.d * 1.0); }
     if (o.jeans) for (const s of [-1, 1]) { // back pockets with contrast stitching
       const bp = mesh(slab(.11, .1, .006, .02), cloth(shade(o.pants, .9), 'denim', .9, .009), hips, s * B.w * .42, -.07, -B.d * .96); bp.rotation.y = Math.PI + s * .25; }
 
@@ -182,7 +206,7 @@
       for (const s of [-1, 1]) mesh(new THREE.BoxGeometry(.014, .38, .014), metal(0xb8b8b8, env), spine, s * .085, B.th - .25, chestZ * .94);
       mesh(new THREE.BoxGeometry(.03, .05, .012), metal(0xb8b8b8, env), spine, .085, B.th - .1, chestZ * .96);       // zipper pull
     } else {
-      const darker = cloth(shade(o.shirt, .9), shirtKind, .88);
+      const darker = cloth(shade(o.shirt, .9), shirtKind, .88); if (o.plaid) { darker.map = shirtM.map; darker.color.set(0xd6d6d6); }
       // collar: band around the neck + two pointed wings
       const band = mesh(new THREE.TorusGeometry(.115, .026, 10, 28), shirtM, spine, 0, B.th - .015, -.005); band.rotation.x = Math.PI / 2; band.scale.set(1.15, 1, 1);
       for (const s of [-1, 1]) { const f = mesh(plate([[0, 0], [s * .135, .02], [s * .085, -.125]], .016), shirtM, spine, s * .01, B.th + .005, chestZ * .6); f.rotation.x = -.5; f.rotation.y = s * .32; }
@@ -190,6 +214,10 @@
       mesh(new THREE.BoxGeometry(.045, nB * step + .03, .008), darker, spine, 0, B.th - .08 - (nB - 1) * step / 2, Fz(.4) + .004);   // placket
       for (let i = 0; i < nB; i++) { const y = B.th - .09 - i * step; mesh(new THREE.CylinderGeometry(.011, .011, .008, 12).rotateX(Math.PI / 2), whiteM, spine, 0, y, Fz(y) + .01); }
       if (o.collar === 'oxford') { const pk = mesh(slab(.085, .095, .006, .008), darker, spine, .115, B.th * .66, chestZ * .97); pk.rotation.y = .28; }
+      if (o.western) for (const sx of [-1, 1]) {   // two chest pockets with pointed flaps + a pearl snap each
+        const pk = mesh(slab(.09, .1, .006, .01), shirtM, spine, sx * .12, B.th * .62, chestZ * .965); pk.rotation.y = sx * .3;
+        const fl = mesh(plate([[-.05, 0], [.05, 0], [.05, -.025], [0, -.05], [-.05, -.025]], .008), darker, spine, sx * .12, B.th * .73, chestZ * .985); fl.rotation.y = sx * .3;
+        mesh(new THREE.SphereGeometry(.011, 10, 8), whiteM, spine, sx * .12, B.th * .69, chestZ * 1.01 + .006); }
       if (o.shirtHem !== false && o.collar === 'polo') { const hem = mesh(new THREE.CylinderGeometry(B.w * .92, B.w * .92, .03, 40, 1, true), darker, spine, 0, .015, 0); hem.scale.z = B.d / B.w * 1.02; }
     }
 
@@ -206,7 +234,7 @@
       const el = grp(sh, 0, -UA, 0);
       if (o.sleeves === 'short') { mesh(new THREE.SphereGeometry(B.ar * .62, 12, 10), skinM, el); mesh(tube(B.ar * .6, B.ar * .56, FA, false), skinM, el); }
       else { mesh(new THREE.SphereGeometry(B.ar * .98, 16, 12), shirtM, el); mesh(tube(B.ar * .98, B.ar * .95, FA - .02, false), shirtM, el);
-        const cuffM = o.jacket ? cloth(0xf6f6f6, 'fine', .7) : (o.hoodie || o.bomber) ? ribM : cloth(shade(o.shirt, .93), shirtKind, .88);
+        const cuffM = o.jacket ? cloth(0xf6f6f6, 'fine', .7) : (o.hoodie || o.bomber) ? ribM : o.plaid ? shirtM : cloth(shade(o.shirt, .93), shirtKind, .88);
         mesh(new THREE.CylinderGeometry(B.ar * (o.hoodie || o.bomber ? .86 : 1.0), B.ar * (o.hoodie || o.bomber ? .84 : 1.0), o.hoodie || o.bomber ? .07 : .05, 20), cuffM, el, 0, -FA + .03, 0);
         if (o.collar === 'oxford') mesh(new THREE.CylinderGeometry(.01, .01, .008, 10).rotateZ(Math.PI / 2), whiteM, el, s * B.ar * 1.0, -FA + .03, 0); }
       const wr = grp(el, 0, -FA, 0);
@@ -258,6 +286,13 @@
       mesh(new THREE.SphereGeometry(R * .075, 12, 8), cm, head, 0, R * 1.035, 0);
       mesh(new THREE.TorusGeometry(R * .12, .012, 6, 16, Math.PI), plain(shade(o.cap, .6)), head, 0, R * .66, -R * .76).rotation.x = .9;  // strap gap
     }
+    if (o.capFwd) { // baseball cap worn forward: crown with button, curved brim over the brows, strap gap at the back
+      const R = B.R, cm = cloth(o.capFwd, 'weave', .8); cm.side = THREE.DoubleSide;
+      const crown = mesh(new THREE.SphereGeometry(R * 1.05, 48, 18, 0, TAU, 0, Math.PI * .35), cm, head, 0, -R * .02, 0); crown.scale.set(1, 1.18, 1);
+      const brim = mesh(new THREE.CylinderGeometry(R * .7, R * .7, .03, 36, 1, false, -Math.PI / 2, Math.PI), cm, head, 0, R * .5, R * .76); brim.rotation.x = .24;
+      mesh(new THREE.SphereGeometry(R * .075, 12, 8), cm, head, 0, R * 1.15, 0);
+      mesh(new THREE.TorusGeometry(R * .12, .012, 6, 16, Math.PI), plain(shade(o.capFwd, .6)), head, 0, R * .55, -R * .86).rotation.x = -.9;
+    }
     if (o.mask) { // bandana over nose and mouth (eyes stay visible), triangle point + knot at the back
       const mm = cloth(o.mask, 'weave', .85); mm.side = THREE.DoubleSide; const R = B.R;
       mesh(new THREE.SphereGeometry(R * 1.03, 56, 18, 0, TAU, Math.PI * .575, Math.PI * .25), mm, head);               // wraps all the way round
@@ -272,7 +307,13 @@
       const ph = mesh(new THREE.BoxGeometry(.075, .15, .012), blackM, ch.arm[1].wr, 0, -B.hand * 1.1, B.hand * .75); ph.rotation.x = -.5;
       mesh(new THREE.PlaneGeometry(.065, .135), new THREE.MeshStandardMaterial({ color: 0x9fd0ff, emissive: 0x5aa0ff, emissiveIntensity: .8 }), ph, 0, 0, -.007).rotation.y = Math.PI;
     }
-    ch.face = name => { headMat.map = faceTex(name); };
+    ch.face = name => { headMat.map = faceTex(name, o.mustache); };
+    ch.face('smile');
+    // handcuffs: a steel ring on each wrist + a short chain; shown with pose({cuffs:true}) (use with gesture 'cuffed')
+    const cuffM = metal(0xc8cad0, env, .22), cuffs = [];
+    for (const s of [-1, 1]) { const r = mesh(new THREE.TorusGeometry(B.ar * .74, .018, 8, 24).rotateX(Math.PI / 2), cuffM, ch.arm[s].wr, 0, .015, 0); r.visible = false; cuffs.push(r); }
+    const chain = mesh(new THREE.CylinderGeometry(.006, .006, 1, 6), cuffM, root); chain.visible = false; cuffs.push(chain);
+    const _a = new THREE.Vector3(), _b = new THREE.Vector3();
 
     // Gestures: silent characters act with their hands. pose({gesture:'cross', gw:0..1}) blends one in.
     // Arm "R" = ch.arm[1], arm "L" = ch.arm[-1] (screen right/left when facing camera). [shX, shY, shZ, elX, elZ]
@@ -285,6 +326,7 @@
       facepalm: { 1: [-.95, .3, -.32, -2.5, -.35], nod: .32, hand: { 1: 'open' } },
       hips:     { 1: [.15, 0, .75, -1.35, -1.25], [-1]: [.15, 0, -.75, -1.35, 1.25], hand: { 1: 'fist', [-1]: 'fist' } },
       tada:     { 1: [-.7, 0, 1.0, -.25, 0], [-1]: [-.7, 0, -1.0, -.25, 0], hand: { 1: 'open', [-1]: 'open' } },
+      cuffed:   { 1: [-.42, .2, -.2, -.85, -.55], [-1]: [-.42, -.2, .2, -.85, .55], nod: .18, hand: { 1: 'fist', [-1]: 'fist' } },   // wrists together in front of the belt
     };
     ch.gestures = Object.keys(G);
     ch.pose = function (p = {}) {
@@ -309,6 +351,11 @@
       spine.rotation.y = sw * .07 * a; spine.rotation.x = (p.lean || 0) + .03 * a;
       neck.rotation.y = -sw * .05 * a + (p.look || 0); neck.rotation.x = (p.nod || 0) + (g && g.nod ? g.nod * gw : 0) + Math.sin(t * 2.1 + 1) * .01;
       neck.rotation.z = (p.tilt || 0) + (g && g.tilt ? g.tilt * gw : 0);
+      const cf = !!p.cuffs; cuffs.forEach(c => c.visible = cf);
+      if (cf) { root.updateMatrixWorld(true); ch.arm[-1].wr.localToWorld(_a.set(0, .015, 0)); ch.arm[1].wr.localToWorld(_b.set(0, .015, 0));
+        root.worldToLocal(_a); root.worldToLocal(_b); const L = _a.distanceTo(_b);
+        chain.position.copy(_a).add(_b).multiplyScalar(.5); chain.scale.set(1, Math.max(.01, L), 1);
+        chain.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), _b.clone().sub(_a).normalize()); }
     };
     ch.pose({});
     return ch;
