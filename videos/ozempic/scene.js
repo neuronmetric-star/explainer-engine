@@ -49,7 +49,7 @@
   }
 
   // OpenArt Wan 3.0 480p inserts (image-to-video from our paintings + props; no cast). Frames in art/C<n>/0001.jpg.. (30 fps)
-  const USE = { C1: true, C2: false, C3: false, C4: false };
+  const USE = { C1: true, C2: true, C3: true, C4: true };
   const CLIPS = { C1: { clip: 'C1/', n: 90, fps: 30, light: 'day' }, C2: { clip: 'C2/', n: 90, fps: 30, light: 'interior' },
     C3: { clip: 'C3/', n: 120, fps: 30, light: 'interior' }, C4: { clip: 'C4/', n: 60, fps: 30, light: 'interior' } };
   const pl = (c, fallback) => USE[c] ? c : fallback;
@@ -84,7 +84,7 @@
       { at: 'chunky', plate: pl('C1', '04'), zoom: [1.0, 1.05], focus: [[.5, .55], [.5, .55]] },
       { at: 'venom', plate: '05', zoom: [1.2, 1.3], focus: [[.55, .5], [.58, .5]] },
       { at: 'week', plate: pl('C3', '06'), zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .48]] },
-      { at: 'ozempic', plate: pl('C3', '06'), zoom: [1.3, 1.38], focus: [[.5, .45], [.5, .45]], clipFrom: 2.4 },
+      { at: 'ozempic', plate: pl('C3', '06'), zoom: [1.0, 1.04], focus: [[.55, .45], [.55, .45]], clipFrom: 2.4 },
       { at: 'stomach', plate: '03', zoom: [1.1, 1.2], focus: [[.5, .62], [.5, .62]] },
       { at: 'sink', plate: pl('C4', '03'), zoom: [1.0, 1.06], focus: [[.5, .5], [.5, .5]] },
       { at: 'brain', plate: '03', zoom: [1.1, 1.15], focus: [[.5, .45], [.5, .38]] },
@@ -174,7 +174,7 @@
           for (let i = 0; i < 7; i++) { const on = id === 'ozempic' || t > tw + i * .12, x = 540 + (i - 3) * 118;
             txt(K, days[i], { x, y: 300, size: 76, color: on ? '#14284f' : '#fff', stroke: 0, shadow: false, w: 100, border: '6px solid #000' }).style.background = on ? '#ffd23a' : 'rgba(0,0,0,.35)'; }
           txt(K, '1 SHOT = 1 WEEK', { y: 420, size: 66, color: 'gold', scale: popIn(K, t, tw + .9), a: id === 'week' && t < tw + .9 ? 0 : 1 });
-          if (id === 'ozempic') { txt(K, 'OZEMPIC', { x: pp.x, y: pp.y + 150 * ps, size: 96, scale: popIn(K, t, at('ozempic') + .1) }); }
+          if (id === 'ozempic') { txt(K, 'OZEMPIC', { x: cl ? 540 : pp.x, y: cl ? 1080 : pp.y + 150 * ps, size: 96, scale: popIn(K, t, at('ozempic') + .1) }); }
           break; }
         case 'stomach': case 'sink': {
           if (id === 'stomach') { const sq = 1 + .03 * Math.sin(t * 1.2); stomach(K, { w: 400 * s * sq });

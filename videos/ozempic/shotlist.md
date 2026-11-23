@@ -26,7 +26,14 @@ as accent) → 05 1992 hospital lab (amber lamp + institutional green, glowing a
 white + teal, one gold accent on the pen) → 07 noon food-truck park (bright blue sky, warm sun, Doug's mustard as accent).
 **Angles:** 01 eye-level wide across the break room · 02 low close detail on the counter · 03 straight-on diagram · 04 low wide,
 lizard's-eye level · 05 over-the-bench lab angle · 06 high angle down a clean lab line · 07 low wide from the grass with big sky.
-**OpenArt:** none needed (no water, fire or crowds; the sink and the body are props/diagram the engine animates).
+**OpenArt (Brian, Nov 23: "make using Wan 480"):** 4 image-to-video inserts, Wan 3.0, 480p, standard, no audio (240 credits total).
+Start frames = our paintings + props composited (`clips/C*_start.png`); no cast in clips; frames in `art/C1..C4/`.
+| Clip | Shots | Start frame | Motion | Credits |
+|---|---|---|---|---|
+| C1 (test) | chunky | 04 desert + P05 lizard | lizard breathes, turns, tongue flick; heat shimmer; push-in | 60 (3 s) |
+| C2 | q, burger, clue | 02 counter + P02 burger + P01 pen | steam curls, cheese drips; slow push-in | 60 (3 s) |
+| C3 | week, ozempic | 06 lab + P01 pen on the stand | robot arm moves, pen glints; push-in | 80 (4 s) |
+| C4 | sink | 03 backdrop + P07 sink | water swirls, one glug, doesn't drain | 40 (2 s) |
 
 ## Images
 | # | File | What |

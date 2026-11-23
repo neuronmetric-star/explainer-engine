@@ -31,3 +31,7 @@ search-result abstracts of the papers/pages listed (PubMed/PMC, KFF). Brian can 
 - Mounjaro (tirzepatide) copies GLP-1 plus a second gut hormone (GIP); left out for length (one idea per line).
 - Eng's VA patent story (VA declined to patent; he patented and licensed it to Amylin): details differ by source.
 - No advice on who should take or stop these drugs.
+
+## AI video inserts (not facts; illustration)
+- 4 short clips made with OpenArt Wan 3.0 (image-to-video, 480p) from our own ChatGPT paintings: the lizard on the rock, the burger,
+  the lab pen, the clogged sink. No real people. Personal Project → Uncategorized on OpenArt.
