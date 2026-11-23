@@ -1,0 +1,27 @@
+# SHORT (~1:05-1:10). DRAFT v1, waiting for Brian. Mode: Explainer, build-break-fix chain (Brian, Nov 23 2026:
+# "Doug builds the window, it fogs, drills the hole, reveal outer pane does the work / middle pane is the backup").
+# Structure borrowed from @1hidden_by_design's storm-drain video (docs/creators/storm-drain-study-2026-11-23.md).
+# Search phrase: "why do airplane windows have a hole" (first spoken sentence, on-screen first 2 s, caption line 1).
+# Payoff: the tiny hole isn't a flaw. It lets damp air out so the window doesn't fog, and it puts the same air on both
+#   sides of the backup pane, so the outside pane holds the whole push and the backup pane stays fresh for a crack.
+# Plant: Victor's "And if it cracks?" + "Every plan needs a backup." Mirror: "Every plan needs a backup. This one needed a hole."
+# Names (one word each, never swapped): "the outside pane", "the backup pane" (= the real middle pane), "the hole".
+# Real windows also have a thin inner scratch pane; left out on purpose (side trivia). Doug, Gary, Victor are fictional;
+# the window facts are real (sources.md). Ending: helicopter passes the window, Gary looks up (PLAYBOOK §1.12a).
+[#q] Why the heck do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
+[#card] See, Doug had a problem. He builds airplane windows.
+[#sky] Planes fly seven miles up, where the air's too thin to breathe.
+[#balloon] So the inside gets pumped full of air, like a balloon, [#push] shoving every window outward: [#milk] a {*gallon of milk|gallon of milk} on every square inch.
+[#pane1] Doug's plan: one thick pane, a sheet of clear plastic.
+[#victor] Victor, the inspector: "And if it {!cracks?"|cracks?"}
+[#pane2] Fine. Doug adds a backup pane. [#backup] Every plan needs a {*backup.|backup.}
+[#seal] He seals both panes airtight. [#bet] Honestly? I'd fly on it.
+[#takeoff] Gary takes the window seat. [#fog] It {!fogs.|fogs.} [#frost] Then it {!frosts.|frosts.}
+[#why] The air sealed between the panes was damp, like breath. [#cold] Up here, the outside pane is colder than a freezer. So, frost.
+[#drill] Doug drills one tiny {*hole|hole} in the backup pane. [#clear] The damp air escapes. Fog's gone.
+[#job] But that hole had a bigger job.
+[#same] Now the backup pane has the same air on both sides. No push. [#outer] The outside pane takes {*all of it.|all of it.}
+[#crack] If it cracks, the tiny hole leaks too slowly, and the backup pane takes over.
+[#mirror] Every plan needs a backup. This one needed a {*hole.|hole.}
+[#question] Window or aisle? One word.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

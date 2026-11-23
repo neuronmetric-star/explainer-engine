@@ -174,6 +174,18 @@ something to follow the next line, the script is broken.
 5. **What's the one object we can track to show the mechanism?** (one drop, one coin, one email.)
 6. **What does it cost them?** That's the consequence, then a dry last line.
 
+### 1.7a The build-break-fix chain (for "how does X work" explainers; from the storm-drain study, Nov 23 2026)
+When the answer is a **system that exists because simpler versions failed** (drains, windows, toilets, fridges), build it
+in front of the viewer. Study: `docs/creators/storm-drain-study-2026-11-23.md` (10.9M plays).
+- **Doug builds the simplest version → it breaks in a way you can SEE (fog, flood, fountain) → the fix → it breaks again.**
+  2–3 rounds in a short. The breaks are our clue: the part that behaves unexpectedly (§1.2).
+- **"But… So…" rhythm**: "But then a storm hits." / "So Doug adds a tank." A new twist every 10–12 s.
+- **Show it, then name it** ("This is a catch basin"), and use that name every time after (§1.6a).
+- **One silly everyday object** the eye can follow through the system (the tennis ball).
+- **The reveal is something everyone has seen** (the manhole, the window hole), and the **last line echoes the first**.
+- Still our format: "Why the heck…" hook on the search phrase, the narrator's bet, the helicopter, the CTA.
+  Example: `videos/airplane-window-hole/`.
+
 ### 1.9 Long-form skeleton (from Ray, @realraywilliam)
 | Time (of ~8:30) | Beat | Line pattern |
 |---|---|---|
