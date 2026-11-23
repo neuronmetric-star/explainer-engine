@@ -1,6 +1,6 @@
 # Shot list: "Why the heck do airplane windows have a tiny hole?" (short, ≈ 1:08–1:12)
 
-**Script:** approved Nov 23 2026 (`script.txt`, ≈ 196 story words + CTA C).
+**Script:** approved Nov 23 2026 (`script.txt`, ≈ 202 story words + CTA C; altitude lines made plainer at Brian's request).
 **Mode:** Explainer, build-break-fix chain (PLAYBOOK §1.7a).
 **Search phrase:** "why do airplane windows have a hole". **On-screen title for the first 2 s** (engine overlay, top band):
 `WHY DO AIRPLANE WINDOWS` (white) / `HAVE A HOLE?` (gold). The phrase is also caption line 1 in `post.md`.
@@ -54,6 +54,7 @@ stays, the hole stays, the arrows and labels add up. Each return to 02/04 shows 
 | q | 05 window seat, engine **hole dot** on the window; **title overlay** | hard open on the window, slow push-in to the hole | Gary seated, `look` at the hole, `tilt` .2, `flat` |
 | card | 02 workshop wide, P08 not shown; fuselage section with empty window slot behind | cut, low, slow push | Doug walks in to the bench (`walk` → stop), `smile`, `hips` |
 | sky | 03 sky diagram: P08 plane slides in from the left; engine `7 MILES UP` + a dashed line down to the mountains | cut, slow pull-back (makes the drop feel big) | none |
+| thin | 03: engine air dots: dense near the ground, only a few scattered up at the plane (light-blue dots) | slow push-in on the empty air around the plane | none |
 | balloon | 03: P08 plane puffs up (scale 1.0 → 1.08, bounce) like a balloon | punch-in | none |
 | push | 04 cutaway: white arrows on the cabin side push toward the empty window slot | hard cut, push-in | none |
 | milk | 04: P04 milk jugs drop in a tight grid against the slot, engine `≈ 8 LB` on one + `PER SQUARE INCH` | punch-in on the jugs, small shake on landing | none |

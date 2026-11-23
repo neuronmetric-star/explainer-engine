@@ -11,11 +11,11 @@
 # Last spoken line before the CTA is a do-it-yourself check (saves); the comment question WINDOW OR AISLE? is on screen + pinned.
 [#q] Why the heck do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
 [#card] See, Doug had a problem. He builds airplane windows.
-[#sky] Planes fly seven miles up, where the air's too thin to breathe.
-[#balloon] So the inside gets pumped full of air, like a balloon, [#push] shoving every window outward: [#milk] a {*gallon of milk|gallon of milk} on every square inch.
+[#sky] Planes fly seven miles up. [#thin] Up there, the air is so thin you couldn't breathe.
+[#balloon] So the plane pumps air inside, like blowing up a balloon. [#push] That air pushes out on every window, [#milk] like a {*gallon of milk|gallon of milk} on every square inch.
 [#pane1] Doug's plan: one thick pane, a sheet of clear plastic.
 [#victor] Victor, the inspector: "And if it {!cracks?"|cracks?"}
-[#pane2] Fine. Doug adds a backup pane. [#backup] Every plan needs a {*backup.|backup.}
+[#pane2] Doug adds a backup pane. [#backup] Every plan needs a {*backup.|backup.}
 [#seal] He seals both panes airtight. [#bet] Honestly? I'd fly on it.
 [#takeoff] Gary takes the window seat. [#fog] It {!fogs.|fogs.} [#frost] Then it {!frosts.|frosts.}
 [#why] The air sealed between the panes was damp, like breath. [#cold] Up here, the outside pane is colder than a freezer. So, frost.
