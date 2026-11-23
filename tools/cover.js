@@ -16,7 +16,7 @@ const dir = vdir(slug), FPS = 30;
   await page.waitForFunction('window.ready===true || window.loadError', null, { timeout: 60000 });
   const le = await page.evaluate('window.loadError'); if (le) throw new Error(le);
   await page.evaluate(`window.step(${Math.max(1, Math.round(+sec * FPS))},${1 / FPS})`);
-  await page.addStyleTag({ content: '#cap,#follow,#cursor,#flash{display:none!important}' });
+  await page.addStyleTag({ content: '#cap,#follow,#cursor,#flash,#ui > div{display:none!important}' });   // also hides the scene's K.text/K.line words (the headline replaces them)
   const frame = path.join(dir, '.cover_frame.png');
   await page.screenshot({ path: frame, type: 'png' });
   await browser.close();
