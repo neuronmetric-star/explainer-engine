@@ -4,7 +4,8 @@
 //  with eye highlights, big round white mitt hands (a finger only to point), real clothes (collars, cuffs, pockets, seams, rolled
 //  jeans, laced sneakers, dress shoes). Model sheets: node engine/lab/render-lab.js <out> --page cast-sheet.html
 //
-//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang'|'isidro', glasses, phone, mask, beanie, shirt, pants, envMap})
+//  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang'|'isidro', glasses, phone, mask, beanie, shirt, pants, envMap,
+//             hat:'hard'|'inspector'|'pilot'|'chef'|'top', hatColor, holdR/holdL:'clipboard'|'drill'|'magnifier'})
 //    ch.root            THREE.Group, feet at y=0, faces +z
 //    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw, handR, handL})
@@ -308,6 +309,60 @@
       const ph = mesh(new THREE.BoxGeometry(.075, .15, .012), blackM, ch.arm[1].wr, 0, -B.hand * 1.1, B.hand * .75); ph.rotation.x = -.5;
       mesh(new THREE.PlaneGeometry(.065, .135), new THREE.MeshStandardMaterial({ color: 0x9fd0ff, emissive: 0x5aa0ff, emissiveIntensity: .8 }), ph, 0, 0, -.007).rotation.y = Math.PI;
     }
+    // ---------- role hats (Nov 23 2026): CHAR.make({hat:'hard'|'inspector'|'pilot'|'chef'|'top', hatColor}) ----------
+    // Sit above the brows; same matte/glossy materials as the rest of the cast so the look stays consistent.
+    if (o.hat) { const R = B.R, k = o.hat; ch.hat = grp(head);
+      if (k === 'hard') {             // construction hard hat: glossy dome, brim all round (longer in front), ridge front to back
+        const hm = new THREE.MeshStandardMaterial({ color: o.hatColor || 0xf2b705, roughness: .38, metalness: 0, envMap: env, envMapIntensity: .35 }); hm.side = THREE.DoubleSide;
+        const dome = mesh(new THREE.SphereGeometry(R * 1.08, 48, 20, 0, TAU, 0, Math.PI * .36), hm, ch.hat, 0, R * .02, 0); dome.scale.y = 1.06;
+        const brim = mesh(new THREE.CylinderGeometry(R * 1.2, R * 1.22, .024, 56), hm, ch.hat, 0, R * .47, R * .1); brim.scale.z = 1.1;
+        const rg = new THREE.TorusGeometry(R * 1.1, R * .055, 10, 40, Math.PI * .6); rg.rotateZ(Math.PI * .2); rg.rotateY(Math.PI / 2);
+        mesh(rg, hm, ch.hat, 0, R * .03, 0);
+      } else if (k === 'inspector' || k === 'pilot') {   // peaked cap: stiff crown wider at the top, dark band, shiny black visor, gold badge
+        const top = o.hatColor || (k === 'pilot' ? 0xf4f2ec : 0x2b3a67);
+        mesh(new THREE.CylinderGeometry(R * 1.12, R * .97, R * .4, 56), cloth(top, 'fine', .8), ch.hat, 0, R * .74, 0);
+        mesh(new THREE.CylinderGeometry(R * .985, R * .985, R * .17, 56, 1, true), plain(0x16161a, .6), ch.hat, 0, R * .58, 0);
+        const visor = mesh(new THREE.CylinderGeometry(R * .66, R * .66, .024, 36, 1, false, -Math.PI / 2, Math.PI), glossy(0x111114, env, .15), ch.hat, 0, R * .5, R * .58); visor.rotation.x = .28;
+        const gold = metal(0xd4a83a, env, .3);
+        if (k === 'pilot') { mesh(new THREE.BoxGeometry(R * .42, R * .07, .02), gold, ch.hat, 0, R * .78, R * 1.0); mesh(new THREE.SphereGeometry(R * .07, 12, 10), gold, ch.hat, 0, R * .78, R * 1.01); }
+        else mesh(new THREE.CylinderGeometry(R * .1, R * .1, .02, 20).rotateX(Math.PI / 2), gold, ch.hat, 0, R * .78, R * 1.0);
+      } else if (k === 'chef') {      // white toque: pleated band + puffy top
+        const wm = cloth(o.hatColor || 0xfbfaf6, 'weave', .95);
+        mesh(new THREE.CylinderGeometry(R * .99, R * .98, R * .42, 48, 1, true), wm, ch.hat, 0, R * .66, 0);
+        for (let i = 0; i < 5; i++) { const a = i / 5 * TAU; mesh(new THREE.SphereGeometry(R * .48, 24, 18), wm, ch.hat, Math.sin(a) * R * .45, R * 1.12, Math.cos(a) * R * .45); }
+        mesh(new THREE.SphereGeometry(R * .55, 24, 18), wm, ch.hat, 0, R * 1.28, 0);
+      } else if (k === 'top') {       // black top hat with a red band
+        const bm = cloth(o.hatColor || 0x17171b, 'fine', .55);
+        mesh(new THREE.CylinderGeometry(R * 1.08, R * 1.08, .022, 56), bm, ch.hat, 0, R * .62, 0);
+        mesh(new THREE.CylinderGeometry(R * .7, R * .66, R * 1.0, 48), bm, ch.hat, 0, R * 1.12, 0);
+        mesh(new THREE.CylinderGeometry(R * .672, R * .668, R * .16, 48, 1, true), cloth(0xb3202c, 'fine', .6), ch.hat, 0, R * .72, 0);
+      }
+    }
+    // ---------- held props (Nov 23 2026): CHAR.make({holdR, holdL}) 'clipboard'|'drill'|'magnifier' ----------
+    // Gripped in the mitt (that hand defaults to 'fist'). ch.held[±1] is the prop group; toggle .visible from a scene.
+    ch.held = {};
+    for (const s of [-1, 1]) { const what = s === 1 ? o.holdR : o.holdL; if (!what) continue;
+      const g = ch.held[s] = grp(ch.arm[s].wr, 0, -B.hand * .78, 0), H = B.hand;
+      if (what === 'clipboard') {     // carried at the side: board flat along the leg, held by its top edge
+        const bd = grp(g, 0, -H * .2, H * .25); bd.rotation.x = .12;
+        mesh(new THREE.BoxGeometry(.014, .34, .25), plain(0x9a6a3c, .7), bd, 0, -.17, 0);
+        const pp = mesh(new THREE.PlaneGeometry(.21, .28), plain(0xf7f5ee, .9), bd, s * .009, -.19, 0); pp.rotation.y = s * Math.PI / 2;
+        for (let i = 0; i < 5; i++) { const ln = mesh(new THREE.PlaneGeometry(.15, .008), plain(0x9aa7c4, .9), bd, s * .0095, -.1 - i * .045, .02); ln.rotation.y = s * Math.PI / 2; }
+        mesh(new THREE.BoxGeometry(.03, .035, .1), metal(0xc8cad0, env, .25), bd, 0, -.012, 0);
+      } else if (what === 'drill') {  // mitt = the grip; body runs past the fist along the forearm line, bit at the tip (points where the fist points)
+        const ym = glossy(0xe39a10, env, .45), km = plain(0x1d1d20, .6);
+        const body = grp(g, 0, 0, H * .55);
+        mesh(new THREE.CylinderGeometry(.06, .065, .3, 22), ym, body, 0, -.12, 0);                         // motor body
+        mesh(new THREE.CylinderGeometry(.068, .068, .05, 22), km, body, 0, -.02, 0);                       // vent ring
+        mesh(new THREE.CylinderGeometry(.04, .03, .07, 18), km, body, 0, -.3, 0);                          // chuck
+        mesh(new THREE.CylinderGeometry(.009, .009, .14, 8), metal(0xbfc3c9, env, .2), body, 0, -.4, 0);   // bit
+        mesh(new THREE.BoxGeometry(.09, .1, .12), ym, g, 0, H * .15, -H * .05);                           // battery pack behind the fist
+      } else if (what === 'magnifier') { // handle in the fist, lens ring beyond the hand
+        mesh(new THREE.CylinderGeometry(.024, .028, .22, 12), plain(0x5a3418, .6), g, 0, -.08, 0);
+        const ring = grp(g, 0, -.34, 0); mesh(new THREE.TorusGeometry(.14, .018, 12, 40), metal(0xd4a83a, env, .3), ring);
+        const lens = mesh(new THREE.CircleGeometry(.14, 40), new THREE.MeshPhysicalMaterial({ color: 0xd8eeff, roughness: .05, transmission: .6, transparent: true, opacity: .45, envMap: env }), ring); lens.material.side = THREE.DoubleSide;
+      }
+    }
     ch.face = name => { headMat.map = faceTex(name, o.mustache); };
     ch.face('smile');
     // handcuffs: a steel ring on each wrist + a short chain; shown with pose({cuffs:true}) (use with gesture 'cuffed')
@@ -346,7 +401,8 @@
         A.sh.rotation.set(sx, sy, sz); A.el.rotation.set(ex, 0, ez);
         A.sh.position.y = B.th * .83 + (g && g.up ? g.up * gw : 0);
         const own = s === 1 ? p.handR : p.handL, gh = g && g.hand && g.hand[s];
-        if (own) setHand(s, own, own, 0); else setHand(s, rz > .5 ? 'open' : 'relaxed', gh || 'relaxed', gh ? gw : 0);
+        const base = ch.held[s] ? 'fist' : rz > .5 ? 'open' : 'relaxed';
+        if (own) setHand(s, own, own, 0); else setHand(s, base, gh || base, gh ? gw : 0);
       }
       hips.position.y = hipY - .02 * a + .035 * a * Math.abs(Math.cos(ph)) + Math.sin(t * 2.1) * .004;
       spine.rotation.y = sw * .07 * a; spine.rotation.x = (p.lean || 0) + .03 * a;

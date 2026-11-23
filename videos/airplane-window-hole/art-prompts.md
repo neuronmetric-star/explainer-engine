@@ -1,4 +1,4 @@
-# ChatGPT batch file: airplane-window-hole (15 images) · art standard v2
+# ChatGPT batch file: airplane-window-hole (13 images) · art standard v2
 
 **How to use:** open a **new ChatGPT chat**, paste the **START** block, then **BATCH 1 only**. Send me those 3 images first.
 I'll check them and send fix-ups if anything looks plain, then you do BATCH 2, 3 and 4.
@@ -139,11 +139,7 @@ P04_milk_jug.png: ONE plastic gallon jug of milk, chunky and slightly cartoon, s
 ```
 
 ```
-BATCH 4 (props P05–P08, all on solid pure green #00FF00)
-P05_clipboard.png: An inspector's clipboard seen straight from the front: brown hardboard with a shiny steel clip, a sheet of paper with a column of empty check boxes and blank lines (no words), a pen tucked under the clip. One personality detail: a coffee ring on the corner of the paper. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text, no numbers.
-
-P06_drill.png: A chunky cordless power drill, mustard yellow with black grips, seen exactly from the side pointing RIGHT, a small thin drill bit, a battery pack at the bottom. One personality detail: a scuff and a bit of tape on the handle. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text, no logos.
-
+BATCH 4 (props P07–P08, all on solid pure green #00FF00; P05 clipboard and P06 drill are now built into the characters)
 P07_sealant_gun.png: A caulk / sealant gun seen from the side pointing RIGHT: red metal frame and trigger, a white tube loaded in it, a small blob of white sealant at the tip. One personality detail: a dried drip on the tube. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
 
 P08_airliner_side.png: THE PLANE alone, small and complete, seen exactly from the side, facing RIGHT, in level flight: white body, teal belly stripe, thin mustard pinstripe, a row of small oval windows, wings and engines, a rounded tail, no logos and no lettering. Light from the upper left with a soft highlight, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.

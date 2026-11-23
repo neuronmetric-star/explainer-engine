@@ -87,7 +87,21 @@ function portrait() { labels.innerHTML = ''; document.getElementById('t').textCo
   const bg = new THREE.Color(0xc9ccd2).convertSRGBToLinear(); renderer.setScissorTest(false); renderer.setViewport(0, 0, W, H); renderer.setClearColor(bg); renderer.clear();
   const sc = one({ outfit: new URLSearchParams(location.search).get('o') || 'isidro' }, ch => { ch.face('flat'); ch.pose({ t: 1 }); }); sc.background = bg;
   const cam = new THREE.PerspectiveCamera(16, 1, .1, 100); cam.position.set(0, 1.85, 4.6); cam.lookAt(0, 1.78, 0); view(sc, cam, 0, 0, W, H); return true; }
-window.SHOT_COUNT = CAST.length + 2;
-window.renderShot = i => i < CAST.length ? sheet(i) : i === CAST.length ? lineup() : portrait();
+// role hats + held props (Nov 23 2026): render-lab --shot <CAST.length+2>
+function roles() { labels.innerHTML = ''; document.getElementById('t').textContent = 'ROLES'; document.getElementById('s').textContent = 'CHAR.make({hat, holdR, holdL})';
+  renderer.setScissorTest(false); renderer.setViewport(0, 0, W, H); renderer.setClearColor(BG); renderer.clear();
+  const R = [['HARD HAT + DRILL', { outfit: 'hoodie', hat: 'hard', holdR: 'drill' }, 'smile', null],
+    ['INSPECTOR + CLIPBOARD', { outfit: 'suit', hat: 'inspector', holdL: 'clipboard' }, 'flat', 'point'],
+    ['PILOT', { outfit: 'oxford', hat: 'pilot' }, 'smile', 'hips'],
+    ['CHEF', { outfit: 'polo', hat: 'chef' }, 'happy', 'tada'],
+    ['TOP HAT', { outfit: 'suit', hat: 'top' }, 'smirk', 'cross'],
+    ['MAGNIFIER', { outfit: 'oxford', holdR: 'magnifier' }, 'surprised', 'mag']];
+  const cam = new THREE.PerspectiveCamera(24, 1, .1, 100);
+  R.forEach(([n, o, f, g], k) => { const col = k % 3, row = (k / 3) | 0;
+    const sc = one(o, ch => { ch.root.rotation.y = -.35; ch.face(f); ch.pose({ t: 1, gesture: g && g !== 'mag' ? g : undefined, gw: g && g !== 'mag' ? 1 : 0, armR: g === 'mag' ? { raise: .85 } : g ? undefined : { fwd: -1.3 } }); });
+    cam.position.set(0, 1.4, 7.0); cam.lookAt(0, 1.22, 0); view(sc, cam, 20 + col * 350, 200 + row * 860, 340, 800); label(n, 20 + col * 350 + 170, 200 + row * 860 + 790, 340); });
+  return true; }
+window.SHOT_COUNT = CAST.length + 3;
+window.renderShot = i => i < CAST.length ? sheet(i) : i === CAST.length ? lineup() : i === CAST.length + 1 ? portrait() : roles();
 window.ready = true;
 </script></body></html>

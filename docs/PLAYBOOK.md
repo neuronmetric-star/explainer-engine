@@ -425,6 +425,10 @@ to the cast gets checked against those sheets.
 | **Gang member** | `gang`: dark hoodie, black jeans, beanie, bandana over nose and mouth (eyes visible); vary with `{shirt, mask}` | street crew / gang (`robot-dogs-haiti`). Never armed, never violent on screen |
 | **Robot dog** | `CHAR.robodog({rifle})`: gray four-legged robot, camera head with glowing lenses, optional mounted rifle (never fires) | robots, machines that "go first" (`robot-dogs-haiti`). Walks with a trot gait: `pose({walk, walkAmt, look})` |
 
+**Role hats and held props (Nov 23 2026):** `CHAR.make({hat:'hard'|'inspector'|'pilot'|'chef'|'top', hatColor, holdR/holdL:'clipboard'|'drill'|'magnifier'})`.
+Same cast, dressed for the job (Doug in a hard hat, Victor the inspector). The holding hand defaults to a fist; `ch.held[±1].visible` toggles the prop.
+Model sheet: `node engine/lab/render-lab.js <out> --page cast-sheet.html --shot 9`.
+
 Use **only the characters the story needs** (usually 2–3). New outfits are added in `OUTFITS` when a
 topic needs one (chef, pilot, doctor…).
 
@@ -518,6 +522,22 @@ Characters always get a soft front fill so faces read, plus contact shadows on t
 One word at a time, white heavy sans with a thick black outline, centered at about y 1270 of 1920.
 Gold = key term or win, red = loss or danger. Nothing else ever sits in the caption band. Keep
 faces and props out of the top 140 px and the bottom 380 px (app UI).
+
+### 3.5 Visual rules v3 (Brian, Nov 23 2026; from the reference studies in `docs/creators/`)
+Same painted 2D world and the same cast. These rules make the mechanism easier to *see*:
+1. **One cutaway painting in every explainer.** A cross-section that shows the hidden inside and the outside at once
+   (under the street, inside the window, inside the wall). It's the video's diagram plate; props and arrows animate on it.
+2. **Growing sets.** Return to the same plate and let it build up (panes slot in, the hole stays, the tunnel grows) instead of a new
+   background for every beat. Each return shows everything added so far. Fewer paintings, clearer story.
+3. **The color code (same in every video, so viewers learn it):** white arrows = air / force · light blue = water / moisture ·
+   red = crack / danger / loss · gold = the answer · gold dashed line = the normal level. Captions keep gold = key word, red = loss.
+4. **Numbers become objects:** piles, jugs, stacks, a counter ticking up. A bare number only when nothing physical fits.
+5. **Pace: something changes every ≈ 2 s** (was 2–3 s): inside a long cue add a punch-in, a prop arriving or a gesture.
+6. **Series banner `THE HECK?`** (Brian's pick): a small dark rounded pill with white text, top center (y ≈ 150–200), on screen the whole
+   video, drawn by the engine. The 2-second title sits under it. Never in the caption band.
+7. **Do-it-yourself ending:** when the topic allows, the last spoken line before the CTA is a check the viewer can do
+   ("Next flight, find the hole.") → saves. The comment question moves on screen + pinned comment.
+8. **Role hats and held props are engine-built** (§2): don't paint a clipboard, drill or magnifier as a prop.
 
 ---
 

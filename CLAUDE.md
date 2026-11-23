@@ -19,6 +19,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **Camera always moving**: push-ins, tracking walk-ins, hard cuts on reveal words; on paintings only
   zoom/pan (feet stay planted). Something changes every 2–3 s. No fades.
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
+- **Visual rules v3** (PLAYBOOK §3.5): one cutaway painting per explainer, growing sets, the color code (white = air/force, light blue = water,
+  red = danger, gold = answer), numbers as objects, a change every ≈ 2 s, the `THE HECK?` series banner, a do-it-yourself last line.
 - **Every video is short form** (Brian, Nov 21 2026; don't ask about length): ≈ 1:05–1:12 final, 175–190 story words + CTA,
   just over TikTok's 1-minute payout line, never under 1:02, never over 1:15; hook → middle → end (PLAYBOOK §1.11).
   Ray's skeleton + Xevi's narrator personality, compressed (`docs/creators/ray-xevi-study.md`). Long form is retired.
@@ -96,7 +98,7 @@ commit and push. Answer from the sheet, never from memory. Trend sheets and fini
 before every picture change · lines starting `#` are comments. Numbers as words in the spoken part.
 
 ## Engine reference
-- **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo'|'president'|'gang', phone, mask, beanie, envMap})` →
+- **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo'|'president'|'gang', phone, mask, beanie, hat:'hard'|'inspector'|'pilot'|'chef'|'top', holdR/holdL:'clipboard'|'drill'|'magnifier', envMap})` →
   `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
   `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw, handR, handL})`;
   gestures `point|wave|shrug|cross|think|facepalm|hips|tada`; hands = big round mitts `fist|relaxed|open|point` (no separate fingers). Pure functions of time.

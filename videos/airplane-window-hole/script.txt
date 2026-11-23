@@ -7,7 +7,8 @@
 # Plant: Victor's "And if it cracks?" + "Every plan needs a backup." Mirror: "Every plan needs a backup. This one needed a hole."
 # Names (one word each, never swapped): "the outside pane", "the backup pane" (= the real middle pane), "the hole".
 # Real windows also have a thin inner scratch pane; left out on purpose (side trivia). Doug, Gary, Victor are fictional;
-# the window facts are real (sources.md). Ending: helicopter passes the window, Gary looks up (PLAYBOOK §1.12a).
+# the window facts are real (sources.md). Ending: helicopter over the tarmac, Doug looks up (PLAYBOOK §1.12a).
+# Last spoken line before the CTA is a do-it-yourself check (saves); the comment question WINDOW OR AISLE? is on screen + pinned.
 [#q] Why the heck do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
 [#card] See, Doug had a problem. He builds airplane windows.
 [#sky] Planes fly seven miles up, where the air's too thin to breathe.
@@ -23,5 +24,5 @@
 [#same] Now the backup pane has the same air on both sides. No push. [#outer] The outside pane takes {*all of it.|all of it.}
 [#crack] If it cracks, the tiny hole leaks too slowly, and the backup pane takes over.
 [#mirror] Every plan needs a backup. This one needed a {*hole.|hole.}
-[#question] Window or aisle? One word.
+[#question] Next flight, find the {*hole.|hole.}
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
