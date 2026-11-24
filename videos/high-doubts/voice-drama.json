@@ -1,0 +1,8 @@
+{ "segments": [
+  { "from": "q", "to": "couch", "gain": 3, "punch": true, "pauseAfter": 0.15 },
+  { "from": "crack1", "to": "better1", "pauseAfter": 0.9 },
+  { "from": "chick2", "to": "ate", "tempo": 0.92, "pauseAfter": 0.3 },
+  { "from": "crack3", "to": "better3", "pauseAfter": 1.0 },
+  { "from": "crack4", "to": "question", "pauseAfter": 0.9 },
+  { "from": "cta", "tempo": 1.08 }
+] }
