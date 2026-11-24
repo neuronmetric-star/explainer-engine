@@ -139,7 +139,7 @@
           txt('GIANTS?', { y: 300, size: 120, color: 'red', scale: popIn(K, t, at('giants') + .2), rot: -.05 }); qmarks({ x: a.x + 70 * sc, y: a.y - 200 * sc }, 1.4); break; }
         case 'diary': case 'sand': {
           const a = p1(), sc = s(); K.prop('PYR', { x: a.x + 70 * sc, y: a.y - 140 * sc, w: 320 * sc });
-          if (id === 'diary') { K.prop('PAPY', { x: a.x + 300 * sc, y: a.y - 260 * sc, w: 300 * sc * K.pop(K.clamp01((t - at('diary') - .2) / .35)), rot: .05 });
+          if (id === 'diary') { K.prop('PAPY', { x: 770, y: 650, w: 540 * K.pop(K.clamp01((t - at('diary') - .2) / .35)), rot: .05 });
             txt("MERER'S DIARY", { y: 300, size: 84, color: 'gold', scale: popIn(K, t, at('diary') + .2) });
             if (t > at('merer')) txt('4,500 YEARS OLD', { y: 400, size: 58, scale: popIn(K, t, at('merer') + .2) }); }
           else { for (let i = 0; i < 3; i++) K.flow(t, a.x - 120 * sc, a.y - 60 * sc + i * 40 * sc, a.x + 300 * sc, a.y - 60 * sc + i * 40 * sc, { color: '#9fd8ff', width: 16, ph: i * .3, speed: .9 });
@@ -152,19 +152,19 @@
           if (t > at('dinos') + 2) txt('"MAYBE THE BONES ARE FAKE"', { y: 400, size: 50, scale: popIn(K, t, at('dinos') + 2) });
           break; }
         case 'chicken': {   // T. rex and the chicken: cousins
-          const a = p1(), b = p2(), sc = s(); K.prop('TREX', { x: a.x + 60 * sc, y: a.y - 110 * sc, w: 380 * sc });
-          const u = K.pop(K.clamp01((t - at('chick2')) / .35)); if (u > 0) K.prop('CHICK', { x: b.x, y: b.y - 90 * sc - 10 * Math.abs(Math.sin(t * 7)), w: 230 * sc * u });
+          const a = p1(), b = p2(), sc = s(); K.prop('TREX', { x: a.x + 110 * sc, y: a.y - 150 * sc, w: 440 * sc });
+          const u = K.pop(K.clamp01((t - at('chick2')) / .35)); if (u > 0) K.prop('CHICK', { x: b.x + 150 * sc, y: b.y - 120 * sc - 10 * Math.abs(Math.sin(t * 7)), w: 240 * sc * u });
           txt("T. REX'S CLOSEST LIVING COUSIN…", { y: 300, size: 54, scale: popIn(K, t, at('chicken') + .1) });
           if (t > at('chick2')) { stamp('THE CHICKEN', at('chick2'), 'gold', 400, 100);
-            const N = 26; let prev = null; const A = { x: a.x + 120 * sc, y: a.y - 260 * sc }, B = { x: b.x, y: b.y - 200 * sc };
+            const N = 26; let prev = null; const A = { x: a.x + 200 * sc, y: a.y - 330 * sc }, B = { x: b.x + 150 * sc, y: b.y - 260 * sc };
             for (let k = 0; k <= N * K.ease((t - at('chick2') - .3) / .6); k++) { const v = k / N, q = { x: K.lerp(A.x, B.x, v), y: K.lerp(A.y, B.y, v) - Math.sin(v * PI) * 120 * sc }; if (prev) K.line(prev.x, prev.y, q.x, q.y, { color: 'gold', width: 9 }); prev = q; } }
           break; }
         case 'round': {   // looking up: is the Earth even round?
           txt('IS EARTH EVEN ROUND?', { y: 300, size: 80, color: 'red', scale: popIn(K, t, at('round') + .2) });
           qmarks({ x: 540, y: 900 }, 1.6); break; }
         case 'sticks': {   // two sticks, two different shadows → the Earth curves
-          const a = p1(), b = p2(), sc = s(); K.prop('STICK', { x: a.x + 80 * sc, y: a.y - 80 * sc, w: 280 * sc });
-          if (t > at('sticks') + .8) K.prop('STICK', { x: b.x, y: b.y - 60 * sc, w: 200 * sc * K.pop(K.clamp01((t - at('sticks') - .8) / .3)), flip: true });
+          const a = p1(), b = p2(), sc = s(); K.prop('STICK', { x: a.x + 90 * sc, y: a.y - 90 * sc, w: 380 * sc });
+          if (t > at('sticks') + .8) K.prop('STICK', { x: b.x - 80 * sc, y: b.y - 60 * sc, w: 280 * sc * K.pop(K.clamp01((t - at('sticks') - .8) / .3)), flip: true });
           txt('STICKS + SHADOWS', { y: 300, size: 84, color: 'gold', scale: popIn(K, t, at('sticks') + .1) });
           if (t > at('bc')) txt('≈ 240 BC', { y: 400, size: 70, color: '#fff', scale: popIn(K, t, at('bc') + .1) });
           break; }
