@@ -101,7 +101,7 @@
     shakes: [['scream+0.3', .45, .7], ['milk+0.5', .25, .3], ['crack', .3, .45]],
     flashes: [],
     follow: { from: 'cta+0.3' },
-    tail: 1.2,
+    tail: 1.0,
 
     build(K) {   // the door for the comparison shot: a plain wooden door in a frame, standing on the workshop floor
       const g = new THREE.Group(), wood = new THREE.MeshStandardMaterial({ color: new THREE.Color(0xb07a48).convertSRGBToLinear(), roughness: .7 });

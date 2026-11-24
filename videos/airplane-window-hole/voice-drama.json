@@ -1,0 +1,66 @@
+{
+ "segments": [
+  {
+   "from": "scream",
+   "to": "q",
+   "gain": 9,
+   "punch": true,
+   "pauseAfter": 0.15
+  },
+  {
+   "from": "look",
+   "to": "card",
+   "tempo": 0.9,
+   "pauseAfter": 0.2
+  },
+  {
+   "from": "card",
+   "to": "layers",
+   "tempo": 1.13
+  },
+  {
+   "from": "seal",
+   "to": "fog",
+   "tempo": 1.0,
+   "pauseAfter": 0.15
+  },
+  {
+   "from": "fault",
+   "to": "drill",
+   "tempo": 1.1
+  },
+  {
+   "from": "job2",
+   "to": "same",
+   "tempo": 0.86,
+   "pauseBefore": 0.3,
+   "pauseAfter": 0.25
+  },
+  {
+   "from": "door",
+   "to": "outer",
+   "tempo": 0.94
+  },
+  {
+   "from": "crack",
+   "to": "trickle",
+   "tempo": 0.9,
+   "pauseAfter": 0.25
+  },
+  {
+   "from": "mirror",
+   "to": "question",
+   "tempo": 0.9,
+   "pauseAfter": 0.2
+  },
+  {
+   "from": "cta",
+   "tempo": 1.15
+  },
+  {
+   "from": "fog",
+   "to": "fault",
+   "tempo": 1.06
+  }
+ ]
+}
