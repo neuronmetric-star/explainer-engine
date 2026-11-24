@@ -19,6 +19,10 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 ## The scorecard (all "yes" before Brian sees it)
 **Script**
 - [ ] **Voice hook:** first words are a shouted "WHAT THE HECK?!", then the search phrase as a plain question.
+- [ ] **Hook line = YOU + the object + the surprise** (creator studies Nov 22–23: storm drain 10.9M, cutting board 6.4M, hay hole 9.2M). Best types, in order:
+      (1) reverse a habit the viewer has ("If you never print to save ink, you're wasting it" / "those gray lines are not just knife marks"),
+      (2) a "what if you…" scenario with action in second 0 ("If you cut a hole in your street…"), (3) the whole absurd outcome in one sentence (Ray).
+      Doug and Gary come in at line 2–3, never as the hook (a stranger's name in second 3 is a speed bump).
 - [ ] **The mystery is shown in the first 5 s** ("Look closely. A tiny hole. Looks like a mistake. It's not.").
 - [ ] **A 10-year-old understands every line.** No jargon. If a word needs Google, swap it (pane → layer, pressure → push).
 - [ ] **One idea per sentence**; every "it" clearly points to one thing ("His window fogs up", not "It fogs").
