@@ -1,0 +1,12 @@
+{ "segments": [
+  { "from": "scream", "to": "q", "gain": 9, "punch": true },
+  { "from": "q", "to": "look", "tempo": 0.95, "pauseAfter": 0.15 },
+  { "from": "card", "to": "bet", "tempo": 1.14 },
+  { "from": "guard", "to": "real", "tempo": 1.06 },
+  { "from": "real", "to": "melt", "tempo": 1.06 },
+  { "from": "melt", "to": "picture", "tempo": 0.96 },
+  { "from": "picture", "to": "weeks", "tempo": 0.96 },
+  { "from": "weeks", "to": "mirror", "tempo": 1.12 },
+  { "from": "question", "to": "cta", "tempo": 1.0 },
+  { "from": "cta", "tempo": 1.15 }
+] }
