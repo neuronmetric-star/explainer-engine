@@ -39,6 +39,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 - [ ] Few words on screen: hook title, key numbers, 1–2 labels, the final idea. Nothing in the caption band.
 - [ ] Every key comparison is a picture (e.g. the door shot).
 - [ ] Bodies are never cut by a straight line: cover with the real outline of a painted object, or reframe.
+- [ ] **Seated cast sits ON the seat** (bed, chair, bench): hips over the cushion, feet on the floor, checked in the WIDE shot.
 - [ ] Faces readable, nobody cropped at the frame edge, the follow button clear of heads.
 - [ ] **The signature goodbye:** the last story line whip-pans to the city-sunset rooftop (`E01`), the helicopter crosses, the winner looks up, then the CTA.
 
@@ -58,6 +59,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 | Nov 24 | airplane-windows-round | "Remove tags. My voice recorder does not understand them" | a CLEAN copy with drama by punctuation only (`…`, `!`, short lines, no CAPS, no brackets) | every voice-direction.md ends with a clean, tag-free copy |
 | Nov 24 | airplane-windows-round | "always develop a strong story any viewer can follow" | the retell test added to the scorecard | retell in 3 sentences |
 | Nov 24 | sleep-two-minutes | "Make sure visual hook is very strong" | frame 1 = the strange thing at 5× (sleeping Gary + giant Z's), crash-zoom out in 0.55 s, white flash + shake + sting on the scream, then HOLD a two-shot with the screamer fully in frame | hook check on stills: at 0.05 s the strange thing fills the frame; at 0.6 s the screamer is whole, big and mid-scream (`flashes` + `shakes` on scream+0.28) |
+| Nov 24 | sleep-two-minutes | "They are not on the bed. Or chair." | measured the painting on a pixel grid: hips placed over the seat (not the feet in front of it), root height = seat height − 0.92 (bed ≈ .71 m → −.21, armchair ≈ .45 m → −.47), thighs sloped on tall seats so feet touch the floor | seated cast: grid the painting, put the hips ON the seat, check the wide shot before the close-up |
 
 ## Results (fill in on the Sunday check)
 | Video | Posted | Views (7 days) | 3-s hold | Watched to end | Shares | Saves | What it teaches |
