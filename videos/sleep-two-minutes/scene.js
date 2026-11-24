@@ -14,7 +14,7 @@
     sunset: { key: [0xffb070, 2.6, [-12, 3, 2]], hemi: [0xffc8b0, 0x8a6a80, .8], front: [0xffe8dc, 1.0], shadow: [0x4a2a5a, .42] },
   };
   // B01 spots (image px): Doug on the bed edge, Gary in the armchair (feet on the floor in front of each seat)
-  const DOUG = [285, 876], GARY = [776, 776], BELL = [300, 318], DOGBED = [540, 705];   // measured: bed edge floor line + mattress top ≈ .71 m; armchair seat ≈ .45 m
+  const CHAIR = [776, 776], PILLOW = [140, 590], BELL = [300, 318], DOGBED = [540, 705];   // measured: armchair seat ≈ .45 m; Gary's head on the pillow, the duvet (occluder) over him
 
   window.SCENE = {
     banner: 'THE HECK?',
@@ -26,29 +26,32 @@
       B04: { img: 'B04_calm_lake_canoe.png', hz: .5, vx: .5, fov0: 55, camH: 1.5, light: 'night' },
       E: { img: ENDING, hz: .45, vx: .5, fov0: 55, camH: 2.0, light: L.sunset },
     },
-    props: { DOG: 'P01_guard_dog_awake.png', DOGZ: 'P02_guard_dog_asleep.png', SHEEP: 'P03_sheep.png', PLANE: 'P04_navy_biplane_1943.png', H01: 'H01_helicopter.png' },
+    props: { DUVET: 'B01_duvet.cut.png', DOG: 'P01_guard_dog_awake.png', DOGZ: 'P02_guard_dog_asleep.png', SHEEP: 'P03_sheep.png', PLANE: 'P04_navy_biplane_1943.png', H01: 'H01_helicopter.png' },
     cast: { doug: 'hoodie', gary: 'oxford', coach: { outfit: 'polo', holdR: 'clipboard' }, cadet: { outfit: 'oxford', hat: 'pilot' } },
     shots: [
-      { at: 'scream', plate: 'B01', zoom: [5.0, 1.25], focus: [[.775, .37], [.52, .47]] },     // THE HOOK: Gary's sleeping face huge → crash-zoom out
-      { at: 'scream+0.55', plate: 'B01', zoom: [1.25, 1.22], focus: [[.52, .47], [.52, .48]] },  // hold the two-shot: Doug screams
-      { at: 'q', plate: 'B01', zoom: [1.22, 1.3], focus: [[.52, .48], [.55, .5]] },
-      { at: 'look', plate: 'B01', zoom: [1.3, 1.75], focus: [[.55, .5], [.76, .47]] },
-      { at: 'doug', plate: 'B01', zoom: [1.75, 1.6], focus: [[.76, .47], [.3, .5]] },
-      { at: 'doug+0.8', plate: 'B01', zoom: [1.6, 1.6], focus: [[.3, .5], [.3, .5]] },
-      { at: 'card', plate: 'B01', zoom: [1.6, 1.7], focus: [[.3, .5], [.3, .48]] },
-      { at: 'bet', plate: 'B01', zoom: [1.7, 1.9], focus: [[.3, .48], [.3, .47]] },
+      { at: 'scream', plate: 'B01', zoom: [5.0, 2.1], focus: [[.135, .37], [.18, .42]] },     // THE HOOK: Gary asleep in bed, face huge → crash-zoom out
+      { at: 'scream+0.5', plate: 'B01', zoom: [2.1, 1.85], focus: [[.18, .42], [.76, .47]] },   // whip across the room…
+      { at: 'scream+0.75', plate: 'B01', zoom: [1.85, 1.75], focus: [[.76, .47], [.76, .48]] }, // …to Doug in the armchair, screaming
+      { at: 'q', plate: 'B01', zoom: [1.75, 1.12], focus: [[.76, .48], [.47, .5]] },
+      { at: 'look', plate: 'B01', zoom: [1.12, 1.9], focus: [[.47, .5], [.2, .43]] },
+      { at: 'doug', plate: 'B01', zoom: [1.9, 1.6], focus: [[.2, .43], [.76, .48]] },
+      { at: 'doug+0.8', plate: 'B01', zoom: [1.6, 1.6], focus: [[.76, .48], [.76, .48]] },
+      { at: 'card', plate: 'B01', zoom: [1.6, 1.7], focus: [[.76, .48], [.76, .47]] },
+      { at: 'bet', plate: 'B01', zoom: [1.7, 1.9], focus: [[.76, .47], [.76, .46]] },
       { at: 'guard', plate: 'B02', zoom: [1.0, 1.25], focus: [[.5, .45], [.5, .43]] },
       { at: 'real', plate: 'B03', zoom: [1.05, 1.15], focus: [[.5, .5], [.5, .5]] },
-      { at: 'melt', plate: 'B01', zoom: [1.9, 2.0], focus: [[.3, .42], [.3, .56]] },
+      { at: 'melt', plate: 'B01', zoom: [1.9, 2.0], focus: [[.76, .4], [.76, .52]] },
       { at: 'picture', plate: 'B04', zoom: [1.0, 1.1], focus: [[.5, .45], [.5, .46]] },
       { at: 'down', plate: 'B02', zoom: [1.25, 1.35], focus: [[.5, .43], [.53, .45]] },
       { at: 'weeks', plate: 'B03', zoom: [1.15, 1.05], focus: [[.5, .5], [.5, .49]] },
-      { at: 'mirror', plate: 'B01', zoom: [1.15, 1.22], focus: [[.52, .52], [.52, .52]] },
+      { at: 'mirror', plate: 'B01', zoom: [1.6, 1.7], focus: [[.76, .48], [.76, .47]] },
+      { at: 'gary', plate: 'B01', zoom: [1.7, 1.9], focus: [[.76, .47], [.2, .42]] },
+      { at: 'gary+0.6', plate: 'B01', zoom: [1.9, 2.0], focus: [[.2, .42], [.2, .42]] },
       { at: 'question', plate: 'E', zoom: [1.04, 1.1], focus: [[.5, .53], [.5, .5]] },
       { at: 'cta', plate: 'E', zoom: [1.1, 1.1], focus: [[.5, .5], [.5, .48]] },
     ],
-    shakes: [['scream+0.28', .5, .8], ['wrong', .25, .3], ['tired+0.3', .3, .35]],
-    flashes: [['scream+0.28', .18, .55]],
+    shakes: [['scream+0.75', .5, .8], ['wrong', .25, .3], ['tired+0.3', .3, .35]],
+    flashes: [['scream+0.75', .18, .55]],
     tail: 1.0,
 
     update(t, K) {
@@ -58,20 +61,28 @@
       const seat = (n, [ix, iy], dy, ry) => { const [x, z] = K.floorAt(ix, iy); return K.place(n, x, dy, z, ry); };
       const zzz = (ch, k = 1) => { const h = K.screenOf(ch.head); for (let i = 0; i < 3; i++) { const ph = (t * .45 + i / 3) % 1;
         K.text('Z', { x: h.x + 60 * k + ph * 120 * k, y: h.y - 90 * k - ph * 200 * k, size: (50 + 50 * ph) * k, color: '#cfe0ff', stroke: Math.round(8 * k), a: Math.sin(ph * PI) }); } };
-      const garyAsleep = (fc = 'blink') => { seat('gary', GARY, -.47, -.6); G.face(fc);
-        G.pose({ t, tilt: .22, nod: .14 + .02 * Math.sin(t * 1.3), lean: -.05 }); K.sit(G, 'down');
-        for (const k of [-1, 1]) { G.leg[k].hip.rotation.set(-1.3, 0, 0); G.leg[k].knee.rotation.x = 1.3; } };   // feet down to the floor
-      const dougOnBed = () => seat('doug', DOUG, -.21, .4);
-      // Doug sits on the tall bed: thighs slope down so his feet reach the floor
-      const dsit = () => { K.sit(D, 'down'); for (const k of [-1, 1]) { D.leg[k].hip.rotation.set(-1.0, 0, 0); D.leg[k].knee.rotation.x = 1.0; } };
+      // Gary IN BED: solve the root so his head lands on the painted pillow, head tipped onto it; the painted duvet is drawn over him
+      const placeHead = (n, [ix, iy], hy, ry, sc = 1) => { const ch = K.cast[n], tg = K.img(ix, iy); let [x, z] = K.floorAt(ix, Math.min(1500, iy + 260));
+        for (let k = 0; k < 4; k++) { K.place(n, x, hy, z, ry, sc); const a = K.screenOf(ch.head); K.place(n, x + .05, hy, z, ry, sc); const b = K.screenOf(ch.head); K.place(n, x, hy, z + .05, ry, sc); const c = K.screenOf(ch.head);
+          const j11 = (b.x - a.x) / .05, j21 = (b.y - a.y) / .05, j12 = (c.x - a.x) / .05, j22 = (c.y - a.y) / .05, det = j11 * j22 - j12 * j21, ex = tg.x - a.x, ey = tg.y - a.y;
+          x += (j22 * ex - j12 * ey) / det; z += (-j21 * ex + j11 * ey) / det; } return K.place(n, x, hy, z, ry, sc); };
+      // only Gary's head shows in bed (the painted bed is big for the camera match): hide his body, scale the head to the pillow
+      const HEADSET = new Set(); G.head.traverse(o => HEADSET.add(o));
+      const bodyVis = on => { G.root.traverse(o => { if (o.isMesh) o.visible = on || HEADSET.has(o); }); if (G.blob) G.blob.visible = on; };
+      bodyVis(true);
+      const garyAsleep = (fc = 'blink') => { G.face(fc); G.pose({ t, tilt: -.55, nod: .1 + .02 * Math.sin(t * 1.3), lean: 0 }); placeHead('gary', PILLOW, .9 - 2.1 * 1.6, .35, 2.1); bodyVis(false);
+        const p = K.img(236, 811); K.prop('DUVET', { x: p.x, y: p.y, w: 472 * s() }); };
+      // Doug IN THE ARMCHAIR (seat ≈ .45 m): hips on the cushion, feet on the floor
+      const dougInChair = () => seat('doug', CHAIR, -.47, -.6);
+      const dsit = () => { K.sit(D, 'down'); for (const k of [-1, 1]) { D.leg[k].hip.rotation.set(-1.3, 0, 0); D.leg[k].knee.rotation.x = 1.3; } };
       const clock = (str, color, from) => K.text(str, { y: 300, size: 64, color, w: 360, stroke: 0, shadow: false, bg: 'rgba(18,20,30,.85)', scale: popIn(K, t, from) });
 
       switch (id) {
-        case 'scream': case 'q': case 'look': case 'doug': case 'card': case 'bet': case 'mirror': {
+        case 'scream': case 'q': case 'look': case 'doug': case 'card': case 'bet': case 'mirror': case 'gary': {
           garyAsleep();
-          zzz(G, id === 'scream' && t < .35 ? 2.2 : 1);
-          dougOnBed();
-          if (id === 'scream') { K.hookReact(D, t, 'scream'); dsit(); K.slam('WHAT THE HECK?!', t, 'scream', { y: 330, size: 104, color: 'red' }); }
+          zzz(G, id === 'scream' && t < .5 ? 2.2 : 1);
+          dougInChair();
+          if (id === 'scream') { K.hookReact(D, t, 'scream+0.47'); dsit(); K.slam('WHAT THE HECK?!', t, 'scream+0.72', { y: 330, size: 104, color: 'red' }); }
           else if (id === 'q') { face(D, 'surprised', t); D.pose(Object.assign({ t, look: -.45, armR: { raise: .25 }, gesture: 'point', gw: 1 }, sway(.5))); dsit();
             const a = K.clamp01((at('look') + .2 - t) / .3);
             K.text('HOW DO YOU FALL ASLEEP', { y: 290, size: 66, a, scale: .8 + .2 * popIn(K, t, at('q')) });
@@ -90,7 +101,7 @@
             if (t > tp - .1) clock('3:07 AM', 'red', tp - .1); }
           else if (id === 'bet') { face(D, t > at('wrong') ? 'worried' : 'smirk', t); D.pose(Object.assign({ t, gesture: t > at('wrong') ? 'facepalm' : 'shrug', gw: K.ease((Lc - .2) / .4) }, sway(.3))); dsit();
             if (t > at('wrong')) K.text('THE MISTAKE', { y: 300, size: 104, color: 'red', scale: popIn(K, t, at('wrong')), rot: -.04 }); }
-          else if (id === 'mirror') { const tg = at('gary');
+          else if (id === 'mirror' || id === 'gary') { const tg = at('gary');
             face(D, 'worried', t); D.pose(Object.assign({ t, gesture: 'think', gw: 1 }, sway(.6))); dsit();
             if (t < tg) K.text('TRIED HARD', { y: 300, size: 92, color: 'red', scale: popIn(K, t, at('mirror') + .2) });
             else K.text('DID NOTHING', { y: 300, size: 92, color: 'gold', scale: popIn(K, t, tg) }); }
@@ -135,7 +146,7 @@
           break; }
 
         case 'melt': {   // THE TRICK: a gold glow walks down Doug's body; each part goes loose as it passes
-          garyAsleep(); dougOnBed();
+          garyAsleep(); dougInChair();
           const tf = at('face'), ts = at('shoulders'), ta = at('arms'), tb = at('breathe'), tl = at('legs');
           const loose = k => K.ease(K.clamp01((t - k) / .8));
           D.face(t > tf ? (t > tb ? 'blink' : 'smile') : 'flat');
