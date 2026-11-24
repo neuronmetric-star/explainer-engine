@@ -31,6 +31,11 @@ diagram (deep cobalt, icy white) → 04 cutaway diagram (warm cabin side vs icy 
 **Growing sets (new rule):** 02 workshop and 04 cutaway build up over the video instead of resetting: panes slot in, the sealant bead
 stays, the hole stays, the arrows and labels add up. Each return to 02/04 shows everything added so far.
 
+**Cutaway note (04 arrived Nov 24):** the painted slot is the rectangular opening in the wall slice (cabin LEFT, sky RIGHT). In 04 the
+panes are drawn by the engine **edge-on** as thin light-blue rounded strips standing in the slot (outside pane near the sky side, thicker;
+backup pane nearer the cabin, thinner; the gap between them is where the damp air, frost and the hole show). P01/P02 (front views)
+are used only in the workshop shots (02).
+
 ## Images
 | # | File | What |
 |---|---|---|
