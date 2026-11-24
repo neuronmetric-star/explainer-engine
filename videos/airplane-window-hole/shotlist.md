@@ -47,7 +47,7 @@ are used only in the workshop shots (02).
 | 06 | `06_window_seat_frosted.png` | Same as 05, the window fogged and frosted over, colder light |
 | 07 | `07_tarmac_sunset.png` | Low wide on the tarmac at sunset: the side of the plane with its row of windows, open floor, big open sky in the top third |
 | P01 | `P01_outside_pane.png` | THE OUTSIDE PANE: thick clear plastic oval pane, faint blue edge |
-| P02 | `P02_backup_pane.png` | THE BACKUP PANE: thinner clear oval pane, no hole (the engine draws it) |
+| P02 | (engine) | THE BACKUP PANE: P01 reused at 90% size, paler and more transparent, sticker hidden (ChatGPT's P02 came out fully transparent; kept as `P02_backup_pane_chatgpt_unused.png`) |
 | P03 | `P03_frost_overlay.png` | Window-shaped patch of fog and frost crystals, white, semi-solid |
 | P04 | `P04_milk_jug.png` | One plastic gallon jug of milk, blank label |
 | P07 | `P07_sealant_gun.png` | A caulk / sealant gun with a white tube, a blob at the tip |
