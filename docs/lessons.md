@@ -18,7 +18,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 
 ## The scorecard (all "yes" before Brian sees it)
 **Script**
-- [ ] **Voice hook:** first words are a shouted "WHAT THE HECK?!", then the search phrase as a plain question.
+- [ ] **Voice hook:** the first spoken line is about the VIEWER ("How does YOUR printer work?") + the surprise. The shouted "WHAT THE HECK?!" opener is on test (dropped on printer-how-it-works, Nov 24): decide by 3-s hold vs sleep-two-minutes.
 - [ ] **Hook line = YOU + the object + the surprise** (creator studies Nov 22–23: storm drain 10.9M, cutting board 6.4M, hay hole 9.2M). Best types, in order:
       (1) reverse a habit the viewer has ("If you never print to save ink, you're wasting it" / "those gray lines are not just knife marks"),
       (2) a "what if you…" scenario with action in second 0 ("If you cut a hole in your street…"), (3) the whole absurd outcome in one sentence (Ray).
@@ -66,6 +66,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 | Nov 24 | sleep-two-minutes | "They are not on the bed. Or chair." | measured the painting on a pixel grid: hips placed over the seat (not the feet in front of it), root height = seat height − 0.92 (bed ≈ .71 m → −.21, armchair ≈ .45 m → −.47), thighs sloped on tall seats so feet touch the floor | seated cast: grid the painting, put the hips ON the seat, check the wide shot before the close-up |
 | Nov 24 | sleep-two-minutes | "Put Gary in the bed and the other one on the chair, that makes more sense" | the sleeper is IN the bed (head on the pillow, the painted duvet cut out with `tools/occluder.py` and drawn over him, body hidden), the one who can't sleep sits up in the chair | staging must match the story: whoever sleeps is in the bed; check "does this make sense?" on every set before building |
 | Nov 24 | sleep-two-minutes | "Make Gary lay flat on the bed… his whole body flat, sized normal… no sheets, eyes closed" | lying pose: the standing pose laid on its side (`rotation.set(0, ry, PI/2)`), head solved onto the pillow pixel and scaled so the feet reach the far end of the bed; no occluder | a sleeping character lies flat ON the bed, whole body visible, normal size, eyes closed |
+| Nov 24 | printer-how-it-works | "Make it more viewer based, like how does YOUR printer work… is the why/what the heck helping us? If not, remove it" | the viewer is the main character ("you", "your dog"), Doug acts it out silently; the shouted opener dropped for this video as a test | viewer-first lines; the shout stays only if the 3-s hold says it helps |
 
 ## Results (fill in on the Sunday check)
 | Video | Posted | Views (7 days) | 3-s hold | Watched to end | Shares | Saves | What it teaches |

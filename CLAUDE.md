@@ -9,8 +9,9 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 
 ## The format (every video)
 - **Easy to understand + the HOOK, always (Brian, Nov 24 2026).** Plain words a 10-year-old follows, an everyday comparison for every
-  step, the mystery on screen in 5 s. The video opens with a **voice hook** (a shouted "WHAT THE HECK?!", then the search phrase as a plain
-  question) and a **visual hook** (the strange thing huge in frame 1, crash-zoom out, a cast member screams, shake + sting).
+  step, the mystery on screen in 5 s. The video opens with a **voice hook**: line 1 = "you" + the object + the surprise
+  ("How does your printer work? If you never print to save ink, you're wasting it."). **Being tested (Brian, Nov 24 2026):** the
+  shouted "WHAT THE HECK?!" in front of it. The printer video drops it; keep or kill it by the 3-second hold vs the sleep video. And a **visual hook** (the strange thing huge in frame 1, crash-zoom out, a cast member screams, shake + sting).
   Every script passes the scorecard in `docs/lessons.md` before Brian sees it.
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.

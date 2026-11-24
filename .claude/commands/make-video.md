@@ -23,7 +23,7 @@ Ready to post) with its "Next step", and keep `docs/series.md` in step.
 3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; short form only: hook → middle → end per §1.11, 175–190 story words + CTA ≈ 1:05 final (never under 1:02); cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
    **Easy to understand, always (Brian, Nov 24 2026):** plain words a 10-year-old follows (no jargon: "layer", not "pane";
    "pushes", not "pressure"), one idea per sentence, an everyday comparison for every step, the mystery shown in the first 5 s.
-   **The HOOK, always:** the first spoken words are a shouted **"WHAT THE HECK?!"**, then the search phrase as a plain question.
+   **The HOOK, always:** the first spoken line is about the viewer ("How does YOUR printer work?") + the surprise, per the hook types in `docs/lessons.md`. The shouted **"WHAT THE HECK?!"** opener is on test (dropped on the printer video, Nov 24): check `docs/lessons.md` for the verdict before using it.
    Before showing me, run the scorecard in `docs/lessons.md` and fix every "no". Read `docs/lessons.md` first: never repeat a past note.
    STOP and show me: the narration in one copyable block, the scorecard, voice direction (how to shout the hook),
    the fact list with sources (always "heck", never "the f*ck"). Wait for "approved" (or edits).

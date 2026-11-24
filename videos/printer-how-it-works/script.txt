@@ -1,16 +1,17 @@
 # printer-how-it-works · one-off · mode: Explainer (track one drop of ink) · search phrase: "how does a printer work"
-# Hook (creator study): line 1 = YOU + the object + the surprise, reversing a habit (cutting-board style): "If you never print to save ink, you're wasting it."
+# Brian, Nov 24 2026: "make it more viewer based… how does YOUR printer work". The viewer is the main character ("you"); Doug acts it out silently.
+# TEST: no shouted "What the heck?!" on this one (Brian: remove it if it isn't helping). The visual hook stays. Compare 3-s hold with the sleep video.
+# Hook (creator study): line 1 = YOU + the object + the surprise, reversing a habit (cutting-board style).
 # Payoff: a printer spits thousands of drops thinner than a hair by BOILING ink with a tiny heater; leave it unused and the ink dries in those holes.
-[#scream] {!WHAT THE HECK?!|What the heck?!} [#q] How does a {*printer|printer} work? [#habit] If you never print, to save ink, [#waste] you're {!wasting|wasting} it.
+[#q] How does {*your printer|your printer} work? [#habit] If you never print, to save ink, [#waste] you're {!wasting|wasting} it.
 [#look] Zoom into any printed photo. [#dots] It's not a picture. [#only] It's {*dots.|dots.}
-[#card] See, Doug had a problem. [#gift] He's printing a photo of Gary's dog. [#months] But his printer hasn't printed in three months. [#save] He was saving ink.
-[#bet] Honestly? Smart. [#press] He hits print, [#stripes] and the dog comes out {!striped.|striped.}
+[#card] Say you haven't printed in three months. [#save] Saving ink. Smart, right? [#press] You hit print, [#stripes] and your dog comes out {!striped.|striped.}
 [#head] Inside your printer, a box slides left and right over the paper. [#holes] Under it: hundreds of holes, thinner than a hair. [#heater] Behind each hole, a tiny heater.
 [#zap] Zap. [#boil] It boils the ink in a blink. [#bubble] A bubble pops up and shoves out one drop. [#kettle] Like a kettle spitting. [#again] Thousands of times a second.
 [#eyes] No mixed colors. Just four colors of dots, and your eyes blend them.
 [#real] And this really happened. [#lab] In 1977, at Canon, a hot soldering iron touched a syringe of ink, by accident. [#shot] The ink shot out. [#idea] Now it's inside millions of printers.
-[#back] Doug's stripes? [#dry] In three months, the ink dried in those tiny holes, [#ketchup] like a crusty ketchup cap. [#clog] Clogged holes, missing stripes.
-[#clean] The cleaning button squirts ink through. [#drink] It works, but it drinks ink.
-[#mirror] Doug never printed to save ink. [#spent] Then the cleaning spent the ink he saved.
+[#back] Your stripes? [#dry] In three months, the ink dried in those tiny holes, [#ketchup] like a crusty ketchup cap. [#clog] Clogged holes, missing stripes.
+[#clean] So you press the cleaning button. It squirts ink through. [#drink] It works, but it drinks ink.
+[#mirror] You never printed to save ink. [#spent] Then the cleaning spent the ink you saved.
 [#question] So print one page a week. [#check] Then zoom your phone into any photo. See the dots? One word.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

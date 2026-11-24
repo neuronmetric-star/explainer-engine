@@ -46,7 +46,7 @@ them and sends a one-line fix for any plain one → next batch. Series episodes 
 
 ## Step 5: the voice (Brian)
 Record the whole narration in OpenArt/ElevenLabs from `voice-direction.md`: CAPS = hit the word, `(slow)`/`(fast)`, `…` = pause, and the
-first words **shouted**: "WHAT THE HECK?!", then the question calmly. Claude then boosts the shout and fine-tunes the pace.
+first line with energy (the shouted "WHAT THE HECK?!" only if `docs/lessons.md` says the test kept it), then the question. Claude then boosts the shout and fine-tunes the pace.
 Send the MP3 here. Claude tightens it (pauses + 1.2×) and checks it lands at 1:05–1:15.
 
 ## After posting
