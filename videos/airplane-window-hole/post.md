@@ -1,7 +1,7 @@
 # Post kit: airplane-window-hole
 
 **Slot:** 18:00 ET (money / how-it-works explainer), or 12:00 ET: Thanksgiving week is peak travel, so it's timely. ≥ 3 h from any other post.
-**Length:** ~1:13 (over the 1:02 payout line).
+**Length:** 1:14 (over the 1:02 payout line). v4: shouted hook + visual hook.
 
 ## TikTok / Reels caption
 Why do airplane windows have a hole? ✈️
