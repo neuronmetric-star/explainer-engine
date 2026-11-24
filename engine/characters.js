@@ -351,7 +351,7 @@
         mesh(new THREE.BoxGeometry(.03, .035, .1), metal(0xc8cad0, env, .25), bd, 0, -.012, 0);
       } else if (what === 'drill') {  // mitt = the grip; body runs past the fist along the forearm line, bit at the tip (points where the fist points)
         const ym = glossy(0xe39a10, env, .45), km = plain(0x1d1d20, .6);
-        const body = grp(g, 0, 0, H * .55);
+        const body = grp(g, 0, 0, H * .55); g.scale.setScalar(1.5);
         mesh(new THREE.CylinderGeometry(.06, .065, .3, 22), ym, body, 0, -.12, 0);                         // motor body
         mesh(new THREE.CylinderGeometry(.068, .068, .05, 22), km, body, 0, -.02, 0);                       // vent ring
         mesh(new THREE.CylinderGeometry(.04, .03, .07, 18), km, body, 0, -.3, 0);                          // chuck

@@ -152,7 +152,7 @@
   const $ = id => document.getElementById(id);
   const cap = $('cap'), flash = $('flash'), fol = $('follow'), cur_ = $('cursor');
   // K.text(str, {x, y, size, color:'white'|'gold'|'red'|css, stroke, rot (rad), skewX/skewY (deg), scale, a, w (box width),
-  //   align, font:'sans'|'marker', shadow}) draws one label this frame (screen px, y down, centered on x,y).
+  //   align, font:'sans'|'marker', shadow, bg (css background: makes a rounded pill, e.g. the series banner)}) draws one label this frame (screen px, y down, centered on x,y).
   // Numbers and words live here, never in the paintings. Drawn above the 3D layer and props, under the captions.
   const TXT = [], TCOL = { white: '#fff', gold: '#ffd23a', red: '#ff4a3d', ink: '#1c2a4a' }; let txtI = 0;
   K.text = function (str, o = {}) {
@@ -168,7 +168,8 @@
     el.style.width = (o.w || 1080) + 'px'; el.style.marginLeft = -(o.w || 1080) / 2 + 'px'; el.style.marginTop = -size * .55 + 'px';
     el.style.opacity = o.a === undefined ? 1 : o.a;
     el.style.transform = `translate(${o.x === undefined ? 540 : o.x}px,${o.y || 0}px) rotate(${o.rot || 0}rad) skew(${o.skewX || 0}deg,${o.skewY || 0}deg) scale(${o.scale === undefined ? 1 : o.scale})`;
-    el.style.border = o.border || 'none'; el.style.padding = o.border ? '0 .18em' : '0'; el.style.boxSizing = 'border-box'; el.style.borderRadius = o.border ? '.08em' : '0';
+    el.style.border = o.border || 'none'; el.style.padding = o.border ? '0 .18em' : o.bg ? '.14em 0 .2em' : '0'; el.style.boxSizing = 'border-box'; el.style.borderRadius = o.bg ? '999px' : o.border ? '.08em' : '0';
+    el.style.background = o.bg || 'none';
     return el; };
   // K.line(x0, y0, x1, y1, {color, width, a, dash}): a straight stroke this frame (screen px): strings on a board, arrows on a map
   const LNS = []; let lnI = 0;
@@ -194,6 +195,8 @@
     usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk, Math.cos(t * 47) * sk, (sh.clipFrom || 0) + (t - sh.t));
     K.shot = { i, id: sh.id, u, t0: sh.t, t1: end, local: t - sh.t };
     SC.update && SC.update(t, K);
+    // series banner (PLAYBOOK §3.5): a small dark pill at the top, the whole video. SCENE.banner = 'THE HECK?'
+    if (SC.banner) K.text(SC.banner, { y: 172, size: 44, w: 330, color: '#fff', stroke: 0, shadow: false, bg: 'rgba(18,20,30,.82)' });
     // captions
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
     if (c && t <= c.end + .45) { if (cap.textContent !== c.txt) cap.textContent = c.txt; cap.className = c.cls; cap.style.transform = `scale(${.85 + .15 * K.clamp01((t - c.t) / .12)})`; cap.style.opacity = 1; } else cap.style.opacity = 0;
