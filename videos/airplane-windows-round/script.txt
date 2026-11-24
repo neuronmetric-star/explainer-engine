@@ -1,0 +1,19 @@
+# SHORT (~1:10). Plane Heck episode 2. DRAFT v1, waiting for Brian. Mode: Explainer + true story (Comet, 1954).
+# Scorecard (docs/lessons.md) checked: shouted hook, mystery in 5 s, plain words, one idea per sentence, a picture for every number,
+# an everyday comparison per step (living room, ripping paper, a balloon, a crowd at a door), build-break-fix, Doug's own choice
+# causes the break, narrator bet, open loop, locked names ("corner", "crack", "round"), last line echoes the first, do-it-yourself end.
+# Series nod: "Remember: planes pump themselves full of air" (episode 1). Facts: sources.md ("sharp square corners", not "square windows broke").
+[#scream] {!WHAT THE HECK?!|What the heck?!} [#q] Why are {*airplane windows|airplane windows} {*round?|round?}
+[#look] Ever seen a square window on a plane? [#never] You haven't. [#scary] And the reason is kind of {!scary.|scary.}
+[#card] See, Doug had a problem. [#job] He's building one of the first jet planes ever, [#square] and he wants big square windows. [#living] Like a living room.
+[#bet] Honestly? I'd want that window too.
+[#remember] Remember: planes pump themselves full of air, like a balloon. [#puff] Every flight, the plane puffs up. [#shrink] Every landing, it shrinks back.
+[#pull] And every puff pulls on the metal around the windows.
+[#paper] Try ripping a sheet of paper. [#hard] Hard, right? [#notch] Now make a tiny cut first. [#rip] It rips {!easy.|easy.}
+[#corner] A sharp corner works like that tiny cut. [#crowd] All the pull piles up right there.
+[#real] And this really happened. [#comet] In 1954, two of the first passenger jets, called Comets, broke apart in the sky.
+[#tank] Engineers sank a whole plane in a giant water tank [#pump] and pumped it up and down, flight after flight.
+[#count] After about three thousand flights, [#crack] it {!cracked.|cracked.} [#where] Right at a sharp square {!corner.|corner.}
+[#round] So now every window is {*round.|round.} [#spread] No corners. The pull spreads out evenly, [#nowhere] and there's nowhere for a crack to start.
+[#mirror] Doug wanted a window like a living room. [#porthole] He got one like a fishbowl. [#question] Next flight, look for the corners. There aren't {*any.|any.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
