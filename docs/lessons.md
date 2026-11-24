@@ -33,7 +33,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 - [ ] Length: the final lands 1:05–1:15 (check after tightening the voice).
 
 **Visual**
-- [ ] **Visual hook:** frame 1 = the strange thing huge; crash-zoom out; a cast member reacts big (`scream`); shake + sting; `WHAT THE HECK?!` on screen.
+- [ ] **Visual hook:** frame 1 = the strange thing huge (5×); crash-zoom out within 0.55 s; a cast member reacts big (`scream`), whole and in frame by 0.6 s; white flash + shake + sting; `WHAT THE HECK?!` on screen.
 - [ ] Smooth: whip-pans between places (`SCENE.whip`), same-place shots continue the camera, ~15–20 shots, no 2-s choppy cuts.
 - [ ] Diagrams move (flowing arrows, drifting particles); one cutaway plate that grows; the color code.
 - [ ] Few words on screen: hook title, key numbers, 1–2 labels, the final idea. Nothing in the caption band.
@@ -57,6 +57,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 | Nov 24 | airplane-windows-round | "our helicopter ending with the city background… it is a signature goodbye" | `E01_city_sunset_ending.png` in `docs/assets/` (painted once, matches the original clip); playbook §1.12a | every video ends on the city sunset |
 | Nov 24 | airplane-windows-round | "Remove tags. My voice recorder does not understand them" | a CLEAN copy with drama by punctuation only (`…`, `!`, short lines, no CAPS, no brackets) | every voice-direction.md ends with a clean, tag-free copy |
 | Nov 24 | airplane-windows-round | "always develop a strong story any viewer can follow" | the retell test added to the scorecard | retell in 3 sentences |
+| Nov 24 | sleep-two-minutes | "Make sure visual hook is very strong" | frame 1 = the strange thing at 5× (sleeping Gary + giant Z's), crash-zoom out in 0.55 s, white flash + shake + sting on the scream, then HOLD a two-shot with the screamer fully in frame | hook check on stills: at 0.05 s the strange thing fills the frame; at 0.6 s the screamer is whole, big and mid-scream (`flashes` + `shakes` on scream+0.28) |
 
 ## Results (fill in on the Sunday check)
 | Video | Posted | Views (7 days) | 3-s hold | Watched to end | Shares | Saves | What it teaches |
