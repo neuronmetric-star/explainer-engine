@@ -1,5 +1,8 @@
 # Voice direction: airplane-windows-round (Plane Heck ep. 2)
 
+**Brian's recorder reads no tags (Nov 24 2026): paste the CLEAN version at the bottom.** Drama comes from punctuation:
+`…` = pause, `!` = energy, short lines = slower. Claude boosts the shout and fine-tunes speed afterwards.
+
 How to read the marks: **CAPS** = hit that word · `(slow)` = slow down, let it land · `(fast)` = quick and light ·
 `…` = a short pause (half a breath) · `[SHOUT]` = full shout, like you just saw something crazy.
 Dry and sarcastic, talking to one friend. After recording, Claude makes the shout louder and fine-tunes the speed
@@ -25,3 +28,38 @@ Next flight, look for the corners. … There aren't any.
 ```
 
 If your voice tool understands tags (ElevenLabs v3 does: `[shouts]`, `[pause]`, `[slowly]`), you can put them in place of the marks.
+
+## CLEAN version (paste this into the recorder)
+```
+What the heck?!
+
+Why are airplane windows round?
+
+Ever seen a square window on a plane? … You haven't. … And the reason is kind of scary.
+
+See, Doug had a problem. He's building one of the first jet planes ever, and he wants big square windows. Like a living room.
+
+Honestly? … I'd want that window too.
+
+Remember: planes pump themselves full of air, like a balloon. Every flight, the plane puffs up. Every landing, it shrinks back.
+
+And every puff pulls on the metal around the windows.
+
+Try ripping a sheet of paper. … Hard, right? … Now make a tiny cut first. … It rips easy!
+
+A sharp corner works like that tiny cut. … All the pull piles up … right there.
+
+And this really happened. … In 1954, two of the first passenger jets, called Comets, broke apart in the sky.
+
+Engineers sank a whole plane in a giant water tank, and pumped it up and down, flight after flight.
+
+After about three thousand flights … it cracked. … Right at a sharp square corner.
+
+So now every window is round. No corners. The pull spreads out evenly, and there's nowhere for a crack to start.
+
+Doug wanted a window like a living room. … He got one like a fishbowl.
+
+Next flight, look for the corners. … There aren't any.
+
+Still here? Then that means you enjoyed the video. So follow and like for more.
+```

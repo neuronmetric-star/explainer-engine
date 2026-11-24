@@ -53,6 +53,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 | Nov 24 | airplane-window-hole | "create a visual hook… and the what the heck screamed out" | v4: shouted hook + crash-zoom/scream | playbook §3.5 #12, scorecard line 1 |
 | Nov 24 | airplane-window-hole | "he is cut off his feet. that does not look good" | tray cut to its real outline; Gary sits cross-legged | no straight-line cut-offs |
 | Nov 24 | airplane-window-hole | "the what the heck needs to be louder… slowed down, faster in other places… for drama" | `tools/voice_drama.js`: hook +9 dB with punch, slow reveals, quick setup; `voice-direction.md` for recording | every video: voice direction + drama pass |
+| Nov 24 | airplane-windows-round | "Remove tags. My voice recorder does not understand them" | a CLEAN copy with drama by punctuation only (`…`, `!`, short lines, no CAPS, no brackets) | every voice-direction.md ends with a clean, tag-free copy |
 | Nov 24 | airplane-windows-round | "always develop a strong story any viewer can follow" | the retell test added to the scorecard | retell in 3 sentences |
 
 ## Results (fill in on the Sunday check)
