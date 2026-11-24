@@ -58,7 +58,7 @@ are used only in the workshop shots (02).
 |---|---|---|---|
 | q | 05 window seat, engine **hole dot** on the window; **title overlay** | hard open on the window, slow push-in to the hole | Gary seated, `look` at the hole, `tilt` .2, `flat` |
 | card | 02 workshop wide, P08 not shown; fuselage section with empty window slot behind | cut, low, slow push | Doug walks in to the bench (`walk` → stop), `smile`, `hips` |
-| sky | 03 sky diagram: P08 plane slides in from the left; engine `7 MILES UP` + a dashed line down to the mountains | cut, slow pull-back (makes the drop feel big) | none |
+| sky | 03 sky diagram: P08 plane slides in from the left, high above the cloud floor; engine `7 MILES UP` + a dashed line down to the mountains (the number is on screen only; the voice says "way above the clouds") | cut, slow pull-back (makes the drop feel big) | none |
 | thin | 03: engine air dots: dense near the ground, only a few scattered up at the plane (light-blue dots) | slow push-in on the empty air around the plane | none |
 | balloon | 03: P08 plane puffs up (scale 1.0 → 1.08, bounce) like a balloon | punch-in | none |
 | push | 04 cutaway: white arrows on the cabin side push toward the empty window slot | hard cut, push-in | none |

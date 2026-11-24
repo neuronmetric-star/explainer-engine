@@ -11,7 +11,7 @@
 # Last spoken line before the CTA is a do-it-yourself check (saves); the comment question WINDOW OR AISLE? is on screen + pinned.
 [#q] Why the heck do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
 [#card] See, Doug had a problem. His job: build a plane window that won't {!break.|break.}
-[#sky] Planes fly seven miles up. [#thin] Up there, the air is so thin you couldn't breathe.
+[#sky] Planes fly way above the {*clouds.|clouds.} [#thin] Up there, the air is so thin you couldn't breathe.
 [#balloon] So the plane pumps air inside, like blowing up a balloon. [#push] That air pushes out on every window, [#milk] like a {*gallon of milk|gallon of milk} on every square inch.
 [#pane1] Doug's plan: one thick pane, a sheet of clear plastic.
 [#victor] Victor, the inspector: "And if it {!cracks?"|cracks?"}
