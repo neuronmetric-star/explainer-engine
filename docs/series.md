@@ -21,7 +21,7 @@ World: Doug and Gary's bedroom at night (reused paintings), plus one cutaway per
 switch off; Gary, the guy who sleeps anywhere. Started Nov 24 2026 (Brian picked it).
 | # | Episode (search phrase) | Status | The answer in one line | New art needed |
 |---|---|---|---|---|
-| 1 | how to fall asleep in 2 minutes | ✍️ script draft · `videos/sleep-two-minutes/` | a tight body keeps your brain's "guard dog" awake; melt your body top to bottom + one boring picture (the WWII Navy pilots' trick, a skill that takes weeks) | 4–5 (bedroom night, cutaway, 1940s Navy flight school, calm lake) |
+| 1 | how to fall asleep in 2 minutes | 🎬 final rendered (1:12), ready to post · `videos/sleep-two-minutes/` | a tight body keeps your brain's "guard dog" awake; melt your body top to bottom + one boring picture (the WWII Navy pilots' trick, a skill that takes weeks) | 4–5 (bedroom night, cutaway, 1940s Navy flight school, calm lake) |
 | 2 | why do we yawn | 💡 | verify before scripting | 1–2 |
 | 3 | why do you get goosebumps | 💡 | verify before scripting | 1–2 |
 | 4 | why do you jerk awake when falling asleep | 💡 | verify (hypnic jerk) | 1 |
