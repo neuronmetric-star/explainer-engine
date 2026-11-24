@@ -10,14 +10,14 @@
 # the window facts are real (sources.md). Ending: helicopter over the tarmac, Doug looks up (PLAYBOOK §1.12a).
 # Last spoken line before the CTA is a do-it-yourself check (saves); the comment question WINDOW OR AISLE? is on screen + pinned.
 [#q] Why the heck do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
-[#card] See, Doug had a problem. He builds airplane windows.
+[#card] See, Doug had a problem. His job: build a plane window that won't {!break.|break.}
 [#sky] Planes fly seven miles up. [#thin] Up there, the air is so thin you couldn't breathe.
 [#balloon] So the plane pumps air inside, like blowing up a balloon. [#push] That air pushes out on every window, [#milk] like a {*gallon of milk|gallon of milk} on every square inch.
 [#pane1] Doug's plan: one thick pane, a sheet of clear plastic.
 [#victor] Victor, the inspector: "And if it {!cracks?"|cracks?"}
 [#pane2] Doug adds a backup pane. [#backup] Every plan needs a {*backup.|backup.}
 [#seal] He seals both panes airtight. [#bet] Honestly? I'd fly on it.
-[#takeoff] Gary takes the window seat. [#fog] It {!fogs.|fogs.} [#frost] Then it {!frosts.|frosts.}
+[#takeoff] Gary takes the window seat. [#fog] His window {!fogs.|fogs.} [#frost] Then it {!frosts.|frosts.}
 [#why] The air sealed between the panes was damp, like breath. [#cold] Up here, the outside pane is colder than a freezer. So, frost.
 [#drill] Doug drills one tiny {*hole|hole} in the backup pane. [#clear] The damp air escapes. Fog's gone.
 [#job] But that hole had a bigger job.
