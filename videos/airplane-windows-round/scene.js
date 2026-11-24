@@ -65,7 +65,7 @@
       switch (id) {
         case 'scream': case 'q': {   // THE HOOK: the cracked square corner huge → crash-zoom out → Doug screams
           const c = K.img(664, 306), k = K.ease(K.clamp01((t + .15) / .5));   // the top-right corner of the square window painted in 08
-          for (let i = 0; i < 6; i++) { const a = -.6 + i * .12, len = (60 + 30 * i) * k * s() / 1.25; K.line(c.x, c.y, c.x + Math.cos(a) * len, c.y + Math.sin(a) * len * .6 - 4 * i, { color: '#ff3b30', width: 9, a: .95 }); }
+          for (let i = 0; i < 6; i++) { const a = -.6 + i * .12, len = (60 + 30 * i) * k * s() / 1.25; K.line(c.x, c.y, c.x + Math.cos(a) * len, c.y + Math.sin(a) * len * .6 - 4 * i, { color: '#ff3b30', width: 9, a: .95 * (id === 'scream' ? K.clamp01((.55 - t) / .2) : 0) }); }
           // frame 1 = the cracked window alone; Doug jumps in from the left as the camera pulls out
           K.placeAt('doug', id === 'scream' ? K.lerp(-500, 600, K.easeOut(K.clamp01((t - .25) / .3))) : 600, 1130, -.25);
           if (id === 'scream') { K.hookReact(D, t, 'scream'); K.slam('WHAT THE HECK?!', t, 'scream'); }
