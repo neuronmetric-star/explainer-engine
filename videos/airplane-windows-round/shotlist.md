@@ -3,7 +3,7 @@
 **Script:** approved Nov 24 2026 (`script.txt`). **Voice:** Brian records from `voice-direction.md`; then `voice-drama.json` (louder hook,
 slow reveals, quick setup) → align → build. **Search phrase:** "why are airplane windows round" (spoken at 1 s, on screen, caption line 1).
 **Cast:** Doug `{outfit:'hoodie', hat:'hard'}` (the builder, series role) · Gary `oxford` (passenger, seated, `K.sit` + tray occluder).
-**Series:** Plane Heck (#planeheck). Reused art from ep. 1: 03 sky, 05 window seat (+ tray occluder), 07 tarmac, P08 plane, H01.
+**Series:** Plane Heck (#planeheck). Reused art from ep. 1: 03 sky, 05 window seat (+ tray occluder), P08 plane, H01. Ending: the signature E01 city sunset (painted once in BATCH 3).
 **New art (5):** 08 1950s workshop with square windows · 09 water tank test · 10 panel: square hole vs oval hole (crack at the square corner) ·
 P10 paper with a tiny cut · P11 paper torn. Batch file: `art-prompts.md`.
 **Rules:** visual hook first (§3.5 #12), `SCENE.whip`, continuous camera on same-plate shots, `K.flow` for the pull, the color code
@@ -26,5 +26,5 @@ P10 paper with a tiny cut · P11 paper torn. Batch file: `art-prompts.md`.
 | count / crack / where | 10 | punch-in to the square corner | the crack grows red on "cracked"; hold 1 s |
 | round / spread / nowhere | 10 → oval hole | pan down to the oval | gold `ROUND` label; smooth white flow around the oval |
 | mirror / porthole | 05 window seat (whip) | slow push | Gary `smile`, taps the oval window |
-| mirror (2nd half) / question | 07 tarmac (whip on "Next flight") | wide | Doug + Gary under the plane's oval windows; the **helicopter** crosses (§1.12a), Doug looks up |
-| cta | 07 hold + follow button | static | Doug `point`, Gary `smirk` |
+| mirror (2nd half) / question | **E01 city sunset rooftop** (whip on "Next flight") — the signature goodbye | wide | Doug + Gary on the rooftop; the **helicopter** crosses the sunset sky (§1.12a), Doug looks up |
+| cta | E01 hold + follow button | static | Doug `point`, Gary `smirk` |

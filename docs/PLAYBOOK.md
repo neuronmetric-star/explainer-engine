@@ -286,8 +286,11 @@ up at it: he finally has the thing, and there's already a next thing. Viewers le
   (y ≈ 560–660) and the caption band (y ≈ 1270).
 - **Acting:** the winner tips his head up (`nod` ≈ −.35) and his face drops to `flat` (or `worried`) while it passes,
   then back to the CTA gesture. Anyone else in the shot can glance up too. Nobody waves at it.
-- **The last background always shows open sky in its top third**, so the helicopter has somewhere to fly. If the story
-  ends indoors, end on a window with sky, or cut to an outdoor shot for the last line. Write that into the shot list.
+- **THE SIGNATURE GOODBYE: the city at sunset (Brian, Nov 24 2026).** The last story line always whip-pans to
+  `E01_city_sunset_ending.png` (`docs/assets/`, copy it into every video's `art/`): the same sunset city as the original
+  Lamborghini helicopter clip, seen from a rooftop where the winner (and anyone else in the story) stands. The helicopter crosses
+  its open top third, the winner looks up, then the follow CTA. Same place every video, so viewers know the goodbye.
+  (Until E01 exists, end on a background with open sky in its top third.)
 - **Words:** none needed; it's a picture joke and costs no length. (In a lesson chain the helicopter is already in the
   story, so it simply flies over again at the end.)
 - **Always the same helicopter:** white with a navy-blue stripe, the one from the Lamborghini video's OpenArt clip

@@ -31,7 +31,8 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.
 - **The helicopter ending, every video, no matter what** (PLAYBOOK §1.12a): on the last story line the Lamborghini
   helicopter (`docs/assets/H01_helicopter.png`) flies across the sky via `K.helicopter(t, cue)`, the winner looks up,
-  then the follow CTA. The last background always has open sky in its top third.
+  then the follow CTA. **The signature goodbye is always the city at sunset:** the last shot is `docs/assets/E01_city_sunset_ending.png`
+  (rooftop + sunset city from the original helicopter clip), the same every video.
 
 ## "make video" (Brian, Nov 24 2026)
 When Brian says **"make video"** (with or without a topic) in a new chat, run `/make-video`: follow `docs/workflow.md`, ask the start

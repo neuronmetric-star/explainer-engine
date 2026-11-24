@@ -1,8 +1,10 @@
-# ChatGPT batch file: airplane-windows-round (5 new images) · art standard v2 · Plane Heck ep. 2
+# ChatGPT batch file: airplane-windows-round (5 new images + the signature ending, painted once for every video) · art standard v2 · Plane Heck ep. 2
 
 **How to use:** you can keep using the **same ChatGPT chat as episode 1** (it already knows the style and the plane). If you start a
 new chat, paste the **START** block first. Then **BATCH 1**, send me the 3 images, then **BATCH 2**.
-**Reused from episode 1 (don't make again):** window seat (05), sky (03), tarmac (07), the plane (P08), the helicopter.
+**Reused from episode 1 (don't make again):** window seat (05), sky (03), the plane (P08), the helicopter.
+**BATCH 3 is the series' signature ending (the city at sunset):** paint it once; every future video reuses it. Attach
+`docs/assets/H00_helicopter_reference.png` (the frame from the original helicopter clip) to that prompt so the city matches.
 
 **Color script:** 08 the 1950s workshop (warm amber, proud, polished aluminum) → 09 the water tank (cold blue-green, serious, quiet)
 → 10 the panel diagram (clean neutral gray with one red crack) → then the reused warm cabin and the sunset tarmac for the ending.
@@ -79,4 +81,21 @@ BATCH 2 (props P10–P11, solid pure green #00FF00)
 P10_paper_cut.png: ONE plain white sheet of printer paper seen straight from the front, standing upright, perfectly flat and clean, with ONE tiny cut (a small notch) at the middle of its top edge. Crisp, light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
 
 P11_paper_torn.png: The same white sheet of paper torn in two from that tiny notch at the top, the two halves pulled slightly apart with a jagged rip line down the middle, a few paper fibers at the edges. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+```
+
+```
+BATCH 3 (the signature ending; ATTACH docs/assets/H00_helicopter_reference.png)
+E01_city_sunset_ending.png: SHOT: from a rooftop terrace looking out over a big city at sunset, eye level, 24mm lens feel, portrait 2:3, horizon about 48% from the top.
+PLACE + MOOD: exactly the city in the attached reference image (H00_helicopter_reference.png): the golden-hour goodbye of our series. Warm, proud, a little dreamy.
+HERO: the city skyline under a huge sunset sky: a tall blue glass tower on the LEFT reflecting the sunset, red-brick apartment and office buildings, a long tree-lined avenue full of tiny cars running straight into the hazy distance, more towers fading into pink haze at the horizon.
+FOREGROUND: the rooftop terrace the camera stands on: a low parapet wall with a simple metal railing along the bottom edge, a big potted olive tree cropped at the right edge, a strand of warm string lights along the railing.
+MIDGROUND: the rooftop floor (warm concrete tiles) runs from the bottom of the frame to the railing, with a couple of wooden outdoor chairs pushed to the left side.
+BACKGROUND: the skyline and avenue as in the reference, soft and hazy with distance.
+DRESSING: rooftop water tanks and AC units on the nearby buildings, green trees along the avenue, a few birds as tiny specks far away, glowing windows starting to light up.
+LIGHT: low golden sun on the LEFT just above the horizon, warm orange glow, long soft shadows, pink and peach clouds, the upper sky turning clear blue.
+PALETTE: sunset orange, peach, pink, warm brick red, glass blue, with a deep blue upper sky.
+TEXTURE: painterly clouds, brick, glass reflections, concrete tiles.
+STAGING: the TOP THIRD of the frame is OPEN SKY with soft clouds and nothing tall in it (a helicopter will fly across). A clear, flat stretch of rooftop floor in the lower-middle, about half the frame wide, for two or three characters to stand (no objects). Keep the band at 60-72% height calm.
+TEXT: none. No numbers, no logos, no signs.
+STRICT: no people, no characters, no animals, no helicopter, no planes.
 ```
