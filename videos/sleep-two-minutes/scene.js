@@ -26,7 +26,7 @@
       B04: { img: 'B04_calm_lake_canoe.png', hz: .5, vx: .5, fov0: 55, camH: 1.5, light: 'night' },
       E: { img: ENDING, hz: .45, vx: .5, fov0: 55, camH: 2.0, light: L.sunset },
     },
-    props: { DUVET: 'B01_duvet.cut.png', DOG: 'P01_guard_dog_awake.png', DOGZ: 'P02_guard_dog_asleep.png', SHEEP: 'P03_sheep.png', PLANE: 'P04_navy_biplane_1943.png', H01: 'H01_helicopter.png' },
+    props: { DOG: 'P01_guard_dog_awake.png', DOGZ: 'P02_guard_dog_asleep.png', SHEEP: 'P03_sheep.png', PLANE: 'P04_navy_biplane_1943.png', H01: 'H01_helicopter.png' },
     cast: { doug: 'hoodie', gary: 'oxford', coach: { outfit: 'polo', holdR: 'clipboard' }, cadet: { outfit: 'oxford', hat: 'pilot' } },
     shots: [
       { at: 'scream', plate: 'B01', zoom: [5.0, 2.1], focus: [[.135, .37], [.18, .42]] },     // THE HOOK: Gary asleep in bed, face huge → crash-zoom out
@@ -70,8 +70,20 @@
       const HEADSET = new Set(); G.head.traverse(o => HEADSET.add(o));
       const bodyVis = on => { G.root.traverse(o => { if (o.isMesh) o.visible = on || HEADSET.has(o); }); if (G.blob) G.blob.visible = on; };
       bodyVis(true);
-      const garyAsleep = (fc = 'blink') => { G.face(fc); G.pose({ t, tilt: -.55, nod: .1 + .02 * Math.sin(t * 1.3), lean: 0 }); placeHead('gary', PILLOW, .9 - 2.1 * 1.6, .35, 2.1); bodyVis(false);
-        const p = K.img(236, 811); K.prop('DUVET', { x: p.x, y: p.y, w: 472 * s() }); };
+      // Gary lies FLAT on top of the bed (Brian: "his whole body flat, sized normal, no sheets, eyes closed"): his standing pose laid on its
+      // side, facing us, head on the pillow, feet toward the far end of the duvet. Solve position, scale and turn so head + feet land on those pixels.
+      const FEET = [430, 655];
+      const garyAsleep = (fc = 'blink') => { G.face(fc); G.pose({ t, tilt: -.45, nod: .05, armR: { raise: .05 }, armL: { raise: .05 } });
+        const tg = K.img(...PILLOW), tf = K.img(...FEET), y = .9;
+        let [x, z] = K.floorAt(PILLOW[0] + 150, Math.min(1500, PILLOW[1] + 220)), sc = 1.5, ry = 0;
+        const put = (x, z) => { K.place('gary', x, y, z, 0, sc); G.root.rotation.set(0, ry, PI / 2); G.root.updateMatrixWorld(true); };
+        for (let it = 0; it < 5; it++) {
+          for (let k = 0; k < 3; k++) { put(x, z); const a = K.screenOf(G.head); put(x + .05, z); const b = K.screenOf(G.head); put(x, z + .05); const c = K.screenOf(G.head);
+            const j11 = (b.x - a.x) / .05, j21 = (b.y - a.y) / .05, j12 = (c.x - a.x) / .05, j22 = (c.y - a.y) / .05, det = j11 * j22 - j12 * j21, ex = tg.x - a.x, ey = tg.y - a.y;
+            x += (j22 * ex - j12 * ey) / det; z += (-j21 * ex + j11 * ey) / det; }
+          put(x, z); const h = K.screenOf(G.head), f = K.screenOf(G.leg[1].ankle);
+          sc = Math.min(8, Math.max(.6, sc * Math.hypot(tf.x - tg.x, tf.y - tg.y) / Math.max(1, Math.hypot(f.x - h.x, f.y - h.y)))); }
+        put(x, z); G.blob.visible = false; };
       // Doug IN THE ARMCHAIR (seat ≈ .45 m): hips on the cushion, feet on the floor
       const dougInChair = () => seat('doug', CHAIR, -.47, -.6);
       const dsit = () => { K.sit(D, 'down'); for (const k of [-1, 1]) { D.leg[k].hip.rotation.set(-1.3, 0, 0); D.leg[k].knee.rotation.x = 1.3; } };
