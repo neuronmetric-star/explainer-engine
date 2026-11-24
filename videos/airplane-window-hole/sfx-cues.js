@@ -4,7 +4,9 @@ module.exports = ({ T, word }) => {
   const ev = [];
   const steps = (from, dur, rate, g) => { for (let t = T(from) + .15; t < T(from) + dur; t += 1 / rate) ev.push({ at: t, sfx: 'step', gain: g }); };
   for (const c of ['card', 'sky', 'push', 'seal', 'fog', 'fault', 'drill', 'clear', 'door', 'outer', 'mirror']) ev.push({ at: T(c) - .05, sfx: 'whoosh', gain: .3 });
-  ev.push({ at: 'q', sfx: 'pop', gain: .45 }, { at: 'q+0.5', sfx: 'pop', gain: .4 }, { at: 'dot', sfx: 'beep', gain: .3 });
+  // THE HOOK: a hit on frame 1, a whoosh on the crash-zoom, a sting as Gary jumps
+  ev.push({ at: 0, sfx: 'clunk', gain: .7 }, { at: 0.25, sfx: 'whoosh', gain: .5 }, { at: 0.3, sfx: 'click', gain: .8 }, { at: 0.32, sfx: 'pop', gain: .6 });
+  ev.push({ at: 'q', sfx: 'pop', gain: .4 }, { at: 'dot', sfx: 'beep', gain: .3 });
   steps('card', 1.6, 2.6, .4);
   ev.push({ at: 'sky', sfx: 'plane', gain: .35 }, { at: 'sky+0.6', sfx: 'pop', gain: .35 }, { at: 'balloon+0.3', sfx: 'hum', gain: .3 });
   for (let i = 0; i < 6; i++) ev.push({ at: T('milk') + .1 + i * .09 + .3, sfx: 'clunk', gain: .32 });

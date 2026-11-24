@@ -77,7 +77,8 @@
     cast: { doug: { outfit: 'hoodie', hat: 'hard', holdR: 'drill' }, gary: 'oxford' },
     // fewer, longer shots; same-plate neighbors continue the camera (each start = the previous end)
     shots: [
-      { at: 'q', plate: '05', zoom: [1.02, 1.45], focus: [[.42, .5], [.24, .42]] },          // q → mistake: one slow push to the hole
+      { at: 'scream', plate: '05', zoom: [4.4, 1.1], focus: [[.174, .423], [.42, .48]] },     // THE HOOK: crash-zoom out from the hole
+      { at: 'q', plate: '05', zoom: [1.1, 1.45], focus: [[.42, .48], [.24, .42]] },          // q → mistake: one slow push back to the hole
       { at: 'card', plate: '02', zoom: [1.0, 1.1], focus: [[.5, .55], [.52, .58]] },
       { at: 'sky', plate: '03', zoom: [1.2, 1.0], focus: [[.5, .45], [.5, .5]] },            // sky → balloon: one pull-back
       { at: 'balloon', plate: '03', zoom: [1.0, 1.1], focus: [[.5, .5], [.5, .46]] },
@@ -97,10 +98,10 @@
       { at: 'mirror', plate: '07', zoom: [1.12, 1.18], focus: [[.42, .5], [.42, .5]] },
       { at: 'cta', plate: '07', zoom: [1.18, 1.2], focus: [[.42, .5], [.42, .5]] },
     ],
-    shakes: [['milk+0.5', .25, .3], ['crack', .3, .45]],
+    shakes: [['scream+0.3', .45, .7], ['milk+0.5', .25, .3], ['crack', .3, .45]],
     flashes: [],
     follow: { from: 'cta+0.3' },
-    tail: 1.4,
+    tail: 1.2,
 
     build(K) {   // the door for the comparison shot: a plain wooden door in a frame, standing on the workshop floor
       const g = new THREE.Group(), wood = new THREE.MeshStandardMaterial({ color: new THREE.Color(0xb07a48).convertSRGBToLinear(), roughness: .7 });
@@ -123,12 +124,23 @@
       const tray = plate => { const p = K.img(400, 1160 + 188); K.prop(plate === '06' ? 'TRAY6' : 'TRAY5', { x: p.x, y: p.y, w: 800 * K.imgScale() }); };
       const sway = (k = 1) => ({ look: .06 * k * Math.sin(t * .7), tilt: .04 * k * Math.sin(t * .9 + 1) });   // idle life
       switch (id) {
+        case 'scream': { // THE HOOK (PLAYBOOK §3.5 #12): frame 1 = the hole, huge, frost crackling; crash-zoom out; Gary jumps back screaming
+          seated(); const r = K.pop(K.clamp01((t - .28) / .3));
+          face(G, t > .28 ? 'scream' : 'flat', t); G.pose({ t, look: -.4, lean: -.22 * r, armR: { raise: .85 * r }, armL: { raise: .85 * r }, handR: 'open', handL: 'open', nod: -.12 * r });
+          G.root.position.y += .06 * Math.sin(K.clamp01((t - .28) / .35) * PI); sit(G); tray('05');
+          const h = K.img(...WIN.hole), hs = K.imgScale() / 1.25;
+          K.text('●', { x: h.x, y: h.y, size: 26 * hs, color: '#1a2230', stroke: 0, shadow: false }); holeRing(K, t, h, 26 * hs, 1);
+          for (let i = 0; i < 10; i++) { const a = i / 10 * 2 * PI + .3, rr = (44 + 18 * (i % 3)) * hs * K.easeOut(K.clamp01(t / .5 - i * .03));
+            K.text('✱', { x: h.x + Math.cos(a) * rr, y: h.y + Math.sin(a) * rr, size: (16 + 6 * (i % 3)) * hs, color: '#ffffff', stroke: 2, a: .9 }); }
+          const k = K.pop(K.clamp01((t - .05) / .25));
+          K.text('WHAT THE HECK?!', { y: 330 + 6 * Math.sin(t * 50) * (1 - K.clamp01(t - .3)), size: 98, color: 'gold', scale: k, rot: -.05 + .02 * Math.sin(t * 40) * (1 - K.clamp01(t - .3)) });
+          break; }
         case 'q': { // one slow push from Gary to the hole; the hole lights up on "A tiny hole"
           seated(); const td = at('dot'), tm = at('mistake');
-          face(G, t > tm ? 'smirk' : t > td ? 'surprised' : 'flat', t);
+          face(G, t > tm ? 'smirk' : 'surprised', t);
           G.pose({ t, look: -.55 + .1 * K.ease((t - tm) / .5), lean: .06 * K.ease((t - at('look')) / .6), tilt: .12 });
           sit(G); tray('05');
-          const h = K.img(...WIN.hole); K.text('●', { x: h.x, y: h.y, size: 26, color: '#1a2230', stroke: 0, shadow: false }); holeRing(K, t, h, 26, K.ease((t - td) / .4));
+          const h = K.img(...WIN.hole), hs = K.imgScale() / 1.25; K.text('●', { x: h.x, y: h.y, size: 26 * hs, color: '#1a2230', stroke: 0, shadow: false }); holeRing(K, t, h, 26 * hs, Math.max(.35, K.ease((t - td) / .4)));
           const a = K.clamp01((at('look') + .4 - t) / .3);
           K.text('WHY DO AIRPLANE WINDOWS', { y: 290, size: 66, a, scale: .8 + .2 * popIn(K, t, at('q')) });
           K.text('HAVE A HOLE?', { y: 380, size: 92, color: 'gold', a, scale: .8 + .2 * popIn(K, t, at('q') + .5) }); break; }
