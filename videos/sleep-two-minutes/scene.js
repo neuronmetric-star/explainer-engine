@@ -69,7 +69,7 @@
       // only Gary's head shows in bed (the painted bed is big for the camera match): hide his body, scale the head to the pillow
       const HEADSET = new Set(); G.head.traverse(o => HEADSET.add(o));
       const bodyVis = on => { G.root.traverse(o => { if (o.isMesh) o.visible = on || HEADSET.has(o); }); if (G.blob) G.blob.visible = on; };
-      bodyVis(true);
+      bodyVis(true); G.root.rotation.set(0, 0, 0); if (G.blob) G.blob.visible = true;   // reset the lying pose every frame (only the bed shots lay him down)
       // Gary lies FLAT on top of the bed (Brian: "his whole body flat, sized normal, no sheets, eyes closed"): his standing pose laid on its
       // side, facing us, head on the pillow, feet toward the far end of the duvet. Solve position, scale and turn so head + feet land on those pixels.
       const FEET = [430, 655];
