@@ -71,6 +71,7 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 | Nov 24 | high-conversation | "I want the setting to be a chill place and Doug and Gary to look the part" | chill den set (couch, lava lamp, string lights); `chilldoug` / `chillgary` outfits + `chill`/`zoned`/`giggle` faces in `engine/characters.js` | the set AND the cast's clothes/faces match the video's vibe; new looks get a cast-sheet preview before any art |
 | Nov 24 | high-conversation | "the other ones don't make sense… make more points like Cleopatra… stupid true facts that are real" | dropped the nonsense lines (who invented hands, cereal soup); every line is a sourced mind-blowing fact, each one leading to the next | in a skit, every "crazy" line is a TRUE fact the viewer can repeat; no filler jokes in the characters' mouths |
 | Nov 24 | high-conversation | "I got a better one for you… they cracked up" | one-upping refrain ("Okay… I got a better one") + "They crack up." beats with laugh SFX | conversations escalate (each line tops the last) and the cast reacts like real friends between beats |
+| Nov 24 | high-conversation | "Can you make their eyes red" | `redEyes: true` option in `engine/characters.js` (pink-red whites + veins; on by default in `chilldoug`/`chillgary`) | Brian decides the vibe vs reach trade-off; Claude flags the risk once, then does it |
 
 ## Results (fill in on the Sunday check)
 | Video | Posted | Views (7 days) | 3-s hold | Watched to end | Shares | Saves | What it teaches |

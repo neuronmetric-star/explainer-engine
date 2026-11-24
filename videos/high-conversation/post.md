@@ -13,7 +13,7 @@ High conversations with your best friend (every fact is real) #shorts
 
 ## Notes
 - First comment to pin: "Which one broke your brain? Cleopatra, mammoths, T. rex, trees, cards or your nose? 👇"
-- Reach risk: TikTok can limit videos that talk about being high. Nothing on screen shows a drug; keep drug hashtags OFF (#stoner, #high, #420). If the 3-s hold is fine but views stall under ~300, re-cut line 1 to "a 3 a.m. conversation" for Reels/Shorts.
+- Reach risk: TikTok can limit videos that talk about being high, and the red eyes (Brian's call) make it more obvious. Nothing on screen shows a drug; keep drug hashtags OFF (#stoner, #high, #420). If the 3-s hold is fine but views stall under ~300, re-cut line 1 to "a 3 a.m. conversation" for Reels/Shorts.
 - Facts + sources: `sources.md` (USGS, Smithsonian, Nature 2015, McGill, Live Science…). Pin a source reply if someone says "fake".
 - The laughs are synthesized; if TikTok offers a trending laugh sound, it can replace them at low volume.
 - Reply to the first comments in the first 30 minutes.

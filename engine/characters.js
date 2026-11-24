@@ -68,15 +68,20 @@
   // ---------- faces: drawn on an equirect canvas; front of the sphere is u=0.25 ----------
   // v2: bigger features, oval eyes with a catchlight, thinner arched brows, warm near-black ink (matches the ref sheets).
   const FACE_CACHE = {};
-  function faceTex(name, mustache) {
-    const key = name + (mustache ? '|m' : '');
+  function faceTex(name, mustache, red) {
+    const key = name + (mustache ? '|m' : '') + (red ? '|r' : '');
     if (FACE_CACHE[key]) return FACE_CACHE[key];
     const W = 2048, H = 1024, c = document.createElement('canvas'); c.width = W; c.height = H;
     const g = c.getContext('2d'); g.fillStyle = '#ffffff'; g.fillRect(0, 0, W, H);
     // eyes ±140 px from the center ≈ 42% of the head width apart (the ref sheets), mouth ≈ a quarter of the head wide
     const cx = W * .25, cy = H * .5, ex = 140, ey = -8, INK = '#1d1612', MOUTH = '#3a1712', TONGUE = '#e8706a';
     g.strokeStyle = g.fillStyle = INK; g.lineCap = 'round'; g.lineJoin = 'round';
-    const eye = (x, y, rx = 24, ry = 34) => { g.fillStyle = INK; g.beginPath(); g.ellipse(x, y, rx, ry, 0, 0, TAU); g.fill();
+    const eye = (x, y, rx = 24, ry = 34) => {
+      if (red) { // red eyes (high-conversation, Brian Nov 24 2026): pink-red whites with little veins around the pupil
+        g.fillStyle = '#ef6a62'; g.beginPath(); g.ellipse(x, y, rx + 22, ry + 18, 0, 0, TAU); g.fill();
+        g.strokeStyle = '#b3160f'; g.lineWidth = 5; for (const [a, l] of [[.3, 16], [2.7, 14], [3.6, 12], [5.9, 15]]) { g.beginPath(); g.moveTo(x + Math.cos(a) * (rx + 18), y + Math.sin(a) * (ry + 12)); g.lineTo(x + Math.cos(a) * (rx + 18 - l), y + Math.sin(a) * (ry + 12 - l)); g.stroke(); }
+        g.lineWidth = 6; g.beginPath(); g.ellipse(x, y, rx + 22, ry + 18, 0, 0, TAU); g.stroke(); g.strokeStyle = INK; }
+      g.fillStyle = INK; g.beginPath(); g.ellipse(x, y, rx, ry, 0, 0, TAU); g.fill();
       g.fillStyle = '#ffffff'; g.beginPath(); g.arc(x - rx * .32, y - ry * .45, Math.min(rx, ry) * .17, 0, TAU); g.fill(); g.fillStyle = INK; };
     const eyes = (rx, ry) => { for (const s of [-1, 1]) eye(cx + s * ex, cy + ey, rx, ry); };
     const arc = (x, y, r, a0, a1, w = 11) => { g.lineWidth = w; g.beginPath(); g.arc(x, y, r, a0, a1); g.stroke(); };
@@ -100,9 +105,10 @@
         g.lineWidth = 11; g.beginPath(); g.moveTo(cx - 60, cy + 124); g.quadraticCurveTo(cx - 28, cy + 102, cx, cy + 118); g.quadraticCurveTo(cx + 28, cy + 134, cx + 60, cy + 112); g.stroke(); break;
       // stoned-chill faces (Nov 24 2026, high-conversation): heavy lids cover the top of each eye; never red eyes
       case 'chill': case 'zoned': case 'giggle': {
-        const lid = (x, y, rx, ry, k) => { eye(x, y, rx, ry); g.fillStyle = '#ffffff'; g.fillRect(x - rx - 8, y - ry - 12, rx * 2 + 16, ry * k + 12);
-          g.fillStyle = INK; line(x - rx - 14, y - ry + ry * k, x + rx + 14, y - ry + ry * k + 4, 12); };
-        if (name === 'giggle') { for (const s of [-1, 1]) arc(cx + s * ex, cy + ey + 26, 30, -Math.PI * .85, -Math.PI * .15, 12); brows(4);
+        const lid = (x, y, rx, ry, k) => { eye(x, y, rx, ry); g.fillStyle = '#ffffff'; g.fillRect(x - rx - 26, y - ry - 20, rx * 2 + 52, ry * k + 20);
+          g.fillStyle = INK; line(x - rx - 24, y - ry + ry * k, x + rx + 24, y - ry + ry * k + 4, 12); };
+        if (name === 'giggle') { if (red) { g.fillStyle = 'rgba(225,60,50,.7)'; for (const s of [-1, 1]) { g.beginPath(); g.ellipse(cx + s * ex, cy + ey + 22, 46, 22, 0, 0, TAU); g.fill(); } g.fillStyle = INK; }
+          for (const s of [-1, 1]) arc(cx + s * ex, cy + ey + 26, 30, -Math.PI * .85, -Math.PI * .15, 12); brows(4);
           g.fillStyle = MOUTH; g.beginPath(); g.ellipse(cx, cy + 118, 70, 46, 0, 0, Math.PI); g.fill(); g.lineWidth = 11; g.strokeStyle = INK; g.stroke(); line(cx - 70, cy + 118, cx + 70, cy + 118, 11); break; }
         for (const s of [-1, 1]) lid(cx + s * ex, cy + ey + 6, 25, 32, 1.05);
         for (const s of [-1, 1]) line(cx + s * ex - 40, cy - 64, cx + s * ex + 40, cy - 60 - s * 4, 10);   // relaxed, low brows
@@ -147,9 +153,9 @@
     isidro: { shirt: 0xffffff, plaid: [0xb3262a, 0x1d1718], pants: 0x222c46, shoes: 0x6e3b1c, belt: 0x4e2c15, buckle: 'big', sleeves: 'long', build: 'medium',
               jeans: true, boots: true, capFwd: 0x1d2440, mustache: true, collar: 'western', western: true },
     // chill looks (Nov 24 2026, high-conversation): Doug = his mustard hoodie + slouchy olive beanie + gray sweatpants;
-    // Gary = glasses + tie-dye tee + bucket hat + loose sage sweatpants. Use with faces chill | zoned | giggle.
-    chilldoug: { shirt: 0xd98a14, pants: 0x8b8d94, shoes: 0xf4f4f2, sleeves: 'long', build: 'hoodie', sneakers: true, hoodie: true, beanie: 0x5d6b3a },
-    chillgary: { shirt: 0xffffff, tiedye: [0xe8463c, 0xf5a623, 0xf7e04a, 0x3fb56b, 0x3a7bd5, 0x8e4fc4], pants: 0x9aa58a, shoes: 0xe9e6dc, sleeves: 'short',
+    // Gary = glasses + tie-dye tee + bucket hat + loose sage sweatpants. Use with faces chill | zoned | giggle. redEyes: true (any outfit) = pink-red eye whites.
+    chilldoug: { redEyes: true, shirt: 0xd98a14, pants: 0x8b8d94, shoes: 0xf4f4f2, sleeves: 'long', build: 'hoodie', sneakers: true, hoodie: true, beanie: 0x5d6b3a },
+    chillgary: { redEyes: true, shirt: 0xffffff, tiedye: [0xe8463c, 0xf5a623, 0xf7e04a, 0x3fb56b, 0x3a7bd5, 0x8e4fc4], pants: 0x9aa58a, shoes: 0xe9e6dc, sleeves: 'short',
                  build: 'slim', crew: true, sneakers: true, glasses: true, hat: 'bucket', hatColor: 0x2f4a3a },
     suit:   { shirt: 0x1e2a55, pants: 0x1e2a55, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc4182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
@@ -403,7 +409,7 @@
         const lens = mesh(new THREE.CircleGeometry(.14, 40), new THREE.MeshPhysicalMaterial({ color: 0xd8eeff, roughness: .05, transmission: .6, transparent: true, opacity: .45, envMap: env }), ring); lens.material.side = THREE.DoubleSide;
       }
     }
-    ch.face = name => { headMat.map = faceTex(name, o.mustache); };
+    ch.face = name => { headMat.map = faceTex(name, o.mustache, o.redEyes); };
     ch.face('smile');
     // handcuffs: a steel ring on each wrist + a short chain; shown with pose({cuffs:true}) (use with gesture 'cuffed')
     const cuffM = metal(0xc8cad0, env, .22), cuffs = [];
