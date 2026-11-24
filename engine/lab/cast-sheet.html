@@ -101,7 +101,17 @@ function roles() { labels.innerHTML = ''; document.getElementById('t').textConte
     const sc = one(o, ch => { ch.root.rotation.y = -.35; ch.face(f); ch.pose({ t: 1, gesture: g && g !== 'mag' ? g : undefined, gw: g && g !== 'mag' ? 1 : 0, armR: g === 'mag' ? { raise: .85 } : g ? undefined : { fwd: -1.3 } }); });
     cam.position.set(0, 1.4, 7.0); cam.lookAt(0, 1.22, 0); view(sc, cam, 20 + col * 350, 200 + row * 860, 340, 800); label(n, 20 + col * 350 + 170, 200 + row * 860 + 790, 340); });
   return true; }
-window.SHOT_COUNT = CAST.length + 3;
-window.renderShot = i => i < CAST.length ? sheet(i) : i === CAST.length ? lineup() : i === CAST.length + 1 ? portrait() : roles();
+// chill looks (Nov 24 2026): render-lab --shot <CAST.length+3>
+function chill() { labels.innerHTML = ''; document.getElementById('t').textContent = 'CHILL DOUG + GARY'; document.getElementById('s').textContent = "outfit 'chilldoug' / 'chillgary' · faces chill · zoned · giggle";
+  renderer.setScissorTest(false); renderer.setViewport(0, 0, W, H); renderer.setClearColor(BG); renderer.clear();
+  const cam = new THREE.PerspectiveCamera(24, 1, .1, 100);
+  [['DOUG', 'chilldoug'], ['GARY', 'chillgary']].forEach(([n, of], k) => {
+    const sc = one({ outfit: of }, ch => { ch.root.rotation.y = k ? .3 : -.3; ch.face('chill'); ch.pose({ t: 1 + k, gesture: k ? 'shrug' : undefined, gw: k ? .6 : 0 }); });
+    cam.fov = 24; cam.position.set(0, 1.3, 6.4); cam.lookAt(0, 1.15, 0); view(sc, cam, 20 + k * 530, 190, 510, 1000); label(n, 20 + k * 530 + 255, 1180, 300);
+    ['chill', 'zoned', 'giggle'].forEach((f, j) => { const s2 = one({ outfit: of }, ch => { ch.face(f); ch.pose({ t: 1 }); });
+      cam.fov = 18; cam.position.set(0, 2.1, 3.6); cam.lookAt(0, 2.0, 0); view(s2, cam, 20 + k * 530 + j * 172, 1260, 166, 240); label(f.toUpperCase(), 20 + k * 530 + j * 172 + 83, 1500, 166); }); });
+  return true; }
+window.SHOT_COUNT = CAST.length + 4;
+window.renderShot = i => i < CAST.length ? sheet(i) : i === CAST.length ? lineup() : i === CAST.length + 1 ? portrait() : i === CAST.length + 2 ? roles() : chill();
 window.ready = true;
 </script></body></html>

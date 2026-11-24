@@ -5,9 +5,9 @@
 //  jeans, laced sneakers, dress shoes). Model sheets: node engine/lab/render-lab.js <out> --page cast-sheet.html
 //
 //  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang'|'isidro', glasses, phone, mask, beanie, shirt, pants, envMap,
-//             hat:'hard'|'inspector'|'pilot'|'chef'|'top', hatColor, holdR/holdL:'clipboard'|'drill'|'magnifier'})
+//             hat:'hard'|'inspector'|'pilot'|'chef'|'top'|'bucket', hatColor, holdR/holdL:'clipboard'|'drill'|'magnifier'})
 //    ch.root            THREE.Group, feet at y=0, faces +z
-//    ch.face('smile')   smile | happy | surprised | scream | smirk | blink | worried | flat
+//    ch.face('smile')   smile | happy | surprised | scream | smirk | blink | worried | flat | chill | zoned | giggle
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw, handR, handL})
 //    gestures: point | wave | shrug | cross | think | facepalm | hips | tada | cuffed   (gw = blend 0..1; pose({cuffs:true}) shows handcuffs)
 //    hands (round mitts): 'fist' | 'relaxed' | 'open' | 'point' (set by the gesture; override with handR/handL)
@@ -43,6 +43,19 @@
     g.fillStyle = css(Bc); g.fillRect(N / 2, N / 2, N / 2, N / 2);
     g.globalAlpha = .12; g.fillStyle = '#000'; for (let i = 0; i < N; i += 4) { g.fillRect(i, 0, 1, N); g.fillRect(0, i, N, 1); }   // weave lines
     const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(8, 8); t.encoding = THREE.sRGBEncoding;
+    return (TEX[key] = t);
+  }
+  // tie-dye: concentric wavy rings of bright colors (Gary's chill tee, Nov 24 2026)
+  function tiedye(cols) {
+    const key = 'tiedye' + cols.join('_'); if (TEX[key]) return TEX[key];
+    const N = 256, c = document.createElement('canvas'); c.width = c.height = N; const g = c.getContext('2d'), css = k => '#' + new THREE.Color(k).getHexString();
+    const img = g.createImageData(N, N), C3 = cols.map(k => new THREE.Color(k));
+    for (let y = 0; y < N; y++) for (let x = 0; x < N; x++) { const dx = x - N / 2, dy = y - N / 2, r = Math.hypot(dx, dy) / N, a = Math.atan2(dy, dx);
+      const v = (((r * 9 + Math.sin(a * 5 + r * 14) * .35) % C3.length) + C3.length) % C3.length, i0 = Math.floor(v), f = v - i0, A = C3[i0 % C3.length], Bc = C3[(i0 + 1) % C3.length];
+      const sm = f < .7 ? 0 : (f - .7) / .3, o = (y * N + x) * 4;
+      img.data[o] = (A.r + (Bc.r - A.r) * sm) * 255; img.data[o + 1] = (A.g + (Bc.g - A.g) * sm) * 255; img.data[o + 2] = (A.b + (Bc.b - A.b) * sm) * 255; img.data[o + 3] = 255; }
+    g.putImageData(img, 0, 0);
+    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(2, 2); t.encoding = THREE.sRGBEncoding;
     return (TEX[key] = t);
   }
   const cloth = (color, kind = 'weave', rough = .9, bump = .006) => new THREE.MeshStandardMaterial({ color, roughness: rough, metalness: 0, bumpMap: fabric(kind), bumpScale: bump });
@@ -85,6 +98,17 @@
         g.lineWidth = 12; g.beginPath(); g.moveTo(cx - 86, cy + 98); g.quadraticCurveTo(cx + 10, cy + 140, cx + 96, cy + 80); g.stroke(); break;
       case 'worried': for (const s of [-1, 1]) line(cx + s * (ex + 54), cy - 66, cx + s * (ex - 46), cy - 100, 11); eyes(23, 31);
         g.lineWidth = 11; g.beginPath(); g.moveTo(cx - 60, cy + 124); g.quadraticCurveTo(cx - 28, cy + 102, cx, cy + 118); g.quadraticCurveTo(cx + 28, cy + 134, cx + 60, cy + 112); g.stroke(); break;
+      // stoned-chill faces (Nov 24 2026, high-conversation): heavy lids cover the top of each eye; never red eyes
+      case 'chill': case 'zoned': case 'giggle': {
+        const lid = (x, y, rx, ry, k) => { eye(x, y, rx, ry); g.fillStyle = '#ffffff'; g.fillRect(x - rx - 8, y - ry - 12, rx * 2 + 16, ry * k + 12);
+          g.fillStyle = INK; line(x - rx - 14, y - ry + ry * k, x + rx + 14, y - ry + ry * k + 4, 12); };
+        if (name === 'giggle') { for (const s of [-1, 1]) arc(cx + s * ex, cy + ey + 26, 30, -Math.PI * .85, -Math.PI * .15, 12); brows(4);
+          g.fillStyle = MOUTH; g.beginPath(); g.ellipse(cx, cy + 118, 70, 46, 0, 0, Math.PI); g.fill(); g.lineWidth = 11; g.strokeStyle = INK; g.stroke(); line(cx - 70, cy + 118, cx + 70, cy + 118, 11); break; }
+        for (const s of [-1, 1]) lid(cx + s * ex, cy + ey + 6, 25, 32, 1.05);
+        for (const s of [-1, 1]) line(cx + s * ex - 40, cy - 64, cx + s * ex + 40, cy - 60 - s * 4, 10);   // relaxed, low brows
+        if (name === 'chill') { g.lineWidth = 12; g.beginPath(); g.moveTo(cx - 70, cy + 104); g.quadraticCurveTo(cx + 10, cy + 136, cx + 82, cy + 96); g.stroke(); }
+        else { g.fillStyle = MOUTH; g.beginPath(); g.ellipse(cx, cy + 124, 30, 20, 0, 0, TAU); g.fill(); g.lineWidth = 10; g.strokeStyle = INK; g.stroke(); }
+        break; }
       case 'blink': brows(); for (const s of [-1, 1]) line(cx + s * ex - 28, cy + ey, cx + s * ex + 28, cy + ey, 12); smile(); break;
       case 'flat': for (const s of [-1, 1]) line(cx + s * ex - 38, cy - 80, cx + s * ex + 38, cy - 80, 10); eyes(23, 30); line(cx - 54, cy + 118, cx + 54, cy + 118, 12); break;
       default: /* smile */ brows(); eyes(); smile();
@@ -122,6 +146,11 @@
     // western shirt (pearl snaps, two flap pockets), dark indigo jeans, big oval silver buckle, brown boots. Never armed. pose({cuffs:true}).
     isidro: { shirt: 0xffffff, plaid: [0xb3262a, 0x1d1718], pants: 0x222c46, shoes: 0x6e3b1c, belt: 0x4e2c15, buckle: 'big', sleeves: 'long', build: 'medium',
               jeans: true, boots: true, capFwd: 0x1d2440, mustache: true, collar: 'western', western: true },
+    // chill looks (Nov 24 2026, high-conversation): Doug = his mustard hoodie + slouchy olive beanie + gray sweatpants;
+    // Gary = glasses + tie-dye tee + bucket hat + loose sage sweatpants. Use with faces chill | zoned | giggle.
+    chilldoug: { shirt: 0xd98a14, pants: 0x8b8d94, shoes: 0xf4f4f2, sleeves: 'long', build: 'hoodie', sneakers: true, hoodie: true, beanie: 0x5d6b3a },
+    chillgary: { shirt: 0xffffff, tiedye: [0xe8463c, 0xf5a623, 0xf7e04a, 0x3fb56b, 0x3a7bd5, 0x8e4fc4], pants: 0x9aa58a, shoes: 0xe9e6dc, sleeves: 'short',
+                 build: 'slim', crew: true, sneakers: true, glasses: true, hat: 'bucket', hatColor: 0x2f4a3a },
     suit:   { shirt: 0x1e2a55, pants: 0x1e2a55, shoes: 0x0e0e10, sleeves: 'long', tie: 0xc4182e, watch: 0xd4a83a, gold: true, build: 'stocky', jacket: true },
   };
 
@@ -132,7 +161,7 @@
       : o.build === 'hoodie' ? { w: .315, d: .24, th: .55, leg: .74, lr: .118, ar: .098, R: .34, hand: .145 }
       : { w: .285, d: .2, th: .55, leg: .74, lr: .112, ar: .088, R: .34, hand: .14 };
     const shirtKind = o.hoodie || o.bomber ? 'knit' : o.jacket || o.collar === 'oxford' ? 'fine' : 'weave';
-    const shirtM = cloth(o.shirt, shirtKind, o.hoodie ? .97 : .88, o.hoodie ? .008 : .005); if (o.plaid) { shirtM.map = plaid(o.plaid[0], o.plaid[1]); shirtM.color.set(0xffffff); }
+    const shirtM = cloth(o.shirt, shirtKind, o.hoodie ? .97 : .88, o.hoodie ? .008 : .005); if (o.plaid) { shirtM.map = plaid(o.plaid[0], o.plaid[1]); shirtM.color.set(0xffffff); } if (o.tiedye) { shirtM.map = tiedye(o.tiedye); shirtM.color.set(0xffffff); }
     const ribM = cloth(shade(o.shirt, .82), 'knit', .97, .012);
     const pantsM = o.jeans ? cloth(o.pants, 'denim', .9, .009) : cloth(o.pants, o.jacket ? 'fine' : 'weave', .88);
     const skinM = porcelain(env, .5, .12), blackM = plain(0x151515, .45), whiteM = plain(0xf2f0ea, .7);
@@ -210,6 +239,8 @@
       const hem = mesh(new THREE.CylinderGeometry(B.w * .92, B.w * .9, .07, 40), ribM, spine, 0, .03, 0); hem.scale.z = B.d / B.w;
       for (const s of [-1, 1]) mesh(new THREE.BoxGeometry(.014, .38, .014), metal(0xb8b8b8, env), spine, s * .085, B.th - .25, chestZ * .94);
       mesh(new THREE.BoxGeometry(.03, .05, .012), metal(0xb8b8b8, env), spine, .085, B.th - .1, chestZ * .96);       // zipper pull
+    } else if (o.crew) {   // plain crew-neck tee (Gary's tie-dye): ribbed neck, no collar, no buttons
+      const col = mesh(new THREE.TorusGeometry(.112, .022, 10, 28), o.tiedye ? cloth(0xf2efe6, 'knit', .95) : ribM, spine, 0, B.th - .012, -.005); col.rotation.x = Math.PI / 2; col.scale.set(1.15, 1, 1);
     } else {
       const darker = cloth(shade(o.shirt, .9), shirtKind, .88); if (o.plaid) { darker.map = shirtM.map; darker.color.set(0xd6d6d6); }
       // collar: band around the neck + two pointed wings
@@ -335,6 +366,11 @@
         mesh(new THREE.CylinderGeometry(R * .99, R * .98, R * .42, 48, 1, true), wm, ch.hat, 0, R * .66, 0);
         for (let i = 0; i < 5; i++) { const a = i / 5 * TAU; mesh(new THREE.SphereGeometry(R * .48, 24, 18), wm, ch.hat, Math.sin(a) * R * .45, R * 1.12, Math.cos(a) * R * .45); }
         mesh(new THREE.SphereGeometry(R * .55, 24, 18), wm, ch.hat, 0, R * 1.28, 0);
+      } else if (k === 'bucket') {    // soft bucket hat: rounded crown, wide brim sloping down all round
+        const bm = cloth(o.hatColor || 0x2f4a3a, 'weave', .95, .01); bm.side = THREE.DoubleSide;
+        const crown = mesh(new THREE.SphereGeometry(R * 1.05, 48, 18, 0, TAU, 0, Math.PI * .42), bm, ch.hat, 0, R * .16, 0); crown.scale.y = 1.12;
+        mesh(new THREE.CylinderGeometry(R * 1.04, R * 1.04, R * .14, 48, 1, true), cloth(shade(o.hatColor || 0x2f4a3a, .7), 'weave', .95), ch.hat, 0, R * .5, 0);   // band
+        mesh(new THREE.CylinderGeometry(R * 1.05, R * 1.3, R * .2, 56, 1, true), bm, ch.hat, 0, R * .36, 0);                                                     // short drooping brim
       } else if (k === 'top') {       // black top hat with a red band
         const bm = cloth(o.hatColor || 0x17171b, 'fine', .55);
         mesh(new THREE.CylinderGeometry(R * 1.08, R * 1.08, .022, 56), bm, ch.hat, 0, R * .62, 0);
