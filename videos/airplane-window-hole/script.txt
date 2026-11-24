@@ -21,7 +21,7 @@
 [#why] The air sealed between the panes was damp, like breath. [#cold] Up here, the outside pane is colder than a freezer. So, frost.
 [#drill] Doug drills one tiny {*hole|hole} in the backup pane. [#clear] The damp air escapes. Fog's gone.
 [#job] But that hole had a bigger job.
-[#same] Now the backup pane has the same air on both sides. No push. [#outer] The outside pane takes {*all of it.|all of it.}
+[#same] Now air sits on both sides of the backup pane, pushing equally. So it feels {*nothing.|nothing.} [#outer] The outside pane takes {*all of it.|all of it.}
 [#crack] If it cracks, the tiny hole leaks too slowly, and the backup pane takes over.
 [#mirror] Every plan needs a backup. This one needed a {*hole.|hole.}
 [#question] Next flight, find the {*hole.|hole.}
