@@ -1,0 +1,8 @@
+BATCH 2 (props P01–P04, solid pure green #00FF00)
+P01_dog_photo.png: THE PHOTO lying flat, seen straight from the front: a glossy printed photo with a thin white border of a happy golden retriever sitting on green grass, tongue out, under a blue sky. Light from the left, a thin darker outline around the photo. Centered on a solid pure green #00FF00 background, no text.
+
+P02_dog_photo_striped.png: The SAME photo, but printed badly: about eight thin horizontal white stripes where ink is missing run across the whole picture (the dog is still recognizable between the stripes). Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P03_ketchup_cap_crusty.png: ONE red squeeze ketchup bottle, upside down, with its flip cap open, the tiny hole in the cap crusted shut with dried dark-red ketchup. Cartoon style, chunky, light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text, no label words.
+
+P04_kettle_spitting.png: ONE chunky cartoon stovetop kettle (shiny red enamel), side view facing RIGHT, a puff of white steam and one big round drop of water spitting out of its spout. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
