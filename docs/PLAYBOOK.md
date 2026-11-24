@@ -538,6 +538,12 @@ Same painted 2D world and the same cast. These rules make the mechanism easier t
 7. **Do-it-yourself ending:** when the topic allows, the last spoken line before the CTA is a check the viewer can do
    ("Next flight, find the hole.") → saves. The comment question moves on screen + pinned comment.
 8. **Role hats and held props are engine-built** (§2): don't paint a clipboard, drill or magnifier as a prop.
+9. **Smooth, not choppy (Brian, Nov 24 2026: "not smooth enough"):** `SCENE.whip = true` turns every change of place into a
+   fast whip-pan with a short blur instead of a hard cut. Shots on the same painting **continue the camera** (each shot's start
+   zoom/focus = the previous shot's end), so a place is one flowing move. Aim for ~15–20 shots in a short, not 25+.
+10. **Diagrams move:** arrows are `flow()` streams (dots running along them), wet air drifts, frost grows; nothing just pops on.
+    Labels: 1–2 per diagram, only the locked names. Titles: the hook title, key numbers, and the final idea. Nothing else.
+11. **Every key idea gets a picture of its everyday comparison** (the door pushed from both sides, built in 3D with `K.scene3D`).
 
 ---
 

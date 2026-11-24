@@ -29,7 +29,8 @@
   K.lerp = (a, b, u) => a + (b - a) * u;
 
   // ---------------- renderer ----------------
-  const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true });
+  const canvasEl = document.getElementById('c');
+  const renderer = new THREE.WebGLRenderer({ canvas: canvasEl, antialias: true });
   renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.autoClear = false;
   renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -139,6 +140,7 @@
   const blobTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d'); const gr = g.createRadialGradient(64, 64, 4, 64, 64, 62);
     gr.addColorStop(0, 'rgba(0,0,0,.55)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c); })();
   K.cast = {};
+  K.scene3D = scene; K.env = env;   // scenes can add their own 3D objects (convert colors sRGB->linear themselves)
   // cast entry: 'hoodie' | {outfit:'president', phone:true} | 'robodog'
   function makeCast(def) { for (const [n, spec] of Object.entries(def)) {
     const o = typeof spec === 'string' ? { outfit: spec } : spec;
@@ -192,7 +194,12 @@
     const sh = SHOTS[i], end = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH, u = K.ease((t - sh.t) / Math.max(.01, end - sh.t));
     const z = K.lerp(sh.zoom[0], sh.zoom[1], u), fx = K.lerp(sh.focus[0][0], sh.focus[1][0], u), fy = K.lerp(sh.focus[0][1], sh.focus[1][1], u);
     const sk = amp(SC._shakes, t) * 18;
-    usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk, Math.cos(t * 47) * sk, (sh.clipFrom || 0) + (t - sh.t));
+    // WHIP-PAN (SCENE.whip = true): when the place changes, the new plate slides in fast from the side with a short blur,
+    // instead of a hard cut. Same-plate shots should continue the camera (next shot's start = last shot's end).
+    let wx = 0, blur = 0;
+    if (SC.whip && i > 0 && SHOTS[i - 1].plate !== sh.plate) { const wu = (t - sh.t) / .24; if (wu < 1) { const e = 1 - K.easeOut(wu); wx = e * W * .55 * (i % 2 ? 1 : -1); blur = e * 9; } }
+    canvasEl.style.filter = blur > .3 ? `blur(${blur.toFixed(1)}px)` : 'none';
+    usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk + wx, Math.cos(t * 47) * sk, (sh.clipFrom || 0) + (t - sh.t));
     K.shot = { i, id: sh.id, u, t0: sh.t, t1: end, local: t - sh.t };
     SC.update && SC.update(t, K);
     // series banner (PLAYBOOK §3.5): a small dark pill at the top, the whole video. SCENE.banner = 'THE HECK?'
