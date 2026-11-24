@@ -1,0 +1,15 @@
+# printer-how-it-works · one-off · mode: Explainer (track one drop of ink) · search phrase: "how does a printer work"
+# Payoff: a printer spits thousands of drops thinner than a hair by BOILING ink with a tiny heater; leave it unused and the ink dries in those holes.
+[#scream] {!WHAT THE HECK?!|What the heck?!} [#q] How does a {*printer|printer} work?
+[#look] Zoom into any printed photo. [#dots] It's not a picture. [#only] It's {*dots.|dots.}
+[#card] See, Doug had a problem. [#gift] He's printing Gary's dog for his birthday. [#months] But his printer hasn't printed in three months. [#save] He was saving ink.
+[#bet] Honestly? Smart. [#press] He hits print, [#stripes] and the dog comes out {!striped.|striped.}
+[#head] Inside, a little box slides left and right over the paper. [#holes] Under it: hundreds of holes, thinner than a hair. [#heater] Behind each hole, a tiny heater.
+[#zap] Zap. [#boil] It boils the ink in a blink. [#bubble] A bubble pops up and shoves out one drop. [#kettle] Like a kettle spitting. [#again] Thousands of times a second.
+[#mix] It never mixes colors. [#eyes] Just four colors of dots, side by side, and your eyes blend them. [#sprinkles] Like sprinkles on a donut.
+[#real] And this really happened. [#lab] In 1977, at Canon, a hot soldering iron touched a syringe of ink, by accident. [#shot] The ink shot out. [#idea] That accident is inside millions of printers.
+[#back] Doug's stripes? [#dry] In three months, the ink dried in those tiny holes, [#ketchup] like a crusty ketchup cap. [#clog] Clogged holes, missing stripes.
+[#clean] The cleaning button squirts ink through. [#works] It works. [#drink] But it drinks ink.
+[#mirror] Doug never printed to save ink. [#spent] Then the cleaning spent the ink he saved.
+[#question] Zoom your phone into any printed photo. See the dots? One word.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
