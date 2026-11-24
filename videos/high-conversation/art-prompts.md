@@ -1,13 +1,13 @@
 # Art prompts: high-conversation
 
 **How:** new ChatGPT chat → paste **START** → **BATCH 1** (3 backgrounds) → send Claude the images → Claude checks them →
-**BATCH 2** (2 backgrounds) → **BATCH 3** (8 props on green). The ending is the signature E01 city sunset (already painted).
-**Total: 5 backgrounds + 8 props = 13 images.**
+**BATCH 2** (1 background + 9 props on green). The ending is the signature E01 city sunset (already painted).
+**Total: 4 backgrounds + 9 props = 13 images.**
 
 **The chill place (Brian, Nov 24 2026: "a chill place"):** a cozy basement hangout at 2 a.m.: a big worn couch, lava lamp,
-string lights, a record player, plants, a ceiling fan, a TV glowing on a paused screen, snacks everywhere.
+string lights, a record player, plants, a ceiling fan, a TV glowing on a paused screen, snacks everywhere, a deck of cards on the table.
 **Color script:** B01–B03 den (deep plum + warm amber string lights + teal TV glow, cozy and hazy) → B04 the "brain break"
-timeline (cosmic purple and gold, wide and dreamy) → B05 kitchen (cold fridge light, blue-white) → E01 sunset rooftop (warm gold).
+timeline where every fact appears (cosmic purple and gold, wide and dreamy) → E01 sunset rooftop (warm gold).
 Nothing in any picture shows drugs, smoke clouds from a joint, pipes or leaves: the chill comes from the room, the light and the faces.
 
 ```
@@ -80,7 +80,7 @@ STRICT: no people, no faces, no hands, no animals. No smoke, pipes or leaves.
 ```
 
 ```
-BATCH 2 (backgrounds B04–B05)
+BATCH 2 (background B04, then props P01–P09)
 B04_brain_timeline.png: SHOT: a wide, dreamy view along one long road that runs from the bottom-left into the far distance at the top-right, horizon about 45% from the top.
 PLACE + MOOD: a cosmic "brain-break" world: a long golden road floating through a purple starry sky, like a thought you can walk along. Playful, mind-blowing, clear like a children's book.
 HERO: the road itself: a long, straight, glowing golden path with evenly spaced little lamp posts, like a timeline, clearly readable from near to far.
@@ -96,30 +96,15 @@ STAGING: keep the three platforms empty and flat on top; keep the band at 60–7
 TEXT: none. No numbers.
 STRICT: no people, no faces, no hands, no animals.
 
-B05_kitchen_fridge.png: SHOT: eye-level, three-quarter view into a small kitchen at night, 28mm lens feel, horizon about 45% from the top.
-PLACE + MOOD: the house kitchen at 5 a.m.: dark, quiet, one big indecision: what to eat.
-HERO: a tall retro fridge in mint green on the RIGHT with its door wide OPEN, cold blue-white light pouring out across the floor; inside: shelves with leftovers, a carton, jars, half a cake, condiments, a pickle jar.
-FOREGROUND: the corner of a kitchen counter cropped at the bottom-left edge with an open loaf of bread, a jar of peanut butter, a knife, an empty cereal box.
-MIDGROUND: a checkered black-and-white tile floor lit by the fridge glow; open cabinet doors on the left showing snack boxes and chip bags (blank labels).
-BACKGROUND: a dark window above the sink with the first purple light of dawn, a toaster, a microwave with a blank dark display, a fruit bowl with one sad banana, hanging pans.
-DRESSING: magnets on the fridge, a stack of take-out menus (blank), a dish rack, a mug tree, a ceramic cookie jar, a wall clock with tick marks only.
-STORY DETAILS: every cabinet is open, a bag of chips folded shut with a clothespin, a sticky note on the fridge (blank).
-LIGHT: cold blue-white light from the open fridge, faint purple dawn from the window, deep blue shadows, a warm small light under the cabinets.
-PALETTE: cold blue-white, mint, deep navy, with a warm yellow accent (the under-cabinet light).
-TEXTURE: glossy enamel, checkered tile with reflections, wood cabinets, glass jars.
-STAGING: keep the tile floor in front of the open fridge clear and flat (about half the frame wide) for two characters to stand. Keep the band at 60–72% height calm.
-TEXT: none. No numbers.
-STRICT: no people, no faces, no hands, no animals.
+PROPS (each on solid pure green #00FF00, no shadow on the background; for these props only, cartoon animals and dinosaurs are allowed):
+P01_cards_deck.png: a deck of playing cards caught mid-shuffle, the cards fanned in an arc between two halves, red and white card backs with a simple diamond pattern (no numbers, no letters, no faces on the cards), a couple of cards flying loose. Warm light from the left, soft highlight, a thin darker outline.
+P02_pyramid.png: the Great Pyramid of Giza alone, sandy gold limestone blocks, the tip slightly worn, a little sand drift at its base, low three-quarter angle. Warm desert light from the left, a soft shadow on the pyramid only, a thin darker outline.
+P03_cleopatra_crown.png: an ancient Egyptian queen's golden headdress floating on its own (no head, no face): gold-and-blue stripes, a golden cobra at the front, glittering jewels, front view. Warm light from the left, a thin darker outline.
+P04_moon_lander.png: a small cartoon Moon lander with gold foil legs on a little round chunk of gray Moon ground with craters, a tiny blank white flag beside it (no stripes, no stars, no text). Light from the left, a thin darker outline.
+P05_mammoth.png: a cute, slightly small woolly mammoth, side view facing RIGHT, shaggy brown fur, curved white tusks, standing on a little patch of snow. Cool light from the left, a soft highlight, a thin darker outline.
+P06_trex.png: a friendly cartoon T. rex, side view facing RIGHT, green-brown with a lighter belly, tiny arms, a goofy proud grin with no sharp teeth showing. Warm light from the left, a thin darker outline.
+P07_stegosaurus.png: a friendly cartoon Stegosaurus, side view facing LEFT, olive green with orange back plates and a spiky tail, a calm sleepy smile. Warm light from the left, a thin darker outline.
+P08_tree_and_galaxy.png: two objects side by side: on the left one young leafy tree with a round green crown and a clump of soil; on the right a small glowing spiral galaxy swirl in purple and gold, like a sparkly pinwheel. Light from the left, a thin darker outline.
+P09_davinci_sketch.png: an old yellowed parchment page, edges torn and curling, with a brown ink sketch of Leonardo da Vinci's "aerial screw" flying machine: a big spiral sail like a screw on a round wooden platform, with faint ink notes as scribbles (no readable letters), a quill pen lying across the corner. Warm candlelight from the left, a thin darker outline.
 ```
 
-```
-BATCH 3 (props on solid green #00FF00, each about 50–80 words). For THIS batch only, the shark and the wombat are allowed: draw them as friendly cartoon props.
-P01_cereal_bowl.png: a big round ceramic bowl in teal with a chipped rim, full of colorful ring cereal floating in milk, a silver spoon sticking out, a few loops spilled beside it. Seen from a slight high angle. Warm light from the left with a soft highlight on the milk, a thin darker outline, solid pure green #00FF00 background, no shadow on the background.
-P02_pyramid.png: the Great Pyramid of Giza alone, sandy gold limestone blocks, the tip slightly worn, a little sand drift at its base, seen from a low three-quarter angle. Warm desert light from the left, a soft shadow on the pyramid only, a thin darker outline, solid pure green #00FF00 background.
-P03_cleopatra_crown.png: an ancient Egyptian queen's golden headdress floating on its own (no head, no face): a gold-and-blue striped crown with a golden cobra at the front, glittering jewels, seen from the front. Warm light from the left, a soft highlight, a thin darker outline, solid pure green #00FF00 background.
-P04_moon_lander.png: a small cartoon Moon lander with gold foil legs standing on a little round chunk of gray Moon ground with craters, a tiny blank white flag on a pole beside it (no stripes, no stars, no text). Light from the left, soft shadow on the ground chunk only, a thin darker outline, solid pure green #00FF00 background.
-P05_shark.png: a friendly cartoon great white shark swimming to the RIGHT, side view, gray back and white belly, a slightly smug grin with no teeth showing, round eye. Cool light from the left with a soft highlight, a thin darker outline, solid pure green #00FF00 background.
-P06_tree.png: one young leafy tree with a thin trunk and a round green crown, a little clump of grass and soil at its roots, side view. Warm light from the left, a soft shadow on the tree only, a thin darker outline, solid pure green #00FF00 background.
-P07_wombat.png: a cute cartoon wombat, chubby and brown, side view facing RIGHT, sitting proudly next to a small neat stack of three brown cubes (its cube-shaped poop, drawn clean and cartoonish like little dice without dots). Warm light from the left, a thin darker outline, solid pure green #00FF00 background.
-P08_snacks_pile.png: a messy pile of snacks: a chip bag, a cookie pack, a candy bar, a box of crackers, a slice of pizza, a pickle, a cupcake (all labels blank), stacked like a little mountain. Warm light from the left, a soft highlight, a thin darker outline, solid pure green #00FF00 background.
-```

@@ -1,18 +1,14 @@
-# high-conversation · one-off · mode: Relatable skit (Brian's idea, Nov 24 2026) · search phrase: "high conversations with your best friend"
-# Brian: "have you ever had a high conversation with your friend, you're both smacked, and this is how it goes… crazy stuff, funny, relatable, interactive, a minute."
-# Doug and Gary on the couch at 2 a.m.; the narrator performs both voices (mouths still, they gesture on their lines).
-# Twist (our channel's angle): the craziest things they say are TRUE (sources.md). Interactive: the nose line makes the viewer see their own nose; tag-your-Gary + one-word question.
-# Payoff: the dumbest-sounding couch talk is real: Cleopatra and the Moon, sharks before trees, cube poop, and the nose your brain hides.
-# Nothing on screen shows a drug (no smoke, no joints): the joke is the conversation.
-[#q] Have you ever had a {*high|high} conversation with your best friend? [#smacked] You're both {!smacked.|smacked.} [#half] And the crazy part? Some of it is actually {*true.|true.}
-[#couch] Two a.m. Doug and Gary, on the couch. [#hands] Doug stares at his hands. [#bro] "Bro. Who invented {*hands?|hands?}"
-[#fan] Gary stares at the ceiling fan like it owes him money.
-[#cereal] "Okay, real question. Is cereal… {*soup?|soup?}" [#cold] "It's cold soup, bro. With croutons."
-[#insane] Then Doug says something insane. [#cleo] "Cleopatra lived closer to the {*Moon|Moon} landing… than to the pyramids being built." [#noway] "No way." [#way] Way. [#ancient] To her, the pyramids were already super old.
-[#sharks] Gary fires back. "Sharks are older than {*trees.|trees.}" [#true2] Also true. Sharks swam before the first tree grew.
-[#wombat] "Wombats poop… {*cubes.|cubes.}" [#loses] Gary loses it. [#true3] True. Little brown dice, [#notes] left on rocks like sticky notes for other wombats.
-[#quiet] Then Gary goes quiet. [#nose] "Bro. You can always see your {*nose.|nose.} Your brain just hides it." [#yours] And now… you can see yours. [#sorry] Sorry.
-[#later] Three hours later: they solved the universe… [#eat] but still can't pick a snack.
-[#roof] They head up to the roof. [#heli] A helicopter flies over. [#mirror] "Bro. Who invented {*helicopters?|helicopters?}"
-[#question] Tag your Gary. And which one broke your brain? One word.
+# high-conversation · one-off · mode: Relatable skit, v2 (Brian, Nov 24 2026: "make more points like Cleopatra… stupid true facts that are real… make it really nice")
+# Every line is a real, sourced fact (sources.md). One fact drags in the next: pyramids → mammoths → dinosaurs → trees → stars → cards → your nose → helicopters.
+# Doug and Gary on the couch in the chill den; the narrator performs both voices (mouths still, they gesture on their lines).
+# Payoff: the dumbest-sounding 2 a.m. couch facts are true, and each one is weirder than the last.
+[#q] Have you ever had a {*high|high} conversation with your best friend? [#smacked] You're both {!smacked.|smacked.} [#true] And somehow… everything you say is {*true.|true.}
+[#couch] Two a.m. Doug and Gary, deep in the couch. [#cleo] "Bro. Cleopatra lived closer to the {*Moon|Moon} landing… than to the pyramids being built." [#noway] "No way." [#way] Way.
+[#mammoth] Gary sits up. First time in an hour. [#mam2] "Bro. When they built the pyramids… {*mammoths|mammoths} were still alive." [#true2] True. The last ones lived on a tiny frozen island.
+[#trex] "T. rex lived closer to {*us|us}… than to the Stegosaurus." [#true3] True. Stegosaurus was long gone before T. rex hatched.
+[#stars] "Bro. There are more trees on Earth… than {*stars|stars} in our whole galaxy." [#true5] True. Trillions of trees. Only billions of stars.
+[#cards] Gary shuffles a deck of cards. [#cards2] "Bro. This order… has probably never existed. {*Ever.|Ever.}" [#true6] True. There are more ways to mix a deck than atoms on Earth.
+[#quiet] Then Gary goes quiet. [#nose] "You can always see your {*nose.|nose.} Your brain just hides it." [#yours] And now… you can see yours. [#sorry] Sorry.
+[#roof] Sunrise. The roof. [#heli] A helicopter flies over. [#mirror] "Bro. Da Vinci drew a {*helicopter|helicopter}… five hundred years ago." [#noway2] "No way." [#way2] Way.
+[#question] Tag your Gary. Which one broke your brain? One word.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

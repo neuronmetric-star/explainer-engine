@@ -29,7 +29,7 @@ switch off; Gary, the guy who sleeps anywhere. Started Nov 24 2026 (Brian picked
 ## 😂 One-offs: relatable skits
 | Episode (search phrase) | Status | The answer in one line |
 |---|---|---|
-| high conversations with your best friend | ✍️ script waiting for approval · `videos/high-conversation/` | the 2 a.m. couch talk sounds insane, but the craziest lines are true |
+| high conversations with your best friend | ✍️ script v2 (all true facts) waiting for approval · `videos/high-conversation/` | the 2 a.m. couch facts sound insane, but every one is true |
 
 ## 💰 Money Heck (hashtag #moneyheck): ideas from `docs/creators/concept-bank.md`
 Penny costs more than a penny · gas pump $100 hold · average return is misleading. World: Doug's shop / bank counter.
