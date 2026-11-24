@@ -1,5 +1,7 @@
 # Mini-series (PLAYBOOK §1.13 "Mini-series")
 
+**Live tracker (phone-friendly, status + next step per episode):** https://claude.ai/artifact/SDxLVHHeJEHJ4cyPpiwYgM
+
 Each series: one world (reused paintings), one running role, 3–5 standalone episodes, posted ≥ 1 day apart.
 Status: ✅ posted/made · ✍️ scripting · 💡 idea (verify facts before scripting).
 

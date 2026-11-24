@@ -33,6 +33,12 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
   helicopter (`docs/assets/H01_helicopter.png`) flies across the sky via `K.helicopter(t, cue)`, the winner looks up,
   then the follow CTA. The last background always has open sky in its top third.
 
+## "make video" (Brian, Nov 24 2026)
+When Brian says **"make video"** (with or without a topic) in a new chat, run `/make-video`: follow `docs/workflow.md`, ask the start
+questions, lead him step by step, and ask him to run his parts (TikTok AI app, ChatGPT art, voice) with exact steps. Keep the
+**series tracker** up to date: https://claude.ai/artifact/SDxLVHHeJEHJ4cyPpiwYgM (a Sheets artifact; read/write it with the Claude Docs
+connector) and `docs/series.md`. Finished work is merged to `main`.
+
 ## Daily topics (`/topics`)
 When Brian asks for today's topics / trending topics: read `docs/trends/<today>.md` (US Eastern date; it's written every
 morning at 6:43 ET by the scheduled trend scrape, PLAYBOOK §6c). If it isn't there, run the scrape first, save the sheet,

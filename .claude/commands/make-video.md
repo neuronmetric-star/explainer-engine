@@ -4,7 +4,15 @@ argument-hint: <topic, e.g. "why airlines overbook flights">
 ---
 Make a video about: **$ARGUMENTS**
 
-Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs-water/`.
+Follow CLAUDE.md, `docs/workflow.md` (who does what) and `docs/PLAYBOOK.md` exactly. Latest worked example: `videos/airplane-window-hole/` (v4).
+You LEAD: Brian works from his phone. Keep messages short, ask before spending credits, and at each step tell him exactly what to run
+on his side (TikTok AI app, ChatGPT art, recording) with the click-by-click steps from `docs/workflow.md`.
+
+**Start (always):** read `docs/lessons.md`, `docs/series.md`, the tracker (https://claude.ai/artifact/SDxLVHHeJEHJ4cyPpiwYgM, via the
+Claude Docs connector) and today's `docs/trends/<date>.md`. Then ask the 3 start questions from `docs/workflow.md` step 0 in ONE message
+(skip any the topic above already answers): which video (offer 3 picks: next series episode, top trend, a concept-bank idea), anything new to
+study first with the TikTok AI app, and when to post. Mark the episode's status in the tracker as you go (Script → Art → Voice → Building →
+Ready to post) with its "Next step", and keep `docs/series.md` in step.
 
 0. **Length:** always short form (≈ 1:05–1:12, PLAYBOOK §1.11). Don't ask; long form is retired.
 0. Default mode is **Trend ride** (PLAYBOOK §1.13) when today's sheet has a meme × topic pair: Doug and Gary act out the
@@ -32,7 +40,7 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs
    crash-zoom out, a cast member reacts big with the `scream` face, shake + sting, `WHAT THE HECK?!` slammed on screen).
    Smooth, not choppy: `SCENE.whip = true`, same-place shots continue the camera, diagrams flow, few words on screen (§3.5 #9–11).
 7. Render preview stills, Read them, fix problems, repeat until clean. Send me the preview.
-8. Render the final 30 fps video with voice. Commit and push. Tell me the file path.
+8. Render the final 30 fps video with voice. Commit, push, and merge to `main` (fast-forward). Send me the video.
 9. Cover + caption: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` on a frame where the character is on
    screen with an expressive face (covers ALWAYS show the character). Write `videos/<slug>/post.md` (TikTok/Reels caption
    + hashtags, YouTube Shorts title). Send me the cover and the caption.
