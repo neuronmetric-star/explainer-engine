@@ -1,14 +1,15 @@
-# high-conversation · one-off · mode: Relatable skit, v2 (Brian, Nov 24 2026: "make more points like Cleopatra… stupid true facts that are real… make it really nice")
+# high-conversation · one-off · mode: Relatable skit, v3 (Brian, Nov 24 2026: "make more points like Cleopatra… stupid true facts that are real… make it really nice")
 # Every line is a real, sourced fact (sources.md). One fact drags in the next: pyramids → mammoths → dinosaurs → trees → stars → cards → your nose → helicopters.
 # Doug and Gary on the couch in the chill den; the narrator performs both voices (mouths still, they gesture on their lines).
 # Payoff: the dumbest-sounding 2 a.m. couch facts are true, and each one is weirder than the last.
+# v3 (Brian, Nov 24 2026): they one-up each other ("Okay… I got a better one") and crack up laughing between facts (refrain: "They crack up.").
 [#q] Have you ever had a {*high|high} conversation with your best friend? [#smacked] You're both {!smacked.|smacked.} [#true] And somehow… everything you say is {*true.|true.}
-[#couch] Two a.m. Doug and Gary, deep in the couch. [#cleo] "Bro. Cleopatra lived closer to the {*Moon|Moon} landing… than to the pyramids being built." [#noway] "No way." [#way] Way.
-[#mammoth] Gary sits up. First time in an hour. [#mam2] "Bro. When they built the pyramids… {*mammoths|mammoths} were still alive." [#true2] True. The last ones lived on a tiny frozen island.
-[#trex] "T. rex lived closer to {*us|us}… than to the Stegosaurus." [#true3] True. Stegosaurus was long gone before T. rex hatched.
-[#stars] "Bro. There are more trees on Earth… than {*stars|stars} in our whole galaxy." [#true5] True. Trillions of trees. Only billions of stars.
-[#cards] Gary shuffles a deck of cards. [#cards2] "Bro. This order… has probably never existed. {*Ever.|Ever.}" [#true6] True. There are more ways to mix a deck than atoms on Earth.
-[#quiet] Then Gary goes quiet. [#nose] "You can always see your {*nose.|nose.} Your brain just hides it." [#yours] And now… you can see yours. [#sorry] Sorry.
-[#roof] Sunrise. The roof. [#heli] A helicopter flies over. [#mirror] "Bro. Da Vinci drew a {*helicopter|helicopter}… five hundred years ago." [#noway2] "No way." [#way2] Way.
+[#couch] Two a.m. The couch. [#cleo] "Bro. Cleopatra lived closer to the {*Moon|Moon} landing… than to the pyramids being built." [#noway] "No way." [#way] Way. [#crack1] They crack up.
+[#better1] "Okay. I got a {*better|better} one." [#mam2] "When they built the pyramids… {*mammoths|mammoths} were still alive." [#true2] True. The last ones lived on a frozen island.
+[#better2] "Nah. I got a better one." [#trex2] "T. rex lived closer to {*us|us}… than to the Stegosaurus." [#true3] True. [#crack2] They crack up again.
+[#stars] "Bro. More trees on Earth… than {*stars|stars} in our galaxy." [#true5] True. Trillions of trees. Only billions of stars.
+[#cards] Gary shuffles some cards. [#cards2] "This order… has probably never existed. {*Ever.|Ever.}" [#true6] True. More ways to mix a deck than atoms on Earth.
+[#quiet] Gary goes quiet. [#nose] "You can always see your {*nose.|nose.} Your brain just hides it." [#yours] And now… you can see yours. [#sorry] Sorry. [#crack3] They lose it.
+[#roof] Sunrise. The roof. [#heli] A helicopter flies over. [#mirror] "Okay. Last one. Da Vinci drew a {*helicopter|helicopter}… five hundred years ago." [#noway2] "No way." [#way2] Way.
 [#question] Tag your Gary. Which one broke your brain? One word.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
