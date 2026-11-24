@@ -1,0 +1,8 @@
+BATCH 2 (props P01–P04, solid pure green #00FF00)
+P01_guard_dog_awake.png: ONE chunky cartoon guard dog (a friendly bulldog-shepherd mix, tan and white, a red collar with a little brass bell), sitting up straight, WIDE awake, ears up, eyes wide, mouth open barking, full body, front 3/4 view. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P02_guard_dog_asleep.png: The SAME dog (same colors, same red collar with the brass bell) curled up in a ball, fast asleep, eyes shut, ears floppy, a calm smile, full body, front 3/4 view. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P03_sheep.png: ONE fluffy cartoon sheep mid-jump (all four legs tucked, like jumping over a fence), cloud-white wool, a dark gray face with sleepy half-closed eyes, side view facing RIGHT. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P04_navy_biplane_1943.png: ONE 1940s US Navy yellow training biplane (a chunky two-wing trainer, bright chrome-yellow wings and body, a silver propeller, a simple blue-and-white round roundel without any star detail), side view flying LEFT, wheels down, no pilot visible (empty open cockpits). Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no numbers, no text.
