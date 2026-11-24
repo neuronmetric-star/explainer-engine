@@ -21,7 +21,9 @@ const out = path.resolve(process.argv.slice(2).find((a, i, arr) => !a.startsWith
     enc.stdin.end(); await new Promise(r => enc.on('close', r)); await browser.close(); console.log('clip ->', path.join(out, 'clip.mp4'), N, 'frames'); if (errs.length) console.log(errs.join('\n')); return;
   }
   const n = await page.evaluate('window.SHOT_COUNT'), files = [];
+  const only = process.argv.indexOf('--shot') > -1 ? +process.argv[process.argv.indexOf('--shot') + 1] : -1;
   for (let i = 0; i < n; i++) {
+    if (only > -1 && i !== only) continue;
     await page.evaluate(`window.renderShot(${i})`);
     const f = path.join(out, `shot${i}.jpg`); await page.screenshot({ path: f, type: 'jpeg', quality: 90, timeout: 300000 }); files.push(f); console.log('rendered', f);
   }

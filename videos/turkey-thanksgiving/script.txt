@@ -1,0 +1,22 @@
+# SHORT (~1:05). Why do we eat turkey on Thanksgiving? Mode: True story.
+# Search phrase (caption line 1 + on-screen text in the first 2 s + first spoken sentence):
+#   "why do we eat turkey on thanksgiving"
+# Payoff: the only eyewitness account of the 1621 feast never says "turkey" (it says fowling + five deer).
+#   Magazine editor Sarah Josepha Hale put roast turkey at the head of the table in her 1827 novel, campaigned to
+#   presidents for a national holiday (Lincoln, 1863), and turkey stuck because it's big and cheap (not kept for eggs).
+# Doug, Gary and Doug's dinner are fictional. History facts: sources.md.
+# Ending: the helicopter ending (PLAYBOOK §1.12a) flies over on the last story line; Gary (the winner) looks up.
+[#q] Why the {*heck|heck} do we eat {*turkey|turkey} on Thanksgiving?
+[#card] See, Doug had a problem. He's hosting Thanksgiving, and he wants it {*exactly|exactly} like the first one.
+[#ground] Over four hundred years ago, [#feast] English settlers called the Pilgrims and the Wampanoag, the Native people already living there, shared a three-day harvest feast.
+[#bet] So Doug bought a turkey. Honestly? I'd bet on turkey too.
+[#letter] Then Gary finds the only eyewitness letter, from a settler, Edward Winslow.
+[#fowling] It says the men went "fowling." That means hunting birds: ducks, geese, maybe turkey. [#deer] And the Wampanoag brought {*five deer.|five deer.}
+[#notice] The word "turkey"? {!Not there.|Not there.} So much for my bet.
+[#hale] So who put it on the table? [#editor] A magazine editor named {*Sarah Josepha Hale.|Sarah Josepha Hale.}
+[#novel] Two centuries later, she wrote a novel where a roast turkey sat at the head of the Thanksgiving table.
+[#letters] Then she asked five presidents for a national holiday. [#lincoln] In eighteen sixty-three, Abraham Lincoln said {*yes.|yes.}
+[#big] And a turkey is big enough to feed a crowd, [#eggs] and nobody kept turkeys for eggs, so they were cheap.
+[#today] Today, almost {*nine in ten|nine in ten} Americans eat it.
+[#end] Doug wanted it exactly like the first one. [#deerplate] So he served deer. [#heli] Gary brought the {*turkey.|turkey.}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

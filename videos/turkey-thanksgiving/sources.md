@@ -1,0 +1,17 @@
+# Sources: Why do we eat turkey on Thanksgiving?
+
+**Doug, Gary, Doug's dinner and "deer for dinner" are fictional.** The history is real.
+
+| Claim in the script | Source |
+|---|---|
+| The 1621 harvest feast: English settlers (the Pilgrims) and the Wampanoag, about three days, in Plymouth (Massachusetts) | Pilgrim Hall Museum, "The 'First Thanksgiving'": https://www.pilgrimhall.org/thanksgiving-national-day-of-mourning/the-first-thanksgiving/ · Massachusetts Commonwealth Museum, "Thanksgiving mysteries": https://www.sec.state.ma.us/divisions/commonwealth-museum/exhibits/online/thanksgiving/thanksgiving-mysteries-3.htm |
+| "Over four hundred years ago" | 1621 → 2026 = 405 years (arithmetic) |
+| The only eyewitness account is Edward Winslow's letter (Dec 1621, printed in *Mourt's Relation*): the governor sent men "fowling"; the Wampanoag killed **five deer** and brought them | Winslow, *Mourt's Relation* (1622), text: https://blogs.cofc.edu/palmettoprogram/files/2014/11/Edward-Winslow-Mourts-Relations-1621-2ay6l5y.pdf · Pilgrim Hall (above) |
+| "Fowling" = hunting wild birds (ducks, geese, possibly turkey); the menu is not recorded, and Winslow's account does not mention turkey | History.com, "What Was on the Menu at the First Thanksgiving?": https://www.history.com/articles/first-thanksgiving-meal · History.com, "Why Do We Eat Turkey on Thanksgiving?": https://www.history.com/articles/turkey-thanksgiving-meal |
+| Sarah Josepha Hale, editor of *Godey's Lady's Book* | NPR, "Thanks To The Woman Who Helped Make A November Thursday Special": https://www.npr.org/2013/11/28/247516223/thanks-to-the-woman-who-helped-make-a-november-thursday-special · History.com, "Abraham Lincoln and the Mother of Thanksgiving": https://www.history.com/articles/abraham-lincoln-and-the-mother-of-thanksgiving |
+| "Two centuries later" her novel *Northwood* (1827) put roast turkey at the head of the Thanksgiving table | History.com (turkey article, above) · Britannica, "Why Do We Eat Turkey on Thanksgiving?": https://www.britannica.com/story/why-do-we-eat-turkey-on-thanksgiving · 1621 → 1827 = 206 years |
+| She asked five presidents for a national Thanksgiving (Taylor, Fillmore, Pierce, Buchanan, then Lincoln) | NPR (above; names the four before Lincoln) · Samford University Library, "Thanksgiving" (five presidents): https://library.samford.edu/special/treasures/2013/thanksgiving.html |
+| 1863: Lincoln proclaims a national Thanksgiving (Oct 3, 1863, after her Sept 28 letter) | National Park Service, "Lincoln and Thanksgiving": https://www.nps.gov/liho/learn/historyculture/lincoln-and-thanksgiving.htm · Library of Congress, Hale's letter to Lincoln: https://www.loc.gov/resource/mal.2669900/ |
+| Turkey is big enough to feed a crowd; turkeys weren't kept for eggs like chickens, so they were relatively cheap | Britannica (above) · Texas A&M, "Why Is Turkey The Main Dish On Thanksgiving?": https://artsci.tamu.edu/news/2022/11/why-is-turkey-the-main-dish-on-thanksgiving.html |
+| "Almost nine in ten Americans eat it" (about 87%, 2025 survey; the turkey federation put it at 88% in 2017) | History.com (turkey article, above) · The Takeout: https://www.thetakeout.com/2011101/how-many-americans-eat-turkey-thanksgiving/ |
+| *(Not in the script; for comments)* Governor William Bradford's history, lost and found again in the 1850s, mentions a "great store of wild turkeys" that fall | History.com (turkey article, above) · Britannica (above) |

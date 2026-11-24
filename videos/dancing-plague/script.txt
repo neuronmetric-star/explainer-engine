@@ -1,0 +1,28 @@
+# SHORT (~1:10). DRAFT v4, waiting for Brian. Mode: TREND RIDE (PLAYBOOK §1.13).
+# The meme (researched Nov 22 2026): Roblox clip by @larpniverse: "In this town, everybody goes out partying… except me. Huss, huss,
+#   huss." ("huss" = the hard-breathing grind sound). Top copy 11.6M plays in 2 days; everyone is repeating it.
+# Brian's angle (v4): Doug, Gary's neighbor, blasts the huss video on his phone everywhere (walking, in the shower). Gary hears it
+#   through the wall when he tries to sleep and in his own shower. Gary marches over to confront him: Doug's in his driveway
+#   dribbling a basketball (grinding, like the original meme): "Sorry, Gary. You just don't huss like me." In the end Gary catches it.
+#   The narrator performs every "huss" and both lines (no clip).
+# Bridge: a sound you can't escape that jumps from one neighbor to the next → a REAL thing that jumped from person to person and
+#   wouldn't stop: the dancing plague of 1518 in Strasbourg.
+# Search phrase: "dancing plague 1518" (TikTok's #1 suggestion). On screen in the first 2 s: DANCING PLAGUE 1518 + HUSS HUSS HUSS.
+# Payoff: the city's cure was MORE dancing (stage + band) and it got worse; best theory = fear spreading through a starving, sick
+#   town (historian John Waller). Deaths are disputed: "later stories", never a number as fact.
+[#q] Why the heck did a whole town catch the {*dancing plague of 1518?|dancing plague of fifteen eighteen?}
+[#doug] See, Gary's neighbor Doug found a video. [#walk] He plays it walking. [#dshower] In the shower. Full volume. {*Huss, huss, huss.|Huss, huss, huss.}
+[#wall] Gary hears it through the wall. [#bed] Trying to sleep: huss, huss, huss. [#gshower] In his own shower: huss, huss, huss.
+[#march] So Gary marches next door. [#court] Doug's in the driveway, dribbling. [#sorry] "Sorry, Gary. You just don't huss like me."
+[#bet] Honestly? Relax, Gary. Sounds stop.
+[#real] Except in {1518,|fifteen eighteen,} a real town caught something that didn't. [#city] Strasbourg, France.
+[#troffea] A woman named Troffea steps outside and starts dancing. [#nostop] No music. She can't {!stop.|stop.} For days.
+[#spread] Then neighbors join. Then strangers. [#400] Within a month, about {!400 people|four hundred people.}
+[#doctors] The doctors' diagnosis? Hot blood. [#cure] The cure? {*Dance it out.|Dance it out.}
+[#stage] They build a stage and bring in a band. [#dj] Basically, a DJ for a plague. [#more] More people {!joined.|joined.}
+[#flip] Finally, the city bans music [#shrine] and ships the dancers to a saint's shrine. [#fade] By September, it fades.
+[#waller] Historian John Waller thinks the town was starving, sick, [#saint] and sure an angry saint could curse you to dance.
+[#yawn] Fear spreads like a {*yawn:|yawn:} one person starts, your body copies.
+[#end] [#quiet] Doug's phone finally died. [#mirror] And Gary? {*Huss, huss, huss.|Huss, huss, huss.}
+[#ask] Who's the Doug on your street?
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

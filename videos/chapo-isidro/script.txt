@@ -1,0 +1,27 @@
+# SHORT (~1:05-1:10). APPROVED by Brian Nov 22 2026. Mode: True story (background of the man arrested Nov 20 2026).
+# Not a trend ride: today's trend pair (huss / dancing plague) doesn't bridge to this; Brian asked for this topic directly.
+# Search phrases: "el chapo isidro" + "sinaloa cartel leader" (first spoken sentence, on-screen first 2 s, caption line 1).
+# Payoff: "El Chapo Isidro" is NOT El Chapo. He's a farm-town kid who sided with El Chapo's enemies, built his own cartel,
+#   got caught four times and walked free every time, until Mexico's army caught him a fifth time on Nov 20 2026.
+# Cast: Doug (hoodie) + Gary (oxford) = fictional viewers watching the news. Chapo Isidro = new outfit 'isidro'
+#   (real person: silent, never armed, shown only doing what he actually did: walking out free, then in handcuffs).
+# Running gag: "Different Chapo." Callback: the revolving door. Mirror: "walked out" -> "left by air" (helicopter ending).
+# Tone: jokes target the revolving door, never the deaths. The firefight lines are read straight.
+[#q] Who the heck is {*El Chapo Isidro,|El Chapo Isidro,} the {*Sinaloa cartel|Sinaloa cartel} leader they just caught?
+[#doug] Doug saw the news: "El *Chapo's back?" [#gary] Gary: "Different *Chapo."
+[#real] The real El Chapo, the most famous drug boss ever, [#life] is serving {!life|life} in America.
+[#card] See, this guy is Fausto Isidro Meza Flores, [#town] from a farm town in Sinaloa, Mexico.
+[#teen] As a teen, he joined a cartel: [#define] a gang that runs drugs like a {*company.|company.}
+[#brothers] He became right-hand man to the Beltrán Leyva brothers, El Chapo's {*partners.|partners.}
+[#split] Until {2008:|two thousand eight:} a brother got arrested, and they blamed El Chapo. [#war] Partners became {!enemies.|enemies.} [#side] Isidro picked the brothers.
+[#own] Then he built his own cartel, [#usa] moving drugs into America.
+[#bet] Honestly? I figured nobody could {*find|find} him.
+[#caught] Wrong. They caught him in {2011.|twenty eleven.} [#free] He walked {!out.|out.} [#2014] Twice in {2014.|twenty fourteen.} [#free2] Walked out. [#2015] {2015.|Twenty fifteen.} [#free3] Walked {!out.|out.}
+[#door] Gary: "That's not a jail. That's a [#spin] {!revolving door.|revolving door.}"
+[#reward] So the FBI put him on its {*Ten Most Wanted|Ten Most Wanted} list.
+[#friday] This Friday, soldiers came for arrest number {*five.|five.}
+[#fight] His gunmen fought back all night. [#dead] Eleven people {!died.|died.}
+[#plane] This time, they flew him to [#takeoff] {*Mexico City.|Mexico City.}
+[#mirror] Four times, he walked out. [#air] The fifth time, he {*flew.|flew.}
+[#ask] Where should he go on trial? {*Mexico|Mexico} or {*America?|America?}
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

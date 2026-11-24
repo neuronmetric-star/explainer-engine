@@ -1,0 +1,22 @@
+# SHORT (~1:05). Brian's own script (Nov 22 2026), lightly marked up. Mode: TREND RIDE skit (no history part).
+# Meme: "huss huss huss" (@larpniverse Roblox clip, "In this town, everybody goes out partying… except me. Huss, huss, huss";
+#   "huss" = the hard-breathing grind sound; top copy 11.6M plays). Search phrase: "huss huss huss" (TikTok's #1 suggestion).
+# Told by Gary in first person. Every "huss" is Brian's own voice sped up 1.6x (trend rhythm); Brian (Nov 22): say it every time the sound
+#   is mentioned, so 8 extra "Huss, huss, huss" clips are spliced in after each mention (voice_v1.mp3 = original edit).
+# Doug and Gary are our cast (fiction). Added per the rules: helicopter on the last story line, viewer question, follow CTA.
+# On screen in the first 2 s: HUSS HUSS HUSS.
+[#q] Why the heck was I hearing {*"Huss, huss, huss"|"Huss, huss, huss"} through my wall all day?
+[#doug] My neighbor Doug was glued to his phone, playing the new trend out loud. [#h1] {*Huss, huss, huss.|Huss, huss, huss.}
+[#morning] I heard it in the morning, [#h2] {*Huss, huss, huss.|Huss, huss, huss.} [#shower] during my shower, [#h3] {*Huss, huss, huss.|Huss, huss, huss.} [#sleep] and even when I was trying to sleep. [#h4] {*Huss, huss, huss.|Huss, huss, huss.}
+[#enough] Finally, I'd had {!enough.|enough.} [#march] I marched next door and knocked.
+[#door] Doug opened the door with a huge smile. [#hi] "Oh, hi, Gary! Have you heard this new trend?" [#h5] {*Huss, huss, huss.|Huss, huss, huss.}
+[#stare] I stared at him. [#heard] "Heard it? I've been hearing it all day! [#down] Can you turn it down?"
+[#course] "Of course!" he said.
+[#home] I went home, still annoyed, [#bed] sat on my bed, and grabbed my phone.
+[#popup] Then the trend popped up. [#h6] {*Huss, huss, huss.|Huss, huss, huss.}
+[#one] I watched one video. [#h7] {*Huss, huss, huss.|Huss, huss, huss.} [#another] Then another. [#h8] {*Huss, huss, huss.|Huss, huss, huss.} [#repeat] Soon I was repeating the sound.
+[#gary] {*"Huss, huss, huss!"|"Huss, huss, huss!"}
+[#over] Doug heard me through the wall and came over.
+[#both] Now we were both hustling together, shouting, [#mirror] {*"Huss, huss, huss!"|"Huss, huss, huss!"} and laughing.
+[#ask] Who's the Doug on your street?
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

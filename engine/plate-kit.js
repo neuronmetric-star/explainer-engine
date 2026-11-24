@@ -29,7 +29,8 @@
   K.lerp = (a, b, u) => a + (b - a) * u;
 
   // ---------------- renderer ----------------
-  const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('c'), antialias: true });
+  const canvasEl = document.getElementById('c');
+  const renderer = new THREE.WebGLRenderer({ canvas: canvasEl, antialias: true });
   renderer.setPixelRatio(1); renderer.setSize(W, H, false); renderer.autoClear = false;
   renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping;
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -72,10 +73,14 @@
     catcher.material.color.copy(lin(L.shadow[0])); catcher.material.opacity = L.shadow[1]; }
 
   // ---------------- plates: camera matched to the painting ----------------
-  // plate preset: { img, hz (horizon, fraction from top), vx (vanishing x), fov0, camH, light }
+  // plate preset: { img, hz (horizon, fraction from top), vx (vanishing x), fov0, camH, light, tint (multiply color, e.g. 0x4a5a9a = night) }
+  // video plate (OpenArt insert): { clip: '../clips/V1/', n: frame count, fps } plays pre-extracted frames <clip>0001.jpg.. as the plate;
+  //   the shot's clipFrom (s into the clip, default 0) + time in the shot picks the frame (holds the last frame). No cast on clip plates.
   let SC, PLATES = {}, cur = null;
-  function usePlate(name, zoom, fx, fy, sx, sy) {
+  function usePlate(name, zoom, fx, fy, sx, sy, clipT) {
     const P = PLATES[name]; if (!P) throw new Error('unknown plate ' + name); setLight(P.light);
+    if (P.frames) { const k = Math.max(0, Math.min(P.frames.length - 1, Math.floor((clipT || 0) * P.fps)));
+      if (P._k !== k) { P._k = k; P.ctx.drawImage(P.frames[k], 0, 0, P.cv.width, P.cv.height); P.tex.needsUpdate = true; } }
     const tex = P.tex, FH = H * zoom, FW = FH * tex.image.width / tex.image.height;
     const ox = Math.max(0, Math.min(FW - W, fx * FW - W / 2)) + sx, oy = Math.max(0, Math.min(FH - H, fy * FH - H / 2)) + sy;
     camera.fov = P.fov0; camera.aspect = FW / FH; camera.setViewOffset(FW, FH, ox, oy, W, H); camera.updateProjectionMatrix();
@@ -83,7 +88,7 @@
     camera.position.set(0, P.camH, 0);
     camera.rotation.x = -Math.atan((.5 - P.hz) * 2 * tH); camera.rotation.y = -Math.atan((P.vx - .5) * 2 * tH * FW / FH);
     camera.updateMatrixWorld();
-    bgMat.map = tex; tex.repeat.set(W / FW, H / FH); tex.offset.set(ox / FW, 1 - (oy + H) / FH); bgMat.needsUpdate = true;
+    bgMat.color.set(P.tint === undefined ? 0xffffff : P.tint); bgMat.map = tex; tex.repeat.set(W / FW, H / FH); tex.offset.set(ox / FW, 1 - (oy + H) / FH); bgMat.needsUpdate = true;
     cur = { name, FW, FH, ox, oy, iw: tex.image.width, ih: tex.image.height };
   }
   // painting pixel (image coords) -> screen pixel, and image px -> screen px scale
@@ -114,6 +119,14 @@
     m.position.set(o.x + dx * c - dy * s, -(o.y) + dx * s + dy * c, 0);
     (o.layer === 'back' ? propBack : propFront).add(m); m.visible = true; return m; };
   K.propInfo = k => PROPS[k];
+  // THE HELICOPTER ENDING (PLAYBOOK §1.12a, every video): the Lamborghini helicopter crosses the sky, left → right.
+  // K.helicopter(t, from) with from = a cue or seconds; o: {y (screen px, default 300), dur (s, default 3.4), w (default 540)}.
+  // Returns 0..1 progress (or -1 when off screen) so the scene can make the winner look up while it passes.
+  K.helicopter = function (t, from, o = {}) {
+    if (!PROPS.H01) throw new Error('add H01: "H01_helicopter.png" to SCENE.props (copy it from docs/assets/)');
+    const u = (t - K.T(from)) / (o.dur || 3.4); if (u < 0 || u > 1) return -1;
+    const w = o.w || 540, x = K.lerp(-w * .7, W + w * .7, u), y = (o.y || 300) + Math.sin(t * 2.2) * 8 - 40 * Math.sin(u * Math.PI);
+    K.prop('H01', { x, y, w, rot: -.07 + Math.sin(t * 1.7) * .015 }); return u; };
   // soft puff texture for exhaust (generated)
   function puffTex() { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d');
     const gr = g.createRadialGradient(64, 64, 6, 64, 64, 62); gr.addColorStop(0, 'rgba(235,232,240,.95)'); gr.addColorStop(.6, 'rgba(215,210,228,.6)'); gr.addColorStop(1, 'rgba(200,196,220,0)');
@@ -127,6 +140,7 @@
   const blobTex = (() => { const c = document.createElement('canvas'); c.width = c.height = 128; const g = c.getContext('2d'); const gr = g.createRadialGradient(64, 64, 4, 64, 64, 62);
     gr.addColorStop(0, 'rgba(0,0,0,.55)'); gr.addColorStop(1, 'rgba(0,0,0,0)'); g.fillStyle = gr; g.fillRect(0, 0, 128, 128); return new THREE.CanvasTexture(c); })();
   K.cast = {};
+  K.scene3D = scene; K.env = env;   // scenes can add their own 3D objects (convert colors sRGB->linear themselves)
   // cast entry: 'hoodie' | {outfit:'president', phone:true} | 'robodog'
   function makeCast(def) { for (const [n, spec] of Object.entries(def)) {
     const o = typeof spec === 'string' ? { outfit: spec } : spec;
@@ -139,6 +153,35 @@
   // ---------------- DOM overlays ----------------
   const $ = id => document.getElementById(id);
   const cap = $('cap'), flash = $('flash'), fol = $('follow'), cur_ = $('cursor');
+  // K.text(str, {x, y, size, color:'white'|'gold'|'red'|css, stroke, rot (rad), skewX/skewY (deg), scale, a, w (box width),
+  //   align, font:'sans'|'marker', shadow, bg (css background: makes a rounded pill, e.g. the series banner)}) draws one label this frame (screen px, y down, centered on x,y).
+  // Numbers and words live here, never in the paintings. Drawn above the 3D layer and props, under the captions.
+  const TXT = [], TCOL = { white: '#fff', gold: '#ffd23a', red: '#ff4a3d', ink: '#1c2a4a' }; let txtI = 0;
+  K.text = function (str, o = {}) {
+    let el = TXT[txtI]; if (!el) { el = document.createElement('div'); el.style.cssText = 'position:absolute;left:0;top:0;white-space:pre;text-align:center;line-height:1.02;font-weight:900;paint-order:stroke fill;transform-origin:50% 50%';
+      cap.parentNode.insertBefore(el, cap); TXT.push(el); } txtI++;
+    const size = o.size || 80, marker = o.font === 'marker';
+    el.textContent = str; el.style.display = 'block'; el.style.fontSize = size + 'px';
+    el.style.fontFamily = marker ? '"Comic Sans MS","Marker Felt","Segoe Print",IN,sans-serif' : 'IN,sans-serif';
+    el.style.color = TCOL[o.color] || o.color || '#fff';
+    const sw = o.stroke === undefined ? (marker ? 0 : Math.round(size * .17)) : o.stroke;
+    el.style.webkitTextStroke = sw ? `${sw}px #000` : '0';
+    el.style.textShadow = o.shadow === false || marker ? 'none' : `0 ${Math.round(size * .08)}px 0 rgba(0,0,0,.55)`;
+    el.style.width = (o.w || 1080) + 'px'; el.style.marginLeft = -(o.w || 1080) / 2 + 'px'; el.style.marginTop = -size * .55 + 'px';
+    el.style.opacity = o.a === undefined ? 1 : o.a;
+    el.style.transform = `translate(${o.x === undefined ? 540 : o.x}px,${o.y || 0}px) rotate(${o.rot || 0}rad) skew(${o.skewX || 0}deg,${o.skewY || 0}deg) scale(${o.scale === undefined ? 1 : o.scale})`;
+    el.style.border = o.border || 'none'; el.style.padding = o.border ? '0 .18em' : o.bg ? '.14em 0 .2em' : '0'; el.style.boxSizing = 'border-box'; el.style.borderRadius = o.bg ? '999px' : o.border ? '.08em' : '0';
+    el.style.background = o.bg || 'none';
+    return el; };
+  // K.line(x0, y0, x1, y1, {color, width, a, dash}): a straight stroke this frame (screen px): strings on a board, arrows on a map
+  const LNS = []; let lnI = 0;
+  K.line = function (x0, y0, x1, y1, o = {}) {
+    let el = LNS[lnI]; if (!el) { el = document.createElement('div'); el.style.cssText = 'position:absolute;left:0;top:0;transform-origin:0 50%;border-radius:99px'; cap.parentNode.insertBefore(el, cap); LNS.push(el); } lnI++;
+    const L = Math.hypot(x1 - x0, y1 - y0), w = o.width || 6, c = TCOL[o.color] || o.color || '#d22';
+    el.style.display = 'block'; el.style.width = L + 'px'; el.style.height = w + 'px'; el.style.opacity = o.a === undefined ? 1 : o.a;
+    el.style.background = o.dash ? `repeating-linear-gradient(90deg, ${c} 0 ${o.dash}px, transparent ${o.dash}px ${o.dash * 2}px)` : c;
+    el.style.boxShadow = o.dash ? 'none' : '0 2px 3px rgba(0,0,0,.35)';
+    el.style.transform = `translate(${x0}px,${y0 - w / 2}px) rotate(${Math.atan2(y1 - y0, x1 - x0)}rad)`; return el; };
 
   // ---------------- frame ----------------
   let time = 0, SHOTS = [];
@@ -146,13 +189,21 @@
   function frame(dt, doRender) {
     time += dt; const t = time;
     Object.values(K.cast).forEach(c => c.root.visible = false); POOL.forEach(m => { m.visible = false; if (m.parent) m.parent.remove(m); }); poolI = 0;
+    TXT.forEach(el => el.style.display = 'none'); txtI = 0; LNS.forEach(el => el.style.display = 'none'); lnI = 0;
     let i = 0; for (let k = 0; k < SHOTS.length; k++) if (t >= SHOTS[k].t) i = k;
     const sh = SHOTS[i], end = SHOTS[i + 1] ? SHOTS[i + 1].t : window.VIDEO_LENGTH, u = K.ease((t - sh.t) / Math.max(.01, end - sh.t));
     const z = K.lerp(sh.zoom[0], sh.zoom[1], u), fx = K.lerp(sh.focus[0][0], sh.focus[1][0], u), fy = K.lerp(sh.focus[0][1], sh.focus[1][1], u);
     const sk = amp(SC._shakes, t) * 18;
-    usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk, Math.cos(t * 47) * sk);
+    // WHIP-PAN (SCENE.whip = true): when the place changes, the new plate slides in fast from the side with a short blur,
+    // instead of a hard cut. Same-plate shots should continue the camera (next shot's start = last shot's end).
+    let wx = 0, blur = 0;
+    if (SC.whip && i > 0 && SHOTS[i - 1].plate !== sh.plate) { const wu = (t - sh.t) / .24; if (wu < 1) { const e = 1 - K.easeOut(wu); wx = e * W * .55 * (i % 2 ? 1 : -1); blur = e * 9; } }
+    canvasEl.style.filter = blur > .3 ? `blur(${blur.toFixed(1)}px)` : 'none';
+    usePlate(sh.plate, z, fx, fy, Math.sin(t * 61) * sk + wx, Math.cos(t * 47) * sk, (sh.clipFrom || 0) + (t - sh.t));
     K.shot = { i, id: sh.id, u, t0: sh.t, t1: end, local: t - sh.t };
     SC.update && SC.update(t, K);
+    // series banner (PLAYBOOK §3.5): a small dark pill at the top, the whole video. SCENE.banner = 'THE HECK?'
+    if (SC.banner) K.text(SC.banner, { y: 172, size: 44, w: 330, color: '#fff', stroke: 0, shadow: false, bg: 'rgba(18,20,30,.82)' });
     // captions
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
     if (c && t <= c.end + .45) { if (cap.textContent !== c.txt) cap.textContent = c.txt; cap.className = c.cls; cap.style.transform = `scale(${.85 + .15 * K.clamp01((t - c.t) / .12)})`; cap.style.opacity = 1; } else cap.style.opacity = 0;
@@ -168,11 +219,16 @@
 
   K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
-    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day' }, p); PLATES[n].tex = await loadTex(p.img, true); }));
+    const loadImg = src => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('missing clip frame ' + src)); im.src = src; });
+    await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { const P = PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day', fps: 15 }, p);
+      if (p.clip) { P.frames = await Promise.all(Array.from({ length: p.n }, (_, i) => loadImg(ART + p.clip + String(i + 1).padStart(4, '0') + '.jpg')));
+        P.cv = document.createElement('canvas'); P.cv.width = P.frames[0].width; P.cv.height = P.frames[0].height; P.ctx = P.cv.getContext('2d');
+        P.tex = new THREE.CanvasTexture(P.cv); P.tex.encoding = THREE.sRGBEncoding; P.tex.image = P.cv; P._k = -1; }
+      else P.tex = await loadTex(p.img, true); }));
     await Promise.all(Object.entries(SC.props || {}).map(async ([n, f]) => { const tex = await loadTex(f, false); PROPS[n] = { tex, iw: tex.image.width, ih: tex.image.height, cut: /\.cut\.png$/.test(f) }; }));
     { const tex = puffTex(); PROPS.puff = { tex, iw: 128, ih: 128 }; }
     makeCast(SC.cast || {});
-    SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]] })).sort((a, b) => a.t - b.t);
+    SHOTS = SC.shots.map(s => ({ id: s.at, t: K.T(s.at), plate: s.plate, zoom: s.zoom || [1, 1], focus: s.focus || [[.5, .5], [.5, .5]], clipFrom: s.clipFrom || 0 })).sort((a, b) => a.t - b.t);
     window.VIDEO_LENGTH = DATA.audioLength + (SC.tail || 1.6);
     SC._shakes = (SC.shakes || []).map(([a, d, m]) => [K.T(a), d, m]);
     SC._flashes = (SC.flashes || []).map(([a, d, m]) => [K.T(a), d, m]);
