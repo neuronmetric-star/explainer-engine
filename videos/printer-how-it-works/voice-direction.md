@@ -5,16 +5,16 @@ Mood: dry, sarcastic, one friend. No shout this time (test): start with energy, 
 
 ## CLEAN copy (paste this into the recorder)
 ```
-How does your printer work? If you never print, to save ink… you're wasting it.
+How does your printer work? It boils ink.
 Zoom into any printed photo… It's not a picture… It's dots.
-Say you haven't printed in three months. Saving ink. Smart, right? You hit print… and your dog comes out striped.
-Inside your printer, a box slides left and right over the paper. Under it: hundreds of holes, thinner than a hair. Behind each hole, a tiny heater.
-Zap! It boils the ink in a blink. A bubble pops up and shoves out one drop. Like a kettle spitting. Thousands of times a second.
-No mixed colors. Just four colors of dots, and your eyes blend them.
-And this really happened… In 1977, at Canon, a hot soldering iron touched a syringe of ink, by accident… The ink shot out. Now it's inside millions of printers.
-Your stripes? In three months, the ink dried in those tiny holes, like a crusty ketchup cap. Clogged holes… missing stripes.
-So you press the cleaning button. It squirts ink through. It works… but it drinks ink.
-You never printed to save ink… Then the cleaning spent the ink you saved.
-So print one page a week. Then zoom your phone into any photo. See the dots? One word.
+You hit print. Your computer turns the photo into a map of dots. Rollers grab one sheet and pull it in.
+Above the paper, a little box slides left and right on a belt. Under it: hundreds of holes, thinner than a hair. Behind each hole, a tiny heater.
+Zap! The heater boils the ink in a blink. A bubble pops up and shoves out one drop. Like a kettle spitting. Then fresh ink flows in, and it fires again. Thousands of times a second.
+The box has just four inks: light blue, pink, yellow and black. It never mixes them. Your eyes do, like tiles in a mosaic.
+One row done, the paper moves up a hair, and the box sweeps back. Row after row… until your photo appears.
+And this really happened… In 1977, at Canon, a hot soldering iron touched a syringe of ink, by accident… The ink shot out. That's your printer.
+One catch: leave it for months, and the ink dries in those holes, like a crusty ketchup cap… Stripes.
+So your printer is a tiny… very angry… kettle.
+Zoom your phone into any printed photo tonight. See the dots? One word.
 Still here? Then that means you enjoyed the video. So follow and like for more.
 ```

@@ -1,17 +1,16 @@
-# printer-how-it-works · one-off · mode: Explainer (track one drop of ink) · search phrase: "how does a printer work"
-# Brian, Nov 24 2026: "make it more viewer based… how does YOUR printer work". The viewer is the main character ("you"); Doug acts it out silently.
-# TEST: no shouted "What the heck?!" on this one (Brian: remove it if it isn't helping). The visual hook stays. Compare 3-s hold with the sleep video.
-# Hook (creator study): line 1 = YOU + the object + the surprise, reversing a habit (cutting-board style).
-# Payoff: a printer spits thousands of drops thinner than a hair by BOILING ink with a tiny heater; leave it unused and the ink dries in those holes.
-[#q] How does {*your printer|your printer} work? [#habit] If you never print, to save ink, [#waste] you're {!wasting|wasting} it.
+# printer-how-it-works · one-off · mode: Explainer (follow one photo from "print" to paper) · search phrase: "how does a printer work"
+# Brian, Nov 24 2026: "I just wanna explain how a printer works" (no ink-saving twist) + "viewer based: how does YOUR printer work".
+# The viewer is "you"; on screen Doug prints a photo of Gary's dog and acts it out silently. TEST: no shouted "What the heck?!" (visual hook stays).
+# Payoff: your printer is a tiny kettle: a heater boils ink into a bubble that spits a drop thinner than a hair, thousands of times a second.
+[#q] How does {*your printer|your printer} work? [#boils] It {!boils|boils} ink.
 [#look] Zoom into any printed photo. [#dots] It's not a picture. [#only] It's {*dots.|dots.}
-[#card] Say you haven't printed in three months. [#save] Saving ink. Smart, right? [#press] You hit print, [#stripes] and your dog comes out {!striped.|striped.}
-[#head] Inside your printer, a box slides left and right over the paper. [#holes] Under it: hundreds of holes, thinner than a hair. [#heater] Behind each hole, a tiny heater.
-[#zap] Zap. [#boil] It boils the ink in a blink. [#bubble] A bubble pops up and shoves out one drop. [#kettle] Like a kettle spitting. [#again] Thousands of times a second.
-[#eyes] No mixed colors. Just four colors of dots, and your eyes blend them.
-[#real] And this really happened. [#lab] In 1977, at Canon, a hot soldering iron touched a syringe of ink, by accident. [#shot] The ink shot out. [#idea] Now it's inside millions of printers.
-[#back] Your stripes? [#dry] In three months, the ink dried in those tiny holes, [#ketchup] like a crusty ketchup cap. [#clog] Clogged holes, missing stripes.
-[#clean] So you press the cleaning button. It squirts ink through. [#drink] It works, but it drinks ink.
-[#mirror] You never printed to save ink. [#spent] Then the cleaning spent the ink you saved.
-[#question] So print one page a week. [#check] Then zoom your phone into any photo. See the dots? One word.
+[#print] You hit print. [#map] Your computer turns the photo into a map of dots. [#rollers] Rollers grab one sheet and pull it in.
+[#head] Above the paper, a little box slides left and right on a belt. [#holes] Under it: hundreds of holes, thinner than a hair. [#heater] Behind each hole, a tiny heater.
+[#zap] Zap. [#boil] The heater boils the ink in a blink. [#bubble] A bubble pops up and shoves out one drop. [#kettle] Like a kettle spitting. [#refill] Then fresh ink flows in, [#again] and it fires again. Thousands of times a second.
+[#inks] The box has just four inks: light blue, pink, yellow and black. [#mix] It never mixes them. [#eyes] Your eyes do, like tiles in a mosaic.
+[#row] One row done, the paper moves up a hair, [#sweep] and the box sweeps back. [#dog] Row after row, until your photo appears.
+[#real] And this really happened. [#lab] In 1977, at Canon, a hot soldering iron touched a syringe of ink, by accident. [#shot] The ink shot out. [#idea] That's your printer.
+[#catch] One catch: leave it for months, and the ink dries in those holes, [#ketchup] like a crusty ketchup cap. [#stripes] {!Stripes.|Stripes.}
+[#mirror] So your printer is a tiny, very angry kettle.
+[#question] Zoom your phone into any printed photo tonight. See the dots? One word.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
