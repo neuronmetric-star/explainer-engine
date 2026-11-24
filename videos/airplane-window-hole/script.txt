@@ -1,23 +1,23 @@
-# SHORT (~1:10). DRAFT v2 (plain words), waiting for Brian. v1 = script-v1.txt (the version recorded Nov 24).
-# Brian, Nov 24: "create another script that anyone that watches can understand the language".
-# Rules for v2: everyday words only (no "pane", "airtight", "damp", "pressure"); one idea per sentence; the mystery
-# shown in the first 10 s; an everyday comparison for every step (balloon, milk jug, spare tire, breath on a cold
-# window, a door pushed from both sides). Names locked: "the outside layer", "the inside layer", "the hole", "the spare".
-# Facts unchanged (sources.md). Real windows have a 3rd thin layer for scratches; left out. Doug, Gary, Victor are invented.
+# SHORT (~1:10). DRAFT v3, waiting for Brian. v1 = script-v1.txt (recorded Nov 24), v2 = script-v2.txt (plain words).
+# v3 = v2's plain words + every storytelling lesson from our research (docs/creators/*): Coon question + mystery in 5 s
+# (cutting-board reversal: "looks like a mistake"), Xevi's "See, Doug had a problem.", the narrator's bet (Coon),
+# a time marker + a joke ~every 10 s (Ray/RicksClips), the fool's own mistake causes the break (true-crime "LOL" lesson),
+# build-break-fix with "So… / But…" (storm drain, hay hole), an everyday comparison per step, an open loop ("the fog was
+# never the real reason"), show-then-name ("the spare"), last line mirrors the first ("mistake"), do-it-yourself ending.
+# Names locked: "the outside layer", "the inside layer", "the hole", "the spare". Facts unchanged (sources.md).
 [#q] Why the heck do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
 [#look] Look closely. [#dot] A tiny hole. [#mistake] Looks like a mistake. It's {*not.|not.}
-[#card] Doug's job: build a plane window that won't {!break.|break.}
-[#sky] Up above the clouds, [#thin] there's barely any air. [#balloon] So planes pump themselves full of air, like a balloon.
-[#push] That air pushes hard on every window. [#milk] Like a {*gallon of milk|gallon of milk} on every inch.
-[#layers] So Doug uses two layers of plastic, [#inner1] one behind the other.
-[#spare] If the outside layer breaks, the inside layer is the spare. [#tire] Like a {*spare tire.|spare tire.}
-[#seal] Doug seals them shut.
-[#takeoff] Gary takes the window seat. [#fog] His window {!fogs up.|fogs up.} [#frost] Then it {!freezes.|freezes.}
-[#why] The air stuck between the layers was wet, [#breath] like breath on a cold window. [#cold] And up there, it's colder than a freezer.
-[#drill] So Doug pokes a tiny {*hole|hole} in the inside layer. [#clear] The wet air gets out. No more fog.
-[#job] Here's the twist.
-[#same] Now air pushes on the inside layer from both sides. [#door] Like two people pushing one door from opposite sides: [#still] it doesn't move. [#nothing] The inside layer feels {*nothing.|nothing.}
+[#card] See, Doug had a problem. [#job] His job: build a plane window that won't {!break.|break.}
+[#sky] Above the clouds, [#thin] there's barely any air. [#balloon] So planes pump themselves full, like a balloon.
+[#push] That air pushes on every window [#milk] like a {*gallon of milk|gallon of milk} on every inch.
+[#layers] So Doug uses two layers of plastic. [#spare] If the outside layer breaks, the inside layer is the spare, [#tire] like a {*spare tire.|spare tire.}
+[#seal] Then he seals them shut. [#bet] Honestly? Looks perfect.
+[#takeoff] [#fog] Gary's window {!fogs up.|fogs up.} [#paid] He paid extra for that seat. [#frost] Then it {!freezes.|freezes.}
+[#fault] Doug's fault. [#why] The air he sealed in was wet, [#breath] like breath on a cold window. [#cold] And up there, it's colder than a freezer.
+[#drill] So Doug pokes a tiny {*hole|hole} in the inside layer. [#clear] The wet air escapes. No fog.
+[#job2] But the fog was never the real reason.
+[#same] Now air pushes on the inside layer from both sides, [#door] like two people pushing one door from opposite sides. [#still] It doesn't move. [#nothing] It feels {*nothing.|nothing.}
 [#outer] The outside layer does all the work.
-[#crack] If it ever {!cracks,|cracks,} [#trickle] the hole is too tiny for the air to rush out. [#takeover] The spare takes over.
-[#mirror] That tiny hole isn't a mistake. It keeps the spare ready. [#question] Next flight, find the {*hole.|hole.}
+[#crack] If it ever {!cracks,|cracks,} [#trickle] the tiny hole can't let the air rush out. [#takeover] The spare takes over.
+[#mirror] So that hole isn't a mistake. It's the {*backup plan.|backup plan.} [#question] Next flight, find it.
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
