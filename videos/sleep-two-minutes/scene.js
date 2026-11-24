@@ -14,7 +14,7 @@
     sunset: { key: [0xffb070, 2.6, [-12, 3, 2]], hemi: [0xffc8b0, 0x8a6a80, .8], front: [0xffe8dc, 1.0], shadow: [0x4a2a5a, .42] },
   };
   // B01 spots (image px): Doug on the bed edge, Gary in the armchair (feet on the floor in front of each seat)
-  const DOUG = [292, 872], GARY = [792, 858], BELL = [300, 318], DOGBED = [540, 705];
+  const DOUG = [285, 876], GARY = [776, 776], BELL = [300, 318], DOGBED = [540, 705];   // measured: bed edge floor line + mattress top ≈ .71 m; armchair seat ≈ .45 m
 
   window.SCENE = {
     banner: 'THE HECK?',
@@ -58,9 +58,12 @@
       const seat = (n, [ix, iy], dy, ry) => { const [x, z] = K.floorAt(ix, iy); return K.place(n, x, dy, z, ry); };
       const zzz = (ch, k = 1) => { const h = K.screenOf(ch.head); for (let i = 0; i < 3; i++) { const ph = (t * .45 + i / 3) % 1;
         K.text('Z', { x: h.x + 60 * k + ph * 120 * k, y: h.y - 90 * k - ph * 200 * k, size: (50 + 50 * ph) * k, color: '#cfe0ff', stroke: Math.round(8 * k), a: Math.sin(ph * PI) }); } };
-      const garyAsleep = (fc = 'blink') => { seat('gary', GARY, -.42, -.55); G.face(fc);
-        G.pose({ t, tilt: .22, nod: .14 + .02 * Math.sin(t * 1.3), lean: -.05 }); K.sit(G, 'down'); };
-      const dougOnBed = () => seat('doug', DOUG, -.42, .45);
+      const garyAsleep = (fc = 'blink') => { seat('gary', GARY, -.47, -.6); G.face(fc);
+        G.pose({ t, tilt: .22, nod: .14 + .02 * Math.sin(t * 1.3), lean: -.05 }); K.sit(G, 'down');
+        for (const k of [-1, 1]) { G.leg[k].hip.rotation.set(-1.3, 0, 0); G.leg[k].knee.rotation.x = 1.3; } };   // feet down to the floor
+      const dougOnBed = () => seat('doug', DOUG, -.21, .4);
+      // Doug sits on the tall bed: thighs slope down so his feet reach the floor
+      const dsit = () => { K.sit(D, 'down'); for (const k of [-1, 1]) { D.leg[k].hip.rotation.set(-1.0, 0, 0); D.leg[k].knee.rotation.x = 1.0; } };
       const clock = (str, color, from) => K.text(str, { y: 300, size: 64, color, w: 360, stroke: 0, shadow: false, bg: 'rgba(18,20,30,.85)', scale: popIn(K, t, from) });
 
       switch (id) {
@@ -68,27 +71,27 @@
           garyAsleep();
           zzz(G, id === 'scream' && t < .35 ? 2.2 : 1);
           dougOnBed();
-          if (id === 'scream') { K.hookReact(D, t, 'scream'); K.sit(D, 'down'); K.slam('WHAT THE HECK?!', t, 'scream', { y: 330, size: 104, color: 'red' }); }
-          else if (id === 'q') { face(D, 'surprised', t); D.pose(Object.assign({ t, look: -.45, armR: { raise: .25 }, gesture: 'point', gw: 1 }, sway(.5))); K.sit(D, 'down');
+          if (id === 'scream') { K.hookReact(D, t, 'scream'); dsit(); K.slam('WHAT THE HECK?!', t, 'scream', { y: 330, size: 104, color: 'red' }); }
+          else if (id === 'q') { face(D, 'surprised', t); D.pose(Object.assign({ t, look: -.45, armR: { raise: .25 }, gesture: 'point', gw: 1 }, sway(.5))); dsit();
             const a = K.clamp01((at('look') + .2 - t) / .3);
             K.text('HOW DO YOU FALL ASLEEP', { y: 290, size: 66, a, scale: .8 + .2 * popIn(K, t, at('q')) });
             K.text('IN 2 MINUTES?', { y: 385, size: 112, color: 'gold', a, scale: .8 + .2 * popIn(K, t, at('q') + .4) }); }
-          else if (id === 'look') { face(D, 'flat', t); D.pose(Object.assign({ t, look: -.5 }, sway(.3))); K.sit(D, 'down');
+          else if (id === 'look') { face(D, 'flat', t); D.pose(Object.assign({ t, look: -.5 }, sway(.3))); dsit();
             if (t > at('out')) K.text('OUT COLD', { y: 300, size: 92, color: 'gold', scale: popIn(K, t, at('out')) }); }
-          else if (id === 'doug') { D.face('flat'); D.pose({ t, nod: -.45, look: .05 }); K.sit(D, 'down');   // wide awake, staring at the ceiling
+          else if (id === 'doug') { D.face('flat'); D.pose({ t, nod: -.45, look: .05 }); dsit();   // wide awake, staring at the ceiling
             if (t > at('stare')) { clock('1:04 AM', '#fff', at('stare')); } }
           else if (id === 'card') { const ts = at('sheep'), tp = at('phone'), tf = at('flip');
             face(D, 'worried', t); D.pose(Object.assign({ t, gesture: t < ts ? 'think' : undefined, gw: 1, nod: t > tp && t < tf ? .25 : -.05,
-              look: t > tf ? .35 * Math.sin((t - tf) * 9) * K.clamp01((at('bet') - t) / .3) : 0 }, sway(.4))); K.sit(D, 'down');
+              look: t > tf ? .35 * Math.sin((t - tf) * 9) * K.clamp01((at('bet') - t) / .3) : 0 }, sway(.4))); dsit();
             if (t > ts - .2 && t < tp + .6) { const h = K.screenOf(D.head);   // sheep hop over Doug's head, counted
               for (let i = 0; i < 3; i++) { const u = (t - ts + .2 - i * .35) / .9; if (u < 0 || u > 1) continue;
                 K.prop('SHEEP', { x: K.lerp(h.x - 420, h.x + 420, u), y: h.y - 90 - 170 * Math.sin(u * PI), w: 400 });
                 if (u > .5) K.text(String(i + 1), { x: h.x + 300, y: h.y - 300, size: 110, color: '#fff', a: K.clamp01((1 - u) * 4) }); } }
             if (t > tp - .1) clock('3:07 AM', 'red', tp - .1); }
-          else if (id === 'bet') { face(D, t > at('wrong') ? 'worried' : 'smirk', t); D.pose(Object.assign({ t, gesture: t > at('wrong') ? 'facepalm' : 'shrug', gw: K.ease((Lc - .2) / .4) }, sway(.3))); K.sit(D, 'down');
+          else if (id === 'bet') { face(D, t > at('wrong') ? 'worried' : 'smirk', t); D.pose(Object.assign({ t, gesture: t > at('wrong') ? 'facepalm' : 'shrug', gw: K.ease((Lc - .2) / .4) }, sway(.3))); dsit();
             if (t > at('wrong')) K.text('THE MISTAKE', { y: 300, size: 104, color: 'red', scale: popIn(K, t, at('wrong')), rot: -.04 }); }
           else if (id === 'mirror') { const tg = at('gary');
-            face(D, 'worried', t); D.pose(Object.assign({ t, gesture: 'think', gw: 1 }, sway(.6))); K.sit(D, 'down');
+            face(D, 'worried', t); D.pose(Object.assign({ t, gesture: 'think', gw: 1 }, sway(.6))); dsit();
             if (t < tg) K.text('TRIED HARD', { y: 300, size: 92, color: 'red', scale: popIn(K, t, at('mirror') + .2) });
             else K.text('DID NOTHING', { y: 300, size: 92, color: 'gold', scale: popIn(K, t, tg) }); }
           break; }
@@ -138,7 +141,7 @@
           D.face(t > tf ? (t > tb ? 'blink' : 'smile') : 'flat');
           D.pose({ t, nod: .12 * loose(tf) + .08 * loose(tb), tilt: .1 * loose(tf), lean: .06 * loose(ts), armR: { raise: -.05 * loose(ta) }, armL: { raise: -.05 * loose(ta) }, handR: 'relaxed', handL: 'relaxed' });
           D.root.position.y -= .05 * loose(ts);   // shoulders drop
-          K.sit(D, 'down');
+          dsit();
           const part = t < ts ? D.head : t < ta ? D.neck : t < tl ? D.arm[1].el : D.leg[1].knee, h = K.screenOf(part), g = t < tf ? 0 : 1;
           for (let r = 0; r < 3; r++) { const N = 36, rad = (part === D.head ? 150 : 95) + r * 26 + 8 * Math.sin(t * 5); let prev = null;   // a pulsing gold halo on the part that melts now
             for (let k = 0; k <= N; k++) { const a = k / N * 2 * PI, q = { x: h.x + Math.cos(a) * rad, y: h.y + Math.sin(a) * rad * .8 }; if (prev) K.line(prev.x, prev.y, q.x, q.y, { color: 'gold', width: 8 - r * 2, a: g * (.85 - r * .25) }); prev = q; } }
