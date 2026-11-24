@@ -108,6 +108,9 @@ before every picture change · lines starting `#` are comments. Numbers as words
   gestures `point|wave|shrug|cross|think|facepalm|hips|tada`; hands = big round mitts `fist|relaxed|open|point` (no separate fingers). Pure functions of time.
   **Characters read big**: ≥ 40% of frame height in wides, 55–70% in mediums (PLAYBOOK §3.1).
   Model sheets: `node engine/lab/render-lab.js <out> --page cast-sheet.html`; compare with `docs/characters/*_ref.png`.
+  **Explainer tools** (`engine/plate-kit.js`, PLAYBOOK §8): `K.flow` flowing arrows, `K.sit`, `K.hookReact` + `K.slam` (the hook), `SCENE.whip`,
+  `SCENE.banner`, `K.scene3D`; `tools/occluder.py` cuts a painted table/counter to its outline to sit in front of the cast.
+- **Mini-series** (PLAYBOOK §1.13 "Mini-series", list in `docs/series.md`): one world + one running role, each episode a standalone topic.
   **Robot dog** `CHAR.robodog({envMap, rifle})` → `pose({t, walk, walkAmt, look, tilt, nod, pitch, crouch})` (trot gait, IK legs;
   scene cast entry `{outfit:'robodog'}`). Scene cast entries can be objects (`{outfit:'president', phone:true}`); plate `light` can be a preset name or a custom object.
 - **Plates** `engine/lab/plate-lab.html`: `usePlate(name, zoom, panX, panY)` matches the 3D camera to a

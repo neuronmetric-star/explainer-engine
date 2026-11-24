@@ -401,6 +401,18 @@ full price; they want to *feel* they didn't pay it). No bridge, no ride.
 - **The joke never replaces the facts:** the story part is researched and sourced like any video (§1.6a zero-knowledge rules).
 - **Timing:** a trend dies in ~7–10 days. Script the same day the sheet flags it; post within 48 h.
 
+#### Mini-series (Brian, Nov 24 2026: "lets start doing mini series")
+A **mini-series** is 3–5 videos that share one world and one running role (Doug the airplane-window builder). Each episode
+is a **different topic that stands alone** (posting rule #2 still holds: no "part 2", no cliffhangers, each one makes sense
+to a first-time viewer), but returning viewers recognize the place, the cast and the joke.
+- **Reuse the art:** the series' paintings live in the first episode's `art/`; later episodes copy what they need and add only
+  2–3 new images. Same color script family, same recurring objects (the plane, the workshop).
+- **Same role, new problem:** "See, Doug had a problem." opens every episode with a new job for the same Doug.
+- **One series nod, no more:** a callback line or prop from an earlier episode (the hole, the spare), never required to understand.
+- **Caption:** a series hashtag (e.g. `#planeheck`) after the search phrase; the cover keeps the same layout per series.
+- **Post them ≥ 1 day apart** so each gets its own test audience; the Sunday review compares episodes.
+- The list of series and episodes: `docs/series.md`.
+
 ### 1.8 Script markup (`script.txt`)
 `*word` gold · `!word` red · `{shown|spoken}` e.g. `{*$40|forty bucks}` · `[#cue]` sync point before
 every picture change · `#` comment lines. Write numbers as words in the spoken part.
@@ -804,6 +816,12 @@ borrow other creators' audiences.
 - **Green-screen props:** key with `colorkey=0x00FF00:0.22:0.06` (ffmpeg) or the same distance-to-pure-green
   in a shader. **No despill:** it turns teal/green props blue. Tested clean on `gas-vs-water/P01_car_side.png`.
 - **Green subjects (cash, bills, leaves):** the key eats them. Run `python3 tools/cutout.py videos/<slug>/art/<file>.png` → `<file>.cut.png` (only green touching the border is removed) and point `SC.props` at the `.cut.png`; the kit skips keying for `*.cut.png`.
+- **Explainer tools (Nov 24 2026, `engine/plate-kit.js`; worked example `videos/airplane-window-hole/scene.js`):**
+  `K.flow(t, x0,y0,x1,y1, {color, width, a})` flowing arrow (air/water/money moving) · `K.arrow(...)` static arrow ·
+  `K.sit(ch, 'cross'|'down')` seated legs (after `ch.pose`) · `K.hookReact(ch, t, from)` the hook's scream + jump-back ·
+  `K.slam('WHAT THE HECK?!', t, from)` the slammed hook text · `SCENE.whip = true` whip-pans between places ·
+  `SCENE.banner = 'THE HECK?'` · `K.scene3D` / `K.env` to add your own 3D objects (the door) · `python3 tools/occluder.py`
+  cuts a painted object (tray, counter) to its outline so it sits in front of the cast.
 - Chromium needs `--allow-file-access-from-files` to load plates.
 - **Status:** the plate and cast system lives in the lab pages. The production pipeline
   (`kit.js`/`stage.html`/`render.js`) still drives the old gold-noir look. Wiring plates, cast and

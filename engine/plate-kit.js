@@ -183,6 +183,37 @@
     el.style.boxShadow = o.dash ? 'none' : '0 2px 3px rgba(0,0,0,.35)';
     el.style.transform = `translate(${x0}px,${y0 - w / 2}px) rotate(${Math.atan2(y1 - y0, x1 - x0)}rad)`; return el; };
 
+  // ---------------- reusable explainer tools (from airplane-window-hole, Nov 24 2026) ----------------
+  // K.arrow(x0,y0,x1,y1,{color,width,a}): a straight arrow (screen px).
+  K.arrow = function (x0, y0, x1, y1, o = {}) { const c = o.color || '#fff', w = o.width || 10, al = o.a === undefined ? 1 : o.a, a = Math.atan2(y1 - y0, x1 - x0), h = w * 2.6;
+    K.line(x0, y0, x1, y1, { color: c, width: w, a: al });
+    K.line(x1, y1, x1 - h * Math.cos(a - .55), y1 - h * Math.sin(a - .55), { color: c, width: w, a: al });
+    K.line(x1, y1, x1 - h * Math.cos(a + .55), y1 - h * Math.sin(a + .55), { color: c, width: w, a: al }); };
+  // K.flow(t,x0,y0,x1,y1,{color,width,a,speed,ph}): a FLOWING arrow (faint shaft + head + dots streaming along it).
+  // Use for anything that moves: air, water, money, heat. Color code: white = air/force, light blue = water, red = danger, gold = answer.
+  K.flow = function (t, x0, y0, x1, y1, o = {}) { const c = o.color || '#fff', w = o.width || 10, al = o.a === undefined ? 1 : o.a, a = Math.atan2(y1 - y0, x1 - x0), sp = o.speed || 1.1, h = w * 2.6;
+    if (al <= .01) return;
+    K.line(x0, y0, x1, y1, { color: c, width: w * .45, a: al * .55 });
+    K.line(x1, y1, x1 - h * Math.cos(a - .55), y1 - h * Math.sin(a - .55), { color: c, width: w, a: al });
+    K.line(x1, y1, x1 - h * Math.cos(a + .55), y1 - h * Math.sin(a + .55), { color: c, width: w, a: al });
+    for (let k = 0; k < 4; k++) { const u = ((t * sp + k / 4 + (o.ph || 0)) % 1); K.text('●', { x: K.lerp(x0, x1, u), y: K.lerp(y0, y1, u), size: w * 2.2, color: c, stroke: 0, shadow: false, a: al * Math.sin(u * Math.PI) }); } };
+  // K.sit(ch, 'cross'|'down'): seated legs, applied AFTER ch.pose(). Lower the root so the hips land on the painted seat.
+  // Hide what's under a painted table with an occluder made by tools/occluder.py (cut to the object's real outline).
+  K.sit = function (ch, style = 'cross') { const A = ch.leg[-1], B = ch.leg[1];
+    A.hip.rotation.set(-1.5, 0, 0); A.knee.rotation.x = 1.5; A.ankle.rotation.x = 0;
+    if (style === 'cross') { B.hip.rotation.set(-1.62, 0, -.42); B.knee.rotation.x = 1.15; B.ankle.rotation.x = .2; }
+    else { B.hip.rotation.set(-1.5, 0, 0); B.knee.rotation.x = 1.5; B.ankle.rotation.x = 0; } };
+  // THE HOOK (PLAYBOOK §3.5 #12). Shot plan: a first shot that crash-zooms OUT from the strange thing, e.g.
+  //   { at: 'scream', plate: '05', zoom: [4.4, 1.1], focus: [[thingX, thingY], [.42, .48]] } and shakes: [['scream+0.3', .45, .7]].
+  // K.hookReact(ch, t, from): scream face + jump back, arms up (call it instead of ch.pose in that shot).
+  K.hookReact = function (ch, t, from = 0, o = {}) { const r = K.pop(K.clamp01((t - K.T(from) - .28) / .3));
+    ch.face(t - K.T(from) > .28 ? 'scream' : 'flat');
+    ch.pose(Object.assign({ t, lean: -.22 * r, armR: { raise: .85 * r }, armL: { raise: .85 * r }, handR: 'open', handL: 'open', nod: -.12 * r }, o));
+    ch.root.position.y += .06 * Math.sin(K.clamp01((t - K.T(from) - .28) / .35) * Math.PI); return r; };
+  // K.slam(str, t, from, {y, size, color}): the slammed, shaking hook text ("WHAT THE HECK?!").
+  K.slam = function (str, t, from = 0, o = {}) { const u = t - K.T(from), k = K.pop(K.clamp01((u - .05) / .25)), sh = 1 - K.clamp01(u - .3);
+    return K.text(str, { y: (o.y || 330) + 6 * Math.sin(t * 50) * sh, size: o.size || 98, color: o.color || 'gold', scale: k, rot: -.05 + .02 * Math.sin(t * 40) * sh }); };
+
   // ---------------- frame ----------------
   let time = 0, SHOTS = [];
   const amp = (arr, t) => { let a = 0; for (const [s, d, m] of arr) if (t > s && t < s + d) a = Math.max(a, (1 - (t - s) / d) * m); return a; };
