@@ -52,6 +52,8 @@ Write down what the viewer will discover. Then pick the question word that the e
 
 - **Show the subject during the question** (the puddle, the door, the plane).
 - **Start the action in sentence two:** "Doug decided to find out by never buying it again."
+- **Since Nov 24 2026 the opening is shouted first:** "WHAT THE HECK?!" then the search phrase as a plain question
+  ("Why do airplane windows have a tiny hole?"); see §3.5 #12.
 - **Always "the heck", never "the f\*ck"** (Brian's rule, Nov 2026): spoken and captioned as "heck", so the opening
   seconds stay ad-safe on TikTok, Reels and YouTube. Coon's punchy rhythm stays; only the word changes.
   Older scripts (gas-vs-water etc.) still say "f\*ck"; don't copy that. **Captions too:** the Nov 13–15 posts
@@ -681,6 +683,9 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 ## 6. Quality checklists
 
 **Script**
+- [ ] **The voice hook:** the first words are a shouted "WHAT THE HECK?!", then the search phrase as a plain question (§3.5 #12)
+- [ ] **Easy:** a 10-year-old follows every line; no jargon; one idea per sentence; an everyday comparison for every step
+- [ ] **The scorecard in `docs/lessons.md` is all "yes"**, and no past note from Brian is repeated
 - [ ] Payoff written first; the question word matches it
 - [ ] Subject on screen during the question; action starts in sentence two
 - [ ] A choice, apparent success, a clue seen before it's explained, an observer, a consequence
@@ -701,6 +706,8 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] Props: material, wear, one personality detail, thin outline, clean green; exact text only where requested
 
 **Preview (before the full render)**
+- [ ] **The visual hook:** frame 1 = the strange thing huge; crash-zoom out; a cast member reacts big; shake + sting (§3.5 #12)
+- [ ] No cut-off bodies: cover parts only with the real outline of a painted object (e.g. a tray cut to its shape)
 - [ ] Feet on the ground, shadows matching the painting's direction
 - [ ] Faces readable (front fill), the caption band clear, nothing in the top 140 / bottom 380 px
 - [ ] Something changes every 2–3 s; reveals held 1–1.5 s

@@ -36,6 +36,8 @@ If we only have 2–3 videos ready, fill slots **1, 2, 3** first, then 5, then 4
 | 22:00 | Claude (optional) | Quick check of the day's views; adjust tomorrow's slots |
 
 ## Weekly check (Sundays)
+- **Fill in the Results table in `docs/lessons.md`** (views, 3-second hold, watched to end, shares, saves per video). The best and the
+  worst video each produce one new rule in the scorecard. Study 2–3 new viral videos in our lanes (TikTok AI app) → `docs/creators/`.
 - Views in the last 30 days vs the 100k line.
 - Which slot and which lane got the most views and shares → give that lane more slots next week.
 - Brian screenshots from TikTok Studio for the top 3 and bottom 3: average watch time and % who watched to the end.

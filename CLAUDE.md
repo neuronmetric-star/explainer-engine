@@ -8,6 +8,10 @@ He works mostly from his phone — keep messages short, show previews, ask befor
 Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` is an older draft).
 
 ## The format (every video)
+- **Easy to understand + the HOOK, always (Brian, Nov 24 2026).** Plain words a 10-year-old follows, an everyday comparison for every
+  step, the mystery on screen in 5 s. The video opens with a **voice hook** (a shouted "WHAT THE HECK?!", then the search phrase as a plain
+  question) and a **visual hook** (the strange thing huge in frame 1, crash-zoom out, a cast member screams, shake + sting).
+  Every script passes the scorecard in `docs/lessons.md` before Brian sees it.
 - **One narrator** (dry, sarcastic, talking to one friend). Characters never speak; mouths stay still.
 - **Flat illustrated 2D world** painted by Brian in ChatGPT from our prompts (`docs/prompt-pack.md`), always.
   **Art standard v2** (Brian, Nov 22 2026: "more descriptive, it felt basic and plain"): rich, cinematic, lived-in paintings.
@@ -114,3 +118,10 @@ before every picture change · lines starting `#` are comments. Numbers as words
 - **Legacy** gold-noir engine (`engine/kit.js`, `stage.html`, `tools/render.js`, `videos/buy-borrow-die`)
   still renders the old wireframe look. Wiring plates + cast into `scene.js`/`render.js` is the next
   build step (do it with `gas-vs-water`). Everything in `update` must be a pure function of `t`.
+
+## Continuous improvement (Brian, Nov 24 2026: "how can we always have continuous improvements?")
+- `docs/lessons.md` is the memory: every note Brian gives, what we changed, and the rule it became. Read it before every script.
+- The **scorecard** in it is checked on every script and shot plan; a "no" is fixed before Brian sees anything.
+- After posting: record each video's numbers (views, 3-second hold, watch-to-end, shares, saves) in the lessons table on the weekly
+  check (Sundays, `docs/posting-schedule.md`); the best and worst video each week each produce one new rule.
+- Keep studying winners: run new reference videos through the TikTok AI app, add them to `docs/creators/`, steal one lesson each.

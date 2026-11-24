@@ -13,8 +13,12 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs
    Pick a short slug and create `videos/<slug>/`.
 2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
 3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; short form only: hook → middle → end per §1.11, 175–190 story words + CTA ≈ 1:05 final (never under 1:02); cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
-   STOP and show me: the narration in one copyable block, then voice direction, the fact list with sources,
-   (opening always says "the heck", never "the f*ck"). Wait for "approved" (or edits).
+   **Easy to understand, always (Brian, Nov 24 2026):** plain words a 10-year-old follows (no jargon: "layer", not "pane";
+   "pushes", not "pressure"), one idea per sentence, an everyday comparison for every step, the mystery shown in the first 5 s.
+   **The HOOK, always:** the first spoken words are a shouted **"WHAT THE HECK?!"**, then the search phrase as a plain question.
+   Before showing me, run the scorecard in `docs/lessons.md` and fix every "no". Read `docs/lessons.md` first: never repeat a past note.
+   STOP and show me: the narration in one copyable block, the scorecard, voice direction (how to shout the hook),
+   the fact list with sources (always "heck", never "the f*ck"). Wait for "approved" (or edits).
 4. Write `videos/<slug>/shotlist.md` (PLAYBOOK §5): cast, numbered background prompts, green-screen prop
    prompts, and the shot plan table (picture · camera · face/pose/gesture per cue). Tell me how many images.
    Also write `videos/<slug>/art-prompts.md` (prompt-pack "Batch file") for Brian to paste into ChatGPT, to **art standard v2**
@@ -24,9 +28,13 @@ Follow CLAUDE.md and `docs/PLAYBOOK.md` exactly. Example to copy: `videos/gas-vs
 5. Voice: if ELEVENLABS_API_KEY is set run `node tools/tts.js <slug>`; otherwise give me the spoken text,
    wait for `voice.mp3`, then run `node tools/align.js <slug>`.
 6. When the art is in `videos/<slug>/art/`: build the scene (plates matched per painting, cast, acting,
-   camera moves and hard cuts per the shot plan).
+   camera moves per the shot plan). **Open on the VISUAL HOOK** (PLAYBOOK §3.5 #12: the strange thing huge in frame 1,
+   crash-zoom out, a cast member reacts big with the `scream` face, shake + sting, `WHAT THE HECK?!` slammed on screen).
+   Smooth, not choppy: `SCENE.whip = true`, same-place shots continue the camera, diagrams flow, few words on screen (§3.5 #9–11).
 7. Render preview stills, Read them, fix problems, repeat until clean. Send me the preview.
 8. Render the final 30 fps video with voice. Commit and push. Tell me the file path.
 9. Cover + caption: `node tools/cover.js <slug> <seconds> "LINE 1|LINE 2|LINE 3"` on a frame where the character is on
    screen with an expressive face (covers ALWAYS show the character). Write `videos/<slug>/post.md` (TikTok/Reels caption
    + hashtags, YouTube Shorts title). Send me the cover and the caption.
+10. **Improve every time:** add Brian's notes from this video (and, after posting, its 3-second hold and completion numbers)
+    to `docs/lessons.md`, turn each note into a rule in the scorecard or the playbook, and commit.
