@@ -99,7 +99,7 @@ before every picture change · lines starting `#` are comments. Numbers as words
 
 ## Engine reference
 - **Cast** `engine/characters.js`: `CHAR.make({outfit:'hoodie'|'oxford'|'suit'|'polo'|'president'|'gang', phone, mask, beanie, hat:'hard'|'inspector'|'pilot'|'chef'|'top', holdR/holdL:'clipboard'|'drill'|'magnifier', envMap})` →
-  `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'smirk'|'worried'|'flat'|'blink')`,
+  `ch.root` (feet at y=0, faces +z), `ch.face('smile'|'happy'|'surprised'|'scream'|'smirk'|'worried'|'flat'|'blink')`,
   `ch.pose({t, walk, walkAmt, look, nod, tilt, lean, armR:{raise}, armL:{raise}, gesture, gw, handR, handL})`;
   gestures `point|wave|shrug|cross|think|facepalm|hips|tada`; hands = big round mitts `fist|relaxed|open|point` (no separate fingers). Pure functions of time.
   **Characters read big**: ≥ 40% of frame height in wides, 55–70% in mediums (PLAYBOOK §3.1).

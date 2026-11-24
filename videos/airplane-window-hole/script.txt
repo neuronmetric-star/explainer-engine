@@ -1,11 +1,13 @@
-# SHORT (~1:10). DRAFT v3, waiting for Brian. v1 = script-v1.txt (recorded Nov 24), v2 = script-v2.txt (plain words).
+# SHORT (~1:10). v4 = v3 + the HOOK (Brian, Nov 24): shouted "WHAT THE HECK?!" (verbal) + crash-zoom off the hole, Gary jumps (visual).
+# Then the exact search phrase "why do airplane windows have a tiny hole". v3 = script-v3.txt.
+# (v3 notes:) v1 = script-v1.txt (recorded Nov 24), v2 = script-v2.txt (plain words).
 # v3 = v2's plain words + every storytelling lesson from our research (docs/creators/*): Coon question + mystery in 5 s
 # (cutting-board reversal: "looks like a mistake"), Xevi's "See, Doug had a problem.", the narrator's bet (Coon),
 # a time marker + a joke ~every 10 s (Ray/RicksClips), the fool's own mistake causes the break (true-crime "LOL" lesson),
 # build-break-fix with "So… / But…" (storm drain, hay hole), an everyday comparison per step, an open loop ("the fog was
 # never the real reason"), show-then-name ("the spare"), last line mirrors the first ("mistake"), do-it-yourself ending.
 # Names locked: "the outside layer", "the inside layer", "the hole", "the spare". Facts unchanged (sources.md).
-[#q] Why the heck do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
+[#scream] {!WHAT THE HECK?!|What the heck?!} [#q] Why do {*airplane windows|airplane windows} have a tiny {*hole?|hole?}
 [#look] Look closely. [#dot] A tiny hole. [#mistake] Looks like a mistake. It's {*not.|not.}
 [#card] See, Doug had a problem. [#job] His job: build a plane window that won't {!break.|break.}
 [#sky] Above the clouds, [#thin] there's barely any air. [#balloon] So planes pump themselves full, like a balloon.

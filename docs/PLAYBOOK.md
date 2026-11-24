@@ -543,6 +543,12 @@ Same painted 2D world and the same cast. These rules make the mechanism easier t
    zoom/focus = the previous shot's end), so a place is one flowing move. Aim for ~15–20 shots in a short, not 25+.
 10. **Diagrams move:** arrows are `flow()` streams (dots running along them), wet air drifts, frost grows; nothing just pops on.
     Labels: 1–2 per diagram, only the locked names. Titles: the hook title, key numbers, and the final idea. Nothing else.
+12. **THE HOOK, every video (Brian, Nov 24 2026; from the reference studies + the Nov 22 audit "speed bump, not a hook"):**
+    - *Visual (0–1.5 s):* frame 1 is already moving: the strange thing **huge** on screen (extreme close-up), then a crash-zoom
+      out to a cast member **reacting big** (jumps back, `scream` face), camera shake + sting, `WHAT THE HECK?!` slammed on screen.
+      Never open on a calm wide or someone just standing.
+    - *Verbal (0–1 s):* the narrator **shouts "WHAT THE HECK?!"** (spoken and captioned, ad-safe), then the plain search phrase
+      as the question ("Why do airplane windows have a tiny hole?"). Only the first line needs recording if a video is upgraded.
 11. **Every key idea gets a picture of its everyday comparison** (the door pushed from both sides, built in 3D with `K.scene3D`).
 
 ---

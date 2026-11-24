@@ -7,7 +7,7 @@
 //  CHAR.make({outfit:'oxford'|'polo'|'suit'|'hoodie'|'president'|'gang'|'isidro', glasses, phone, mask, beanie, shirt, pants, envMap,
 //             hat:'hard'|'inspector'|'pilot'|'chef'|'top', hatColor, holdR/holdL:'clipboard'|'drill'|'magnifier'})
 //    ch.root            THREE.Group, feet at y=0, faces +z
-//    ch.face('smile')   smile | happy | surprised | smirk | blink | worried | flat
+//    ch.face('smile')   smile | happy | surprised | scream | smirk | blink | worried | flat
 //    ch.pose({t, walk, walkAmt, armR:{raise}, armL:{raise}, look, nod, tilt, lean, gesture, gw, handR, handL})
 //    gestures: point | wave | shrug | cross | think | facepalm | hips | tada | cuffed   (gw = blend 0..1; pose({cuffs:true}) shows handcuffs)
 //    hands (round mitts): 'fist' | 'relaxed' | 'open' | 'point' (set by the gesture; override with handR/handL)
@@ -76,6 +76,10 @@
           mouth(); g.fillStyle = MOUTH; g.fill(); g.save(); mouth(); g.clip(); g.fillStyle = TONGUE; g.beginPath(); g.ellipse(cx, cy + 196, 64, 46, 0, 0, TAU); g.fill(); g.restore();
           mouth(); g.lineWidth = 11; g.strokeStyle = INK; g.stroke(); }   // stroke the MOUTH outline (was stroking the tongue ellipse -> black ring under the mouth)
         break;
+      case 'scream': { brows(34); eyes(28, 44);   // the hook reaction: brows way up, big eyes, a tall open mouth (Nov 24 2026)
+        g.fillStyle = MOUTH; g.beginPath(); g.ellipse(cx, cy + 150, 62, 88, 0, 0, TAU); g.fill();
+        g.save(); g.beginPath(); g.ellipse(cx, cy + 150, 62, 88, 0, 0, TAU); g.clip(); g.fillStyle = TONGUE; g.beginPath(); g.ellipse(cx, cy + 232, 50, 40, 0, 0, TAU); g.fill(); g.restore();
+        g.lineWidth = 11; g.strokeStyle = INK; g.beginPath(); g.ellipse(cx, cy + 150, 62, 88, 0, 0, TAU); g.stroke(); break; }
       case 'surprised': brows(20); eyes(26, 38); g.lineWidth = 11; g.beginPath(); g.ellipse(cx, cy + 124, 20, 27, 0, 0, TAU); g.stroke(); break;   // hollow 'o' like the ref sheets
       case 'smirk': for (const s of [-1, 1]) line(cx + s * (ex + 58), cy - 100, cx + s * (ex - 40), cy - 66, 12); eyes(23, 27);
         g.lineWidth = 12; g.beginPath(); g.moveTo(cx - 86, cy + 98); g.quadraticCurveTo(cx + 10, cy + 140, cx + 96, cy + 80); g.stroke(); break;
