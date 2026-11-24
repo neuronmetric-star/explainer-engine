@@ -7,7 +7,7 @@
 | `H00_helicopter_clip_openart.mp4` | The original OpenArt clip from the Lamborghini video (5 s, 480×854): the helicopter flies off into a sunset over the city | Source of truth for how the helicopter looks; also an OpenArt asset |
 | `H00_helicopter_reference.png` | A frame from that clip (1.0 s) | Attach it in ChatGPT when painting H01, so it matches |
 
-| `E01_city_sunset_ending.png` | **THE SIGNATURE ENDING** (Brian, Nov 24 2026): the city at sunset from the original helicopter clip, seen from a rooftop where the cast stands; open sky on top for the helicopter | The LAST story shot of every video (PLAYBOOK §1.12a). Copy into `videos/<slug>/art/`. Paint once (prompt below, attach `H00_helicopter_reference.png`). |
+| `E01_city_sunset_ending.png` | **THE SIGNATURE ENDING** (Brian, Nov 24 2026): the city at sunset from the original helicopter clip, seen from a rooftop where the cast stands; open sky on top for the helicopter | The LAST story shot of every video (PLAYBOOK §1.12a). Copy into `videos/<slug>/art/`. ✅ Painted Nov 24 2026 (first used in Plane Heck ep. 2). Cast spots: Doug (360,1270), Gary (680,1240); plate `hz .45, vx .5, camH 2.0`. |
 
 ## E01 prompt (attach `H00_helicopter_reference.png`) (ChatGPT, same style bible as the video batch)
 

@@ -290,7 +290,8 @@ up at it: he finally has the thing, and there's already a next thing. Viewers le
   `E01_city_sunset_ending.png` (`docs/assets/`, copy it into every video's `art/`): the same sunset city as the original
   Lamborghini helicopter clip, seen from a rooftop where the winner (and anyone else in the story) stands. The helicopter crosses
   its open top third, the winner looks up, then the follow CTA. Same place every video, so viewers know the goodbye.
-  (Until E01 exists, end on a background with open sky in its top third.)
+  Ending plate settings that work (ep. 2): `{ img: 'E01_city_sunset_ending.png', hz: .45, vx: .5, camH: 2.0 }`, Doug `K.placeAt('doug', 360, 1270)`,
+  Gary `K.placeAt('gary', 680, 1240)`, camera zoom ≈ 1.04→1.1 with focus y ≈ .5 so heads stay below the FOLLOW button.
 - **Words:** none needed; it's a picture joke and costs no length. (In a lesson chain the helicopter is already in the
   story, so it simply flies over again at the end.)
 - **Always the same helicopter:** white with a navy-blue stripe, the one from the Lamborghini video's OpenArt clip

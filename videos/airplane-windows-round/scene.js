@@ -8,7 +8,7 @@
   const popIn = (K, t, from, dur = .35) => K.pop(K.clamp01((t - from) / dur));
   const WORDS = window.VIDEO_DATA.words, norm = w => w.toLowerCase().replace(/[^a-z0-9]/g, '');
   const wordAt = (K, w, cue) => { const t0 = K.T(cue); const x = WORDS.find(o => o.start >= t0 - .01 && norm(o.w) === w); return x ? x.start : t0; };
-  const ENDING = 'E01_PLACEHOLDER_tarmac.png';   // swap to 'E01_city_sunset_ending.png' when Brian paints it (docs/assets)
+  const ENDING = 'E01_city_sunset_ending.png';   // the series' signature goodbye (docs/assets)
 
   const L = {
     shop: { key: [0xffc888, 2.3, [-10, 7, 3]], hemi: [0xe8d8ff, 0x9a7060, .8], front: [0xfff0e2, 1.0], shadow: [0x3a2a4a, .38] },
@@ -28,7 +28,7 @@
       '10': { img: '10_panel_square_vs_round.png', hz: .5, vx: .5, fov0: 55, camH: 1.5, light: 'interior' },
       '05': { img: '05_window_seat_clear.png', hz: .42, vx: .5, fov0: 55, camH: 1.25, light: L.seat },
       '03': { img: '03_sky_altitude_side.png', hz: .5, vx: .5, fov0: 55, camH: 1.5, light: 'day' },
-      'E': { img: ENDING, hz: .55, vx: .45, fov0: 55, camH: 1.3, light: L.sunset },
+      'E': { img: ENDING, hz: .45, vx: .5, fov0: 55, camH: 2.0, light: L.sunset },
     },
     props: { TRAY5: '05_tray_front.cut.png', P08: 'P08_airliner_side.png', P10: 'P10_paper_cut.png', P11: 'P11_paper_torn.png', H01: 'H01_helicopter.png' },
     cast: { doug: { outfit: 'hoodie', hat: 'hard' }, gary: 'oxford' },
@@ -47,8 +47,8 @@
       { at: 'round', plate: '10', zoom: [2.1, 1.3], focus: [[.66, .17], [.5, .63]] },
       { at: 'spread', plate: '10', zoom: [1.3, 1.18], focus: [[.5, .63], [.5, .6]] },
       { at: 'mirror', plate: '05', zoom: [1.0, 1.08], focus: [[.5, .48], [.54, .48]] },
-      { at: 'question', plate: 'E', zoom: [1.12, 1.18], focus: [[.42, .5], [.42, .5]] },
-      { at: 'cta', plate: 'E', zoom: [1.18, 1.2], focus: [[.42, .5], [.42, .5]] },
+      { at: 'question', plate: 'E', zoom: [1.04, 1.1], focus: [[.5, .53], [.5, .5]] },
+      { at: 'cta', plate: 'E', zoom: [1.1, 1.1], focus: [[.5, .5], [.5, .48]] },
     ],
     shakes: [['scream+0.3', .45, .7], ['rip', .2, .3], ['crack', .3, .45]],
     flashes: [],
@@ -135,7 +135,7 @@
           if (t > at('porthole')) K.text('LIKE A FISHBOWL', { y: 300, size: 80, color: 'gold', scale: popIn(K, t, at('porthole')) });
           break; }
         case 'question': case 'cta': {   // THE SIGNATURE GOODBYE: the city sunset, the helicopter crosses, Doug looks up
-          K.placeAt('doug', 300, 1110, .3); K.placeAt('gary', 640, 1090, -.3);
+          K.placeAt('doug', 360, 1270, .3); K.placeAt('gary', 680, 1240, -.3);
           const hu = t < at('cta') ? K.helicopter(t, 'question', { y: 360, w: 520 }) : -1, up = hu < 0 ? 0 : Math.sin(PI * K.clamp01((hu - .05) / .85));
           face(D, up > .3 ? 'flat' : id === 'cta' ? 'smirk' : 'smile', t);
           D.pose(Object.assign({ t, nod: -.38 * up, gesture: id === 'cta' ? 'point' : 'hips', gw: id === 'cta' ? K.ease((Lc - .3) / .4) : 1 - up }, sway(1 - up)));
