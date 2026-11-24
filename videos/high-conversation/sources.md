@@ -1,0 +1,11 @@
+# Sources: high-conversation
+
+Doug and Gary, the couch, the 2 a.m. talk: invented (comedy skit, Brian's idea). "Who invented hands/helicopters" and "is cereal soup" are jokes, not claims.
+The four "it's true" lines:
+
+| Line | Fact | Source |
+|---|---|---|
+| Cleopatra lived closer to the Moon landing than to the pyramids being built | Great Pyramid finished ≈ 2560 BC; Cleopatra born 69 BC, died 30 BC; Apollo 11 landed 1969. Pyramid → Cleopatra ≈ 2,500 yrs; Cleopatra → Moon ≈ 2,000 yrs | [WorldAtlas: Did Cleopatra really live closer in time to the first lunar landing?](https://www.worldatlas.com/articles/so-cleopatra-lived-closer-in-time-to-the-first-lunar-landing-than-the-great-pyramids.html) · [IFLScience](https://www.iflscience.com/cleopatra-lived-closer-in-time-to-the-artemis-ii-launch-than-to-the-construction-of-the-pyramids-83380) |
+| Sharks are older than trees | Oldest shark-like scales ≈ 455 million years old (Ordovician, Colorado); first trees ≈ 385–390 million years ago. Caveat: early shark-like fish, not modern sharks (we say "sharks swam before the first tree grew") | [Live Science: Are sharks really older than trees?](https://www.livescience.com/animals/sharks/are-sharks-really-older-than-trees) · [Smithsonian: Sharks are older than trees](https://www.smithsonianmag.com/legacy_blog/respect-sharks-are-older-than-trees/) |
+| Wombats poop cubes, left on rocks like notes | Cubes form in the last part of the intestine (Yang & Hu 2018; Soft Matter 2021). Wombats leave them on rocks and logs as "latrines" that tell neighbors about them (Carver, Journal of Zoology) | [National Geographic](https://www.nationalgeographic.com/animals/article/wombat-poop-cube-why-is-it-square-shaped) · [PBS NOVA](https://www.pbs.org/wgbh/nova/article/wombats-poop-cubes) · [Smithsonian](https://www.smithsonianmag.com/smart-news/scientists-have-solved-mystery-how-wombats-poop-cubes-180976898/) |
+| You can always see your nose; your brain hides it | Your eyes always pick up the nose; because it never changes, the brain stops paying attention (neural adaptation / unconscious selective attention). Focus on it and you see it | [Live Science: Why don't you usually see your nose?](https://livescience.com/health/why-dont-you-usually-see-your-nose) · [IFLScience](https://www.iflscience.com/why-dont-we-see-our-own-noses-all-the-time-83313) |

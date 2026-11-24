@@ -1,0 +1,18 @@
+# high-conversation · one-off · mode: Relatable skit (Brian's idea, Nov 24 2026) · search phrase: "high conversations with your best friend"
+# Brian: "have you ever had a high conversation with your friend, you're both smacked, and this is how it goes… crazy stuff, funny, relatable, interactive, a minute."
+# Doug and Gary on the couch at 2 a.m.; the narrator performs both voices (mouths still, they gesture on their lines).
+# Twist (our channel's angle): the craziest things they say are TRUE (sources.md). Interactive: the nose line makes the viewer see their own nose; tag-your-Gary + one-word question.
+# Payoff: the dumbest-sounding couch talk is real: Cleopatra and the Moon, sharks before trees, cube poop, and the nose your brain hides.
+# Nothing on screen shows a drug (no smoke, no joints): the joke is the conversation.
+[#q] Have you ever had a {*high|high} conversation with your best friend? [#smacked] You're both {!smacked.|smacked.} [#half] And the crazy part? Some of it is actually {*true.|true.}
+[#couch] Two a.m. Doug and Gary, on the couch. [#hands] Doug stares at his hands. [#bro] "Bro. Who invented {*hands?|hands?}"
+[#fan] Gary stares at the ceiling fan like it owes him money.
+[#cereal] "Okay, real question. Is cereal… {*soup?|soup?}" [#cold] "It's cold soup, bro. With croutons."
+[#insane] Then Doug says something insane. [#cleo] "Cleopatra lived closer to the {*Moon|Moon} landing… than to the pyramids being built." [#noway] "No way." [#way] Way. [#ancient] To her, the pyramids were already super old.
+[#sharks] Gary fires back. "Sharks are older than {*trees.|trees.}" [#true2] Also true. Sharks swam before the first tree grew.
+[#wombat] "Wombats poop… {*cubes.|cubes.}" [#loses] Gary loses it. [#true3] True. Little brown dice, [#notes] left on rocks like sticky notes for other wombats.
+[#quiet] Then Gary goes quiet. [#nose] "Bro. You can always see your {*nose.|nose.} Your brain just hides it." [#yours] And now… you can see yours. [#sorry] Sorry.
+[#later] Three hours later: they solved the universe… [#eat] but still can't pick a snack.
+[#roof] They head up to the roof. [#heli] A helicopter flies over. [#mirror] "Bro. Who invented {*helicopters?|helicopters?}"
+[#question] Tag your Gary. And which one broke your brain? One word.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
