@@ -86,8 +86,8 @@
       { at: 'layers', plate: '04', zoom: [1.12, 1.25], focus: [[.47, .49], [.5, .5]] },
       { at: 'seal', plate: '02', zoom: [3.0, 2.4], focus: [[.6, .24], [.6, .28]] },           // seal → bet: one pull-back from the window
       { at: 'bet', plate: '02', zoom: [2.4, 1.15], focus: [[.6, .28], [.5, .55]] },
-      { at: 'fog', plate: '05', zoom: [1.05, 1.12], focus: [[.42, .48], [.42, .46]] },
-      { at: 'frost', plate: '06', zoom: [1.12, 1.18], focus: [[.42, .46], [.44, .46]] },      // same framing: the painting just gets colder
+      { at: 'fog', plate: '05', zoom: [1.05, 1.1], focus: [[.46, .48], [.47, .47]] },
+      { at: 'frost', plate: '06', zoom: [1.1, 1.14], focus: [[.47, .47], [.48, .47]] },      // same framing: the painting just gets colder
       { at: 'fault', plate: '04', zoom: [1.2, 1.35], focus: [[.5, .48], [.53, .48]] },        // fault → cold
       { at: 'drill', plate: '02', zoom: [1.25, 1.32], focus: [[.45, .5], [.45, .5]] },
       { at: 'clear', plate: '04', zoom: [1.35, 1.5], focus: [[.48, .54], [.45, .57]] },       // clear → same: hole, then the push both ways
@@ -119,9 +119,12 @@
       const id = K.shot.id, Lc = K.shot.local, at = c => K.T(c);
       const D = K.cast.doug, G = K.cast.gary;
       D.held[1].visible = id === 'drill'; if (DOOR) DOOR.visible = id === 'door';
-      const sit = ch => { for (const k of [-1, 1]) { ch.leg[k].hip.rotation.x = -1.5; ch.leg[k].knee.rotation.x = 1.55; ch.leg[k].ankle.rotation.x = 0; } };
+      // seated, legs crossed: one thigh forward with the shin down, the other crossed over it at the knee (Brian, Nov 24: no cut-off legs)
+      const sit = ch => { const A = ch.leg[-1], B = ch.leg[1];
+        A.hip.rotation.set(-1.5, 0, 0); A.knee.rotation.x = 1.5; A.ankle.rotation.x = 0;
+        B.hip.rotation.set(-1.62, 0, -.42); B.knee.rotation.x = 1.15; B.ankle.rotation.x = .2; };
       const seated = () => K.place('gary', .27, -.55, -3.4, -.4);
-      const tray = plate => { const p = K.img(400, 1160 + 188); K.prop(plate === '06' ? 'TRAY6' : 'TRAY5', { x: p.x, y: p.y, w: 800 * K.imgScale() }); };
+      const tray = plate => { const p = K.img(512, 1268); K.prop(plate === '06' ? 'TRAY6' : 'TRAY5', { x: p.x, y: p.y, w: 1024 * K.imgScale() }); };   // tray + cup cut to their real outline
       const sway = (k = 1) => ({ look: .06 * k * Math.sin(t * .7), tilt: .04 * k * Math.sin(t * .9 + 1) });   // idle life
       switch (id) {
         case 'scream': { // THE HOOK (PLAYBOOK §3.5 #12): frame 1 = the hole, huge, frost crackling; crash-zoom out; Gary jumps back screaming
