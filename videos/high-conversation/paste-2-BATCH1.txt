@@ -1,0 +1,45 @@
+BATCH 1 (backgrounds B01–B03)
+B01_den_wide.png: SHOT: eye-level, straight-on view of a couch against the back wall, 28mm lens feel, horizon about 45% from the top.
+PLACE + MOOD: a cozy, chill basement hangout at 2 a.m.: warm, hazy, safe, the kind of room where friends talk nonsense for hours.
+HERO: THE COUCH centered against the back wall, its seat cushions clearly visible from the front, with THE CEILING FAN hanging in the upper part of the frame above it.
+FOREGROUND: the edge of a low wooden coffee table cropped at the bottom of the frame: an open bag of chips, a cereal box, two bowls, an empty pizza box, a game controller, a remote.
+MIDGROUND: a round shaggy rug in front of the couch; a purple beanbag on the left; THE LAVA LAMP on a side table at the right end of the couch, glowing.
+BACKGROUND: the back wall in deep plum paint with THE STRING LIGHTS in loops across the top; a record player on a low shelf with a stack of vinyl records; a small basement window up high showing a deep blue night; hanging plants in macrame holders; a blank poster of a sunset; a guitar leaning in the corner.
+DRESSING: a TV on the far left wall glowing teal on a blank paused screen, a fuzzy blanket on the floor, a stack of board games, a mini fridge with magnets, a cactus, a skateboard under the shelf.
+STORY DETAILS: a single sock on the couch arm, a bag of chips tipped over with crumbs, a cereal box lying on its side, three empty bowls stacked like they've been here for hours.
+LIGHT: warm amber from THE STRING LIGHTS, magenta-orange glow from THE LAVA LAMP on the right, a cool teal glow from the TV on the left, soft haze in the air like a dusty room, purple shadows.
+PALETTE: deep plum, warm amber, burnt orange, teal, with a magenta accent.
+TEXTURE: corduroy, shag rug, wood grain, painted brick, vinyl.
+STAGING: the couch seat must be clearly visible and empty so two characters can sit on it side by side; keep the rug in front of the couch clear and flat. Keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no faces, no hands, no animals. No smoke from cigarettes or joints, no pipes, no leaves.
+
+B02_couch_low_angle.png: SHOT: low angle from the floor beside the coffee table, looking slightly UP at the couch, 24mm lens feel, horizon about 60% from the top so the ceiling shows.
+PLACE + MOOD: the same basement den, the same night: lazy and dreamy, like time has slowed down.
+HERO: THE COUCH from a three-quarter angle (left end closer), and above it THE CEILING FAN big in the upper third, seen from below, blades slightly blurred as it turns.
+FOREGROUND: the coffee table edge cropped at the bottom with a bowl of cereal, a spoon, a crumpled napkin and a game controller, slightly out of focus.
+MIDGROUND: the couch cushions, the purple throw, the mismatched pillows; THE LAVA LAMP glowing at the right end.
+BACKGROUND: the plum wall with THE STRING LIGHTS sagging in loops, the ceiling with wooden beams, the high little window with deep blue night.
+DRESSING: hanging plants, the record player, a stack of vinyl, a disco-ball keychain hanging from a beam catching light, a guitar in the corner.
+STORY DETAILS: a sock hanging off the fan blade, a cereal box knocked over with a few loops on the table.
+LIGHT: amber from above (string lights), magenta from the lava lamp, a faint teal TV glow from off-screen left, soft haze, rim light on the fan blades.
+PALETTE: deep plum, warm amber, burnt orange, with a magenta accent.
+TEXTURE: corduroy, wood beams, painted plaster, glass.
+STAGING: the couch seat clearly visible and empty for two characters to sit; THE CEILING FAN fully inside the frame. Keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no faces, no hands, no animals. No smoke, pipes or leaves.
+
+B03_fan_pov.png: SHOT: straight up at the ceiling, as if lying on the couch looking up, a dreamy wide lens, centered.
+PLACE + MOOD: the den's ceiling at 2 a.m.: hypnotic, calm, a little trippy-cozy.
+HERO: THE CEILING FAN dead center from directly below, all five wooden blades and the frosted dome visible, the blades with soft motion blur.
+FOREGROUND: the top edge of the couch back and a pillow corner cropped at the bottom of the frame, soft focus.
+MIDGROUND: THE STRING LIGHTS in loops on the ceiling around the fan, a hanging plant cropped at the left edge, the wooden beams.
+BACKGROUND: the plum ceiling with faint swirling light reflections from THE LAVA LAMP, glowing magenta and orange.
+DRESSING: a disco-ball keychain on a beam, a glow-in-the-dark star sticker or two on the ceiling, a dangling pull chain on the fan.
+STORY DETAILS: a sock stuck on one fan blade.
+LIGHT: warm amber string lights, magenta-orange lava reflections on the ceiling, gentle haze, soft purple shadows.
+PALETTE: deep plum, warm amber, magenta, with a gold accent.
+TEXTURE: wood grain, painted plaster, glass, fabric.
+STAGING: no floor in this shot; keep the band at 60–72% height calm (blades thin there).
+TEXT: none. No numbers.
+STRICT: no people, no faces, no hands, no animals. No smoke, pipes or leaves.

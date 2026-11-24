@@ -1,0 +1,30 @@
+BATCH 2 (backgrounds B04–B05)
+B04_brain_timeline.png: SHOT: a wide, dreamy view along one long road that runs from the bottom-left into the far distance at the top-right, horizon about 45% from the top.
+PLACE + MOOD: a cosmic "brain-break" world: a long golden road floating through a purple starry sky, like a thought you can walk along. Playful, mind-blowing, clear like a children's book.
+HERO: the road itself: a long, straight, glowing golden path with evenly spaced little lamp posts, like a timeline, clearly readable from near to far.
+FOREGROUND: a few sparkly stars and soft purple clouds cropped at the bottom corners.
+MIDGROUND: three EMPTY round stone platforms along the road (one near on the left, one in the middle, one far on the right) for objects to be placed later; the platforms are clearly separated, the far one at about twice the distance of the middle one.
+BACKGROUND: a deep purple-blue starry sky with a big soft galaxy swirl, a crescent moon, floating sand dunes on the left horizon (ancient Egypt feel) and a few distant planets on the right horizon (space feel).
+DRESSING: tiny floating sparkles, soft nebula clouds in pink and teal, shooting stars.
+STORY DETAILS: the road is sandy and old near the left, and turns smooth and modern near the right.
+LIGHT: golden glow from the road, cool purple starlight, soft haze, rim light on the platforms.
+PALETTE: cosmic purple, deep blue, gold, with a pink accent.
+TEXTURE: painted sand, polished stone, soft clouds, star glitter.
+STAGING: keep the three platforms empty and flat on top; keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no faces, no hands, no animals.
+
+B05_kitchen_fridge.png: SHOT: eye-level, three-quarter view into a small kitchen at night, 28mm lens feel, horizon about 45% from the top.
+PLACE + MOOD: the house kitchen at 5 a.m.: dark, quiet, one big indecision: what to eat.
+HERO: a tall retro fridge in mint green on the RIGHT with its door wide OPEN, cold blue-white light pouring out across the floor; inside: shelves with leftovers, a carton, jars, half a cake, condiments, a pickle jar.
+FOREGROUND: the corner of a kitchen counter cropped at the bottom-left edge with an open loaf of bread, a jar of peanut butter, a knife, an empty cereal box.
+MIDGROUND: a checkered black-and-white tile floor lit by the fridge glow; open cabinet doors on the left showing snack boxes and chip bags (blank labels).
+BACKGROUND: a dark window above the sink with the first purple light of dawn, a toaster, a microwave with a blank dark display, a fruit bowl with one sad banana, hanging pans.
+DRESSING: magnets on the fridge, a stack of take-out menus (blank), a dish rack, a mug tree, a ceramic cookie jar, a wall clock with tick marks only.
+STORY DETAILS: every cabinet is open, a bag of chips folded shut with a clothespin, a sticky note on the fridge (blank).
+LIGHT: cold blue-white light from the open fridge, faint purple dawn from the window, deep blue shadows, a warm small light under the cabinets.
+PALETTE: cold blue-white, mint, deep navy, with a warm yellow accent (the under-cabinet light).
+TEXTURE: glossy enamel, checkered tile with reflections, wood cabinets, glass jars.
+STAGING: keep the tile floor in front of the open fridge clear and flat (about half the frame wide) for two characters to stand. Keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no faces, no hands, no animals.
