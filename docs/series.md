@@ -11,7 +11,7 @@ Role: Doug, the airplane builder in a hard hat; Gary, the passenger in the windo
 | # | Episode (search phrase) | Status | The answer in one line | New art needed |
 |---|---|---|---|---|
 | 1 | why do airplane windows have a hole | ✅ `videos/airplane-window-hole/` | the hole lets the outside layer do all the work and keeps the spare ready | — |
-| 2 | why are airplane windows round | ✍️ script v1 waiting for Brian · `videos/airplane-windows-round/` | square corners pile up stress and crack (the 1950s Comet jets); round corners spread it | 2–3 (1950s hangar/workshop variant, square-window fuselage, crack close-up) |
+| 2 | why are airplane windows round | 🎨 script approved; art + voice next · `videos/airplane-windows-round/` | square corners pile up stress and crack (the 1950s Comet jets); round corners spread it | 2–3 (1950s hangar/workshop variant, square-window fuselage, crack close-up) |
 | 3 | why do your ears pop on a plane | 💡 | the cabin's air gets thinner as you climb; the air behind your eardrum pushes out until a tiny tube lets it go | 1–2 (ear cutaway) |
 | 4 | why do they dim the lights for landing | 💡 | so your eyes are already used to the dark if you need to get out fast | 1–2 (cabin at night) |
 | 5 | why do you have to put your phone in airplane mode | 💡 | verify: interference with radios/cell towers; mostly a precaution | 1 |

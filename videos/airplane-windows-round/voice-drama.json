@@ -1,0 +1,10 @@
+{ "segments": [
+  { "from": "scream", "to": "q", "gain": 9, "punch": true, "pauseAfter": 0.15 },
+  { "from": "look", "to": "card", "tempo": 0.92, "pauseAfter": 0.2 },
+  { "from": "card", "to": "paper", "tempo": 1.1 },
+  { "from": "corner", "to": "real", "tempo": 0.92 },
+  { "from": "real", "to": "tank", "tempo": 0.9, "pauseBefore": 0.25 },
+  { "from": "count", "to": "round", "tempo": 0.88, "pauseAfter": 0.3 },
+  { "from": "mirror", "to": "question", "tempo": 0.95 },
+  { "from": "cta", "tempo": 1.12 }
+] }

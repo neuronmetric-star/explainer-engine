@@ -245,6 +245,10 @@ the definitions, the steps, the clue, the mirror line.
 **Tightening (Brian's raw voice → `voice.mp3`, keep the original as `voice_raw.mp3`):**
 `ffmpeg -i voice_raw.mp3 -af "silenceremove=start_periods=1:start_threshold=-40dB:stop_periods=-1:stop_duration=0.25:stop_threshold=-40dB:stop_silence=0.16,atempo=1.2" -q:a 2 voice.mp3`
 (pauses over 0.25 s cut to 0.16 s, then 1.2× speed; dollar-a-second: 1:32 raw → 1:11).
+**Voice drama (Brian, Nov 24 2026), every video:** Brian records from `videos/<slug>/voice-direction.md` (CAPS = hit, `(slow)`, `(fast)`,
+`…` = pause, `[SHOUT]` = the hook). After tightening and `align.js`, write `voice-drama.json` and run `node tools/voice_drama.js <slug>`:
+the hook gets +9 dB with compression ("punch"), reveals slow to ~0.88–0.92×, setup speeds to ~1.08–1.13×, pauses go before/after the
+big lines. Then `node tools/align.js <slug>` again and rebuild `sfx.wav`. Keep the plain take as `voice_plain.mp3`.
 **Length check:** after `align.js`, the final (voice + tail) must be ≥ 1:02. If it's shorter, tighten the voice
 with `atempo=1.1` instead of 1.2, or trim fewer pauses; if it's over 1:15, cut words before recording.
 Shots: ≈ 20–25 cuts, 5–8 backgrounds, 4–6 props (≈ 10–12 images, one ChatGPT batch file).

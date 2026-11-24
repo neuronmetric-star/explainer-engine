@@ -17,7 +17,7 @@ runs it. Claude leads, asks, and tells Brian exactly what to run on his side at 
 | 2. Research | Web research, `sources.md` | — |
 | 3. Script | Writes it, runs the scorecard, shows narration + scorecard + hook direction | Says "approved" or edits |
 | 4. Art | Writes `art-prompts.md` (reusing series art), reviews every image | Paints in **ChatGPT** batch by batch, sends the images |
-| 5. Voice | Gives the text and how to shout the hook | Records in **OpenArt/ElevenLabs**, sends the MP3 |
+| 5. Voice | Gives `voice-direction.md` (where to shout, slow down, speed up, pause); after recording runs the drama pass (louder hook, pacing) | Records in **OpenArt/ElevenLabs** following the marks, sends the MP3 |
 | 6. Build | Tightens + aligns the voice, builds the scene (visual hook first), sound effects | — |
 | 7. Preview | Renders stills, checks them against the scorecard, fixes, sends a preview | Says "looks good" or notes |
 | 8. Final | Renders, makes the cover and caption, updates the tracker and `docs/series.md`, merges to `main` | Posts (TikTok first, then Reels, Shorts), pins the comment |
@@ -45,7 +45,8 @@ New ChatGPT chat → paste **START** + **BATCH 1** from `videos/<slug>/art-promp
 them and sends a one-line fix for any plain one → next batch. Series episodes reuse the series' paintings: usually 2–4 new images.
 
 ## Step 5: the voice (Brian)
-Record the whole narration in OpenArt/ElevenLabs. The first words are **shouted**: "WHAT THE HECK?!", then the question calmly.
+Record the whole narration in OpenArt/ElevenLabs from `voice-direction.md`: CAPS = hit the word, `(slow)`/`(fast)`, `…` = pause, and the
+first words **shouted**: "WHAT THE HECK?!", then the question calmly. Claude then boosts the shout and fine-tunes the pace.
 Send the MP3 here. Claude tightens it (pauses + 1.2×) and checks it lands at 1:05–1:15.
 
 ## After posting
