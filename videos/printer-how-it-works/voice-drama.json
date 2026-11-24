@@ -1,0 +1,12 @@
+{ "segments": [
+  { "from": "q", "to": "look", "gain": 3, "punch": true },
+  { "from": "print", "to": "head", "tempo": 1.1 },
+  { "from": "head", "to": "zap", "tempo": 1.05 },
+  { "from": "zap", "to": "boil", "gain": 4, "punch": true },
+  { "from": "refill", "to": "inks", "tempo": 1.06 },
+  { "from": "inks", "to": "real", "tempo": 1.08 },
+  { "from": "real", "to": "catch", "tempo": 0.97, "pauseBefore": 0.15 },
+  { "from": "catch", "to": "mirror", "tempo": 1.06 },
+  { "from": "mirror", "to": "question", "tempo": 0.95, "pauseAfter": 0.2 },
+  { "from": "cta", "tempo": 1.15 }
+] }
