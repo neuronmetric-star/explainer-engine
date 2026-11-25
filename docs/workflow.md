@@ -23,6 +23,11 @@ runs it. Claude leads, asks, and tells Brian exactly what to run on his side at 
 | 8. Final | Renders, makes the cover and caption, updates the tracker and `docs/series.md`, merges to `main` | Posts (TikTok first, then Reels, Shorts), pins the comment |
 | 9. Learn | Adds Brian's notes to `docs/lessons.md`; Sunday review adds the numbers | Sundays: pastes 3-s hold + watched-to-end from TikTok Studio |
 
+## Skill gates (Nov 25 2026): every step loads its lane skill
+The creator research is now six skills in `.claude/skills/` (scout, hook, script, visual, character-emotion, growth). Claude loads the lane's
+skill at its step and runs its pre-publish checklist; before the video goes to Brian it saves the pass/fail table (`videos/<slug>/skill-audit.md`)
+and shows him every ❌/⚠️ first. Details: `.claude/commands/make-video.md`.
+
 ## Step 0: the start questions (Claude asks, in one short message)
 1. **Which video?** Offer 3 picks, each with its one-line answer: the next episode of a running series (from the tracker),
    the top idea on today's trend sheet, and one from the concept bank. Or Brian's own topic.

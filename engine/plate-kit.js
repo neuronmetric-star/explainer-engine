@@ -19,6 +19,16 @@
       pend.forEach(c => CUES[c] = w0.start); pend.length = 0; CAPS.push({ t: w0.start, end: w1.end, txt: tk.disp, cls: tk.cls }); wi += tk.n; }
     pend.forEach(c => CUES[c] = DATA.audioLength); })();
   K.cues = CUES;
+  // Caption chunks (creator research Nov 25 2026): SCENE.captionChunk = N groups the captions into chunks of up to N words
+  // (max ~20 characters, split at punctuation and gaps); gold/red key words keep their colors. Off by default = one word at a time.
+  function chunkCaps(n) { const out = []; let cur = null; const esc = x => x.replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+    const flush = () => { if (cur) { out.push(cur); cur = null; } };
+    for (const c of CAPS) { const span = '<span class="' + (c.cls || '') + '">' + esc(c.txt) + '</span>';
+      if (cur && (cur.n >= n || cur.len + c.txt.length + 1 > 20 || c.t - cur.end > .35)) flush();
+      if (!cur) cur = { t: c.t, end: c.end, html: span, len: c.txt.length, n: 1, txt: c.txt };
+      else { cur.html += ' ' + span; cur.end = c.end; cur.len += c.txt.length + 1; cur.n++; cur.txt += ' ' + c.txt; }
+      if (/[.?!\u2026,]$/.test(c.txt)) flush(); }
+    flush(); CAPS.length = 0; out.forEach(o => CAPS.push({ t: o.t, end: o.end, txt: o.txt, html: o.html, cls: '' })); }
   K.at = c => { if (!(c in CUES)) throw new Error('Unknown cue [#' + c + ']'); return CUES[c]; };
   K.T = x => { if (typeof x === 'number') return x; const m = /^([\w-]+)([+-][\d.]+)?$/.exec(x); return K.at(m[1]) + (m[2] ? parseFloat(m[2]) : 0); };
   K.clamp01 = x => Math.max(0, Math.min(1, x));
@@ -237,7 +247,7 @@
     if (SC.banner) K.text(SC.banner, { y: 172, size: 44, w: 330, color: '#fff', stroke: 0, shadow: false, bg: 'rgba(18,20,30,.82)' });
     // captions
     let c = null; for (const x of CAPS) { if (x.t <= t) c = x; else break; }
-    if (c && t <= c.end + .45) { if (cap.textContent !== c.txt) cap.textContent = c.txt; cap.className = c.cls; cap.style.transform = `scale(${.85 + .15 * K.clamp01((t - c.t) / .12)})`; cap.style.opacity = 1; } else cap.style.opacity = 0;
+    if (c && t <= c.end + .45) { if (cap._k !== (c.html || c.txt)) { cap._k = c.html || c.txt; if (c.html) cap.innerHTML = c.html; else cap.textContent = c.txt; } cap.className = c.cls; cap.style.transform = `scale(${.85 + .15 * K.clamp01((t - c.t) / .12)})`; cap.style.opacity = 1; } else cap.style.opacity = 0;
     flash.style.opacity = amp(SC._flashes, t);
     // follow CTA
     if (SC.follow) { const ft = t - SC._followAt, on = ft >= 0; fol.style.opacity = on ? 1 : 0;
@@ -250,6 +260,7 @@
 
   K.start = async function () {
     SC = window.SCENE; if (!SC) throw new Error('scene.js must set window.SCENE');
+    if (SC.captionChunk) chunkCaps(SC.captionChunk);
     const loadImg = src => new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = () => rej(new Error('missing clip frame ' + src)); im.src = src; });
     await Promise.all(Object.entries(SC.plates).map(async ([n, p]) => { const P = PLATES[n] = Object.assign({ hz: .45, vx: .5, fov0: 55, camH: 1.9, light: 'day', fps: 15 }, p);
       if (p.clip) { P.frames = await Promise.all(Array.from({ length: p.n }, (_, i) => loadImg(ART + p.clip + String(i + 1).padStart(4, '0') + '.jpg')));

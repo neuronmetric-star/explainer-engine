@@ -32,12 +32,14 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 - [ ] **Voice drama planned:** `voice-direction.md` marks where to slow down, speed up, pause and SHOUT; `voice-drama.json` set.
 - [ ] **The problem is a problem:** "See, Doug had a problem." is followed by the problem itself, not his job title.
 - [ ] Build → break → fix ("So… / But…"); the character's own mistake causes the break.
+- [ ] **Ladder + re-hook (creator research Nov 25, `.claude/skills/script`):** "Perfect! Except…" rungs (each fix causes the next problem), one final flip that undoes it, a spoken re-hook ("what about coming down?") near the halfway mark. Winners 14.8M / 20.3M used 5–7 rungs; ours had 4 because of the 1:15 cap.
 - [ ] A narrator bet ("Honestly? Looks perfect."), a joke about every 10 s, one open loop ("…was never the real reason").
 - [ ] Names locked once defined (same word every time); the last line echoes the first; a do-it-yourself last line ("Next flight, find it.").
 - [ ] Length: the final lands 1:05–1:15 (check after tightening the voice).
 
 **Visual**
 - [ ] **Visual hook:** frame 1 = the strange thing huge (5×); crash-zoom out within 0.55 s; a cast member reacts big (`scream`), whole and in frame by 0.6 s; white flash + shake + sting; `WHAT THE HECK?!` on screen.
+- [ ] **Live numbers + body emotion (creator research Nov 25):** a counter or label that changes on screen (`8,000 FT`), emotion in bodies and props only; captions in 2–4 word chunks are a TEST (`SCENE.captionChunk = 3`; default is one word at a time).
 - [ ] Smooth: whip-pans between places (`SCENE.whip`), same-place shots continue the camera, ~15–20 shots, no 2-s choppy cuts.
 - [ ] Diagrams move (flowing arrows, drifting particles); one cutaway plate that grows; the color code.
 - [ ] Few words on screen: hook title, key numbers, 1–2 labels, the final idea. Nothing in the caption band.
@@ -72,8 +74,12 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 | Nov 24 | high-conversation | "the other ones don't make sense… make more points like Cleopatra… stupid true facts that are real" | dropped the nonsense lines (who invented hands, cereal soup); every line is a sourced mind-blowing fact, each one leading to the next | in a skit, every "crazy" line is a TRUE fact the viewer can repeat; no filler jokes in the characters' mouths |
 | Nov 24 | high-conversation | "I got a better one for you… they cracked up" | one-upping refrain ("Okay… I got a better one") + "They crack up." beats with laugh SFX | conversations escalate (each line tops the last) and the cast reacts like real friends between beats |
 | Nov 24 | high-conversation | "Can you make their eyes red" | `redEyes: true` option in `engine/characters.js` (pink-red whites + veins; on by default in `chilldoug`/`chillgary`) | Brian decides the vibe vs reach trade-off; Claude flags the risk once, then does it |
+| Nov 25 | all | "use all the research and the six skills to make a video" | 13 top videos + web research became six skills in `.claude/skills/` (scout, hook, script, visual, character-emotion, growth) and the ears-pop-plane video applies them | read the lane skill before each step; every rule carries evidence and TEST marks |
+| Nov 25 | ears-pop-plane | "keep the helicopter ending, it's our signature; keep Doug and Gary; update visuals as needed" | helicopter + city sunset kept; ladder, counters and chunked captions added; no shouted hook; send-to-a-friend last line, no follow button | tests logged in Results: no-shout hook, caption chunks, send line. Judge by 3-s hold, watch-to-end and shares |
+| Nov 25 | ears-pop-plane | (build) the hook crash-zoom was stretched over the whole 2 s shot, and cabin cast was too big (camH) | split the hook into `hook` (0.55 s zoom) + `hook+0.55` hold; plate `01` camH 2.6 | a crash-zoom shot must last 0.55 s (add a `cue+0.55` shot); set a new plate's `camH` so the cast reads ~45% of the frame |
 
 ## Results (fill in on the Sunday check)
 | Video | Posted | Views (7 days) | 3-s hold | Watched to end | Shares | Saves | What it teaches |
 |---|---|---|---|---|---|---|---|
 | airplane-window-hole (v4) | | | | | | | |
+| ears-pop-plane (1:06.7) | | | | | | | TESTS: no-shout "Why do YOUR…" hook, 2–4 word caption chunks, send-to-a-friend last line (no follow button); compare 3-s hold with sleep-two-minutes (no-shout) and the shouted ep. 1–2 |
