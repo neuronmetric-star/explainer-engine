@@ -1,0 +1,32 @@
+BATCH 2 (backgrounds B04–B05 + the exhibit sign)
+B04_ocean_map.png: SHOT: straight-down top view of a big painted map pinned to a wooden table, filling the frame.
+PLACE + MOOD: an old explorer's sea map of the Indian Ocean: huge, open, adventurous.
+HERO: the map shows the southern tip of AFRICA on the LEFT edge and the whole of AUSTRALIA on the RIGHT, with a vast deep-blue Indian Ocean between them (lots of open water in the middle). No route drawn (I add it later).
+FOREGROUND: a brass compass and a rolled-up spyglass cropped at the bottom-left corner; a coffee ring stain and a pencil at the bottom-right.
+MIDGROUND: soft painted waves and swirling current lines across the ocean, a little compass rose (no letters), tiny sailing-ship pictograms.
+BACKGROUND: the wooden table edges at the corners, a curling map edge, push pins.
+DRESSING: islands as small green-gold shapes, a sea-monster-free border pattern of rope knots, a small magnifying glass, a pair of dividers.
+STORY DETAILS: a tiny empty fish-tank pictogram drawn in one corner of the map (to show how small a tank is next to the ocean).
+LIGHT: warm lamp light from the top LEFT, gentle vignette, soft paper shadows.
+PALETTE: aged parchment, deep ocean blue, teal, with a gold accent.
+TEXTURE: parchment grain, watercolor washes, wood grain, brass.
+STAGING: keep the middle of the ocean open and calm (a route will be drawn across it). Keep the band at 60–72% height calm.
+TEXT: none. No letters, no country names, no numbers.
+STRICT: no people, no animals, no sea creatures.
+
+B05_boat_deck_sea.png: SHOT: eye-level on a boat deck looking out to sea, 28mm lens feel, horizon about 48% from the top.
+PLACE + MOOD: the back deck of a small research boat at sunrise, far out at sea: relief, freedom, letting something go.
+HERO: the open ocean beyond the boat's low back rail in the center, gentle swells sparkling in the sunrise, the rail has a gap with a small ramp sloping down to the water on the RIGHT.
+FOREGROUND: a coil of rope and an orange life ring cropped at the bottom-left; a metal cooler box at the bottom-right edge.
+MIDGROUND: a wide wet wooden deck with puddles reflecting the sky; a small crane arm with a canvas sling hanging empty.
+BACKGROUND: the far horizon with soft clouds glowing peach, a faint coastline on the LEFT, seabird-free sky.
+DRESSING: a buoy, a bucket, rubber gloves on the rail, a radio antenna, a flag on a short pole (blank), a clipboard (blank) clipped to the rail, a thermos.
+STORY DETAILS: a wet trail on the deck leading to the ramp (something big just slid out), a little splash still settling in the water.
+LIGHT: low warm sunrise from the RIGHT, peach and gold glints on the water, cool blue shadows on the deck.
+PALETTE: peach, sea blue, white foam, with an orange accent (the life ring).
+TEXTURE: wet wood planks, rope fibers, painted metal, rippling water.
+STAGING: keep the deck floor in the lower-middle clear and flat, about half the frame wide, for two characters to stand by the rail. Keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no animals, no fish, no birds.
+
+P08_great_white_sign.png: An aquarium exhibit sign on a short brass stand: a chunky rounded rectangle in deep navy blue with a brass frame. On it, a big bold illustration of THE GREAT WHITE's head coming straight at us with its mouth WIDE OPEN, rows of white triangle teeth, pink gums, dramatic but cartoon-friendly. Under the picture, the exact words "GREAT WHITE" in big bold cream capital letters. Light from the left, a highlight on the brass, a thin darker outline. Centered on a solid pure green #00FF00 background, no other text, no numbers.

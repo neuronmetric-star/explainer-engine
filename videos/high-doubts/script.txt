@@ -1,0 +1,14 @@
+# high-doubts · one-off relatable skit, ep. 2 of the couch talks · search phrase: "high conversations with your best friend"
+# Brian, Nov 24 2026: "the thoughts are like: did people actually go to the moon? that's BS. were the pyramids built by giants? did dinosaurs even exist?
+#   …then 'yo bro, that is true', both crack up, and 'oh no, I got a better one'."
+# One asks the 2 a.m. "that's fake" question; the other answers "Yo bro, that's true" + the PROOF (sources.md). Refrains: "Yo bro, that's true." · "They crack up." · "Oh no. I got a better one."
+# Never treats a myth as fact: every doubt is answered with real evidence. No swearing ("that's cap", not "BS").
+# v2 adds: is the Earth round? (Eratosthenes). Payoff: the things you doubt at 2 a.m. have proof you'd never guess: mirrors on the Moon, a pyramid worker's diary, chickens are T. rex's cousins.
+[#q] Have you ever had a {*high|high} conversation with your best friend? [#smacked] You're both {!smacked…|smacked…} [#doubt] and suddenly, you doubt {!everything.|everything.}
+[#couch] Two a.m. The couch. [#moon] "Bro… did people actually go to the {*Moon?|Moon?} That's cap." [#true1] "Yo bro, that's {*true.|true.} [#mirrors] They left mirrors up there. [#lasers] Scientists still shoot lasers at them… today." [#crack1] They crack up.
+[#better1] "Oh no. I got a better one." [#giants] "Were the pyramids built by {!giants?|giants?}" [#true2] "Yo bro, regular workers built them. [#diary] We found one guy's {*diary.|diary.} [#merer] His name was Merer. He wrote down every boat of stone." [#sand] "And they slid the big blocks on wet sand. Way easier."
+[#better2] "Nah, nah. I got a better one." [#dinos] "Did {!dinosaurs|dinosaurs} even exist? Maybe somebody made the bones up." [#true3] "Yo bro, they're real. [#chicken] T. rex's closest living cousin… [#chick2] is the {*chicken.|chicken.}" [#ate] "You ate a dinosaur today." [#crack3] They lose it.
+[#better3] "Okay, okay. Last one." [#round] "Is the Earth even {!round?|round?}" [#true5] "Yo bro, a Greek guy measured how big around it is… [#sticks] with sticks and shadows. [#bc] Over two thousand years ago."
+[#roof] Sunrise. The roof. [#heli] A helicopter flies over. [#mirror] "Bro… is that thing even real?" [#true4] "Yo bro… that's true." [#crack4] They crack up.
+[#question] Which one did you used to doubt? One word.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

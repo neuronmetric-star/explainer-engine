@@ -1,0 +1,9 @@
+{ "segments": [
+  { "from": "q", "to": "couch", "gain": 3, "punch": true, "pauseAfter": 0.2 },
+  { "from": "crack1", "to": "better1", "pauseAfter": 0.9 },
+  { "from": "crack2", "to": "stars", "pauseAfter": 0.9 },
+  { "from": "yours", "to": "sorry", "tempo": 0.9, "pauseAfter": 0.25 },
+  { "from": "crack3", "to": "roof", "pauseAfter": 1.0 },
+  { "from": "noway2", "to": "question", "pauseAfter": 0.3 },
+  { "from": "cta", "tempo": 1.08 }
+] }

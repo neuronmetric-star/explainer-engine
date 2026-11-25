@@ -103,8 +103,38 @@ def helicopter(d=3.6):  # the signature ending: rotor "whup-whup" + turbine whin
     return (thump * 0.5 + whine) * pan * 0.7
 
 
+def _reson(x, f, bw):  # 2-pole resonator (formant filter)
+    r = np.exp(-np.pi * bw / SR); c = 2 * r * np.cos(2 * np.pi * f / SR)
+    y = np.zeros_like(x); y1 = y2 = 0.0
+    for i in range(len(x)):
+        v = x[i] + c * y1 - r * r * y2; y[i] = v; y2 = y1; y1 = v
+    return y * (1 - r)
+
+
+def _ha_voice(d, f0, start, nsyl, gap, vowel):  # one person's "ha-ha-ha": glottal pulses through vowel formants + breathy "h"
+    n = int(SR * d); out = np.zeros(n)
+    for k in range(nsyl):
+        t0 = start + k * gap * (1 + 0.15 * rng.standard_normal()); L = int(SR * 0.12)
+        i0 = int(SR * t0)
+        if i0 + L >= n: break
+        tt = np.arange(L) / SR; f = f0 * (1.08 - 0.25 * k / nsyl) * (1 + 0.04 * np.sin(2 * np.pi * 7 * tt))
+        ph = np.cumsum(f / SR); src = (np.mod(ph, 1.0) - 0.5) * 2               # sawtooth = buzzy vocal folds
+        src = src * env(L, SR * 0.02, SR * 0.05) * (0.9 - 0.4 * k / nsyl)
+        h = noise(L) * env(L, SR * 0.005, SR * 0.09) * 0.35                       # breath
+        v = sum(_reson(src + h, F, B) * g for F, B, g in vowel)
+        out[i0:i0 + L] += v
+    return out
+
+
+def laugh(d=1.7):  # two friends cracking up (synthesized; never a recording)
+    a = _ha_voice(d, 190, 0.02, 7, 0.17, [(760, 90, 1.0), (1250, 110, 0.6), (2550, 160, 0.25)])
+    b = _ha_voice(d, 260, 0.12, 6, 0.19, [(820, 100, 1.0), (1350, 120, 0.55), (2750, 180, 0.22)])
+    x = a + 0.85 * b
+    return x / (np.max(np.abs(x)) + 1e-9) * 0.6
+
+
 LIB = dict(whoosh=whoosh, step=step, servo=servo, beep=beep, tap=tap, pop=pop, click=click, plane=plane, hum=hum, clunk=clunk,
-           helicopter=helicopter)
+           helicopter=helicopter, laugh=laugh)
 
 if __name__ == '__main__':
     ev_file, out, length = sys.argv[1], sys.argv[2], float(sys.argv[3])
