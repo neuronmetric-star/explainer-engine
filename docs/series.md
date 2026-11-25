@@ -36,7 +36,7 @@ switch off; Gary, the guy who sleeps anywhere. Started Nov 24 2026 (Brian picked
 ## 💰 Money Heck (hashtag #moneyheck): ideas from `docs/creators/concept-bank.md`
 | Episode (search phrase) | Status | The answer in one line |
 |---|---|---|
-| why do the poor get poorer and the rich get richer | ✍️ script · `videos/rich-get-richer/` | follow one dollar: fees and interest flow to banks, banks pay their owners, and most owners are rich |
+| why do the poor get poorer and the rich get richer | 🎨 art (script approved Nov 25) · `videos/rich-get-richer/` | follow one dollar: fees and interest flow to banks, banks pay their owners, and most owners are rich |
 
 More ideas: Penny costs more than a penny · gas pump $100 hold · average return is misleading. World: Doug's shop / bank counter.
 

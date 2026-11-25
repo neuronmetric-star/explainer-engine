@@ -1,0 +1,12 @@
+BATCH 2 (props P01–P06, solid pure green #00FF00)
+P01_coffee_cup.png: ONE takeaway coffee cup with a white plastic lid and a brown cardboard sleeve, a little steam curl on top, a small blank paper price tag tied to it with string (blank, no numbers). Slightly squashed cup, a coffee drip on the side. Front 3/4 view. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P02_card_reader.png: ONE countertop card payment terminal, chunky charcoal-gray plastic, a small glowing blank white-blue screen (no text, no numbers), a contactless wave pictogram above the screen, a little red status light on top, a scuffed keypad with blank keys. Front 3/4 view, tilted toward us. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P03_receipt.png: ONE long paper receipt curling at the bottom, slightly crumpled, thin printed gray lines only (no letters, no numbers), a torn zigzag top edge. Front view. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background.
+
+P04_credit_card.png: ONE plain credit card in deep blue with a shiny gold chip and a subtle wave pattern, no numbers, no names, no logos, front 3/4 view, slightly tilted, a tiny scratch on the corner. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P05_snowball.png: ONE big round snowball rolling, packed white snow with blue shadows, little bits of snow flying off, a slight motion feel, a few twigs and a dry leaf stuck in it. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P06_bank_slice.png: ONE little classical bank building (white columns, a triangle roof, steps, a green door) made like a cake: one thin wedge-shaped slice is cut out and pulled slightly forward to the right, showing the cake layers inside (cream and chocolate). Cute, clean, front 3/4 view. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text, no numbers.
