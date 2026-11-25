@@ -1,0 +1,45 @@
+BATCH 1 (backgrounds B01–B03)
+B01_aquarium_hall.png: SHOT: eye-level, slightly low, 28mm lens feel, horizon about 45% from the top, looking straight at the glass.
+PLACE + MOOD: the grand main hall of a modern aquarium at opening time: impressive, hopeful, but the star of the show is missing.
+HERO: THE BIG TANK filling the whole back wall and the upper two-thirds of the frame, EMPTY: just water, kelp, rocks and bubbles. On the RIGHT side of the glass, an empty brass sign stand at chest height (blank, nothing on it yet).
+FOREGROUND: a dark velvet rope on brass posts cropped at the bottom-left edge; the curved end of a wooden bench cropped at the bottom-right.
+MIDGROUND: a wide polished dark-blue floor reflecting the tank; a small kids' step stool by the glass.
+BACKGROUND: through the water, the faint far wall of the tank fading into deep blue haze; sun rays slanting down from the surface.
+DRESSING: brass handrails, a round porthole window on the side wall, a glowing blue exit pictogram (no words), a mop bucket parked by a pillar, ceiling spotlights, a cleaning squeegee leaning on the glass, little fingerprint smudges on the glass.
+STORY DETAILS: a "missing" spot: the big tank is clearly built for one huge star animal (a shark-shaped pictogram on a small blank plaque on the pillar), but it's empty; a dropped kid's balloon on the ceiling.
+LIGHT: cool aqua glow from the tank as the key light, rippling caustic light patterns dancing on the floor and walls, warm brass spotlights from above on the RIGHT, purple shadows.
+PALETTE: deep aqua blue, warm brass, cream, with a gold accent.
+TEXTURE: thick glass reflections, polished floor, brushed brass, velvet rope, painted concrete.
+STAGING: keep the floor in front of the glass clear and flat across the middle two-thirds of the frame width for three characters to stand. Keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no fish, no sharks, no animals.
+
+B02_round_tank_1980.png: SHOT: eye-level 3/4 view, 24mm lens feel, horizon about 45% from the top.
+PLACE + MOOD: an old 1980 aquarium research room built around a big ROUND tank, late at night: a bit dated, humming, tense.
+HERO: a big ROUND doughnut-shaped glass tank in the middle of the room, waist-high concrete base, curved glass walls, dark teal water, a sandy bottom and a few rocks. EMPTY of animals. On the curved glass wall facing us, slightly RIGHT of center at about knee-to-waist height, ONE clearly visible vertical metal seam strip with three rivets (the one odd spot on an otherwise smooth wall).
+FOREGROUND: a 1980 metal lab cart cropped at the bottom-left edge with coiled cables, a clipboard (blank) and a thermos; a coiled yellow hose at the bottom-right.
+MIDGROUND: a scuffed green-gray tile floor around the tank with puddles reflecting the lights; a rolling stool.
+BACKGROUND: cinder-block walls painted mustard and teal, a big metal pipe system with valves, a wall of 1980 control panels with toggle switches and round dial gauges (tick marks only), a wall clock (tick marks only).
+DRESSING: a buzzing fluorescent tube light (one flickering), a cork board with blank papers, a fan on a shelf, a bucket of fish food (pictogram), rubber boots by the door, a net on a pole.
+STORY DETAILS: the metal seam on the glass has a faint glow of tiny sparkles; a little strip of tape on the floor near it, like someone has been watching that spot.
+LIGHT: dim green-white fluorescent from above, teal glow from the tank, a warm desk lamp on the LEFT, purple shadows.
+PALETTE: retro teal, mustard yellow, dim fluorescent green, with a red accent (a small red warning light on the control panel).
+TEXTURE: cinder block, scratched glass, wet tile, painted steel, rivets.
+STAGING: keep the floor in front of the tank (bottom-center) clear and flat about half the frame wide for two characters to stand. Keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no fish, no sharks, no animals.
+
+B03_lab_lightbox.png: SHOT: straight-on, eye-level, 35mm lens feel, horizon about 45% from the top.
+PLACE + MOOD: a bright aquarium science lab: clean, clear, "let me show you how it works".
+HERO: a huge glowing white lightbox panel (like a giant X-ray viewer) covering most of the back wall, evenly lit, completely BLANK (I add the diagram later).
+FOREGROUND: a lab bench corner cropped at the bottom-right edge with a microscope, glass jars of colored sand and a coffee mug (pictogram of a fin, no text); a rolling chair edge at the bottom-left.
+MIDGROUND: a clean light-gray floor with soft reflections of the lightbox.
+BACKGROUND: shelves on both sides of the lightbox with labeled-looking jars (blank labels), shark-tooth-shaped models in a glass case, a small fish tank with only plants and bubbles (no fish), a rolled-up ocean map, a whiteboard with simple wave doodles (no words).
+DRESSING: a magnifying lamp on an arm, a tablet on a stand (blank screen), a stack of field notebooks, a yellow diving helmet on a shelf, a coiled rope, sticky notes (blank).
+STORY DETAILS: a toy shark-fin pencil topper on the bench; a sticky note shaped like a lightning bolt on the lightbox frame (the buzz clue).
+LIGHT: bright cool white light from the lightbox as the key, warm desk lamp practical on the RIGHT bench, soft blue shadows, rim light on the jars.
+PALETTE: cool white, slate blue, light gray, with a gold accent.
+TEXTURE: frosted acrylic, brushed steel, glass jars, painted walls, paper.
+STAGING: keep the floor in front of the lightbox clear and flat (left and center) for one character to stand beside the diagram. The lightbox must stay blank and evenly lit. Keep the band at 60–72% height calm.
+TEXT: none. No numbers.
+STRICT: no people, no fish, no sharks, no animals.

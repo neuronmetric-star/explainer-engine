@@ -1,0 +1,16 @@
+BATCH 3 (props, solid pure green #00FF00)
+P01_great_white_swim.png: THE GREAT WHITE (exact look from the START block): full body, perfect side view facing RIGHT, swimming calmly, mouth closed with a tiny smug smile, tail fin bent slightly as if mid-swish, fins clearly separate from the body. Light from the left with a soft highlight on the back, a thin darker outline. Centered on a solid pure green #00FF00 background, no shadow on the background, no text.
+
+P02_great_white_hungry.png: The SAME great white (same colors, same notch in the dorsal fin), same side view facing RIGHT, but now with a big hungry grin showing rows of white triangle teeth, eyes looking sideways, and a white restaurant napkin bib tied around its neck. Funny, not scary, no blood. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P03_soupfin_shark.png: ONE smaller, slim cartoon shark (a soupfin shark): light bronze-gray back, pale belly, long pointy snout, big round worried eyes, side view facing LEFT, swimming. Clearly smaller and thinner than the great white. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P04_shark_cutaway.png: A clean children's-science-book cutaway diagram of THE GREAT WHITE in side view facing RIGHT: the front half of the body cut open to show the open mouth leading back to FIVE gill slits with bright red feathery gill arches inside, and a cluster of small dark dots (pores) all over the snout. Clean flat shapes, soft colors, white outline glow, no labels, no arrows (I add them later). Centered on a solid pure green #00FF00 background, no text.
+
+P05_voltmeter.png: ONE 1980-style handheld analog electric meter: a chunky mustard-yellow plastic box with a round glass dial and a thin black needle (tick marks only, no numbers), a big black knob, and two coiled wires ending in red and black metal probe tips. Scuffed corners, a strip of tape on the side. Front 3/4 view. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P06_bicycle.png: ONE red kid's bicycle with a white seat, chunky tires and a little bell, no rider, side view facing RIGHT, leaning slightly as if about to tip over, kickstand up. A scuff on the fender. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
+
+P07_phone_buzzing.png: ONE smartphone lying face up, slightly tilted toward us, its screen glowing bright white-blue and blank (no icons, no text), with short curved buzz lines around its edges to show it's vibrating. A cracked corner on the case. Light from the screen glow, a thin darker outline. Centered on a solid pure green #00FF00 background, no text, no numbers.
+
+P09_closet.png: ONE narrow wooden broom closet, front view, door swung wide open to the LEFT, inside: a mop, a bucket, a broom and one shelf with paper towels; the inside is tiny and cramped. Painted cream wood with a brass knob and scuffs. Light from the left, a thin darker outline. Centered on a solid pure green #00FF00 background, no text.
