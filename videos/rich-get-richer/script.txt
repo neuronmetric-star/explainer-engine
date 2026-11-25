@@ -1,0 +1,18 @@
+# rich-get-richer · Money Heck ep. 1 · mode: Explainer (track one dollar) · search phrase: "why do the poor get poorer and the rich get richer"
+# Payoff: when you're short, you pay fees and interest; that money goes to banks, banks pay their owners, and most owners are rich. The rich own the thing that collects; the poor pay it.
+# No shouted opener (shout test still open, docs/lessons.md). Doug + Victor are invented (sources.md "Labels"). Not advice: we show how money moves.
+[#q] Why do the poor get poorer and the rich get {*richer?|richer?}
+[#follow] Follow one dollar. [#uphill] It rolls {*uphill.|uphill.}
+[#card] See, Doug had a problem: [#three] {!$3|three dollars} in the bank. [#coffee] His coffee cost {$5|five.}
+[#tap] He tapped his card anyway. [#beep] Beep. Approved. [#bet] Honestly? Looks like a win.
+[#fee] Then the bank charged him {!$35.|thirty-five dollars.} [#short] For being two dollars short. [#what] That's an overdraft fee: [#cover] the bank covers you, then charges you for the favor.
+[#forty] Same coffee. [#now] Now it costs {!$40.|forty.} [#good] Better be a great coffee.
+[#car] Next month, Doug's car breaks. [#nosave] No savings, so it goes on his credit card. [#interest] The card charges interest: rent on borrowed money. [#fifth] About a {!fifth|fifth} extra a year, until he pays it off.
+[#victor] Victor's car breaks too. [#savings] He pays from savings. [#nofee] No fee.
+[#where] So where did Doug's {$35|thirty-five dollars} go? [#bank] The bank. [#owners] And the bank pays its owners. [#stock] Who owns a bank? [#piece] Anyone with its stock: a tiny piece of the company. [#most] And most stocks belong to the richest {*10%|ten percent.}
+[#reveal] People like Victor. [#payday] Doug's fee became Victor's {*payday.|payday.}
+[#pays] Doug pays the fees. [#owns] Victor owns the thing that {*collects them.|collects them.}
+[#snow] And it snowballs. [#debt] Doug's debt grows. [#grows] Victor's stocks grow too, about a tenth a year, on average.
+[#mirror] Doug bought a coffee. [#bought] Victor bought a piece of the {*bank.|bank.}
+[#diy] Tonight, search your bank app for "fee." [#question] How many did you find? One number.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
