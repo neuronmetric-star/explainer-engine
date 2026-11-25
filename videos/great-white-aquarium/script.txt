@@ -1,0 +1,15 @@
+# great-white-aquarium · One-off · mode: True story · search phrase: "why are there no great white sharks in aquariums"
+# Payoff: a great white is built for the whole ocean (it breathes by swimming, feels tiny electric buzzes, crosses oceans), so in a tank it rams the walls, stops eating, or hunts its tank mates. Every one ever kept died or was let go.
+# Shout test (docs/lessons.md): no "WHAT THE HECK?!" opener on this one, like the printer video. Doug = invented stand-in for the real aquarium keepers (sources.md "Labels").
+[#q] Why are there no great white sharks in {*aquariums?|aquariums?}
+[#glass] You've seen sharks behind the glass. [#never] But never {!this one.|this one.} [#tried] And it's not because nobody tried.
+[#card] See, Doug had a problem. [#boss] Doug's boss wanted a great white. [#easy] It's just a big fish. [#bet] Honestly? I'd have bet on Doug.
+[#swim] One catch: a great white breathes by swimming. [#stop] It can never stop, [#bike] like a bike: stop, and you fall over.
+[#round] So Doug tried a round tank, [#sandy] with a young shark named Sandy. [#bonk] But Sandy kept ramming the wall. [#spot] Always the same spot.
+[#gary] Gary found a tiny electric {!buzz|buzz} [#buzz] there. [#nose] Great whites feel electricity with their noses. [#phone] To Sandy, that wall was a phone buzzing in a dark room. [#free1] {*3 days|Three days} later, they let her go.
+[#big] Next: a giant tank in California. [#her] A young great white ate, [#swam] swam, [#crowd] and almost {*a million|a million} people came to see her. [#record] A {*record.|record.}
+[#but] But she kept growing. [#buffet] She looked at the other sharks like a buffet. [#two] Two {!didn't make it.|didn't make it.} [#free2] So they let her go too.
+[#roam] Great whites are built to swim far. [#trip] One swam from Africa to Australia and back. [#closet] To her, a tank is a closet.
+[#mirror] Just a big fish? [#ocean] A big fish that needs the whole {*ocean.|ocean.}
+[#diy] Next aquarium trip, look. You won't find one. [#question] Would you swim with one? Yes or no.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.

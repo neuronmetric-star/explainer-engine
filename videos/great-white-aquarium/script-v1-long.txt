@@ -1,0 +1,18 @@
+# great-white-aquarium · One-off · mode: True story · search phrase: "why are there no great white sharks in aquariums"
+# Payoff: a great white is built for the whole ocean (it breathes by swimming, feels tiny electric buzzes, crosses oceans), so in a tank it rams the walls, stops eating, or hunts its tank mates. Every one ever kept died or was let go.
+# Shout test (docs/lessons.md): no "WHAT THE HECK?!" opener on this one, like the printer video. Doug = invented stand-in for the real aquarium keepers (sources.md "Labels").
+[#q] Why are there no great white sharks in {*aquariums?|aquariums?}
+[#glass] You've seen sharks behind the glass. [#never] But never this one. [#none] Not in a single aquarium on Earth.
+[#card] See, Doug had a problem. [#boss] His boss wanted a great white in the tank. [#easy] Easy, right? It's just a big fish. [#bet] Honestly? I'd have bet on Doug.
+[#first] The {1955|first try} lasted {!less than a day.|less than a day.} [#dougs] Okay, lots of different Dougs. Stay with me.
+[#swim] See, a great white breathes by swimming. [#gills] Water rushes in its mouth and over its gills, like wind in your face out a car window. [#stop] If it stops swimming, it can't breathe. [#wall] And in a tank, there's always a wall coming.
+[#round] So next, a round tank. [#sandy] A young shark named Sandy. [#bonk] Sandy kept ramming the wall. [#spot] Always the same spot.
+[#gary] Gary checked that spot [#buzz] and found a tiny electric buzz. [#nose] A great white has little holes on its nose that feel electricity, like the buzz of a fish's heartbeat. [#phone] To Sandy, that wall was a phone buzzing in a dark room. [#free1] Three days later, they let her go.
+[#big] Then Doug got the biggest tank in California. [#her] A young great white [#ate] ate, [#swam] swam, [#crowd] and almost {*a million|a million} people came to see her. [#record] Over six months. A {*record.|record.}
+[#but] But she kept growing. [#hunt] And she started looking at the other sharks [#buffet] like a buffet. [#two] Two of them {!didn't make it.|didn't make it.} [#free2] So they drove her back out to sea and let her go.
+[#nicole] Because a great white is built for this. [#trip] One named Nicole swam from Africa to Australia and back in nine months. [#usa] That's like driving across America four times. [#closet] A tank is a closet.
+[#japan] The last try was in Japan. [#refused] That shark wouldn't eat. [#three] {!Three days.|Three days.}
+[#answer] So that's why. [#needs] A great white needs the whole ocean to breathe, to roam, and to hunt. [#tank] A tank gives it walls, a buzz, and snacks.
+[#mirror] Just a big fish. [#ocean] A big fish that needs the whole {*ocean.|ocean.}
+[#diy] Next aquarium trip, look for one. You won't find it. [#question] Would you swim with one? Yes or no.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
