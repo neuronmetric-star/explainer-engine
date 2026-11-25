@@ -1,0 +1,11 @@
+{ "segments": [
+  { "from": "q", "to": "glass", "gain": 6, "punch": true, "pauseAfter": 0.12 },
+  { "from": "card", "to": "swim", "tempo": 1.12 },
+  { "from": "round", "to": "gary", "tempo": 1.06 },
+  { "from": "gary", "to": "big", "tempo": 0.93 },
+  { "from": "big", "to": "but", "tempo": 1.12 },
+  { "from": "but", "to": "free2", "tempo": 0.93 },
+  { "from": "free2", "to": "mirror", "tempo": 1.06 },
+  { "from": "mirror", "to": "diy", "tempo": 0.96, "pauseBefore": 0.15 },
+  { "from": "cta", "tempo": 1.12 }
+] }
