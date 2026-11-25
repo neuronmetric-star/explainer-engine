@@ -1,0 +1,11 @@
+{ "segments": [
+  { "from": "q", "to": "follow", "gain": 6, "punch": true, "pauseAfter": 0.1 },
+  { "from": "card", "to": "fee", "tempo": 1.1 },
+  { "from": "car", "to": "victor", "tempo": 1.08 },
+  { "from": "victor", "to": "where", "tempo": 1.05 },
+  { "from": "where", "to": "reveal", "tempo": 0.97 },
+  { "from": "reveal", "to": "pays", "tempo": 0.94 },
+  { "from": "pays", "to": "mirror", "tempo": 1.05 },
+  { "from": "diy", "to": "cta", "tempo": 1.05 },
+  { "from": "cta", "tempo": 1.12 }
+] }
