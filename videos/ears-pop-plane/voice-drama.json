@@ -1,0 +1,13 @@
+{ "segments": [
+  { "from": "hook", "to": "door", "gain": 4, "punch": true, "pauseAfter": 0.1 },
+  { "from": "door", "to": "drum", "tempo": 0.9, "pauseAfter": 0.15 },
+  { "from": "drum", "to": "card", "tempo": 1.06 },
+  { "from": "card", "to": "bag", "tempo": 1.04 },
+  { "from": "same", "to": "pop", "tempo": 1.0 },
+  { "from": "pop", "to": "perfect", "tempo": 0.85, "pauseAfter": 0.2 },
+  { "from": "except", "to": "more", "tempo": 0.92, "pauseAfter": 0.2 },
+  { "from": "more", "to": "swallow", "tempo": 0.92, "pauseAfter": 0.15 },
+  { "from": "gum", "to": "cabin", "tempo": 1.08 },
+  { "from": "small", "to": "diy", "tempo": 0.92, "pauseAfter": 0.2 },
+  { "from": "cta", "tempo": 1.1 }
+] }

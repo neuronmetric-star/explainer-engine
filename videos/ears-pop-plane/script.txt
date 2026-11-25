@@ -1,0 +1,16 @@
+# SHORT (~1:08). Plane Heck episode 3. DRAFT v2, waiting for Brian. Mode: Explainer (how a thing works).
+# Brian picked Nov 25 2026: send-to-a-friend last line (test), helicopter + city sunset stay. No shouted "WHAT THE HECK?!" (A/B vs the shouted eps 1-2).
+# Creator-study moves: "You" + "not broken, it's something stranger" hook; "Perfect! Except…" ladder (4 rungs: house length cap) + final flip; re-hook at halfway.
+# Names locked: "the door" (the tube's end), "drum" (eardrum), "squeeze". Facts: sources.md.
+[#hook] Why do {*YOUR|your} ears pop on a plane? [#notbroken] They're not broken. [#door] There's a tiny {*door|door} inside your head, [#shut] and it's usually shut.
+[#drum] Behind your eardrum is a pocket of air. [#tube] A skinny tube joins it to your throat, and the door sits at the end.
+[#card] See, Doug had a problem. [#grab] His passengers grab their ears on every flight. [#gary] Even Gary.
+[#bag] Think of a chip bag. Carry it up a mountain, and it puffs up, [#less] because the air outside pushes less.
+[#same] Your ear works the same way. The air behind your drum pushes out, [#pop] the door opens, and... {*pop.|pop.}
+[#perfect] Perfect! [#except] Except... what about coming {!down?|down?}
+[#more] Now the air outside pushes {!more.|more.} [#squeeze] It squeezes your drum in, [#stuck] and the door stays {!shut.|shut.} [#ouch] Ouch.
+[#swallow] Doug's fix: swallow. Each swallow tugs the door open. [#perfect2] Perfect! [#asleep] Except... Gary's asleep, [#nosw] and sleepers don't swallow. [#gum] So Doug hands out gum. Chewing keeps you swallowing.
+[#cabin] Doug's biggest fix is the cabin. [#pump] He pumps it full of air, so it feels like a mountain town, [#notsky] not the top of the sky.
+[#small] Without that, the squeeze would be far {!bigger.|bigger.} [#mirror] So the pop you feel? [#flip] That's the {*small|small} version.
+[#diy] Next flight, swallow on the way down.
+[#cta] Send this to the friend who grabs their ears.
