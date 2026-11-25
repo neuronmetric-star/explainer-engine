@@ -1,0 +1,15 @@
+# penny-costs-more · Money Heck ep. 1 · mode: Explainer + true story · search phrase: "why does a penny cost more than a penny"
+# Production: PixVerse V6 image-to-video clips (1080p) from start frames of our cast (Doug) made in OpenArt; captions, banner and the
+# signature city-sunset helicopter ending composited by our engine. Hook type: the whole outcome in one sentence + "your" (lessons.md).
+# Payoff: a penny cost 3.69¢ to make (zinc, copper, machines, trucks), so every one lost money; the U.S. pressed its last penny Nov 12, 2025.
+[#q] The {*penny|penny} in your pocket cost almost {!four cents|four cents} to make. [#stopped] So America stopped making them. [#why] Why does a penny cost more than a penny?
+[#look] Look closer. [#zinc] It's not copper. Since nineteen eighty-two, it's zinc, wearing a thin copper coat. [#pricey] And zinc and copper keep getting pricier.
+[#stand] Picture Doug selling lemonade for one cent, [#cup] when every cup costs him almost four. [#broke] He'd be broke by lunch. [#mint] That was the U.S. Mint.
+[#add] The zinc. The copper. Giant machines. Trucks to your bank. [#total] Add it up: {!3.69¢|three point six nine cents}. For one cent.
+[#loss] So every penny lost almost three cents. [#billions] And they made billions of them. Billions of tiny losses. [#year] In one year, the Mint lost {!$85 million|eighty-five million dollars} on pennies. [#lemonade] That's a lot of lemonade.
+[#bet] Honestly? I'd have quit sooner.
+[#last] So on November twelfth, {2025|twenty twenty-five}, in Philadelphia, [#press] the Mint pressed its very last penny. [#years] After two hundred thirty-two years.
+[#still] But your pennies are still money. Spend them. [#round] When a store runs out, it rounds your cash total to the nearest nickel. [#updown] Sometimes up. Sometimes down.
+[#mirror] So, a penny for your thoughts? [#four] That'll be {*four cents.|four cents.}
+[#question] Check your couch tonight. How many pennies? One number.
+[#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
