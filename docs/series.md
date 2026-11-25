@@ -12,7 +12,7 @@ Role: Doug, the airplane builder in a hard hat; Gary, the passenger in the windo
 |---|---|---|---|---|
 | 1 | why do airplane windows have a hole | ✅ `videos/airplane-window-hole/` | the hole lets the outside layer do all the work and keeps the spare ready | — |
 | 2 | why are airplane windows round | 🎬 final rendered (1:13), ready to post · `videos/airplane-windows-round/` | square corners pile up stress and crack (the 1950s Comet jets); round corners spread it | done (workshop, water tank, panel, paper) |
-| 3 | why do your ears pop on a plane | 💡 | the cabin's air gets thinner as you climb; the air behind your eardrum pushes out until a tiny tube lets it go | 1–2 (ear cutaway) |
+| 3 | why do your ears pop on a plane | 🎬 final rendered (1:07), ready to post · `videos/ears-pop-plane/` | the cabin's air gets thinner as you climb; the air behind your eardrum pushes out until a tiny tube lets it go | done (ear cutaway, mountain road, chip bags, gum) |
 | 4 | why do they dim the lights for landing | 💡 | so your eyes are already used to the dark if you need to get out fast | 1–2 (cabin at night) |
 | 5 | why do you have to put your phone in airplane mode | 💡 | verify: interference with radios/cell towers; mostly a precaution | 1 |
 
@@ -22,7 +22,7 @@ switch off; Gary, the guy who sleeps anywhere. Started Nov 24 2026 (Brian picked
 | # | Episode (search phrase) | Status | The answer in one line | New art needed |
 |---|---|---|---|---|
 | 1 | how to fall asleep in 2 minutes | 🎬 final rendered (1:12), ready to post · `videos/sleep-two-minutes/` | a tight body keeps your brain's "guard dog" awake; melt your body top to bottom + one boring picture (the WWII Navy pilots' trick, a skill that takes weeks) | 4–5 (bedroom night, cutaway, 1940s Navy flight school, calm lake) |
-| 2 | why do we yawn | 💡 | verify before scripting | 1–2 |
+| 2 | why do we yawn | 🎨 script approved Nov 25; art + voice next · `videos/yawn-why/` | the best idea so far: a yawn is a fan for a warm brain (not air, Provine 1987); still debated, and nobody knows why yawns spread | 6 (brain room, hot street, oxygen tank, pigeon, laptop fan, lab rat) |
 | 3 | why do you get goosebumps | 💡 | verify before scripting | 1–2 |
 | 4 | why do you jerk awake when falling asleep | 💡 | verify (hypnic jerk) | 1 |
 
