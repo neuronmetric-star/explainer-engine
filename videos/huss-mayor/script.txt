@@ -4,13 +4,13 @@
 # but our own gags (not a copy), Doug = underdog, Gary = reigning mayor. Narrator performs everyone; Doug and Gary act silently.
 # Search phrase: "huss huss huss" / "in this town". On screen first 2 s: HUSS = MAYOR. Doug, Gary and the town are fiction.
 [#q] In this town, whoever says {*"huss"|"huss"} the loudest becomes {*mayor.|mayor.} [#h1] Huss, huss, huss.
-[#train] So everybody trains. [#mail] The mailman hussed so hard, every mailbox on the street popped open. [#baker] The baker hussed into the dough. That's why our bread is so puffy. [#grandma] Grandma hussed once at the bus stop. [#bus] The bus is still in the lake.
-[#gary] Our mayor, Gary, hussed so loud last year, he turned the town clock backwards. [#late] We're still an hour behind.
-[#doug] And then there's Doug. Doug can't huss. [#try] When he tries, it comes out like this. [#pfft] Pfffft. [#dog] His dog thought it was a squeaky toy.
-[#train2] So while everybody partied, Doug trained. Every night. [#candle] He hussed at a candle. Nothing. [#moth] He hussed at a moth. The moth stayed to watch.
-[#day] Then came election day. [#square] The whole town in the square. Giant speakers. And the huss-o-meter. [#grandma2] Grandma scored a hundred and twelve. The windows did not survive. [#gary2] Gary scored a hundred and forty. His hat did not survive.
+[#train] So everybody trains. [#mail] The mailman hussed so hard, every mailbox on the street popped open. [#grandma] Grandma hussed once at the bus stop. [#bus] The bus is still in the lake.
+[#gary] Our mayor, Gary, hussed so loud he turned the town clock backwards.
+[#doug] And then there's Doug. Doug can't huss. [#try] When he tries, it comes out like this. [#pfft] Pfffft.
+[#train2] So while everybody partied, Doug trained. [#moth] He hussed at a moth. The moth stayed to watch.
+[#day] Election day. [#square] The whole town, one giant speaker, and the huss-o-meter. [#grandma2] Grandma scored a hundred and twelve. The windows did not survive. [#gary2] Gary scored a hundred and forty. His hat did not survive.
 [#turn] Then it was Doug's turn. [#laugh] Everybody laughed. [#breath] He took a deep breath, and did his tiny little huss.
-[#zero] The meter said, zero. [#shake] Then the ground started shaking. [#down] His huss didn't go up. It went {*down.|down.} Into the pipes. [#sinks] Every sink, every toilet, every chimney answered. [#boom] The meter exploded! [#tenk] {*Ten thousand!|Ten thousand!}
+[#zero] The meter said, zero. [#shake] Then the ground shook. [#down] His huss didn't go up. It went {*down.|down.} Into the pipes. [#sinks] Every sink and toilet answered. [#boom] The meter exploded! [#tenk] {*Ten thousand!|Ten thousand!}
 [#mayor] So now Doug is the mayor. His first law: no more partying. Only training.
 [#heli] But last night, from under the town, something answered. [#h2] {*Huss. Huss. Huss.|Huss. Huss. Huss.}
 [#ask] Would you vote for Doug?
