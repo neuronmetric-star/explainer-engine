@@ -1,18 +1,18 @@
-# SHORT (~1:05). DRAFT v1, waiting for Brian. Mode: TREND RIDE skit (fiction). Brian's twist (Nov 25): "In this town everybody has girls...
-# even my aunt Mora... but me, I'm huss huss huss. I have one girl, or maybe I don't have any." Same skeleton as huss-mayor (the @neyroblox23 format).
-# Told in first person by Doug (narrator performs him). Gary = the guy with the most girls (silent, ledger + fingers). Aunt Mora = fiction.
-# "Girls" = girlfriends/crushes, kept PG and ad-safe. NO girl in our cast: the one girl is an off-screen/silhouette/painted figure (ask Brian).
+# SHORT (~1:05). DRAFT v2, waiting for Brian. Mode: TREND RIDE skit (fiction). Brian (Nov 25): "everyone has girls but me, they don't want me,
+# so I need to huss huss huss." Same skeleton as huss-mayor (the @neyroblox23 format): rule -> town -> underdog -> trains -> contest -> win -> new law.
+# First person by Doug (narrator performs him). Gary = the guy with the most girls (silent, spreadsheet). Aunt Mora = fiction.
+# "Girls" = girlfriends/crushes, PG and ad-safe. NO girl in our cast: girls are crowd/silhouettes/painted (ask Brian).
 # Search phrase: "in this town" / "huss huss huss". On screen first 2 s: IN THIS TOWN = GIRLS.
 [#q] In this town, everybody has {*girls.|girls.} [#aunt] Even my Aunt Mora. [#mora] She has {*twelve.|twelve.} She's eighty.
 [#all] The mailman has three. The baker has five. [#gary] And Gary has {*thirty.|thirty.} He keeps a spreadsheet.
-[#think] Nobody in this town thinks about anything else. [#bus] The bus driver missed the bus stop. The bus is still in the lake.
-[#me] And then there's me. [#huss] I'm Doug, and I go {*huss, huss, huss.|huss, huss, huss.}
-[#train] While everybody chases girls, I train. Every single night. [#moth] I hussed at a candle. It didn't move. I hussed at a moth. The moth stayed to watch.
-[#ask] Then Gary stops me in the square. [#count] "Doug, how many girls?" [#one] I say, "One." [#maybe] "Or maybe zero."
-[#laugh] The whole town laughs. [#aunt2] Even Aunt Mora. Twelve girls, and she's laughing at me.
-[#night] So that night I trained harder. [#windowhuss] Huss, huss, huss. {*Louder.|Louder.}
-[#answer] And from a window across the street, somebody hussed back. [#girl] Huss, huss, huss. [#who] The one girl. [#every] She'd been answering every single night.
-[#realize] I just never looked up.
-[#mirror] Gary has thirty girls. I have one. [#heli] And she hussed louder than all of them.
-[#ask2] So, are you a Gary, or a Doug?
+[#me] And then there's me. [#zero] I have {!zero.|zero.} [#no] I asked every girl in town. They all said, "No thanks, Doug." [#aunt2] Even the ones Aunt Mora had spare.
+[#sad] So I did the only thing left. [#huss] {*Huss, huss, huss.|Huss, huss, huss.}
+[#train] Every single night. [#candle] I hussed at a candle. It didn't move. [#moth] I hussed at a moth. The moth stayed to watch.
+[#day] Then came the big huss contest. [#square] The whole town in the square, and the huss-o-meter. [#gary2] Gary scored a hundred and forty. His hat did not survive. [#aunt3] Aunt Mora scored a hundred and twelve. The windows did not survive.
+[#turn] Then it was my turn. [#laugh] Everybody laughed. [#breath] I took a deep breath, and did my tiny little huss.
+[#zero2] The meter said, zero. [#shake] Then the ground shook. [#down] My huss didn't go up. It went {*down.|down.} Into the pipes. Every sink and toilet answered. [#boom] The meter exploded! [#tenk] {*Ten thousand!|Ten thousand!}
+[#line] Suddenly, every girl in town was in line. [#gary3] Gary's spreadsheet was crying.
+[#law] I looked at them and said, "Sorry. No more girls. Only {*training.|training.}"
+[#heli] And last night, from under the town, something answered. [#h2] {*Huss. Huss. Huss.|Huss. Huss. Huss.}
+[#ask] Are you a Gary, or a Doug?
 [#cta] Still here? Then that means you enjoyed the video. So *follow and *like for more.
