@@ -9,7 +9,7 @@
 | the re-hook "Then what is it?" | "the best idea so far: a clamp" |
 | "Does it fit?" | the half-hour vs twelve-minute lines, bridged ("More time open, more time filled. That fits.") |
 | "Why bother?" | blood carries oxygen → may be a nightly tune-up (hedged) |
-| the open mystery | "Nobody knows for sure why the clamp opens. Nobody knows why." |
+| the open mystery | "Nobody's sure." in the mirror line (the standalone mystery lines were cut for length) |
 
 ## Causal chain (every link SPOKEN)
 people say a sexy dream → even 3-year-olds have it, and they aren't dreaming that → so it's not the dream → best idea: a chemical keeps a clamp shut all day (hose, blood can't flood in) → in REM sleep the chemical backs off, the clamp opens, the hose fills → so you'd expect them to be longer in REM sleep (30 vs 12 min, matches) → and ~3-5 per night, the last one is the one you catch → why bother: blood carries oxygen, tissue needs oxygen, so a nightly fill may be a tune-up → doctors used it as a test (stamps) → nobody knows why the clamp opens → best guess + Doug closed with a reason
