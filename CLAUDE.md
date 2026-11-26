@@ -141,3 +141,12 @@ before every picture change · lines starting `#` are comments. Numbers as words
 - After posting: record each video's numbers (views, 3-second hold, watch-to-end, shares, saves) in the lessons table on the weekly
   check (Sundays, `docs/posting-schedule.md`); the best and worst video each week each produce one new rule.
 - Keep studying winners: run new reference videos through the TikTok AI app, add them to `docs/creators/`, steal one lesson each.
+
+## Legacy kit.js engine extras (from the Nov 11 videos: house, submarine, Nvidia, shower)
+Videos without an `art/` folder render through `engine/stage.html` + `engine/kit.js`. That engine also has:
+- Looks: no `look.js` = **bright** (sunny, solid shapes, soft shadows); `window.LOOK = 'gold-noir' | 'blueprint'`
+  in `videos/<slug>/look.js` (`engine/styles/*`). Old videos pin theirs.
+- Solid models, cutaways + numbered callouts (`videos/_cutaway-demo/`); real CC0 Quaternius 3D models in
+  `assets/models/` via `models:{}` + `K.model / K.anim / K.crown / K.stick` (`videos/_army-demo/`).
+- Time-of-day lighting inside a video (`K.lights`, `K.keyOffset`, `K.skyTexture`, `K.bloom`; see `videos/why-shower-morning/`).
+- @coonknows moving watermark + end-card handle (`K.BRAND`); `tools/draft-timing.js` for placeholder timing.

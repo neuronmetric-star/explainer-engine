@@ -1,0 +1,19 @@
+# Sources — Nvidia CEO scandal (as of Nov 11, 2026)
+Allegations are press reports citing anonymous officials; nothing is proven. Script attributes every claim and does not name the woman.
+
+- Axios, "Nvidia CEO Jensen Huang admits affair, board to launch investigation" (Nov 8, 2026) — NYT reported Friday (Nov 6) that U.S. intelligence agencies believe the woman is a Chinese spy; Huang's Sunday memo admits the affair. https://www.axios.com/2026/11/08/nvidia-ceo-jensen-huang-admits-affair-board-to-launch-investigation
+- CNN, "Nvidia CEO Jensen Huang admits affair as company launches investigation into foreign spy accusations" (Nov 8, 2026) — Huang took "full responsibility"; independent board committee with outside counsel; board has "no reason to believe" national security or Nvidia secrets were compromised; Huang to keep leading "without interruption". https://www.cnn.com/2026/11/08/business/nvidia-investigation-ceo-jensen-huang
+- CNBC, "Read Huang's email to his staff and statement from Nvidia's board of directors" (Nov 8, 2026). https://www.cnbc.com/2026/11/08/nvidia-jensen-huang-email-board-of-directors-statement.html
+- CNBC, "Nvidia stock falls 4% as scrutiny turns to Jensen Huang's affair with alleged Chinese spy" (Nov 9, 2026) — Monday drop ~4%. https://www.cnbc.com/2026/11/09/nvidia-jensen-huang-chinese-spy-investigation.html
+- CNBC, "Nvidia sells off for second day…" (Nov 10, 2026) — Tuesday −5.47%; briefly dipped below $4 trillion market cap; analyst: probe could take 4–6 weeks. https://www.cnbc.com/2026/11/10/nvidia-nvda-jensen-huang-affair-chinese-spy.html
+- The Globe and Mail, "Nvidia shares plunge for second day as Huang affair fallout deepens" — about US$430 billion of market value lost over two sessions (NBC says almost $500B since Monday; we use the lower figure, "about"). https://www.theglobeandmail.com/business/article-nvidia-stock-market-value-ceo-jensen-huang-affair-fallout/
+- Forbes, "Nvidia's $190 Billion Drop Over Jensen Huang Probe Is A Board Warning" (Nov 10, 2026) — allegations remain allegations; China's Foreign Ministry rejected them. https://www.forbes.com/sites/sandycarter/2026/11/10/nvidias-190-billion-drop-over-jensen-huang-probe-is-a-board-warning/
+- NBC News, "Nvidia hires former acting U.S. attorney to probe Jensen Huang affair" — three House committee chairs requested a closed-door briefing; class-action shareholder lawsuit filed in federal court in San Jose. https://www.nbcnews.com/business/corporations/ex-prosecutor-probe-jensen-huang-chinese-spy-affair-nvidia-rcna608628
+- Nvidia is a member of the S&P 500, so S&P 500 index funds hold Nvidia shares (index membership).
+
+## Added for the "human" version
+- NVIDIA blog, "NVIDIA Founder and CEO Jensen Huang Returns to Denny's Where NVIDIA Launched a Trillion-Dollar Vision" — Nvidia founded in 1993 by Huang, Malachowsky and Priem at a San Jose Denny's booth (now has a plaque); Huang worked at Denny's as a teen. https://blogs.nvidia.com/blog/nvidia-dennys-trillion/
+- CNBC via NBC Miami, "Jensen Huang started his $2 trillion company Nvidia at a Denny's breakfast booth" — dishwasher/busboy at a Portland Denny's starting at 15; age 30 at the 1993 founding. https://www.nbcmiami.com/news/business/money-report/jensen-huang-started-his-2-trillion-company-nvidia-at-a-dennys-breakfast-booth/3302554
+- Axios (Nov 8, 2026) — per the NYT, the woman was reportedly recruited to seek information and potentially push for Nvidia's advanced chips to be made available in China. https://www.axios.com/2026/11/08/nvidia-ceo-jensen-huang-admits-affair-board-to-launch-investigation
+- NBC News / CNBC — President Trump called Huang "an honorable guy". https://www.nbcnews.com/tech/tech-news/nvidia-ceo-jensen-huang-investigation-rcna608148
+- "Nearly 10%": −4.27% Monday and −5.47% Tuesday compound to about −9.5% (CNBC Nov 9 and Nov 10 figures).

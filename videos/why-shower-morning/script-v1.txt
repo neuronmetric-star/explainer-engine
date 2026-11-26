@@ -1,0 +1,21 @@
+# Why the f*ck do we shower in the morning if we showered at night? — what happens to your body while you sleep
+# Markup: *gold  !red  {shown|spoken}  [#cue]   — sources in sources.md
+
+[#hook] Why the {F*CK|fuck} do we have to shower in the morning, if we showered at night? [#bridge] Give me a minute. I'll show you what happens while you sleep.
+[#answer] Short answer: you weren't alone in that bed. [#wilder] About {*100 billion|a hundred billion} *bacteria were with you.
+
+[#step1] Step one: you *sweat.
+[#heat] To fall asleep, your body dumps heat through your skin. [#cup] You lose about a *cup of water overnight.
+
+[#step2] Step two: you *shed.
+[#cells] You drop tens of thousands of dead skin cells a minute. [#millions] *Millions by morning. [#mites] Dust mites in your pillow eat them.
+
+[#step3] Step three: the bacteria *feast.
+[#bugs] Your skin is home to about {*1,000|a thousand} kinds of bacteria. [#smell] One, called Staph hominis, turns odorless sweat into a !sulfur !gas. [#bo] Sweat doesn't stink. Bacteria *eating it does.
+[#breath] In your mouth, saliva slows down, so bacteria make sulfur gas there too. [#morningbreath] !Morning !breath.
+
+[#catch] But here's what nobody tells you: [#derm] dermatologists say you don't need two long showers. [#hot] Too much hot water strips your skin's protective oils.
+[#you] So your night shower washes off your *day. [#morning] Your morning shower washes off your *night. [#quick] Keep it quick and lukewarm.
+
+[#punch] You don't wake up dirty. [#punch2] You wake up *outnumbered.
+[#cta] Follow. I explain one of these every day.

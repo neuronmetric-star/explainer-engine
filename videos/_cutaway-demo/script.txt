@@ -1,0 +1,5 @@
+# Cutaway engine demo (not a real video) — tests K.hull / K.solid / K.cutaway / callouts
+[#hook] This is a *nuclear submarine. [#open] Let's cut it *open.
+[#c1] The !reactor. [#c2] Missile *tubes. [#c3] Crew *bunks. [#c4] The control room. [#c5] The torpedo room.
+[#fly] Now fly *inside, from the torpedo room, all the way back to the reactor.
+[#cta] Follow for more *how *it's *built.
