@@ -2,21 +2,24 @@
 description: Make a "Why do we X?" explainer end to end with the yawn-video system (topic, research, script, beats, art, voice, build, measured audit, post kit)
 argument-hint: <topic, e.g. "why do we yawn">
 ---
-Make an explainer about: **$ARGUMENTS** (if empty, offer 3 topics, see step 0)
+Make an explainer about: **$ARGUMENTS** (if empty, run Step 0: scrape and offer topics)
 
 You LEAD. Brian works from his phone: keep messages short, paste everything he must copy into code blocks, say exactly what he does next, and ask before spending credits.
 The method is `docs/explainer-system.md` (read it first) and `docs/templates/explainer-recipe.md` (the slot-by-slot recipe). Load each lane skill with the Skill tool AT ITS STEP
-(`.claude/skills/`: scout, hook, script, visual, character-emotion, growth, explainer) and follow it. Never grade your own work by eye: `node tools/audit.js` and `node tools/beats.js check` measure.
+(`.claude/skills/`: topic-scout, scout, hook, script, visual, character-emotion, growth, explainer) and follow it. Never grade your own work by eye: `node tools/audit.js` and `node tools/beats.js check` measure.
 Run `git fetch origin` and work on the branch the harness gave you; finished work is merged to `main` only when Brian says so ("commit", "merge to main").
 
-**Step 0. Start (ONE message).** Read `docs/lessons.md`, `docs/series.md`, the tracker (https://claude.ai/artifact/SDxLVHHeJEHJ4cyPpiwYgM via the Claude Docs connector) and today's `docs/trends/<date>.md` if it exists.
-Ask: (1) which topic (offer 3 "Why do we X?" picks from the series list / concept bank / trend sheet, each with its one-line answer), (2) when to post, (3) the character (default Doug, Gary as the second friend).
-Pick a slug and `mkdir videos/<slug>`. Mark the tracker row "Script".
+**Step 0. Topics first, then production (the word "explainer" runs ALL of this).**
+0a. Read `docs/lessons.md`, `docs/series.md`, the tracker (https://claude.ai/artifact/SDxLVHHeJEHJ4cyPpiwYgM via the Claude Docs connector). Load the `topic-scout` skill and run it NOW: check the Scrape Creators balance (free), scrape each niche, write `docs/trends/<date>.md` (reuse today's sheet only if it exists and Brian didn't say "refresh"). Report credits spent in one line.
+0b. Show Brian **3-5 topic ideas in ONE short message** (mix formats: why-explainer and build ladder; rotate vs the last 3 videos). Each: the search phrase, the format, the one-line answer, the evidence line `[@handle, plays]`. Also ask when to post; default character Doug (Gary second).
+**Brian replies with a number or "approved" = the topic is approved. Do not start research before that.** If he names his own topic, skip 0b and go on.
+0c. After approval, pick a slug, `mkdir videos/<slug>`, mark the tracker row "Script", and carry the WHOLE production below (Steps 1-7) without asking him to re-start anything: stop only at the marked approval gates (script, beats) and for his parts (painting, recording voice).
 
 **Step 1. Research** (≥ 3 solid sources, web search) → `videos/<slug>/sources.md` from `docs/templates/sources.example.md`: label fiction, hedge unsettled science, never invent a number ("not reported").
 
 **Step 2. Script** → `videos/<slug>/script.txt` (from `docs/templates/script.example.txt`, the recipe's slots) and `videos/<slug>/notes.md` (from `docs/templates/notes.example.md`: promise ledger, causal chain, 3-sentence retell).
-Skills: hook, script (including the follow-through gate), growth. Longer is fine (≈ 175-255 words; the voice is sped 1.2-1.4x). Show Brian the narration in ONE copyable block + the ledger/retell in 3 lines, and **wait for "approved"**.
+Skills: hook, script (including the follow-through gate), growth. Build-ladder topics use the "If you X, you have Y. But… so you…" skeleton (see `videos/bread-ladder/script.txt`); why-topics use the recipe.
+The ending CTA is: "Send this to someone who…" then "follow, and watch our <last video> next" (Brian, Nov 26). Longer is fine (≈ 175-255 words; the voice is sped 1.2-1.4x). Show Brian the narration in ONE copyable block + the ledger/retell in 3 lines, and **wait for "approved"**.
 
 **Step 3. Beats** → copy `docs/templates/beats.example.json` to `videos/<slug>/beats.json` and edit it (plates, props, shots, overlays, actors, `images` briefs). Skills: visual, character-emotion.
 `node tools/beats.js check <slug>` must PASS. Show Brian the beat → painting table (`node tools/beats.js shots <slug>`) and **wait for "approved" BEFORE any painting**: one painting per idea, none held > ~12 s, the camera moves in every shot, the cast only in the opening and the signature ending.

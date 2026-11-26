@@ -5,7 +5,7 @@ description: Use when Brian says "explainer" or asks to make a "Why do we X?" / 
 
 # Explainer system (the yawn-video method, Nov 26 2026)
 
-Open with the word **explainer**. Then follow `/explainer` (`.claude/commands/explainer.md`) step by step. This skill is the short version and the rules; the full map is `docs/explainer-system.md`.
+Open with the word **explainer**. It first runs `topic-scout` (scrape) and shows a few topics for Brian's approval, then runs the whole production. Follow `/explainer` (`.claude/commands/explainer.md`) step by step. This skill is the short version and the rules; the full map is `docs/explainer-system.md`.
 
 ## The loop
 topic → research (≥ 3 sources, `sources.md`) → script (`script.txt` + `notes.md`) → **approve** → beats (`beats.json`) → **approve BEFORE painting** → art prompts → Brian paints → voice → tighten/align/drama/sfx → `make-scene` → previews → `audit` → render → cover + `post.md` → **Brian says commit**.
@@ -16,7 +16,7 @@ topic → research (≥ 3 sources, `sources.md`) → script (`script.txt` + `not
 3. **Longer is fine** (≈ 175-255 words): the voice is sped 1.2-1.4x by `tools/tighten.js`; final 1:05-1:15. [Brian, Nov 26]
 4. **One painting per idea**, none held > ~12 s (the signature sunset excepted); the camera moves in EVERY shot; something changes at least every 3 s; live numbers/labels; our color code. [`visual` skill]
 5. **The cast** appears only in the opening (the problem) and the signature helicopter/city-sunset goodbye; the middle is images only. Emotion is in bodies and props, never dialogue. [`character-emotion` skill; Brian, Nov 26]
-6. **The ending** is the share trigger: a send-to-a-friend line, no spoken follow ask; the helicopter + city sunset stays. [`growth` skill; Brian: the signature]
+6. **The ending** is the share trigger: "Send this to someone who…", then "follow, and watch our <last video> next" (Brian, Nov 26: include a CTA to our videos); the helicopter + city sunset stays. [`growth` skill; Brian]
 7. **Facts**: hedge unsettled science ("best idea so far", "may", "nobody's sure"); never invent a number; no personalized medical/legal/financial advice.
 8. **Measure, don't self-grade**: `node tools/beats.js check <slug>` and `node tools/audit.js <slug>`; a duplicate voice file or a missing image is a FAIL, not a guess.
 

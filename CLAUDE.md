@@ -38,7 +38,7 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 **New chat? Paste the command in `docs/START-HERE.md`** (runs all 7 skills incl. `topic-scout`; Scrape Creators allowed, report credits).
 
 ## "explainer" (Brian, Nov 26 2026): the one-word opener for "Why do we X?" videos
-When Brian says **"explainer"** (with or without a topic) in a new chat, run `/explainer`: read `docs/explainer-system.md`, ask the 3 start questions, then lead him step by step with the
+When Brian says **"explainer"** (with or without a topic) in a new chat, run `/explainer`: read `docs/explainer-system.md`, run `topic-scout` (Scrape Creators) and show 3-5 topics for his approval, THEN lead him step by step with the
 yawn-video system (research → script + follow-through notes → beats → ChatGPT art prompts → voice → generated scene → measured audit → post kit). The method lives in `docs/explainer-system.md`,
 `docs/templates/`, `.claude/commands/explainer.md` and `.claude/skills/explainer/`. **Measure, don't self-grade** (`tools/audit.js`, `tools/beats.js check`). Commit/merge to `main` only when Brian says.
 

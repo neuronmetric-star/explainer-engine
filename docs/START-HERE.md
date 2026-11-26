@@ -6,7 +6,7 @@ Paste this as your first message in a new Claude Code chat on this repo:
 explainer. Run the full Explainer Engine system, all 7 skills (topic-scout, scout, hook, script, visual, character-emotion, growth), using Scrape Creators for live topics. Read CLAUDE.md, docs/START-HERE.md, docs/explainer-system.md and docs/lessons.md first. Ask me the 3 start questions, show 3 topics from today's scrape per niche, then lead me step by step: research, script (I approve), art prompts, voice, scene, audit, post kit. Report credits spent. Don't commit or merge until I say so.
 ```
 
-Short version (works too): `explainer`
+**Short version (does the same): just type `explainer`.** It scrapes first, shows 3-5 topics, waits for your pick, then runs the whole production.
 
 ## What happens
 1. `topic-scout`: balance check, niche scrape (body, science, money, history, kitchen/holiday), 3 ranked topics each with search phrase, evidence, format. Writes `docs/trends/<date>.md`.
