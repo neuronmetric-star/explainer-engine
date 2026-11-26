@@ -23,7 +23,8 @@ switch off; Gary, the guy who sleeps anywhere. Started Nov 24 2026 (Brian picked
 |---|---|---|---|---|
 | 1 | how to fall asleep in 2 minutes | 🎬 final rendered (1:12), ready to post · `videos/sleep-two-minutes/` | a tight body keeps your brain's "guard dog" awake; melt your body top to bottom + one boring picture (the WWII Navy pilots' trick, a skill that takes weeks) | 4–5 (bedroom night, cutaway, 1940s Navy flight school, calm lake) |
 | 2 | why do we yawn | 🎬 v4.2 explainer (11 paintings) rendered (1:12), ready to post · `videos/yawn-why/` (v2 archived) | the best idea so far: a yawn is a fan for a warm brain (not air, Provine 1987); still debated, and nobody knows why yawns spread | 6 (brain room, hot street, oxygen tank, pigeon, laptop fan, lab rat) |
-| 3 | why do you get goosebumps | 💡 | verify before scripting | 1–2 |
+| 3 | why do men wake up with morning wood | 🎬 final rendered (1:14), ready to post · `videos/morning-wood/` (Brian picked topic 6, Nov 26) | the best idea so far: a brain chemical keeps a clamp shut all day and backs off in REM sleep, so blood fills 3–5 times a night; may be a nightly oxygen tune-up; nobody's sure why. Sources need a re-read (fetch was blocked) | done (bed + tent, dream sky, sleep lab, toddler room, hose clamp shut/open, five moons, clinic desk, garage, stamp rings) |
+| 4 | why do you get goosebumps | 💡 | verify before scripting | 1–2 |
 | 4 | why do you jerk awake when falling asleep | 💡 | verify (hypnic jerk) | 1 |
 
 ## 😂 One-offs: relatable skits

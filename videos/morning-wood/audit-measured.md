@@ -6,14 +6,14 @@
 | voice | search phrase spoken in the first 3 s | ✅ PASS | "why do men wake up with morning wood" finished at 1.52 s |
 | voice | voice file is not a copy of another video's | ✅ PASS | checksum unique |
 | script | re-hook ("rehook" cue) between 25% and 60% | ✅ PASS | at 28% |
-| script | final length 1:02 to 1:15 | ✅ PASS | 1:14 (74.2 s), 279 words, estimated (no final.mp4 yet) |
+| script | final length 1:02 to 1:15 | ✅ PASS | 1:14 (74.2 s), 279 words |
 | visual | something changes on screen at least every 3 s | ⚠️ WARN | 39 changes, avg 1.87 s, longest gap 3.5 s at 17.1 s |
 | visual | one painting per idea: no painting held > 12 s (ending excluded) | ✅ PASS | 10 distinct paintings; longest hold 9.3 s (M07) |
 | visual | the camera moves in every shot | ✅ PASS | 0 static shots |
 | visual | caption chunks (TEST) setting | ℹ️ INFO | captionChunk = 3 (0/1 = one word at a time) |
 | follow-through | notes file has a promise ledger, a causal chain and a written retell | ✅ PASS | notes.md |
 | facts | sources.md has at least 3 source links | ✅ PASS | 12 links |
-| post | cover.jpg and post.md exist | ⚠️ WARN | no cover, post.md ok |
+| post | cover.jpg and post.md exist | ✅ PASS | cover ok, post.md ok |
 | audio | sound effects file built | ✅ PASS | sfx.wav present (not listened to) |
 
 This measures; it does not judge comprehension. Brian's ear and the follow-through notes do that.
