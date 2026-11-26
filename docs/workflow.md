@@ -23,6 +23,8 @@ runs it. Claude leads, asks, and tells Brian exactly what to run on his side at 
 | 8. Final | Renders, makes the cover and caption, updates the tracker and `docs/series.md`, merges to `main` | Posts (TikTok first, then Reels, Shorts), pins the comment |
 | 9. Learn | Adds Brian's notes to `docs/lessons.md`; Sunday review adds the numbers | Sundays: pastes 3-s hold + watched-to-end from TikTok Studio |
 
+> **For "Why do we X?" explainers use the one-word opener `explainer`** (`/explainer`, `docs/explainer-system.md`): the repeatable yawn-video system with a beats file, generated scene and measured audit.
+
 ## Skill gates (Nov 25 2026): every step loads its lane skill
 The creator research is now six skills in `.claude/skills/` (scout, hook, script, visual, character-emotion, growth). Claude loads the lane's
 skill at its step and runs its pre-publish checklist; before the video goes to Brian it saves the pass/fail table (`videos/<slug>/skill-audit.md`)

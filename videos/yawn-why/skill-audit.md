@@ -171,7 +171,7 @@ The v2 render and files are archived in `v2_archive/` (do not post).
 ## follow-through gate (script skill, rules 26–32)
 | Check | Result |
 |---|---|
-| Promise ledger: every promise paid off | ✅ `script-v4-notes.md`: "Why do we yawn?" → the mirror; Doug's problem → "A yawn isn't a flaw… Nothing's wrong with him. Probably."; "extra air" → the 1987 test; "Then what is it?" → heat/fan; "Does it fit?" → 160 people + rats; "still a mystery" left open on purpose |
+| Promise ledger: every promise paid off | ✅ `notes.md`: "Why do we yawn?" → the mirror; Doug's problem → "A yawn isn't a flaw… Nothing's wrong with him. Probably."; "extra air" → the 1987 test; "Then what is it?" → heat/fan; "Does it fit?" → 160 people + rats; "still a mystery" left open on purpose |
 | Causal chain, every link spoken; analogies bridged | ✅ belief stated BEFORE the bet; laptop → "a laptop uses a fan to cool down" → "a yawn may be your brain's fan"; "hot air can't cool you off" bridges the 160-people result |
 | Character problem resolved | ✅ |
 | Retell written out | ✅ (in the notes). Not tested on a real viewer: that is the next step |

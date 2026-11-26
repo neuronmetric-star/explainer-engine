@@ -2,6 +2,8 @@
 description: Research, script, shot list, voice, build and render a full story-driven explainer video for any topic
 argument-hint: <topic, e.g. "why airlines overbook flights">
 ---
+> For a **"Why do we X?" / how-it-works explainer**, use `/explainer` instead (the one-word opener "explainer"; `docs/explainer-system.md`): it is the repeatable system with a beats file, a generated scene and a measured audit. Use this command for story-driven videos (true stories, trend rides, lesson chains).
+
 Make a video about: **$ARGUMENTS**
 
 Follow CLAUDE.md, `docs/workflow.md` (who does what) and `docs/PLAYBOOK.md` exactly. Latest worked example: `videos/airplane-window-hole/` (v4).

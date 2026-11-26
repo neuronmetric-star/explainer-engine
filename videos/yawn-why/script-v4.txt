@@ -2,7 +2,7 @@
 #   every idea is introduced BEFORE it is referred to ("the air thing" is gone; the common belief is stated first, then the narrator's bet),
 #   the unexplained "sleepiness" line is cut, the fan idea says WHY (a laptop uses a fan), and Doug's problem is closed with a reason.
 # DRAFT, waiting for Brian's "approved". `script.txt` (v2, rendered) is untouched until then. Longer is fine: the voice is sped 1.2-1.4x (tools/tighten.js).
-# Follow-through gate: see script-v4-notes.md. Facts + hedges: sources.md ("best idea so far", "may", "not every scientist agrees").
+# Follow-through gate: see notes.md. Facts + hedges: sources.md ("best idea so far", "may", "not every scientist agrees").
 [#hook] Why do we {*yawn?|yawn?} [#card] See, Doug had a problem. [#kept] He kept yawning, and he worried something was wrong.
 [#belief] Let's start with what most people say: a yawn brings in extra {!air.|air.} [#bet] Honestly? I believed that too.
 [#tested] Scientists tested it in {*1987.|nineteen eighty-seven.} [#o2] Volunteers breathed pure oxygen, and they yawned just as much. [#laps] Then they exercised, to breathe twice as fast. [#same] Same {!yawns.|yawns.} [#notair] So it's not about air.

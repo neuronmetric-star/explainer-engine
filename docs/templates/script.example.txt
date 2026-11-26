@@ -1,0 +1,13 @@
+# SCRIPT SKELETON (copy to videos/<slug>/script.txt). Markup: *word gold, !word red, {shown|spoken}, [#cue] before every picture change. Numbers as words in the spoken part.
+# Slots follow docs/templates/explainer-recipe.md. Cue names are free, but keep `hook` first, `rehook` (the re-hook) and the cues beats.json refers to.
+[#hook] Why do we {*X?|X?} [#card] See, <CHARACTER> had a problem. [#kept] <He/She> <did the thing>, and worried something was wrong.
+[#belief] Let's start with what most people say: <the common belief>. [#bet] Honestly? I believed that too.
+[#tested] <Who> tested it in {*<year>.|<year spoken>} [#test1] <What they did>, and <what happened>. [#test2] Then <second test>. [#same] <Same result.> [#notit] So it's not <the belief>.
+[#rehook] Then what is it?
+[#idea] Here's the best idea so far: {*<one word>.|<one word>.} [#compare] Think of <everyday thing>. <It does Y because Z>. [#mech] <The mechanism, as the same comparison>. [#nodis] Not every scientist agrees.
+[#people] Does it fit? <Evidence 1: who, how many, what they found>. [#fits] If <the idea> is true, that makes sense: <the bridge, because...>.
+[#rats] <Evidence 2: a different kind>, [#drop] <result>.
+[#mystery] There's still a mystery. [#spread] <The open question>. [#why] Nobody knows why.
+[#mirror] So, why do we X? [#best] Best guess: <the idea in 5 words>. [#idk] Nobody's sure.
+[#doug] So <CHARACTER> can relax. <The closing reason>. [#probably] Nothing's wrong with <him>. Probably. [#diy] <Next time you ..., do the do-it-yourself thing.>
+[#cta] Send this to someone who <is doing the thing>.
