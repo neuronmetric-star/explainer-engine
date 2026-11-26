@@ -1,0 +1,16 @@
+# MORNING-WOOD v1 (Nov 26 2026): explainer, Body Heck. Search phrase: "why do men wake up with morning wood". Brian: "I want to do 6"; "no such thing as an unsafe topic".
+# Platform note (flagged once): adult-adjacent wording may limit reach or monetization on some platforms; Brian decided to run it. Spoken term is always "morning wood" (one name, no synonyms).
+# DRAFT, waiting for Brian's "approved". Longer is fine: the voice is sped 1.2-1.4x (tools/tighten.js).
+# Follow-through gate: see notes.md. Facts + hedges: sources.md ("best idea so far", "may", "scientists think", "nobody's sure").
+# Alt hook (voice A/B, viewer-first): "If you wake up with morning wood, your body just did something it does about four times a night."
+[#hook] Why do men wake up with {*morning wood?|morning wood?} [#card] See, Doug had a problem. [#kept] He woke up like that every morning, and he worried something was wrong.
+[#belief] Let's start with what most people say: a {!sexy dream.|sexy dream.} [#bet] Honestly? I believed that too.
+[#tested] Sleep scientists checked in {*1972.|nineteen seventy-two.} [#watch] They watched boys sleep all night, wired to sensors. [#age] It shows up in boys as young as {*three.|three.} [#notdream] A three-year-old isn't dreaming that. So it's not the dream.
+[#rehook] Then what is it?
+[#idea] Best idea so far: a {*clamp.|clamp.} [#hose] Picture a garden hose. All day, a chemical in your brain clamps it shut, so blood can't rush in. [#rem] In REM sleep, the dreaming stage, the chemical backs off, and the hose fills. [#nodis] Not proven.
+[#count] That means it happens at night too: {*three to five|three to five} times, and you only catch the last one. [#people] Does it fit? In that study, each lasted about {*half an hour|half an hour} in REM sleep, but only about {*twelve minutes|twelve minutes} outside it. [#fits] More time open, more time filled. That fits.
+[#stamps] Doctors even used it as a test: {4|four} postage stamps around a sleeper, in {*1980.|nineteen eighty.} [#torn] Torn by morning? It happened. [#results] It tore for {22|twenty-two} healthy men, and not for {11|eleven} men with a physical problem.
+[#oxy] Why bother? Blood carries oxygen, so it may be a nightly {*tune-up.|tune-up.}
+[#mirror] So, why do men wake up with morning wood? [#best] Best guess: a clamp that opens in REM sleep. [#idk] Nobody's {!sure.|sure.}
+[#doug] So Doug can relax. It's not a dream, and it's not a flaw. [#probably] Nothing's wrong with him. Probably. [#diy] Tonight you'll have about four, and sleep through them.
+[#cta] Send this to someone who's embarrassed about it. [#follow] Then follow, and watch our {yawn video|yawn video} next.
