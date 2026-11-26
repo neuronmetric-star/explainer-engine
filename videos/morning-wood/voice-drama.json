@@ -1,0 +1,8 @@
+{ "segments": [
+  { "from": "hook", "to": "card", "gain": 3, "punch": true },
+  { "from": "notdream", "to": "rehook", "tempo": 0.94, "pauseAfter": 0.2 },
+  { "from": "rehook", "to": "idea", "tempo": 0.9, "pauseAfter": 0.2 },
+  { "from": "nodis", "to": "count", "tempo": 0.94, "pauseAfter": 0.1 },
+  { "from": "mirror", "to": "doug", "tempo": 0.94, "pauseAfter": 0.15 },
+  { "from": "cta", "tempo": 1.05 }
+] }

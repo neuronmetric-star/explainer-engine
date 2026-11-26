@@ -7,7 +7,7 @@
 //   banner, captionChunk, tail, lights{name:{key,hemi,front,shadow}}, plates{name:{img,hz,vx,fov0,camH,light}}, props{key:file}, cast{name:outfit|{...}}
 //   shots[{at, plate, zoom:[a,b], focus:[[x,y],[x,y]]}]          one painting per idea; the camera moves in EVERY shot (zoom a != b)
 //   shakes/flashes [[cue,dur,mag]]
-//   actors[{who, from, to, placement:{type:'lying',x,y,z,ry,sc,pose?} | {type:'stand',ix,iy,ry}, idle:{face,look,tilt}, events:[{at,do,...}]}]
+//   actors[{who, from, to, placement:{type:'lying',x,y,z,ry,sc,pose?} (tilt = extra roll in radians, + lowers the head; or ix,iy = painted FLOOR pixel under the FEET + dx,dz offsets in metres, so a bed can be solved in pixels) | {type:'stand',ix,iy,ry}, idle:{face,look,tilt}, events:[{at,do,...}]}]
 //        events: {do:'yawn', at, dur=1.6, hold?}  {do:'face', at, to, face}  {do:'gesture', at, to, gesture}  {do:'lookUp', at, to}
 //   helicopter {at, y, w, dur}                                    the signature goodbye (K.helicopter); actors with lookUp look up while it crosses
 //   overlays[{type, at, to?, ...}]  (to defaults to the end of the shot that contains `at`)
@@ -65,7 +65,7 @@
         const pl = a.placement || { type: 'stand', ix: 360, iy: 1270, ry: 0 };
         if (yk > .05) yawnPose(ch, Math.min(1, yk));
         else { ch.face(face); ch.pose(Object.assign({ t, nod: look ? -.38 * up : 0, look: idle.look || 0 }, gesture ? { gesture: gesture.g, gw: gesture.w * (1 - (look ? up : 0)) } : {}, sway(1 - (look ? up : 0) * .8))); }
-        if (pl.type === 'lying') { ch.root.position.set(pl.x, pl.y === undefined ? .9 : pl.y, pl.z); ch.root.rotation.set(0, pl.ry || 0, PI / 2); ch.root.scale.setScalar(pl.sc || 1); ch.root.visible = true; ch.root.updateMatrixWorld(true); if (ch.blob) ch.blob.visible = false; }
+        if (pl.type === 'lying') { let lx = pl.x, lz = pl.z; if (pl.ix !== undefined) { const fl = K.floorAt(pl.ix, pl.iy); lx = fl[0] + (pl.dx || 0); lz = fl[1] + (pl.dz || 0); } ch.root.position.set(lx, pl.y === undefined ? .9 : pl.y, lz); ch.root.rotation.set(0, pl.ry || 0, PI / 2 + (pl.tilt || 0)); ch.root.scale.setScalar(pl.sc || 1); ch.root.visible = true; ch.root.updateMatrixWorld(true); if (ch.blob) ch.blob.visible = false; }
         else K.placeAt(a.who, pl.ix, pl.iy, pl.ry || 0, pl.sc || 1);
       }
 
