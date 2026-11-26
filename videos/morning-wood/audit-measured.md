@@ -13,7 +13,7 @@
 | visual | caption chunks (TEST) setting | ℹ️ INFO | captionChunk = 3 (0/1 = one word at a time) |
 | follow-through | notes file has a promise ledger, a causal chain and a written retell | ✅ PASS | notes.md |
 | facts | sources.md has at least 3 source links | ✅ PASS | 12 links |
-| post | cover.jpg and post.md exist | ⚠️ WARN | no cover, no post.md |
+| post | cover.jpg and post.md exist | ⚠️ WARN | no cover, post.md ok |
 | audio | sound effects file built | ✅ PASS | sfx.wav present (not listened to) |
 
 This measures; it does not judge comprehension. Brian's ear and the follow-through notes do that.
