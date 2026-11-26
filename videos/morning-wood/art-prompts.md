@@ -45,7 +45,7 @@ FOREGROUND: the corner of a metal desk cropped at the bottom left with a mug, a 
 MIDGROUND: a tall chart recorder machine on a cart with a long loop of paper tape curling out covered in wavy ink lines (no numbers), two big reel-to-reel tape machines, a wall of dials and knobs.
 BACKGROUND: a big dark observation window with a green-tinted reflection, wood-paneled walls, a round wall clock (tick marks only), a poster of a plain brain outline.
 DRESSING: a thermos, a desk lamp, coiled cables, orange and brown 1970s curtains, a stool.
-STORY DETAILS: a half-eaten sandwich on a plate, a paper cup with a pencil in it, a sleepy cat clock.
+STORY DETAILS: a half-eaten sandwich on a plate, a paper cup with a pencil in it, a wall clock shaped like a crescent moon.
 LIGHT: warm orange from a desk lamp on the left, cool green glow from the monitors, colored shadows in blue.
 PALETTE: 1970s orange, brown and teal, with one gold accent.
 TEXTURE: wood paneling, brushed metal, paper tape, plastic dials.
@@ -74,8 +74,8 @@ HERO: a thick bright leaf-green garden hose running across the lawn from a brass
 FOREGROUND: tall tomato plants and a wooden fence post cropped at the left, a watering can at the bottom right.
 MIDGROUND: a vegetable bed with cabbages and sunflowers, a wheelbarrow, a coiled spare hose, a brass tap on a brick wall.
 BACKGROUND: a wooden fence, a little shed, tall trees, a blue sky with soft clouds.
-DRESSING: garden gloves, a trowel, a straw hat on a post, butterflies, a bucket.
-STORY DETAILS: one wilting plant at the far end of the hose (to show nothing is flowing), a snail on the clamp.
+DRESSING: garden gloves, a trowel, a straw hat on a post, a bucket.
+STORY DETAILS: one wilting plant at the far end of the hose (to show nothing is flowing), a dewdrop on the clamp handle.
 LIGHT: strong warm sun from the upper left, long soft shadows, bright green and gold, colored shadows in blue-violet.
 PALETTE: leaf green and sky blue with one red accent (the clamp handle).
 TEXTURE: rubber, brass, wood grain, leaf veins, brick.
@@ -91,9 +91,9 @@ PLACE + MOOD: the exact same garden as M04 at night under a huge glowing moon: "
 HERO: the exact hose and the exact silver clamp with the red handle from M04_hose_clamped_day.png, but the clamp is now OPEN and swung to the side; the whole hose is full and swollen with water and gently glowing, sparkles of water jumping along it.
 FOREGROUND: the same tomato plants and fence post at the left, the same watering can at the bottom right, now silvery in the moonlight.
 MIDGROUND: the same vegetable bed with the plants now perked up and fresh, the same wheelbarrow, the same brass tap.
-BACKGROUND: a giant moon, fireflies, a night sky with a swirl of stars and a faint ring of REM-style swirls (pictogram only), the same shed and trees in deep blue.
-DRESSING: fireflies, glowing dew drops, a sleeping garden gnome (no face), moonlit mist.
-STORY DETAILS: the far-end plant is now standing up straight and green, a happy snail on the open clamp.
+BACKGROUND: a giant moon, glowing dust, a night sky with a swirl of stars and a faint ring of REM-style swirls (pictogram only), the same shed and trees in deep blue.
+DRESSING: glowing dew drops, drifting glowing dust motes, a stone birdbath, moonlit mist.
+STORY DETAILS: the far-end plant is now standing up straight and green, a glowing dewdrop on the open clamp handle.
 LIGHT: cool silver-blue moonlight from the upper right, warm glow from the water in the hose, colored shadows in violet.
 PALETTE: deep blue and silver with one warm gold accent (the glowing water).
 TEXTURE: rubber, brass, wet leaves, moonlit mist.
@@ -107,7 +107,7 @@ HERO: five glowing round moons hanging in a row across the sky like lanterns on 
 FOREGROUND: a window ledge with a blue curtain cropped at the bottom left and a sleeping potted cactus.
 MIDGROUND: a long string of fairy lights holding the five moons, soft clouds, a few stars, a calm lake below reflecting the moons.
 BACKGROUND: a faraway hill with a tiny house, layers of blue haze, a hint of sunrise on the far edge.
-DRESSING: sparkles, a drifting paper plane, a sleeping owl (no face) on a branch.
+DRESSING: sparkles, a drifting paper plane, a bare tree branch with a hanging lantern.
 STORY DETAILS: the fifth moon has a tiny alarm bell hanging from it.
 LIGHT: cool silver moonlight, a warm orange line of dawn at the horizon, colored shadows in violet.
 PALETTE: deep navy and silver with one orange dawn accent.
@@ -123,7 +123,7 @@ FOREGROUND: a stack of folders and a brass desk lamp cropped at the top left, a 
 MIDGROUND: a typewriter, a rolodex, a framed diploma (blank), a retro telephone with a curly cord.
 BACKGROUND: wood-paneled wall, a window with venetian blinds and morning light, a plant.
 DRESSING: paper clips, a stapler, a pencil cup, a tidy desk, sticky notes (blank).
-STORY DETAILS: a tiny hand-drawn smiley on a sticky note, a half-solved crossword (no letters).
+STORY DETAILS: a sticky note with a simple pictogram star, a half-solved crossword (no letters).
 LIGHT: warm golden morning light through the blinds from the right, colored shadows in teal.
 PALETTE: 1980 mustard, brown and teal, with one gold accent.
 TEXTURE: wood grain, paper, brass, felt blotter.
