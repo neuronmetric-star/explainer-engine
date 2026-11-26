@@ -29,15 +29,38 @@
     1052730,
     0.42
    ]
+  },
+  "morning": {
+   "key": [
+    16769200,
+    2.2,
+    [
+     -10,
+     6,
+     4
+    ]
+   ],
+   "hemi": [
+    16772300,
+    9067088,
+    0.95
+   ],
+   "front": [
+    16774368,
+    0.9
+   ],
+   "shadow": [
+    5909050,
+    0.4
+   ]
   }
  },
  "plates": {
-  "B08": {
-   "img": "B08_two_beds_bedroom.png",
-   "hz": 0.2,
-   "vx": 0.72,
-   "camH": 2.5,
-   "light": "night"
+  "M00": {
+   "img": "M00_bed_morning_tent.png",
+   "hz": 0.45,
+   "camH": 1.6,
+   "light": "morning"
   },
   "M01": {
    "img": "M01_dream_sky_night.png",
@@ -97,43 +120,43 @@
  "shots": [
   {
    "at": "hook",
-   "plate": "B08",
+   "plate": "M00",
    "zoom": [
     5.0,
     1.3
    ],
    "focus": [
     [
-     0.66,
-     0.34
+     0.52,
+     0.62
     ],
     [
-     0.62,
-     0.4
+     0.5,
+     0.55
     ]
    ]
   },
   {
    "at": "hook+0.55",
-   "plate": "B08",
+   "plate": "M00",
    "zoom": [
     1.3,
     1.8
    ],
    "focus": [
     [
-     0.62,
-     0.4
+     0.5,
+     0.55
     ],
     [
-     0.64,
-     0.36
+     0.5,
+     0.5
     ]
    ]
   },
   {
    "at": "card",
-   "plate": "B08",
+   "plate": "M00",
    "zoom": [
     1.8,
     2.1
@@ -151,7 +174,7 @@
   },
   {
    "at": "kept",
-   "plate": "B08",
+   "plate": "M00",
    "zoom": [
     2.1,
     1.5
@@ -603,11 +626,12 @@
    "to": "belief",
    "placement": {
     "type": "lying",
-    "x": 4.1351,
+    "x": 0,
     "y": 0.9,
-    "z": -9.6684,
+    "z": -9.5,
     "ry": -0.7,
-    "sc": 1.1388
+    "sc": 1.1,
+    "_todo": "solve against M00 once painted (pillow pixel + hips over the bump); cut the duvet with tools/occluder.py and draw it over him"
    },
    "idle": {
     "face": "flat",
@@ -687,6 +711,16 @@
    "text": "DOUG'S PROBLEM",
    "size": 96,
    "color": "gold"
+  },
+  {
+   "type": "text",
+   "at": "card",
+   "to": "belief",
+   "text": "⬇ MORNING WOOD",
+   "size": 90,
+   "color": "red",
+   "y": 520,
+   "rot": -0.03
   },
   {
    "type": "text",
@@ -1074,6 +1108,23 @@
   "THE GARDEN HOSE: a thick, bright leaf-green rubber hose with yellow brass fittings, coiled in a loose loop; THE CLAMP: a chunky silver steel pinch-clamp with a big red handle, clamped across the hose near the middle, identical in every image it appears in (the exact hose and clamp from M04_hose_clamped_day.png; in M05 the clamp is open, the hose is full and swollen with water)"
  ],
  "images": [
+  {
+   "file": "M00_bed_morning_tent.png",
+   "kind": "background",
+   "idea": "the hook + Doug's problem: he wakes with a visible tent in the blanket",
+   "shot": "eye-level 3/4 view of ONE single bed seen from the side and slightly from the foot, the bed running from the left (pillow) to the right (foot), 35mm lens feel, horizon about 45% from the top, portrait 2:3.",
+   "place": "Doug's bedroom at sunrise, the same cozy world as the night bedroom but now in strong golden morning light: \"the morning after\". Funny, warm, a little embarrassing. The bed is EMPTY of people: the pillow is flat with a head-shaped dent, the duvet is pulled up as if someone were under it.",
+   "hero": "a thick olive-green duvet with two cream stripes (the same blanket as the green bed in the night bedroom) covering the whole bed up to the pillow, with ONE clear, rounded, cartoon TENT-shaped bump pushing up the duvet near the middle of the bed, about as big as a loaf of bread, with soft fabric folds radiating from it and a sunbeam hitting it. It is the clearly the biggest, brightest thing in the image. Cartoon, wholesome and silly, nothing explicit, no body shapes visible, only the bump in the blanket.",
+   "foreground": "the corner of a nightstand cropped at the bottom right with a round alarm clock ringing (little vibration lines and tick marks only, no numbers) and a glass of water.",
+   "midground": "the wooden bed frame with the flat pillow at the left, a rumpled sheet corner, a pair of slippers on the floor, a woven rug.",
+   "background": "a big window with open curtains and a golden sunrise over rooftops, a bookshelf with plants and string lights, a coat on a hook.",
+   "dressing": "dust motes in the sunbeams, a stack of books, a mug, a plant on the sill, wood floor with warm reflections.",
+   "story": "the alarm clock is jumping off the nightstand, a sock hanging off the bed corner, one slipper kicked over.",
+   "light": "strong golden sunrise from the window on the right, long warm shadows, cool blue shadows in the corners, glowing dust.",
+   "palette": "olive green and honey wood with one gold sunrise accent.",
+   "texture": "knit duvet weave with soft folds, wood grain, glass, brushed metal.",
+   "staging": "keep the bed lying flat and clear along the middle band so a character can lie on it, with the pillow at the left. Keep the band at 60-72% height calm. The bump is in the middle third of the bed length."
+  },
   {
    "file": "M01_dream_sky_night.png",
    "kind": "background",
