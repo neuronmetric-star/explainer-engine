@@ -26,7 +26,7 @@ Worked example: `videos/gas-vs-water/` (short form; `videos/why-cars-need-gas/` 
 - **Captions**: one word at a time, white with thick black outline, y≈1270 of 1920. Gold = key/win, red = loss.
 - **Visual rules v3** (PLAYBOOK §3.5): one cutaway painting per explainer, growing sets, the color code (white = air/force, light blue = water,
   red = danger, gold = answer), numbers as objects, a change every ≈ 2 s, the `THE HECK?` series banner, a do-it-yourself last line.
-- **Every video is short form** (Brian, Nov 21 2026; don't ask about length): ≈ 1:05–1:12 final, 175–190 story words + CTA,
+- **Every video is short form** (Brian, Nov 21 2026; don't ask about length): ≈ 1:05–1:15 final; **longer scripts are fine** (Brian, Nov 26 2026): the voice is sped 1.2–1.4× (`node tools/tighten.js <slug>` picks the tempo) so ≈ 175–255 story words + CTA,
   just over TikTok's 1-minute payout line, never under 1:02, never over 1:15; hook → middle → end (PLAYBOOK §1.11).
   Ray's skeleton + Xevi's narrator personality, compressed (`docs/creators/ray-xevi-study.md`). Long form is retired.
 - **One narrator** performs everyone's lines Xevi-style; silent characters gesture on their lines.

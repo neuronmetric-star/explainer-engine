@@ -28,7 +28,7 @@ Load each lane skill with the Skill tool at its step (don't work from memory), a
 1. Write the **payoff** (one sentence the viewer will discover) and pick the question word that it answers.
    Pick a short slug and create `videos/<slug>/`.
 2. Research with web search (≥3 solid sources) → `videos/<slug>/sources.md`. Label fiction/reconstructions.
-3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; short form only: hook → middle → end per §1.11, 175–190 story words + CTA ≈ 1:05 final (never under 1:02); cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
+3. Write `videos/<slug>/script.txt` (PLAYBOOK §1 + §1.9 Ray skeleton + §1.10 Xevi personality; short form only: hook → middle → end per §1.11, ≈ 175–255 story words (longer is fine: tools/tighten.js speeds the voice 1.2–1.4× to land 1:05–1:15) + CTA ≈ 1:05 final (never under 1:02); cues before every picture change; zero-knowledge pass per §1.6a: basics first, every term, name and number explained).
    **Easy to understand, always (Brian, Nov 24 2026):** plain words a 10-year-old follows (no jargon: "layer", not "pane";
    "pushes", not "pressure"), one idea per sentence, an everyday comparison for every step, the mystery shown in the first 5 s.
    **The HOOK, always:** the first spoken line is about the viewer ("How does YOUR printer work?") + the surprise, per the hook types in `docs/lessons.md`. The shouted **"WHAT THE HECK?!"** opener is on test (dropped on the printer video, Nov 24): check `docs/lessons.md` for the verdict before using it.

@@ -124,7 +124,7 @@ script, shot list or anything else. Never assume.
 | Format | Runtime | Words (deadpan, ~200–215 wpm) | Structure |
 |---|---|---|---|
 | **Long** | **8:00–9:30** | **1,300–1,500** (~160–170 wpm, conversational) | Ray's skeleton (§1.9): 6–8 scenes, each with a decision, discovery or setback; 2–3 "until" flips; plant early details and pay them off once the viewer can read them |
-| **Short** | ~1:05 (never under 1:02) | 175–190 story words + CTA (≈ 3 words/s after tightening) | Hook, middle, end (§1.11): one chain of events, the mechanism in 2–3 steps, one callback |
+| **Short** | ~1:05–1:15 (never under 1:02) | ≈ 175–255 story words + CTA: longer is fine, the voice is sped 1.2–1.4× (`tools/tighten.js`, Brian Nov 26 2026) | Hook, middle, end (§1.11): one chain of events, the mechanism in 2–3 steps, one callback |
 
 Time the read aloud. Leave about 0.5 s after each reveal line.
 
@@ -715,7 +715,7 @@ File names: `<place>_<angle>_<time>.png` and `prop_<thing>.png`, into `videos/<s
 - [ ] The mechanism told as an if-then example; the surprise said out loud; every number has a yardstick and a cause
 - [ ] No side bets between characters; the last line mirrors a line from the middle
 - [ ] A simile or joke about every 10 s; a specific number or two; an everyday analogy for the mechanism
-- [ ] Short: 175–190 story words + CTA, final 1:05–1:10 (≥ 1:02); every claim sourced; fiction labeled
+- [ ] Short: ≈ 175–255 story words + CTA, tempo 1.2–1.4× (tools/tighten.js), final 1:05–1:15 (≥ 1:02); every claim sourced; fiction labeled
 - [ ] Dry last line, then the follow CTA
 
 **Images**

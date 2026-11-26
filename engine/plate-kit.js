@@ -109,6 +109,8 @@
   const rc = new THREE.Raycaster(), floorPlane = new THREE.Plane(new THREE.Vector3(0, 1, 0), 0), hit = new THREE.Vector3();
   K.floorAt = (ix, iy) => { const p = K.img(ix, iy); rc.setFromCamera({ x: p.x / W * 2 - 1, y: -(p.y / H * 2 - 1) }, camera);
     if (!rc.ray.intersectPlane(floorPlane, hit)) throw new Error('floorAt: point is above the horizon ' + ix + ',' + iy); return [hit.x, hit.z]; };
+  // K.rayPoint(ix, iy, d): the world point d units along the camera ray through painting pixel (ix, iy) (to place something on a bed/shelf, not on the floor)
+  K.rayPoint = (ix, iy, d) => { const p = K.img(ix, iy); rc.setFromCamera({ x: p.x / W * 2 - 1, y: -(p.y / H * 2 - 1) }, camera); return rc.ray.origin.clone().add(rc.ray.direction.clone().multiplyScalar(d)); };
   K.placeAt = (n, ix, iy, ry = 0, scale = 1) => { const [x, z] = K.floorAt(ix, iy); return K.place(n, x, 0, z, ry, scale); };
   const pv = new THREE.Vector3();
   K.screenOf = obj => { obj.getWorldPosition(pv); pv.project(camera); return { x: (pv.x * .5 + .5) * W, y: (-pv.y * .5 + .5) * H }; };

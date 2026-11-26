@@ -55,6 +55,8 @@ Web-research tags: OFFICIAL = the platform itself; VENDOR = tool/agency blog, us
 25. **One consistent style and character across the channel.** No study ranks 2D, 3D or stick-figure styles: not reported.
 26. **Avoid generic AI stock looks and scenes repeated across videos.** Export clean, without watermarks. [platform rule: YouTube inauthentic-content policy, July 2025; Instagram favors originals].
 
+27. **One painting per idea in an explainer; never one picture for more than ~12 s.** Counters and labels are not enough: the painting itself changes when the idea changes (belief → test → exercise → analogy → evidence → open question). Plan the beat → image table BEFORE asking Brian to paint. [house: Brian Nov 26 2026: "I would like more different images following the script"; yawn v4 spent ~35 s on one head painting]
+
 ## Pre-publish checklist
 - [ ] Does something change on screen at least every 3 s (no static stretch over 4 s)?
 - [ ] Does the camera move in every shot, feet planted on paintings?
