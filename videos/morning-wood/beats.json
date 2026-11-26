@@ -57,7 +57,7 @@
  },
  "plates": {
   "M00": {
-   "img": "M00_bed_morning_tent.png",
+   "img": "M00_doug_shock.png",
    "hz": 0.45,
    "camH": 1.6,
    "light": "morning"
@@ -110,8 +110,7 @@
  },
  "props": {
   "P01": "P01_stamp_ring_whole.cut.png",
-  "P02": "P02_stamp_ring_torn.cut.png",
-  "DUVET": "M00_duvet.cut.png"
+  "P02": "P02_stamp_ring_torn.cut.png"
  },
  "cast": {
   "doug": {
@@ -123,17 +122,17 @@
    "at": "hook",
    "plate": "M00",
    "zoom": [
-    5.0,
+    4.5,
     1.3
    ],
    "focus": [
     [
-     0.62,
-     0.4
+     0.24,
+     0.36
     ],
     [
-     0.5,
-     0.45
+     0.4,
+     0.5
     ]
    ]
   },
@@ -146,11 +145,11 @@
    ],
    "focus": [
     [
-     0.5,
-     0.45
+     0.4,
+     0.5
     ],
     [
-     0.4,
+     0.3,
      0.45
     ]
    ]
@@ -160,16 +159,16 @@
    "plate": "M00",
    "zoom": [
     1.5,
-    1.75
+    1.7
    ],
    "focus": [
     [
-     0.4,
+     0.3,
      0.45
     ],
     [
-     0.3,
-     0.46
+     0.28,
+     0.42
     ]
    ]
   },
@@ -177,17 +176,17 @@
    "at": "kept",
    "plate": "M00",
    "zoom": [
-    1.75,
-    1.4
+    1.7,
+    1.3
    ],
    "focus": [
     [
-     0.3,
-     0.46
+     0.28,
+     0.42
     ],
     [
      0.42,
-     0.46
+     0.5
     ]
    ]
   },
@@ -621,41 +620,6 @@
   ]
  ],
  "actors": [
-  {
-   "who": "doug",
-   "from": "hook",
-   "to": "belief",
-   "placement": {
-    "type": "lying",
-    "ix": 800,
-    "iy": 1040,
-    "dx": -0.45,
-    "dz": -0.9,
-    "y": 1.0,
-    "ry": 0,
-    "sc": 1.3,
-    "tilt": -0.4,
-    "headOnly": true
-   },
-   "idle": {
-    "face": "flat",
-    "look": -0.3
-   },
-   "events": [
-    {
-     "do": "face",
-     "at": "hook",
-     "to": "card",
-     "face": "surprised"
-    },
-    {
-     "do": "face",
-     "at": "kept",
-     "to": "belief",
-     "face": "worried"
-    }
-   ]
-  },
   {
    "who": "doug",
    "from": "doug",
@@ -1106,18 +1070,6 @@
    "text": "FOLLOW",
    "size": 110,
    "color": "gold"
-  },
-  {
-   "type": "prop",
-   "at": "hook",
-   "to": "belief",
-   "prop": "DUVET",
-   "pos": [
-    470.5,
-    764.5
-   ],
-   "w": 869,
-   "pop": 0.01
   },
   {
    "type": "text",
