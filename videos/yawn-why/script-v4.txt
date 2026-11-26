@@ -1,0 +1,16 @@
+# YAWN v4.1 (Brian, Nov 26 2026): explainer; "Doug only at the beginning, to bring the problem"; REWRITTEN after "this does not make any sense":
+#   every idea is introduced BEFORE it is referred to ("the air thing" is gone; the common belief is stated first, then the narrator's bet),
+#   the unexplained "sleepiness" line is cut, the fan idea says WHY (a laptop uses a fan), and Doug's problem is closed with a reason.
+# DRAFT, waiting for Brian's "approved". `script.txt` (v2, rendered) is untouched until then. Longer is fine: the voice is sped 1.2-1.4x (tools/tighten.js).
+# Follow-through gate: see script-v4-notes.md. Facts + hedges: sources.md ("best idea so far", "may", "not every scientist agrees").
+[#hook] Why do we {*yawn?|yawn?} [#card] See, Doug had a problem. [#kept] He kept yawning, and he worried something was wrong.
+[#belief] Let's start with what most people say: a yawn brings in extra {!air.|air.} [#bet] Honestly? I believed that too.
+[#tested] Scientists tested it in {*1987.|nineteen eighty-seven.} [#o2] Volunteers breathed pure oxygen, and they yawned just as much. [#laps] Then they exercised, to breathe twice as fast. [#same] Same {!yawns.|yawns.} [#notair] So it's not about air.
+[#rehook] Then what is it?
+[#idea] Here's the best idea so far: {*heat.|heat.} [#laptop] Think of your brain like a laptop. [#warm] It gets warm when it works, and a laptop uses a fan to cool down. [#fan] A yawn may be your brain's {*fan.|fan.} [#pull] It may pull in cool air to cool the brain down. [#nodis] Not every scientist agrees.
+[#people] Does it fit? Researchers watched {160|a hundred and sixty} people, in winter and summer. [#hot] When the air outside was hotter than their bodies, they yawned {*less.|less.} [#fits] If a yawn is a fan, that makes sense: hot air can't cool you off.
+[#rats] In rats, tiny probes showed the brain heating up before a yawn, [#drop] and cooling down after.
+[#mystery] There's still a mystery. [#spread] Yawns spread: when someone near you yawns, you often do too. [#why] Nobody knows {!why.|why.}
+[#mirror] So, why do we yawn? [#best] Best guess: to cool a warm brain. [#idk] Nobody's sure.
+[#doug] So Doug can relax. A yawn isn't a flaw. It may just be your brain's fan. [#probably] Nothing's wrong with him. Probably. [#diy] Next yawn, feel the cool air.
+[#cta] Send this to someone who's yawning.

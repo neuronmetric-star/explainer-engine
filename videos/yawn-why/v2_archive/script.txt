@@ -1,0 +1,17 @@
+# SHORT (~1:09). Body Heck episode 2. DRAFT v2, waiting for Brian. Mode: Explainer (how a thing works). Posting target Fri Nov 27.
+# Lane skills used: hook (statement/paradox frame, kills TWO obvious answers), script ("Perfect! Except…" ladder, re-hook at ~halfway, flip that undoes it),
+# character-emotion (yawn = body: stretch + head back, contagion = Doug copies Gary), growth (send line, no follow ask), visual (live counters).
+# Names locked: "yawn", "the air thing", "brain", "fan". Facts + hedges: sources.md (science is not settled: say "best idea so far").
+[#hook] You've yawned today, [#nobody] and scientists still can't agree why we {*yawn.|yawn.}
+[#notair] It's not for {!air.|air.} [#nottired] And it's not just being tired.
+[#card] See, Doug had a problem. [#grab] He couldn't stop yawning. [#joke] One yawn was so wide, a pigeon checked for vacancy. [#gary] Gary slept right through it.
+[#bet] Honestly? I believed the air thing too. [#idea] The idea: a yawn gulps in extra air. [#o2] So Doug breathed pure oxygen.
+[#perfect] Perfect! [#except] Except... [#tested] scientists tested that in {*1987.|nineteen eighty-seven.} It changed {!nothing.|nothing.}
+[#laps] So Doug ran laps, to breathe twice as fast. [#perfect2] Perfect! [#except2] Except... [#same] same {!result.|result.}
+[#rehook] So if it's not air... what is it?
+[#cool] Here's the best idea so far. [#laptop] Think of your brain like a laptop. [#warm] It gets warm when it works. [#pull] A yawn may pull in cool air, like a little {*fan.|fan.}
+[#people] Researchers watched {160|a hundred and sixty} people. [#hot] When the air was hotter than their bodies, they yawned {*less.|less.}
+[#rats] In rats, tiny probes showed the brain heating up before a yawn, [#drop] and cooling down after.
+[#perfect3] Perfect! [#except3] Except... [#catch] when Gary finally yawns, [#doug2] Doug yawns too. [#why] And nobody knows {!why.|why.}
+[#flip] I'd bet you just yawned. [#mirror] So, why do we yawn? [#idk] Nobody's sure. [#diy] Next yawn, feel the cool air.
+[#cta] Send this to someone who's yawning.

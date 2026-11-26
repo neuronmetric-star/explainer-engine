@@ -104,3 +104,131 @@ Legend: ✅ pass · ⚠️ partial / decide · ❌ fail · ➖ not run or not ye
 
 ## scout
 - ➖ not run (Brian's choice).
+
+---
+# STAGE 3: FINAL RENDER (run Nov 26 2026; measured on `data.js`, `scene.js`, `final.mp4`; 1:10.2, 1080×1920, 30 fps)
+
+## hook
+| Check | Result |
+|---|---|
+| Voice at frame 0; search phrase in the first sentence | ⚠️ first word 0.00 s ✅; the title `WHY DO WE YAWN?` is on screen from 0.25 s ✅; but the spoken "…why we yawn" lands at 3.3 s (inside sentence 1, just past the 3 s mark). Fix next time: put the phrase earlier in line 1 |
+| Strange thing huge in frame 1, camera moving | ✅ Doug's yawn fills the frame (5×), crash-zoom out in 0.55 s, flash + shake |
+| Line 2 kills the obvious answers | ✅ "It's not for air. And it's not just being tired." |
+| Hook form logged for the A/B | ✅ lessons Results row |
+
+## script
+| Check | Result |
+|---|---|
+| 5–7 rungs, a flip that undoes the ladder | ✅ oxygen → laps → brain fan (+160 people, +probe) → contagion → "nobody knows" |
+| Re-hook near halfway | ✅ "So if it's not air … what is it?" at 49% |
+| Length 1:02–1:15 | ✅ 1:10.2 (voice 69.2 s + 1.0 s tail); 5 s after the payoff |
+| Numbers sourced | ✅ 1987, 160 people, "twice as fast" |
+| Last line mirrors the hook, scorecard (bet, jokes, retell) | ✅ |
+
+## visual (measured from the real cue times)
+| Check | Result |
+|---|---|
+| Something changes at least every 3 s | ⚠️ 44 planned changes, avg 1.58 s; longest gap 3.1 s (@23.9 s, after the "1987" stamp), next 2.9 s. Marginal |
+| Camera moves in every shot | ✅ 0 shots with equal start/end zoom (ep. 3's static `cta` is fixed) |
+| Live counter / status | ✅ `100% OXYGEN`, `BREATHS ×2`, `1987`, `160 PEOPLE`, `YAWNS ↓`, brain-heat gauge |
+| Colors follow our code | ✅ |
+| Captions (chunks TEST #2) | ✅ logged |
+| SFX | ⚠️ `sfx.wav` 57 events on cues; not listened to (no audio playback here) |
+| Paintings pass the §4 gate | ✅ by eye: B08 two beds, B07 brain, B06 street; the first brain room was rejected and replaced |
+
+## character-emotion
+| Check | Result |
+|---|---|
+| Both friends clearly lie on their own beds | ✅ Gary (left, green bed) and Doug (right, navy bed), head on the pillow; Doug stands only for the laps |
+| Body/prop emotion, silent cast | ✅ yawn = hollow-`o` + stretch, pigeon gag, running, Gary → Doug copy |
+| Final flip is a body reaction | ✅ both yawn at the sunset |
+| Gold/red on the character as well as the label | ⚠️ labels and the gauge only (known gap) |
+| Placement quality | ⚠️ the lying poses are fitted by a hand-tuned solver against the painting (hz .2, camH 2.5); the bodies hover slightly above the mattresses and look stiff. Fine at phone size, not perfect |
+| Unsafe content | ✅ no rat on screen; a drawn probe wire only |
+
+## growth
+| Check | Result |
+|---|---|
+| Last 5 s: wide reveal + body flip | ✅ sunset + helicopter, both friends yawn |
+| CTA decision logged | ✅ send-to-a-friend line (test #2); no follow button |
+| Spoken viewer question | ⚠️ none spoken; the pinned comment asks one |
+| Template sameness vs ep. 3 | ⚠️ same ladder + sunset ending; hook form and send-line wording differ |
+| Caption line 1 = search phrase; 3–5 niche hashtags | ✅ (`post.md`) |
+| ≥ 1:02, ≥ 3 h after the last post, a different topic | ✅ (slot: Fri Nov 27) |
+
+## Open items
+- Lab rat painting (P08): not delivered; skipped on purpose (see `post.md`).
+- Engine note: `K.rayPoint` added to `engine/plate-kit.js` (unused after the fit was simplified; harmless).
+
+## Revision Nov 26 (Brian: "make them a tiny bit smaller")
+- The two lying figures were scaled to 85% (Gary 1.527 → 1.297, Doug 1.340 → 1.139) and re-solved so each head stays on its pillow (residual 0 px). Standing shots (laps, sunset) are unchanged (they must read ≥ 40% of the frame height). Re-rendered: 1:10.2.
+
+---
+# v4 EXPLAINER CUT (Nov 26 2026): final render ≈ 1:12 (72.0 s), 1080×1920, 30 fps; measured on `data.js`, `scene.js`, `final.mp4`
+Brian's direction: "just say why do we yawn and jump into an explainer; Doug only at the beginning, to bring the problem; then images, no more Doug."
+The v2 render and files are archived in `v2_archive/` (do not post).
+
+## follow-through gate (script skill, rules 26–32)
+| Check | Result |
+|---|---|
+| Promise ledger: every promise paid off | ✅ `script-v4-notes.md`: "Why do we yawn?" → the mirror; Doug's problem → "A yawn isn't a flaw… Nothing's wrong with him. Probably."; "extra air" → the 1987 test; "Then what is it?" → heat/fan; "Does it fit?" → 160 people + rats; "still a mystery" left open on purpose |
+| Causal chain, every link spoken; analogies bridged | ✅ belief stated BEFORE the bet; laptop → "a laptop uses a fan to cool down" → "a yawn may be your brain's fan"; "hot air can't cool you off" bridges the 160-people result |
+| Character problem resolved | ✅ |
+| Retell written out | ✅ (in the notes). Not tested on a real viewer: that is the next step |
+
+## hook
+| Check | Result |
+|---|---|
+| Voice at frame 0; search phrase in the first sentence | ✅ first word at 0.00 s; "Why do we yawn?" fully spoken by 0.75 s (v2 was 3.3 s); title on screen from 0.25 s |
+| Strange thing huge in frame 1, camera moving | ✅ Doug's giant yawn, crash-zoom out in 0.55 s, flash + shake |
+| Line 2 kills the obvious answer | ⚠️ by design: Brian asked for a plain "Why do we yawn?" opener. The belief is killed later, with the 1987 test |
+
+## script
+| Check | Result |
+|---|---|
+| Re-hook near halfway | ⚠️ "Then what is it?" at 30%: early, because that is where the question genuinely arises |
+| Flip that undoes the ladder | ⚠️ not a ladder any more: an explainer chain that ends open ("nobody's sure") + Doug's relief. By design |
+| Length 1:02–1:15 | ✅ voice 71.0 s (raw 96.5 s, tempo 1.33× chosen by `tools/tighten.js`) + 1 s tail = 72.0 s; 5.8 s after the payoff |
+| Numbers sourced | ✅ 1987, 160 people, "twice as fast" (sources.md) |
+| Hedges | ✅ "best idea so far", "may", "not every scientist agrees", "nobody's sure" |
+
+## visual (measured on the real cue times)
+| Check | Result |
+|---|---|
+| Something changes at least every 3 s | ✅ 47 changes, avg 1.50 s, longest gap 2.4 s (the four 3.1–3.6 s gaps found on the first pass were filled) |
+| Camera moves in every shot | ✅ 0 shots with equal start/end zoom |
+| Live counter / status | ✅ `1987`, `100% OXYGEN`, `BREATHS ×2`, `160 PEOPLE`, `YAWNS ↓`, brain-heat gauge |
+| Colors follow our code | ✅ |
+| Captions | ✅ 2–4 word chunks (TEST #3) |
+| SFX | ⚠️ `sfx.wav` 46 events on cues; not listened to (no audio playback here) |
+| Paintings | ✅ B08 bedroom, B07 yawning head, B06 hot street (all chosen by Brian) |
+
+## character-emotion
+| Check | Result |
+|---|---|
+| Doug only in the opening, then images only | ✅ Doug lies on his bed, mid-yawn, in the first ~5 s; Gary's bed is empty; 5–58 s is images only |
+| The cast's other appearance | ⚠️ the signature city-sunset goodbye (house rule) shows Doug and Gary yawning with the helicopter; Brian can drop it |
+| Body emotion, silent | ✅ the yawn = hollow-`o` + stretch |
+
+## growth
+| Check | Result |
+|---|---|
+| Last 5 s: wide reveal | ✅ sunset + helicopter |
+| CTA | ✅ send-to-a-friend line (test #2/#3); no follow button |
+| Spoken viewer question | ⚠️ none; the pinned comment asks one |
+| Template sameness vs ep. 3 | ✅ different structure (explainer chain, not the ladder); same signature ending |
+| Caption line 1 = the search phrase; hashtags | ✅ (`post.md`) |
+
+---
+# v4.2: A DIFFERENT PAINTING FOR EACH IDEA (Nov 26 2026; Brian: "more different images following the script" + the rat). Final render 72.0 s.
+New paintings: B09 classroom, B10 1987 lab, B11 treadmill lab, B12 laptop desk, B13 winter/summer street, B14 rat bench + the rat prop (P08), B15 waiting room. The oxygen-tank and laptop props are now painted into B10 / B12.
+
+## visual (new rule 27: one painting per idea, never one picture for more than ~12 s)
+| Check | Result |
+|---|---|
+| Distinct paintings | ✅ 11 (was 6): bedroom, classroom, 1987 lab, treadmill lab, head/brain, laptop desk, split street, hot street, rat bench, waiting room, sunset |
+| Longest time on one painting | ✅ 6.7 s (the hot street); the sunset goodbye holds 10.1 s (signature, with the helicopter) |
+| Each idea has its own picture | ✅ extra air → classroom · 1987 oxygen → lab · exercise → treadmill · laptop → desk · 160 people → winter/summer + hot street · rats → bench + rat · yawns spread → waiting room (a ripple of "AAAH") · answer → head |
+| Rat | ✅ Brian's rat painting is the prop on the bench; no drawn wire needed; the rat is a cartoon (no research on screen beyond the probe wire) |
+| Pace, camera, counters | ✅ unchanged from v4 (every shot moves; avg change 1.5 s; the longest gap was 2.4 s before the "AAAH" ripple was added) |
+| Not checked | ⚠️ sfx not listened to; the finished file with sound not watched end to end |

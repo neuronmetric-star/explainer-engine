@@ -1,0 +1,11 @@
+{ "segments": [
+  { "from": "hook", "to": "belief", "gain": 3, "punch": true },
+  { "from": "tested", "to": "laps", "tempo": 0.92 },
+  { "from": "same", "to": "rehook", "tempo": 0.9, "pauseAfter": 0.2 },
+  { "from": "rehook", "to": "idea", "tempo": 0.88, "pauseAfter": 0.25 },
+  { "from": "fan", "to": "pull", "tempo": 0.92 },
+  { "from": "hot", "to": "rats", "tempo": 0.93 },
+  { "from": "mystery", "to": "mirror", "tempo": 0.92, "pauseAfter": 0.2 },
+  { "from": "mirror", "to": "doug", "tempo": 0.93, "pauseAfter": 0.15 },
+  { "from": "cta", "tempo": 1.1 }
+] }

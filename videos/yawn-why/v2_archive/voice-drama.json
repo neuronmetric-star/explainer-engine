@@ -1,0 +1,11 @@
+{ "segments": [
+  { "from": "hook", "to": "notair", "gain": 3, "punch": true },
+  { "from": "notair", "to": "card", "tempo": 0.93, "pauseAfter": 0.1 },
+  { "from": "tested", "to": "laps", "tempo": 0.88, "pauseAfter": 0.15 },
+  { "from": "except2", "to": "rehook", "tempo": 0.9, "pauseAfter": 0.15 },
+  { "from": "rehook", "to": "cool", "tempo": 0.88, "pauseAfter": 0.25 },
+  { "from": "hot", "to": "rats", "tempo": 0.92 },
+  { "from": "except3", "to": "flip", "tempo": 0.9, "pauseAfter": 0.2 },
+  { "from": "flip", "to": "diy", "tempo": 0.93, "pauseAfter": 0.1 },
+  { "from": "cta", "tempo": 1.1 }
+] }
