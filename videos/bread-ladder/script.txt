@@ -1,0 +1,17 @@
+# bread-ladder: BUILD-LADDER TEST (mode = Explainer, skeleton = "If you X, you have Y. But… so you…"), series: Body/Kitchen Heck, Doug is the "you"
+# FOLLOW-THROUGH GATE (script skill rules 26-32)
+# Promise ledger: "How does bread rise?" -> paid at #oven; "you get a flat cracker" -> paid at #end (the cracker became bread); every "But" is answered by the next "So".
+# Causal chain: flour+water bakes flat, because nothing makes holes -> yeast eats sugar and burps gas -> but gas leaks, so knead -> kneading builds gluten, a net, so it traps gas -> the net is stiff, so rest warm -> yeast eats faster, gas piles up, net stretches, dough grows -> still raw, so bake -> heat expands the gas and turns water to steam, loaf jumps -> heat kills yeast and sets the net, so the holes stay.
+# Analogies bridged aloud: soda (same gas), loose balloon -> "so a net is what you need", egg white -> "the net cooks the same way".
+# Character problem: Doug's flat cracker -> resolved at #end with a reason.
+# Retell: 1. Doug mixed flour and water and got a flat cracker. 2. Yeast burps gas, kneading builds a net that traps it, and the oven makes the gas and steam expand. 3. Heat then kills the yeast and sets the net, so the holes stay and it is bread.
+# SOURCES: videos/bread-ladder/sources.md. All claims hedged to what they say. No numbers invented.
+[#hook] How does bread rise? [#cracker] Mix flour and water, bake it, and you don't get bread. You get a flat cracker.
+[#doug] That's what Doug just made. [#yeast] So you add yeast. It's a tiny living fungus that eats the sugar in flour, and burps out gas. [#soda] The same gas that's in soda.
+[#leak] But the gas just leaks out, like air from a loose balloon. [#knead] So you knead the dough. Pushing and folding builds {*gluten,|gluten,} a stretchy net made from the proteins in flour.
+[#net] The net traps each burp, like the skin of a balloon. [#stiff] But a fresh net is stiff, so you let it rest somewhere warm. [#rise] The yeast eats faster, the gas piles up, and the net stretches. The dough grows.
+[#raw] So, is it bread yet? No. It's still raw dough. [#oven] So you bake it. Heat makes the trapped gas expand, and water inside turns to steam and expands too. The loaf jumps up in the oven.
+[#kill] Then the heat kills the yeast, and the net sets, just like an egg white cooks. [#holes] That's why the holes stay.
+[#flip] Here's the twist. The yeast that built your bread died in the oven. [#end] So Doug's cracker became bread, thanks to a fungus that never got to taste it.
+[#diy] Next time you tear a slice, look at the holes. Each one was a burp.
+[#cta] Send this to someone who's baking.

@@ -18,7 +18,7 @@ Ready to post) with its "Next step", and keep `docs/series.md` in step.
 
 **Skill gates (added Nov 25 2026, from the creator research; skills live in `.claude/skills/<lane>/SKILL.md`).**
 Load each lane skill with the Skill tool at its step (don't work from memory), apply its rules, and run its "Pre-publish checklist" before moving on:
-- **Start:** `scout`. Vet any new creator/topic lead (1M+ video, 3 latest posts on-topic, no borrowed IP, no paid scrapers: Scrape Creators is banned). If nothing new is studied, say "scout: not run".
+- **Start:** `scout`. Vet any new creator/topic lead (1M+ video, 3 latest posts on-topic, no borrowed IP, Scrape Creators is allowed, report credits spent). If nothing new is studied, say "scout: not run".
 - **Script (steps 1–3):** `hook` (fill its worksheet; A/B the hook form), `script` (ladder, final flip that undoes it, halfway re-hook, > 61 s), `growth` (ending, CTA decision, caption plan). Then the `docs/lessons.md` scorecard, INCLUDING the narrator bet and a joke about every 10 s.
 - **Shot list + art (step 4):** `visual` (a change every ≤ 3 s, live numbers, caption style) and `character-emotion` (acting-notes table per cue; the final flip needs a body/prop reaction).
 - **Preview (step 7) and final (step 8):** re-run the `visual` and `character-emotion` checklists on preview stills, measure the gaps between on-screen changes from `scene.js` cues, then the `hook`, `script` and `growth` checklists on the final. Save the pass/fail table as `videos/<slug>/skill-audit.md` (example: `videos/ears-pop-plane/skill-audit.md`) and show Brian the ❌ and ⚠️ rows BEFORE sending the video.

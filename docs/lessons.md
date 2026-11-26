@@ -93,3 +93,6 @@ script**, runs the scorecard on every script and shot plan, and adds to it after
 | airplane-window-hole (v4) | | | | | | | |
 | ears-pop-plane (1:06.7) | | | | | | | TESTS: no-shout "Why do YOUR…" hook, 2–4 word caption chunks, send-to-a-friend last line (no follow button); compare 3-s hold with sleep-two-minutes (no-shout) and the shouted ep. 1–2 |
 | yawn-why v4 (≈1:12) | | | | | | | TESTS: plain "Why do we yawn?" opener + Doug problem then images only (no cast), 2–4 word caption chunks, send-to-a-friend last line (no follow button); compare 3-s hold and watch-to-end with ears-pop-plane and the shouted ep. 1–2 |
+
+
+| Nov 26 2026 | Brian: "if you are able to use scrape to the max of your ability- i would appreciate it." | Scrape Creators ban reversed. Scout rule 6 + checklist updated. Daily scrape now includes explainer-lane discovery (search_top most-liked this-week/month, transcripts, creator profiles). First full pass: 20 credits, found the "How a X Becomes Your Y" ladder lane (see docs/creators/study-build-ladder-2026-11-26.md). |

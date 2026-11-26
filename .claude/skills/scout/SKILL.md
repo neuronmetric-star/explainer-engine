@@ -21,7 +21,7 @@ Web-research tags: OFFICIAL = the platform itself; VENDOR = tool/agency blog, us
 5. **Prefer faceless/animated educational accounts close to our format.** [study-money scout note: other @justrichit "how X makes money" videos are the closest fit]. For body: [study-body scout note: need men-vs-women body leads; ask Brian for handles or do a manual TikTok search].
 
 ### Tools and data
-6. **Never use paid scrapers. Scrape Creators is banned.** [task brief: Brian's rule]. Don't call any `mcp__Scrape_Creators__*` tool, even though it's connected. Use the TikTok AI app pipeline (Apify → Gemini analysis → Claude concepts) as set up [study headers], and ask Brian before spending credits [house: CLAUDE.md].
+6. **Scrape Creators is allowed and encouraged (Brian, Nov 26 2026: "use scrape to the max of your ability"; this reverses the earlier ban).** Use it for the daily trend sheet, 1M+ explainer-lane discovery, transcripts (1 credit each; `use_ai_as_fallback` for videos ≤ 120 s) and creator profiles. Check `v1_account_credit_balance` (free) first, report credits spent after each pass, and write big results to a file and extract fields with a script, because raw search output is 1M+ characters. Other paid scrapers still need Brian's OK. [house: Brian Nov 26 2026]
 7. **Stats come from the app's scrape; cuts/min are Gemini estimates, not measured.** Label them "est." wherever you reuse them [study headers].
 8. **Typical config:** max 10 videos, Top K 1, 30-day lookback (General used 90-day) [study headers].
 
@@ -58,7 +58,7 @@ Web-research tags: OFFICIAL = the platform itself; VENDOR = tool/agency blog, us
 - [ ] Does every account have a 1M+ video, or is it labelled low-weight?
 - [ ] Were each lead's 3 latest posts checked as on-topic?
 - [ ] Are borrowed-IP, reposting, war/true-crime and other ad-unsafe accounts excluded, and was each web-list lead hand-checked in the app?
-- [ ] Was only the TikTok AI app used (no Scrape Creators or other paid scraper)?
+- [ ] Were credits checked first and the credits spent reported (Scrape Creators is allowed; TikTok AI app still good for video-level study)?
 - [ ] Does each finding carry a lane tag and one "Steal this" rule, structure only, with estimates marked "est." and missing stats "not reported"?
 - [ ] Is the output saved unedited in `docs/creators/` with unverified claims flagged?
 
